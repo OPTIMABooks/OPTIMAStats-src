@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_describing-with-graphs">
+  <title>Describing Data Graphically</title>
+  <idx>><h>data</h></data>
+
+
+1.2 -- Describing Data Graphically
+Last modified by Jonathan Duncan on Sunday, 5 January 2020, 9:32 PM
+This document was downloaded on Friday, 10 April 2020, 2:50 PM
+Introduction
+Once we have collected our data, we need to be able to understand it. Data in
+its raw form--a long
+list of values--is not very informative. In this section we will explore ways
+in which we can organize
+data in tables and describe the values using graphs.
+The graph we choose to use will depend on the data we are describing as well as
+other factors.
+Some of these factors are:
+Does our data come from a quantitative variable or a qualitative variable?
+Is our data univariate or bivariate?
+Do we want a "quick-and-dirty" graph we can sketch by hand, or will a computer
+be drawing
+the graph for us (see lab activity one for computer related information)?
+Does the data represent the value of a variable over time, or the value of a
+variable from
+many different subjects?
+By answering these questions we will learn to choose and construct an
+appropriate graph to
+describe many different data sets. We will also learn to interpret these graphs
+as a preliminary step
+in analyzing our data.
+Click the continue button to get started!
+Terms and Definitions
+Skills
+Upon completion of this lesson, you should be able to describe the following
+terms:
+area principle, bar graph, bimodal, center, class, class width, contingency
+table, expanded stem-
+and-leaf plot, frequency distribution, frequency table, histogram, marginal
+distribution, mound-
+shaped, multimodal, pie graph, relative frequency bar graph, relative frequency
+table, scatter plot,
+skewed left, skewed right, stacked bar graph, stem-and-leaf plot, symmetric,
+time series, uniform,
+unimodal, upper class limit
+Upon completion of this lesson, you should be able to:
+Organize data into frequency tables or frequency distributions
+Create bar charts and histograms based on tables
+Construct pie charts and charts for bivariate data
+Construct Stem-and-Leaf plots
+Select appropriate graphs to summarize given data
+Interpret graphs by describing the center and shape
+Note: This lesson contains 6 checkpoints.
+Qualitative Data - Tables
+Recall that a qualitative variable produces data that represents categories,
+and not numerical
+values. Consider the following example.
+Example 1.2.1
+To better understand their customers, a pizza parlor decides to collect a list
+of favorite pizza
+toppings. They choose an appropriate sampling technique and gather the
+following data from 96
+customers. What does this data tell you?
+cheese
+green peppers
+olives
+cheese
+olives
+cheese
+cheese
+cheese
+green peppers
+cheese
+pepperoni
+olives
+pineapple
+onions
+cheese
+sausage
+onions
+anchovies
+olives
+cheese
+green peppers
+cheese
+cheese
+cheese
+pineapple
+mushrooms
+green peppers
+pineapple
+cheese
+green peppers
+sausage
+cheese
+sausage
+bacon
+bacon
+green peppers
+cheese
+pepperoni
+pepperoni
+olives
+pepperoni
+pepperoni
+green peppers
+pepperoni
+olives
+olives
+olives
+green peppers
+pepperoni
+pepperoni
+mushrooms
+onions
+bacon
+sausage
+sausage
+olives
+sausage
+green peppers
+olives
+bacon
+sausage
+pepperoni
+pineapple
+olives
+mushrooms
+bacon
+onions
+bacon
+olives
+sausage
+mushrooms
+cheese
+pineapple
+bacon
+green peppers
+pepperoni
+olives
+pepperoni
+pepperoni
+pepperoni
+sausage
+sausage
+pepperoni
+pepperoni
+cheese
+bacon
+onions
+pepperoni
+pineapple
+olives
+cheese
+bacon
+green peppers
+bacon
+pepperoni
+olives
+Solution
+Without some organization, it is hard to glean anything from this data. We need
+a way to simplify
+things!
+Our first step in constructing a graph for this data is to summarize. With any
+qualitative variable, we
+can construct what is called a frequency table to summarize the values in our
+data set.
+Frequency Table
+A frequency table is a two column table used to summarize the values of a
+qualitative variable.
+The first column contains the various categories that the variable can take on.
+The second
+column contains the counts or frequency with which each category appears.
+To see how this works, let's use a frequency table to summarize the pizza
+topping data set we saw
+in our example.
+Example 1.2.2
+Construct a frequency table for the pizza topping data seen in example 1.2.1.
+Does this table
+give you a better picture of the data set?
+Solution
+Steps:
+1. List all of the possible pizza toppings in
+the first column of our table.
+2. Count the frequency with which each
+topping appears.
+3. Check to ensure that the total of our
+counts adds up to the total number of
+values in the set of data.
+This definitely gives us a clearer picture of the
+data set. We can now see the number of times
+each topping was selected as somebody's
+favorite.
+Topping
+Frequency
+Anchovies
+1
+Bacon
+10
+Cheese
+17
+Green Peppers
+11
+Mushrooms
+4
+Olives
+15
+Onions
+5
+Pepperoni
+17
+Pineapple
+6
+Sausage
+10
+Total:
+96
+While this is a great way to summarize data, it can still be hard to tell how
+popular categories are in
+relation to one another. In the previous example, there is a difference of two
+between the number
+of customers who favor cheese and the number who favor olives. Is that a large
+difference? To
+better analyze this, we can change from using counts to using percents.
+Relative Frequency Table
+A relative frequency table is a table in which each category is listed together
+with the ratio of
+the total values from the data set that fall into that category.
+Let's revisit the pizza topping example once again.
+Example 1.2.3
+Construct a relative frequency table for the pizza topping data seen in
+examples 1.2.1 and 1.2.2.
+Solution
+Steps:
+1. Start with the frequency table from the
+previous example.
+2. Divide each category frequency by the
+grand total (in this case 96).
+3. Check to ensure that the sum is 1. Note
+that in this case, the extra 0.0002 is a
+result of rounding error in our four-
+decimal-place answers.
+With this relative frequency table, we can more
+easily tell how each category relates to the
+others.
+Topping
+Relative Frequency
+Anchovies
+1/96 = 0.0104
+Bacon
+10/96 = 0.1042
+Cheese
+17/96 = 0.1771
+Green Peppers
+11/96 = 0.1146
+Mushrooms
+4/96 = 0.0417
+Olives
+15/96 = 0.1563
+Onions
+5/96 = 0.0521
+Pepperoni
+17/96 = 0.1771
+Pineapple
+6/96 = 0.0625
+Sausage
+10/96 = 0.1042
+Total:
+1.0002
+While these tables are a good step in better displaying our data, we still need
+to translate this into a
+picture. To see how we do that, click continue.
+Qualitative Data - Graphs
+One of the most basic ways to graphically represent data collected for a
+qualitative variable is
+using a bar graph.
+Bar Graph
+A bar graph is a graph for qualitative data in which each possible category is
+represented by a
+bar, the height of which corresponds to the frequency of that category in the
+data set. These bars
+can be arranged in any order and are separated from each other by empty space.
+Note that the first step in creating a bar chart from raw data is to construct
+a frequency table. Once
+that is done, a computer spreadsheet program such as OpenOffice or Microsoft
+Excel is a great
+way to quickly construct bar graphs. Consider the following example, based on
+our pizza topping
+example from the last page.
+Example 1.2.4
+Construct a bar graph for the pizza topping data seen in example 1.2.2.
+Solution
+Recall that the frequency table for this data is:
+Topping
+Frequency
+Anchovies
+1
+Bacon
+9
+Cheese
+17
+Green Peppers
+11
+Mushrooms
+4
+Olives
+14
+Onions
+6
+Pepperoni
+17
+Pineapple
+Sausage
+6
+10
+Graphing this produces:
+What happens to the bar graph if we use the relative frequency table instead of
+the frequency
+table? We do get a new type of graph, but as we shall see, the shape of the
+graph will not change,
+just the scale. First, the definition.
+Relative Frequency Bar Graph
+A relative frequency bar graph is a graph for qualitative data in which each
+category is
+represented by a bar, the height of which corresponds to the percent of the
+data values that are
+in that category. These bars can be arranged in any order and are separated
+from each other by
+empty space.
+Below we construct a relative frequency bar graph for the pizza topping
+example.
+Example 1.2.5
+Construct a bar graph for the pizza topping data seen in example 1.2.3.
+Solution
+Recall that the relative frequency table for this
+data is:
+Topping
+Percent
+Anchovies
+1.04
+Bacon
+10.42
+Cheese
+17.71
+Green Peppers
+11.46
+Mushrooms
+4.17
+Olives
+15.63
+Onions
+5.21
+Pepperoni
+17.71
+Pineapple
+6.25
+Sausage
+Graphing this produces:
+10.42
+Both the bar graph and relative frequency bar graph are particularly useful for
+comparing the
+number or percent of values that are in one category with the number or
+proportion in another
+category. However it is sometimes better to show how each category frequency or
+proportion
+relates to the whole. For this type of situation, a pie graph is more useful.
+Pie Graph
+A pie graph is a graph for qualitative data in which a circle is divided into
+sectors or wedges
+representing the various categories. The area of these sectors is determined by
+the relative
+frequency of the associated category.
+With the same spreadsheet program we used to build our bar graphs, we can also
+construct pie
+graphs. To see how this works, we will revisit example 1.2.2 one last time.
+Example 1.2.6
+Construct a pie graph for the pizza topping data seen in example 1.2.3.
+Solution
+Recall that the relative frequency table for this
+data is:
+Topping
+Percent
+Anchovies
+1.04
+Bacon
+10.42
+Cheese
+17.71
+Green Peppers
+11.46
+Mushrooms
+4.17
+Olives
+15.63
+Onions
+5.21
+Pepperoni
+17.71
+Pineapple
+6.25
+Sausage
+Graphing this produces:
+10.42
+There is one more situation involving qualitative variables which we must
+investigate.
+Click continue to see what to do with bivariate qualitative data.
+Qualitative Data - Bivariate Data
+The frequency tables and graphs that we've looked at so far work well for
+univariate data. But they
+need to be modified before they will work with data involving more than one
+variable. Multivariate
+data can be very difficult to summarize and display graphically. Because of
+this, we usually just
+look at each variable separately. However when we have two variables there are
+some special
+techniques that we can use to summarize and display the data.
+Contingency Table
+A contingency table, also called a two-way table, is a table used to summarize
+bivariate
+qualitative data. The columns in this table represent the various categories of
+one of the two
+variables, and the rows represent the categories of the other variable. In each
+cell (row-column
+combination) we record the number of subjects with that row category and column
+category.
+To see how a contingency table can be read, let's look at an example involving
+college students
+and summer vacation plans.
+Example 1.2.7
+Four hundred randomly selected college students are asked to give their class
+standing
+(Freshman, Sophomore, Junior, or Senior) and their summer plans (work, play, or
+study). The
+following contingency table summarizes the results of this survey. Determine
+the number of
+Freshmen who are not working this summer.
+Freshman
+Sophomore
+Junior
+Senior
+Work
+23
+35
+30
+51
+Play
+49
+62
+29
+17
+Study
+28
+17
+46
+13
+Solution
+The column labeled "Freshmen" has three rows corresponding to work, play, and
+study. To get
+the number of Freshmen who are not working we add together those who are
+playing and those
+who are studying to get 49+28 = 77.
+When we create a contingency table, or if we are just given a contingency
+table, we sometimes will
+want to look at each variable separately. In the example above, we may want to
+know how many of
+these students intend to work this summer. To answer this question, we need to
+total up the rows
+and/or columns. These totals are typically displayed in the margins of the
+table, leading to the
+following definition.
+Marginal Distribution
+A marginal distribution of a contingency table is either the sums of the rows
+of that contingency
+table, or the sum of the columns of that contingency table.
+Let's find the marginal distributions for the student summer plans example
+above.
+Example 1.2.8
+Construct the marginal distributions for the contingency table seen in example
+1.2.7. Use these
+distributions to determine (a) the number of students who plan to work this
+summer, and (b) the
+number of Juniors who took part in the study.
+Solution
+In order to find these marginal distributions, we
+first add together the rows and columns from
+the table in example 1.2.7.
+Once that is done, we can answer these
+questions by reading off the appropriate
+numbers.
+1.
+139 students plan to work this summer
+2.
+105 Juniors participated in the study.
+Freshman
+Sophomore
+Junior
+Senior
+total
+Work
+23
+35
+30
+51
+139
+Play
+49
+62
+29
+17
+157
+Study
+28
+17
+46
+13
+104
+total
+100
+114
+105
+81
+note: the sum of the row totals and column totals should both be the grand
+total, 400 in this case.
+A contingency table is a great tool for summarizing bivariate qualitative data.
+But in order to
+describe this data with a graph, we will need to make a modification to our bar
+graph. We will use a
+special type of bar graph called a stacked bar graph.
+Stacked Bar Graph
+A stacked bar graph is used to display the data in a contingency table. One of
+the two variables
+is chosen as the primary variable, and a bar is created for each category of
+the primary variable.
+The height of the bar is equal to the marginal distribution entry for that
+category. The bar is
+broken up into "stacked" pieces, the heights of which represent the frequency
+secondary variable
+categories in that primary variable category.
+This definition can be difficult to decipher. Let's look at stacked bar graphs
+for the summer plans
+data. Again, these graphs were created using a spreadsheet program.
+Example 1.2.9
+Create two stacked bar graphs for the contingency table seen in example 1.2.7--
+one graph with
+class standing as the primary variable, and the other with summer plans as the
+primary variable.
+Solution
+First we create a graph with class standing as the primary variable.
+And then the graph with summer plans as the primary variable.
+To see more examples of summarizing and displaying graphs for qualitative data,
+see the following
+video examples.
+Video Examples
+Example 1 - Summarizing and Graphing
+Qualitative Data
+Example 2 - Summarizing and Graphing
+Qualitative Data
+Example 3 - Summarizing and Graphing
+Bivariate Qualitative Data
+We're now ready for a quick understanding check. Click continue to see your
+first checkpoint
+question in this lesson.
+Cluster
+Cluster
+Score: 0
+Qualitative Data - Question 1
+Checkpoint
+To check your understanding, please answer the
+following question.
+You have seen several definitions and methods for summarizing and displaying
+qualitative data.
+Question
+Which of the following is a true statement?
+A relative frequency table uses percents instead of counts.
+Score: 1
+We can never construct a bar chart or a pie chart based on the same data set.
+Score: 0
+Large sets of raw data are easily understood.
+Score: 0
+The order in which categories in a bar graph are listed is important.
+Score: 0
+The marginal distributions in a contingency table can add to different totals.
+Score: 0
+Qualitative Data - Question 2
+Checkpoint
+To check your understanding, please answer the
+following question.
+You have seen several definitions and methods for summarizing and displaying
+qualitative data.
+Question
+Which of the statements below is false?
+The bar chart and relative frequency bar chart for the same data set will have
+different shapes.
+Score: 1
+Marginal distributions summarize a single variable.
+Score: 0
+A pie graph is a good way to show the relationship of each category to the
+whole.
+Score: 1
+A frequency table and relative frequency table for a set of data will have the
+same number of rows.
+Score: 0
+A stacked bar chart wil not work to graph univariate data.
+Score: 0
+Qualitative Data - Question 3
+Checkpoint
+To check your understanding, please answer the
+following question.
+You have seen several definitions and methods for summarizing and displaying
+qualitative data.
+Question
+Check the statement below which is false.
+To construct a relative frequency table, divide the frequency for each category
+by 100.
+Score: 1
+A stacked bar chart is used to graph the contents of a contingency table.
+Score: 0
+A contingency table is used to summarize bivariate data.
+Score: 0
+There should be spaces between the bars in a bar graph.
+Score: 0
+There is more than one way to graph qualitative data.
+Score: 0
+End of cluster
+End of cluster
+Score: 0
+Quantitative Data - Tables
+When we wish to summarize quantitative variables, we run into many of the same
+problems that
+we had with qualitative variables. The raw data itself is usually not very
+useful. Our first task is to
+come up with a way to summarize this data in a table, like we did with
+frequency tables for
+qualitative variables. To do this, we must create "categories" to use as the
+rows for our table.
+Frequency Distribution
+In order to summarize values from a quantitative variable, we must first break
+the range of
+values up into "categories" as follows.
+Class - the range of values taken on by the variable is broken up into sections
+called
+classes.
+Upper Class Limit - the largest number that belongs to a class is called the
+upper class
+limit.
+Class Width - the difference between the upper class limit of a given class and
+the upper
+class limit of the previous class (or the minimum value in the data set for the
+first class) is
+called the class width. This value should almost always be the same for each
+class.
+Once the classes have been established, we treat them as categories and count
+the number of
+values that fall into each class. The resulting table is called a frequency
+distribution
+.
+Note that although a frequency distribution will look very similar to a
+frequency table, there is a
+difference. Namely, we must break the range of values up into classes in order
+to construct our
+table. It is probably easiest to remember that a frequency table is used to
+summarize data from a
+qualitative variable, and a frequency distribution is used to summarize data
+from a quantitative
+variable.
+Example 1.2.10
+The height of tomato plants is of particular interest to Daisy. She spends her
+summer gathering
+data on the heights of tomato plants in various randomly selected gardens in
+her home town.
+Summarize the data she collected below, showing these heights rounded to the
+nearest 10th of
+an inch, in a frequency distribution with five classes.
+11.1
+10.1
+17.9
+16.9
+9.3
+9.6
+14.1
+15.2
+9.4
+14.2
+12.7
+8.4
+13.0
+12.2
+16.2
+12.0
+9.7
+11.2
+8.9
+17.4
+16.6
+9.8
+17.0
+13.4
+10.5
+15.3
+13.5
+12.7
+12.8
+17.0
+12.9
+8.6
+8.3
+13.4
+17.3
+8.8
+8.2
+13.3
+17.4
+12.1
+16.1
+9.4
+10.7
+17.0
+9.9
+13.1
+10.4
+14.8
+17.7
+10.2
+16.6
+8.1
+8.5
+16.9
+14.1
+17.5
+9.1
+13.0
+8.7
+16.0
+16.6
+14.6
+14.8
+15.1
+Solution
+To construct our frequency distribution, we follow these
+steps:
+1. Determine the class width as follows:
+a. Find the range: 8.1 to 17.9. Lets round to
+8.0 to 18, giving a range of 10.
+b. Find the class width by taking range/#
+classes, or 10/5 = 2.
+2. Starting with our minimum value (we rounded to
+8), add the class width to get the upper class limits
+(10, 12, 14, 16, 18).
+3. List the classes in the first column of our table.
+Note that these should not include the previous
+class upper class limit, thus the second class is
+from 10.1-12, not 10-12.
+4. Finally, count the number of values that fall into
+each class. For example, there are 7 values
+bigger than 10, but less than or equal to 12.
+Frequency Distribution
+Classes
+Frequency
+8.1-10
+17
+10.1-12
+7
+12.1-14
+14
+14.1-16
+10
+16.1-18
+16
+Once we have summarized our data in a frequency distribution, we can of course
+create a relative
+frequency distribution by dividing each class frequency by the grand total. We
+can also create a
+representative graph. To see how that is done, click continue.
+Quantitative Data - Histograms
+The graph that we use to describe data summarized by a frequency distribution
+is very similar to
+the bar graphs we used to summarize data in a frequency table. There is,
+however, an important
+distinction.
+Histogram
+A histogram is a graph for quantitative data in which each class in a frequency
+distribution for
+that data is represented by a bar, the height of which corresponds to the
+frequency of that class.
+These bars must be arranged in ascending order of the classes and must touch
+each other.
+Note that in a histogram, the order is important because the classes of a
+frequency distribution are
+themselves ordered from smallest values to largest values. Also, note that the
+bars touch to show
+that the classes are contiguous--that is, there is no space between the
+classes. Let's try
+constructing a histogram for the tomato plant heights seen on the previous
+page. We use a
+spreadsheet to accomplish this, in much the same way that we constructed a bar
+graph.
+Example 1.2.11
+Construct a histogram for the frequency distribution found in example 1.2.10.
+Solution
+Recall that the frequency distribution was:
+Classes
+Frequency
+8.1-10
+17
+10.1-12
+7
+12.1-14
+14
+14.1-16
+10
+16.1-18
+16
+note: notice that the bars in this graph touch each other, and that they are in
+order from lowest
+values (8.1-10) up to highest values (16.1-18). These are both important
+characteristics for
+histograms!
+To see more of this, view the following video examples.
+Video Examples
+Example 4 - Summarizing and Graphing
+Quantitative Data
+Example 5 - Summarizing and Graphing
+Quantitative Data
+We are now ready for a checkpoint question on summarizing and graphing
+quantitative variable
+data. Click continue to view this question.
+Cluster
+Cluster
+Score: 0
+Tables and Histograms - Question 1
+Checkpoint
+To check your understanding, please answer the
+following question.
+You have seen several definitions involving summarizing and displaying
+quantitative data.
+Question
+Check the true statement below.
+In a frequency distribution the class widths should be the same for all
+classes.
+Score: 1
+The lower class limit is the highest number that can appear in a class.
+Score: 0
+Frequency distributions and frequency tables are the same thing.
+Score: 0
+The order in which the bars in a histogram are arranged does not matter.
+Score: 0
+It is okay to allow classes to overlap:for example, 5-10 and 10-15 are valid
+successive classes.
+Score: 0
+Tables and Histograms - Question 2
+Checkpoint
+To check your understanding, please answer the
+following question.
+You have seen several definitions involving summarizing and displaying
+quantitative data.
+Question
+Check the false statement below.
+The upper class limit of the last class in a frequency distribution can be less
+than the largest
+number in the data set.
+Score: 1
+The bars in a histogram should always touch each other.
+Score: 0
+A frequency distribution is used to summarize data from a quantitative
+variable.
+Score: 0
+A histogram should not be used to graph data from a qualitative variable.
+Score: 0
+To find an approximate class width, take the maximum value in the data set,
+subtract the minimum
+value, and divide by the desired number of classes.
+Score: 0
+Tables and Histograms - Question 3
+Checkpoint
+To check your understanding, please answer the
+following question.
+You have seen several definitions and methods for summarizing and displaying
+qualitative data.
+Question
+Check the false statement below.
+The class widths can be different for different classes in a frequency
+distribution.
+Score: 1
+Histograms and frequency distributions go together.
+Score: 0
+Bar graphs and frequency tables go together
+Score: 0
+Different frequency distributions can be created from the same data set,
+depending on the desired
+number of classes.
+Score: 1
+A frequency table can not be used to summarize a quantitative variable.
+Score: 0
+End of cluster
+End of cluster
+Score: 0
+Quantitative Data - Stem-and-Leaf Plots
+One of the disadvantages of summarizing quantitative data with a frequency
+distribution and
+histogram is that you lose the specific values.
+Example 1.2.12
+Using the frequency distribution created in example 1.2.10, determine how many
+tomato plants
+are exactly 14.2 inches tall.
+Classes
+Frequency
+8.1-10
+17
+10.1-12
+7
+12.1-14
+14
+14.1-16
+10
+16.1-18
+16
+Solution
+This is not possible. If all we have is the frequency distribution, we can only
+tell that there are
+10 plants between 14.1 and 16 inches tall. Some of those may be 14.2 inches
+tall, but there is no
+way of knowing without going back to the raw data.
+If we wish to create a pictorial representation of a set of quantitative data
+that also shows the raw
+data, we need a new type of graph.
+Stem-and-Leaf Plot
+In a stem-and-leaf plot, data is represented by separating each value into two
+parts: the stem
+(all but the right-most digit) and leaf (right-most digit). A table is then
+constructed with a row for
+each stem with that stem in the first column and a list of all leaves which
+belong from that stem in
+the second column, given in ascending order.
+Stem-and-leaf plots are usually created by hand. Because of this, they are most
+useful for
+relatively small sets of data where we wish to get a quick picture of the shape
+of the data. To get
+an accurate picture, it is important that each "leaf" take up the same amount
+of space. So if you are
+typing a stem-and-leaf plot into a computer, use a mono-spaced font such as
+courier so that the
+ones (1) don't take up less space than the eights (8). Consider the following
+example.
+Example 1.2.13
+The following is a list of number of quarter credits taken by 30 different
+college students.
+Construct a stem-and-leaf plot for this data.
+12
+17
+14
+13
+16
+16
+18
+8
+21
+16
+14
+13
+16
+17
+16
+16
+9
+3
+18
+15
+15
+12
+11
+15
+21
+16
+15
+6
+15
+19
+Solution
+We construct our stem-and-leaf plot as follows:
+1. Divide each value into the stem (10's
+digit) and leaf (1's digit) pieces. Note that
+this yields stems 0, 1, and 2.
+2. List the stems in order in the first column
+of our table.
+3. For each stem, list the associated leaves
+in ascending order.
+Stem-and-Leaf Plot
+Stem Leaf
+0
+3689
+1
+122334455555666666677889
+2
+11
+Note that the "shape" we see here is like a histogram tilted on its side.
+However, in this particular
+instance the middle stem seems to have a disproportionate number of leaves. To
+remedy this, we
+need to split our stems up into smaller pieces.
+Expanded Stem-and-Leaf Plot
+An expanded stem-and-leaf plot includes more than one row for each stem. The
+leaves are
+divided equally between the rows representing the associated stems.
+Example 1.2.14
+Construct an expanded stem-and-leaf plot for the credits data from example
+1.2.13 using two
+rows per stem.
+Solution
+This is done in almost exactly the same way as
+our last example. The only difference is that
+each stem gets two rows. The leaves are then
+split up with 0-4 going in the first row and 5-9 in
+the second row for a given stem. The result is
+shown to the right.
+note: this gives us a clearer picture of how the
+credit hour values are distributed!
+Stem Leaf
+0
+3
+0
+689
+1
+1223344
+1
+55555666666677889
+2
+11
+2
+You can see a few more examples of this in action in the following videos.
+Video Examples
+Example 6 - Stem-and-Leaf Plots
+Example 7 - Stem-and-Leaf Plots
+Let's try an understanding checkpoint. Click continue to attempt your question.
+Cluster
+Cluster
+Score: 0
+Stem-and-Leaf Question 1
+Checkpoint
+To check your understanding, please answer the
+following question.
+A biologist researching seagulls counts the number of seagulls that enter a
+nesting ground during
+several 15 minute periods. She records the following results.
+24 50 46 34 27
+39 26 37 43 37
+40 37 51 26 36
+51 43 34 32 48
+Question
+Which of the following is the correct Stem-and-Leaf plot for this data?
+Stem Leaf
+2 4667
+3 24467779
+4 03368
+5 011
+Score: 1
+Stem Leaf
+2 4766
+3 49777642
+4 63038
+5 011
+Score: 0
+Stem Leaf
+2 4
+2 667
+3 244
+3 67779
+4 033
+4 68
+5 011
+5
+Score: 0
+Stem-and-Leaf Question 2
+Checkpoint
+To check your understanding, please answer the
+following question.
+A biologist researching seagulls counts the number of seagulls that enter a
+nesting ground during
+several 15 minute periods. She records the following results.
+24 50 46 34 27
+39 26 37 43 37
+40 37 51 26 36
+51 43 34 32 48
+Question
+Which of the following is the correct expanded Stem-and-Leaf plot for this
+data?
+Stem Leaf
+2 4
+2 667
+3 244
+3 67779
+4 033
+4 68
+5 011
+5
+Score: 1
+Stem Leaf
+2 4667
+3 24467779
+4 03368
+5 011
+Score: 0
+Stem Leaf
+2 47
+2 66
+3 4977
+3 7642
+4 63
+4 038
+5 0
+5 11
+Score: 0
+Stem-and-Leaf Question 3
+Checkpoint
+To check your understanding, please answer the
+following question.
+A biologist researching seagulls counts the number of seagulls that enter a
+nesting ground during
+several 15 minute periods. She records the following results.
+24 50 46 34 27
+40 37 51 26 36
+51 43 34 32 48
+Question
+Which of the following is the correct Stem-and-Leaf plot for this data?
+Stem Leaf
+2 467
+3 24467
+4 0368
+5 011
+Score: 1
+Stem Leaf
+2 476
+3 47642
+4 6038
+5 011
+Score: 0
+Stem Leaf
+2 476
+5 011
+4 6038
+3 47642
+Score: 0
+End of cluster
+End of cluster
+Score: 0
+Quantitative Data - Other Graphs
+There are several other graphs that can be useful to help display certain types
+of data. One of the
+most useful "other" types of graphs is meant to display the value of a single
+quantitative variable
+measured over time.
+Time Series
+A time series graph, also called a line chart, lists times along the horizontal
+axis, and values
+along the vertical axis. Points are placed at the appropriate height for the
+value of the variable at
+each time. These points are then connected with line segments.
+To see how a time series can be used, consider the next example.
+Example 1.2.15
+The value of a certain stock is recorded every January for five years. The
+following data is
+recorded. Construct a time series graph for this data.
+Year
+2005
+2006
+2007
+2008
+2009
+Value
+$42
+$47.5
+$51
+$46.3
+$35.2
+Solution
+Using a spreadsheet program, we can produce the following graph.
+We need another type of graph to represent bivariate quantitative variables.
+This sort of data
+comes in (x,y) pairs where x represents the value of the first variable and y
+the value of the
+second. In order to describe the relationship between the two variables, we can
+plot these pairs on
+a graph, creating what's called a scatter plot.
+Scatter Plot
+In a scatter plot we associate one variable from a set of bivariate data with
+the x-axis and the
+other with the y-axis. We then plot each pair of values as an (x,y) point on
+this coordinate
+system.
+To see how this works, let's look at an example.
+Example 1.2.16
+The tail length and weight of a certain breed of mice are measured. Construct a
+scatter plot and
+comment on the relationship, if any, that this graph shows between the two
+variables.
+Mouse #1
+Mouse #2
+Tail Length
+(cm)
+Mouse #3
+Mouse #4
+Mouse #5
+Mouse #6
+Mouse #7
+7
+8.2
+12.1
+9.3
+11.5
+7.8
+10.4
+Weight (oz)
+3.3
+4.6
+8.6
+6.1
+7.3
+2.6
+7
+Solution
+Using a spreadsheet, we construct the following scatter plot.
+There definitely appears to be a relationship between tail length and weight.
+Larger tail lengths
+seem to correspond to larger weights. While this is not always the case (mouse
+#6 is an
+exception) it does appear to be a fairly strong relationship.
+To see more examples of when these other types of graphs may be used, view the
+following
+videos.
+Video Examples
+Example 8 - Other Graphs
+Example 9 - Other Graphs
+We've now seen a wide range of graphs. Before we talk about how to interpret
+some of these
+graphs, let's pause to make sure we understand when to use each type of graph.
+Click continue to
+see your next checkpoint question.
+Cluster
+Cluster
+Score: 0
+Appropriate Graphs - Question 1
+Checkpoint
+To check your understanding, please answer the
+following question.
+You have been asked to come up with a quick graph for a set of 15 values from a
+quantitative
+variable ranging between 10 and 40.
+Question
+What sort of graph would be most appropriate in this situation?
+Stem-and-Leaf Plot
+Score: 1
+Bar Graph
+Score: 0
+Time Series
+Score: 0
+Pie Graph
+Score: 0
+Appropriate Graphs - Question 2
+Checkpoint
+To check your understanding, please answer the
+following question.
+Data has been collected from 100 ten-year-old children. For each child the
+parents' combined
+income, and the child's reading level are recorded. You wish to construct a
+graph to determine if
+there is a relationship between these two variables.
+Question
+What type of graph is most appropriate for this data?
+Scatter Plot
+Score: 1
+Histogram
+Score: 0
+Pie graph
+Score: 0
+Stem-and-Leaf Plot
+Score: 0
+Appropriate Graphs - Question 3
+Checkpoint
+To check your understanding, please answer the
+following question.
+You are asked to determine if the interest rate for a certificate deposit has
+changed in the last two
+years. You are given a set of data consisting of interest rates for the
+certificate of deposit every
+month for the last two years.
+Question
+What type of graph is most appropriate for this data?
+Time Series
+Score: 1
+Scatter Plot
+Score: 0
+Histogram
+Score: 0
+Bar Graph
+Score: 0
+End of cluster
+End of cluster
+Score: 0
+Quantitative Data - Interpreting Graphs
+The reason that we create graphs in the first place is to help us better
+understand a set of data. It
+is therefore important that we know how to interpret the graphs that we create.
+In this class, we will
+spend most of our time working with univariate quantitative variables. We thus
+need to be sure that
+we know how to interpret histograms. There are three major things to look for
+in a histogram.
+Center
+The center of a histogram is the class that most accurately describes the
+typical value in the
+data set being described.
+Modes
+One way to describe the shape of a histogram is based on the number of modes
+the histogram
+possesses. A mode is a class that contains significantly more data than the
+classes immediately
+next to it. A histogram can be unimodal (one mode), bimodal (two modes),
+multimodal (more
+than two modes), or it may have no prominent modes in which case it is called
+uniform.
+Symmetry
+Another way to describe the shape of a histogram is based on its symmetry. A
+histogram may be
+symmetric (meaning it has the same shape on the left and right of its center),
+skewed right
+(meaning that the right tail is longer than the left) or skewed left (meaning
+that the left tail is
+longer than the right).
+We can tell a lot about the distribution of values of a single quantitative
+variable by describing the
+histogram in these terms. Consider the following example.
+Example 1.2.17
+Classify each of the histograms below by number of modes and symmetry. Also,
+locate the
+center of each histogram.
+(a)
+(b)
+(c)
+(d)
+(e)
+(f)
+Solution
+a.This histogram has a single mode in the 15.1-20 class. The histogram is
+skewed to the
+left (that tail is longer) and the center appears to be somewhere between the
+10.1-15
+class and the 15.1-20 class.
+b.Histogram (b) has two modes (bimodal). It is also skewed to the left, and the
+center
+appears to be again between the 10.1-15 and 15.1-20 classes.
+c.This histogram is unimodal and symmetric. The center is in the 10.1-15 class.
+d.Histogram (d) does not appear to have any modes--while some of the bars are
+taller than
+their neighbors, the difference is very small. We will call this histogram
+uniform and
+symmetric with the center right in the middle class, 10.1-15.
+e.This histogram is bimodal and appears to be slightly skewed to the left. The
+center
+appears to be in the middle class.
+f.Our final histogram is multimodal (three modes) and symmetric. The center is
+in the
+middle class, 10.1-15.
+Graph (c) above is an example of a very common histogram shape. This shape is
+so common, in
+fact, that it has a distinctive name.
+Mound-Shaped
+A histogram is called mound-shaped if it is unimodal and symmetric, with the
+mode in the exact
+center of the histogram.
+Take a look at a few more examples in the following videos.
+Video Examples
+Example 10 - Interpreting Graphs
+Example 11 - Interpreting Graphs
+You should now be ready to try to interpret histograms on your own. Click
+continue  to try a
+checkpoint question.
+Cluster
+Cluster
+Score: 0
+Interpreting Graphs - Question 1
+Checkpoint
+To check your understanding, please answer the
+following question.
+Consider the histogram shown below.
+Question
+Which of the following term correctly describes this histogram?
+Skewed Right
+Score: 1
+Unimodal
+Score: 0
+Symmetric
+Score: 0
+Skewed Left
+Score: 0
+Uniform
+Score: 0
+Interpreting Graphs - Question 2
+Checkpoint
+To check your understanding, please answer the
+following question.
+Consider the histogram shown below.
+Question
+Which of the following terms correctly describes this histogram?
+Mound Shaped
+Score: 1
+Bimodal
+Score: 0
+Skewed Left
+Score: 0
+Skewed Right
+Score: 0
+Multimodal
+Score: 0
+Uniform
+Score: 0
+Interpreting Graphs - Question 3
+Checkpoint
+To check your understanding, please answer the
+following question.
+Consider the histogram shown below.
+Question
+Which of the following terms correctly describes this histogram?
+Uniform
+Score: 1
+Mound Shaped
+Score: 0
+Skewed Left
+Score: 0
+Unimodal
+Score: 0
+Bimodal
+Score: 0
+Skewed Right
+Score: 0
+End of cluster
+End of cluster
+Score: 0
+Things to Avoid
+There are a few common errors in creating and using graphs that should be
+mentioned. The first
+such error is commonly caused either by a "helpful" computer program with
+poorly chosen default
+settings, or by a person who is trying to manipulate the graph to "lie" with
+statistics.
+Example 1.2.18
+The following frequency table gives the number of individuals in a recent study
+who said that
+they had full health insurance coverage, some health insurance coverage, and no
+health
+insurance coverage. Next to those numbers are two bar charts representing this
+data. Determine
+which bar chart is misleading, and explain why it is misleading.
+Frequency Table
+Status Frequency
+No Insurance
+102
+Some Insurance
+95
+Full Insurance
+82
+Using a spreadsheet program, the two histograms above were constructed. Both
+histograms
+used the data above.
+Solution
+The first histogram is accurate, but the second is not. Notice that the scale
+on the side starts at
+80 instead of at 0. This exaggerates the difference between the number of
+individuals with full
+coverage and those with some or no coverage.
+This is one example of a problem caused by a violation of an important
+principle in graphing.
+Area Principle
+The area principle states that the area of any bar or sector in a graph
+representing a category in
+a frequency table or class in a frequency distribution must be in the same
+proportion to the rest
+of the graph as the frequency of the category or class is to the rest of the
+data in the table.
+By changing the starting point of the frequency axis in the second histogram
+above, we have
+violated the area principle. This makes the "full insurance" bar look much
+shorter in relation to the
+other two bars than the numbers indicate. Another common error in creating
+graphs is to violate
+the area principle by creating three dimensional graphs. Consider the
+following.
+Example 1.2.19
+A store manager wishes to know the general age group into which most of his
+customers fall. He
+does a quick survey and comes up with the following frequency distribution. He
+then creates a
+pie graph to show the proportion of customers in each age group. Do you think
+his pie graph
+accurately represents the data from the frequency distribution?
+Frequency Distribution
+Ages
+Frequency
+0-20
+14
+21-40
+16
+41-60
+10
+61+
+7
+Solution
+This is not an accurate representation of the store manager's frequency
+distribution. Notice that
+the 0-20 year old age group looks like it may be the largest group based on the
+amount of blue
+on the graph. However, the 21-40 year old group is in fact larger. By adding
+the 3D effects, the
+store manager has violated the area principle.
+To review these concepts and see a few other examples of bad graphs, please see
+the following
+videos.
+Video Examples
+Example 12 - Things to Avoid
+Example 13 - Things to Avoid
+We must be sure not to sacrifice accuracy to create "pretty" looking graphs.
+You are now ready for
+your last checkpoint question of this lesson. Click continue to view your
+question.
+Cluster
+Cluster
+Score: 0
+Things to Avoid - Question 1
+Checkpoint
+To check your understanding, please answer the
+following question.
+It is always best to use three dimensional effects to make your graphs more
+appealing.
+Question
+Is this previous statement true or false?
+False
+Score: 1
+True
+Score: 0
+Things to Avoid - Question 2
+Checkpoint
+To check your understanding, please answer the
+following question.
+It is best to change the scale of the y-axis in a histogram or bar graph to
+start at a number close to
+the minimum value in the frequency distribution or frequency table, but bigger
+than zero.
+Question
+Is this previous statement true or false?
+False
+Score: 1
+True
+Score: 0
+Things to Avoid - Question 3
+Checkpoint
+To check your understanding, please answer the
+following question.
+Violating the area principle may create misleading graphs.
+Question
+Is this previous statement true or false?
+True
+Score: 1
+False
+Score: 0
+End of cluster
+End of cluster
+Score: 0
+Lesson Completion
+Lesson Completion
+I certify that I have read the content of this lesson and understand it to the
+best of my ability.
+Select true
+below and click submit to finish the lesson.
+True
+Score: 1
+False
+Score: 1
+Powered by TCPDF (www.tcpdf.org)
+</section>

@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_understanding-data">
+	<title>Understanding Data</title>
+
+	<introduction>
+		<p>As our definition of statistics is centered around understanding data, we will begin with an examination of data collection and classification.</p>
+	</introduction>
+
+	<objectives>
+		<title>Section Objectives</title>
+		<introduction>
+			<p>Upon completion of this lesson, you should be able to describe the following terms.</p>
+		</introduction>				
+		<ul>
+			<li>
+				<title>Terms and Definitions</title>
+				<p>
+					<ol>
+						<li><p>bias</p></li>
+						<li><p>bivariate</p></li>
+						<li><p>causation</p></li>
+						<li><p>census</p></li>
+						<li><p>cluster sample</p></li>
+						<li><p>continuous variable</p></li>
+						<li><p>convenience sample</p></li>
+						<li><p>correlation</p></li>
+						<li><p>data</p></li>
+						<li><p>discrete variable</p></li>
+						<li><p>experiment</p></li>
+						<li><p>factor</p></li>
+						<li><p>leading question</p></li>
+						<li><p>lurking variable</p></li>
+						<li><p>multivariate</p></li>
+						<li><p>observational study</p></li>
+						<li><p>population</p></li>
+						<li><p>qualitative variable</p></li>
+						<li><p>quantitative variable</p></li>
+						<li><p>sample</p></li>
+						<li><p>simple random sample</p></li>
+						<li><p>stratified sample</p></li>
+						<li><p>systematic sample</p></li>
+						<li><p>treatment</p></li>
+						<li><p>univariate</p></li>
+						<li><p>variable</p></li>
+						<li><p>voluntary response sample</p></li>
+					</ol>
+				</p>
+			</li>
+			<li>
+				<title>Skills</title>
+				<p>
+					<ol>
+						<li><p>Classify data by the number and type of variables in contains.</p></li>
+						<li><p>Differenttiate between populations and samples.</p></li>
+						<li><p>Identify and Describe valid Sampling Techniques.</p></li>
+						<li><p>Differentiate between Experiments and Observational Studies.</p></li>
+						<li><p>Identify and correct common errors in data collection or analysis.</p></li>
+					</ol>
+				</p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection>
+		<title>What is Data?</title>
+
+		<introduction>
+			<p>Statistics is the study of <term>data</term>. So it is vitally important that we understand what data is. Throughout this text we need to be sure that we all agree on what terms mean. Whenever we introduce a new term, it will be defined as follows.</p>
+			<definition>
+				<title>Data</title>
+				<statement>
+					<p>Any collection of measurements or values is referred to collectively as <term>data</term>.</p>
+				</statement>
+			</definition>
+			<p>We can understand and classify data better if we first understand the source from which the measurements are taken. Each type of measurement such as height, length of time, or favorite pizza topping, comes from a certain characteristic or property called a	<term>variable</term>.</p>
+			<definition>
+				<title>Variable</title>
+				<statement>
+					<p>A <term>variable</term> is a single characteristic that is being measured or changed.</p>
+				</statement>
+			</definition>
+			<p>In a typical set of data, one or more variables are identified, and the measurements are collected for each of those variables.</p>
+			<example>
+				<title>Identifying Variables</title>
+				<statement>
+					<p>A wildlife conservationist wishes to better understand the population of fish that live in a certain lake. To do this, she catches 100 fish and records the species, length, and weight of each fish. Identify the variables in this set of data.</p>
+				</statement>
+				<solution>
+					<p>The three characteristics measured are: fish species, fish length, and fish weight. These are the variables.</p>
+				</solution>
+			</example>
+		</introduction>
+
+		<subsubsection>
+			<title>Classification by Number of Variables</title>
+			<p>One way in which we can classify data is based on the number of variables that are being measured. In this class we will look at data sets composed of	measurements from one, two, or more variables. These are given the following names.</p>
+			<definition>
+				<title>Number of Variables</title>
+				<statement>
+					<p>A data set can be named based on the number of variables being measured as follows.
+						<ul>
+							<li><p><term>Univariate data</term> contains measurements from a single variable.</p></li>
+							<li><p><term>Bivariate data</term> contains measurements from two variables. This is sometimes called <term>paired data</term></p></li>
+							<li><p><term>Multivariate data</term> contains measurements from three or more variables.</p></li>
+						</ul>
+					</p>
+				</statement>
+			</definition>
+			<p>Let's look at an example.</p>
+			<example>
+				<title>Classifying Datasets</title>
+				<statement>
+					<p>Identify each of the following data sets based on the number of variables being measured.
+						<ol>
+							<li><p>A wildlife conservationist records the species, length, and weight of 100 fish caught in a certain lake.</p></li>
+							<li><p>To better understand how tall tomato plants grow, you record the height of 40 tomato plants at a local nursery.</p></li>
+							<li><p>The mayor wants to know if the local bond measure will pass in the next election. He asks 250 city residents how old they are, and if they plan to support the measure.</p></li>
+							<li><p>As a part of the admission process, a school requires students to submit their name, phone number, zip code, email address, and expected major.</p></li>
+						</ol>
+					</p>
+				</statement>
+				<solution>
+					<p>
+						<ol>
+							<li><p>Multivariate - there are three variables: species, length, and weight.</p></li>
+							<li><p>Univariate - since there is only one variable, height, this is univariate data.</p></li>
+							<li><p>Bivariate - collecting age and support for the bond means that there are two variables.</p></li>
+							<li><p>Multivariate - there are five variables in this data set, so it must be multivariate.</p></li>
+						</ol>
+					</p>
+				</solution>
+			</example>
+			<figure>
+				<caption>Number of Variables I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-01.mp4"/>
+			</figure>
+			<figure>
+				<caption>Number of Variables II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-02.mp4"/>
+			</figure>
+
+			<exercise>
+				<title>Number of Variables</title>
+				<statement>
+					<p>A high school math teacher asks her students to write down their favorite subject on a blank piece of paper. She then collects these anonymous papers and records the favorite subject of each student.
+					</p>
+					<p>Question: What type of data did the teacher record?</p>
+				</statement>
+				<hint><p>The answer is either univariate, bivariate, or Multivariate</p></hint>
+				<answer><p>Univariate</p></answer>
+			</exercise>
+
+			<exercise>
+				<title>Number of Variables</title>
+				<statement>
+					<p>A country veterinarian is collecting data on the lifespan of various breeds of horses. To do this, she records the age and breed of each horse that dies in her region.</p>
+					<p>Question: What type of data is this?</p>
+				</statement>
+				<hint><p>How many pieces of information did the veterinarian collect for each horse?</p></hint>
+				<answer><p>Bivariate</p></answer>
+			</exercise>
+
+			<exercise>
+				<title>Number of Variables</title>
+				<statement>
+					<p>A state trooper, growing bored with her job, decides to pass the time recording data about the cars that pass her speed trap. She writes down the make, model, color, and speed of each of the cars that drive past.</p>
+					<p>Question: What type of data is she collecting?</p>
+				</statement>
+				<answer><p>Multivariate</p></answer>
+			</exercise>
+		</subsubsection>
+
+		<subsubsection>
+			<title>Types of Variable</title>
+			<p>Another way to classify data is based on the types of variables that are being measured. The type of a variable depends on what is being recorded. Consider the following example.</p>
+			<example>
+				<title>Identifying Variables</title>
+				<statement>
+					<p> The post office, wishing to better understand its customers, decides to collect	data from 1000 households within a certain state. They mail each household a questionnaire asking the residents to confirm their zip code, list the number of people who live in that household, and give the length of time that they have lived there. What are the variables in this study, and how do the measurements differ?</p>
+				</statement>
+				<solution>
+					<p>The three variables in this multivariate set of data are: zip code, number of residents, and length of time in residence. The characteristics of these variables are:
+						<ul>
+							<li>
+								<title>Zip Code</title>
+								<p>
+									While the values recorded are numbers (i.e. 99324, 49103, 92357, etc) they
+									actually represent categories and not numerical values. Notice that it would 
+									make no sense to <q>average</q> two zip codes!
+								</p>
+							</li>
+							<li>
+								<title>Number of Residents</title>
+								<p>These values are numbers (i.e. 2 residents, 5 residents, 1 resident, etc) and they do actually represent numerical quantities. Notice that it does make sense to talk about the <q>average number of residents.</q> Also, note that the values that this variable can take on are all whole numbers. In particular, there are <q>gaps</q> between the values (i.e. 1, 2, 3, etc.).</p>
+							</li>
+							<li>
+								<title>Length of Residence</title>
+								<p>The values for this final variable are also numbers (i.e. 1 year, 2 months, and 12 days = 1.2 years). These numbers do make sense in an average, and they also are different from the number of residents values because there is no space in between them.  In other words, if I've lived at my house for 0.9 years, and you've lived at yours for 1.0 years, then there is still room <q>in between</q> those two values for somebody who has lived that their residence for 0.97 years.</p>
+							</li>
+						</ul>
+					</p>
+				</solution>
+			</example>
+			<p>This example helps point out the three types of variables that we will be studying. The first type, zip code, is an example of a variable that really yields non-numerical data. The values of such a variable represent categories into which the individuals can be grouped, or in other words a <q>quality</q> instead of a <q>quantity.</q></p>
+			<definition>
+				<title>Qualitative Variable</title>
+				<statement>
+					<p>Also called a <term>categorical variable</term>, a <term>qualitative variable</term>	is one that takes on values representing categories or descriptions as opposed to numerical values.</p>
+				</statement>
+			</definition>
+			<p>In this text we will spend the majority of our time working with variables whose values are numbers that can be added, divided, etc. These types of values represent a quantity as opposed to a quality, and they are named accordingly.</p>
+			<definition>
+				<title>Quantitative Variable</title>
+				<statement>
+					<p>A <term>quantitative variable</term> is one that takes on numerical values. Unlike a qualitative variable, the values of a quantitative variable can be used in computations.</p>
+				</statement>
+			</definition>
+			<p> In our example we saw that even though Number of Residents and Length of Residence are both quantitative variables, the measurements we take are still somewhat different.  Because of these  differences, we need two more definitions that apply only to quantitative variables.</p>	
+			<definition>
+				<title>Discrete Variable</title>
+				<statement>
+					<p>A <term>discrete variable</term> is a quantitative variable in which there are gaps between the possible values of the variable.</p>
+				</statement>
+			</definition>
+			<definition>
+				<title>Continuous Variable</title>
+				<statement>
+					<p>A <term>continuous variable</term> is a quantitative variable for which there are an infinite number of possible values with no gaps between these values.</p>
+				</statement>
+			</definition>
+			<p>Before we move on, let's revisit the example above and give the formal types of each of the three variables.</p>
+			<example>
+				<title>Identifying Variables, Revisited</title>
+				<statement>
+					<p>The post office, wishing to better understand its customers, decides to collect data from 1000 ouseholds within a certain state. They mail each household a questionnaire sking the esidents to confirm their zip code, list the number of people who live in that husehold, and give the length of time that they have lived there. Identify and classify each of the variables in this survey.</p>
+				</statement>
+				<solution>
+					<p>The three variables in this multivariate set are:
+						<ul>
+							<li>
+								<title>Zip Code</title>
+								<p>qualitative variable</p>
+							</li>
+							<li>
+								<title>Number of Residents</title>
+								<p>quantitative and discrete variable</p>
+							</li>
+							<li>
+								<title>Length of Residence</title>
+								<p>quantitative and continuous variable</p>
+							</li>
+						</ul>
+					</p>
+				</solution>
+			</example>
+			<p>Now for some more video examples.</p>
+			<figure>
+				<caption>Types of Variables I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-03.mp4" />
+			</figure>
+			<figure>
+				<caption>Types of Variables II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-04.mp4" />
+			</figure>
+
+			<exercise>
+				<title>Types of Variables</title>
+				<statement>
+					<p>A biologist studying the nesting habits of seagulls decides that as a part of her study, she will take an inventory of all nests at a certain nesting ground each morning for a month. She will count the number of chicks in each nest, record whether a parent gull is present, and specify the distance from each nest to its closest neighboring nest.</p>
+					<p>Question: Identify the type of each variable in this study.</p>
+				</statement>
+				<hint><p>Your options for each variable are <term>qualitative</term>, <term>quantitative and discrete</term>, or <term>quantitative and continuous</term>.</p></hint>
+				<answer>
+					<p>
+						<ul>
+							<li><title>Number of Chicks</title><p>quantitative and discrete</p></li>
+							<li><title>Presence of Parents</title><p>qualitative</p></li>
+							<li><title>Distance to Closest Neighboring Nest</title><p>quantitative and continuous</p></li>
+						</ul>
+					</p>
+				</answer>
+			</exercise>
+			<exercise>
+				<title>Types of Variables</title>
+				<statement>
+					<p>A nursing student wishes to measure the effect of sleep deprivation on exam performance. He surveys other students after the most recent nursing exam is returned and asks how much sleep they got on the night before the exam, their exam score, and whether they were tired during the exam.</p>
+					<p>Question: What type of variable is the amount of sleep?</p>
+				</statement>
+				<hint><p>Does sleep come in chunks of time?</p></hint>
+				<answer><p>Quantitative and Continuous</p></answer>
+			</exercise>
+			<exercise>
+				<title>Types of Variables</title>
+				<statement>
+					<p>A nursing student wishes to measure the effect of sleep deprivation on exam performance. He surveys other students after the most recent nursing exam is returned and asks how much sleep they got on the night before the exam, their exam score (rounded to the nearest whole percent), and whether they were tired during the exam.</p>
+					<p>Question: What type of variable is records if they tired?</p>
+				</statement>
+				<answer><p>Qualitative</p></answer>
+			</exercise>
+		</subsubsection>
+	</subsection>
+
+	<subsection>
+		<title>Collecting Data</title>
+
+		<introduction>
+			<p>Before we even have data to analyze or describe, we must first collect the	data.</p>
+		</introduction>
+
+		<subsubsection>
+			<title>Populations and Samples</title>
+			<p>The process we use to collect data is just as important, if not more important, than the tools we use to analyze that data. Consider the following example.</p>
+			<example>
+				<title>Representative Data</title>
+				<statement>
+					<p>Sam the high school student, who has not had a statistics class, decides to do a research project on the height of an average student at his school. Since he works for the basketball coach, Sam decides to look up the heights of all students who have played for the basketball team over the last 10 years.	How useful will this data be for Sam's research project?</p>
+				</statement>
+				<solution>
+					<p>This data will be of no use in researching the height of an average high school student. The data was collected from a small group of students who will, in general, be much taller than the typical high school student.</p>
+				</solution>
+			</example>
+			<p>Our analysis of a set of data will do us no good if that data does not come from the objects that we are trying to study. To better understand this concept, we need to first distinguish between the subjects we are trying	to study, and the individuals from whom we actually collect data.</p>
+			<definition>
+				<title>Population</title>
+				<statement>
+					<p>A <term>population</term> is the collection of all subjects to be studied.</p>
+				</statement>
+			</definition>
+			<definition>
+				<title>Sample</title>
+				<statement>
+					<p>A <term>sample</term> is a sub-collection of subjects drawn from a given population.</p>
+				</statement>
+			</definition>
+			<p>Using these new terms, the problem with Sam's research is that the sample he selected is not representative of the population he is studying. One way to remedy this problem would be to collect the height of all students at Sam's school. That is, he could measure the entire population.</p>
+			<definition>
+				<title>Census</title>
+				<statement>
+					<p>In a <term>census</term>, data is collected from every member of the population being studied.</p>
+				</statement>
+			</definition>
+			<p>However, if Sam attends a large high school, taking a census may not be possible. If we think of other examples, we soon come to the realization that in many instances the population being studied is either too large or it is too expensive for us to collect data from every member of the population. In those cases, we must carefully select a sample that is representative of our population.</p>
+
+			<figure>
+				<caption>Populations and Samples I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-05.mp4" />
+			</figure>
+			<figure>
+				<caption>Populations and Samples II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-06.mp4" />
+			</figure>
+
+			<exercise>
+				<title>Populations and Samples</title>
+				<statement>
+					<p>A web programmer has just finished writing an online book store website. She needs to determine if the site will be usable. There are two parts to this website. The public section will allow a general Internet user to search for and purchase books from the store. The second administrative section allows the five book store managers for whom the website is being written to enter the books they wish to sell and view customer orders.</p>
+					<p>To test the administrative side of the site, our web programmer randomly selects 50 people who rate their Internet skill level as <q>average</q> and asks them to upload a book information and view customer orders.</p>
+					<p>Question: Which of the following is an accurate statements?
+						<ol>
+							<li><p>The programmer has not defined the population that she wishes to study.</p></li>
+							<li><p>The programmer has used a census when she should be taking a sample.</p></li>
+							<li><p>The programmer is using a sample that does not represent the population.</p></li>
+							<li><p>The programmer is using a convenience sample.</p></li>
+						</ol>
+					</p>
+				</statement>
+				<answer><p>The programmer is using a sample that does not represent the population.</p></answer>
+			</exercise>
+
+			<exercise>
+				<title>Populations and Samples</title>
+				<statement>
+					<p>An engineer wishes to determine if a particular type of bracket can withstand a given amount of weight. To test this, he randomly selects 100 brackets produced at plant A, one of four different bracket manufacturing plants, during the month	of April, 2019.</p>
+					<p>Question: From what population is the engineer actually sampling?
+						<ol>
+							<li><p>The population of all brackets of this design.</p></li>
+							<li><p>The population of all brackets produced at plant A.</p></li>
+							<li><p>The population of all brackets produced at plant A during April 2019.</p></li>
+							<li><p>The population of 100 brackets selected from those produced at plant A during April 2019.</p></li>
+						</ol>
+					</p>
+				</statement>
+				<answer><p>The population of all brackets produced at plant A during April 2008.</p></answer>
+			</exercise>
+
+			<exercise>
+				<title>Populations and Samples</title>
+				<statement>
+					<p>A web programmer has just finished writing an online book store website. She	needs to determine if the site will be usable. There are two parts to this website.	The public section will allow a general Internet user to search for and purchase books from the store. The second administrative section enables the five book	store managers for whom the website is being written to enter the books they wish to sell and view customer orders. To test the public side of the site, our web programmer randomly selects 50 people who claim their Internet skill level is <q>average</q> and asks them try out the public site and rate its usability. To test the administrative side, she has all five book store managers test the site and rate its usability.</p>
+					<p>Question: Identify each of the following as a population, sample, or census.
+						<ol>
+							<li><p>The data collected from the five managers</p></li>
+							<li><p>Internet users for whom the public site is designed</p></li>
+							<li><p>The five managers for whom the administrative site is designed</p></li>
+							<li><p>The 50 users who tested the public site.</p></li>
+						</ol>
+					</p>
+				</statement>
+				<answer>
+					<p>These groups are identified as follows:
+						<ol>
+							<li><p>census</p></li>
+							<li><p>population</p></li>
+							<li><p>population</p></li>
+							<li><p>sample</p></li>
+						</ol>
+					</p>
+				</answer>
+			</exercise>
+		</subsubsection>
+
+		<subsubsection>
+			<title>Sampling Methods</title>
+			<p>Since it is important that we select a sample that represents the population we are studying, we need to be very careful when selecting a sample. We not only need to guard against accidentally designing a sample that does not represent the population, but also against unintentional bias in the way we collect our data. One of the best tools in guarding against such biased samples is randomness, and the simplest way to use randomness to collect a sample is to collect a <term>simple random sample</term>.</p>
+			<definition>
+				<title>Simple Random Sample</title>
+				<statement>
+					<p>A <term>simple random sample</term> of size <m>n</m> is a sample drawn from a population in such a way that every group of <m>n</m> subjects in the population is equally likely to be chosen.</p>
+				</statement>
+			</definition>
+			<p>To better understand the concept of a simple random sample, consider the following example.</p>
+			<example>
+				<title>Simple Random Samples</title>
+				<statement>
+					<p>A professor wishes to randomly select a sample of 6 students from her class of 48. The students are sitting in eight rows of six students each. The professor comes up with two sampling methods.
+						<ol>
+							<li><p>Assign each student a number from 1 to 48, and then write these numbers on slips of paper, put them in a bag, and randomly select six of these slips to determine which students will be included in the sample.</p></li>
+							<li><p>Assign each row of students a random number from 1 to 8. Then randomly select one number and include all six of the students in that row in the sample.</p></li>
+						</ol>
+						Which of these two methods will result in a simple random sample?</p>
+					</statement>
+					<solution>
+						<p>The key to solving this problem is deciding if using a particular method give each group of six students the same chance of being chosen.
+							<ol>
+								<li><p>This method is a simple random sample. Each group of six students has the same chance of being chosen (we'll see how to compute this when we study probability).</p></li>
+								<li><p>This method is not a simple random sample. To see this, suppose that Bob is sitting in row 1 and Mary in row 2. Then it is impossible for Bob and Mary to be chosen in the same sample. This means that any group including both Bob and Mary has no chance of being chosen, and therefore all groups of six are not equally likely.</p></li>
+							</ol>
+						</p>
+					</solution>
+				</example>
+				<p>Ensuring that we get a simple random sample can be difficult. Even if we manage to design a simple random sample, we still can not be certain that we will get a sample that is representative of the population we are studying. There are several alternative sampling techniques that can help us select a representative sample, and at the same time make it easier to select our sample. Each of these methods employs randomness. However, none of them will result in a true simple random sample.</p>
+				<definition>
+					<title>Systematic Sample</title>
+					<statement>
+						<p>A <term>systematic sample</term> is a random sample collected from an ordered population by randomly choosing one of the first <m>k</m> subjects, and then selecting every <m>k</m>th subject thereafter.</p>
+
+						<figure>
+							<caption>Systematic Sample</caption>
+							<image source="chapter_descriptive-stats/images/sec_understanding-data_systematic-sample.png" width="50%">
+								<description>
+									One of the first 5 dots was randomly selected, and then every 5th dot thereafter is selected for the sample.
+								</description>
+							</image>
+						</figure>
+					</statement>
+				</definition>
+				<p>A systematic sample is particularly useful when the population from which we are sampling is already ordered. Examples of this include products coming off of an assembly line, or cars moving through a sobriety check point.</p>
+				<definition>
+					<title>Stratified Sample</title>
+					<statement>
+						<p>In a <term>stratified sample</term>, a population is broken into several groups (called strata) and then a simple random sample is collected from each of these groups.</p>
+						<figure>
+							<caption>Stratified Sample</caption>
+							<image source="chapter_descriptive-stats/images/sec_understanding-data_stratified-sample.png" width="50%">
+								<description>
+									The dots have been divided into six groups, and then two dots are randomly selected from each group to form the sample.
+								</description>
+							</image>
+						</figure>
+					</statement>
+				</definition>
+				<p>In a stratified sample we group the population by characteristics which we think may make a difference, and then select randomly from each group. For example, we may want to ensure that both men and women are included in a drug study, so we select some men and some women. Or we may wish to ensure that voters of all political leanings are included in an election poll.</p>
+				<definition>
+					<title>Cluster Sample</title>
+					<statement>
+						<p>A <term>cluster sample</term> is taken by dividing the population into several groups (called clusters) and then picking a simple random sample of the clusters. We then sample each individual in the selected clusters.</p>
+						<figure>
+							<caption>Cluster Sample</caption>
+							<image source="chapter_descriptive-stats/images/sec_understanding-data_cluster-sample.png" width="50%">
+								<description>
+									The dots have been divided into six groups, and then three of those groups are randomly selected and every dot from the selected groups is added to the sample.
+								</description>
+							</image>
+						</figure>
+					</statement>					
+				</definition>
+				<p>The difference between a cluster sample and a stratified sample is sometimes confusing. We can, however, tell the difference by looking at when the simple random sample is taken. In a stratified sample, we take separate simple random samples from each group or strata. In a cluster sample, however, we get a simple random sample of the groups (or clusters) and then sample every individual. Consider the following example.</p>
+				<example>
+					<title>Sampling Techniques</title>
+					<statement>
+						<p>Determine the type of sample being taken in each of the situations described below.
+							<ol>
+								<li><p>The pastor of a large church wishes to know what proportion of his congregation would be interested in a new outreach opportunity. Since the church is so large, he decides to collect a sample by randomly selecting 25 of the 100 active small group classes and asking all members of those 25 classes if they would support the new outreach program.</p></li>
+								<li><p>A county judge wishes to determine how many of the defendants that she sees have a high-school diploma. In order to collect a sample from her docket, she has her clerk use the computer to randomly select 40 case numbers and then checks the educational background of those defendants.</p></li>
+								<li><p>Workers for a consumer survey corporation collect data at a local mall by selecting a strategic location and then randomly selecting one of the first 50 people who walk by to ask to take the survey. They then ask every 50th person who walks by to complete the survey.</p></li>
+								<li><p>A golf pro shop wants to determine the average amount of money spent by the average customer. They suspect that men spend more in the shop than women. They therefore divide their customers into two groups: men and women. They then randomly select 40 of the male and 35 of the female customers and examine their most recent purchase.</p></li>
+							</ol>
+						</p>
+					</statement>
+					<solution>
+						<p>The sampling techniques used are as follows.
+							<ol>
+								<li><p>The small group classes in this example are clusters. Since the pastor randomly selects several of these clusters and then questions every member of the class, this is a cluster sample.</p></li>
+								<li><p>In this case the judge is conducting a simple random sample. There is no special technique being used.</p></li>
+								<li><p>Since the worker in this situation is looking at every 50th person, this is a systematic sample.</p></li>
+								<li><p>The golf shop splits the population into two strata, men and women, and then randomly selects a few individuals from each of these strata. This is therefore a stratified sample.</p></li>
+							</ol>
+						</p>
+					</solution>
+				</example>
+
+				<figure>
+					<caption>Sampling Techniques I</caption>
+					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-07.mp4" />
+				</figure>
+				<figure>
+					<caption>Sampling Techniques II</caption>
+					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-08.mp4" />
+				</figure>
+
+				<exercise>
+					<title>Types of Samples</title>
+					<statement>
+						<p>Five samples are described below.
+							<ol>
+								<li>
+									<title>Testing Cars</title>
+									<p>Automakers are required by the government to do thorough safety inspections on a certain percent of the cars they produce. The thinking is that if there are manufacturing defects in any of the cars, they should appear in a representative sample. to meet these requirements, a certain automaker decides that they will randomly pick one of the first 25 cars that comes off of the assembly line and then check every 25th car thereafter.</p>
+								</li>
+								<li>
+									<title>Selecting Candy</title>
+									<p>In order to the check the claim that 20% of Skittles candy is red, you decide to buy a large number of bags of Skittles and check the proportion of candies that are red. To accomplish this you start by listing the convenience stores in your town in alphabetical order. Then you randomly select 15 of those stores, and purchase all of the bags of Skittles at each of those stores.</p>
+								</li>
+								<li>
+									<title>Polling Students</title>
+									<p>A statistics student wishes to determine the average number of math classes taken by a university student in a given year. To do this, she decides that she will randomly select 50 Freshmen, 50 Sophomores, 50 Juniors, and 50 Seniors and ask them how many math classes they have taken in the last year.</p>
+								</li>
+								<li>
+									<title>Measuring Fish</title>
+									<p>A game warden wishes to determine the proportion of fish in a certain lake that are of an acceptable length for fishermen to keep. The warden decides to row around the lake catching one fish, throwing it back, and moving on to catch another until he has caught and measured a total of 100 fish.</p>
+								</li>
+								<li>
+									<title>State Survey</title>
+									<p>Wishing to determine the average number of people in a typical household, a state government randomly selects 10 counties in the state and mails a survey to every household in those counties.</p>
+								</li>
+							</ol>
+						</p>
+						<p>Question: Determine the type of sampling technique used in each of the situations described above.</p>
+					</statement>
+					<answer>
+						<p>These sampling techniques used are as follows:
+							<ol>
+								<li><p>systematic sample</p></li>
+								<li><p>cluster sample</p></li>
+								<li><p>stratified sample</p></li>
+								<li><p>simple random sample</p></li>
+								<li><p>cluster sample</p></li>
+							</ol>
+						</p>
+					</answer>
+				</exercise>
+
+				<exercise>
+					<title>Types of Samples</title>
+					<statement>
+						<p>Five samples are described below.
+							<ol>
+								<li>
+									<title>Finding Favorite Pizza Toppings</title>
+									<p>A pizza parlor wishes to determine its customers' favorite pizza topping. To do this, they decide that on each day of the coming week they will randomly pick one of the first 10 people who order a pizza and ask them their favorite topping. They will then ask every 10th person after this randomly selected person for their favorite pizza topping.</p>
+								</li>
+								<li>
+									<title>Identifying Road Rage</title>
+									<p>A sociologist wishes to measure the percent of traffic accidents that are at least partially caused by road rage. To collect his data, the researcher randomly selects 30 accidents involving motorcycles, 50 involving passenger trucks, and 100 involving passenger cars. He then questions witnesses to these accidents looking for evidence that road rage was involved.</p>
+								</li>
+								<li>
+									<title>Classifying UFOs</title>
+									<p>Your crazy uncle believes that there is a conspiracy to cover up UFO sightings. To check his findings, he randomly selects 10 of the 50 states and attempts to get data of every UFO sighting in those 10 states. Unfortunately, men in black suburbans show up and haul him away before he can complete his study.</p>
+								</li>
+								<li>
+									<title>Religious Affiliation</title>
+									<p>A religious organization wishes to determine what percent of Americans consider themselves Christian. To accomplish this, the divide the country into regions: northwest, southwest, mid-west south, and northeast. They randomly select 500 registered voters from each region and ask them if they consider themselves to be Christian.</p>
+								</li>
+								<li>
+									<title>Measuring Student Outcomes</title>
+									<p>A high school principal needs to determine if her students are able to read at an appropriate grade level. To accomplish this, she assigns each student a random number, and has a computer randomly select 200 of the students. She then gives these 200 students a reading comprehension test to determine if their reading level is grade-appropriate.</p>
+								</li>
+							</ol>
+						</p>
+						<p>Question: Determine the type of sampling technique used in each of the situations described above.</p>
+					</statement>
+					<answer>
+						<p>These sampling techniques used are as follows:
+							<ol>
+								<li><p>systematic sample</p></li>
+								<li><p>stratified sample</p></li>
+								<li><p>cluster sample</p></li>
+								<li><p>stratified sample</p></li>
+								<li><p>simple random sample</p></li>
+							</ol>
+						</p>
+					</answer>
+				</exercise>
+				<exercise>
+					<title>Types of Samples</title>
+					<statement>
+						<p>Five samples are described below.
+							<ol>
+								<li>
+									<title>Determining Drug Effectiveness</title>
+									<p>In order to determine the effectiveness of a drug, a doctor randomly selects 100 people who have taken the drug. The doctor does not differentiate based on gender, race, or condition, but simply checks to see how quickly the patient recovered after starting the drug therapy.</p>
+								</li>
+								<li>
+									<title>Measuring Ballot Measure Support</title>
+									<p>A polling organization has been charged with the task of determining if a ballot measure will pass in the next election. To get a balanced sample, the organization decides that they will randomly select 450 Republicans, 450 Democrats, and 200 Independents and ask them if they plan to vote for the ballot measure.</p>
+								</li>
+								<li>
+									<title>Computing Computer Costs</title>
+									<p>A popular computing magazine editor wishes to determine the cost of a typical computer. To do this, she asks the magazine's readers to write in if they have purchased a computer in the last six months, and give the price of the new computer. The editor takes the first response she receives and then takes every 5th response that comes in after that.</p>
+								</li>
+								<li>
+									<title>Identifying Climate Change</title>
+									<p>In order to determine the average global temperature, a climate research organization assigns a number to each temperature measuring station in the United States. They then randomly select 250 of these stations and look at the average memperature measured.</p>
+								</li>
+								<li>
+									<title>Finding Insect Genders</title>
+									<p>An entomologist decides to determine what proportion of insects in her back yard are male. To do this she divides her back yard into a 10 by10 grid. She then randomly selects 20 of these grid squares and determines the sex of each insect in those squares.</p>
+								</li>
+							</ol>
+						</p>
+						<p>Question: Determine the type of sampling technique used in each of the situations described above.</p>
+					</statement>
+					<answer>
+						<p>These sampling techniques used are as follows:
+							<ol>
+								<li><p>simple random sample</p></li>
+								<li><p>stratified sample</p></li>
+								<li><p>systematic sample</p></li>
+								<li><p>simple random sample</p></li>
+								<li><p>cluster sample</p></li>
+							</ol>
+						</p>
+					</answer>
+				</exercise>
+			</subsubsection>
+
+			<subsubsection>
+				<title>Types of Studies</title>
+				<p>A sample may be collected from a population for one of two reasons. We may simply wish to know a characteristic of that population. On the other hand, we may want to try to change a characteristic and then measure the result. These result in two different types	of studies.</p>
+				<definition>
+					<title>Observational Study</title>
+					<statement>
+						<p>In an <term>observational study</term> specific characteristics are observed and measured, but no attempt is made to change these characteristics.</p>
+					</statement>
+				</definition>
+				<definition>
+					<title>Experiment</title>
+					<statement>
+						<p>In an <term>experiment</term>, some treatment is applied and its effects on the subject are observed.</p>
+					</statement>
+				</definition>
+				<p>Notice that the main difference is that in an experiment we attempt to change a characteristic whereas in an observational study, we do not. Because experiments seek to measure the effect of a treatment on the subject, they are by nature more complicated than observational studies. Below are some specific terms used when designing an experiment.</p>
+				<definition>
+					<title>Experiment Terminology</title>
+					<statement>
+						<p>When conducting an experiment, the following terms are often used.
+							<ul>
+								<li><p>A <term>factor</term> is an independent variable the values of which are varied by the experimenter.</p></li>
+								<li><p>A <term>treatment</term> is a specific combination of factor values.</p></li>
+							</ul>
+						</p>
+					</statement>
+				</definition>
+				<p>To help see the difference between these two types of studies, let's look at a couple of examples.</p>
+				<example>
+					<title>Types of Studies</title>
+					<statement>
+						<p>Sam wishes to determine the length of time that it takes a radish seed to germinate. He plants radishes in his garden, and continues his normal watering and weeding process. When the first radish sprouts emerge, Sam records the length of time that has elapsed. Is Sam conducting an observational study or an experiment?
+						</p>
+					</statement>
+					<solution>
+						<p>In this case, Sam is conducting an observational study. He does not attempt to change the conditions under which the seeds are growing, he simply observes the length of time it took sprouts to emerge.</p>
+					</solution>
+				</example>
+				<example>
+					<title>Types of Studies</title>
+					<statement>
+						<p>Nancy is more ambitions than Sam. She wants to know if radish seeds can be made to germinate faster by altering the conditions in which they grow. To test this theory, Nancy decides that she will plant four groups of radish seeds. The first group will be watered and weeded as normal. The second group will be watered and weeded as well, but will in addition receive fertilizer every other day. The third group will be weeded as normal, but will receive twice as much water. Finally, the fourth group of radish seeds will be weeded as normal, receive fertilizer every other day, and get twice as much water. Nancy will record how long it takes each group of radish seeds to sprout. Is this an observational study or an experiment?</p>
+					</statement>
+					<solution>
+						<p>Nancy is conducting an experiment. By altering the environment of the radish seeds, she is varying the treatment that each group of seeds receives and then measuring the	effects. The two factors that Nancy is varying are amount of water and fertilization. The treatments are represented by the four groups:
+							<ul>
+								<li><p>normal water, no fertilizer</p></li>
+								<li><p>normal water, fertilizer</p></li>
+								<li><p>double water, no fertilizer</p></li>
+								<li><p>double water, fertilizer.</p></li>
+							</ul>
+						</p>
+					</solution>
+				</example>
+				<p>To see more examples, check out the videos below.</p>
+
+				<figure>
+					<caption>Types of Studies I</caption>
+					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-09.mp4"/>
+				</figure>
+				<figure>
+					<caption>Types of Studies II</caption>
+					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-10.mp4"/>
+				</figure>
+
+				<exercise>
+					<title>Types of Studies</title>
+					<statement>
+						<p>A food production company wishes to determine if there is a market for spicy peanut butter. They decide to randomly select 1000 individuals who have purchased their peanut butter products in the past and send them a questionnaire asking if they would be interested in trying spicy peanut butter.</p>
+						<p>Question: What type of study is this?</p>
+					</statement>
+					<answer>
+						<p>Observational Study</p>
+					</answer>
+				</exercise>
+
+				<exercise>
+					<title>Types of Studies</title>
+					<statement>
+						<p>A college student wishes to convince her fellow students that the cost of food in the cafeteria is too high. To do measure the effectiveness of several methods she shows a short video to one group of students, has a group discussion with another, and takes a third group out to lunch at the cafeteria. She then has each group respond to the question <q>does the cafeteria charge too much.</q></p>
+						<p>Question: What type of study is this?</p>
+					</statement>
+					<answer>
+						<p>Experiment</p>
+					</answer>
+				</exercise>
+
+				<exercise>
+					<title>Types of Studies</title>
+					<statement>
+						<p>You receive a phone call from the local campaign for candidate X. After reading you a list of all of the reasons why you should support their candidate, the caller asks if you are planning to vote for candidate Y.</p>
+						<p>Question: What type of study is this?</p>
+					</statement>
+					<answer><p>Experiment</p></answer>
+				</exercise>
+			</subsubsection>
+
+			<subsubsection>
+				<title>Things to Avoid</title>
+
+				<p>Now that we have looked at a lot of good tools for collecting data, it is time to think about some things that we need to avoid.</p>
+
+				<paragraphs>
+					<title>Bad Samples</title>
+					<p>If we use a sampling technique that does not include some element of randomness we are likely to produce a sample that does not represent our population. One of the easiest, but most dangerous ways to collect data is by using a convenience sample.</p>
+					<definition>
+						<title>Convenience Sample</title>
+						<statement>
+							<p>A <term>convenience sample</term> is a sample collected by simply selecting the most convenient members of a population.</p>
+						</statement>
+					</definition>
+					<p>The problem with this method of sampling is that it is likely that there will be some bias in the selection process.</p>
+					<definition>
+						<title>Bias</title>
+						<statement>
+							<p>A sample has <term>bias</term> and is called <term>biased</term> if it over-represents one portion of a population and under-represents another.</p>
+						</statement>
+					</definition>
+					<p>Consider the following example.</p>
+					<example>
+						<title>Sources of Bias</title>
+						<statement>
+							<p>You wish to conduct a study of dessert preferences in Americans. You believe that more people prefer cake to pie, as you do. To gather your data, you ask your immediate family members if they prefer cake or pie and find that all of them prefer cake! What is wrong with your sampling technique?</p>
+						</statement>
+						<solution>
+							<p>Your sample is not representative of the entire population of Americans. By selecting a convenience sample (your family) you have chosen individuals who are likely to have similar preferences--after all, you all grew up with more cake than pie. This is a source of bias in your sample.</p>
+						</solution>
+					</example>
+				</paragraphs>
+
+				<paragraphs>
+					<title>Leading Questions</title>
+					<p>The way that a question is asked can also be a source of bias in a study. Simple things such as the order of options (<q>do you like cake or pie?</q> vs. <q>do you like pie or cake?</q>) can cause people to change their answers. Some questions, however, are intentionally worded to evoke a specific response.</p>
+					<definition>
+						<title>Leading Question</title>
+						<statement>
+							<p>A question which is phrased in such a way as to elicit a specific answer is called a <term>leading question</term>.</p>
+						</statement>
+					</definition>
+					<p>Consider the following example, that actually happened to a Walla Walla University Mathematics professor.</p>
+					<example>
+						<title>Leading Question</title>
+						<statement>
+							<p>A National Rifle Association call center employee is told to find out if US voters support the most recent gun control legislation. To determine this, she randomly calls 200 registered voters and asks <q>do you support the most recent attempt by the gun-hating congress to trample your 2nd amendment rights?</q> Is there a problem with this questioning technique?</p>
+						</statement>
+						<solution>
+							<p>By characterizing the congress as <q>Gun-hating</q> and the bill as <q>trampling rights</q> the caller makes it clear what the <q>correct</q> answer to this question should be. People are much more likely to say they do not support the legislation after being asked this question.</p>
+						</solution>
+					</example>
+				</paragraphs>
+
+				<paragraphs>
+					<title>Voluntary Response</title>
+					<p>Another potential source of bias in a sample comes from having people <q>volunteer</q> to respond to a
+					survey.</p>
+					<definition>
+						<title>Voluntary Response Sample</title>
+						<statement>
+							<p>A sample in which people choose themselves by responding to a general request to participate is called a <term>voluntary response sample</term>.</p>
+						</statement>
+					</definition>
+					<p>If you mail out a questionnaire asking people how they feel about a certain controversial celebrity, you are likely to get responses only from those who care enough to take the time to answer your questions. This leads to responses from only those who have a strong opinions, and most often those with strongly negative opinions. Consider the following actual example.</p>
+					<example>
+						<title>Voluntary Response Sample</title>
+						<statement>
+							<p>Ann Landers, the famous advice columnist, once asked her readers to respond to the question <q>If you had it to do over again, would you have children?</q> Nearly 70% of the 10,000 parents who responded said that they would not have had children if they could do it over again. Does this accurately reflect the sentiment of parents in general?</p>
+						</statement>
+						<solution>
+							<p>No! This data is worthless as an indication of the opinion of parents in	general. Only people who had strong feelings, probably due to bad experiences, were angry enough to take the time to write in. A few months later a well-designed opinion poll on the same topic found that 91% of parents would have children again.</p>
+						</solution>
+					</example>
+				</paragraphs>
+
+				<paragraphs>
+					<title>Lurking Variables</title>
+					<p>One of the most prevalent things to avoid when using statistics is assuming that because there is a <term>correlation</term> between two things, one must cause the other. In many cases there can be a third (or forth, or fifth) unknown variable that <q>lurks</q> in the background and is affecting both observed variables. Let's define these terms precisely and finish with an example.</p>
+					<definition>
+						<title>Correlation</title>
+						<statement>
+							<p>We say that there is <term>correlation</term> between two (or more) variables if certain values of one frequently appear together with certain values of the other.</p>
+						</statement>
+					</definition>
+					<p>For example, we would say that there is a correlation between people's height and weight because taller people tend to weigh more. But does being taller cause you to weigh more, or do they just go together?</p>
+					<definition>
+						<title>Causation</title>
+						<statement>
+							<p>We say that there is <term>causation</term> between two variables if the value of one of the variables causes the value of the other to change.</p>
+						</statement>
+					</definition>
+					<p>To understand this term, suppose that we measured the variables <q>average driving speed</q> and <q>number of speeding tickets.</q> It would be reasonable to say that there is causation between these two variables. That is, driving faster causes one to get more speeding tickets. But it is possible that there is another variable affecting both your driving speed and number of tickets. Suppose, for example, that you drive a fancy red sports car. This is a potential example of a <term>lurking variable</term>.</p>
+					<definition>
+						<title>Lurking Variable</title>
+						<statement>
+							<p>A lurking variable is an unmeasured variable that has an important effect on the relationship between variables in a study.</p>
+						</statement>
+					</definition>
+					<p>Consider the following examples.</p>
+					<example>
+						<title>Luring Variables</title>
+						<statement>
+							<p>In a study of fuel efficiency and its relationship to weight the Buick Estate Wagon appeared to be an anomaly. Although weighing much more than most cars in its class, the Buick Estate Wagon had a better fuel economy than it should have had in relation to these other cars. Further research indicated that Buick's recommended a higher tire inflation pressure than did the other car manufacturers. Identify the lurking variable in this study.</p>
+						</statement>
+						<solution>
+							<p>Tire Pressure is the lurking variable. While it has an effect on gas mileage (higher pressure = better mileage) it was not included in the original study.</p>
+						</solution>
+					</example>
+					<example>
+						<title>Lurking Variables</title>
+						<statement>
+							<p>A study of nutrition and TV ownership in Africa found that there was a high correlation between a family suffering from malnutrition and not owning a television set. A statistics student concludes that there is causation as well. That is, owning a television set leads to better nutrition. Critique	this conclusion.</p>
+						</statement>
+						<solution>
+							<p>The student is confusing causation and correlation. While there may be correlation between owning a television and having good nutrition, it is not logical to conclude that having a TV improves nutrition. It is much more reasonable to conclude that there is a lurking variable in this study. Perhaps the economic status of the families studied is causing both the differences in	nutrition and television ownership.</p>
+						</solution>
+					</example>
+				</paragraphs>
+
+				<p>Review these things to avoid by watching one or both of the following video examples.</p>
+
+				<figure>
+					<caption>Things to Avoid I</caption>
+					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-11.mp4" />
+				</figure>
+				<figure>
+					<caption>Things to Avoid II</caption>
+					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-12.mp4" />
+				</figure>
+
+				<exercise>
+					<title>Things to Avoid</title>
+					<statement>
+						<p>Jane works for a advertising firm and has been asked to determine if consumers still like advertising jingles. To make this determination, she asks 20 of her friends from other advertising	firms <q>do you want to risk your job by doing away with advertising jingles?</q> She finds that, not surprisingly, everybody she polled likes advertising jingles.</p>
+						<p>Question: Which of the <q>things to avoid</q> mentioned in this section has Jane done in her study?</p>
+					</statement>
+					<answer>
+						<p>Jane has both taken a convenience sample and asked a leading question</p>
+					</answer>
+				</exercise>
+
+				<exercise>
+					<title>Things to Avoid</title>
+					<statement>
+						<p>A major department store wishes to determine if people with store credit cards enjoy their shopping experience more than those who do not have store credit cards. To research this question, they send surveys to everybody who has shopped at their store in the last year and ask them if they enjoyed their shopping experience, and if they have a store card. They find that the majority of returned surveys are from people who either have a card and enjoyed their shopping experience, or from people who do not have a card and didn't enjoy their shopping experience. The store concludes that having a store card makes shopping with the store more enjoyable.</p>
+						<p>Question: Which of the <q>things to avoid</q> mentioned in this section did the department store do in its study?</p>
+					</statement>
+					<answer>
+						<p>They have both taken a voluntary response sample and confused correlation with causation.</p>
+					</answer>
+				</exercise>
+			</subsubsection>
+
+		</subsection>
+	</section>

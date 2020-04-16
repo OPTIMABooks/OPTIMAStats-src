@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+<!--  
+  <docinfo>
+  </docinfo>
+-->
+<book>
+  <title>OpenIntro Statistics</title>
+  <frontmatter>
+    <titlepage>
+      <author>
+        <personname>Jonathan Duncan, Ph.D.</personname>
+        <department>Department of Mathematics</department>
+        <institution>Walla Walla University</institution>
+      </author>
+
+      <date>
+        <today/>
+      </date>
+    </titlepage>
+
+    <colophon>
+      <edition>1</edition>
+      <copyright>
+        <year>2008<ndash/>2020</year>
+        <holder>Jonathan Duncan</holder>
+        <minilicense>Creative Commons BY NC</minilicense>
+        <shortlicense>
+          Licensed to the public under Creative Commons Attribution-Noncommercial 4.0 International Public License
+        </shortlicense>
+      </copyright>
+    </colophon>
+    <preface>
+      <p>Statistics is the study of data. More formally, Merriam-Webster defines statistics as a branch of mathematics dealing with the collection, analysis, interpretation, and presentation of masses of numerical data. In this course, we will break our examination of statistics up into several chapters. These are:
+        <ul>
+          <li><p>Collecting and Describing Data</p></li>
+          <li><p>Understanding Probability and Randomness</p></li>
+          <li><p>Probability Distributions</p></li>
+          <li><p>Estimation of Means and Proportions</p></li>
+          <li><p>Tests of Significance for Means and Proportions</p></li>
+          <li><p>Other Tests of Significance</p></li>
+        </ul>
+        In chapter 1 we will learn how to collect and describe (present) data. This is usually referred to as descriptive statistics. Chapters 2 and 3 introduce us to randomness and help us better understand chance. Finally, in chapters 4, 5, and 6 we will apply what we learned about randomness to the analysis and interpretation of data. In particular, we will learn how to make inferences about a population based on data we collect and describe for a sample. These chapters are referred to collectively as inferential statistics.</p>
+      </preface>
+
+    </frontmatter>
+
+    <part>
+      <title>Descriptive Statistics</title>
+      <xi:include href="./chapter_descriptive-stats/index.ptx"/>
+    </part>
+<!--
+      <part>
+        <title>Probability and Counting</title>
+        <xi:include href="./chapter_probability-and-counting/index.ptx"/>
+        <xi:include href="./chapter_probability-distributions/index.ptx"/>
+      </part>
+
+      <part>
+        <title>Inferential Statistics</title>
+        <xi:include href="./chapter_confidence-intervals/index.ptx"/>
+        <xi:include href="./chapter_hypothesis-testing/index.ptx"/>
+        <xi:include href="./chapter_other-tests/index.ptx"/>
+      </part>
+    -->
+    <backmatter>
+ <!--     
+      <xi:include href="./appendix_back_reference.ptx"/>
+    -->
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+    </backmatter>
+  </book>
+</pretext>

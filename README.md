@@ -1,2 +1,2 @@
 # IntroStats
-Introductory statistics textbook
+Source files for Introductory statistics textbook.
