@@ -88,7 +88,10 @@ html:
 	cp -a $(IMAGESRC) $(HTMLOUT)
 	cd $(HTMLOUT); \
 	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/index.ptx
+	google-chrome-stable http://localhost/
 
 check:
-	@jing $(PTX)/schema/pretext.rng $(SRC)/index.ptx > $(OUTPUT)/jingreport.txt
+	install -d $(OUTPUT)
+	-rm $(OUTPUT)/jingreport.txt
+	-jing $(PTX)/schema/pretext.rng $(SRC)/index.ptx > $(OUTPUT)/jingreport.txt
 	@if [ -s $(OUTPUT)/jingreport.txt ]; then less $(OUTPUT)/jingreport.txt; else echo "No errors found"; fi
