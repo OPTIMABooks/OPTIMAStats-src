@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_descriptive">
+  <title>Collecting and Describing Data</title>
+  <introduction>
+    <p>
+      Many people are either dismissive of statistics (after all, you can prove 
+      anything with statistics, right?) or find the topic intimidating. However,
+      a good understanding of statistics will help us to answer real-world 
+      questions such as the ones below.
+      <ul>
+        <li>
+            <p>Candidate X has 47% support from the voting public with a margin of error of plus-or-minus 4%. Is it possible that candidate X is supported by a majority of voters?</p>
+        </li>
+        <li>
+            <p>Mark scored in the 84th percentile on his achievement test scores. How could you explain to Mark's parents what this means?</p>
+        </li>
+        <li>
+            <p>A nurse needs to compare the rate of absorption of a drug in men and women to detect any differences.</p>
+        </li>
+        <li>
+          <p>Sally needs to decide if the decline in sales in her small business is significant, or if it just a temporary fluctuation.</p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      As answering any of these questions involves working with data, we begin our study 
+      of statistics with an examination of data and data collection.
+    </p>
+  </introduction>
+
+  <xi:include href="sec_data.ptx"/>
+  <xi:include href="sec_graphs.ptx"/>
+<!--  
+  <xi:include href="sec_center-and-spread.ptx"/>
+  <xi:include href="sec_relative-standing.ptx"/>
+-->
+</chapter>

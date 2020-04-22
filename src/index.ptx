@@ -47,8 +47,8 @@
     </frontmatter>
 
     <part>
-      <title>Descriptive Statistics</title>
-      <xi:include href="./chapter_descriptive-stats/index.ptx"/>
+      <title>Descriptive Statistics and Probability</title>
+      <xi:include href="chap_descriptive.ptx"/>
     </part>
 <!--
       <part>
