@@ -1,9 +1,6 @@
 ## ********************************************************************* ##
-## Copyright 2016                                                        ##
-## David Farmer, Greg Hartman, Alex Jordan, Carly Vollet                 ##
-##                                                                       ##
-## This file is part of APEX Calculus                                    ##
-##                                                                       ##
+## Copyright 2020                                                        ##
+## Jonathan Duncan                                                       ##
 ## ********************************************************************* ##
 
 #######################
@@ -78,17 +75,43 @@ SERVER = "(https://webwork.pcc.edu,orcca,orcca,anonymous,orcca)"
 
 html:
 	install -d $(HTMLOUT)
-	-rm -rf $HTMLOUT/knowl
+	-rm -rf $(HTMLOUT)/knowl
 	install -d $(HTMLOUT)/knowl
 	install -d $(HTMLOUT)/images
 	install -d $(OUTPUT)
 	install -d $(OUTPUT)/images
-#	-rm $(HTMLOUT)/*.html
-#	cp -a $(IMAGESOUT) $(HTMLOUT)
+	-rm $(HTMLOUT)/*.html
+	cp -a $(IMAGESOUT) $(HTMLOUT)
 	cp -a $(IMAGESRC) $(HTMLOUT)
+	-rm $(OUTPUT)/xsltreport.txt
 	cd $(HTMLOUT); \
-	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/index.ptx
-	google-chrome-stable http://localhost/
+	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/index.ptx 2> $(OUTPUT)/xsltreport.txt
+	google-chrome-stable --new-window http://localhost/
+	@if [ -s $(OUTPUT)/xsltreport.txt ]; then less $(OUTPUT)/xsltreport.txt; else echo "No errors found"; fi
+
+images:
+	install -d $(OUTPUT)
+	-rm -rf $(IMAGESOUT) || :
+	install -d $(IMAGESOUT)
+	install -d $(OUTPUT)/preview
+	$(PTX)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(SRC)/index.ptx
+	$(PTX)/script/mbx -c youtube -d $(OUTPUT)/preview $(SRC)/index.ptx
+	$(PTX)/script/mbx -c preview -f png -d $(OUTPUT)/preview $(SRC)/index.ptx
+
+pdf:
+	install -d $(OUTPUT)
+	-rm -rf $(PRINTOUT) || :
+	install -d $(PRINTOUT)
+	install -d $(PRINTOUT)/images
+	install -d $(IMAGESOUT)
+	cp -a $(IMAGESRC) $(PRINTOUT) || :
+	cp -a $(OUTPUT)preview $(PRINTOUT)/images || :
+	cd $(PRINTOUT); \
+	xsltproc -xinclude $(PTXXSL)/mathbook-latex.xsl $(SRC)/index.ptx > IntroStats.tex 2> $(OUTPUT)/xsltreport.txt; \
+	xelatex IntroStats; 2> $(OUTPUT)/xelatexreport.txt; \
+	xelatex IntroStats; 2> $(OUTPUT)/xelatexreport.txt
+	@if [ -s $(OUTPUT)/xsltreport.txt ]; then less $(OUTPUT)/xsltreport.txt; else if [ -s $(OUTPUT)/xelatexreport.txt ]; then less $(OUTPUT)/xelatexreport.txt; else echo "No errors found"; fi; fi
+
 
 check:
 	install -d $(OUTPUT)
