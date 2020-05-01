@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_descriptive">
+  <title>Understanding Randomness and Probability</title>
+  <introduction>
+    <p>Randomness is essential to the study of statistics for many different reasons.  Two of the most important are stated below.
+      <ul>
+        <li><p>By using randomness we can design samples that have a better chance of being non-biased and representing the population.</p></li>
+        <li><p>By understanding randomness, we can use our sample not only to make a claim about a population, or estimate the value of a population parameter, but also to state how <q>good</q> that claim is.</p></li>
+      </ul>
+      Since inferential statistics, which is where we are headed in this text, is all about making claims about a population based on a sample, it is important that we understand randomness and more specifically, the probability of an event.</p>
+  </introduction>
+
+  <xi:include href="sec_simulation.ptx"/>
+<!--
+  <xi:include href="sec_counting.ptx"/>
+  <xi:include href="sec_probability-rules.ptx"/>
+  <xi:include href="sec_conditional.ptx"/>
+-->
+</chapter>
