@@ -2,72 +2,64 @@
 <section xml:id="sec_data">
 	<title>Understanding Data</title>
 
-	<introduction>
+	<introduction xml:id="sec_data_intro">
 		<p>As our definition of statistics is centered around understanding data, we will begin with an examination of data collection and classification.</p>
 	</introduction>
 
 	<objectives xml:id="sec_data_obj">
-		<title>Section Objectives</title>
 		<introduction>
-			<p>Upon completion of this lesson, you should be able to describe the following terms.</p>
+			<p>After finishing this section you should be able to</p>
 		</introduction>				
 		<ul>
-			<li>
-				<title>Terms and Definitions</title>
-				<p>
-					<ol>
-						<li><p>bias</p></li>
-						<li><p>bivariate</p></li>
-						<li><p>causation</p></li>
-						<li><p>census</p></li>
-						<li><p>cluster sample</p></li>
-						<li><p>continuous variable</p></li>
-						<li><p>convenience sample</p></li>
-						<li><p>correlation</p></li>
-						<li><p>data</p></li>
-						<li><p>discrete variable</p></li>
-						<li><p>experiment</p></li>
-						<li><p>factor</p></li>
-						<li><p>leading question</p></li>
-						<li><p>lurking variable</p></li>
-						<li><p>multivariate</p></li>
-						<li><p>observational study</p></li>
-						<li><p>population</p></li>
-						<li><p>qualitative variable</p></li>
-						<li><p>quantitative variable</p></li>
-						<li><p>sample</p></li>
-						<li><p>simple random sample</p></li>
-						<li><p>stratified sample</p></li>
-						<li><p>systematic sample</p></li>
-						<li><p>treatment</p></li>
-						<li><p>univariate</p></li>
-						<li><p>variable</p></li>
-						<li><p>voluntary response sample</p></li>
-					</ol>
-				</p>
-			</li>
-			<li>
-				<title>Skills</title>
-				<p>
-					<ol>
-						<li><p>Classify data by the number and type of variables in contains.</p></li>
-						<li><p>Differenttiate between populations and samples.</p></li>
-						<li><p>Identify and Describe valid Sampling Techniques.</p></li>
-						<li><p>Differentiate between Experiments and Observational Studies.</p></li>
-						<li><p>Identify and correct common errors in data collection or analysis.</p></li>
-					</ol>
-				</p>
+			<li><p>describe the following terms:
+				<ul cols="2">
+					<li><p>bias</p></li>
+					<li><p>bivariate</p></li>
+					<li><p>causation</p></li>
+					<li><p>census</p></li>
+					<li><p>cluster sample</p></li>
+					<li><p>continuous variable</p></li>
+					<li><p>convenience sample</p></li>
+					<li><p>correlation</p></li>
+					<li><p>data</p></li>
+					<li><p>discrete variable</p></li>
+					<li><p>experiment</p></li>
+					<li><p>factor</p></li>
+					<li><p>leading question</p></li>
+					<li><p>lurking variable</p></li>
+					<li><p>multivariate</p></li>
+					<li><p>observational study</p></li>
+					<li><p>population</p></li>
+					<li><p>qualitative variable</p></li>
+					<li><p>quantitative variable</p></li>
+					<li><p>sample</p></li>
+					<li><p>simple random sample</p></li>
+					<li><p>stratified sample</p></li>
+					<li><p>systematic sample</p></li>
+					<li><p>treatment</p></li>
+					<li><p>univariate</p></li>
+					<li><p>variable</p></li>
+					<li><p>voluntary response sample</p></li>
+				</ul></p>
+			</li>					
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Classify data by the number and type of variables in contains.</p></li>
+					<li><p>Differenttiate between populations and samples.</p></li>
+					<li><p>Identify and Describe valid Sampling Techniques.</p></li>
+					<li><p>Differentiate between Experiments and Observational Studies.</p></li>
+					<li><p>Identify and correct common errors in data collection or analysis.</p></li>
+				</ul></p>
 			</li>
 		</ul>
 	</objectives>
 
-	<subsection xml:id="sec_data_s1">
+	<subsection xml:id="sec_data_ss1">
 		<title>What is Data?</title>
 
-		<introduction xml:id="sec_data_s1_intro">
+		<introduction xml:id="sec_data_ss1_intro">
 			<p>Statistics is the study of <term>data</term>. So it is vitally important that we understand what data is. Throughout this text we need to be sure that we all agree on what terms mean. Whenever we introduce a new term, it will be defined as follows.</p>
 			<definition xml:id="def_data">
-				<title>Data</title>
 				<idx>data</idx>
 				<statement>
 					<p>Any collection of measurements or values is referred to collectively as <term>data</term>.</p>
@@ -75,14 +67,13 @@
 			</definition>
 			<p>We can understand and classify data better if we first understand the source from which the measurements are taken. Each type of measurement such as height, length of time, or favorite pizza topping, comes from a certain characteristic or property called a	<term>variable</term>.</p>
 			<definition xml:id="def_variable">
-				<title>Variable</title>
 				<idx>variable</idx>
 				<statement>
 					<p>A <term>variable</term> is a single characteristic that is being measured or changed.</p>
 				</statement>
 			</definition>
 			<p>In a typical set of data, one or more variables are identified, and the measurements are collected for each of those variables.</p>
-			<example xml:id="examp_data_s1_e1">
+			<example xml:id="examp_data_identifying-variables">
 				<title>Identifying Variables</title>
 				<statement>
 					<p>A wildlife conservationist wishes to better understand the population of fish that live in a certain lake. To do this, she catches 100 fish and records the species, length, and weight of each fish. Identify the variables in this set of data.</p>
@@ -93,11 +84,10 @@
 			</example>
 		</introduction>
 
-		<subsubsection xml:id="sec_data_s1-1">
+		<subsubsection xml:id="sec_data_ss1-1">
 			<title>Classification by Number of Variables</title>
 			<p>One way in which we can classify data is based on the number of variables that are being measured. In this class we will look at data sets composed of	measurements from one, two, or more variables. These are given the following names.</p>
 			<definition xml:id="def_num-vars">
-				<title>Number of Variables</title>
 				<idx><h>data</h><h>univariate</h></idx>
 				<idx><h>data</h><h>bivariate</h></idx>
 				<idx><h>data</h><h>multivariate</h></idx>
@@ -112,7 +102,7 @@
 				</statement>
 			</definition>
 			<p>Let's look at an example.</p>
-			<example xml:id="examp_data_s1-1_e1">
+			<example xml:id="examp_data_classifying-datasets">
 				<title>Classifying Datasets</title>
 				<statement>
 					<p>Identify each of the following data sets based on the number of variables being measured.
@@ -135,16 +125,16 @@
 					</p>
 				</solution>
 			</example>
-			<figure xml:id="sec_data_s1-1_v1">
+			<figure xml:id="video_data_num-vars-1">
 				<caption>Number of Variables I</caption>
 				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-01.mp4"/>
 			</figure>
-			<figure xml:id="sec_data_s1-1_v2">
+			<figure xml:id="video_data_num-vars-2">
 				<caption>Number of Variables II</caption>
 				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-02.mp4"/>
 			</figure>
 
-			<exercise xml:id="sec_data_s1-1_c1">
+			<exercise xml:id="ckpt_data_num-variables-1">
 				<title>Number of Variables</title>
 				<statement>
 					<p>A high school math teacher asks her students to write down their favorite subject on a blank piece of paper. She then collects these anonymous papers and records the favorite subject of each student.
@@ -155,7 +145,7 @@
 				<answer><p>Univariate</p></answer>
 			</exercise>
 
-			<exercise xml:id="sec_data_s1-1_c2">
+			<exercise xml:id="ckpt_data_num-variables-2">
 				<title>Number of Variables</title>
 				<statement>
 					<p>A country veterinarian is collecting data on the lifespan of various breeds of horses. To do this, she records the age and breed of each horse that dies in her region.</p>
@@ -165,7 +155,7 @@
 				<answer><p>Bivariate</p></answer>
 			</exercise>
 
-			<exercise xml:id="sec_data_s1-1_c3">
+			<exercise xml:id="ckpt_data_num-variables-3">
 				<title>Number of Variables</title>
 				<statement>
 					<p>A state trooper, growing bored with her job, decides to pass the time recording data about the cars that pass her speed trap. She writes down the make, model, color, and speed of each of the cars that drive past.</p>
@@ -175,11 +165,11 @@
 			</exercise>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_data_s1-2">
+		<subsubsection xml:id="sec_data_ss1-2">
 			<title>Types of Variable</title>
 			<p>Another way to classify data is based on the types of variables that are being measured. The type of a variable depends on what is being recorded. Consider the following example.</p>
-			<example xml:id="examp_data_s1-2_e1">
-				<title>Identifying Variables</title>
+			<example xml:id="examp_data_classify-variables">
+				<title>Classifying Variables</title>
 				<statement>
 					<p> The post office, wishing to better understand its customers, decides to collect	data from 1000 households within a certain state. They mail each household a questionnaire asking the residents to confirm their zip code, list the number of people who live in that household, and give the length of time that they have lived there. What are the variables in this study, and how do the measurements differ?</p>
 				</statement>
@@ -207,16 +197,14 @@
 				</solution>
 			</example>
 			<p>This example helps point out the three types of variables that we will be studying. The first type, zip code, is an example of a variable that really yields non-numerical data. The values of such a variable represent categories into which the individuals can be grouped, or in other words a <q>quality</q> instead of a <q>quantity.</q></p>
-			<definition xml:id="def_qaualitative">
-				<title>Qualitative Variable</title>
+			<definition xml:id="def_qualitative-variable">
 				<idx><h>variable</h><h>qualitative</h></idx>
 				<statement>
-					<p>Also called a <term>categorical variable</term>, a <term>qualitative variable</term>	is one that takes on values representing categories or descriptions as opposed to numerical values.</p>
+					<p>A <term>qualitative variable</term> (also called a <term>categorical variable</term>) is one that takes on values representing categories or descriptions as opposed to numerical values.</p>
 				</statement>
 			</definition>
 			<p>In this text we will spend the majority of our time working with variables whose values are numbers that can be added, divided, etc. These types of values represent a quantity as opposed to a quality, and they are named accordingly.</p>
-			<definition xml:id="def_quantitative">
-				<title>Quantitative Variable</title>
+			<definition xml:id="def_quantitative-variable">
 				<idx><h>variable</h><h>quantitative</h></idx>
 				<statement>
 					<p>A <term>quantitative variable</term> is one that takes on numerical values. Unlike a qualitative variable, the values of a quantitative variable can be used in computations.</p>
@@ -224,22 +212,20 @@
 			</definition>
 			<p> In our example we saw that even though Number of Residents and Length of Residence are both quantitative variables, the measurements we take are still somewhat different.  Because of these  differences, we need two more definitions that apply only to quantitative variables.</p>	
 			<definition xml:id="def_discrete">
-				<title>Discrete Variable</title>
 				<idx><h>variable</h><h>quantitative</h><h>discrete</h></idx>
 				<statement>
 					<p>A <term>discrete variable</term> is a quantitative variable in which there are gaps between the possible values of the variable.</p>
 				</statement>
 			</definition>
 			<definition xml:id="def_continuous">
-				<title>Continuous Variable</title>
 				<idx><h>variable</h><h>quantitative</h><h>continuous</h></idx>
 				<statement>
 					<p>A <term>continuous variable</term> is a quantitative variable for which there are an infinite number of possible values with no gaps between these values.</p>
 				</statement>
 			</definition>
 			<p>Before we move on, let's revisit the example above and give the formal types of each of the three variables.</p>
-			<example xml:id="examp_data_s1-2_e2">
-				<title>Identifying Variables, Revisited</title>
+			<example xml:id="examp_data_classify-variables-2">
+				<title>Classifying Variables, Revisited</title>
 				<statement>
 					<p>The post office, wishing to better understand its customers, decides to collect data from 1000 ouseholds within a certain state. They mail each household a questionnaire sking the esidents to confirm their zip code, list the number of people who live in that husehold, and give the length of time that they have lived there. Identify and classify each of the variables in this survey.</p>
 				</statement>
@@ -263,16 +249,19 @@
 				</solution>
 			</example>
 			<p>Now for some more video examples.</p>
-			<figure xml:id="sec_data_s1-2_v1">
+			<figure xml:id="video_data_classify-variables-1">
 				<caption>Types of Variables I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-03.mp4" />
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-03" preview="default"/>
 			</figure>
-			<figure xml:id="sec_data_s1-2_v2">
+			<figure xml:id="video_data_classify-variables-2">
 				<caption>Types of Variables II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-04.mp4" />
+<!--				
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-04.mp4" preview="default"/>
+			-->
+				<video youtube="TjLTKXHwi88" preview="default"/>
 			</figure>
 
-			<exercise xml:id="sec_data_s1-2_c1">
+			<exercise xml:id="ckpt_data_classify-variables-1">
 				<title>Types of Variables</title>
 				<statement>
 					<p>A biologist studying the nesting habits of seagulls decides that as a part of her study, she will take an inventory of all nests at a certain nesting ground each morning for a month. She will count the number of chicks in each nest, record whether a parent gull is present, and specify the distance from each nest to its closest neighboring nest.</p>
@@ -289,7 +278,8 @@
 					</p>
 				</answer>
 			</exercise>
-			<exercise xml:id="sec_data_s1-2_c2">
+
+			<exercise xml:id="ckpt_data_classify-variables-2">
 				<title>Types of Variables</title>
 				<statement>
 					<p>A nursing student wishes to measure the effect of sleep deprivation on exam performance. He surveys other students after the most recent nursing exam is returned and asks how much sleep they got on the night before the exam, their exam score, and whether they were tired during the exam.</p>
@@ -298,7 +288,8 @@
 				<hint><p>Does sleep come in chunks of time?</p></hint>
 				<answer><p>Quantitative and Continuous</p></answer>
 			</exercise>
-			<exercise xml:id="sec_data_s1-2_c3">
+
+			<exercise xml:id="ckpt_data_classify-variables-3">
 				<title>Types of Variables</title>
 				<statement>
 					<p>A nursing student wishes to measure the effect of sleep deprivation on exam performance. He surveys other students after the most recent nursing exam is returned and asks how much sleep they got on the night before the exam, their exam score (rounded to the nearest whole percent), and whether they were tired during the exam.</p>
@@ -309,17 +300,17 @@
 		</subsubsection>
 	</subsection>
 
-	<subsection xml:id="sec_data_s2">
+	<subsection xml:id="sec_data_ss2">
 		<title>Collecting Data</title>
 
-		<introduction xml:id="sec_data_s2_intro">
+		<introduction xml:id="sec_data_ss2_intro">
 			<p>Before we even have data to analyze or describe, we must first collect the	data.</p>
 		</introduction>
 
-		<subsubsection xml:id="sec_data_s2-1">
+		<subsubsection xml:id="sec_data_ss2-1">
 			<title>Populations and Samples</title>
 			<p>The process we use to collect data is just as important, if not more important, than the tools we use to analyze that data. Consider the following example.</p>
-			<example xml:id="examp_data_s2-1_e1">
+			<example xml:id="examp_data_representative-data">
 				<title>Representative Data</title>
 				<statement>
 					<p>Sam the high school student, who has not had a statistics class, decides to do a research project on the height of an average student at his school. Since he works for the basketball coach, Sam decides to look up the heights of all students who have played for the basketball team over the last 10 years.	How useful will this data be for Sam's research project?</p>
@@ -330,14 +321,12 @@
 			</example>
 			<p>Our analysis of a set of data will do us no good if that data does not come from the objects that we are trying to study. To better understand this concept, we need to first distinguish between the subjects we are trying	to study, and the individuals from whom we actually collect data.</p>
 			<definition xml:id="def_population">
-				<title>Population</title>
 				<idx>population</idx>
 				<statement>
 					<p>A <term>population</term> is the collection of all subjects to be studied.</p>
 				</statement>
 			</definition>
 			<definition xml:id="def_sample">
-				<title>Sample</title>
 				<idx>sample</idx>
 				<statement>
 					<p>A <term>sample</term> is a sub-collection of subjects drawn from a given population.</p>
@@ -345,7 +334,6 @@
 			</definition>
 			<p>Using these new terms, the problem with Sam's research is that the sample he selected is not representative of the population he is studying. One way to remedy this problem would be to collect the height of all students at Sam's school. That is, he could measure the entire population.</p>
 			<definition xml:id="def_census">
-				<title>Census</title>
 				<idx>census</idx>
 				<statement>
 					<p>In a <term>census</term>, data is collected from every member of the population being studied.</p>
@@ -353,16 +341,16 @@
 			</definition>
 			<p>However, if Sam attends a large high school, taking a census may not be possible. If we think of other examples, we soon come to the realization that in many instances the population being studied is either too large or it is too expensive for us to collect data from every member of the population. In those cases, we must carefully select a sample that is representative of our population.</p>
 
-			<figure xml:id="sec_data_s2-1_v1">
+			<figure xml:id="video_data_pop-and-sample-1">
 				<caption>Populations and Samples I</caption>
 				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-05.mp4" />
 			</figure>
-			<figure xml:id="sec_data_s2-1_v2">
+			<figure xml:id="video_data_pop-and-sample-2">
 				<caption>Populations and Samples II</caption>
 				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-06.mp4" />
 			</figure>
 
-			<exercise xml:id="sec_data_s2-1_c1">
+			<exercise xml:id="ckpt_data_pop-and-sample-1">
 				<title>Populations and Samples</title>
 				<statement>
 					<p>A web programmer has just finished writing an online book store website. She needs to determine if the site will be usable. There are two parts to this website. The public section will allow a general Internet user to search for and purchase books from the store. The second administrative section allows the five book store managers for whom the website is being written to enter the books they wish to sell and view customer orders.</p>
@@ -379,7 +367,7 @@
 				<answer><p>The programmer is using a sample that does not represent the population.</p></answer>
 			</exercise>
 
-			<exercise xml:id="sec_data_s2-1_c2">
+			<exercise xml:id="ckpt_data_pop-and-sample-2">
 				<title>Populations and Samples</title>
 				<statement>
 					<p>An engineer wishes to determine if a particular type of bracket can withstand a given amount of weight. To test this, he randomly selects 100 brackets produced at plant A, one of four different bracket manufacturing plants, during the month	of April, 2019.</p>
@@ -395,7 +383,7 @@
 				<answer><p>The population of all brackets produced at plant A during April 2008.</p></answer>
 			</exercise>
 
-			<exercise xml:id="sec_data_s2-1_c3">
+			<exercise xml:id="ckpt_data_pop-and-sample-3">
 				<title>Populations and Samples</title>
 				<statement>
 					<p>A web programmer has just finished writing an online book store website. She	needs to determine if the site will be usable. There are two parts to this website.	The public section will allow a general Internet user to search for and purchase books from the store. The second administrative section enables the five book	store managers for whom the website is being written to enter the books they wish to sell and view customer orders. To test the public side of the site, our web programmer randomly selects 50 people who claim their Internet skill level is <q>average</q> and asks them try out the public site and rate its usability. To test the administrative side, she has all five book store managers test the site and rate its usability.</p>
@@ -421,19 +409,18 @@
 			</exercise>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_data_s2-2">
+		<subsubsection xml:id="sec_data_ss2-2">
 			<title>Sampling Plans</title>
 			<idx>sampling plans</idx>
 			<p>Since it is important that we select a sample that represents the population we are studying, we need to be very careful when selecting a sample. We not only need to guard against accidentally designing a sample that does not represent the population, but also against unintentional bias in the way we collect our data. One of the best tools in guarding against such biased samples is randomness, and the simplest way to use randomness to collect a sample is to collect a <term>simple random sample</term>.</p>
-			<definition xml:id="def_srs">
-				<title>Simple Random Sample</title>
+			<definition xml:id="def_simple-random-sample">
 				<idx><h>sampling plans</h><h>simple random sample</h></idx>
 				<statement>
 					<p>A <term>simple random sample</term> of size <m>n</m> is a sample drawn from a population in such a way that every group of <m>n</m> subjects in the population is equally likely to be chosen.</p>
 				</statement>
 			</definition>
 			<p>To better understand the concept of a simple random sample, consider the following example.</p>
-			<example xml:id="examp_data_s2-2_e1">
+			<example xml:id="examp_data_sample-plans-1">
 				<title>Simple Random Samples</title>
 				<statement>
 					<p>A professor wishes to randomly select a sample of 6 students from her class of 48. The students are sitting in eight rows of six students each. The professor comes up with two sampling methods.
@@ -454,14 +441,12 @@
 				</example>
 				<p>Ensuring that we get a simple random sample can be difficult. Even if we manage to design a simple random sample, we still can not be certain that we will get a sample that is representative of the population we are studying. There are several alternative sampling techniques that can help us select a representative sample, and at the same time make it easier to select our sample. Each of these methods employs randomness. However, none of them will result in a true simple random sample.</p>
 				<definition xml:id="def_systematic_sample">
-					<title>Systematic Sample</title>
 					<idx><h>sampling plans</h><h>systematic sample</h></idx>
 					<statement>
 						<p>A <term>systematic sample</term> is a random sample collected from an ordered population by randomly choosing one of the first <m>k</m> subjects, and then selecting every <m>k</m>th subject thereafter.</p>
-
-						<figure>
+						<figure xml:id="image_data_def_systematic-sample">
 							<caption>Systematic Sample</caption>
-							<image source="./images/sec_understanding-data_systematic-sample.png" width="50%">
+							<image source="./images/data_def_systematic-sample.png" width="50%">
 								<description>
 									One of the first 5 dots was randomly selected, and then every 5th dot thereafter is selected for the sample.
 								</description>
@@ -471,13 +456,12 @@
 				</definition>
 				<p>A systematic sample is particularly useful when the population from which we are sampling is already ordered. Examples of this include products coming off of an assembly line, or cars moving through a sobriety check point.</p>
 				<definition xml:id="def_stratified_sample">
-					<title>Stratified Sample</title>
 					<idx><h>sampling plans</h><h>stratified sample</h></idx>
 					<statement>
 						<p>In a <term>stratified sample</term>, a population is broken into several groups (called strata) and then a simple random sample is collected from each of these groups.</p>
-						<figure>
+						<figure xml:id="image_data_def_stratified-sample">
 							<caption>Stratified Sample</caption>
-							<image source="./images/sec_understanding-data_stratified-sample.png" width="50%">
+							<image source="./images/data_def_stratified-sample.png" width="50%">
 								<description>
 									The dots have been divided into six groups, and then two dots are randomly selected from each group to form the sample.
 								</description>
@@ -487,13 +471,12 @@
 				</definition>
 				<p>In a stratified sample we group the population by characteristics which we think may make a difference, and then select randomly from each group. For example, we may want to ensure that both men and women are included in a drug study, so we select some men and some women. Or we may wish to ensure that voters of all political leanings are included in an election poll.</p>
 				<definition xml:id="def_cluster_sample">
-					<title>Cluster Sample</title>
 					<idx><h>sampling plans</h><h>cluster sample</h></idx>
 					<statement>
 						<p>A <term>cluster sample</term> is taken by dividing the population into several groups (called clusters) and then picking a simple random sample of the clusters. We then sample each individual in the selected clusters.</p>
-						<figure>
+						<figure xml:id="image_data_def_cluster-sample">
 							<caption>Cluster Sample</caption>
-							<image source="./images/sec_understanding-data_cluster-sample.png" width="50%">
+							<image source="./images/data_def_cluster-sample.png" width="50%">
 								<description>
 									The dots have been divided into six groups, and then three of those groups are randomly selected and every dot from the selected groups is added to the sample.
 								</description>
@@ -502,7 +485,7 @@
 					</statement>					
 				</definition>
 				<p>The difference between a cluster sample and a stratified sample is sometimes confusing. We can, however, tell the difference by looking at when the simple random sample is taken. In a stratified sample, we take separate simple random samples from each group or strata. In a cluster sample, however, we get a simple random sample of the groups (or clusters) and then sample every individual. Consider the following example.</p>
-				<example xml:id="examp_data_s2-2_e2">
+				<example xml:id="examp_data_sample-plans-2">
 					<title>Sampling Techniques</title>
 					<statement>
 						<p>Determine the type of sample being taken in each of the situations described below.
@@ -526,16 +509,16 @@
 					</solution>
 				</example>
 
-				<figure xml:id="sec_data_s2-2_v1">
+				<figure xml:id="video_data_sample-plans-1">
 					<caption>Sampling Techniques I</caption>
 					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-07.mp4" />
 				</figure>
-				<figure xml:id="sec_data_s2-2_v2">
+				<figure xml:id="video_data_sample-plans-2">
 					<caption>Sampling Techniques II</caption>
 					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-08.mp4" />
 				</figure>
 
-				<exercise xml:id="sec_data_s2-2_c1">
+				<exercise xml:id="ckpt_data_sample_plans-1">
 					<title>Types of Samples</title>
 					<statement>
 						<p>Five samples are described below.
@@ -577,7 +560,7 @@
 					</answer>
 				</exercise>
 
-				<exercise xml:id="sec_data_s2-2_c2">
+				<exercise xml:id="ckpt_data_sample-plans-2">
 					<title>Types of Samples</title>
 					<statement>
 						<p>Five samples are described below.
@@ -618,7 +601,7 @@
 						</p>
 					</answer>
 				</exercise>
-				<exercise xml:id="sec_data_s2-2_c3">
+				<exercise xml:id="ckpt_data_sample-plans-3">
 					<title>Types of Samples</title>
 					<statement>
 						<p>Five samples are described below.
@@ -661,18 +644,16 @@
 				</exercise>
 			</subsubsection>
 
-			<subsubsection xml:id="sec_data_s2-3">
+			<subsubsection xml:id="sec_data_ss2-3">
 				<title>Types of Studies</title>
 				<p>A sample may be collected from a population for one of two reasons. We may simply wish to know a characteristic of that population. On the other hand, we may want to try to change a characteristic and then measure the result. These result in two different types	of studies.</p>
 				<definition xml:id="def_observational-study">
-					<title>Observational Study</title>
 					<idx><h>study types</h><h>observational study</h></idx>
 					<statement>
 						<p>In an <term>observational study</term> specific characteristics are observed and measured, but no attempt is made to change these characteristics.</p>
 					</statement>
 				</definition>
-				<definition xml:id="dev_experiment">
-					<title>Experiment</title>
+				<definition xml:id="def_experiment">
 					<idx><h>study types</h><h>experiment</h></idx>
 					<statement>
 						<p>In an <term>experiment</term>, some treatment is applied and its effects on the subject are observed.</p>
@@ -680,7 +661,6 @@
 				</definition>
 				<p>Notice that the main difference is that in an experiment we attempt to change a characteristic whereas in an observational study, we do not. Because experiments seek to measure the effect of a treatment on the subject, they are by nature more complicated than observational studies. Below are some specific terms used when designing an experiment.</p>
 				<definition xml:id="def_experiment-terms">
-					<title>Experiment Terminology</title>
 					<idx><h>study types</h><h>experiment</h><h>factor</h></idx>
 					<idx><h>study types</h><h>experiment</h><h>treatment</h></idx>
 					<statement>
@@ -693,7 +673,7 @@
 					</statement>
 				</definition>
 				<p>To help see the difference between these two types of studies, let's look at a couple of examples.</p>
-				<example xml:id="examp_data_s2-3_e1">
+				<example xml:id="examp_data_study-type-1">
 					<title>Types of Studies</title>
 					<statement>
 						<p>Sam wishes to determine the length of time that it takes a radish seed to germinate. He plants radishes in his garden, and continues his normal watering and weeding process. When the first radish sprouts emerge, Sam records the length of time that has elapsed. Is Sam conducting an observational study or an experiment?
@@ -703,7 +683,7 @@
 						<p>In this case, Sam is conducting an observational study. He does not attempt to change the conditions under which the seeds are growing, he simply observes the length of time it took sprouts to emerge.</p>
 					</solution>
 				</example>
-				<example xml:id="examp_data_s2-3_e2">
+				<example xml:id="examp_data_study-type-2">
 					<title>Types of Studies</title>
 					<statement>
 						<p>Nancy is more ambitions than Sam. She wants to know if radish seeds can be made to germinate faster by altering the conditions in which they grow. To test this theory, Nancy decides that she will plant four groups of radish seeds. The first group will be watered and weeded as normal. The second group will be watered and weeded as well, but will in addition receive fertilizer every other day. The third group will be weeded as normal, but will receive twice as much water. Finally, the fourth group of radish seeds will be weeded as normal, receive fertilizer every other day, and get twice as much water. Nancy will record how long it takes each group of radish seeds to sprout. Is this an observational study or an experiment?</p>
@@ -721,16 +701,16 @@
 				</example>
 				<p>To see more examples, check out the videos below.</p>
 
-				<figure xml:id="sec_data_s2-3_v1">
+				<figure xml:id="video_data_study-type-1">
 					<caption>Types of Studies I</caption>
 					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-09.mp4"/>
 				</figure>
-				<figure xml:id="sec_data_s2-3_v2">
+				<figure xml:id="video_data_study-type-2">
 					<caption>Types of Studies II</caption>
 					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-10.mp4"/>
 				</figure>
 
-				<exercise xml:id="sec_data_s2-3_c1">
+				<exercise xml:id="ckpt_data_study-type-1">
 					<title>Types of Studies</title>
 					<statement>
 						<p>A food production company wishes to determine if there is a market for spicy peanut butter. They decide to randomly select 1000 individuals who have purchased their peanut butter products in the past and send them a questionnaire asking if they would be interested in trying spicy peanut butter.</p>
@@ -741,7 +721,7 @@
 					</answer>
 				</exercise>
 
-				<exercise xml:id="sec_data_s2-3_c2">
+				<exercise xml:id="ckpt_data_study-type-2">
 					<title>Types of Studies</title>
 					<statement>
 						<p>A college student wishes to convince her fellow students that the cost of food in the cafeteria is too high. To do measure the effectiveness of several methods she shows a short video to one group of students, has a group discussion with another, and takes a third group out to lunch at the cafeteria. She then has each group respond to the question <q>does the cafeteria charge too much.</q></p>
@@ -752,7 +732,7 @@
 					</answer>
 				</exercise>
 
-				<exercise xml:id="sec_data_s2-3_c3">
+				<exercise xml:id="ckpt_data_study-type-3">
 					<title>Types of Studies</title>
 					<statement>
 						<p>You receive a phone call from the local campaign for candidate X. After reading you a list of all of the reasons why you should support their candidate, the caller asks if you are planning to vote for candidate Y.</p>
@@ -762,16 +742,13 @@
 				</exercise>
 			</subsubsection>
 
-			<subsubsection xml:id="sec_data_s2-4">
+			<subsubsection xml:id="sec_data_ss2-4">
 				<title>Things to Avoid</title>
-
 				<p>Now that we have looked at a lot of good tools for collecting data, it is time to think about some things that we need to avoid.</p>
-
-				<paragraphs xml:id="sec_data_s2-4-1">
+				<paragraphs xml:id="sec_data_ss2-4-1">
 					<title>Bad Samples</title>
 					<p>If we use a sampling technique that does not include some element of randomness we are likely to produce a sample that does not represent our population. One of the easiest, but most dangerous ways to collect data is by using a convenience sample.</p>
 					<definition xml:id="def_convenience-sample">
-						<title>Convenience Sample</title>
 						<idx><h>sampling plans</h><h>convenience sample</h></idx>
 						<statement>
 							<p>A <term>convenience sample</term> is a sample collected by simply selecting the most convenient members of a population.</p>
@@ -779,14 +756,13 @@
 					</definition>
 					<p>The problem with this method of sampling is that it is likely that there will be some bias in the selection process.</p>
 					<definition xml:id="def_bias">
-						<title>Bias</title>
 						<idx>bias</idx>
 						<statement>
 							<p>A sample has <term>bias</term> and is called <term>biased</term> if it over-represents one portion of a population and under-represents another.</p>
 						</statement>
 					</definition>
 					<p>Consider the following example.</p>
-					<example xml:id="examp_data_s2-4-1_e1">
+					<example xml:id="examp_data_bias-sources">
 						<title>Sources of Bias</title>
 						<statement>
 							<p>You wish to conduct a study of dessert preferences in Americans. You believe that more people prefer cake to pie, as you do. To gather your data, you ask your immediate family members if they prefer cake or pie and find that all of them prefer cake! What is wrong with your sampling technique?</p>
@@ -797,18 +773,17 @@
 					</example>
 				</paragraphs>
 
-				<paragraphs xml:id="sec_data_s-2-4-2">
+				<paragraphs xml:id="sec_data_ss2-4-2">
 					<title>Leading Questions</title>
 					<p>The way that a question is asked can also be a source of bias in a study. Simple things such as the order of options (<q>do you like cake or pie?</q> vs. <q>do you like pie or cake?</q>) can cause people to change their answers. Some questions, however, are intentionally worded to evoke a specific response.</p>
 					<definition xml:id="def_leading-question">
-						<title>Leading Question</title>
 						<idx>leading question</idx>
 						<statement>
 							<p>A question which is phrased in such a way as to elicit a specific answer is called a <term>leading question</term>.</p>
 						</statement>
 					</definition>
 					<p>Consider the following example, that actually happened to a Walla Walla University Mathematics professor.</p>
-					<example xml:id="examp_data_s-2-4-2_e1">
+					<example xml:id="examp_data_leading-question">
 						<title>Leading Question</title>
 						<statement>
 							<p>A National Rifle Association call center employee is told to find out if US voters support the most recent gun control legislation. To determine this, she randomly calls 200 registered voters and asks <q>do you support the most recent attempt by the gun-hating congress to trample your 2nd amendment rights?</q> Is there a problem with this questioning technique?</p>
@@ -819,19 +794,18 @@
 					</example>
 				</paragraphs>
 
-				<paragraphs xml:id="sec_data_s-2-4-3">
+				<paragraphs xml:id="sec_data_ss2-4-3">
 					<title>Voluntary Response</title>
 					<p>Another potential source of bias in a sample comes from having people <q>volunteer</q> to respond to a
 					survey.</p>
 					<definition xml:id="def_voluntary-response-sample">
-						<title>Voluntary Response Sample</title>
 						<idx><h>sampling plans</h><h>voluntary response sample</h></idx>
 						<statement>
 							<p>A sample in which people choose themselves by responding to a general request to participate is called a <term>voluntary response sample</term>.</p>
 						</statement>
 					</definition>
 					<p>If you mail out a questionnaire asking people how they feel about a certain controversial celebrity, you are likely to get responses only from those who care enough to take the time to answer your questions. This leads to responses from only those who have a strong opinions, and most often those with strongly negative opinions. Consider the following actual example.</p>
-					<example xml:id="examp_data_s-2-4-3_e1">
+					<example xml:id="examp_data_voluntary-response">
 						<title>Voluntary Response Sample</title>
 						<statement>
 							<p>Ann Landers, the famous advice columnist, once asked her readers to respond to the question <q>If you had it to do over again, would you have children?</q> Nearly 70% of the 10,000 parents who responded said that they would not have had children if they could do it over again. Does this accurately reflect the sentiment of parents in general?</p>
@@ -842,11 +816,10 @@
 					</example>
 				</paragraphs>
 
-				<paragraphs xml:id="sec_data_s-2-4-4">
+				<paragraphs xml:id="sec_data_ss2-4-4">
 					<title>Lurking Variables</title>
 					<p>One of the most prevalent things to avoid when using statistics is assuming that because there is a <term>correlation</term> between two things, one must cause the other. In many cases there can be a third (or forth, or fifth) unknown variable that <q>lurks</q> in the background and is affecting both observed variables. Let's define these terms precisely and finish with an example.</p>
 					<definition xml:id="def_correlation">
-						<title>Correlation</title>
 						<idx>correlation</idx>
 						<statement>
 							<p>We say that there is <term>correlation</term> between two (or more) variables if certain values of one frequently appear together with certain values of the other.</p>
@@ -854,7 +827,6 @@
 					</definition>
 					<p>For example, we would say that there is a correlation between people's height and weight because taller people tend to weigh more. But does being taller cause you to weigh more, or do they just go together?</p>
 					<definition xml:id="def_causation">
-						<title>Causation</title>
 						<idx>causation</idx>
 						<statement>
 							<p>We say that there is <term>causation</term> between two variables if the value of one of the variables causes the value of the other to change.</p>
@@ -862,14 +834,13 @@
 					</definition>
 					<p>To understand this term, suppose that we measured the variables <q>average driving speed</q> and <q>number of speeding tickets.</q> It would be reasonable to say that there is causation between these two variables. That is, driving faster causes one to get more speeding tickets. But it is possible that there is another variable affecting both your driving speed and number of tickets. Suppose, for example, that you drive a fancy red sports car. This is a potential example of a <term>lurking variable</term>.</p>
 					<definition xml:id="def_lurking-variable">
-						<title>Lurking Variable</title>
 						<idx>lurking variable</idx>
 						<statement>
 							<p>A lurking variable is an unmeasured variable that has an important effect on the relationship between variables in a study.</p>
 						</statement>
 					</definition>
 					<p>Consider the following examples.</p>
-					<example xml:id="examp_data_s2-4-4_e1">
+					<example xml:id="examp_data_lurking-variables-1">
 						<title>Luring Variables</title>
 						<statement>
 							<p>In a study of fuel efficiency and its relationship to weight the Buick Estate Wagon appeared to be an anomaly. Although weighing much more than most cars in its class, the Buick Estate Wagon had a better fuel economy than it should have had in relation to these other cars. Further research indicated that Buick's recommended a higher tire inflation pressure than did the other car manufacturers. Identify the lurking variable in this study.</p>
@@ -878,7 +849,7 @@
 							<p>Tire Pressure is the lurking variable. While it has an effect on gas mileage (higher pressure = better mileage) it was not included in the original study.</p>
 						</solution>
 					</example>
-					<example xml:id="examp_data_s2-4-4_e2">
+					<example xml:id="examp_data_lurking-variables-2">
 						<title>Lurking Variables</title>
 						<statement>
 							<p>A study of nutrition and TV ownership in Africa found that there was a high correlation between a family suffering from malnutrition and not owning a television set. A statistics student concludes that there is causation as well. That is, owning a television set leads to better nutrition. Critique	this conclusion.</p>
@@ -891,16 +862,16 @@
 
 				<p>Review these things to avoid by watching one or both of the following video examples.</p>
 
-				<figure xml:id="sec_data_s2-4_v1">
+				<figure xml:id="video_data_avoid-1">
 					<caption>Things to Avoid I</caption>
 					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-11.mp4" />
 				</figure>
-				<figure xml:id="sec_data_s2-4_v2">
+				<figure xml:id="video_data_avoid-2">
 					<caption>Things to Avoid II</caption>
 					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-12.mp4" />
 				</figure>
 
-				<exercise xml:id="sec_data_s2-4_c1">
+				<exercise xml:id="ckpt_data_avoid-1">
 					<title>Things to Avoid</title>
 					<statement>
 						<p>Jane works for a advertising firm and has been asked to determine if consumers still like advertising jingles. To make this determination, she asks 20 of her friends from other advertising	firms <q>do you want to risk your job by doing away with advertising jingles?</q> She finds that, not surprisingly, everybody she polled likes advertising jingles.</p>
@@ -911,7 +882,7 @@
 					</answer>
 				</exercise>
 
-				<exercise xml:id="sec_data_s2-4_c2">
+				<exercise xml:id="ckpt_data_avoid-2">
 					<title>Things to Avoid</title>
 					<statement>
 						<p>A major department store wishes to determine if people with store credit cards enjoy their shopping experience more than those who do not have store credit cards. To research this question, they send surveys to everybody who has shopped at their store in the last year and ask them if they enjoyed their shopping experience, and if they have a store card. They find that the majority of returned surveys are from people who either have a card and enjoyed their shopping experience, or from people who do not have a card and didn't enjoy their shopping experience. The store concludes that having a store card makes shopping with the store more enjoyable.</p>

@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_center-spread">
+  <title>Describing Data Numerically: Measures of Center and Spread</title>
+
+  <introduction xml:id="sec_center-spread_intro">
+  	<title>Introduction</title>
+  	<p>While describing data sets using graphs gives a good overview, it does not give us the detail that we need to do more advanced analysis. Graphs are meant to give 	  a picture of the data, but in order to make decisions based on a set of data, we need to have numerical summaries.</p>
+  	<p>In this section, we will look at several types of numerical summaries, or measures, which we can compute from a set of quantitative data. These measures include both:
+  		<ol>
+  			<li><title>Measures of Center</title><p>
+  			  A measure of center gives a single number that represents the "typical" value in the set of data. One very familiar measure of center is the average. When you say that the average score on an exam is 80%, you are claiming that the typical student scored 80%. This is not, however, the only way to measure the center of a data set, as we shall see in this section.</p></li>
+  			<li><title>Measures of Spread</title><p>
+  				Also called a measure of variation, this number or set of numbers indicates how spread out the data is. For example, if three students take an exam and all score 80%, the average would be 80%, but there is no variation between the scores. But if three students scored 60%, 80%, and 100%, the average would still be 80%, but now there is a large amount of variation between their scores<ndash/>they are much more spread out.</p></li>
+  		</ol>
+  	</p>
+  	<p>Each of these values can be computed for data drawn from a sample (a small number of values from a larger population), or for a census of an entire population. We give them different names, however, depending on the source.</p>
+
+		<definition xml:id="def_statistic">
+			<idx>statistic</idx>
+			<statement>
+				<p>A measurement describing some characteristic of a sample is called a <term>statistic</term>.</p>
+			</statement>
+		</definition>
+
+		<definition xml:id="def_parameter">
+			<idx>parameter</idx>
+			<statement>
+				<p>A measurement describing some characteristic of a population is called a <term>parameter</term>.</p>
+			</statement>
+		</definition>
+		<p>The measures of center that we will look at often come with a related measure of variation or spread, so we will examine these together where appropriate.</p>
+	</introduction>
+
+	<objectives xml:id="sec_center-spread_obj">
+		<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul cols="2">
+					<li><p>interquartile range</p></li>
+					<li><p>mean</p></li>
+					<li><p>median</p></li>
+					<li><p>midrange</p></li>
+					<li><p>mode</p></li>
+					<li><p>outlier</p></li>
+					<li><p>parameter</p></li>
+					<li><p>quartile</p></li>
+					<li><p>range</p></li>
+					<li><p>standard deviation</p></li>
+					<li><p>statistic</p></li>
+					<li><p>variance</p></li>
+				</ul></p>
+			</li>					
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Compute the mode</p></li>
+					<li><p>Compute the midrange and the range</p></li>
+					<li><p>Compute the median, 1st and 3rd quartiles, and interquartile range</p></li>
+					<li><p>Compute the mean and standard deviation</p></li>
+					<li><p>Select an appropriate measure of center for a given dataset</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_center-spread_mode">
+		<title>The Mode</title>
+		<p>We have already seen the term <term>mode</term> used in the context of a graph. Recall that the <xref ref="def_histogram-mode" text="custom">mode of a histogram or bar graph</xref> is the class or category that has the tallest bar. That is, it is the class or category that appears the most in the data set. This seems to be a reasonable way to describe a <q>typical</q> element of a data set and leads to the following definition.</p>
+		<definition xml:id="def_mode">
+			<idx>mode</idx>
+			<idx><h>measures of center</h><h>mode</h></idx>
+			<statement>
+				<p>The <term>mode</term> of a set of values is the value that appears most often. If more than one value is tied for the most appearances, each one is a mode. If no value appears more than once, there is no mode.</p>
+			</statement>
+		</definition>
+		<p>The <term>mode</term> is unique among our measures of center as it is the only one that applies to both <xref ref="def_quantitative-variable" text="custom">quantitative variables</xref> and <xref ref="def_qualitative-variable" text="custom">qualitative variables</xref>. Consider the following examples.</p>
+		<example xml:id="examp_center-spread_mode-qualitative">
+			<title>The Mode of a Qualitative Variable</title>
+			<statement>
+				<p>A breakout presentation at a business convention attracts 16 participants. The job title of each of these participants is as follows. Find the mode of this set of data.</p>
+				<table xml:id="examp_center-spread_mode-qualitative_data">
+					<title>Job Titles</title>
+					<tabular>
+						<row>
+							<cell>manager</cell>
+							<cell>owner</cell>
+							<cell>H.R. director</cell>
+							<cell>owner</cell>
+						</row>
+						<row>
+							<cell>manager</cell>
+							<cell>H.R. director</cell>
+							<cell>manager</cell>
+							<cell>manager</cell>
+						</row>
+						<row>
+							<cell>owner</cell>
+							<cell>manager</cell>
+							<cell>manager</cell>
+							<cell>H.R. director</cell>
+						</row>
+						<row>
+							<cell>manager</cell>
+							<cell>owner</cell>
+							<cell>owner</cell>
+							<cell>manager</cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>The mode is the most commonly appearing value. One way to find that is to construct a <xref ref="def_frequency-table" text="custom">frequency table</xref>.  Doing so for this data produces the following table, from which we can see that the mode is <q>manager</q>.</p>
+				<table xml:id="examp_center-spread_mode_frequency-table">
+					<title>Frequency Table</title>
+					<tabular>
+						<row bottom="medium">
+							<cell right="medium">Value</cell>
+							<cell>Frequency</cell>
+						</row>
+						<row>
+							<cell right="medium">manager</cell>
+							<cell>8</cell>
+						</row>
+						<row>
+							<cell right="medium">H.R. director</cell>
+							<cell>3</cell>
+						</row>
+						<row>
+							<cell right="medium">owner</cell>
+							<cell>5</cell>
+						</row>
+					</tabular>
+				</table>
+			</solution>
+		</example>
+		<example xml:id="examp_center-spread_mode-quantitative">
+			<title>The Mode of a Quantitative Variable</title>
+			<statement>
+				<p>A survey of twelve grocery store shoppers asked how many times a month these shoppers visit their favorite grocery store. Find the mode of the resulting data, shown below.</p>
+				<table xml:id="examp_center-spread_mode-quantitative_data">
+					<title>Number of Visits Per Month</title>
+					<tabular>
+						<row>
+							<cell>6</cell>
+							<cell>2</cell>
+							<cell>5</cell>
+							<cell>1</cell>
+							<cell>3</cell>
+							<cell>5</cell>
+							<cell>3</cell>
+							<cell>2</cell>
+						</row>
+						<row>
+							<cell>7</cell>
+							<cell>4</cell>
+							<cell>1</cell>
+							<cell>5</cell>
+							<cell>3</cell>
+							<cell>6</cell>
+							<cell>4</cell>
+							<cell>8</cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>Again, the best starting point is to construct a quick frequency table.</p>
+				<table xml:id="examp_center-spread_mode-quantitative_freqency-table">
+					<title>Frequency Table</title>
+					<tabular>
+						<row bottom="medium">
+							<cell right="medium">Value</cell>
+							<cell>1</cell>							
+							<cell>2</cell>
+							<cell>3</cell>
+							<cell>4</cell>
+							<cell>5</cell>
+							<cell>6</cell>
+							<cell>7</cell>
+							<cell>8</cell>							
+						</row>
+						<row>
+							<cell right="medium">Frequency</cell>
+							<cell>2</cell>
+							<cell>2</cell>
+							<cell>3</cell>
+							<cell>2</cell>
+							<cell>3</cell>
+							<cell>2</cell>
+							<cell>1</cell>
+							<cell>1</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Notice that in this data set, both the 5 and the 3 appear three times. Every other value appears two or fewer times. This makes this set of data bimodal with modes 3 and 5.</p>
+			</solution>
+		</example>
+
+		<p>While the mode is an easy way to measure the center, and is in fact the only way we have to measure the center of a set of qualitative data, it is usually not the best choice for measuring the center of a set of quantitative data. To see why this may be so, consider the next example.</p>
+
+		<example xml:id="examp_center-spread_mode_bad-example">
+			<statement>
+				<p>Find the mode of the following sets of numbers.
+					<ol label="a">
+						<li><p><m>\lbrace 1, 2, 5, 7, 12, 15, 19, 22, 50 \rbrace</m></p></li>
+						<li><p><m>\lbrace 1, 1, 20, 23, 26, 24, 29, 30, 27, 32, 19\rbrace</m></p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>The modes of these sets of numbers are as follows:
+					<ol label="a">
+						<li><p>This data set contains no repeated values. Therefore, according to <xref ref="def_mode" text="custom">the definition</xref>, there is no mode for this set.</p></li>
+						<li><p>This data contains only one repeated value, the 1. So the mode is 1. However, 1 is definitely not the <q>typical</q> value in the set since all other values are between 19 and 32.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>In summary, you should use the mode to measure the center of any qualitative set of data, or as a quick, but not definitive, measure of center for quantitative data. But be careful! The mode may not exist, there may be multiple modes, and if there is a single mode it may be very different from the <q>typical</q> values in the data set.</p>
+
+		<figure xml:id="video_center-spread_mode-1">
+			<caption>Finding the Mode I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-01.mp4"/>
+		</figure>
+		<figure xml:id="video_center-spread_mode-2">
+			<caption>Finding the Mode II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_center-spread_mode-1">
+			<title>Finding the Mode I</title>
+			<statement>
+				<p>The following colors of cars were observed in the parking lot of the local grocery store.</p>
+				<table>
+					<title>Car Colors</title>
+					<tabular>
+						<row>
+							<cell>blue</cell>
+							<cell>green</cell>
+							<cell>black</cell>
+							<cell>white</cell>
+						</row>
+						<row>
+							<cell>white</cell>
+							<cell>green</cell>
+							<cell>blue</cell>
+							<cell>yellow</cell>
+						</row>
+						<row>
+							<cell>white</cell>
+							<cell>white</cell>
+							<cell>blue</cell>
+							<cell>black</cell>
+						</row>
+						<row>
+							<cell>black</cell>
+							<cell>green</cell>
+							<cell>red</cell>
+							<cell>green</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: Which color(s) is/are the mode(s) for this set of data?</p>
+			</statement>
+			<answer><p>green and white</p></answer>
+		</exercise>
+
+		<exercise xml:id="ckpt_center-spread_mode-2">
+			<title>Finding the Mode II</title>
+			<statement>
+				<p>Consider the following set of data.
+				  <me>\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1 \rbrace</me>
+				  Question: What is/are the mode(s) for this set of data?</p>
+			</statement>
+			<answer><p>4, 6, 9, and 3 are all modes</p></answer>
+		</exercise>
+
+		<exercise xml:id="ckpt_center-spread_mode-3">
+			<title>Finding the Mode II</title>
+			<statement>
+				<p>The following pets were found in 10 randomly selected homes.</p>
+				<table>
+					<title>Pets</title>
+					<tabular>
+					  <row>
+					    <cell>cat</cell>
+					    <cell>fish</cell>
+					    <cell>bird</cell>
+					    <cell>hamster</cell>
+					  	<cell>ferret</cell>
+					  </row>
+					  <row>
+					  	<cell>dog</cell>
+					  	<cell>rabbit</cell>
+					  	<cell>rat</cell>
+					  	<cell>gerbil</cell>
+					  	<cell>pig</cell>
+					  </row>
+					</tabular>
+				</table>
+				<p>Question: What is/are the mode(s) for this data set?</p>
+			</statement>
+			<answer><p>there is no mode</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_center-spread_midrange-range">
+		<title>Midrange and Range</title>
+		<p>When we think of the <q>typical</q> value in a set of data, we may also think of the word <term>middle</term>. Our next measure of center is exactly that<mdash/>the middle of the data set.</p>
+		<definition xml:id="def_midrange">
+			<idx>midrange</idx>
+			<idx><h>measures of center</h><h>midrange</h></idx>
+			<statement>
+				<p>The <term>midrange</term> of a set of data is the value in the exact center of the data. To compute the midrange, use the formula:
+				<me>\text{midrange} = \frac{\text{maximum} + \text{minimum}}{2}</me>
+				where <term>maximum</term> is the maximum value in the data set and <term>minimum</term> is the minimum value.</p>
+			</statement>
+		</definition>
+		<p>Notice that the midrange does involve some computation using numerical values, so it can only be used with <xref ref="def_quantitative-variable" text="custom">quantitative variables</xref>, where such computations make sense. To measure how spread out the data is from the midrange, we use the <term>range</term>.</p>
+		<definition xml:id="def_range">
+			<idx>range</idx>
+			<idx><h>measures of spread</h><h>range</h></idx>
+			<statement>
+				<p>The <term>range</term> of a set of data is the difference between the highest and lowest values in the data set. That is:
+				<me>\text{range} = \text{maximum} - \text{minimum}.</me></p>
+			</statement>
+		</definition>
+		<p>Let's try out these new definitions with an example.</p>
+		<example xml:id="examp_center-spread_midrange-range_computation">
+			<statement>
+				<p>A certain pond has been well stocked with fish for the upcoming fishing season. In order to keep a fish from this pond, it must be at least 13 inches long. To try to determine if the fish in the pond are long enough to allow fishing, a fish and game warden randomly catches and releases 20 different fish, finding the following lengths, in inches. Find the range and midrange of this data.</p>
+				<table xml:id="examp_center-spread_midrange-range_computation_data">
+					<title>Fish Lengths in Inches</title>
+					<tabular>
+						<row>
+							<cell>13.2</cell>
+							<cell>10.8</cell>
+							<cell>14.6</cell>
+							<cell>17.2</cell>
+							<cell>17</cell>
+						</row>
+						<row>
+							<cell>18.3</cell>
+							<cell>6.5</cell>
+							<cell>13.4</cell>
+							<cell>16.7</cell>
+							<cell>11.3</cell>
+						</row>
+						<row>
+							<cell>12.3</cell>
+							<cell>9.8</cell>
+							<cell>9.4</cell>
+							<cell>11.6</cell>
+							<cell>12.1</cell>
+						</row>
+						<row>
+							<cell>8.7</cell>
+							<cell>12.6</cell>
+							<cell>13</cell>
+							<cell>14.3</cell>
+							<cell>13.1</cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>To find the midrange and range we need to identify the maximum and minimum values in the data set. The largest value is 18.3 and the smallest is 6.5, Thus we compute the midrange using:
+				<me>\text{midrange} = \frac{18.3+6.5}{2} = 12.4</me>
+				and we get the range using:
+				<me>\text{range} = 18.3 - 6.5 = 11.8.</me>
+				It looks like the pond is not yet ready to open for fishing. The typical fish, as measured by the midrange, is only 12.4 inches long and could not be kept.</p>
+			</solution>
+		</example>
+		<p>The midrange and range are useful tools for measuring the center and spread of a set of data, but there are several problems with them. The biggest problem is that both the midrange and range are extremely sensitive to <term>outliers</term>.</p>
+		<definition xml:id="def_outlier">
+			<idx>outlier</idx>
+			<statement>
+				<p>An <term>outlier</term> in a data set is a value that is either much larger than the rest of the data or much smaller than the rest of the data.</p>
+			</statement>
+		</definition>
+		<p>To see how an outlier can affect the midrange and range, let's take another look at the fish-length data from the previous example.</p>
+		<example xml:id="examp_center-spread_midrange-range_computation-outlier">
+			<title>The Effect of Outliers on the Midrange and Range</title>
+			<statement>
+				<p>The game warden believes that the 6.5 inch fish he caught in the <xref ref="examp_center-spread_midrange-range_computation_data" text="custom">sample above</xref> is an outlier. He decides to redo the computation without that fish. Find the new midrange and range.</p>
+			</statement>
+			<solution>
+				<p>Without the 6.5 inch outlier, the new minimum is 8.7. This gives the following values:
+				<me>\text{midrange} = \frac{18.3+8.7}{2} = 13.5</me>
+				and
+				<me>\text{range} = 18.3 - 8.7 = 9.6.</me>
+				With this new computation, it looks like the fish are in fact large enough to be caught<mdash/>the typical fish length, as measured by the midrange, is 13.5 inches.</p>
+			</solution>
+		</example>
+		<p>Notice what a big difference the single 6.5 inch fish made! This is what we mean when we say that the midrange is sensitive to outliers. Another problem with the range and midrange is that they only use the extreme maximum and minimum values of the data set. Ideally, we would want every value in the set of data to have some part in computing the <q>typical</q> value and the <q>spread</q> of the data.  For this reason, we will keep exploring different measures of center and spread.</p>
+
+		<figure xml:id="video_center-spread_midrange-range-1">
+			<caption>Finding the Midrange and Range I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-03.mp4"/>
+		</figure>
+		<figure xml:id="video_center-spread_midrange-range-2">
+			<caption>Finding the Midrange and Range II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_center-spread_midrange-range-1">
+			<title>Finding the Midrange and Range I</title>
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1 \rbrace</me>
+				Question: What is the midrange for this data?</p>
+			</statement>
+			<answer><p>5</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_midrange-range-2">
+			<title>Finding the Midrange and Range II</title>
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1\rbrace</me>
+				Question: What is the range for this data?</p>
+				</statement>
+			<answer><p>8</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_midrange-range-3">
+			<title>Finding the Midrange and Range III</title>
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15 \rbrace</me>
+				Question: What is the range for this data?</p>
+			</statement>
+			<answer><p>393</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_midrange-range-4">
+			<title>Finding the Midrange and Range IV</title>
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15\rbrace</me>
+				Question: What is the midrange for this data?</p>
+			</statement>
+			<answer><p>203.5</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_center-spread_median-quartile">
+		<title>Median and Quartiles</title>
+		<p>To reinforce why we need a measure of center that is resistant to outliers, consider the following example.</p>
+		<example xml:id="examp_center-spread_median-quartile_outlier">
+			<statement>
+				<p>The most expensive house in a certain market is a $2,500,000.00 mansion. The least expensive house is an $8,000.00 mobile home. Do you think that the midrange is an accurate measure of the <q>typical</q> home value in this market?</p>
+			</statement>
+			<solution>
+				<p>To answer this question, let's first compute the midrange. This is:
+				<me>\text{midrange} = \frac{2500000 + 8000}{2} = 1254000.</me>
+				Do you think that the typical house really costs one and a quarter million dollars? Probably not! The midrange <em>is not an appropriate measure of center</em> for this data.</p>
+			</solution>
+		</example>
+		<p>Once again, the outliers in this data set are affecting the midrange. To solve that problem, we introduce a new measure of center that is both resistant to outliers (meaning that they do not affect it very much) and considers more than just the two extreme values in the data set.</p>
+		<definition xml:id="def_median">
+			<idx>median</idx>
+			<idx><h>measures of center</h><h>median</h></idx>
+			<statement>
+				<p>The <term>median</term> of a data set is the middle number, or average of the two middle numbers, in the set of data once it has been arranged in increasing order.</p>
+			</statement>
+		</definition>
+		<p>You may have heard of the median before. It is often used as a measure of center in data sets where we expect outliers, such as housing prices. Another common set of data in which the median is used is household income. The phrase <q>median household income</q> may sound familiar.  For those of us working in Washington State with Bill Gates, it is a good thing that the median is used to measure typical incomes! Let's practice computing the median.</p>
+		<example xml:id="examp_center-spread_median-quartile_median">
+			<title>Computing the Median</title>
+			<statement>
+				<p>Find the median of each set of data below.
+					<ol label="a">
+						<li><p><m>\lbrace 14, 17, 10, 9, 16, 19, 12, 10, 15, 13 \rbrace</m></p></li>
+						<li><p><m>\lbrace 100, 215, 164, 117, 1000, 205, 178 \rbrace</m></p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>There are two steps to computing the median, and it is important that we do step one first. That first step is to arrange the data in order. The second step is to locate the middle value. Let's try this on both of the data sets above. 
+					<ol label="a">
+						<li><p>Our first step is to re-arrange this set of numbers in order, from smallest to largest:
+							<me>\lbrace 9, 10, 10, 12, 13, 14, 15, 16, 17, 19\rbrace</me>
+							Then we find the middle number. Since there are an even number of values (ten of them), the exact middle lies half way between the two center values (5th and 6th) which are 13 and 14. So the median is <m>\frac{13+14}{2} = 13.5</m>.</p></li>
+						<li><p>Again, we start by ordering the data:
+						  <me>\lbrace 100, 117, 164, 178, 205, 215, 1000 \rbrace</me>
+						  As there are an odd number of values in this data set (seven of them), the median is the single value in the exact center (the 4th value), which is 178.</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>Notice that the 1000 in the second data set is a definite outlier. However, in computing the median, the actual value does not matter. The only thing that matters is its relationship to the rest of the data. This 1000 could be replaced by a more reasonable 220 and the median would not change. Bill Gates could make only $200,000 a year, and the median household income in Washington State would not change! This is what it means to be <em>resistant to outliers</em>.</p>
+		<p>To measure the variation in a set of data, we can use a slight twist on the median. Notice that the median divides the set of data into two pieces. If we take each of those pieces and divide them in half, we are dividing the data into quarters. We can then look at the range between the first quarter of the data and the third quarter of the data. This gives us a measurement similar to the range. But since we are only looking at the middle half of the data, we will not be affected by any outliers at the extremes.</p>
+		<definition xml:id="def_quartiles">
+			<idx>quartiles</idx>
+			<idx><h>measures of relative standing</h><h>quartiles</h></idx>
+			<statement>
+				<p>Any quantitative data set can be divided up into quarters using five <term>quartiles</term>. These quartiles are:
+				  <ul>
+				  	<li><p>the <term>zeroth quartile</term> (<m>Q_0</m>), which is the minimum value in the data set.</p></li>
+				  	<li><p>the <term>first quartile</term> (<m>Q_1</m>), which divides the bottom quarter of the data from the rest of the data.</p></li>
+				  	<li><p>the <term>second quartile</term> (<m>Q_2</m>), which divides the bottom half of the data from the top half. This is more commonly called the median.</p></li>
+				  	<li><p>the <term>third quartile</term> (<m>Q_3</m>), which divides the bottom three-quarters of the data from the top quarter.</p></li>
+				  	<li><p>the <term>fourth quartile</term> (<m>Q_4</m>), is the maximum value in the data set.</p></li>
+				  </ul>
+				</p>
+			</statement>
+		</definition>
+		<p>The range between <m>Q_1</m> and <m>Q_3</m> is of particular interest and, as mentioned above, it has a special name.</p>
+		<definition xml:id="def_iqr">
+			<idx>interquartile range (iqr)</idx>
+			<idx><h>measures of spread</h><h>interquartile range (iqr)</h></idx>
+			<statement>
+				<p>The <term>Interquartile Range</term> or <term>IQR</term> is the difference between the 3rd and 1st quartiles. That is,
+				<me>\text{IQR} = Q_3 - Q_1.</me></p>
+			</statement>
+		</definition>
+		<p>To see how this works, let's revisit the fish-length example.</p>
+		<example xml:id="examp_center-spread_median-quartile_iqr">
+			<statement>
+				<p>A certain pond has been well stocked with fish for the upcoming fishing season. In order to keep a fish from this pond, it must be at least 13 inches long. To try to determine if the fish in the pond are long enough to allow fishing, a fish and game warden randomly catches and releases 20 different fish, finding the lengths from <xref ref="examp_center-spread_midrange-range_computation"/>. Find the median and IQR for this data.</p>
+			</statement>
+			<solution>
+				<p>We first arrange the <xref ref="examp_center-spread_midrange-range_computation_data" text="custom">data</xref> in order.  One way to make this process quicker is to cut and paste the data into a spreadsheet program and ask it to sort the values for you. This results in:
+				<me>\scriptstyle 6.5, 8.7, 9.4, 9.8, 10.8, 11.3, 11.6, 12.1, 12.3, 12.6, 13, 13.1, 13.2, 13.4, 14.3, 14.6, 16.7, 17, 17.2, 18.3</me>
+				Since there are 20 values in the data set, the median will be the average of the 10th and 11th values. That is:
+				<me>\text{median} = \frac{12.6+13}{2} = 12.8.</me>
+				According to the median, the fish are not quite long enough!</p>
+				<p>To compute the IQR we must find <m>Q_1</m> and <m>Q_3</m>.  We find <m>Q_1</m> by computing the median of the first half of the data set. Those first ten numbers are:
+				<me>6.5, 8.7, 9.4, 9.8, 10.8, 11.3, 11.6, 12.1, 12.3, 12.6.</me>
+				The median of this data, and thus the first quartile, is:
+				<me>Q_1 = \frac{10.8+11.3}{2} = 11.05.</me></p>
+				<p>We can find <m>Q_3</m> in the same way, but working with the top half of the data.
+				<me>13, 13.1, 13.2, 13.4, 14.3, 14.6, 16.7, 17, 17.2, 18.3.</me>
+				The median of the top half of the data is:
+				<me>Q_3 = \frac{14.3+14.6}{2} = 14.5.</me></p>
+				<p>Therefore, the IQR is <m>IQR = 14.5-11.05 = 3.45</m>. This means that the middle half of the fish fall into a range of 3.45 inches.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_center-spread_median-quartile-1">
+			<caption>Finding Medians, Quartiles, and IQR I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-05.mp4"/>
+		</figure>
+		<figure xml:id="video_center-spread_median-quartile-2">
+			<caption>Finding Medians, Quartiles, and IQR II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_center-spread_median-quartile-1">
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15\rbrace</me>
+				Question: What is the median for this set of data?</p>
+			</statement>
+			<answer><p>26</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_median-quartile-2">
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15\rbrace</me>
+				Question: What is the first quartile for this data?</p>
+			</statement>
+			<answer><p>17</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_median-quartile-3">
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1 \rbrace</me>
+				Question: What is the median for this data?</p>
+			</statement>
+			<answer><p>5</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_median-quartile-4">
+			<statement>
+				<p>Consider the following set of data.
+				<me>\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1\rbrace</me>
+				Question: What is the third quartile for this data?</p>
+			</statement>
+			<answer><p>7</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_center-spread_mean-stdev">
+		<title>Mean and Standard Deviation</title>
+		<p>While the median is a good measure of center to use in the case where we know a set of data contains outliers, it does have one major disadvantage. Namely, it does not take the value of every data point into consideration. In many instances, we want each value in the data set to have weight in determining the <q>typical</q> value. To achieve this goal, we turn back to an already familiar measure of center, commonly called the <term>average</term>.  We will, however, use a more precise name for this measure.</p>
+		<definition xml:id="def_mean">
+			<idx>mean</idx>
+			<idx><h>measures of center</h><h>mean</h></idx>
+			<statement>
+				<p>The <term>arithmetic mean</term>, which we will call simply the <term>mean</term>, is a measure of center found by taking the sum of all values in the data set and dividing by the number of values in the data set. Symbolically,</p>
+				<sidebyside widths="50% 50%" margins="auto">
+					<p><me>\text{Population:}\quad\mu = \frac{\sum x_i}{n}</me></p>
+					<p><me>\text{Sample:}\quad\overline{x} = \frac{\sum x_i}{n}</me></p>
+				</sidebyside>
+				<p>Where the <m>x_i</m> represent the values in the data set, <m>n</m> is the number of values in the data set, and the Greek letter <m>\sum</m> stands for summation.</p>
+			</statement>
+		</definition>
+		<p>Notice that there is a different symbol used for the mean depending on whether it is the mean of an entire population, or just the mean of a sample. For a population, the Greek letter <m>\mu</m> (pronounced <q>myoo</q>) is used for the mean. For a sample, we use <m>\overline{x}</m> (read <q>x bar</q>) to represent the mean. Keep this distinction in mind, as it can be a clue as to what type of data you are dealing with on a homework or exam problem.</p>
+		<p>Another thing to note is that the name <term>arithmetic mean</term> is important. First, we don't call this the <term>average</term>, even though most people think of it as the average. The reason is simply that the word average means <q>typical</q> and we have seen several ways to measure the <q>typical</q> value in a data set. Next, we specify that this is the <em>arithmetic</em> mean because there are actually different types of means. We could, for example, use the <term>geometric mean</term>, which is given by the formula:
+		<me>\sqrt[n]{x_1 \times x_2 \times \cdots \times x_n}</me></p>
+		<p>For many data sets the geometric mean and arithmetic mean are very close. But you wouldn't want to have your homework average computed using the geometric mean. To understand why not, think about what would happen if only one of your assignments was not turned in! In this text we will always use the arithmetic mean.  For that reason, we can simplify things by stating up front that we mean the <term>arithmetic mean</term> when we say <term>mean</term>.</p>
+		<p>The measure of spread most commonly used with the mean is called the <term>variance</term>. This can be thought of as the average (or mean) distance that each data point lies away from the mean. If we compute the average, however, we would get zero because of the +/- signs. So we square these differences, resulting in the following definition.</p>
+		<definition xml:id="def_variance">
+			<idx>variance</idx>
+			<idx><h>measures of spread</h><h>variance</h></idx>
+			<statement>
+				<p>The <term>variance</term> measures the average square of the distance of a value from the mean in a set of data. Symbolically,</p>
+				<sidebyside widths="50% 50%" margins="auto">
+					<p><me>\text{Population:}\quad\sigma^2 = \frac{\sum (x_i - \mu)^2}{n}</me></p>
+					<p><me>\text{Sample:}\quad s^2 = \frac{\sum (x_i -\overline{x})^2}{n-1}</me></p>
+				</sidebyside>
+			</statement>
+		</definition>
+		<p>Again we use a different symbol to represent the variance of a population, the Greek letter <m>\sigma^2</m> (pronounced <q>sig-muh squared</q>), and a sample, the Latin letter <m>s^2</m> (pronounced <q>s squared</q>). But the variance of a population also differs in a more substantial way from that of a sample. Notice that in a population, we divide the sum of the differences squared by <m>n</m>, the number of values in the population. But in a sample, we divide by <m>n-1</m>. This is an important distinction to remember. The reason for it is, unfortunately, beyond the scope of the course, but involves the fact that in a sample there is less variation than in the entire population.</p>
+		<p>One problem with using the variance as a measure of spread is that the units are different from the units of the data set. For example, if we say that the mean number of children in a US household is 2.2 with a variance of 0.4, then the mean is in <q>children</q>.  That is, there are an average of 2.2 children in US households. The variance, however, has units <q>square children.</q> What does it mean to say that the number of children varies by 0.4 square children? To remedy that, we often take the square root of the variance to get a measure of spread that is in the same units as the mean.</p>
+		<definition xml:id="def_stddev">
+			<idx>standard deviation</idx>
+			<idx><h>measures of spread</h><h>standard deviation</h></idx>
+			<statement>
+				<p>The <term>standard deviation</term> of a set of data is the square root of the variance. Symbolically,</p>
+				<sidebyside widths="50% 50%" margins="auto">
+					<p><me>\text{Population:}\quad\sigma = \sqrt{\frac{\sum(x_i - \mu)^2}{n}}</me></p>
+					<p><me>\text{Sample:}\quad s = \sqrt{\frac{\sum (x_i - \overline{x})^2}{n-1}}</me></p>
+				</sidebyside>
+			</statement>
+		</definition>
+		<p>Let's test out these new formulas on an example.</p>
+		<example xml:id="examp_center-spread_mean-stdev_computation">
+			<title>Computing the Mean and Standard Deviation</title>
+			<statement>
+				<p>Find the mean and standard deviation of sample data <m>\lbrace 4, 6, 3, 8, 4\rbrace</m>.</p>
+			</statement>
+			<solution>
+				<p>We will do this in three steps.
+				<ol>
+				  <li><p>We first compute the mean as follows.
+				    <me>\overline{x} = \frac{4 + 6 + 3 + 8 + 4}{5} = \frac{25}{5} = 5.</me></p></li>
+				  <li><p>Next, we compute the variance.  Using a table can make this computation easier.</p>
+				    <table>
+				     	<title></title>
+				     	<tabular>
+				     		<row bottom="medium">
+				     			<cell halign="center" right="medium"><m>x_i</m></cell>
+				     			<cell halign="center" right="medium"><m>(x_i - \overline{x})</m></cell>
+				     			<cell halign="center"><m>(x_i - \overline{x})^2</m></cell>
+				     		</row>
+				     		<row>
+				     			<cell right="medium"><m>4</m></cell>
+				     			<cell right="medium"><m>(4 - 5) = -1</m></cell>
+				     			<cell><m>(-1)^2 = 1</m></cell>
+				     		</row>
+				     		<row>
+				     			<cell right="medium"><m>6</m></cell>
+				     			<cell right="medium"><m>(6 - 5) = 1</m></cell>
+				     			<cell><m>(1)^2 = 1</m></cell>
+				     		</row>
+				     		<row>
+				     			<cell right="medium"><m>3</m></cell>
+				     			<cell right="medium"><m>(3 - 5) = -2</m></cell>
+				     			<cell><m>(-2)^2 = 4</m></cell>
+				     		</row>
+				     		<row>
+				     			<cell right="medium"><m>8</m></cell>
+				     			<cell right="medium"><m>(8 - 5) = 3</m></cell>
+				     			<cell><m>(3)^2 = 9</m></cell>
+				     		</row>
+				     		<row bottom="medium">
+				     			<cell right="medium"><m>4</m></cell>
+				     			<cell right="medium"><m>(4 - 5) = -1</m></cell>
+				     			<cell><m>(-1)^2 = 1</m></cell>
+				     		</row>
+				     		<row>
+				     		  <cell colspan="2" halign="right"><m>s^2 =</m></cell>
+				     		  <cell><m>\frac{16}{5-1} = 4</m></cell>
+				     		 </row>
+				     	</tabular>
+				    </table>
+				  </li>
+				  <li><p>Finally, the standard deviation is <m>s = \sqrt{4} = 2</m>.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>The number for this example turned out very nice. This is not always the case. Usually the standard deviation will involve decimals. In general, you should not round your answers during any intermediate steps, and then round your standard deviation to one decimal more than the number of decimals in the original data set. One quick way to estimate the standard deviation is based on the range of the data.</p>
+		<definition xml:id="def_stddev-estimate">
+			<idx><h>meausures of spread</h><h>estimating standard deviation</h></idx>
+			<statement>
+				<p>To <term>estimate the standard deviation</term> of a population, use the following general rule:
+				<me>\sigma \approx \frac{\text{range}}{4}.</me></p>
+			</statement>
+		</definition>
+		<p>In the above example, our estimate of <m>\frac{8-3}{4} = 1.25</m> is not terribly good, but this can be a quick and easy way to approximate the standard deviation if all you have are the minimum and maximum values of your population data.</p>
+
+		<figure xml:id="video_center-spread_mean-stdev-1">
+			<caption>Finding Means and Standard Deviations I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-09.mp4"/>
+		</figure>
+		<figure xml:id="video_center-spread_mean-stdev-2">
+			<caption>Finding Means and Standard Deviations II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_center-spread_mean-stdev-1">
+			<statement>
+				<p>A population of long tailed cats has the following tail-lengths, in inches.
+				<me>\lbrace 22, 19, 28, 23, 31\rbrace</me></p>
+				<p>Question: Find the standard deviation for this population data. Round your final answer to one decimal place.</p>
+			</statement>
+			<answer><p>4.3</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_mean-stdev-2">
+			<statement>
+				<p>A sample of newly manufactured widgets showed the following number of manufacturing defaults.
+				<me>\lbrace 2, 3, 0, 1, 0\rbrace</me></p>
+				<p>Question: Find the standard deviation for this sample data. Round your final answer to one decimal place.</p>
+			</statement>
+			<answer><p>1.3</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_mean-stdev-3">
+			<statement>
+				<p>A sample of driving speeds from five randomly selected cars yielded the following values, in miles per hour.
+				<me>\lbrace 68, 45, 71, 32, 55\rbrace</me></p>
+				<p>Question: Find the standard deviation for this sample data. Round your final answer to one decimal place.</p>
+			</statement>
+			<answer><p>16.2</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_center-spread_appropriate">
+		<title>Selecting Appropriate Summaries</title>
+		<p>We have now seen four different sets of numerical summaries:
+		  <ul>
+		  <li><p>the <xref ref="def_mode" text="custom">mode</xref>,</p></li>
+		  <li><p>the <xref ref="def_midrange" text="custom">midrange</xref> and <xref ref="def_range" text="custom">range</xref>,</p></li>
+		  <li><p>the <xref ref="def_median" text="custom">median</xref> and <xref ref="def_iqr" text="custom">IQR</xref>, and</p></li>
+		  <li><p>the <xref ref="def_mean" text="custom">mean</xref> and <xref ref="def_stddev" text="custom">standard deviation,</xref>.</p></li>
+		</ul></p>
+		<p>But how do we know when to use a particular measure of center? To better answer this question, let's review the strengths and weaknesses of each of these numerical summaries in tabular format.</p>
+		<table>
+			<title>Comparison of Measures of Center and Spread</title>
+			<tabular>
+				<col right="medium"></col>
+				<col halign="center"></col>
+				<col halign="center"></col>
+				<col halign="center"></col>
+				<col halign="center"></col>		
+				<row>
+					<cell></cell>
+					<cell>Qualitative</cell>
+					<cell>Quantitative</cell>
+					<cell>Sensitive</cell>
+					<cell>Considers</cell>
+				</row>
+				<row bottom="medium">
+					<cell></cell>
+					<cell>Data</cell>
+					<cell>Data</cell>
+					<cell>to Outliers</cell>
+					<cell>every Value</cell>
+				</row>
+				<row>
+					<cell><term>Mode</term></cell>
+					<cell>sometimes</cell>
+					<cell>sometimes</cell>
+					<cell>no</cell>
+					<cell>no</cell>
+				</row>
+				<row>
+					<cell><term>Midrange</term> and <term>Range</term></cell>
+					<cell>no</cell>
+					<cell>yes</cell>
+					<cell>yes</cell>
+					<cell>no</cell>
+				</row>
+				<row>
+					<cell><term>Median</term> and <term>IQR</term></cell>
+					<cell>no</cell>
+					<cell>yes</cell>
+					<cell>no</cell>
+					<cell>no</cell>
+				</row>
+				<row>
+					<cell><term>Mean</term> and <term>Standard Deviation</term></cell>
+					<cell>no</cell>
+					<cell>yes</cell>
+					<cell>somewhat</cell>
+					<cell>yes</cell>
+				</row>
+			</tabular>
+		</table>
+		<p>As we can see, each method has its own strengths and weaknesses. Based on these, we can summarize when to use which measures of center and spread, as outlined in the observation below.</p>
+		<observation xml:id="fig_center-spread_appropriate">
+			<p><ul>
+				<li><title>Mode</title>
+				  <p>Use the mode when dealing with qualitative data, or for a quick measure of center for small sets of quantitative data. The mode may not exist, and should not be used in general for larger sets of quantitative data.</p></li>
+				<li><title>Midrange and Range</title>
+				  <p>The midrange and range may be used for a quick estimate of center and variation, but should not be used if there are any indications of outliers.</p></li>
+				<li><title>Median and Inter-Quartile Range</title>
+				  <p>Use the median and inter-quartile range if there are indications of strong outliers in your data. Data sets which with strong outliers would include income or housing price data.</p></li>
+				<li><title>Mean and Standard Deviation</title>
+				  <p>The mean and standard deviation are the best all-purpose measures of center and variation for quantitative data. Unless your data set has strong outliers, these are the summary values you should use.</p></li>
+		  </ul></p>
+		</observation>
+		<example xml:id="examp_center-spread_appropriate_identify">
+			<title>Picking Appropriate Measures</title>
+			<statement>
+				<p>Determine which measure of center would be best in each of the following data sets.
+				<ol label="a">
+					<li><p>The salaries of all employee's at IBM.</p></li>
+					<li><p>A quick assessment of how well a group of athletes did in a 100-meter dash.</p></li>
+					<li><p>Determine the typical hair color in a group of teenagers.</p></li>
+					<li><p>Finding the typical height of a pine tree in a given acre of forest.</p></li>
+				</ol></p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Salaries of all employees at a large firm such as IBM are likely to include outliers, such as the CEO's salary. For this reason, the median is probably the best measure of center.</p></li>
+					<li><p>The midrange may be best. This set of data should not include many outliers, and the values will be small and relatively close together. This makes the midrange an acceptable way to quickly measure the center.</p></li>
+					<li><p>Hair color is a qualitative variable, so our only choice is to use the mode.</p></li>
+					<li><p>Pine tree heights on an acre of forest land should not have large outliers, and there are likely to be quite a few trees. Since there is no reason to use any of the other measures of center, the mean would be best here.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>Often it is helpful to compute several summaries. One useful comparison relates the mean and median together. When the mean is larger than the median, the data will have a histogram that is <xref ref="def_histogram-symmetry" text="custom">skewed right</xref>. When the mean is smaller, the histogram will be <xref ref="def_histogram-symmetry" text="custom">skewed left</xref>.  Finally, if the mean and median are equal, the histogram will be exactly <xref ref="def_histogram-symmetry" text="custom">symmetric</xref>.</p>
+
+		<figure xml:id="video_center-spread_appropriate-1">
+			<caption>Using Appropriate Measures I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-13.mp4"/>
+		</figure>
+		<figure xml:id="video_center-spread_appropriate-2">
+			<caption>Using Appropriate Measures II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-14.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_center-spread_appropriate-1">
+			<statement>
+				<p>A teacher wishes to summarize the score of a <q>typical</q> student on the most recent exam. The teacher is aware that one very gifted student received a perfect score, but that all other students struggled on the exam.</p>
+				<p>Question: Which measure of center should the teacher use to summarize the score of a typical student?</p>
+			</statement>
+			<answer><p>median</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_appropriate-2">
+			<statement>
+				<p>A basketball coach wishes to summarize the height of a group of students at basketball camp. Most of the students are in the same height range, with no unusually short or tall students whose heights would be considered outliers.</p>
+				<p>Question: Which measure of center should the coach use?</p>
+			</statement>
+			<answer><p>mean</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_center-spread_appropriate-3">
+			<statement>
+				<p>A travel agent wishes to summarize the most common hotel choice in Walla Walla. She collects data from her most recent 250 clients, recording the hotel in which each client stayed.</p>
+				<p>Question: What measure of center should the travel agent use to summarize this data?</p>
+			</statement>
+			<answer><p>mode</p></answer>
+		</exercise>
+	</subsection>
+
+</section>

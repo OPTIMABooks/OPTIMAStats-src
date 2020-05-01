@@ -1,1511 +1,500 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec_relative-standing">
   <title>Describing Data Numerically: Measures of Relative Standing</title>
-  <idx>><h>data</h></data>
 
+  <introduction xml:id="sec_relative-standing_intro">
+  	<title>Introduction</title>
+  	<p>It is sometimes useful to determine how one value in a data set compares to the rest of the data in the same set.  To do this, we compute a measure of <term>relative standing</term> for the value within its data set.</p>
+  	<p>For example, when ranking our favorite pizza toppints, we are specifying the relative standing of each topping.  If <q>mushroom</q> is your favorite topping, then it is ranked number one out of all possible toppings.  If <q>onion</q> is your second favorite topping, then it is not as high as mushroom, but better than everything else.</p>
+  	<p>This type of measure can also be useful for comparing data from two different data sets. A 70% on a math exam may be the top score, while 70% on a history exam is the bottom score. By giving the relative standing of these scores, we can more accurately compare them.</p>
+  	<p>The measures of relative standing we define in this section will be based on or closely related to the measures of center and spread we saw in the previous section.</p>
+  </introduction>
 
-1.3 -- Describing Data Numerically
-Last modified by Jonathan Duncan on Saturday, 12 November 2016, 9:56 PM
-This document was downloaded on Friday, 10 April 2020, 2:50 PM
-Introduction
-While describing data sets using graphs gives a good overview, it does not give
-us the detail that
-we need to do more advanced analysis. Graphs are meant to give a picture of the
-data, but in
-order to make decisions based on a set of data, we need to have numerical
-summaries.
-In this lesson, we will look at several types of numerical summaries, or
-measures, which we can
-compute from a set of quantitative data. These types of measures include the
-following.
-Measures of Center
-A measure of center gives a single number that represents the "typical" value
-in the set of
-data. One very familiar measure of center is the average. When you say that the
-average
-score on an exam is 80%, you are claiming that the typical student scored 80%.
-This is not,
-however, the only way to measure the center of a data set, as we shall see in
-this lesson.
-Measures of Spread
-Also called a measure of variation, this number or set of numbers indicates how
-spread out
-the data is. For example, if three students take an exam and all score 80%, the
-average
-would be 80%, but there is no variation between the scores. But if three
-students scored
-60%, 80%, and 100%, the average would still be 80%, but now there is a large
-amount of
-variation between their scores--they are much more spread out.
-Measures of Relative Standing
-It is sometimes useful to determine how one value in a data set compares to the
-rest of the
-data set. For example, when ranking a student in a class, we are giving the
-students
-relative standing. This type of measure can also be useful for comparing data
-from two
-different data sets. A 70% on a math exam may be the top score, while 70% on a
-history
-exam is the bottom score. By giving the relative standing of these scores, we
-can more
-accurately compare them.
-Each of these values can be computed for data drawn from a sample, or for a
-census of an entire
-population. We give them different names, however, depending on the source.
-Statistic
-A measurement describing some characteristic of a sample is called a statistic.
-Parameter
-A measurement describing some characteristic of a population is called a
-parameter.
-The measures of center that we will look at often come with a related measure
-of variation, so we
-will examine these together where appropriate. When you are ready to start
-looking at numerical
-summaries, click the continue button to get started.
-Terms and Definitions
-Skills
-Upon completion of this lesson, you should be able to describe the following
-terms:
-box-plot, empirical rule, five number summary, interquartile range, mean,
-median, midrange, mode, outlier, parameter, percentile,
-quartile, range, standard deviation, statistic, variance, z-score
-Upon completion of this lesson, you should be able to:
-Compute the Mode
-Compute the Midrange and the Range
-Compute the Median and 1
-st
-and 3
-rd
-Quartile
-Find a 5-Number Summary and Construct a Box-Plot
-Understand Percentiles
-Compute the Mean and Standard Deviation
-Compare Values Using z-Scores
-Apply the Empirical Rule to Mound-Shaped Data
-Select an Appropriate Measure of Center
-Note: This lesson contains 7 checkpoints.
-Mode
-We have already seen the term "mode" used in the context of a graph. Recall
-that the mode of a
-histogram or bar graph is the class or category that has the tallest bar. That
-is, it is the class or
-category that appears the most in the data set. This seems to be a reasonable
-way to describe a
-"typical" element of a data set.
-Mode
-The mode of a set of values is the value that appears most often. If more than
-one value is tied
-for the most appearances, each one is a mode. If no value appears more than
-once, there is no
-mode.
-The mode is unique among our measures of center as it is the only one that
-applies to both
-quantitative variables and qualitative variables. Consider the following
-examples.
-Example 1.3.1
-A breakout presentation at a business convention attracts 16 participants. The
-job title of each of
-these participants is as follows. Find the mode of this set of data.
-manager owner
-H.R. director
-owner
-manager H.R. director
-manager
-manager
-owner manager
-manager
-H.R. director
-manager owner
-owner
-manager
-Solution
-The mode is the most commonly appearing value. In this set of data, the values
-are manager (8
-times), owner (5 times) and H.R. directory (3 times). So the mode is "manager".
-Example 1.3.2
-A survey of 12 grocery store shoppers asked how many times a month these
-shoppers visit their
-favorite grocery store. Find the mode of the resulting data, shown below.
-6
-2
-5
-1
-3
-5
-3
-2
-7
-4
-1
-5
-3
-6
-4
-8
-Solution
-Notice that in this data set, both the 5 and the 3 appear three times. Every
-other value appears
-two or fewer times. This makes this set of data bimodal with modes 3 and 5.
-While the mode is an easy way to measure the center, and is in fact the only
-way we have to
-measure the center of a set of qualitative data, it is usually not the best
-choice for measuring the
-center of a set of quantitative data. To see why this may be so, consider the
-next example.
-Example 1.3.3
-Find the mode of the following sets of numbers.
-(a): { 1, 2, 5, 7, 12, 15, 19, 22, 50 }
-(b): { 1, 1, 20, 23, 26, 24, 29, 30, 27, 32, 19 }
-Solution
-The modes of these sets of numbers are as follows:
-1.The set (a) contains no repeated values. Therefore, according to the
-definition, there is
-no mode for this set.
-2.The set (b) contains only one repeated value, 1. So the mode is 1. However, 1
-is
-definitely not the "typical" value in the set since all other values are
-between 19 and 32.
-In summary, you should use the mode to measure the center of any qualitative
-set of data, or as a
-quick, but not definitive, measure of center for quantitative data. But be
-careful! The mode may not
-exist, there may be multiple modes, and if there is a single mode it may be
-very different from the
-"typical" values in the data set.
-Video Examples
-Example 1 - Finding the Mode
-Example 2 - Finding the Mode
-When you are ready for your first checkpoint question, click
-continue.
-Cluster
-Cluster
-Score: 0
-Mode - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-The following colors of cars were observed in the parking lot of the local
-grocery store.
-blue green black white
-white green blue yellow
-white white blue black
-black green red green
-Question
-Which of the following is/are the mode(s) for this set of data?
-green
-Score: 1
-white
-Score: 1
-black
-Score: 0
-red
-Score: 0
-blue
-Score: 0
-yellow
-Score: 0
-Mode - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1
-Question
-What is/are the mode(s) for this set of data?
-4
-Score: 1
-6
-Score: 1
-9
-Score: 1
-3
-Score: 1
-5
-Score: 0
-1
-Score: 0
-Mode - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-The following pets were found in 10 randomly selected homes.
-cat fish bird hamster ferret
-dog rabbit rat gerbil pig
-Question
-What is/are the mode(s) for this data set?
-there is no mode
-Score: 1
-gerbil
-Score: 0
-hamster
-Score: 0
-dog
-Score: 0
-rabbit
-Score: 0
-fish
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Midrange and Range
-When we think of the "typical" value in a set of data, we may also think of the
-word "middle." Our
-next measure of center is exactly that--the middle of the data set.
-Midrange
-The midrange  of a set of data is the value in the exact center of the data. To
-compute the
-midrange, use the formula:
-\(\text{midrange} = \frac{\text{maximum} + \text{minimum}}{2}\)
-where "maximum" is the maximum value in the data set and "minimum" is the
-minimum value.
-Notice that the midrange does involve some computation using numerical values,
-so it can only be
-used with quantitative variables--where such computations make sense. To
-measure how spread
-out the data is from the midrange, we use the range.
-Range
-The range of a set of data is the difference between the highest and lowest
-values in the data
-set. That is:
-range = maximum - minimum.
-Let's try out these new definitions with an example.
-Example 1.3.4
-A certain pond has been well stocked with fish for the upcoming fishing season.
-In order to keep
-a fish from this pond, it must be at least 13 inches long. To try to determine
-if the fish in the pond
-are long enough to allow fishing, a fish and game warden randomly catches and
-releases 20
-different fish, finding the following lengths, in inches. Find the range and
-midrange of this data.
-13.2
-10.8
-14.6
-17.2
-17
-18.3
-6.5
-13.4
-16.7
-11.3
-12.3
-9.8
-9.4
-11.6
-12.1
-8.7
-12.6
-13
-14.3
-13.1
-Solution
-To find the midrange and range we need to identify the maximum and minimum
-values in the
-data set. The largest value is 18.3 and the smallest is 6.5, Thus we compute:
-\(\text{midrange} = \frac{18.3+6.5}{2} = 12.4\)
-and
-\(\text{range} = 18.3 - 6.5 = 11.8.\)
-It looks like the pond is not yet ready to open for fishing. The typical fish,
-as measured by the
-midrange, is only 12.4 inches long and could not be kept.
-The midrange and range are useful tools for measuring the center and spread of
-a set of data, but
-there are several problems with them. The biggest problem is that both the
-midrange and range
-are extremely sensitive to outliers.
-Outlier
-An outlier in a data set is a value that is either much larger than the rest of
-the data or much
-smaller than the rest of the data.
-To see how an outlier can affect the midrange and range, let's take another
-look at the fish-length
-data from the previous example.
-Example 1.3.5
-The game warden believes that the 6.5 inch fish he caught in the above example
-is an outlier.
-He decides to redo the computation without that fish. Find the new midrange and
-range.
-Solution
-Without the outlier, the new minimum is 8.7. This gives the following values:
-\(\text{midrange} = \frac{18.3+8.7}{2} = 13.5\)
-and
-\(\text{range} = 18.3 - 8.7 = 9.6.\)
-With this new computation, it looks like the fish are in fact large enough to
-be caught--the typical
-fish length, as measured by the midrange, is 13.5 inches.
-Notice what a big difference the single 6.5 inch fish made! This is what we
-mean when we say that
-the midrange is sensitive to outliers. Another problem with the range and
-midrange is that they only
-use the extreme maximum and minimum values of the data set. Ideally, we would
-want every value
-in the set of data to have some part in computing the "typical" value and the
-"spread" of the data.
-For this reason, we will keep working on developing a better measure of center
-and spread.
-After looking at the following video examples, click continue for your next
-checkpoint question.
-Video Examples
-Example 3 - Finding the Midrange and
-Range
-Example 4 - Finding the Midrange and
-Range
-Cluster
-Cluster
-Score: 0
-Midrange/Range - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1
-Question
-What is the midrange for this data? Note that you must enter the value and not
-a formula.
-5
-Score: 1
--1000000000:10000000000
-Score: 0
-Midrange/Range - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1
-Question
-What is the range for this data? Note that you must enter a value and not a
-formula.
-8
-Score: 1
--10000000000:10000000000
-Score: 0
-Midrange/Range - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15
-Question
-What is the range for this data? Note that you must enter a value and not a
-formula.
-393
-Score: 1
--10000000000:10000000000
-Score: 0
-Midrange/Range - Question 4
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15
-Question
-What is the midrange for this data? Note that you must enter a value and not a
-formula.
-203.5
-Score: 1
--10000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Median and Quartiles
-To reinforce why we need a measure of center that is resistant to outliers,
-consider the following
-example.
-Example 1.3.6
-The most expensive house in a certain market is a $2,500,000.00 mansion. The
-least expensive
-house is an $8,000.00 mobile home. Do you think that the midrange is an
-accurate measure of
-the "typical" home value in this market?
-Solution
-To answer this question, let's first compute the midrange. This is:
-\(\text{midrange} = \frac{2500000 + 8000}{2} = 1254000.\)
-Do you think that the typical house really costs one and a quarter million
-dollars? Probably not!
-The midrange is not an appropriate measure of center.
-Once again, the outliers in this data set are affecting the midrange. To solve
-that problem, we will
-introduce a new measure of center that is both resistant to outliers (meaning
-that they do not affect
-it very much) and considers every value in the data set.
-Median
-The median of a data set is the middle number, or average of the two middle
-numbers, in the set
-of data once it has been arranged in increasing order.
-You may have heard of the median before. It is often used as a measure of
-center in data sets
-where we expect outliers, such as housing prices. Another common set of data in
-which the
-median is used is household income. The phrase "median household income" may
-sound familiar.
-For those of us working in Washington State with Bill Gates, it is a good thing
-that the median is
-used to measure typical incomes! Let's practice computing the median.
-Example 1.3.7
-Find the median of each set of data below.
-a.{ 14, 17, 10, 9, 16, 19, 12, 10, 15, 13 }
-b.{ 100, 215, 164, 117, 1000, 205, 178 }
-Solution
-There are two steps to computing the median, and it is important that we do
-step one first. That
-first step is to arrange the data in order. The second step is to locate the
-middle value. Let's try
-this on both of the data sets above.
-a.Our first step is to re-arrange this set of numbers in order, from smallest
-to largest:
-9, 10, 10, 12, 13, 14, 15, 16, 17, 19
-Then we find the middle number. Since there are an even number of values (ten
-of
-them), the exact middle lies half way between the two center values (5th and
-6th) which
-are 13 and 14. So the median is (13+14)/2 = 13.5.
-b.Again, we start by ordering the data:
-100, 117, 164, 178, 205, 215, 1000
-As there are an odd number of values in this data set (seven of them), the
-median is the
-single value in the exact center (the 4th value), which is 178.
-Notice that the 1000 in the second data set is a definite outlier. However, in
-computing the median,
-the actual value does not matter. The only thing that matters is its
-relationship to the rest of the
-data. This 1000 could be replaced by a more reasonable 220 and the median would
-not change.
-Bill Gates could make only $200,000 a year, and the median household income in
-Washington
-State would not change! This is what it means to be resistant to outliers.
-To measure the variation in a set of data, we can use a slight twist on the
-median. Notice that the
-median divides the set of data into two pieces. If we take each of those pieces
-and divide them in
-half, we are dividing the data into quarters. We can then look at the range
-between the first quarter
-of the data and the third quarter of the data. This gives us a measurement
-similar to the range, but
-since we are only looking at the middle half of the data, we will not be
-affected by any outliers at
-the extremes.
-Quartiles
-Any quantitative data set can be divided up into quarters using five quartiles.
-These quartiles
-are:
-Q
-0
-- The zeroth quartile is the minimum value in the data set.
-Q
-1
-- The first quartile divides the bottom quarter of the data from the rest of
-the data.
-Q
-2
-- The second quartile divides the bottom half of the data from the top half.
-This is
-more commonly called the median.
-Q
-3
-- The third quartile divides the bottom three-quarters of the data from the top
-quarter.
-Q
-4
-- The fourth quartile is the maximum value in the data set.
-The range between the Q1 and Q3 is of particular interest and, as mentioned
-above, it has a
-special name.
-Interquartile Range (IQR)
-The Interquartile Range, IQR for short, is the difference between the 3rd and
-1st quartiles. That
-is,
-IQR = Q
-3
-- Q
-1
-.
-To see how this works, let's revisit the fish-length example from the previous
-page.
-Example 1.3.8
-A certain pond has been well stocked with fish for the upcoming fishing season.
-In order to keep
-a fish from this pond, it must be at least 13 inches long. To try to determine
-if the fish in the pond
-are long enough to allow fishing, a fish and game warden randomly catches and
-releases 20
-different fish, finding the following lengths, in inches. Find the median and
-IQR for this data.
-13.2
-10.8
-14.6
-17.2
-17
-18.3
-6.5
-13.4
-16.7
-11.3
-12.3
-9.8
-9.4
-11.6
-12.1
-8.7
-12.6
-13
-14.3
-13.1
-Solution
-1.We first arrange the data in order. If you are doing this as a homework
-exercise, a
-spreadsheet program can be an invaluable tool. Simply cut and paste the above
-numbers
-into the spreadsheet and ask it to sort them for you. This results in:
-6.5, 8.7, 9.4, 9.8, 10.8, 11.3, 11.6, 12.1, 12.3, 12.6, 13, 13.1, 13.2, 13.4,
-14.3, 14.6, 16.7, 17, 17.2, 18.3
-Since there are 20 values in the data set, the median will be the average of
-the 10
-th
-and
-11
-th
-values. That is: (12.6+13)/2 = 12.8. According to the median, the fish are not
-quite
-long enough!
-2.To compute the IQR we need Q
-1
-and Q
-3
-. Q
-1
-can be found by computing the median of
-the first half of the data set. Those first ten numbers are:
-6.5, 8.7, 9.4, 9.8, 10.8, 11.3, 11.6, 12.1, 12.3, 12.6.
-The median of this data is (10.8+11.3)/2 = 11.05. We can find Q
-3
-in the same way, but
-working with the top half of the data.
-13, 13.1, 13.2, 13.4, 14.3, 14.6, 16.7, 17, 17.2, 18.3.
-The median of the top half of the data is (14.3+14.6)/2 = 14.5. Therefore, the
-IQR is
-14.5-11.05 = 3.45. This means that the middle half of the fish fall into a
-range of 3.45
-inches.
-The quartiles we have just seen are measures of relative standing. A measure of
-relative standing
-gives the position of a certain value in the data set. When we say that the
-first quartile is 11.05, we
-are saying that the value 11.05 (even though it is not in the data set above)
-divides the bottom
-quarter of the data from the top three-quarters of the data. Another related
-measure of relative
-standing is the percentile.
-Percentile
-The x
-th
-percentile is a value that divides the bottom x percent of the data from the
-top 100-x
-percent of the data in a given data set.
-If you think about percentiles and quartiles, you may recognize that quartiles
-are in fact specific
-percentiles. The first quartile, Q
-1
-, is the 25th percentile. The median, Q
-2
-, is the 50th percentile. And
-the third quartile, Q
-3
-, is the 75th percentile. Percentiles are seen most often in conjunction with
-standardized measurements, such as an infants weight, or standardized test
-results.
-Example 1.3.9
-Interpret the following statements involving the word percentile.
-a.When little Johnny was born, his height was only in the 20th percentile. But
-as he grew,
-he was soon taller than all of his peers.
-b.Sally really enjoys reading. She scored in the 95th percentile for reading on
-her most
-recent achievement test.
-Solution
-a.Johnny's height was in the 20th percentile, meaning that he was as tall or
-taller than 20%
-of newborns, and as tall or shorter than 80%. So relative to other newborns, he
-was fairly
-short.
-b.Sally scored in the 95th percentile, meaning that her score was as good or
-better than
-95% of children who took this achievement test. Stated from the opposite
-perspective,
-only 5% of children scored as well or better than Sally.
-For more examples, please watch the following videos.
-Video Examples
-Example 5 - Finding Medians, Quartiles,
-and the IQR
-Example 6 - Finding Medians, Quartiles,
-and the IQR
-When you are ready, click continue for your next checkpoint example.
-Cluster
-Cluster
-Score: 0
-Median and Quartiles - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15
-Question
-What is the median for this set of data?
-26
-Score: 1
--10000000000:10000000000
-Score: 0
-Median and Quartiles - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15
-Question
-What is the first quartile for this data? Note that you must enter a value and
-not a formula.
-16:18
-Score: 1
--10000000000:10000000000
-Score: 0
-Median and Quartiles - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1
-Question
-What is the median for this data? Note that you must enter the value and not a
-formula.
-5
-Score: 1
--10000000000:100000000000
-Score: 0
-Median and Quartiles - Question 4
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1
-Question
-What is the third quartile for this data? Note that you must enter the value
-and not a formula.
-6.5:7.5
-Score: 1
--10000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Five Number Summaries and Box-Plots
-The median and quartiles that we just saw can be used to create a graphic that
-represents the
-distribution (shape) of the data set. This graphic is referred to as a box-
-plot. Before we see how to
-build a box plot, however, let's look at the numbers that go into making the
-plot.
-Five Number Summary
-The five number summary for a set of data is the minimum, first quartile,
-median, third quartile,
-and maximum for that set of data, once any outliers have been removed.
-You have hopefully noticed that the five numbers that make up this summary are
-the five quartiles,
-Q
-0
-, Q
-1
-, Q
-2
-, Q
-3
-, and Q
-4
-that we saw on the last page, assuming that there are no outliers in the data
-set. We will define how to identify outliers in the context of a five number
-summary in the following
-step-by-step definition of a box-plot.
-Box-Plot
-A box-plot, also called a box-and-whisker plot, is the graphical representation
-of the five number
-summary for a set of data. To construct a box-plot, follow these steps.
-1.Draw a horizontal axis with a scale covering the entire range of values in
-the data set.
-2.Above that axis, draw a box with left side at the first quartile, and right
-side at the third
-quartile.
-3.Draw a vertical line inside the box, dividing it at the median.
-4.Sketch in temporary "fences" at 1.5 x IQR above and below the edges of the
-box.
-5.Mark any values from the data set that lie outside these fences with an
-asterisk (*) on the
-graph. They are outliers.
-6.Draw horizontal lines extending from the left edge of the box down to the
-minimum value
-in the data set that is not an outlier, and from the right edge of the box to
-the maximum
-value that is not an outlier.
-Unlike a histogram, the box-plot focuses on showing the range of data. This
-range, excluding
-outliers, is divided up into quarters allowing one to see where the data is
-most "tightly packed"
-together. Let's see how this works in an example.
-Example 1.3.10
-Construct a five-number summary and a box-plot for the data: { 14, 17, 10, 9,
-16, 19, 12, 10, 15,
-13 }
-Solution
-The first step is to compute the five number summary. To do that, we must
-arrange the data in
-order.
-9 10 10 12 13 14 15 16 17 19
-<
-Q1
-M Q3
->
-We have marked the minimum with a <, first quartile with Q1, median with M,
-third quartile with
-Q3, and maximum with >. This gives us the five number summary 9, 10, 13.5, 16,
-19. Now for
-the box-plot.
-Note that the temporary fences would have been at 10 - 1.5 x 6 = 1 and 16 + 1.5
-x 6 = 25, which
-are not within the range of the data, so we did not have any outliers in this
-set of data.
-To see more examples of box-plots in action, including some in which there are
-outliers, watch the
-following video examples.
-Video Examples
-Example 7 - Five Number Summaries
-and Box-Plots
-Example 8 - Five Number Summaries
-and Box-Plots
-Click continue to view your checkpoint question.
-Cluster
-Cluster
-Score: 0
-Five Number Summaries and Box-Plots - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15
-Question
-True or False: When constructing a box-plot, one of these values would be an
-outlier (above or
-below the "fences")?
-True
-Score: 1
-False
-Score: 0
-Five Number Summaries and Box-Plots - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-Consider the following set of data.
-4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1
-Question
-True or False: When constructing a box-plot, one of these values would be an
-outlier (above or
-below the "fences")?
-False
-Score: 1
-True
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Mean and Standard Deviation
-While the median is a good measure of center to use in the case where we know a
-set of data
-contains outliers, it does have one major disadvantage. Namely, it does not
-take the value of every
-data point into consideration. In many instances, we want each value in the
-data set to have weight
-in determining the "typical" value. To achieve this goal, we turn back to an
-already familiar
-measure of center, typically called the average.
-Mean
-The arithmetic mean, which we will call simply the mean, is a measure of center
-found by taking
-the sum of all values in the data set and dividing by the number of values in
-the data set.
-Symbolically,
-Population: \(\mu = \frac{\sum x_i}{n}\)
-Sample: \(\overline{x} = \frac{\sum x_i}{n}\)
-Where the \( x_i \) represent the values in the data set, n the number of
-values in the data set,
-and the Greek letter \( \sum \) stands for summation.
-Notice that there is a different symbol used for the mean depending on whether
-it is the mean of an
-entire population, or just the mean of a sample. For a population, the Greek
-letter \( \mu \),
-(pronounced "mu") is used for the mean. For a sample, we use \( \overline{x} \)
-(read "x bar") to
-represent the mean. Keep this distinction in mind, as it can be a clue as to
-what type of data you
-are dealing with in a homework or exam problem.
-Another thing to note is that the name "arithmetic mean" is important. First,
-we don't call this the
-average, even though most people think of it as the average. The reason is
-simply that the word
-average means "typical," and we have seen several ways to measure the "typical"
-value in a data
-set. Next, while we will call it the mean, the arithmetic mean is really only
-one type of mean. We
-could also look at the geometric mean which is given by the formula:
-\(\sqrt[n]{x_1 \times x_2 \times \cdots \times x_n}\)
-For many data sets the geometric mean and arithmetic mean are very close. But
-you wouldn't want
-to have your homework average computed using the geometric mean. To understand
-why not,
-think about what would happen if only one of your assignments was not turned
-in!
-The measure of variation most commonly used with the mean is called the
-variance. This can be
-thought of as the average distance that each data point lies away from the
-mean. If we compute
-the average, however, we would get zero because of the +/- signs. So we square
-these
-differences, resulting in the following definition.
-Variance
-The variance measures the average square of the distance of a value from the
-mean in a set of
-data. Symbolically,
-Population: \(\sigma^2 = \frac{\sum (x_i - \mu)^2}{n}\)
-Sample: \(s^2 = \frac{\sum (x_i -
-\overline{x})^2}{n-1}\)
-Again we use a different symbol to represent the variance of a population--the
-Greek letter \(
-\sigma \) (sigma) squared--and a sample--the Latin letter s squared. But the
-variance of a
-population also differs in a more substantial way from that of a sample. Notice
-that in a population,
-we divide the sum of the differences squared by n, the number of values in the
-population. But in a
-sample, we divide by n-1. This is an important distinction to remember. The
-reason for it is,
-unfortunately, beyond the scope of the course, but has something to do with the
-fact that in a
-sample there is less variation than in the entire population.
-One problem with using the variance as a measure of variation is that the units
-are different from
-the units of the data set. For example, if we say that the mean number of
-children in a US
-household is 2.2 with a variance of 0.4, then the mean has units "children"--
-there are an average of
-2.2 children in US households. The variance, however, has units "square
-children". What does it
-mean to say that the number of children varies by 0.4 square children? To
-remedy that, the actual
-measure of variation that we use with the mean is slightly different.
-Standard Deviation
-The standard deviation of a set of data is the square root of the variance.
-Symbolically,
-Population: \(\sigma = \sqrt{\frac{\sum(x_i - \mu)^2}{n}}\)
-Sample: \(s = \sqrt{\frac{\sum (x_i -
-\overline{x})^2}{n-1}}\)
-Let's test out these new formulas on an example.
-Example 1.3.11
-Find the mean and standard deviation of sample data {4, 6, 3, 8, 4}.
-Solution
-We will do this in three steps. First, the mean:
-\(\overline{x} = \frac{4 + 6 + 3 + 8 + 4}{5} = \frac{25}{5} = 5.\)
-Next, the variance. Using a table can make this computation easier.
-\( x_i \)
-\( (x_i - \overline{x}) \)
-\( (x_i - \overline{x})^2 \)
-4
-4 - 5 = -1
-(-1)
-2
-= 1
-6
-6 - 5 = 1
-1
-2
-= 1
-3
-3 - 5 = -2
-(-2)
-2
-= 4
-8
-8 - 5 = 3
-(3)
-2
-= 9
-4
-4 - 5 = -1
-(-1)
-2
-= 1
-\( s^2 = \)
-Finally, the standard deviation is \( s = \sqrt{4} = 2 \).
-The number for this example turned out very nice. This is not always the case.
-Usually the
-standard deviation will involve decimals. In general, you should not round your
-answers during any
-intermediate steps, and then round your standard deviation to one decimal more
-than the number
-of decimals in the original data set. One quick way to estimate the standard
-deviation is based on
-the range of the data.
-Estimating Standard Deviation
-To estimate the standard deviation of a population, use
-\(\sigma \approx \frac{\text{range}}{4}\)
-In the above example, our estimate of (8-3)/4 = 1.25 is not terribly good, but
-this can be a quick
-and easy way to approximate the standard deviation. Try watching the following
-video examples
-for more practice finding means and standard deviations.
-Video Examples
-Example 9 - Finding Means and
-Standard Deviations
-Example 10 - Finding Means and
-Standard Deviations
-When you are ready to try a checkpoint question, click continue.
-Cluster
-Cluster
-Score: 0
-Mean and Standard Deviation - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-A population of long tailed cats has the following tail-lengths, in inches.
-22,19, 28, 23, 31
-Question
-Find the standard deviation for this population data. Round your final answer
-to one decimal place.
-4.30:4.35
-Score: 1
--10000000000:10000000000
-Score: 0
-Mean and Standard Deviation - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-A sample of newly manufactured widgets showed the following number of
-manufacturing defaults.
-2, 3, 0, 1, 0
-Question
-Find the standard deviation for this sample data. Round your final answer to
-one decimal place.
-1.26:1.34
-Score: 1
--10000000000:10000000000
-Score: 0
-Mean and Standard Deviation - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-A sample of driving speeds from five randomly selected cars yielded the
-following values, in miles
-per hour.
-68, 45, 71, 32, 55
-Question
-Find the standard deviation for this sample data. Round your final answer to
-one decimal place.
-16.1:16.25
-Score: 1
--10000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-z-Scores and the Emperical Rule
-With the mean and standard deviation now defined, we can look at how those can
-be applied to
-describing and comparing data sets. A "standard" deviation can be thought of as
-a measure of
-typical distance from the mean. In a typical data set, most data is within
-three standard deviations
-of the mean.
-Example 1.3.12
-Determine which of the in values in the sample { 4, 10, 12, 13, 9, 10 }, if
-any, should be
-considered an outlier.
-Soultion
-1.We could use the IQR to determine if a value is an outlier. In this method,
-we will find the
-first and third quartiles and then take anything that is more than 1.5 x IQR
-away from
-these values to be an outlier. Arranging the data in order: 4, 9, 10, 10, 12,
-13, the
-quartiles are Q
-1
-: 9 and Q
-3
-: 12. So the IQR is 12-9 = 3 and 1.5 x 3 = 4.5. This gives an
-upper limit of 12+4.5 =16.5, so there are no outliers on the high side. The
-lower limit is
-9-4.5 = 4.5, so 4 is an outlier on the low side.
-2.Using the mean and standard deviation gives us another way to check for
-outliers.
-The mean is:
-\(\overline{x} = \frac{58}{6} \approx 9.7\)
-The standard deviation is:
-\(s = \sqrt{\frac{(4-9.7)^2 + (10-9.7)^2 + (12-9.7)^2 + (13-9.7)^2 + (9-9.7)^2
-+
-(10-9.7)^2}{5}} \approx 3.1\)
-So outliers will be bigger than
-\(\overline{x} + 3s = 9.7 + 3\times 3.1 = 19\)
-and smaller than
-\(\overline{x} - 3s = 9.7 - 3\times 3.1 = 0.4.\)
-Thus, there are no outliers using this model.
-This idea of measuring how unusual a value is by looking at the number of
-standard deviations it
-lies away from the mean is an important one for us to understand. We will use
-this concept many
-times in the weeks to come. There is a special name for this value which we
-state next.
-z-Score
-The z-score of a value is the number of standard deviations that it lies away
-from the mean. To
-compute the z-Score of a value x, use one of the following formulas:
-Population: \(z = \frac{x -
-\mu}{\sigma}\)
-Sample: \(z = \frac{x-\overline{x}}{s}\)
-Note that in both cases the z-score is computed by subtracting the mean from
-the value x and
-dividing by the standard deviation.
-Refining our second method in example 1.3.12, we can check individual values to
-determine their
-distance away from the mean, in terms of number of standard deviations, by
-computing their z-
-scores.
-Example 1.3.13
-In the last example, we saw that 4 was a potential outlier (according to the
-IQR) in the data set
-with mean \( \overline{x} = 9.7 \) and standard deviation \( s = 3.1 \). Find
-and interpret the z-
-score for 4.
-Solution
-The z-score for 4 is:
-\(z = \frac{4 - 9.7}{3.1} \approx -1.83\)
-This means that 4 lies 1.83 standard deviations below the mean. Since it is not
-at least three
-standard deviations above or below the mean, we do not consider it an outlier.
-Another useful application of z-scores is to compare values from two different
-data sets. A z-score
-gives us a measure of relative standing. That is, how far above or below the
-mean is this value
-compared to the rest of the data in that data set.
-Example 1.3.14
-Using z-scores, determine which is better. A score of 70% on an exam with an
-average score of
-65% and a standard deviation of 2.5%, or a score of 70% on an exam with an
-average score of
-65% and a standard deviation of 15%.
-Solution
-The first exam score of 70%, or 0.70, has a z-score of \(z = \frac{0.70 - 0.65}
-{0.025} = 2.0\).
-The second exam score of 70%, or 0.70, has a z-score of \( z = \frac{0.70-0.65}
-{0.15} \approx
-0.333\).
-So the score on the first exam is "higher" than the score on the second exam.
-Even though both
-scores are exactly the same value, 70%, a 70% on the first exam is actually a
-better score
-than a 70% on the second exam. This is because the first exam has a smaller
-standard
-deviation, meaning that the scores are more tightly grouped around the mean of
-65%.
-In the special case where we know that our data has a mound-shaped
-distribution, meaning that if
-we made a histogram it would be mound shaped with a mode right in the center
-and symmetric
-sides, we can use the z-scores to predict how much of the data will fall into
-certain ranges.
-Empirical Rule
-The empirical rule states that in a mound-shaped distribution,
-68% of the values will lie within one standard deviation of the mean (z-score
-between -1
-and 1),
-95% of the values will lie within two standard deviations of the mean (z-score
-between -2
-and 2), and
-99.7% of the values will lie within three standard deviations of the mean (z-
-score
-between -3 and 3).
-You can see then why a z-score of less than -3 or more than 3 would make a
-value an outlier. Only
-0.3% of values should be in this range. To help you visualize the empirical
-rule, take a look at the
-following picture.
-Now let's apply the empirical rule to an example.
-Example 1.3.15
-Suppose that the distribution of scores on a standardized exam is mound-shaped
-with a mean of
-\( \mu = 102.5 \) and standard deviation of \( \sigma = 9.8 \). Answer the
-following questions.
-a.What percent of the students scored between 82.9 and 122.1?
-b.Between what two scores did 68% of students score?
-c.The top 0.15% of students made at least what score?
-Solution
-1.Based on the empirical rule, since 82.9 = 102.5 - 2(9.8) and 122.1 = 102.5+2
-(9.8), this is
-the range that corresponds to 95% of the students.
-2.According to the empirical rule, 68% of students scored within one standard
-deviation of
-the mean. So this range is from 102.5 - 9.8 = 92.7 and 102.5 + 9.8 = 112.3.
-3.Finally, The top 0.15%, which is half of 0.3%, scored at least 3 standard
-deviations above
-the mean. So their score is at least 102.5 + 3(9.8) = 131.9.
-To see more z-scores in action, please view the following video examples.
-Video Examples
-Example 11 - z-Scores and the
-Empirical Rule
-Example 12 - z-Scores and the
-Empirical Rule
-When you are ready for your next checkpoint question, click continue.
-Cluster
-Cluster
-Score: 0
-z-Scores and the Emperical Rule - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-Sam had three midterm exams, and he scored as follows on these exams.
-English
-He scored a 43 on his English exam. The exam had a mean of 40 and a standard
-deviation
-of 7.
-Math
-On his math exam, Sam scored 78. The exam had a mean of 73 and a standard
-deviation
-of 9.5
-History
-Finally, on the history exam Sam scored 65. This exam had a mean of 60 and
-standard
-deviation of 8.2.
-Question
-Using z-scores, determine on which exam Sam actually scored best, relative to
-the rest of the
-class.
-History
-Score: 1
-Math
-Score: 0
-English
-Score: 0
-z-Scores and the Emperical Rule - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-A widget manufacturer produces widgets whose weights have a mound-shaped
-distribution with a
-mean of 14 oz. and standard deviation of 1.7 oz.
-Question
-Approximately what percent of the widgets produced will weigh between 8.9 and
-19.1 oz?
-99.7%
-Score: 1
-68%
-Score: 0
-95%
-Score: 0
-z-Scores and the Emperical Rule - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-The length of time that a typical student spends studying per day has a mound-
-shaped distribution
-with mean \(\mu = 161\) minutes and standard deviation \(\sigma = 51\) minutes.
-Question
-Use z-scores to determine which, if any, of the following study times should be
-considered outliers.
-2 minutes
-Score: 1
-365 minutes
-Score: 1
-294 minutes
-Score: 0
-29 minutes
-Score: 0
-105 minutes
-Score: 0
-none of these are outliers
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Selecting Appropriate Summaries
-We have now seen four different sets of numerical summaries.
-The mode, which measures the center
-The midrange and range, which measure center and variation
-The median and IQR, which measure center and variation
-The mean and standard deviation, which measure center and variation.
-How do we know when to use a particular measure of center? To better answer
-this question, let's
-review the strengths and weaknesses of each of these numerical summaries in
-tabular format.
-Qualitative Data
-Quantitative Data
-Sensitive to Outliers
-Considers every Value
-Mode
-sometimes
-sometimes
-no
-no
-Midrange and Range
-no
-yes
-yes
-no
-Median and IQR
-no
-yes
-no
-no
-Mean and Standard Deviation
-no
-yes
-somewhat
-yes
-As we can see, each method has its own strengths and weaknesses. Here is a
-summary of when
-each method is appropriate.
-Mode
-Use the mode when dealing with qualitative data, or for a quick measure of
-center for small
-sets of quantitative data. The mode may not exist, and should not be used in
-general for
-larger sets of quantitative data.
-Midrange and Range
-The midrange and range may be used for a quick estimate of center and
-variation, but
-should not be used if there are any indications of outliers.
-Median and Inter-Quartile Range
-Use the median and inter-quartile range if there are indications of strong
-outliers in your
-data. Data sets which with strong outliers would include income or housing
-price data.
-Mean and Standard Deviation
-The mean and standard deviation are the best all-purpose measures of center and
-variation for quantitative data. Unless your data set has strong outliers,
-these are the
-summary values you should use.
-Example 1.3.16
-Determine which measure of center would be best in each of the following data
-sets.
-a.The salaries of all employee's at IBM.
-b.A quick assessment of how well a group of athletes did in a 100-meter dash.
-c.Determine the typical hair color in a group of teenagers.
-d.Finding the typical height of a pine tree in a given acre of forest.
-Solution
-a.Salaries of all employees at a large firm such as IBM are likely to include
-outliers, such
-as the CEO's salary. For this reason, the median is probably the best measure
-of center.
-b.The midrange may be best. This set of data should not include many outliers,
-and the
-values will be small and relatively close together. This makes the midrange an
-acceptable way to quickly measure the center.
-c.Hair color is a qualitative variable, so our only choice is to use the mode.
-d.Pine tree heights on an acre of forest land should not have large outliers,
-and there are
-likely to be quite a few trees. Since there is no reason to use any of the
-other measures
-of center, the mean would be best here.
-Often it is helpful to compute several summaries. One useful comparison relates
-the mean and
-median together. When the mean is larger than the median, the data will have a
-histogram that is
-skewed right. When the mean is smaller, the histogram will be skewed left.
-Finally, if the mean and
-median are equal, the histogram will be exactly symmetric.
-The following video examples deal with selecting appropriate numerical
-summaries.
-Video Examples
-Example 13 - Using an Appropriate
-Measure of Center
-Example 14 - Using an Appropriate
-Measure of Center
-Cluster
-Cluster
-Score: 0
-Selecting Summaries - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-A teacher wishes to summarize the score of a "typical" student on the most
-recent exam. The
-teacher is aware that one very gifted student received a perfect score, but
-that all other students
-struggled on the exam.
-Question
-Which measure of center should the teacher use to summarize the score of a
-typical student?
-median
-Score: 1
-mean
-Score: 0
-midrange
-Score: 0
-mode
-Score: 0
-Selecting Summaries - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-A basketball coach wishes to summarize the height of a group of students at
-basketball camp.
-Most of the students are in the same height range, with no unusually short or
-tall students whose
-heights would be considered outliers.
-Question
-Which measure of center should the coach use?
-mean
-Score: 1
-median
-Score: 0
-mode
-Score: 0
-midrange
-Score: 0
-Selecting Summaries - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-A travel agent wishes to summarize the most common hotel choice in Walla Walla.
-She collects
-data from her most recent 250 clients, recording the hotel in which each client
-stayed.
-Question
-What measure of center should the travel agent use to summarize this data?
-mode
-Score: 1
-mean
-Score: 0
-median
-Score: 0
-midrange
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Chebyshev's Inequality
-While the empirical rule gives us a good way to estimate how much of a data set
-will lie within one,
-two, or three standard deviations of the mean, it does have limitations. First,
-it only works if we
-know the distribution is mound-shaped. If the distribution is skewed, bimodal,
-or otherwise not
-mound shaped the empirical rule will not give us accurate results. The other
-drawback is that this
-rule only tells us how much of the data is within the three ranges given: one,
-two, or three standard
-deviations on each side of the mean. The next rule we will examine is much more
-general.
-Chebyshev's Inequality
-Chebyshev's Inequality states that the proportion of values in any distribution
-that lie within k
-standard deviations of the mean is at least \( 1-1/k^2\). Symbolically, if P is
-the proportion of
-values in the range from \( \mu - k\sigma\) to \(\mu+k\sigma\), then \(P \geq
-1-\frac{1}{k^2}\).
-Now let's revisit example 1.3.15 and see how this new rule can be applied.
-Example 1.3.15 revisited
-Suppose that the mean score on a standardized exam is \(\mu = 102.5\) and
-standard deviation
-is \(\sigma = 9.8\). Without assuming that the distribution of scores is mound
-shaped, answer the
-following questions.
-a.What percent of the students scored between 82.9 and 122.1?
-b.What percent of students will score between 87.8 and 117.2?
-Solution
-1.We can no longer use the empirical rule, since we do not know if the
-distribution is
-mound shaped. Instead, we use Chebyshev's Inequality. As before, we see that
-102.5-82.9 = 19.6 = 2 x 9.8 and also 122.1 - 102.5 = 19.6 = 2 x 9.8. So the
-range is two
-standard deviations on either side of the mean. This means that k = 2 in
-Chebyshev's
-Inequality, and therefore the percent of values in this range is at least 1-1/2
-2
-= 3/4 or
-75%.
-Note that this is less than the 95% the empirical rule gave us. That is because
-we can not
-be as certain how the data is distributed if we don't know the shape of the
-distribution.
-2.For part 2, we again start by stating the range in terms of standard
-deviations from the
-mean. 102.5 - 87.8 = 14.7 and 14.7/9.8 = 1.5,. Also, 117.2-102.5 = 14.7 and
-again
-14.7/9.8 = 1.5. So our range is 1.5 standard deviations on either side of the
-mean, and k
-= 1.5 in Chebyshev's Inequality. Plugging this in we get at least 1-1/(1.5)
-2
-= 55.56% of
-the data is within 1.5 standard deviations of the mean.
-Note that this problem would not be possible with the empirical rule, even if
-we knew the
-distribution was mound shaped. 1.5 standard deviations is not one of the three
-options
-given by the empirical rule.
-The video examples below may help you understand Chebyshev's Inequality. Click
-continue to
-view your last checkpoint question of the section.
-Video Examples
-Example 15 - Using Chebyshev's
-Inequality
-Example 16 - Using Chebyshev's
-Inequality
-Cluster
-Cluster
-Score: 0
-Chebyshev's Inequality -- Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-The distribution of ages for college students is known to be highly skewed to
-the right. Suppose
-that at a certain university the average age is 21.7 years with a standard
-deviation of 0.56 years.
-Question
-At least what percentage of the student body is between 20.3 and 23.1 years
-old?
-84
-Score: 1
-0:1
-Score: 0
--1000000000:10000000000
-Score: 0
-Chebyshev's Inequality -- Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-Cleck all distributions for which the following is true.
-Question
-To what shape(s) of distribution does Chebyshev's Inequality apply?
-Mound-Shaped
-Score: 1
-Skewed Left
-Score: 1
-Skewed Right
-Score: 1
-None of these
-Score: 0
-Chebyshev's Inequality -- Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-Suppose that the weight of a certain mellon has an unknown distribution, but
-the mean is known to
-be 4.2 pounds and the standard deviation is 1.28 pounds.
-Question
-According to Chebyshev's Inequality, 75% of mellons will weigh between 1.64
-pounds and what
-maximum weight?
-6.76
-Score: 1
--1000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Powered by TCPDF (www.tcpdf.org)
+  <objectives xml:id="sec_relative-standing_obj">
+		<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul cols="2">
+					<li><p>box-plot</p></li>
+					<li><p>empirical rule</p></li>
+					<li><p>five-number summary</p></li>
+					<li><p>percentile</p></li>
+					<li><p>z-score</p></li>
+				</ul></p>
+			</li>					
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Interpret percentiles</p></li>
+					<li><p>Find a five-number summary and construct a box-plot</p></li>
+					<li><p>compute the z-score for a value within its data set</p></li>
+					<li><p>use z-scores to compare the relative standing of a value within two or more data sets</p></li>
+					<li><p>apply the empirical rule to mound-shaped distributions</p></li>
+					<li><p>use Cheybshev's inequality</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_relative-standing_percentiles">
+		<title>Percentiles</title>
+		<p>In the previous section, we learned how to compute <xref ref="def_quartiles" text="custom">the five quartiles</xref>.  While we used them to help us compute a measure of spread, the quartiles themselves are actually a measure of relative standing.  They help us define the location of a value within the given set of data.</p>
+		<example xml:id="examp_relative-standing_quartile">
+			<title>Using Quartiles for Relative Standing</title>
+			<statement>
+				<p>Obed's plumbing business charges $95 an hour for residential service.  A study of residential service rates among all plumbers in the same region finds the following quartiles.  How do Obed's rates compare to those of the other plubers in the region?
+					<ul cols="3">
+						<li><p><m>Q_0 = \$65</m></p></li>
+						<li><p><m>Q_1 = \$74</m></p></li>
+						<li><p><m>Q_2 = \$86</m></p></li>
+						<li><p><m>Q_3 = \$97</m></p></li>
+						<li><p><m>Q_4 = \$109</m></p></li>
+					</ul>
+				</p>
+			</statement>
+			<solution>
+				<p>Obed's rate of $95 an hour is between <m>Q_2</m>, the second quartile or median, and <m>Q_3</m>, the third quartile.  So he charges more than at least 50% of plumbers, but less than at most 75% of plumbers in his region.</p>
+			</solution>
+		</example>
+		<p>Another related measure of relative standing closely related to quartiles is a <term>percentile</term>.</p>
+		<definition xml:id="def_percentile">
+			<idx>percentile</idx>
+			<idx><h>measures of relative standing</h><h>percentile</h></idx>
+			<statement>
+				<p>The <m>x^\text{th}</m> <term>percentile</term> is a value that divides the bottom <m>x</m> percent of the data from the top <m>100-x</m> percent of the data in a given data set.</p>
+			</statement>
+		</definition>
+		<p>If you think about the relationship between percentiles and quartiles, you may recognize that quartiles are in fact specific percentiles. The first quartile, <m>Q_1</m>, is also the 25th percentile. The median, <m>Q_2</m>, is the 50th percentile. And the third quartile, <m>Q_3</m>, is the 75th percentile. Percentiles are seen most often in conjunction with standardized measurements, such as an infants weight or standardized test results.</p>
+		<example xml:id="examp_relative-standing_percentile">
+			<title>Interpreting Percentiles</title>
+			<statement>
+				<p>Interpret the following statements involving the word percentile.
+				<ol label="a">
+					<li><p>When little Johnny was born, his height was only in the 20th percentile. But as he grew, he was soon taller than all of his peers.</p></li>
+					<li><p>Isabella really enjoys reading. She scored in the 95th percentile for reading on her most recent achievement test.</p></li>
+				</ol></p>
+			</statement>
+			<solution>
+				<p>The following statements interpret the percentiles used above.
+					<ol label="a">
+						<li><p>Johnny's height was in the 20th percentile, meaning that he was as tall or taller than 20% of newborns and as short or shorter than 80%. So relative to other newborns, he was fairly short.</p></li>
+						<li><p>Isabella scored in the 95th percentile, meaning that her score was as good or better than 95% of children who took this achievement test. Stated from the opposite perspective, only 5% of children scored as well or better than Isabella.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+	</subsection>
+
+	<subsection xml:id="sec_relative-standing_box-plots">
+		<title>Five Number Summaries and Box-Plots</title>
+		<p>The median and quartiles that we saw in <xref ref="sec_center-spread_median-quartile"/> can be used to create a graphic that represents the distribution (shape) of the data set. This graphic is referred to as a <term>box-plot</term>. Before we see how to build a box plot, however, let's look at the numbers that go into making the plot.</p>
+		<definition xml:id="def_five-number-summary">
+			<idx>five-number summary</idx>
+			<statement>
+				<p>The <term>five-number summary</term> for a set of data is the minimum, first quartile, median, third quartile, and maximum for that set of data, once any outliers have been removed.</p>
+			</statement>
+		</definition>
+		<p>You have hopefully noticed that the five numbers that make up this summary are the five quartiles, <m>Q_0</m>, <m>Q_1</m>, <m>Q_2</m>, <m>Q_3</m>, and <m>Q_4</m>, that we saw previously, assuming that there are no outliers in the data set. We will define how to identify outliers in the context of a five number summary in the following step-by-step definition of a box-plot.</p>
+		<definition xml:id="def_box-plot">
+			<idx>box-plot</idx>
+			<idx><h>graphs</h><h>box-plot</h></idx>
+			<statement>
+				<p>A <term>box-plot</term>, also called a <term>box-and-whisker plot</term>, is the graphical representation of the five number summary for a set of data. To construct a box-plot, follow these steps. 
+					<ol>
+						<li><p>Draw an axis with a scale covering at least the entire range of values in the data set.</p></li>
+						<li><p>Draw a box (rectangle) with bottom at the first quartile, and top at the third quartile.</p></li>
+						<li><p>Draw a line through the box, dividing it at the median.</p></li>
+						<li><p>Sketch in temporary <q>fences</q> at 1.5 times the <xref ref="def_iqr" text="custom">IQR</xref> above and below the edges of the box.</p></li>
+						<li><p>Mark any values from the data set that lie outside these fences on the graph. They are outliers.</p></li>
+						<li><p>Draw <q>whiskers</q> from the bottom of the box down to the minimum value in the data set that is not an outlier, and from the top of the box to the maximum value that is not an outlier.</p></li>
+					</ol></p>
+			</statement>
+		</definition>
+		<p>Unlike a histogram, the box-plot focuses on showing the range of data. This range, excluding outliers, is divided up into quarters allowing one to see where the data is most <q>tightly packed</q> together. Let's see how this works in an example.</p>
+		<example xml:id="examp_relative-standing_box-plot">
+			<title>Constructing a Box-Plot</title>
+			<statement>
+				<p>Construct a five-number summary and a box-plot for the data: <m>\lbrace 14, 17, 10, 9, 16, 19, 12, 10, 15, 13, 42 \rbrace</m>.</p>
+			</statement>
+			<solution>
+				<p>The first step is to compute the five number summary. To do that, we must arrange the data in order.
+				  <me>9, 10, 10, 12, 13, 14, 15, 16, 17, 19, 42</me>
+				  Next we identify the following quartiles:
+				  <ul>
+				  	<li><p>Since there are eleven numbers, the second quartile, or median, is right in the middle at position 6.  So <m>Q_2 = 14</m>.</p></li>
+				  	<li><p>We will share this middle number between the upper and lower half of the data, so that there are six values in each half.  The first quartile is therefore the average of the 3rd and 4th numbers, and <m>Q_1 = \frac{10+12}{2} = 11</m>.</p></li>
+				  	<li><p>The third quartile is the median of the top six numbers, so it is <m>Q_3 = \frac{16+17}{2} = 16.5</m>.</p></li>
+				  </ul></p>
+				<p>Next, we compute the interquartile range and calculate where the fences should be placed.  We get <m>IQR = Q_3 - Q_1 = 16.5 - 11 = 5.5</m>.  So the upper and lower fences are at <m>Q_1 - 1.5(\text{IQR}) = 11 - 1.5(5.5) = 2.75</m> and at <m>Q_3 + 1.5(\text{IQR}) = 16.5 + 1.5(5.5) = 24.75</m>.</p>
+				<p>Note that the maximum value in the data set, 42, is above the upper fence.  So it is an outlier and will not be included in the five number summary.  The minimum and maximum vales of the remaining data are 9 and 19 respectively.  This gives us the following five-number summary.
+					<me>\text{Min} = 9, \quad Q_1 = 11, \quad \text{Median} = 14, \quad Q_3 = 16.5, \text{Max} = 19</me>
+				Using these, we construct the box-plot shown below, remembering to identify the outlier with an asterisk.</p>
+				<figure xml:id="examp_relative-standing_examp_box-plot_plot">
+					<caption>Box Plot</caption>
+					<image xml:id="image_relative-standing_examp_box-plot">
+						<latex-image>
+							\begin{filecontents}{testdata.dat}
+							  % 0 median q3 q1 max min
+							  0 14 16.5 11 19 9
+							\end{filecontents}					
+							\pgfplotsset{
+							  box plot/.style={
+							    /pgfplots/.cd,
+							    black,
+							    only marks,
+							    mark=-,
+							    mark size=1em,
+							    /pgfplots/error bars/.cd,
+							    y dir=plus,
+							    y explicit,
+							  },
+							  box plot box/.style={
+							    /pgfplots/error bars/draw error bar/.code 2 args={%
+							        \draw  ##1 -- ++(1em,0pt) |- ##2 -- ++(-1em,0pt) |- ##1 -- cycle;
+							    },
+							    /pgfplots/table/.cd,
+							    y index=2,
+							    y error expr={\thisrowno{3}-\thisrowno{2}},
+							    /pgfplots/box plot
+							  },
+							  box plot top whisker/.style={
+							    /pgfplots/error bars/draw error bar/.code 2 args={%
+							        \pgfkeysgetvalue{/pgfplots/error bars/error mark}%
+							        {\pgfplotserrorbarsmark}%
+							        \pgfkeysgetvalue{/pgfplots/error bars/error mark options}%
+							        {\pgfplotserrorbarsmarkopts}%
+							        \path ##1 -- ##2;
+							    },
+							    /pgfplots/table/.cd,
+							    y index=4,
+							    y error expr={\thisrowno{2}-\thisrowno{4}},
+							    /pgfplots/box plot
+							  },
+							  box plot bottom whisker/.style={
+							    /pgfplots/error bars/draw error bar/.code 2 args={%
+							      \pgfkeysgetvalue{/pgfplots/error bars/error mark}%
+							      {\pgfplotserrorbarsmark}%
+							      \pgfkeysgetvalue{/pgfplots/error bars/error mark options}%
+							      {\pgfplotserrorbarsmarkopts}%
+							      \path ##1 -- ##2;
+							    },
+							    /pgfplots/table/.cd,
+							    y index=5,
+							    y error expr={\thisrowno{3}-\thisrowno{5}},
+							    /pgfplots/box plot
+							  },
+							  box plot median/.style={
+							      /pgfplots/box plot
+							  }
+							}
+							\begin{tikzpicture}
+							  \begin{axis} [enlarge x limits=0.25,xtick=data]
+							    \addplot [box plot median] table {testdata.dat};
+							    \addplot [box plot box] table {testdata.dat};
+							    \addplot [box plot top whisker] table {testdata.dat};
+							    \addplot [box plot bottom whisker] table {testdata.dat};
+							    \addplot [dashed] {2.75};
+							    \addplot [dashed] {24.75};
+							    \addplot coordinates {(0,42)};
+							  \end{axis}
+							\end{tikzpicture}	
+						</latex-image>
+					</image>
+				</figure>
+			</solution>
+		</example>
+
+		<figure xml:id="video_relative-standing_box-plot-1">
+			<caption>Five Number Summaries and Box-Plots I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-07.mp4"/>
+		</figure>
+		<figure xml:id="video_relative-standing_box-plot-2">
+			<caption>Five Number Summaries and Box-Plots I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_relative-standing_box-plot-1">
+			<statement>
+				<p>Consider the following set of data: <me>\lbrace 15, 25, 7, 19, 400, 27, 51, 32, 19, 77, 52, 15 \rbrace.</me></p>
+				<p>Question: True or False: When constructing a box-plot, one of these values would be an outlier (above or below the <q>fences</q>)?</p>
+			</statement>
+			<answer><p>True</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_relative-standing_box-plot-2">
+			<statement>
+				<p>Consider the following set of data: <me>\lbrace 4, 6, 3, 9, 7, 4, 2, 6, 9, 3, 8, 5, 1 \rbrace.</me></p>
+				<p>Question: True or False: When constructing a box-plot, one of these values would be an outlier (above or below the <q>fences</q>)?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_relative-standing_z-score">
+		<title>z-Scores and the Emperical Rule</title>
+		<p>The mean and standard deviation can also be applied to measure the relative standing of a value within its data set. To do this, we think of a <xref ref="def_stddev" text="custom"><q>standard</q> deviation</xref> as a measure of typical distance from the mean. It turns out that in a typical data set, most data is within three standard deviations of the mean.  Anything that is more than three standard deviations from the mean can be considered an <xref ref="def_outlier" text="custom">outlier</xref>.</p>
+		<example xml:id="examp_relative-standing_z-score_outlier">
+			<title>Identifying Outliers</title>
+			<statement>
+				<p>Determine which, if any, of the in values in the sample <m>\lbrace 4, 10, 12, 13, 9, 10 \rbrace</m> should be considered outliers.</p>
+			</statement>
+			<solution>
+				<p>There are two ways to approach this problem, depending on which types of measures we want to use.
+					<ol>
+						<li><p>We could use the IQR to determine if a value is an outlier. In this method, we will find the first and third quartiles and then take anything that is more than <m>1.5 \times \text{IQR}</m> away from these values to be an outlier.</p>
+						  <p>Arranging the data in order gives:
+							<me>4, 9, 10, 10, 12, 13.</me>
+						  So the quartiles are <m>Q_1 = 9</m> and <m>Q_3 = 12</m>. Thus, the IQR is <m>12-9 = 3</m> and our fences are at
+						  <me>9 - 1.5(3) = 4.5 \qquad \text{and} \qquad 12 + 1.5(3) = 16.5.</me>
+						  Therefore, 4 is an outlier on the low side.</p></li>
+						 <li><p>Using the mean and standard deviation gives us another way to check for outliers.  Computing these gives:
+						   <me>\overline{x} = \frac{58}{6} \approx 9.7</me>
+						   <me>\scriptstyle s = \sqrt{\frac{(4-9.7)^2 + (10-9.7)^2 + (12-9.7)^2 + (13-9.7)^2 + (9-9.7)^2 + (10-9.7)^2}{5}} \approx 3.1.</me>
+						   So outliers will be less than <m>\overline{x} - 3s = 9.7 - 3(3.1) = 0.4</m> or bigger than <m>\overline{x} + 3s = 9.7 + 3(3.1) = 19</m>. Therefore, there are no outliers using this method.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>This idea of measuring how unusual a value is by looking at the number of standard deviations it lies away from the mean is an important one for us to understand. We will use this concept many times in the chapters to come. Because of its usefulness, there is a special name for this measure.</p>
+		<definition xml:id="def_z-score">
+			<idx>z-score</idx>
+			<idx><h>measures of relative standing</h><h>z-score</h></idx>
+			<statement>
+				<p>The <term>z-score</term> of a value is the number of standard deviations that it lies away from the mean. To compute the z-Score of a value x, use one of the following formulas:</p>
+				<sidebyside widths="50% 50%" margins="auto">
+					<p><me>\text{Population:}\quad z= \frac{x -\mu}{\sigma}</me></p>
+					<p><me>\text{Sample:}\quad z = \frac{x-\overline{x}}{s}</me></p>
+				</sidebyside>
+				<p>Note that in both cases the z-score is computed by subtracting the mean from the value <m>x</m> and dividing by the standard deviation.</p>
+			</statement>
+		</definition>
+		<p>Refining our second method in <xref ref="examp_relative-standing_z-score_outlier"/>, we can check individual values to determine their distance away from the mean in terms of number of standard deviations.  We do this by computing their z-scores.</p>
+		<example xml:id="examp_relative-standing_z-score_compute">
+			<title>Using z-Scores to Check for Outliers</title>
+			<statement>
+				<p>In the last example, we saw that 4 was a potential outlier according to the IQR.  The mean of the data set was <m>\overline{x} = 9.7</m> and the standard deviation was <m>s = 3.1</m>. Find and interpret the z-score for 4 in this data set.</p>
+			</statement>
+			<solution>
+				<p>The z-score for 4 is:
+					<me>z = \frac{4 - 9.7}{3.1} \approx -1.83</me>
+					This means that 4 lies approximately 1.83 standard deviations below (because the z-score is negative) the mean. Since it is not at least three standard deviations above or below the mean, we do not consider it an outlier.
+				</p>
+			</solution>
+		</example>
+		<p>Another useful application of z-scores is to compare values from two different data sets. A z-score gives us a measure of relative standing. That is, how far above or below the mean is this value compared to the rest of the data in that data set.</p>
+		<example xml:id="examp_relative-standing_z-score_compare">
+			<title>Using z-Scores to Compare Between Datas Sets</title>
+			<statement>
+				<p>Using z-scores, determine which is better. A score of 70% on an exam with an average score of 65% and a standard deviation of 2.5%, or a score of 70% on an exam with an average score of 65% and a standard deviation of 15%.</p>
+			</statement>
+			<solution>
+				<p>The first exam score of 70%, or 0.70, has a z-score of 
+					<me>z_1 = \frac{0.70 - 0.65}{0.025} = 2.0.</me>
+					The second exam score of 70%, or 0.70, has a z-score of
+					<me>z_2 = \frac{0.70-0.65}{0.15} \approx 0.333.</me>
+					Since <m>z_1 > z_2</m>, the score on the first exam is <q>higher</q> than the score on the second exam relative to the rest of the data.</p>
+					<p>Even though both scores are exactly the same value, 70%, <em>a 70% on the first exam is actually a better score than a 70% on the second exam</em>. This is because the first exam has a smaller standard deviation, meaning that the scores are more tightly grouped around the mean of 65%.</p>
+			</solution>
+		</example>
+		<p>In the special case where we know that our data has a <xref ref="def_histogram-mound-shaped" text="custom">mound-shaped distribution</xref>, meaning that if we made a histogram it would be mound shaped with a mode right in the center and symmetric sides, we can use the z-scores to predict how much of the data will fall into certain ranges.</p>
+		<definition xml:id="def_empirical-rule">
+			<idx>empirical rule</idx>
+			<statement>
+				<p>The empirical rule states that in a mound-shaped distribution,
+				<ul>
+				  <li><p>68% of the values will lie within one standard deviation of the mean (z-score between -1 and 1),</p></li>
+				  <li><p>95% of the values will lie within two standard deviations of the mean (z-score between -2 and 2), and</p></li>
+				  <li><p>99.7% of the values will lie within three standard deviations of the mean (z-score between -3 and 3).</p></li>
+				</ul></p>
+			</statement>
+		</definition>
+		<p>You can see then why a z-score of less than -3 or more than 3 would make a value an outlier. Only 0.3% of values should be in this range. To help you visualize the empirical rule, take a look at the following picture.</p>
+		<figure xml:id="image_relative-standing_empirical">
+			<caption>Empirical Rule</caption>
+			<image source="./images/relative-standing_empirical.png" width="100%"/>
+		</figure>
+		<p>Now let's apply the empirical rule to an example.</p>
+		<example xml:id="examp_relative-standing_empirical">
+			<title>Applying the Empirical Rule</title>
+			<statement>
+				<p>Suppose that the distribution of scores on a standardized exam is mound-shaped with a mean of <m>\mu = 102.5</m> and standard deviation of <m>\sigma = 9.8</m>. Answer the following questions.
+				<ol label="a">
+					<li><p>What percent of the students scored between 82.9 and 122.1?</p></li>
+					<li><p>Between what two scores did 68% of students score?</p></li>
+					<li><p>The top 0.15% of students made at least what score?</p></li>
+				</ol></p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Since <m>82.9 = 102.5 - 2(9.8)</m> and <m>122.1 = 102.5+2(9.8)</m>, the range extends two standard deviations above and below the mean.  So the empirical rule says that 95% of students will score in this range.</p></li>
+					<li><p>According to the empirical rule, 68% of students scored within one standard deviation of the mean. So this range is from <m>102.5 - 1(9.8) = 92.7</m> and <m>102.5 + 1(9.8) = 112.3</m>.</p></li>
+					<li>Finally, The top 0.15%, which is half of 0.3%, scored at least 3 standard deviations above the mean. So their score is at least <m>102.5 + 3(9.8) = 131.9</m>.</li></ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_relative-standing_z-score-1">
+			<caption>z-Scores and the Empirical Rule I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-11.mp4"/>
+		</figure>
+		<figure xml:id="video_relative-standing_z-score-2">
+			<caption>z-Scores and the Empirical Rule II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-12.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_relative-standing_z-score-1">
+			<statement>
+				<p>Sam had three midterm exams, and he scored as follows on these exams. 
+					<ul>
+						<li><title>English</title><p>He scored a 43 on his English exam. The exam had a mean of 40 and a standard deviation of 7.</p></li>
+						<li><title>Math</title><p>On his math exam, Sam scored 78. The exam had a mean of 73 and a standard deviation of 9.5.</p></li>
+						<li><title>History</title><p>Finally, on the history exam Sam scored 65. This exam had a mean of 60 and standard deviation of 8.2.</p></li>
+					</ul>
+				</p>
+				<p>Question: Using z-scores, determine on which exam Sam actually scored best, relative to the rest of the class.</p>
+			</statement>
+			<answer><p>History</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_relative-standing_z-score-2">
+			<statement>
+				<p>A widget manufacturer produces widgets whose weights have a mound-shaped distribution with a mean of 14 oz. and standard deviation of 1.7 oz.</p>
+				<p>Question: Approximately what percent of the widgets produced will weigh between 8.9 and 19.1 oz?</p>
+			</statement>
+			<answer><p>99.7%</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_relative-standing_z-score-3">
+			<statement>
+				<p>The length of time that a typical student spends studying per day has a mound-shaped distribution with mean <m>\mu = 161</m> minutes and standard deviation <m>\sigma = 51</m> minutes.</p>
+				<p>Question: Use z-scores to determine which, if any, of the following study times should be considered outliers: 2 minutes, 29 minutes, 105 minutes, 294 minutes, and 365 minutes</p>
+			</statement>
+			<answer><p>2 minutes and 365 minutes are outliers</p></answer>
+		</exercise>
+	</subsection>
+		
+  <subsection xml:id="sec_relative-standing_chebyshev">
+  	<title>Chebyshev's Inequality</title>
+		<p>While the empirical rule gives us a good way to estimate how much of a data set will lie within one, two, or three standard deviations of the mean, it does have limitations. First, it only works if we know the distribution is mound-shaped. If the distribution is skewed, bimodal, or otherwise not mound shaped the empirical rule will not give us accurate results. The other drawback is that this rule only tells us how much of the data is within the three ranges given: one, two, or three standard deviations on each side of the mean. The next rule we will examine is much more general.</p>
+		<definition xml:id="def_chebyshev">
+			<idx>Chebyshev's inequality</idx>
+			<statement>
+				<p><term>Chebyshev's Inequality</term> states that the proportion of values in any distribution that lie within <m>k</m> standard deviations of the mean is at least <m>1-\frac{1}{k^2}</m>. Symbolically, if <m>P</m> is the proportion of values in the range from <m>\mu - k\sigma</m> to <m>\mu+k\sigma</m>, then <me>P \geq 1-\frac{1}{k^2}.</me></p>
+			</statement>
+		</definition>
+		<p>Now let's revisit <xref ref="examp_relative-standing_empirical"/> and see how this new rule can be applied.</p>
+		<example xml:id="examp_relative-standing_chebyshev_find-P">
+			<title>Using Chebyshev's Inequality to Find Percentages</title>
+			<statement>
+				<p>Suppose that the mean score on a standardized exam is <m>\mu = 102.5</m> and standard deviation is <m>\sigma = 9.8</m>. Without assuming that the distribution of scores is mound shaped, answer the following questions.
+					<ol label="a">
+						<li><p>What percent of the students scored between 82.9 and 122.1?</p></li>
+						<li><p>What percent of students will score between 87.8 and 117.2?</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>We can no longer use the empirical rule, since we do not know if the distribution is mound shaped. Instead, we use Chebyshev's Inequality.
+					<ol label="a">
+					<li><p>Our first step is to figure out how many standard deviations 82.9 and 122.1 are on either side of the mean.  This is the value of <m>k</m> in Chebyshev's inequality.  We compute that by finding the difference between the mean and the lower bound of our range and dividing by <m>\sigma</m>.
+					  <me>k = \frac{\mu - \text{lower bound}}{\sigma} = \frac{102.5-82.9}{9.8} = 2</me>
+					  We could have found the same value using the upper bound.
+					  <me>k = \frac{\text{upper bound} - \mu}{\sigma} = \frac{122.1-102.5}{9.8} = 2</me>
+					  Therefore, the percent of values in this range is 
+					  <me>P \geq 1-\frac{1}{2^2} = 1 - \frac{1}{4} = \frac{3}{4} = 0.75 \text{ or } 75\%</me></p>
+					  <p>Note that this is less than the 95% the empirical rule gave us. That is because we can not be as certain how the data is distributed if we don't know the shape of the distribution.</p></li>
+					<li><p>For the second part, we again start by finding the value of <m>k</m>.
+					  <me>k = \frac{102.5 - 87.8}{9.8} = 1.5</me>
+					  So our range is 1.5 standard deviations on either side of the mean. Plugging this in we get
+					  <me>P \geq 1-\frac{1}{(1.5)^2} = 1-\frac{1}{2.25} \approx 0.5556.</me>
+					  So at least 55.6% of the data is within 1.5 standard deviations of the mean.</p>
+					  <p>Note that this problem would not be possible with the empirical rule, even if we knew the distribution was mound shaped. 1.5 standard deviations is not one of the three options given by the empirical rule.</p>
+					</li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>Chebyshev's inequality relates several things together:
+			<ul>
+				<li><p>the mean of the data set,</p></li>
+				<li><p>The standard deviation of the data set,</p></li>
+				<li><p>a range extending a certain number of standard deviations above and below the mean, and</p></li>
+				<li><p>a minimum percent of the data.</p></li>
+			</ul>
+			If we have any three of these values, we can use Chebyshev's inequality to relate them all together.  Consider the following examples.</p>
+		<example xml:id="examp_relative-standing_chebyshev_find-k">
+			<title>Using Chebyshev's Inequality to Find the Range</title>
+			<statement>
+				<p>Montly sales for a particular retail business follow an unknown distribution with a mean of <m>\mu = \$92,000</m> and a standard deviation of <m>\sigma = \$12,500</m>.  Use Chebyshev's inequality to determine between what minimum and maximum amount the montly sales figure will lie at least 75% of the time.</p>
+			</statement>
+			<solution>
+				<p>In this problem we are given the value of <m>P</m>, the proportion that lies within <m>k</m> standard deviations of the mean.  So we will use it to find <m>k</m>.
+				<md>					
+					<mrow>P \geq 1 - \frac{1}{k^2} \amp \Rightarrow 0.75 \geq 1 - \frac{1}{k^2}</mrow>
+					<mrow>\amp \Rightarrow 0.75 - 1 \geq - \frac{1}{k^2}</mrow>
+					<mrow>\amp \Rightarrow 0.25 \leq \frac{1}{k^2}</mrow>
+					<mrow>\amp \Rightarrow 4 \geq k^2</mrow>
+					<mrow>\amp \Rightarrow k \leq 2</mrow>
+				</md>
+				So the range of monthy sales is at most two standard deviations on either side of the mean, or from a minimum of <m>\$92,000-2(12,500) = \$67,000</m> to a maximum of <m>\$92,000+2(12,500) = \$117,000</m></p>
+			</solution>
+		</example>
+		<example xml:id="examp_relative-standing_chebyshev_find-sigma">
+			<title>Using Chebyshev's Inequality to Find the Standard Deviation</title>
+			<statement>
+				<p>The Matabolism rate of a drug is the rate at which the drug is eliminated from a patient's system. It is often measured in half-life, or the time it takes for 50% of the drug to be eliminated in the system.  Suppose that for a certain drug, the average half-life in a general patient is known to be <m>\mu = 5.5</m> hours.  A recent study found that in at least 99% of patients, the half-life was somewhere between 3.8 and 7.2 hours.  Use Chebyshev's inequality to determine the standard deviation of the drug half-life.</p>
+			</statement>
+			<solution>
+				<p>As in <xref ref="examp_relative-standing_chebyshev_find-P"/>, we are given a range of values.  In that example, we used it to find <m>k</m>k, but this required that we know the standard deviation <m>\sigma</m>.  But we are also given a percent of the population in the range, as in <xref ref="examp_relative-standing_chebyshev_find-k"/>.  So we can start by finding <m>k</m> with this information.
+				<md>
+					<mrow>P \geq 1 - \frac{1}{k^2} \amp \Rightarrow 0.99 \geq 1 - \frac{1}{k^2}</mrow>
+					<mrow>\amp \Rightarrow 0.01 \leq \frac{1}{k^2}</mrow>
+					<mrow>\amp \Rightarrow 100 \geq k^2</mrow>
+					<mrow>\amp \Rightarrow k \leq 10</mrow>
+				</md>
+				Thus, we know that the maximum range will be from 10 standard deviations below the mean to 10 standard deviations above the mean.  Or, using the minimum and expressing this symbolically,
+				<md>
+					<mrow>3.8 = \mu - k\sigma \amp \Rightarrow 3.8 = 5.5 - 10\sigma</mrow>
+					<mrow>\amp \Rightarrow 3.8 - 5.5 = -10\sigma</mrow>
+					<mrow>\amp \Rightarrow \sigma = \frac{3.8 - 5.5}{-10} \approx 0.17.</mrow>
+				</md>
+				Thus, the standard deviation is approximately 0.17 hours, or 10.2 minutes.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_relative-standing_chebyshev-1">
+			<caption>Using Chebyshev's Inequality I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-15.mp4"/>
+		</figure>
+		<figure xml:id="video_relative-standing_chebyshev-2">
+			<caption>Using Chebyshev's Inequality II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-16.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_relative-standing_chebyshev-1">
+			<statement>
+				<p>The distribution of ages for college students is known to be highly skewed to the right. Suppose that at a certain university the average age is 21.7 years with a standard deviation of 0.56 years.</p>
+				<p>Question: At least what percentage of the student body is between 20.3 and 23.1 years old?</p>
+			</statement>
+			<answer><p>84%</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_relative-standing_chebyshev-2">
+			<statement>
+				<p>Chebyshev's inequality can be used with which of the following distribution shapes?
+					<ul cols="2">
+						<li><p>Mound-Shaped</p></li>
+						<li><p>Skewed Left</p></li>
+						<li><p>Skewed Right</p></li>
+						<li><p>Uniform</p></li>
+					</ul>
+				</p>
+			</statement>
+			<answer><p>All of these</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_relative-standing_chebyshev-3">
+			<statement>
+				<p>Suppose that the weight of a certain mellon has an unknown distribution, but the mean is known to be 4.2 pounds and the standard deviation is 1.28 pounds.</p>
+				<p>Question: According to Chebyshev's inequality, 75% of mellons will weigh between 1.64 pounds and what maximum weight?</p>
+			</statement>
+			<answer><p>6.76 pounds</p></answer>
+		</exercise>
+ 	</subsection>
+
 </section>

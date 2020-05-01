@@ -31,8 +31,7 @@
 
   <xi:include href="sec_data.ptx"/>
   <xi:include href="sec_graphs.ptx"/>
-<!--  
-  <xi:include href="sec_center-and-spread.ptx"/>
+  <xi:include href="sec_center-spread.ptx"/>
   <xi:include href="sec_relative-standing.ptx"/>
--->
+
 </chapter>

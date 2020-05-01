@@ -16,160 +16,211 @@
 
 	<objectives xml:id="sec_graphs_obj">
 		<introduction>
-			<p>Upon completion of this lesson, you should be able to describe the following terms and complete the following tasks.</p>
+			<p>Upon completion of this lesson, you should be able to</p>
 		</introduction>
 		<ul>
-			<li><title>Terms and Definitions</title><p>
-			<ol @cols="2">
-				<li><p>area principle</p></li>
-				<li><p>bar graph</p></li>
-				<li><p>bimodal</p></li>
-				<li><p>center</p></li>
-				<li><p>class</p></li>
-				<li><p>class width</p></li>
-				<li><p>contingency table</p></li>
-				<li><p>expanded stem-and-leaf plot</p></li>
-				<li><p>frequency distribution</p></li>
-				<li><p>frequency table</p></li>
-				<li><p>histogram</p></li>
-				<li><p>marginal distribution</p></li>
-				<li><p>mound-shaped</p></li>
-				<li><p>multimodal</p></li>
-				<li><p>pie graph</p></li>
-				<li><p>relative frequency bar graph</p></li>
-				<li><p>relative frequency table</p></li>
-				<li><p>scatter plot</p></li>
-				<li><p>skewed left</p></li>
-				<li><p>skewed right</p></li>
-				<li><p>stacked bar graph</p></li>
-				<li><p>stem-and-leaf plot</p></li>
-				<li><p>symmetric</p></li>
-				<li><p>time series</p></li>
-				<li><p>uniform</p></li>
-				<li><p>unimodal</p></li>
-				<li><p>upper class limit</p></li>
-			</ol></p>
-			<li><title>Tasks</title><p>
-			<ol @cols="2">
-				<li><p>Organize data into frequency tables or frequency distributions</p></li>
-				<li><p>Create bar charts and histograms based on tables</p></li>
-				<li><p>Construct pie charts and charts for bivariate data</p></li>
-				<li><p>Construct Stem-and-Leaf plots</p></li>
-				<li><p>Select appropriate graphs to summarize given data</p></li>
-				<li><p>Interpret graphs by describing the center and shape</p></li>
-			</ol></p></li></li>
+			<li><p>describe the following terms:
+				<ul cols="2">
+					<li><p>area principle</p></li>
+					<li><p>bar graph</p></li>
+					<li><p>bimodal</p></li>
+					<li><p>center</p></li>
+					<li><p>class</p></li>
+					<li><p>class width</p></li>
+					<li><p>contingency table</p></li>
+					<li><p>expanded stem-and-leaf plot</p></li>
+					<li><p>frequency distribution</p></li>
+					<li><p>frequency table</p></li>
+					<li><p>histogram</p></li>
+					<li><p>marginal distribution</p></li>
+					<li><p>mound-shaped</p></li>
+					<li><p>multimodal</p></li>
+					<li><p>pie graph</p></li>
+					<li><p>relative frequency bar graph</p></li>
+					<li><p>relative frequency table</p></li>
+					<li><p>scatter plot</p></li>
+					<li><p>skewed left</p></li>
+					<li><p>skewed right</p></li>
+					<li><p>stacked bar graph</p></li>
+					<li><p>stem-and-leaf plot</p></li>
+					<li><p>symmetric</p></li>
+					<li><p>time series</p></li>
+					<li><p>uniform</p></li>
+					<li><p>unimodal</p></li>
+					<li><p>upper class limit</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Organize data into frequency tables or frequency distributions</p></li>
+					<li><p>Create bar charts and histograms based on tables</p></li>
+					<li><p>Construct pie charts and charts for bivariate data</p></li>
+					<li><p>Construct Stem-and-Leaf plots</p></li>
+					<li><p>Select appropriate graphs to summarize given data</p></li>
+					<li><p>Interpret graphs by describing the center and shape</p></li>
+				</ul></p>
+			</li>
 		</ul>
 	</objectives>
 
-	<subsection xml:id="sec_graphs_s1">
+	<subsection xml:id="sec_graphs_ss1">
 		<title>Qualitative Data</title>
 
-		<introduction xml:id="sec_graphs_sl_intro">
-			<p>Recall that a <xref ref="def_qualitative-variable">qualitative variable</xref> produces data that represents categories, and not numerical values. Consider the following example.</p>
-			<example xml:id="examp_graphs_s1_e1">
-				<title>Pizza Toppings</title>
+		<introduction xml:id="sec_graphs_ss1_intro">
+			<p>Recall that a <xref ref="def_qualitative-variable" text="custom">qualitative variable</xref> produces data that represents categories, and not numerical values. Consider the following example.</p>
+			<example xml:id="examp_graphs_organizing-data">
+				<title>Organizing Data</title>
 				<statement>
-					<p>To better understand their customers, a pizza parlor decides to collect a list of favorite pizza toppings. They choose an appropriate sampling technique and gather the following data from 96 customers. What does this data tell you?
-						<ul @cols="6">
-							<li><p>cheese</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>olives</p></li>
-							<li><p>cheese</p></li>
-							<li><p>olives</p></li>
-							<li><p>cheese</p></li>
-							<li><p>cheese</p></li>
-							<li><p>cheese</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>cheese</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>olives</p></li>
-							<li><p>pineapple</p></li>
-							<li><p>onions</p></li>
-							<li><p>cheese</p></li>
-							<li><p>sausage</p></li>
-							<li><p>onions</p></li>
-							<li><p>anchovies</p></li>
-							<li><p>olives</p></li>
-							<li><p>cheese</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>cheese</p></li>
-							<li><p>cheese</p></li>
-							<li><p>cheese</p></li>
-							<li><p>pineapple</p></li>
-							<li><p>mushrooms</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>pineapple</p></li>
-							<li><p>cheese</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>sausage</p></li>
-							<li><p>cheese</p></li>
-							<li><p>sausage</p></li>
-							<li><p>bacon</p></li>
-							<li><p>bacon</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>cheese</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>olives</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>olives</p></li>
-							<li><p>olives</p></li>
-							<li><p>olives</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>mushrooms</p></li>
-							<li><p>onions</p></li>
-							<li><p>bacon</p></li>
-							<li><p>sausage</p></li>
-							<li><p>sausage</p></li>
-							<li><p>olives</p></li>
-							<li><p>sausage</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>olives</p></li>
-							<li><p>bacon</p></li>
-							<li><p>sausage</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pineapple</p></li>
-							<li><p>olives</p></li>
-							<li><p>mushrooms</p></li>
-							<li><p>bacon</p></li>
-							<li><p>onions</p></li>
-							<li><p>bacon</p></li>
-							<li><p>olives</p></li>
-							<li><p>sausage</p></li>
-							<li><p>mushrooms</p></li>
-							<li><p>cheese</p></li>
-							<li><p>pineapple</p></li>
-							<li><p>bacon</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>olives</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>sausage</p></li>
-							<li><p>sausage</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>cheese</p></li>
-							<li><p>bacon</p></li>
-							<li><p>onions</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>pineapple</p></li>
-							<li><p>olives</p></li>
-							<li><p>cheese</p></li>
-							<li><p>bacon</p></li>
-							<li><p>green peppers</p></li>
-							<li><p>bacon</p></li>
-							<li><p>pepperoni</p></li>
-							<li><p>olives</p></li>
-							<li><p>Solution</p></li>
-						</ul>
-					</p>
+					<p>To better understand their customers, a pizza parlor decides to collect a list of favorite pizza toppings. They choose an appropriate sampling technique and gather the following data from 96 customers. What does this data tell you?</p>
+					<table xml:id="examp_graphs_organizing-data_table">
+						<title>Raw Pizza Topping Data</title>
+						<tabular>
+							<row>
+								<cell>cheese</cell>
+								<cell>green peppers</cell>
+								<cell>olives</cell>
+								<cell>cheese</cell>
+							</row>
+							<row>
+								<cell>olives</cell>
+								<cell>cheese</cell>
+								<cell>cheese</cell>
+								<cell>cheese</cell>
+							</row>
+							<row>								
+								<cell>green peppers</cell>
+								<cell>cheese</cell>
+								<cell>pepperoni</cell>
+								<cell>olives</cell>
+							</row>
+							<row>
+								<cell>pineapple</cell>
+								<cell>onions</cell>
+								<cell>cheese</cell>
+								<cell>sausage</cell>
+							</row>
+							<row>								
+								<cell>onions</cell>
+								<cell>anchovies</cell>
+								<cell>olives</cell>
+								<cell>cheese</cell>
+							</row>
+							<row>								
+								<cell>green peppers</cell>
+								<cell>cheese</cell>
+								<cell>cheese</cell>
+								<cell>cheese</cell>
+							</row>
+							<row>
+								<cell>pineapple</cell>
+								<cell>mushrooms</cell>
+								<cell>green peppers</cell>
+								<cell>pineapple</cell>
+							</row>
+							<row>								
+								<cell>cheese</cell>
+								<cell>green peppers</cell>
+								<cell>sausage</cell>
+								<cell>cheese</cell>
+							</row>
+							<row>
+								<cell>sausage</cell>
+								<cell>bacon</cell>
+								<cell>bacon</cell>
+								<cell>green peppers</cell>
+							</row>
+							<row>
+								<cell>cheese</cell>
+								<cell>pepperoni</cell>
+								<cell>pepperoni</cell>
+								<cell>olives</cell>
+							</row>
+							<row>								
+								<cell>pepperoni</cell>
+								<cell>pepperoni</cell>
+								<cell>green peppers</cell>
+								<cell>pepperoni</cell>
+							</row>
+							<row>								
+								<cell>olives</cell>
+								<cell>olives</cell>
+								<cell>olives</cell>
+								<cell>green peppers</cell>
+							</row>
+							<row>
+								<cell>pepperoni</cell>
+								<cell>pepperoni</cell>
+								<cell>mushrooms</cell>
+								<cell>onions</cell>
+							</row>
+							<row>								
+								<cell>bacon</cell>
+								<cell>sausage</cell>
+								<cell>sausage</cell>
+								<cell>olives</cell>
+							</row>
+							<row>
+								<cell>sausage</cell>
+								<cell>green peppers</cell>
+								<cell>olives</cell>
+								<cell>bacon</cell>
+							</row>
+							<row>
+								<cell>sausage</cell>
+								<cell>pepperoni</cell>
+								<cell>pineapple</cell>
+								<cell>olives</cell>
+							</row>
+							<row>								
+								<cell>mushrooms</cell>
+								<cell>bacon</cell>
+								<cell>onions</cell>
+								<cell>bacon</cell>
+							</row>
+							<row>								
+								<cell>olives</cell>
+								<cell>sausage</cell>
+								<cell>mushrooms</cell>
+								<cell>cheese</cell>
+							</row>
+							<row>
+								<cell>pineapple</cell>
+								<cell>bacon</cell>
+								<cell>green peppers</cell>
+								<cell>pepperoni</cell>
+							</row>
+							<row>								
+								<cell>olives</cell>
+								<cell>pepperoni</cell>
+								<cell>pepperoni</cell>
+								<cell>pepperoni</cell>
+							</row>
+							<row>								
+								<cell>sausage</cell>
+								<cell>sausage</cell>
+								<cell>pepperoni</cell>
+								<cell>pepperoni</cell>
+							</row>
+							<row>
+								<cell>cheese</cell>
+								<cell>bacon</cell>
+								<cell>onions</cell>
+								<cell>pepperoni</cell>
+							</row>
+							<row>								
+								<cell>pineapple</cell>
+								<cell>olives</cell>
+								<cell>cheese</cell>
+								<cell>bacon</cell>
+							</row>
+							<row>								
+								<cell>green peppers</cell>
+								<cell>bacon</cell>
+								<cell>pepperoni</cell>
+								<cell>olives</cell>
+							</row>
+						</tabular>
+					</table>						
 				</statement>
 				<solution>
 					<p>Without some organization, it is hard to glean anything from this data. We need a way to simplify things!</p>
@@ -177,82 +228,81 @@
 			</example>
 		</introduction>
 
-		<subsubsection xml:id="sec_grahs_s1-1">
+		<subsubsection xml:id="sec_grahs_ss1-1">
+			<title>Frequency Tables</title>
 			<p>Our first step in constructing a graph for this data is to summarize. With any qualitative variable, we can construct what is called a <term>frequency table</term> to summarize the values in our data set.</p>
 			<definition xml:id="def_frequency-table">
-				<title>Frequency Table</title>
 				<idx>frequency table</idx>
 				<statement>
 					<p>A <term>frequency table</term> is a two column table used to summarize the values of a	qualitative variable.	The first column contains the various categories that the variable can take on.	The second column contains the counts or frequency with which each category appears.</p>
 				</statement>
 			</definition>
-			<p>To see how this works, let's use a frequency table to summarize the pizza topping data set we saw in <xref ref="examp_graphs_s1_e1">our last example</xref>.</p>
-			<example xml:id="examp_graphs_s1_e2">
-				<title>Pizza Toppings Frequency Table</title>
+			<p>To see how this works, let's use a frequency table to summarize the pizza topping data set we saw in our first example.</p>
+			<example xml:id="examp_graphs_frequency-table">
+				<title>A Frequency Table</title>
 				<statement>
-					<p>Construct a frequency table for the pizza topping data seen in <xref ref="examp_graphs_s1_e1">the example above</xref>.  Does this table
-					give you a better picture of the data set?</p>
+					<p>Construct a frequency table for the pizza topping data seen in <xref ref="examp_graphs_organizing-data" text="custom">the example above</xref>.  Does this table	give you a better picture of the data set?</p>
 				</statement>
 				<solution>
-					<sidebyside widths="75% 25%" margins="auto" valign="middle">
+					<sidebyside widths="55% 40%" margins="0%" valign="middle">
 						<p>Steps:
 							<ol>
 								<li><p>List all of the possible pizza toppings in the first column of our table.</p></li>
-								<li><p>Count the frequency with which each topping appears.</p></li>
+								<li><p>Count the frequency with which each topping appears in <xref ref="examp_graphs_organizing-data_table" text="custom">the original data</xref>.</p></li>
 								<li><p>Check to ensure that the total of our counts adds up to the total number of values in the set of data.</p></li>
 							</ol>
 							This definitely gives us a clearer picture of the data set. We can now see the number of times each topping was selected as somebody's favorite.
 						</p>
-						<table xml:id="examp_graphs_s1_e2_table">
-							<title>Pizza Toppings</title>
+						<table xml:id="examp_graphs_frequency-table_table">
+							<title>Pizza Toppings Frequency Table</title>
 							<tabular>
 								<row bottom="medium">
 									<cell>Topping</cell>
-									<cell>Frequency</cell>
+									<cell halign="center">Frequency</cell>
 								</row>
 								<row>
 									<cell>Anchovies</cell>
-									<cell>1</cell>
+									<cell halign="center">1</cell>
 								</row>
 								<row>
 									<cell>Bacon</cell>
-									<cell>10</cell>
+									<cell halign="center">10</cell>
 								</row>
 								<row>
 									<cell>Cheese</cell>
-									<cell>17</cell>
+									<cell halign="center">17</cell>
 								</row>
 								<row>
 									<cell>Green Peppers</cell>
-									<cell>11</cell>
+									<cell halign="center">11</cell>
 								</row>
 								<row>
 									<cell>Mushrooms</cell>
-									<cell>4</cell>
+									<cell halign="center">4</cell>
 								</row>
 								<row>
 									<cell>Olives</cell>
-									<cell>15</cell>
+									<cell halign="center">15</cell>
 								</row>
 								<row>
 									<cell>Onions</cell>
-									<cell>5</cell>
+									<cell halign="center">5</cell>
 								</row>
 								<row>
 									<cell>Pepperoni</cell>
-									<cell>17</cell>
+									<cell halign="center">17</cell>
 								</row>
 								<row>
 									<cell>Pineapple</cell>
-									<cell>6</cell>
+									<cell halign="center">6</cell>
+								</row>
+								<row bottom="medium">
+									<cell>Sausage</cell>
+									<cell halign="center">10</cell>
 								</row>
 								<row>
-									<cell>Sausage</cell>
-									<cell>10</cell>
-								</row>
-								<row top="medium">
 									<cell>Total:</cell>
-									<cell>96</cell>
+									<cell halign="center">96</cell>
 								</row>
 							</tabular>
 						</table>
@@ -268,72 +318,72 @@
 					<p>A <term>relative frequency table</term> is a table in which each category is listed together with the ratio of the total values from the data set that fall into that category.</p>
 				</statement>
 			</definition>
-			<p>Let's revisit the <xref ref="examp_graphs_s1_e2">pizza topping example</xref> once again.</p>
-			<example xml:id="examp_graphs_s1_e3">
-				<title>Pizza Topping Relative Frequency Table</title>
+			<p>Let's revisit the pizza topping data once again, this time constructing a relative frequency table.</p>
+			<example xml:id="examp_graphs_relative-frequency-table">
+				<title>A Relative Frequency Table</title>
 				<statement>
-					<p>Construct a relative frequency table for the pizza topping data seen in <xref ref="examp_graphs_s2_e2">the last example</xref>.</p>
+					<p>Construct a relative frequency table for the pizza topping data seen in <xref ref="examp_graphs_organizing-data"/>.</p>
 				</statement>
 				<solution>
-					<sidebyside widths="75% 25%" margins="auto" valign="middle">
+					<sidebyside widths="50% 45%" margins="0%" valign="middle">
 						<p>Steps:
 							<ol>
-								<li><p>Start with the frequency table from the <xref ref="examp_graphs_s1_e2">previous example</xref>.</p></li>
+								<li><p>Start with the <xref ref="examp_graphs_frequency-table_table" text="custom">frequency table</xref> from the previous example.</p></li>
 								<li><p>Divide each category frequency by the grand total (in this case 96).</p></li>
 								<li><p>Check to ensure that the sum is 1. Note that in this case, the extra 0.0002 is a result of rounding error in our four-decimal-place answers.</p></li>
 							</ol>
 							With this relative frequency table, we can more easily tell how each category relates to the others.
 						</p>
-						<table xml:id="examp_graphs_s1_e3_table">
-							<title>Pizza Toppings</title>
+						<table xml:id="examp_graphs_relative-frequency-table_table">
+							<title>Pizza Toppings Relative Frequency Table</title>
 							<tabular>
 								<row bottom="medium">
 									<cell>Topping</cell>
-									<cell>Relative Frequency</cell>
+									<cell halign="center">Relative Frequency</cell>
 								</row>
 								<row>
 									<cell>Anchovies</cell>
-									<cell><m>\frac{1}{96} \approx 0.0104</m></cell>
+									<cell halign="center"><m>\frac{1}{96} \approx 0.0104</m></cell>
 								</row>
 								<row>
 									<cell>Bacon</cell>
-									<cell><m>\frac{10}{96} \approx 0.1042</m></cell>
+									<cell halign="center"><m>\frac{10}{96} \approx 0.1042</m></cell>
 								</row>
 								<row>
 									<cell>Cheese</cell>
-									<cell><m>\frac{17}{96} \approx 0.1771</m></cell>
+									<cell halign="center"><m>\frac{17}{96} \approx 0.1771</m></cell>
 								</row>
 								<row>
 									<cell>Green Peppers</cell>
-									<cell><m>\frac{11}{96} \approx 0.1146</m></cell>
+									<cell halign="center"><m>\frac{11}{96} \approx 0.1146</m></cell>
 								</row>
 								<row>
 									<cell>Mushrooms</cell>
-									<cell><m>\frac{4}{96} \approx 0.0417</m></cell>
-								</cell>
+									<cell halign="center"><m>\frac{4}{96} \approx 0.0417</m></cell>
+								</row>
 								<row>
 									<cell>Olives</cell>
-									<cell><m>\frac{15}{96} \approx 0.1563</m></cell>
+									<cell halign="center"><m>\frac{15}{96} \approx 0.1563</m></cell>
 								</row>
 								<row>
 									<cell>Onions</cell>
-									<cell><m>\frac{5}{96} \approx 0.0521</m></cell>
+									<cell halign="center"><m>\frac{5}{96} \approx 0.0521</m></cell>
 								</row>
 								<row>
 									<cell>Pepperoni</cell>
-									<cell><m>\frac{17}{96} \approx 0.1771</m></cell>
+									<cell halign="center"><m>\frac{17}{96} \approx 0.1771</m></cell>
 								</row>
 								<row>
 									<cell>Pineapple</cell>
-									<cell><m>\frac{6}{96} \approx 0.0625</m></cell>
+									<cell halign="center"><m>\frac{6}{96} \approx 0.0625</m></cell>
+								</row>
+								<row bottom="medium">
+									<cell>Sausage</cell>
+									<cell halign="center"><m>\frac{10}{96} \approx 0.1042</m></cell>
 								</row>
 								<row>
-									<cell>Sausage</cell>
-									<cell><m>\frac{10}{96} \approx 0.1042</m></cell>
-								</row>
-								<row top="medium">
 									<cell>Total:</cell>
-									<cell><m>1.0002</m></cell>
+									<cell halign="center"><m>1.0002</m></cell>
 								</row>
 							</tabular>
 						</table>
@@ -343,7 +393,7 @@
 			<p>While these tables are a good step in better displaying our data, we still need to translate this into a	picture. To see how we do that, continue on to the next section.</p>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_s1-2">
+		<subsubsection xml:id="sec_graphs_ss1-2">
 			<title>Graphs</title>
 			<p>One of the most basic ways to graphically represent data collected for a qualitative variable is using a bar graph.</p>
 			<definition xml:id="def_bar-graph">
@@ -353,297 +403,313 @@
 					<p>A <term>bar graph</term> is a graph for qualitative data in which each possible category is represented by a bar, the height of which corresponds to the frequency of that category in the	data set. These bars can be arranged in any order and are separated from each other by empty space.</p>
 				</statement>
 			</definition>
-			<p>Note that the first step in creating a bar chart from raw data is to construct a frequency table. Once that is done, a computer spreadsheet program such as OpenOffice or Microsoft Excel is a great	way to quickly construct bar graphs. Consider the following example, based on	our <xref ref="examp_data_s1-e2">pizza topping example</xref>.</p>
-			<example xml:id="examp_graphs_s1_e4">
-				<title>Pizza Topping Bar Graph</title>
+			<p>Note that the first step in creating a bar chart from raw data is to construct a frequency table. Once that is done, a computer spreadsheet program such as OpenOffice or Microsoft Excel is a great	way to quickly construct bar graphs. Consider the following example, based on	our pizza topping dats.</p>
+			<example xml:id="examp_graphs_bar-graph">
+				<title>Constructing a Bar Graph</title>
 				<statement>
-					<p>Construct a bar graph for the pizza topping data seen in <xref ref="examp_data_s1_e2" /></p>
+					<p>Construct a bar graph for the pizza topping data seen in <xref ref="examp_graphs_organizing-data" /></p>
 				</statement>
 				<solution>
-					<p>Based on the <xref ref="examp_data_s1_e2-table">frequency table for this data</xref>, we get the following bar graph.</p>
-					<image xml:id="examp_graphs_s1_e4_image" src="./images/graph_graphs_s1_e4.png" width="50%"/>
+					<p>Based on the <xref ref="examp_graphs_frequency-table_table" text="custom">frequency table for this data</xref>, we get the following bar graph.</p>
+					<figure xml:id="image_graphs_examp_bar-graph">
+						<caption>Pizza Topping Bar Graph</caption>
+						<image source="./images/graphs_examp_bar-graph.png" width="80%"/>
+					</figure>
 				</solution>
 			</example>
 			<p>What happens to the bar graph if we use the relative frequency table instead of the frequency table? We do get a new type of graph, but as we shall see, the shape of the graph will not change, just the scale. First, the definition.</p>
 			<definition xml:id="def_relative-frequency-bar-graph">
-				<title>Relative Frequency Bar Graph</title>
 				<idx><h>graphs</h><h>relative frequency bar graph</h></idx>
 				<statement>
 					<p>A relative frequency bar graph is a graph for qualitative data in which each category is represented by a bar, the height of which corresponds to the percent of the	data values that are in that category. These bars can be arranged in any order and are separated from each other by empty space.</p>
 				</statement>
 			</definition>
 			<p>Below we construct a relative frequency bar graph for the pizza topping example.</p>
-			<example xml:id="examp_graphs_s1_e5">
-				<title>Pizza Topping Relative Frequency Bar Graph</title>
+			<example xml:id="examp_graphs_relative-frequency-bar-graph">
+				<title>Constructing a Relative Frequency Bar Graph</title>
 				<statement>
-					<p>Construct a bar graph for the pizza topping data seen in <xref ref="examp_graphs_s1_e3"/>.</p>
+					<p>Construct a bar graph for the pizza topping data seen in <xref ref="examp_graphs_organizing-data"/>.</p>
 				</statement>
 				<solution>
-					<p>Based on the <xref ref="examp_graphs_s1_e3_table">relative frequency table</xref>, we get the following bar graph.</p>
-					<image xml:id="examp_graphs_s1_e5_image" src="./images/graph_graphs_s1_e5.png" width="50%"/>
+					<p>Based on the <xref ref="examp_graphs_relative-frequency-table_table" text="custom">relative frequency table</xref>, we get the following bar graph.</p>
+					<figure xml:id="image_graphs_Examp_relative-frequency-bar-graph">
+						<caption>Pizza Topping Relative Frequency Bar Graph</caption>
+						<image source="./images/graphs_examp_relative-frequency-bar-graph.png" width="80%"/>
+					</figure>
+					<p>Notice that the bar graph is scaled in terms of percent instead of the relative frequencies from the table.  This is a common quirk with using spreadsheet programs to produce such graphs.</p>
 				</solution>
 			</example>
 			<p>Both the bar graph and relative frequency bar graph are particularly useful for comparing the number or percent of values that are in one category with the number or proportion in another category. However it is sometimes better to show how each category frequency or proportion relates to the whole. For this type of situation, a <term>pie graph</term> is more useful.</p>
 			<definition xml:id="def_pie-graph">
-				<title>Pie Graph</title>
 				<idx><h>graphs</h><h>pie graph</h></idx>
 				<statement>
 					<p>A <term>pie graph</term> is a graph for qualitative data in which a circle is divided into sectors or wedges	representing the various categories. The area of these sectors is determined by	the relative frequency of the associated category.</p>
 				</statement>
 			</definition>
-			<p>With the same spreadsheet program we used to build our bar graphs, we can also construct pie	graphs. To see how this works, we will revisit <xref ref="examp_graphs_s1_e3">our pizza topping example</xref> one last time.</p>
-			<example xml:id="examp_graphs_s1_e6">
-				<title>Pizza Topping Pie Graph</title>
+			<p>With the same spreadsheet program we used to build our bar graphs, we can also construct pie	graphs. To see how this works, we will revisit our pizza topping example one last time.</p>
+			<example xml:id="examp_graphs_pie-graph">
+				<title>Constructing a Pie Graph</title>
 				<statement>
-					<p>Based on the <xref ref="examp_data_s1_e3_table">relative frequency table</xref>, we get the following pie graph.</p>
-					<image xml:id="examp_data_s1_e6_image" src="./images/graph_data_s1_e6.png" width="50%"/>
+					<p>Construct a pie graph for the pizza topping data seen in <xref ref="examp_graphs_organizing-data"/>.</p>
 				</statement>
+				<solution>
+					<p>Based on the <xref ref="examp_graphs_relative-frequency-table_table" text="custom">relative frequency table</xref> previously constructed for this data, we get the following pie graph.</p>
+					<figure xml:id="image_graphs_examp_pie-graph">
+						<caption>Pizza Topping Pie Graph</caption>
+						<image source="./images/graphs_examp_pie-graph.png" width="80%"/>
+					</figure>
+					<p>Again, spreadsheet programs often convert relative frequencies into percents when constructing a pie graph.</p>
+				</solution>
 			</example>
 			<p>There is one more situation involving qualitative variables which we must investigate.</p>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_s1-3">
+		<subsubsection xml:id="sec_graphs_ss1-3">
 			<title>Bivariate Data</title>
-			<p>The frequency tables and graphs that we've looked at so far work well for <xref xml:id="def_univariate-data">univariate data</xref>. But they need to be modified before they will work with data involving more than one variable. <xref xml:id="def_multivariage-data">Multivariate data</xref> can be very difficult to summarize and display graphically. Because of this, we usually just look at each variable separately. However when we have two variables (<xref ref="def_bivariate-data">bivariate data</xref>) there are	some special techniques that we can use to summarize and display the data.</p>
+			<p>The frequency tables and graphs that we've looked at so far work well for <xref ref="def_num-vars" text="custom">univariate data</xref>. But they need to be modified before they will work with data involving more than one variable. <xref ref="def_num-vars" text="custom">Multivariate data</xref> can be very difficult to summarize and display graphically. Because of this, we usually just look at each variable separately. However when we have two variables (<xref ref="def_num-vars" text="custom">bivariate data</xref>) there are	some special techniques that we can use to summarize and display the data.</p>
 			<definition xml:id="def_contingency-table">
-				<title>Contingency Table</title>
 				<idx>contingency table</idx>
 				<statement>
 					<p>A <term>contingency table</term>, also called a <term>two-way table</term>, is a table used to summarize bivariate qualitative data. The columns in this table represent the various categories of one of the two variables and the rows represent the categories of the other variable. In each cell (row-column combination) we record the number of subjects with that row category and column category.</p>
 				</statement>
 			</definition>
 			<p>To see how a contingency table can be read, let's look at an example involving college students and summer vacation plans.</p>
-			<example xml:id="examp_graphs_s1_e7">
-				<title>Class Standing and Summer Plans</title>
+			<example xml:id="examp_graphs_contingency-table">
+				<title>Using a Contingency Table</title>
 				<statement>
 					<p>Four hundred randomly selected college students are asked to give their class standing (Freshman, Sophomore, Junior, or Senior) and their summer plans (work, play, or study). The following contingency table summarizes the results of this survey.</p>
 					<p>Determinethe number of	Freshmen who are not working this summer.</p>
-					<table xml:id="examp_graphs_s1_e7_table">
+					<table xml:id="examp_graphs_contingency-table_table">
 						<title>Class Standing and Summer Plans</title>
 						<tabular>
-							<row below="medium">
-								<cell></cell>
-								<cell>Freshman</cell>
-								<cell>Sophomore</cell>
-								<cell>Junior</cell>
-								<cell>Senior</cell>
+							<row bottom="medium">
+								<cell right="medium"></cell>
+								<cell halign="center">Freshman</cell>
+								<cell halign="center">Sophomore</cell>
+								<cell halign="center">Junior</cell>
+								<cell halign="center">Senior</cell>
 							</row>
 							<row>
-								<cell left="medium">Work</cell>
-								<cell>23</cell>
-								<cell>35</cell>
-								<cell>30</cell>
-								<cell>51</cell>
+								<cell right="medium">Work</cell>
+								<cell halign="center">23</cell>
+								<cell halign="center">35</cell>
+								<cell halign="center">30</cell>
+								<cell halign="center">51</cell>
 							</row>
 							<row>
-								<cell left="medium">Play</cell>
-								<cell>49</cell>
-								<cell>62</cell>
-								<cell>29</cell>
-								<cell>17</cell>
+								<cell right="medium">Play</cell>
+								<cell halign="center">49</cell>
+								<cell halign="center">62</cell>
+								<cell halign="center">29</cell>
+								<cell halign="center">17</cell>
 							</row>
 							<row>
-								<cell left="medium">Study</cell>
-								<cell>28</cell>
-								<cell>17</cell>
-								<cell>46</cell>
-								<cell>13</cell>
+								<cell right="medium">Study</cell>
+								<cell halign="center">28</cell>
+								<cell halign="center">17</cell>
+								<cell halign="center">46</cell>
+								<cell halign="center">13</cell>
 							</row>
 						</tabular>
 					</table>
 				</statement>
 				<solution>
-					<p>The column labeled <em>Freshmen</em> has three rows corresponding to <em>work</em>, <em>play</em>, and	<em>study</em>. To get the number of Freshmen who are not working we add together those who are	playing and those	who are studying to get <m>49+28 = 77</m>.</p>
+					<p>The column labeled <em>Freshmen</em> has three rows corresponding to <em>work</em>, <em>play</em>, and	<em>study</em>. To get the number of Freshmen who are not working, we add together those who areplaying and those	who are studying which gives us <m>49+28 = 77</m>.</p>
 				</solution>
 			</example>
 			<p>When we create a contingency table, or if we are just given a contingency table, we sometimes will want to look at each variable separately. In the example above, we may want to know how many of	these students intend to work this summer. To answer this question, we need to total up the rows and/or columns. These totals are typically displayed in the margins of the	table, leading to the	following definition.</p>
 			<definition xml:id="def_marginal-distribution">
-				<title>Marginal Distribution</title>
 				<idx>marginal distribution</idx>
 				<statement>
 					<p>A <term>marginal distribution</term> of a contingency table is either the sums of the rows of that contingency table, or the sum of the columns of that contingency table.</p>
 				</statement>
 			</definition>
 			<p>Let's find the marginal distributions for the student summer plans example	above.</p>
-			<example xml:id="examp_graphs_s1_e8">
-				<title>Marginal Distributions of Class Standing and Summer Plans</title>
+			<example xml:id="examp_graphs_marginal-distribution">
+				<title>Computing Marginal Distributions</title>
 				<statement>
-					<p>Construct the marginal distributions for the contingency table seen in <xref ref="examp_graphs_s1_e7"/>. Use these	distributions to determine both the number of students who plan to work this summer and the number of Juniors who took part in the study.</p>
+					<p>Construct the marginal distributions for the contingency table seen in <xref ref="examp_graphs_contingency-table"/>. Use these distributions to determine both the number of students who plan to work this summer and the number of Juniors who took part in the study.</p>
 				</statement>
 				<solution>
-					<p>In order to find these marginal distributions, we must find the total in each row and column of the table in <xref ref="examp_graphs_s1_e7"/>. Once that is done, we can answer these questions by reading off the appropriate	totals.</p>
-					<table xml:id="examp_graphs_s1_e8_table">
+					<p>In order to find these marginal distributions, we must find the total in each row and column of <xref ref="examp_graphs_contingency-table_table" text="custom">the contingency table</xref>. Once that is done, we can answer these questions by reading off the appropriate	totals.</p>
+					<table xml:id="examp_graphs_marginal-distribution_table">
 						<title>Marginal Distributions of Class Standing and Summer Plans</title>
 						<tabular>
-							<row below="medium">
-								<cell></cell>
-								<cell>Freshman</cell>
-								<cell>Sophomore</cell>
-								<cell>Junior</cell>
-								<cell>Senior</cell>
-								<cell><em>total</em></cell>
+							<row bottom="medium">
+								<cell right="medium"></cell>
+								<cell halign="center">Freshman</cell>
+								<cell halign="center">Sophomore</cell>
+								<cell halign="center">Junior</cell>
+								<cell right="minor" halign="center">Senior</cell>
+								<cell halign="center"><em>total</em></cell>
 							</row>
 							<row>
-								<cell left="medium">Work</cell>
-								<cell>23</cell>
-								<cell>35</cell>
-								<cell>30</cell>
-								<cell>51</cell>
-								<cell><em>139</em></cell>
+								<cell right="medium">Work</cell>
+								<cell halign="center">23</cell>
+								<cell halign="center">35</cell>
+								<cell halign="center">30</cell>
+								<cell right="minor" halign="center">51</cell>
+								<cell halign="center"><em>139</em></cell>
 							</row>
 							<row>
-								<cell left="medium">Play</cell>
-								<cell>49</cell>
-								<cell>62</cell>
-								<cell>29</cell>
-								<cell>17</cell>
-								<cell><em>157</em></cell>
+								<cell right="medium">Play</cell>
+								<cell halign="center">49</cell>
+								<cell halign="center">62</cell>
+								<cell halign="center">29</cell>
+								<cell right="minor" halign="center">17</cell>
+								<cell halign="center"><em>157</em></cell>
+							</row>
+							<row bottom="minor">
+								<cell right="medium">Study</cell>
+								<cell halign="center">28</cell>
+								<cell halign="center">17</cell>
+								<cell halign="center">46</cell>
+								<cell right="minor" halign="center">13</cell>
+								<cell halign="center"><em>104</em></cell>
 							</row>
 							<row>
-								<cell left="medium">Study</cell>
-								<cell>28</cell>
-								<cell>17</cell>
-								<cell>46</cell>
-								<cell>13</cell>
-								<cell><em>104</em></cell>
-							</row>
-							<row>
-								<cell left="medium"><em>total</em></cell>
-								<cell><em>100</em></cell>
-								<cell><em>114</em></cell>
-								<cell><em>105</em></cell>
-								<cell><em>81</em></cell>
+								<cell right="medium"><em>total</em></cell>
+								<cell halign="center"><em>100</em></cell>
+								<cell halign="center"><em>114</em></cell>
+								<cell halign="center"><em>105</em></cell>
+								<cell right="minor" halign="center"><em>81</em></cell>
 							</row>
 						</tabular>
 					</table>
-					<p>From the marginal distributions, we find that <em>139</em> students plan to work this summer and <em>105</em> Juniors participated in the study.</p>
-					<note><p>The sum of the row totals and column totals should both be the grand total, 400 in this case.</p></note>
+					<p>From the marginal distribution for summer activities (the row totals), we find that <em>139</em> students plan to work this summer.  From the marginal distribution for class standing (the column totals), we see that <em>105</em> Juniors participated in the study.</p>
+					<p>Note that the sum of the row totals and column totals should both add up to the grand total, which is 400 in this case.</p>
 				</solution>
 			</example>
 			<p>A contingency table is a great tool for summarizing bivariate qualitative data. But in order to describe this data with a graph, we will need to make a modification to our bar graph. We will use a	special type of bar graph called a <term>stacked bar graph</term>.</p>
 			<definition xml:id="def_stacked-bar-graph">
-				<title>Stacked Bar Graph</title>
 				<idx><h>graphs</h><h>stacked bar graph</h></idx>
+				<idx><h>graphs</h><h>stacked bar graph</h><h>primary variable</h></idx>
+				<idx><h>graphs</h><h>stacked bar graph</h><h>secondary variable</h></idx>
 				<statement>
-					<p>A <term>stacked bar graph</term> is used to display the data in a <xref ref="def_contingency-table">contingency table</xref>. One of the two variables				is chosen as the primary variable, and a bar is created for each category of the primary variable. The height of the bar is equal to the <xref ref="def_marginal-distribution">marginal distribution</xref> entry for that category. The bar is	broken up into <q>stacked</q> pieces, the heights of which represent the frequency of the secondary variable categories within that primary variable category.</p>
+					<p>A <term>stacked bar graph</term> is used to display the data in a <xref ref="def_contingency-table" text="custom">contingency table</xref>. One of the two variables is chosen as the <term>primary variable</term>, and a bar is created for each category of the primary variable. The height of the bar is equal to the <xref ref="def_marginal-distribution" text="custom">marginal distribution</xref> entry for that category. The bar is broken up into <q>stacked</q> pieces, the heights of which represent the frequency of the <term>secondary variable</term> categories within that primary variable category.</p>
 				</statement>
 			</definition>
 			<p>This definition can be difficult to decipher. Let's look at stacked bar graphs	for the summer plans data. Again, these graphs were created using a spreadsheet program.</p>
-			<example xml:id="examp_s1_e9">
-				<title>Summer Plans Stacked Bar Graphs</title>
+			<example xml:id="examp_graphs_stacked-bar-graph">
+				<title>Constructing Stacked Bar Graphs</title>
 				<statement>
-					<p>Create two stacked bar graphs for the contingency table seen in <xref ref="examp_graph_s1_e7"/><emdash/>one graph with class standing as the primary variable, and the other with summer plans as the primary variable.</p>
+					<p>Create two stacked bar graphs for the contingency table seen in <xref ref="examp_graphs_contingency-table"/><ndash/>one graph with class standing as the primary variable, and the other with summer plans as the primary variable.</p>
 				</statement>
 				<solution>
 					<p>First we create a graph with class standing as the primary variable.</p>
-					<image xml:id="examp_graphs_s1_e9_image-1" source="./images/graph_graphs_s1_e9-1.png" width="50%"/>
+					<figure xml:id="image_graphs_stacked-bar-graph-a">
+						<caption>Summer Plans by Class Standing</caption>
+						<image source="./images/graphs_stacked-bar-graph-a.png" width="80%"/>
+					</figure>
 					<p>And then the graph with summer plans as the primary variable.</p>
-					<image xml:id="examp_graphs_s1_e9_image-2" source="./images/graph_graphs_s1_e9-2.png" width="50%"/>
+					<figure xml:id="image_graphs_stacked-bar-graph-b">
+						<caption>Class Standing by Summer Plans</caption>
+						<image source="./images/graphs_stacked-bar-graph-b.png" width="80%"/>
+					</figure>
 				</solution>
 			</example>
 			<p>To see more examples of summarizing and displaying graphs for qualitative data, see the following video examples.</p>
+		
+			<figure xml:id="video_graphs_graphing-qualitative-1">
+				<caption>Summarizing and Graphing Qualitative Data I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-01.mp4"/>
+			</figure>
+			<figure xml:id="video_graphs_graphing-qualitative-2">
+				<caption>Summarizing and Graphing Qualitative Data II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-02.mp4"/>
+			</figure>
+			<figure xml:id="video_graphs_graphing-qualitative-3">
+				<caption>Summarizing and Graphing Bivariate Qualitative Data</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-03.mp4"/>
+			</figure>
+
+			<exercise xml:id="ckpt_graphs_graphing-qualitative-1">
+				<title>Qualitative Data<mdash/>True/False</title>
+				<statement>
+					<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
+					<p>Question: Which of the following are true statements?</p>
+					<ol>
+						<li><p>A relative frequency table uses percents instead of counts.</p></li>
+						<li><p>We can never construct a bar chart or a pie chart based on the same data set.</p></li>
+						<li><p>Large sets of raw data are easily understood.</p></li>
+						<li><p>The order in which categories in a bar graph are listed is important.</p></li>
+						<li><p>The marginal distributions in a contingency table must add to the same totals.</p></li>
+					</ol>
+				</statement>
+				<answer>
+					<p>The first and last statements are true.  The others are false.</p>
+				</answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_graphing-qualitative-2">
+				<title>Qualitative Data<mdash/>True/False</title>
+				<statement>
+					<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
+					<p>Question: Which of the following statements are false?</p>
+					<ol>
+						<li><p>The bar chart and relative frequency bar chart for the same data set will have different shapes.</p></li>
+						<li><p>Marginal distributions summarize a single variable.</p></li>
+						<li><p>A pie graph is a good way to show the relationship of each category to the whole.</p></li>
+						<li><p>A frequency table and relative frequency table for a set of data may have different numbers of rows.</p></li>
+						<li><p>A stacked bar chart wil not work to graph univariate data.</p></li>
+					</ol>
+				</statement>
+				<answer>
+					<p>The first and third statements are false.  The others are true.</p>
+				</answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_graphing-qualitative-3">
+				<title>Qualitative Data<mdash/>True/False</title>
+				<statement>
+					<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
+					<p>Question: Which of the following statements are false?</p>
+					<ol>
+						<li><p>To construct a relative frequency table, divide the frequency for each category by 100.</p></li>
+						<li><p>A stacked bar chart is used to graph the contents of a frequency table.</p></li>
+						<li><p>A contingency table is used to summarize bivariate data.</p></li>
+						<li><p>There should be spaces between the bars in a bar graph.</p></li>
+						<li><p>There is more than one way to graph qualitative data.</p></li>
+					</ol>
+				</statement>
+				<answer>
+					<p>The first and second statements are false.  The others are true.</p>
+				</answer>
+			</exercise>
 		</subsubsection>
-
-		<figure xml:id="sec_graphs_s1_v1">
-			<caption>Summarizing and Graphing Qualitative Data I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-01.mp4"/>
-		</figure>
-		<figure xml:id="sec_graphs_s1_v2">
-			<caption>Summarizing and Graphing Qualitative Data II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-02.mp4"/>
-		</figure>
-		<figure xml:id="sec_graphs_s1_v3">
-			<caption>Summarizing and Graphing Bivariate Qualitative Data</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-03.mp4"/>
-		</figure>
-
-		<exercise xml:id="sec_graphs_s1_c1">
-			<title>Qualitative Data<emdash/>True/False</title>
-			<statement>
-				<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
-				<p>Question: Which of the following are true statements?</p>
-				<ol>
-					<li><p>A relative frequency table uses percents instead of counts.</p></li>
-					<li><p>We can never construct a bar chart or a pie chart based on the same data set.</p></li>
-					<li><p>Large sets of raw data are easily understood.</p></li>
-					<li><p>The order in which categories in a bar graph are listed is important.</p></li>
-					<li><p>The marginal distributions in a contingency table must add to the same totals.</p></li>
-				</ol>
-			</statement>
-			<answer>
-				<p>The first and last statements are true.  The others are false.</p>
-			</answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s1_c2">
-			<title>Qualitative Data<emdash/>True/False</title>
-			<statement>
-				<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
-				<p>Question: Which of the following statements are false?</p>
-				<ol>
-					<li><p>The bar chart and relative frequency bar chart for the same data set will have different shapes.</p></li>
-					<li><p>Marginal distributions summarize a single variable.</p></li>
-					<li><p>A pie graph is a good way to show the relationship of each category to the whole.</p></li>
-					<li><p>A frequency table and relative frequency table for a set of data may have different numbers of rows.</p></li>
-					<li><p>A stacked bar chart wil not work to graph univariate data.</p></li>
-				</ol>
-			</statement>
-			<answer>
-				<p>The first and third statements are false.  The others are true.</p>
-			</answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s1_c3">
-			<title>Qualitative Data<emdash/>True/False</title>
-			<statement>
-				<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
-				<p>Question: Which of the following statements are false?</p>
-				<ol>
-					<li><p>To construct a relative frequency table, divide the frequency for each category by 100.</p></li>
-					<li><p>A stacked bar chart is used to graph the contents of a frequency table.</p></li>
-					<li><p>A contingency table is used to summarize bivariate data.</p></li>
-					<li><p>There should be spaces between the bars in a bar graph.</p></li>
-					<li><p>There is more than one way to graph qualitative data.</p></li>
-				</ol>
-			</statement>
-			<answer>
-				<p>The first and second statements are false.  The others are true.</p>
-			</answer>
-		</exercise>
 	</subsection>
 
-	<subsection xml:id="sec_graphs_s2">
+	<subsection xml:id="sec_graphs_ss2">
 		<title>Quantitative Data</title>
 		<introduction>
 			<p>When we wish to describe quantitative variables, we run into many of the same problems that we had with qualitative variables. The raw data itself is usually not very useful and must be summarized before we can construct graphs.</p>
 		</introduction>
 
-		<subsubsection xml:id="sec_graphs_s2-1">
+		<subsubsection xml:id="sec_graphs_ss2-1">
 			<title>Summarizing Quantitative Data with Tables</title>
-			<p>Our first task is to	come up with a way to summarize this data in a table, like we did with <xref ref="def_frequency-table">frequency tables</xref> for	qualitative variables. To do this, we must create <q>categories</q> to use as the	rows for our table.</p>
+			<p>Our first task is to	come up with a way to summarize this data in a table, like we did with <xref ref="def_frequency-table" text="custom">frequency tables</xref> for qualitative variables. To do this, we must create <q>categories</q> to use as the	rows for our table.</p>
 			<definition xml:id="def_frequency-distribution">
-				<title>Frequency Distribution</title>
 				<idx><h>frequency distribution</h></idx>
 				<idx><h>frequency distribution</h><h>class</h></idx>
 				<idx><h>frequency distribution</h><h>class width</h></idx>
 				<idx><h>frequency distribution</h><h>upper class limit</h></idx>
 				<statement>
-					<p>A frequency distribution is a table constructed to summarize quantative data.  It has the following components:
+					<p>A <term>frequency distribution</term> is a table constructed to summarize quantative data. It has the following components:
 						<ul>
-							<li><p><term>Class</term><emdash/>the range of values taken on by the variable is broken up into sections called <term>classes</term>.</p></li>
-							<li><p><term>Upper Class Limit</term><emdash/>the largest number that belongs to a class is called the <term>upper class limit</term>.</p></li>
-							<li><p><term>Class Width</term><emdash/>the difference between the upper class limit of a given class and the upper class limit of the previous class (or the minimum value in the data set for the	first class) is called the <term>class width</term>. This value should almost always be the same for each class.</p></li>
+							<li><p><term>Class</term><mdash/>the range of values taken on by the variable is broken up into sections called <term>classes</term>.</p></li>
+							<li><p><term>Upper Class Limit</term><mdash/>the largest number that belongs to a class is called the <term>upper class limit</term>.</p></li>
+							<li><p><term>Class Width</term><mdash/>the difference between the upper class limit of a given class and the upper class limit of the previous class (or the minimum value in the data set for the	first class) is called the <term>class width</term>. This value should almost always be the same for each class.</p></li>
 						</ul>
-						Once the classes have been established, we treat them as categories and count	the number of values that fall into each class. The resulting table is called a <term>frequency distribution</term>.
+						Once the classes have been established, we treat them as categories and count	the number of values that fall into each class.  We then create a table with a column giving the classes and a second column containing their frequencies.
 					</p>
 				</statement>
 			</definition>
 			<p>Note that although a frequency distribution will look very similar to a frequency table, there is a difference. Namely, we must break the range of values up into classes in order to construct our table. It is probably easiest to remember that a <term>frequency table</term> is used to summarize data from a qualitative variable, and a <term>frequency distribution</term> is used to summarize data from a quantitative	variable.</p>
-			<exmaple xml:id="examp_graphs_s2_e1">
-				<title>Tomato Plant Heights</title>
+			<example xml:id="examp_graphs_frequency-distribution">
+				<title>Constructing a Frequency Distribution</title>
 				<statement>
 					<p>The height of tomato plants is of particular interest to Daisy. She spends her summer gathering data on the heights of tomato plants in various randomly selected gardens in her home town. Summarize the data she collected below, showing these heights rounded to the nearest 10th of an inch, in a frequency distribution with five classes.</p>
-					<table>
+					<table xml:id="examp_graphs_frequency-distribution_table">
 						<title>Tomato Plant Heights</title>
 						<tabular>
 							<row>
@@ -730,7 +796,7 @@
 					</table>
 				</statement>
 				<solution>
-					<sidebyside widths="75% 25%" margins="auto" valign="middle">
+					<sidebyside widths="65% 30%" margins="auto" valign="middle">
 						<p>To construct our frequency distribution, we follow these steps:
 							<ol>
 								<li><p>Determine the class width as follows:
@@ -742,155 +808,154 @@
 									<li><p>List the classes in the first column of our table. Note that these should not include the previous class upper class limit, thus the second class is	from 10.1-12, not 10-12.</p></li>
 									<li><p>Finally, count the number of values that fall into each class. For example, there are 7 values bigger than 10, but less than or equal to 12.</p></li>
 								</ol>
-								This gives us the frequency distribution shown.
 							</p>
-							<table>
-								<title>Frequency Distribution</title>
-								<tabular xml:id="examp_graphs_s2_e1_table">
-									<row>
-										<cell below="medium">Classes</cell>
-										<cell below="medium">Frequency</cell>
+							<table xml:id="examp_graphs_frequency-distribution_frequency-distribution">
+								<title>Frequency Distribution of Tomato Plant Heights</title>
+								<tabular  halign="center">
+									<row bottom="medium">
+										<cell right="medium">Classes</cell>
+										<cell>Frequency</cell>
 									</row>
 									<row>
-										<cell>8.1-10</cell>
+										<cell right="medium">8.1-10</cell>
 										<cell>17</cell>
 									</row>
 									<row>
-										<cell>10.1-12</cell>
+										<cell halign="center" right="medium">10.1-12</cell>
 										<cell>7</cell>
 									</row>
 									<row>
-										<cell>12.1-14</cell>
+										<cell halign="center" right="medium">12.1-14</cell>
 										<cell>14</cell>
 									</row>
 									<row>
-										<cell>14.1-16</cell>
+										<cell halign="center" right="medium">14.1-16</cell>
 										<cell>10</cell>
 									</row>
 									<row>
-										<cell>16.1-18</cell>
+										<cell halign="center" right="medium">16.1-18</cell>
 										<cell>16</cell>
 									</row>
 								</tabular>
 							</table>
 					</sidebyside>
 				</solution>
-			</exmaple>
+			</example>
 			<p>Once we have summarized our data in a frequency distribution, we can of course create a relative frequency distribution by dividing each class frequency by the grand total. We can also create a representative graph, which we will learn about in the next section.</p>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_s2-2">
+		<subsubsection xml:id="sec_graphs_ss2-2">
 			<title>Histograms</title>
-			<p>The graph that we use to describe data summarized by a frequency distribution is very similar to	the <xref ref="def_bar-graph">bar graphs</xref> we used to summarize data from a frequency table. There is,	however, some important distinction.</p>
+			<p>The graph that we use to describe data summarized by a frequency distribution is very similar to	the <xref ref="def_bar-graph" text="custom">bar graphs</xref> we used to summarize data from a frequency table. There is,	however, some important distinction.</p>
 			<definition xml:id="def_histogram">
-				<title>Histogram</title>
-				<idx><h>graphs</h>graphs<h>histogram</h></idx>
+				<idx><h>graphs</h><h>histogram</h></idx>
 				<statement>
 					<p>A <term>histogram</term> is a graph for quantitative data in which each class in a frequency	distribution for that data is represented by a bar, the height of which corresponds to the frequency of that class. These bars must be arranged in ascending order of the classes and must touch each other.</p>
 				</statement>
 			</definition>
-			<p>Note that in a histogram, the order is important because the classes of a frequency distribution are themselves ordered from smallest values to largest values. Also, note that the bars touch to show that the classes are contiguous--that is, there is no space between the classes. Let's try constructing a histogram for the tomato plant heights seen in the <xref ref="examp_graphs_s2_e1">previous example</xref>. We use a spreadsheet to accomplish this, in much the same way that we constructed a bar graph.</p>
-			<example xml:id="examp_graphs_s2_e2">
-				<title>Histogram of Tomato Plant Heights</title>
+			<p>Note that in a histogram, the order is important because the classes of a frequency distribution are themselves ordered from smallest values to largest values. Also, note that the bars touch to show that the classes are contiguous--that is, there is no space between the classes. Let's try constructing a histogram for the tomato plant heights seen in the previous example. We use a spreadsheet to accomplish this, in much the same way that we constructed a bar graph.</p>
+			<example xml:id="examp_graphs_histogram">
+				<title>Constructing a Histogram</title>
 				<statement>
-					<p>Construct a histogram for the frequency distribution found in <xref ref="examp_graphs_s2_e1"/>.</p>
+					<p>Construct a histogram for the frequency distribution found in <xref ref="examp_graphs_frequency-distribution"/>.</p>
 				</statement>
 				<solution>
-					<p>Based on the <xref ref="examp_graphs_s2_e1_table">frequency distribution</xref> built in the previous example, we construct the following histogram.</p>
-					<image xml:id="examp_graphs_s1_e9_image-1" source="./images/graph_graphs_s2_e2.png" width="50%"/>
-					<note>notice that the bars in this graph touch each other, and that they are in order from lowest values (8.1-10) up to highest values (16.1-18). These are both important characteristics for histograms!</note>
+					<p>Based on the <xref ref="examp_graphs_frequency-distribution_frequency-distribution" text="custom">frequency distribution</xref> built in the previous example, we construct the following histogram.</p>
+					<figure xml:id="image_graphs_examp_histogram">
+						<caption>A Histogram if Tomato Plant Heights</caption>
+						<image source="./images/graphs_examp_histogram.png" width="80%"/>
+					</figure>
+					<p>notice that the bars in this graph touch each other, and that they are in order from lowest values (8.1-10) up to highest values (16.1-18). These are both important characteristics for histograms!</p>
 				</solution>
 			</example>
+
+			<figure xml:id="video_graphs_frequency-and-histogram-1">
+				<caption>Frequency Distributions and Histograms I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-04.mp4"/>
+			</figure>
+			<figure xml:id="video_graphs_frequency-and-histogram-2">
+				<caption>Frequency Distributions and Histograms II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-05.mp4"/>
+			</figure>
+
+			<exercise xml:id="ckpt_graphs_frequency-and-histogram-1">
+				<title>Frequency Distributions and Histograms</title>
+				<statement>
+					<p>You have seen several definitions involving summarizing and displaying quantitative data.</p>
+					<p>Question: Which of the following are true statements?</p>
+					<ol>
+						<li><p>In a frequency distribution the class widths should be the same for all.</p></li>
+						<li><p>The lower class limit is the highest number that can appear in a class.</p></li>
+						<li><p>Frequency distributions and frequency tables are exactly the same thing.</p></li>
+						<li><p>The order in which the bars in a histogram are arranged matters.</p></li>
+						<li><p>It is okay to allow classes to overlap:for example, 5-10 and 10-15 are valid</p></li>
+					</ol>
+				</statement>
+				<answer>
+					<p>The first and fourth statements are true.  The others are false.</p>
+				</answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_frequency-and-histogram-2">
+				<title>Frequency Distributions and Histograms</title>
+				<statement>
+					<p>You have seen several definitions involving summarizing and displaying quantitative data.</p>
+					<p>Question: Which of the following are false statements?</p>
+					<ol>
+						<li><p>The bars in a histogram should always touch each other.</p></li>
+						<li><p>The upper class limit of the last class in a frequency distribution can be less than the largest	number in the data set.</p></li>
+						<li><p>A frequency distribution is used to summarize data from a quantitative variable.</p></li>
+						<li><p>A bar graph may be used to graph data from a frequency distribution.</p></li>
+						<li><p>To find an approximate class width, take the maximum value in the data set, subtract the minimum	value, and divide by the desired number of classes.</p></li>
+					</ol>
+				</statement>
+				<answer><p>The second and fourth statements are false.  The others are true.</p></answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_frequency-and-histogram-3">
+				<title>Frequency Distributions and Histograms</title>
+				<statement>
+					<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
+					<p>Question: Which of the following are false statements?</p>
+					<ol>
+						<li><p>Histograms and frequency distributions go together.</p></li>
+						<li><p>A given set of data will always produce the same frequency distribution, regardless of the class width chosen.</p></li>
+						<li><p>Bar graphs and frequency tables go together.</p></li>
+						<li><p>A frequency table can not be used to summarize a quantitative variable.</p></li>
+						<li><p>The class widths can be different for different classes in a frequency distribution.</p></li>
+					</ol>
+				</statement>
+				<answer><p>The second and the last statements are false.  The others are true.</p></answer>
+			</exercise>			
 		</subsubsection>
 
-		<figure xml:id="sec_graphs_s2_v1">
-			<caption>Frequency Distributions and Histograms I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-04.mp4"/>
-		</figure>
-		<figure xml:id="sec_graphs_s2_v1">
-			<caption>Frequency Distributions and Histograms II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-05.mp4"/>
-		</figure>
-
-		<exercise xml:id="sec_graphs_s2_c1">
-			<title>Frequency Distributions and Histograms</title>
-			<statement>
-				<p>You have seen several definitions involving summarizing and displaying quantitative data.</p>
-				<p>Question: Which of the following are true statements?</p>
-				<ol>
-					<li><p>In a frequency distribution the class widths should be the same for all.</p></li>
-					<li><p>The lower class limit is the highest number that can appear in a class.</p></li>
-					<li><p>Frequency distributions and frequency tables are exactly the same thing.</p></li>
-					<li><p>The order in which the bars in a histogram are arranged matters.</p></li>
-					<li><p>It is okay to allow classes to overlap:for example, 5-10 and 10-15 are valid</p></li>
-				</ol>
-			</statement>
-			<answer>
-				<p>The first and fourth statements are true.  The others are false.</p>
-			</answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s2_c2">
-			<title>Frequency Distributions and Histograms</title>
-			<statement>
-				<p>You have seen several definitions involving summarizing and displaying quantitative data.</p>
-				<p>Question: Which of the following are false statements?</p>
-				<ol>
-					<li><p>The bars in a histogram should always touch each other.</p></li>
-					<li><p>The upper class limit of the last class in a frequency distribution can be less than the largest	number in the data set.</p></li>
-					<li><p>A frequency distribution is used to summarize data from a quantitative variable.</p></li>
-					<li><p>A bar graph may be used to graph data from a frequency distribution.</p></li>
-					<li><p>To find an approximate class width, take the maximum value in the data set, subtract the minimum	value, and divide by the desired number of classes.</p></li>
-				</ol>
-			</statement>
-			<answer><p>The second and fourth statements are false.  The others are true.</p></answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s2_c3">
-			<title>Frequency Distributions and Histograms</title>
-			<statement>
-				<p>You have seen several definitions and methods for summarizing and displaying qualitative data.</p>
-				<p>Question: Which of the following are false statements?</p>
-				<ol>
-					<li><p>Histograms and frequency distributions go together.</p></li>
-					<li><p>A given set of data will always produce the same frequency distribution, regardless of the class width chosen.</p></li>
-					<li><p>Bar graphs and frequency tables go together.</p></li>
-					<li><p>A frequency table can not be used to summarize a quantitative variable.</p></li>
-					<li><p>The class widths can be different for different classes in a frequency distribution.</p></li>
-				</ol>
-			</statement>
-			<answer><p>The second and the last statements are false.  The others are true.</p></answer>
-		</exercise>
-
-		<subsubsection xml:id="sec_graphs_s2-3">
+		<subsubsection xml:id="sec_graphs_ss2-3">
 			<title>Stem-and-Leaf Plots</title>
 			<p>One of the disadvantages of summarizing quantitative data with a frequency distribution and histogram is that you lose the specific values.  That is, you can not tell what the individual data values were before the summary was created.</p>
-			<example xml:id="examp_graphs_s2_e3">
+			<example xml:id="examp_graphs_recovering-data">
 				<title>Recovering Data from a Frequency Distribution</title>
 				<statement>
-				  <p>Using the frequency distribution created in <xref ref="examp_graphs_s2_e1"/>, determine how many tomato plants are exactly 14.2 inches tall.</p>
+				  <p>Using the frequency distribution created in <xref ref="examp_graphs_frequency-distribution"/>, determine how many tomato plants are exactly 14.2 inches tall.</p>
 				</statement>
 				<solution>
-					<p>Looking just at the <xref ref="examp_graphs_s2_e1_table">frequency distribution</xref> we created for this data, this is not possible.  If all we have is the frequency distribution, we can only tell that there are 10 plants between 14.1 and 16 inches tall. Some of those may be 14.2 inches tall, but there is no
-					way of knowing without going back to the raw data.</p>
+					<p>Looking just at the <xref ref="examp_graphs_frequency-distribution_frequency-distribution" text="custom">frequency distribution</xref> we created for this data, this is not possible.  If all we have is the frequency distribution, we can only tell that there are 10 plants between 14.1 and 16 inches tall. Some of those may be 14.2 inches tall, but there is no way of knowing without going back to the raw data.</p>
 				</solution>
 			</example>
 			<p>If we wish to create a pictorial representation of a set of quantitative data that also shows the raw data, we need a new type of graph.</p>
-			<defintion xml:id="def_stem-and-leaf">
-				<title>Stem-and-Leaf Plot</title>
+			<definition xml:id="def_stem-and-leaf">
 				<idx><h>graphs</h><h>stem-and-leaf plot</h></idx>
 				<statement>
 					<p>In a <term>stem-and-leaf plot</term>, data is represented by separating each value into two parts: the stem (all but the right-most digit) and leaf (
 					right-most digit). A table is then constructed with a row for each stem with that stem in the first column and a list of all leaves which
 					belong from that stem in the second column, given in ascending order with no spaces or commas between them.</p>
 				</statement>
-			</defintion>
+			</definition>
 			<p>Stem-and-leaf plots are usually created by hand. Because of this, they are most useful for	relatively small data sets for which we wish to get a quick picture of the shape of the data. To get an accurate picture, it is important that each <q>leaf</q> take up the same amount of space. So if you are typing a stem-and-leaf plot into a computer, use a mono-spaced font such as courier so that the ones (1) don't take up less space than the eights (8). Consider the following	example.</p>
-			<example xml:id="examp_graphs_s2_e4">
-				<title>Plotting Number of Credits</title>
+			<example xml:id="examp_graphs_stem-and-leaf">
+				<title>Constructing a Stem-and-Leaf Plot</title>
 				<statement>
 					<p>The following is a list of number of quarter credits taken by 30 different	college students.	Construct a stem-and-leaf plot for this data.</p>
-					<table xml:id="examp_graphs_s2_e4_table">
+					<table xml:id="examp_graphs_stem-and-leaf_table">
 						<title>Number of Credits Taken</title>
 						<tabular>
 							<row>
@@ -933,7 +998,7 @@
 					</table>
 				</statement>
 				<solution>
-					<sidebyside widths="75% 25%" margins="auto" valign="middle">
+					<sidebyside widths="50% 45%" margins="auto" valign="middle">
 						<p>We construct our stem-and-leaf plot as follows:
 							<ol>
 								<li><p>Divide each value into the stem (10's	digit) and leaf (1's digit) pieces. Note that	this yields stems 0, 1, and 2.</p></li>
@@ -941,47 +1006,80 @@
 								<li><p>For each stem, list the associated leaves in ascending order.</p></li>
 							</ol>
 							This produces the following plot.</p>
-						<table xml:id="examp_graphs_s2_e4_table">
-							<title>Stem-and-Leaf Plot</title>
+							<figure xml:id="examp_graphs_stem-and-leaf_plot">
+								<caption>Stem-and-Leaf Plot</caption>
+								<image xml:id="image_graphs_examp_stem-and-leaf">
+									<latex-image>
+\begin{tabular}{r|l}
+  Stem &amp; Leaves\\
+  \hline
+  \tt 0 &amp; \tt 3689\\
+  \tt 1 &amp; \tt 122334455555666666677889\\
+  \tt 2 &amp; \tt 11\\
+\end{tabular}
+                  </latex-image>
+								</image>
+							</figure>
+<!--  
+						<table xml:id="examp_graphs_stem-and-leaf_plot">
+							<title>Stem-and-Leaf Plot</title> 
 							<tabular>
 								<row bottom="medium">
-									<cell right="medium">Stem</cell>
+									<cell halign="right" right="medium">Stem</cell>
 									<cell>Leaves</cell>
 								</row>
 								<row>
-									<cell right="medium">0</cell>
-									<cell>3689</cell>
+									<cell halign="right" right="medium"><cd>0</cd></cell>
+									<cell><cd>3689</cd></cell>
 								</row>
 								<row>
-									<cell right="medium">1</cell>
-									<cell>122334455555666666677889</cell>
+									<cell halign="right" right="medium"><cd>1</cd></cell>
+									<cell><cd>122334455555666666677889</cd></cell>
 								</row>
 								<row>
-									<cell right="medium">2</cell>
-									<cell>11</cell>
+									<cell halign="right" right="medium"><cd>2</cd></cell>
+									<cell><cd>11</cd></cell>
 								</row>
 							</tabular>
 						</table>
+-->						
 					</sidebyside>
 				</solution>
 			</example>
 			<p>Note that the <q>shape</q> we see here is like a histogram tilted on its side.	However, in this particular	instance the middle stem seems to have a disproportionate number of leaves. To remedy this, we can split our stems up into smaller pieces.</p>
 			<definition>
-			  <title>Expanded Stem-and-Leaf Plot</title>
 			  <idx><h>graphs</h><h>expanded stem-and-leaf plot</h></idx>
 			  <statement>
 			  	<p>An <term>expanded stem-and-leaf plot</term> includes more than one row for each stem. The leaves are divided equally between the rows representing the associated stems.</p>
 			  </statement>
 			</definition>
-			<example xml:id="examp_graphs_s2_e5">
-				<title>An Expanded Stem-and-Leaf Plot</title>
+			<example xml:id="examp_graphs_expanded-stem-and-leaf">
+				<title>Constructing an Expanded Stem-and-Leaf Plot</title>
 				<statement>
-					<p>Construct an expanded stem-and-leaf plot for the credits data from <xref ref="examp_graphs_s2_e4"/> using two rows per stem.</p>
+					<p>Construct an expanded stem-and-leaf plot for the credits data from <xref ref="examp_graphs_stem-and-leaf"/> using two rows per stem.</p>
 				</statement>
 				<solution>
-					<sidebyside widths="75% 25%" margins="auto" valign="middle">
-						<p>This is done in almost exactly the same way as	our last example. The only difference is that	each stem gets two rows. The leaves are then split up with 0-4 going in the first row and 5-9 in the second row for a given stem. The result is	shown to the right.</p>
-						<table xml:id="examp_graphs_s2_e5_table">
+					<sidebyside widths="50% 45%" margins="auto" valign="middle">
+						<p>This is done in almost exactly the same way as	<xref ref="examp_graphs_stem-and-leaf_plot" text="custom">our last example</xref>. The only difference is that	each stem gets two rows. The leaves are then split up with 0-4 going in the first row and 5-9 in the second row for a given stem. The result is	shown to the right.</p>
+						<figure xml:id="examp_graphs_expanded-stem-and-leaf_plot">
+							<caption>Expanded Stem-and-Leaf Plot</caption>
+							<image xml:id="image_graphs_expanded-stem-and-leaf">
+								<latex-image>
+\begin{tabular}{r|l}
+Stem &amp; Leaves \\
+\hline
+\tt 0 &amp; 3 \\
+\tt 0 &amp; 689 \\
+\tt 1 &amp; 1223344 \\
+\tt 1 &amp; 55555666666677889 \\
+\tt 2 &amp; 11 \\
+\tt 2 &amp;	\\
+\end{tabular}					
+								</latex-image>
+							</image>
+						</figure>
+<!--		
+						<table xml:id="examp_graphs_expanded-stem-and-leaf_plot">
 							<title>Expanded Stem-and-Leaf Plot</title>
 							<tabular>
 								<row bottom="medium">
@@ -989,216 +1087,186 @@
 									<cell>Leaf</cell>
 								</row>
 								<row>
-									<cell right="medium">0</cell>
-									<cell>3</cell>
+									<cell halign="right" right="medium"><pre>0</pre></cell>
+									<cell><pre>3</pre></cell>
 								</row>
 								<row>
-									<cell right="medium">0</cell>
-									<cell>689</cell>
+									<cell halign="right" right="medium"><pre>0</pre></cell>
+									<cell><pre>689</pre></cell>
 								</row>
 								<row>
-									<cell right="medium">1</cell>
-									<cell>1223344</cell>
+									<cell halign="right" right="medium"><pre>1</pre></cell>
+									<cell><pre>1223344</pre></cell>
 								</row>
 								<row>
-								  <cell right="medium">1</cell>
-								  <cell>55555666666677889</cell>
+								  <cell halign="right" right="medium"><pre>1</pre></cell>
+								  <cell><pre>55555666666677889</pre></cell>
 								</row>
 								<row>
-									<cell right="medium">2</cell>
-									<cell>11</cell>
+									<cell halign="right" right="medium"><pre>2</pre></cell>
+									<cell><pre>11</pre></cell>
 								</row>
 								<row>
-									<cell right="medium">2</cell>
+									<cell halign="right" right="medium"><pre>2</pre></cell>
 									<cell></cell>
 								</row>
 							</tabular>
 						</table>
+-->						
 					</sidebyside>
-					<note><p>this gives us a clearer picture of how the credit hour values are distributed!</p></note>
+					<p>This gives us a clearer picture of how the credit hour values are distributed!</p>
 				</solution>
 			</example>
+
+			<figure xml:id="video_graphs_stem-and-leaf-1">
+				<caption>Stem-and-Leaf Plots I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-06.mp4"/>
+			</figure>
+
+			<figure xml:id="video_graphs_stem-and-leaf-2">
+				<caption>Stem-and-Leaf Plots II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-07.mp4"/>
+			</figure>
+
+			<exercise xml:id="ckpt_graphs_stem-and-leaves-1">
+				<title>Stem-and-Leaf Plots</title>
+				<statement>
+					<p>A biologist researching seagulls counts the number of seagulls that enter a nesting ground during several 15 minute periods. She records the following results.</p>
+					<table>
+						<title>Number of Seagulls</title>
+						<tabular>
+							<row>
+								<cell>24</cell>
+								<cell>50</cell>
+								<cell>46</cell>
+								<cell>34</cell>
+								<cell>27</cell>
+							</row>
+							<row>
+								<cell>39</cell>
+								<cell>26</cell>
+								<cell>37</cell>
+								<cell>43</cell>
+								<cell>37</cell>
+							</row>
+							<row>
+								<cell>40</cell>
+								<cell>37</cell>
+								<cell>51</cell>
+								<cell>26</cell>
+								<cell>36</cell>
+							</row>
+							<row>
+								<cell>51</cell>
+								<cell>43</cell>
+								<cell>34</cell>
+								<cell>32</cell>
+								<cell>48</cell>
+							</row>
+						</tabular>
+					</table>
+					<p>Construct a stem-and-leaf plot for this data.</p>
+				</statement>
+				<solution>
+					<figure>
+						<caption>Stem-and-Leaf Plot</caption>
+						<image width="20%">
+							<latex-image>
+\begin{tabular}{r|l}
+  Stem &amp; Leaf \\
+  \hline
+  \tt 2 &amp; \tt 4667 \\
+  \tt 3 &amp; \tt 24467779 \\
+	\tt 4 &amp; \tt 03368 \\
+	\tt 5 &amp; \tt 011 \\
+\end{tabular}
+							</latex-image>
+						</image>
+					</figure>
+				</solution>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_stem-and-leaves-2">
+			  <title>Stem-and-Leaf Plots</title>
+			  <statement>
+			    <p>A biologist researching seagulls counts the number of seagulls that enter a nesting ground during several 15 minute periods. She records the following results.</p>
+					<table>
+						<title>Number of Seagulls</title>
+						<tabular>
+							<row>
+								<cell>24</cell>
+								<cell>50</cell>
+								<cell>46</cell>
+								<cell>34</cell>
+								<cell>27</cell>
+							</row>
+							<row>
+								<cell>39</cell>
+								<cell>26</cell>
+								<cell>37</cell>
+								<cell>43</cell>
+								<cell>37</cell>
+							</row>
+							<row>
+								<cell>40</cell>
+								<cell>37</cell>
+								<cell>51</cell>
+								<cell>26</cell>
+								<cell>36</cell>
+							</row>
+							<row>
+								<cell>51</cell>
+								<cell>43</cell>
+								<cell>34</cell>
+								<cell>32</cell>
+								<cell>48</cell>
+							</row>
+						</tabular>
+					</table>
+					<p>Construct an expanded stem-and-leaf plot for this data.</p>
+				</statement>
+				<solution>
+					<figure>
+						<caption>Expanded Stem-and-Leaf Plot</caption>
+						<image width="20%">
+							<latex-image>
+\begin{tabular}{r|l}
+  Stem &amp; Leaf\\
+  \hline
+  \tt 2 &amp; \tt 4\\
+  \tt 2 &amp; \tt 667\\
+  \tt 3 &amp; \tt 244\\
+  \tt 3 &amp; \tt 67779\\
+	\tt 4 &amp; \tt 033\\
+  \tt 4 &amp; \tt 68\\
+  \tt 5 &amp; \tt 011\\
+  \tt 5 &amp; \\
+ \end{tabular}
+							</latex-image>
+						</image>
+					</figure>
+				</solution>
+			</exercise>
 		</subsubsection>
 
-		<figure xml:id="sec_graphs_s2_v3">
-			<title>Stem-and-Leaf Plots I</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-06.mp4"/>
-		</figure>
-
-		<figure xml:id="sec_graphs_s2_v3">
-			<title>Stem-and-Leaf Plots II</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-07.mp4"/>
-		</figure>
-
-		<exercise xml:id="sec_graphs_s2_c4">
-			<title>Stem-and-Leaf Plots</title>
-			<statement>
-				<p>A biologist researching seagulls counts the number of seagulls that enter a nesting ground during several 15 minute periods. She records the following results.</p>
-				<table>
-					<title>Number of Seagulls</title>
-					<tabular>
-						<row>
-							<cell>24</cell>
-							<cell>50</cell>
-							<cell>46</cell>
-							<cell>34</cell>
-							<cell>27</cell>
-						</row>
-						<row>
-							<cell>39</cell>
-							<cell>26</cell>
-							<cell>37</cell>
-							<cell>43</cell>
-							<cell>37</cell>
-						</row>
-						<row>
-							<cell>40</cell>
-							<cell>37</cell>
-							<cell>51</cell>
-							<cell>26</cell>
-							<cell>36</cell>
-						</row>
-						<row>
-							<cell>51</cell>
-							<cell>43</cell>
-							<cell>34</cell>
-							<cell>32</cell>
-							<cell>48</cell>
-						</row>
-					</tabular>
-				</table>
-				<p>Construct a stem-and-leaf plot for this data.</p>
-			</statement>
-			<solution>
-				<table>
-					<tabular>
-						<row bottom="medium">
-							<cell>Stem</cell>
-							<cell>Leaves</cell>
-						</row>
-						<row>
-							<cell right="medium">2</cell>
-							<cell>4667</cell>
-						</row>
-						<row>
-						  <cell right="medium">3</cell>
-						  <cell>24467779</cell>
-						</row>
-						<row>
-							<cell right="medium">4</cell>
-							<cell>03368</cell>
-						</row>
-						<row>
-							<cell right="medium">5</cell>
-							<cell>011</cell>
-						</row>
-					</tabular>
-				</table>
-			</solution>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s2_c5">
-		  <title>Stem-and-Leaf Plots</title>
-		  <statement>
-		    <p>A biologist researching seagulls counts the number of seagulls that enter a nesting ground during several 15 minute periods. She records the following results.</p>
-				<table>
-					<title>Number of Seagulls</title>
-					<tabular>
-						<row>
-							<cell>24</cell>
-							<cell>50</cell>
-							<cell>46</cell>
-							<cell>34</cell>
-							<cell>27</cell>
-						</row>
-						<row>
-							<cell>39</cell>
-							<cell>26</cell>
-							<cell>37</cell>
-							<cell>43</cell>
-							<cell>37</cell>
-						</row>
-						<row>
-							<cell>40</cell>
-							<cell>37</cell>
-							<cell>51</cell>
-							<cell>26</cell>
-							<cell>36</cell>
-						</row>
-						<row>
-							<cell>51</cell>
-							<cell>43</cell>
-							<cell>34</cell>
-							<cell>32</cell>
-							<cell>48</cell>
-						</row>
-					</tabular>
-				</table>
-				<p>Construct an expanded stem-and-leaf plot for this data.</p>
-			</statement>
-			<solution>
-				<table>
-					<tabular>
-						<row bottom="medium">
-						  <cell right="medium">Stem</cell>
-						  <cell>Leaf</cell>
-						</row>
-						<row>
-							<cell right="medium">2</cell>
-							<cell>4</cell>
-						</row>
-						<row>
-							<cell right="medium">2</cell>
-							<cell>667</cell>
-						</row>
-						<row>
-							<cell right="medium">3</cell>
-							<cell>244</cell>
-						</row>
-						<row>
-							<cell right="medium">3</cell>
-							<cell>67779</cell>
-						</row>
-						<row>
-							<cell right="medium">4</cell>
-							<cell>033</cell>
-						</row>
-						<row>
-							<cell right="medium">4</cell>
-							<cell>68</cell>
-						</row>
-						<row>
-							<cell right="medium">5</cell>
-							<cell>011</cell>
-						</row>
-						<row>
-							<cell right="medium">5</cell>
-							<cell></cell>
-						</row>
-					</tabular>
-				</table>
-			</solution>
-		</exercise>
-
-		<subsubsection xml:id="sec_graphs_s2-4">
+		<subsubsection xml:id="sec_graphs_ss2-4">
 			<title>Other Graphs</title>
 			<p>There are several other graphs that can be useful to help display certain types of data. One of the most useful <q>other</q> types of graphs is meant to display the value of a single quantitative variable	measured over time.</p>
 			<definition xml:id="def_time-series">
-				<title>Time Series</title>
 				<idx><h>graphs</h><h>time series</h></idx>
 				<statement>
 					<p>A <term>time series</term> graph, also called a line chart, lists times along the horizontal axis, and values along the vertical axis. Points are placed at the appropriate height for the value of the variable at each time. These points are then connected with line segments.</p>
 				</statement>
 			</definition>
 			<p>To see how a time series can be used, consider the next example.</p>
-			<example xml:id="examp_graphs_s2_e6">
-				<title>Stock Price Over Time</title>
+			<example xml:id="examp_graphs_time-series">
+				<title>Using a Time Series</title>
 				<statement>
 					<p>The value of a certain stock is recorded every January for five years. The following data is	recorded. Construct a time series graph for this data.</p>
 					<table>
-						<title>Stock Price</title>
+						<title>Stock Price Over Time</title>
 						<tabular>
-							<row>
+							<row bottom="medium">
 								<cell right="medium">Year</cell>
 								<cell>2005</cell>
 								<cell>2006</cell>
@@ -1219,113 +1287,127 @@
 				</statement>
 				<solution>
 					<p>Using a spreadsheet program, we can produce the following graph.</p>
-					<image source="./images/graph_graphs_s2_e6" width="50%"/>
+					<figure xml:id="image_graphs_examp_time-series">
+						<caption>Time Series of Stock Price</caption>
+						<image source="./images/graphs_time-series.png" width="80%"/>
+					</figure>
 				</solution>
 			</example>
 			<p>We need another type of graph to represent bivariate quantitative variables. This sort of data comes in <m>(x,y)</m> pairs where <m>x</m> represents the value of the first variable and <m>y</m> the value of the second. In order to describe the relationship between the two variables, we can plot these pairs on
 			a graph, creating what's called a <term>scatter plot</term>.</p>
 			<definition xml:id="def_scatter-plot">
-				<title>Scatter Plot</title>
 				<statement>
 					<p>In a scatter plot we associate one variable from a set of bivariate data with	the <m>x</m>-axis and the other with the <m>y</m>-axis. We then plot each pair of values as an <m>(x,y)</m> point on this coordinate system.</p>
 				</statement>
 			</definition>
 			<p>To see how this works, let's look at an example.</p>
-			<example xml:id="examp_graphs_s2_e7">
-				<title>Scatter Plot of Bivariate Mouse Data</title>
+			<example xml:id="examp_graphs_scatter-plot">
+				<title>Constructing a Scatter Plot</title>
 				<statement>
 					<p>The tail length and weight of a certain breed of mice are measured. Construct a scatter plot and comment on the relationship, if any, that this graph shows between the two variables.</p>
 					<table>
+						<title>Bivariate Mice Data</title>
 						<tabular>
 							<row bottom="medium">
-								<cell></cell>
-								<cell>Mouse #1</cell>
-								<cell>Mouse #2</cell>
-								<cell>Mouse #3</cell>
-								<cell>Mouse #4</cell>
-								<cell>Mouse #5</cell>
-								<cell>Mouse #6</cell>
-								<cell>Mouse #7</cell>
-							</row>
-							<row>
+								<cell right="medium">Mouse Number</cell>
 								<cell right="medium">Tail Length (cm)</cell>
-								<cell>7</cell>
-								<cell>8.2</cell>
-								<cell>12.1</cell>
-								<cell>9.3</cell>
-								<cell>11.5</cell>
-								<cell>7.8</cell>
-								<cell>10.4</cell>
+								<cell>Weight (oz)</cell>
+							</row>
+							<row>								
+								<cell right="medium">Mouse #1</cell>
+								<cell halign="center" right="medium">7</cell>
+								<cell halign="center">3.3</cell>
 							</row>
 							<row>
-								<cell right="medium">Weight (oz)</cell>
-								<cell>3.3</cell>
-								<cell>4.6</cell>
-								<cell>8.6</cell>
-								<cell>6.1</cell>
-								<cell>7.3</cell>
-								<cell>2.6</cell>
-								<cell>7.0</cell>
+								<cell right="medium">Mouse #2</cell>
+								<cell halign="center" right="medium">8.2</cell>
+								<cell halign="center">4.6</cell>
+							</row>
+							<row>
+								<cell right="medium">Mouse #3</cell>
+								<cell halign="center" right="medium">12.1</cell>
+								<cell halign="center">8.6</cell>
+							</row>
+							<row>
+								<cell right="medium">Mouse #4</cell>
+								<cell halign="center" right="medium">9.3</cell>
+								<cell halign="center">6.1</cell>
+							</row>
+							<row>
+								<cell right="medium">Mouse #5</cell>
+								<cell halign="center" right="medium">11.5</cell>
+								<cell halign="center">7.3</cell>
+							</row>
+							<row>
+								<cell right="medium">Mouse #6</cell>
+								<cell halign="center" right="medium">7.8</cell>
+								<cell halign="center">2.6</cell>
+							</row>
+							<row>
+								<cell right="medium">Mouse #7</cell>
+								<cell halign="center" right="medium">10.4</cell>
+								<cell halign="center">7.0</cell>
 							</row>
 						</tabular>
 					</table>
 				</statement>
 				<solution>
 					<p>Using a spreadsheet, we construct the following scatter plot.</p>
-					<image source="./images/graph_graphs_s2_e7.png" width="50%"/>
+					<figure xml:id="image_graphs_examp_scatter-plot">
+						<caption>A Scatter Plot of Mouse Tail Length vs. Weight</caption>
+						<image source="./images/graphs_examp_scatter-plot.png" width="80%"/>
+					</figure>
 					<p>There definitely appears to be a relationship between tail length and weight. Larger tail lengths seem to correspond to larger weights. While this is not always the case (mouse	#6 is an exception) it does appear to be a fairly strong relationship.</p>
 				</solution>
 			</example>
+
+			<figure xml:id="video_graphs_other-graphs-1">
+				<caption>Other Graphs I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-08.mp4"/>
+			</figure>
+			<figure xml:id="video_graphs_other-graphs-2">
+				<caption>Other Graphs II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-09.mp4"/>
+			</figure>
+
+			<exercise xml:id="ckpt_graphs_other-graphs-1">
+				<title>Appropriate Graphs</title>
+				<statement>
+					<p>You have been asked to come up with a quick graph for a set of 15 values from a quantitative variable ranging between 10 and 40.</p>
+					<p>Question: What sort of graph would be most appropriate in this situation?</p>
+				</statement>
+				<answer><p>A stem-and-leaf plot</p></answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_other-graphs-2">
+				<title>Appropriate Graphs</title>
+				<statement>
+					<p>Data has been collected from 100 ten-year-old children. For each child the parents' combined income, and the child's reading level are recorded. You wish to construct a graph to determine if there is a relationship between these two variables.</p>
+					<p>Question: What type of graph is most appropriate for this data?</p>
+				</statement>
+				<answer><p>A scatter plot</p></answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_other-graphs-3">
+				<title>Appropriate Graphs</title>
+				<statement>
+					<p>You are asked to determine if the interest rate for a certificate deposit has changed in the last two years. You are given a set of data consisting of interest rates for the certificate of deposit every month for the last two years.</p>
+					<p>Question: What type of graph is most appropriate for this data?</p>
+				</statement>
+				<answer><p>Time Series</p></answer>
+			</exercise>
 		</subsubsection>
 
-		<figure xml:id="sec_graphs_s2_v5">
-			<title>Other Graphs I</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-08.mp4"/>
-		</figure>
-		<figure xml:id="sec_graphs_s2_v6">
-			<title>Other Graphs II</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-09.mp4"/>
-		</figure>
-
-		<exercise xml:id="sec_graphs_s2_c6">
-			<title>Appropriate Graphs</title>
-			<statement>
-				<p>You have been asked to come up with a quick graph for a set of 15 values from a quantitative variable ranging between 10 and 40.</p>
-				<p>Question: What sort of graph would be most appropriate in this situation?</p>
-			</statement>
-			<answer><p>A stem-and-leaf plot</p></answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s2_c7">
-			<title>Appropriate Graphs</title>
-			<statement>
-				<p>Data has been collected from 100 ten-year-old children. For each child the parents' combined income, and the child's reading level are recorded. You wish to construct a graph to determine if there is a relationship between these two variables.</p>
-				<p>Question: What type of graph is most appropriate for this data?</p>
-			</statement>
-			<answer><p>A scatter plot</p></answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s2_c8">
-			<title>Appropriate Graphs</title>
-			<statement>
-				<p>You are asked to determine if the interest rate for a certificate deposit has changed in the last two years. You are given a set of data consisting of interest rates for the certificate of deposit every month for the last two years.</p>
-				<p>Question: What type of graph is most appropriate for this data?</p>
-			</statement>
-			<answer><p>Time Series</p></answer>
-		</exercise>
-
-		<subsubsection xml:id="sec_graphs_s2-5">
+		<subsubsection xml:id="sec_graphs_ss2-5">
 		  <title>Interpreting Graphs</title>
 		  <p>The reason that we create graphs in the first place is to help us better understand a set of data. It is therefore important that we know how to interpret the graphs that we create. In this class, we will spend most of our time working with univariate quantitative variables. We thus need to be sure that	we know how to interpret histograms. There are three major things to look for	in a histogram.</p>
 		  <definition xml:id="def_histogram-center">
-		  	<title>Histogram Center</title>
 		  	<idx><h>graphs</h><h>histogram</h><h>center</h></idx>
 		  	<statement>
 		  		<p>The <term>center</term> of a histogram is the class that most accurately describes the typical value in the data set being described.</p>
 		  	</statement>
 		  </definition>
 		  <definition xml:id="def_histogram-mode">
-		  	<title>Histogram Mode</title>
 		  	<idx><h>graphs</h><h>histogram</h><h>mode</h></idx>
 		  	<idx><h>graphs</h><h>histogram</h><h>unimodal</h></idx>
 		  	<idx><h>graphs</h><h>histogram</h><h>bimodal</h></idx>
@@ -1337,7 +1419,6 @@
 				</statement>
 			</definition>
 			<definition xml:id="def_histogram-symmetry">
-				<title>Histogram Symmetry</title>
 				<idx><h>graphs</h><h>histogram</h><h>symmetric</h></idx>
 				<idx><h>graphs</h><h>histogram</h><h>skewed</h></idx>
 				<statement>
@@ -1345,40 +1426,40 @@
 				</statement>
 			</definition>
 			<p>We can tell a lot about the distribution of values of a single quantitative variable by describing the	histogram in these terms. Consider the following example.</p>
-			<example xml:id="examp_graphs_s2_e8">
+			<example xml:id="examp_graphs_describing-histograms">
 				<title>Describing Histograms</title>
 				<statement>
 					<p>Locate the center of each histogram and then classify it by number of modes and symmetry.</p>
 					<sbsgroup>
 						<sidebyside margins="5%" widths="40% 40%">
-							<p>
-								<image source="./images/graph_graphs_s2_e8-a.png" width="100%"/>
-								(a)
-							</p>
-							<p>
-							  <image source="./images/graph_graphs_s2_e8-b.png" width="100%"/>
-							  (b)
-							</p>
+							<figure xml:id="image_graphs_examp_describing-histograms-a">
+								<caption>(a)</caption>
+								<image source="./images/graphs_examp_describing-histograms-a.png" width="100%"/>
+							</figure>								
+							<figure xml:id="image_graphs_examp_describing-histograms-b">
+								<caption>(b)</caption>
+							  <image source="./images/graphs_examp_describing-histograms-b.png" width="100%"/>
+							</figure>
 						</sidebyside>
 						<sidebyside margins="5%" widths="40% 40%">
-							<p>
-								<image source="./images/graph_graphs_s2_e8-c.png" width="100%"/>
-								(c)
-							</p>
-							<p>
-							  <image source="./images/graph_graphs_s2_e8-d.png" width="100%"/>
-							  (d)
-							</p>
+							<figure xml:id="image_graphs_examp_describing-histograms-c">
+								<caption>(c)</caption>
+								<image source="./images/graphs_examp_describing-histograms-c.png" width="100%"/>
+							</figure>
+							<figure xml:id="image_graphs_examp_describing-histograms-d">
+								<caption>(d)</caption>
+							  <image source="./images/graphs_examp_describing-histograms-d.png" width="100%"/>
+							</figure>
 						</sidebyside>
 						<sidebyside margins="5%" widths="40% 40%">
-							<p>
-								<image source="./images/graph_graphs_s2_e8-e.png" width="100%"/>
-								(e)
-							</p>
-							<p>
-							  <image source="./images/graph_graphs_s2_e8-f.png" width="100%"/>
-							  (f)
-							</p>
+							<figure xml:id="image_graphs_examp_describing-histograms-e">
+								<caption>(e)</caption>
+								<image source="./images/graphs_examp_describing-histograms-e.png" width="100%"/>
+							</figure>
+							<figure xml:id="image_graphs_examp_describing-histograms-f">
+								<caption>(f)</caption>
+							  <image source="./images/graphs_examp_describing-histograms-f.png" width="100%"/>
+							</figure>
 						</sidebyside>
 					</sbsgroup>						
 				</statement>
@@ -1395,90 +1476,98 @@
 			</example>
 			<p>Graph (c) above is an example of a very common histogram shape. This shape is so common, in fact, that it has a distinctive name.</p>
 			<definition xml:id="def_histogram-mound-shaped">
-				<title>Mound-Shaped Histogram</title>
 				<idx><h>graphs</h><h>histogram</h><h>mound-shaped</h></idx>
 				<statement>
 					<p>A histogram is called <term>mound-shaped</term> if it is unimodal and symmetric, with the mode in the exact center of the histogram.</p>
 				</statement>
 			</definition>
+
+			<figure xml:id="video_graphs_describing-histograms-1">
+				<caption>Histogram Shapes I</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-10.mp4"/>
+			</figure>
+			<figure xml:id="video_graphs_describing-histograms-2">
+				<caption>Histogram Shapes II</caption>
+				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-11.mp4"/>
+			</figure>
+
+			<exercise xml:id="ckpt_graphs_describing-histograms-1">
+				<title>Histogram Shapes</title>
+				<statement>
+					<p>Consider the histogram shown below.</p>
+					<figure xml:id="image_graphs_ckpt_describing-histograms-1">
+						<caption></caption>
+						<image source="./images/ckpt_graphs_describing-histograms-1.png" width="50%"/>
+					</figure>
+					<p>Question: Which of the following terms correctly describes this histogram?
+					  <ul cols="2">
+					    <li><p>Unimodal</p></li>
+					    <li><p>Bimodal</p></li>
+					    <li><p>Uniform</p></li>
+					    <li><p>Symmetric</p></li>
+					    <li><p>Skewed Right</p></li>
+					    <li><p>Skewed Left</p></li>			    
+					  </ul>
+					</p>
+				</statement>
+				<answer><p>The histogram is bimodal and skewed right</p></answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_describing-histograms-2">
+				<title>Histogram Shapes</title>
+				<statement>
+					<p>Consider the histogram shown below.</p>
+					<figure xml:id="image_graphs_ckpt_describing-histograms-2">
+						<caption></caption>
+						<image source="./images/ckpt_graphs_describing-histograms-2.png" width="50%"/>
+					</figure>
+					<p>Question: Which of the following terms correctly describes this histogram?
+						<ul cols="2">
+							<li><p>Bimodal</p></li>
+							<li><p>Skewed Left</p></li>
+							<li><p>Skewed Right</p></li>
+							<li><p>Mound-Shaped</p></li>
+							<li><p>Multimodal</p></li>
+							<li><p>Uniform</p></li>
+						</ul>
+					</p>
+				</statement>
+				<answer><p>This histogram is Mound-Shaped</p></answer>
+			</exercise>
+
+			<exercise xml:id="ckpt_graphs_describing-histograms-3">
+				<title>Histogram Shapes</title>
+				<statement>
+					<p>Consider the histogram shown below.</p>
+					<figure xml:id="image_graphs_ckpt_describing-histograms-3">
+						<caption></caption>
+						<image source="./images/ckpt_graphs_describing-histograms-3.png" width="50%"/>
+					</figure>
+					<p>Question: Which of the following terms correctly describes this histogram?
+						<ul cols="2">
+							<li><p>Mound Shaped</p></li>
+							<li><p>Skewed Left</p></li>
+							<li><p>Unimodal</p></li>
+							<li><p>Bimodal</p></li>
+							<li><p>Uniform</p></li>
+							<li><p>Skewed Right</p></li>
+						</ul>
+					</p>
+				</statement>
+				<answer><p>The histogram is uniform.</p></answer>
+			</exercise>
 		</subsubsection>
-
-		<figure xml:id="sec_graphs_s2_v7">
-			<title>Histogram Shapes I</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-10.mp4"/>
-		</figure>
-		<figure xml:id="sec_graphs_s2_v8">
-			<title>Histogram Shapes II</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-11.mp4"/>
-		</figure>
-
-		<exercise xml:id="sec_graphs_s2_c9">
-			<title>Histogram Shapes</title>
-			<statement>
-				<p>Consider the histogram shown below.</p>
-				<image source="./images/graph_graphs_s2_c9.png" width="50%"/>
-				<p>Question: Which of the following terms correctly describes this histogram?
-				  <ul @cols="2">
-				    <li><p>Unimodal</p></li>
-				    <li><p>Bimodal</p></li>
-				    <li><p>Uniform</p></li>
-				    <li><p>Symmetric</p></li>
-				    <li><p>Skewed Right</p></li>
-				    <li><p>Skewed Left</p></li>			    
-				  </ul>
-				</p>
-			</statement>
-			<answer><p>The histogram is bimodal and skewed right</p></answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s2_c10">
-			<title>Histogram Shapes</title>
-			<statement>
-				<p>Consider the histogram shown below.</p>
-				<image source="./images/graph_graphs_s2_c10.png" width="50%"/>
-				<p>Question: Which of the following terms correctly describes this histogram?
-					<ul @cols="2">
-						<li><p>Bimodal</p></li>
-						<li><p>Skewed Left</p></li>
-						<li><p>Skewed Right</p></li>
-						<li><p>Mound-Shaped</p></li>
-						<li><p>Multimodal</p></li>
-						<li><p>Uniform</p></li>
-					</ul>
-				</p>
-			</statement>
-			<answer><p>This histogram is Mound-Shaped</p></answer>
-		</exercise>
-
-		<exercise xml:id="sec_graphs_s2_c11">
-			<title>Histogram Shapes</title>
-			<statement>
-				<p>Consider the histogram shown below.</p>
-				<image source="./images/graph_graphs_s2_c11.png" width="50%"/>
-				<p>Question: Which of the following terms correctly describes this histogram?
-					<ul @cols="2">
-						<li><p>Mound Shaped</p></li>
-						<li><p>Skewed Left</p></li>
-						<li><p>Unimodal</p></li>
-						<li><p>Bimodal</p></li>
-						<li><p>Uniform</p></li>
-						<li><p>Skewed Right</p></li>
-					</ul>
-				</p>
-			</statement>
-			<answer><p>The histogram is uniform.</p></answer>
-		</exercise>
 	</subsection>
 
-	<subsection xml:id="sec_graphs_s3">
-		<titile>Things to Avoid</titile>
+	<subsection xml:id="sec_graphs_ss3">
+		<title>Things to Avoid</title>
 		<p>There are a few common errors in creating and using graphs that should be mentioned. The first	such error is commonly caused either by a <q>helpful</q> computer program with poorly chosen default settings, or by a person who is trying to manipulate the graph to <q>lie</q> with statistics.</p>
-		<example xml:id="examp_graphs_s3_e1">
+		<example xml:id="examp_graphs_incorrect-axis">
 			<title>Incorrect Vertical Axis</title>
 			<statement>
 				<p>The following frequency table gives the number of individuals in a recent study who said that they had full health insurance coverage, some health insurance coverage, and no health insurance coverage. Next to those numbers are two bar charts representing this data. Determine which bar chart is misleading, and explain why it is misleading.</p>
 				<sidebyside margins="5%" widths="20% 35% 35%">
-					<table>
+					<table xml:id="examp_graphs_incorrect-axis_table">
 						<title>Frequency Table</title>
 						<tabular>
 							<row bottom="medium">
@@ -1499,8 +1588,8 @@
 							</row>
 						</tabular>
 					</table>
-					<image source="./images/graph_graphs_s3_e1-a.png" width="100%"/>
-					<image source="./images/graph_graphs_s3_e1-b.png" width="100%"/>
+					<image source="./images/graphs_examp_incorrect-axis-a.png" width="100%"/>
+					<image source="./images/graphs_examp_incorrect-axis-a.png" width="100%"/>
 				</sidebyside>
 			</statement>
 			<solution>
@@ -1509,19 +1598,18 @@
 		</example>
 		<p>This is one example of a problem caused by a violation of an important	principle in graphing.</p>
 		<definition xml:id="def_area-principle">
-			<title>Area Principle</title>
 			<idx><h>graphs</h><h>area principle</h></idx>
 			<statement>
 				<p>The <term>area principle</term> states that the area of any bar or sector in a graph representing a category in a frequency table or class in a frequency distribution must be in the same proportion to the rest of the graph as the frequency of the category or class is to the rest of the data in the table.</p>
 			</statement>
 		</definition>
 		<p>By changing the starting point of the frequency axis in the second histogram above, we have violated the area principle. This makes the <q>full insurance</q> bar look much shorter in relation to the other two bars than the numbers indicate. Another common error in creating graphs is to violate the area principle by creating three dimensional graphs. Consider the following.</p>
-		<example xml:id="examp_graphs_s3_e2">
+		<example xml:id="examp_graphs_3d-pie-graph">
 			<title>A Three-Dimensional Pie Graph</title>
 			<statement>
 				<p>A store manager wishes to know the general age group into which most of his customers fall. He does a quick survey and comes up with the following fequency distribution. He then creates a pie graph to show the proportion of customers in each age group. Do you think his pie graph accurately represents the data from the frequency distribution?</p>
 				<sidebyside margins="5%" widths="20% 70%">
-					<table>
+					<table xml:id="examp_graphs_3d-pie-graph_table">
 						<title>Frequency Distribution</title>
 						<tabular>
 							<row bottom="medium">
@@ -1546,7 +1634,7 @@
 							</row>
 						</tabular>
 					</table>
-					<image source="./images/graph_graphs_s3_e2.png" width="50%"/>
+					<image source="./images/graphs_examp_3d-pie-graph.png" width="50%"/>
 				</sidebyside>
 			</statement>
 			<solution>
@@ -1555,16 +1643,16 @@
 		</example>
 		<p>The most important thing to remember from this section is that we must be sure not to sacrifice accuracy to create <q>pretty</q> looking graphs.</p> 
 
-		<figure xml:id="sec_graphs_s3_v1">
-			<title>Things to Avoid I</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-12.mp4"/>
+		<figure xml:id="video_graphs_things-to-avoid-1">
+			<caption>Things to Avoid I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-12.mp4"/>
 		</figure>
-		<figure xml:id="sec_graphs_s3_v2">
-			<title>Things to Avoid II</title>
-			<video src="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-13.mp4"/>
+		<figure xml:id="video_graphs_things-to-avoid-2">
+			<caption>Things to Avoid II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-13.mp4"/>
 		</figure>
 
-		<exercise xml:id="sec_graphs_s3_c1">
+		<exercise xml:id="ckpt_graphs_things-to-avoid-1">
 			<title>Things to Avoid</title>
 			<statement>
 				<p>It is always best to use three dimensional effects to make your graphs more appealing.</p>
@@ -1573,7 +1661,7 @@
 			<answer><p>False</p></answer>
 		</exercise>
 
-		<exercise xml:id="sec_graphs_s3_c2">
+		<exercise xml:id="ckpt_graphs_things-to-avoid-2">
 			<title>Things to Avoid</title>
 			<statement>
 				<p>It is best to change the scale of the <m>y</m>-axis in a histogram or bar graph to start at a number close to the minimum value in the frequency distribution or frequency table, but bigger than zero.</p>
@@ -1582,7 +1670,7 @@
 			<answer><p>False</p></answer>
 		</exercise>
 
-		<exercise xml:id="sec_graphs_s3_c3">
+		<exercise xml:id="ckpt_graphs_things-to-avoid-3">
 			<title>Things to Avoid</title>
 			<statement>
 				<p>Violating the area principle may create misleading graphs.</p>
@@ -1591,4 +1679,5 @@
 			<answer><p>True</p></answer>
 		</exercise>
 	</subsection>
+
 </section>
