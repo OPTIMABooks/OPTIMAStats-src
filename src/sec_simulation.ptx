@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_simulation">
+  <title>Randomness and Simulation</title>
+
+  <introduction xml:id="sec_simulation_intro">
+  	<p>We begin our study of randomness and probability by exploring the concept of randomness.  What does it mean for a process to be random?  Why does it matter?  We'll attempt to answer these questions in the first few parts of this section.</p>
+  	<p>Once we've identified sources of randomness, we will focus on how we can utilize them to simulate a process.  We'll discuss the key steps in conducting a simulation and look at several examples.  We will finish the section by reviewing several limitations of simulations.</p>
+  </introduction>
+
+  <objectives xml:id="sec_simulation_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul cols="2">
+					<li><p>component</p></li>
+					<li><p>deterministic process</p></li>
+					<li><p>outcome</p></li>
+					<li><p>pseudo-random</p></li>
+					<li><p>random number table</p></li>
+					<li><p>random process</p></li>
+					<li><p>response variable</p></li>
+					<li><p>simulation</p></li>
+					<li><p>trial</p></li>
+				</ul></p>
+			</li>					
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Identify random, pseudo-random, and non-random processes</p></li>
+					<li><p>Describe a simulation using appropriate vocabulary</p></li>
+					<li><p>Set-up a simulation using appropriate assumptions,</p></li>
+					<li><p>Conduct a simulation using random number tables</p></li>
+					<li><p>Identify the limitations of a simulation</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_simulation_pseudo-random">
+		<title>Random vs. Pseudo-random Numbers</title>
+		<p>We have already seen the terms <q>random sample</q> in this course, and we will see it a lot more as we continue. It is important, therefore, that we understand what randomness means.</p>
+		<example xml:id="examp_simulation_identify-random">
+			<title>Identifying Random Processes</title>
+			<statement>
+				<p>Which of the following processes is random?
+					<ol label="a">
+						<li><p>a person thinks of a number between one and ten</p></li>
+						<li><p>a student randomly fills in bubbles on a standardized test sheet</p></li>
+						<li><p>a computer program randomly assigns the winning lottery numbers</p></li>
+					</ol></p>
+			</statement>
+			<solution>
+				<p>Surprisingly, the answer is none of these are truly random processes.</p>
+			</solution>
+		</example>
+		<p>To be truly random, a process must have no predictability<mdash/>show no preference towards one or more outcomes. A person choosing a number is likely to have a <q>favorite</q> number or to be influenced by something he just saw or heard. A student filling in bubbles is likely to make a design, or even to <q>try to be random</q> and evenly spread out the bubbles, which is not in fact random. Even a computer program comes up with <q>random numbers</q> using a predictable algorithm. The computer program is an example of the following.</p>
+		<definition xml:id="def_pseudo-random">
+			<idx>pseudo-random process</idx>
+			<statement>
+				<p>A <term>pseudo-random process</term> is one that appears to be random, but which, when repeated with the same initial inputs, will always produce the same results.</p>
+			</statement>
+		</definition>
+		<p>Where then can we get a reliable source of random information? This can actually be a philosophical question. Is anything in the universe truly random, or is everything <term>deterministic</term><idx>deterministic</idx><mdash/>meaning if we know the initial conditions, we can predict exactly what will happen. In this class, we assume that physical phenomena that we observe are, if not random, so complex that they might as well be random. We can gather random numbers then from sources such as:
+		<ul>
+			<li><p>the time between the decay of radioactive material, or</p></li>
+			<li><p>time between the observation of cosmic rays, or</p></li>
+			<li><p>wind gust speeds and direction.</p></li>
+		</ul>
+		None of these are terribly practical for us, so instead we use either a pseudo-random number generator on a computer, or a random number table which records digits based on processes similar to those mentioned above.</p>
+		<definition xml:id="def_random-number-table">
+			<idx>random number table</idx>
+			<statement>
+				<p>A <term>random number table</term> is a list of digits recorded based on some random process. For example,</p>				
+				<pre>				
+					2217726304387410092537086270581997622725849795907032825001108963
+					3217535822643800292254644943760642389043766557204107354186024508
+					8906427308645681412198226653885873285801699027843110380420067664
+					8740522639824530519902027044464984322000946238678577902639002954
+					8887003319933147508331265192321413908608671496383528968974910533
+					4943760642389043766557204107354186024508432200094623867858226440
+				</pre>
+			</statement>
+		</definition>
+		<p>To use a random number table to help us generate a string of random numbers, we first <q>randomly</q> select a starting point in the table, and then use the digits that follow.</p>
+		<example xml:id="examp_simulation_using-table">
+			<title>Using a Random Number Table</title>
+			<statement>
+				<p>You wish to randomly pick a sample of 6 people from a group of 100 people. Use the random number table provided above to do this.</p>
+			</statement>
+			<solution>
+				<p>We will assign each person in our group of 100 a two-digit number from 00 to 99. This means we will take groups of two digits from the table above, skipping over any repeating numbers since we don't want to pick the same <q>person</q> twice.</p>
+				<p>In order to select our six pairs of digits, we must first pick a starting point.  We'll do this by rolling a six-sided die (since there are six rows in the table).  Let's say this comes up with the number 3.  Then we will start at the beginning of the third row in the table.  The first six pairs of two-digit numbers from that row are <m>89, 06, 42, 73, 08,</m> and <m>65</m>.</p>
+				<p>Each of these numbers represents one of our people, and there are no repeats.  So the six people we will use in our sample are those assigned numbers 89, 6, 42, 73, 8, and 64.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_simulation_pseudo-random-1">
+			<caption>Using Random Number Tables I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-01.mp4"/>
+		</figure>
+		<figure xml:id="video_simulation_pseudo-random-2">
+			<caption>Using Random Number Tables II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_simulation_pseudo-random-1">
+			<statement>
+				<p>You wish to collect a sample of 10 individuals from a population of 100. To do this, you assign numbers 0-99 to these individuals, and then use the random number table below, starting with the first entry and taking two digits at a time to select your sample.</p>
+				<pre>
+					52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+					93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+					16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+				</pre>
+				<p>Question: What are the numbers of the individuals will be included in your sample?</p>
+			</statement>
+			<answer><p>Person number 52, 55, 71, 34, 40, 30, 79, 3, 18, and 58.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_simulation_pseudo-random-2">
+			<statement>
+				<p>You wish to collect a sample of 10 individuals from a population of 100. To do this, you assign numbers 0-99 to these individuals, and then use the random number table below, starting with the first entry in the second row, and taking two digits at a time to select your sample.</p>
+				<pre>
+					52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+					93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+					16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+				</pre>
+				<p>Question: Which of the following individuals will not be included in your sample?
+					<ol cols="2">
+						<li><p>Person number 22</p></li>
+						<li><p>Person number 35</p></li>
+						<li><p>Person number 46</p></li>
+						<li><p>Person number 69</p></li>
+					</ol>
+				</p>
+			</statement>
+			<answer><p>Person number 46</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_simulation_pseudo-random-3">
+			<statement>
+				<p>You wish to collect a sample of 10 individuals from a population of 100. To do this, you assign numbers 0-99 to these individuals, and then use the random number table below, starting with the first entry in the third row and taking two digits at a time to select your sample.</p>
+				<pre>
+					52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+					93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+					16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+				</pre>
+				<p>Question: Which individuals are included in your sample?</p>
+			</statement>
+			<answer><p>Person number 16, 64, 52, 11, 77, 60, 69, 71, 55, and 24.</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_simulation_random">
+		<title>Random Processes</title>
+		<p>In statistics, we use random processes in many different ways. For example, we may wish to use randomness to:
+			<ul>
+				<li><p>eliminate human biases -- such as in selecting individuals for a sample,</p></li>
+				<li><p>model the real world -- such as flipping a coin, rolling a die, or other more complicated random processes, or</p></li>
+				<li><p>predict how likely a given event is to happen based on the models above.</p></li>
+			</ul>
+		</p>
+		<p>One of our goals in this lesson is to better understand how we can model the real world using <term>random processes</term> so that we can make predictions and better understand our samples. To model the real world, we must first understand the process we are trying to model.</p>
+		<definition xml:id="def_random-process">
+	    <idx>random process</idx>
+	    <statement>
+	    	<p>A <term>random process</term> is one in which, even if the initial conditions are known, the final result can not be predicted.</p>
+	    </statement>
+	  </definition>
+	  <p>If a process is not random, then the outcome can be predicted or determined based on the initial conditions, or starting points of the process. Such a process is called <term>deterministic</term>.</p>
+	  <definition xml:id="def_deterministic-process">
+	  	<idx>deterministic process</idx>
+	  	<statement>
+	  		<p>In a <term>deterministic process</term> the outcome of the process is completely determined by the initial conditions. That is, the final result will always be the same if the same starting point is used.</p>
+	  	</statement>
+	  </definition>
+	  <p>To see the difference between these two types of processes, consider the following examples.</p>
+	  <example xml:id="examp_simulation_random-or-deterministic-1">
+	  	<title>Identifying Processes I</title>
+	  	<statement>
+	  		<p>An otherwise empty lake is stocked with 500 catfish, 750 bass, and 1000 trout. A fisherman decides to catch fish and throw them back until he has caught one of each type of fish. Is this a random or deterministic process?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>This is a <em>random process</em> because the answer to the question will vary randomly. In order to model this, we would either need to either find such a pond and fish (probably impractical), come up with a way to count all of the possibilities (see <xref provisional="sec_counting"/>) or simulate the process using random numbers.</p>
+	  	</solution>
+	  </example>
+	  <example xml:id="examp_simulation_random-or-deterministic-2">
+	  	<title>Identifying Processes II</title>
+	  	<statement>
+	  		<p>A lamp is connected to five different light switches, each in a different room. The lamp turns on if an even number of the light switches are in the up position and off if an odd number are in the up position. We observe the state of the light (off or on). Is this a random process?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>This is not a random process, it is <em>deterministic</em>. Based on the state of the light switches we can say for certain whether the lamp will be off or on.</p>
+	  	</solution>
+	  </example>
+
+	  <figure xml:id="video_simulation_random-1">
+	  	<caption>Deterministic and Random Processes I</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-03.mp4"/>
+	  </figure>
+	  <figure xml:id="video_simulation_random-2">
+	  	<caption>Deterministic and Random Processes II</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-04.mp4"/>
+	  </figure>
+
+	  <exercise xml:id="ckpt_simulation_random-1">
+	  	<statement>
+	  		<p>The following describes three different processes.
+	  			<ol label="a">
+	  				<li><p>Shuffling a deck of 52 playing cards four times, and then drawing the top card.</p></li>
+	  				<li><p>Pushing four specific buttons on your calculator, in a specified order, and then pressing the <q>=</q> key.</p></li>
+	  				<li><p>Spinning the <q>wheel-of-fortune</q> from the TV game show.</p></li>
+	  			</ol>
+	  		</p>
+	  		<p>Question: Identify each of these processes as random or deterministic.</p>
+	  	</statement>
+	  	<answer><p>drawing a card and spinning the wheel are random, pushing the calculator keys is deterministic</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_simulation_random-2">
+	  	<statement>
+	  		<p>The following describes three different processes.
+	  			<ol label="a">
+		  			<li><p>Typing a specified list of commands into a computer program.</p></li>
+		  			<li><p>Drawing 4 names from a hat containing 100 names and noting whose name is drawn.</p></li>
+		  			<li><p>Drawing 4 names from a hat containing 4 names and noting whose name is drawn.</p></li>
+		  		</ol>
+		  	</p>
+		  	<p>Question: Identify each of these processes as random or deterministic.</p>
+		  </statement>
+		  <answer><p>drawing names from the 100 name hat is random, the others are deterministic</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_simulation_random-3">
+	  	<statement>
+	  		<p>The following describes three different processes.
+	  			<ol label="a">
+	  				<li><p>Typing your PIN number into the ATM after inserting your bank card.</p></li>
+	  				<li><p>Rolling a pair of dice weighted so that the "1" always comes up and noting the sum of the numbers that appear.</p></li>
+	  				<li><p>Rolling a pair of fair dice noting the sum of the numbers that appear.</p></li>
+	  			</ol>
+	  		</p>
+	  		<p>Question: Identify each of these processes as random or deterministic.</p>
+	  	</statement>
+	  	<answer><p>using your ATM card and rolling the weighted dice are deterministic.</p></answer>
+	  </exercise>
+	</subsection>
+
+	<subsection xml:id="sec_simulation_simulation">
+		<title>Simulation</title>
+		<p>Our <xref ref="examp_simulation_random-or-deterministic-1" text="custom">fishing example</xref> from the last page illustrates an important point. Many times it is not practical to replicate a particular random process. We don't have a lake in our back yard that we can stock with these fish to perform this exact experiment. Instead, we need to try to construct a model for the process which we can then use as a <term>simulation</term>.</p>
+		<definition xml:id="def_simulation">
+			<idx>simulation</idx>
+			<statement>
+				<p>A <term>simulation</term> is a sequence of random outcomes that models a random process.</p>
+			</statement>
+		</definition>
+		<p>As we construct simulations for this and other examples, keep the following cautions in mind.
+		  <ul>
+		    <li><p>A simulation is a model of the real process and therefore is not perfect.</p></li>
+		    <li><p>A simulation is meant to be easier to perform than the actual random process.</p></li>
+		    <li><p>A simulation needs to correctly model the process, so we should be careful of any underlying assumptions.</p></li>
+		  </ul>
+		</p>
+		<p>In order to describe the simulations that we will create and carry out, it is important to have a well-understood vocabulary. Some of these terms have already been used, but we clarify their exact definitions below.</p>
+		<definition xml:id="def_simulation-terms">
+			<idx><h>simulation</h><h>component</h></idx>
+			<idx><h>simulation</h><h>outcome</h></idx>
+			<idx><h>simulation</h><h>trial</h></idx>
+			<idx><h>simulation</h><h>response variable</h></idx>
+			<statement>
+				<p>The following terms are often used in describing simulations.
+					<ul>
+						<li><title>Component</title><p>A component is the most basic action in the process being simulated.</p></li>
+						<li><title>Outcome</title><p>The outcomes of a process are the possible results of a single component.</p></li>
+						<li><title>Trial</title><p>A trial is one series of components which completes the process.</p></li>
+						<li><title>Response Variable</title><p>The response variable is the final result for which we are looking.</p></li>
+					</ul>
+				</p>
+			</statement>
+		</definition>
+		<p>To better understand these terms, let's apply them to the fishing example from earlier.</p>
+		<example xml:id="examp_simulation_identify-parts">
+			<title>Identifying Parts of a Random Process</title>
+			<statement>
+				<p>Identify the components, outcomes, trials, and response variables in the fishing experiment seen in <xref ref="examp_simulation_random-or-deterministic-1" />.</p>
+			</statement>
+			<solution>
+				<p>These are as follows.
+					<ul>
+						<li><p>A <term>component</term> is catching a single fish. This is the most basic action in our process.</p></li>
+						<li><p>The <term>outcomes</term> are the various fish that could be caught - catfish, bass, and trout.</p></li>
+						<li><p>A <term>trial</term> is catching a series of fish until we get one of each type.</p></li>
+						<li><p>The <term>response variable</term> is the number of fish we had to catch in our trial.</p></li>
+					</ul>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_simulation_identify-parts-1">
+			<caption>Identifying Parts of a Random Process I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-05.mp4"/>
+		</figure>
+		<figure xml:id="video_simulation_identify-parts-2">
+			<caption>Identifying Parts of a Random Process II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_simulation_simulation-1">
+			<statement>
+				<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 individuals from upper management were <q>randomly</q> selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+				<p>Question: What are the components of such a simulation?</p>
+			</statement>
+			<answer><p>The selection of one employee to receive a parking space.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_simulation_simulation-2">
+			<statement>
+				<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 individuals from upper management were <q>randomly</q> selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+				<p>Question: What are the trials of such a simulation?</p>
+			</statement>
+			<answer><p>The selection of 23 employees to receive parking spaces.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_simulation_simulation-3">
+			<statement>
+				<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 individuals from upper management were <q>randomly</q> selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+				<p>Question: What are the outcomes of such a simulation?</p>
+			</statement>
+			<answer><p>Picking any one of the 74 employees who participated in the lottery.</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_simulation_conducting">
+		<title>Conducting Simulations</title>
+		<p>In order to actually carry out a simulation, we will combine the analysis of the random process we saw on the last page with the use of a randomness that we saw earlier in this lesson. The first thing we must do is identify any assumptions we make about the random process.</p>
+		<example xml:id="examp_simualtion_conducting_assumptions">
+			<title>Identifying Assumptions</title>
+			<statement>
+				<p>List any assumptions that must be made to simulate the fishing process seen in <xref ref="examp_simulation_random-or-deterministic-1" />.</p>
+			</statement>
+			<solution>
+				<p>There are many assumptions that are made in simulating this example. Here are a few of the more important ones.
+					<ul>
+						<li><p>Each species of fish has the same chance of being caught--that is, no one fish is more likely to take a hook than another.</p></li>
+						<li><p>The number of fish does not change from those that we are given--no fish have died, been added, etc.</p></li>
+						<li><p>The fisherman is fishing in a spot that is visited equally by all three types of fish--he hasn't found a place where trout will not go, for example.</p></li>
+						<li><p>And others...</p></li>
+					</ul>
+				</p>
+			</solution>
+		</example>
+		<p>All of these assumptions are important as they will dictate how we design our model. Remember that the goal in simulating is to model the process in a simpler and more easily studied form. The steps we must follow to set up such a simulation are listed below.</p>
+		<definition xml:id="def_simulation-steps">
+			<idx><h>simulation</h><h>simulation steps</h></idx>
+			<statement>
+				<p>To conduct a simulation, follow these steps.
+					<ol>
+						<li><p>Identify the components.</p></li>
+						<li><p>Explain how the outcome of these components will be modeled.</p></li>
+						<li><p>Explain how we will simulate a trial.</p></li>
+						<li><p>Identify the response variable.</p></li>
+						<li><p>Run several trials using a source of randomness, such as a random number table.</p></li>
+						<li><p>Analyze the response variable.</p></li>
+					</ol>
+				</p>
+			</statement>
+		</definition>
+		<p>We have already seen how to identify the components, outcomes, and trials. Let's finish our fishing example by actually conducting the simulation.</p>
+		<example xml:id="examp_simulation_conducting">
+			<title>Conducting a Simulation</title>
+			<statement>
+				<p>Simulate 10 trials of the fishing process seen in <xref ref="examp_simulation_random-or-deterministic-1"/> using the following random number table.</p>
+				<pre>
+					2217726304387410092537086270581997622725849795907032825001108963
+					3217535822643800292254644943760642389043766557204107354186024508
+					8906427308645681412198226653885873285801699027843110380420067664
+					8740522639824530519902027044464984322000946238678577902639002954
+					8887003319933147508331265192321413908608671496383528968974910533
+					4943760642389043766557204107354186024508432200094623867858226440
+				</pre>
+			</statement>
+			<solution>
+				<p>We will follow the steps outlined above.
+					<ol>
+						<li><p>We have already noted that the component in this process is catching a single fish.</p></li>
+						<li><p>Our simulation must model the three types of fish that make up the outcomes. We need to do this in such a way that the fish types and the modeled outcomes are in the same proportion. Recall that there were 500 catfish, 750 bass, and 1000 trout, for a total of 2250 fish. This gives:
+							<ul>
+								<li><p><m>\frac{500}{2250} = \frac{2}{9}</m> <mdash/> we use digits 0, 1 from 0-9 to represent catfish</p></li>
+								<li><p><m>\frac{750}{2250} = \frac{3}{9}</m> <mdash/> we use digits 2, 3, 4 from 0-9 to represent bass</p></li>
+								<li><p><m>\frac{1000}{2250} = \frac{4}{9}</m> <mdash/> we use digits 5, 6, 7, and 8 for trout</p></li>
+							</ul>
+							Note that the digit 9 will not be used.</p></li>
+						<li><p>To simulate a trial, we will select a starting point and record digits (representing fish) until we have recorded one of each <q>type of fish.</q></p></li>
+						<li><p>The response variable will be the number of <q>fish</q> recorded (so number of digits).</p></li>
+						<li><p>The results of 10 trials starting as indicated are shown below.  The <em>*</em> symbol in the outcomes represents the unassigned digit <q>9.</q></p>
+							<table xml:id="examp_simulation_conducting_table">
+								<title>Ten Simulation Trials for Fishing Example</title>
+								<tabular>
+									<col right="medium"></col>
+									<col right="medium"></col>
+									<row halign="center" bottom="medium">
+										<cell>Starting Point</cell>
+										<cell>Outcomes</cell>
+										<cell>Response Var.</cell>
+									</row>
+									<row>
+										<cell>row 1, column 1</cell>
+										<cell>2217726304 <m>\Rightarrow</m> bbct</cell>
+										<cell>4 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 2, column 11</cell>
+										<cell>6438002922 <m>\Rightarrow</m> tbbtc</cell>
+										<cell>5 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 3, column 21</cell>
+										<cell>982266538858732 <m>\Rightarrow</m> *tbbtttbtttttbc</cell>
+										<cell>14 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 4, column 31</cell>
+										<cell>4984322000 <m>\Rightarrow</m> b*tbbbbc</cell>
+										<cell>7 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 5, column 41</cell>
+										<cell>6714963835 <m>\Rightarrow</m> ttcb</cell>
+										<cell>4 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 6, column 51</cell>
+										<cell>23867858226440 <m>\Rightarrow</m> bbttttttbbtbbc</cell>
+										<cell>14 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 1, column 21</cell>
+										<cell>3708627058 <m>\Rightarrow</m> btc</cell>
+										<cell>3 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 2, column 31</cell>
+										<cell>0642389043 <m>\Rightarrow</m> ctb</cell>
+										<cell>3 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 3, column 41</cell>
+										<cell>6990278431 <m>\Rightarrow</m> t**ccttb</cell>
+										<cell>6 fish caught</cell>
+									</row>
+									<row>
+										<cell>row 4, column 51</cell>
+										<cell>7790263900 <m>\Rightarrow</m> tt*cb</cell>
+										<cell>4 fish caught</cell>
+									</row>
+								</tabular>
+							</table>							
+						</li>
+						<li><p>The response variable had values 4, 5, 14, 7, 4, 14, 3, 3, 6, 4 giving a mean value of:
+							<me>\overline{x} = \frac{4+5+14+7+4+14+3+3+6+4}{10} = 6.4 \text{ fish}.</me>
+							It appears that the number of fish we would need to catch before having one of each sort is around 6. Note, however, that the 14's may be outliers.</p></li>
+				  </ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_simulation_conducting-1">
+			<caption>Conducting Simulations I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-07.mp4"/>
+		</figure>
+		<figure xml:id="video_simulation_conducting-2">
+			<caption>Conducting Simulations II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_simulation_conducting-1">
+			<statement>
+				<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 of the upper management team were "randomly" selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+				<p>You decide to conduct the simulation using the following random number table, assigning numbers 00-16 to the upper management individuals and 17-73 to the remaining employees. Numbers 74-99 are skipped, as are repeated numbers.</p>
+				<pre>
+					52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+					93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+					16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+				</pre>
+				<p>Question: How many upper-management employees received a parking spot on your first trial if you start with the first entry of row one?</p>
+			</statement>
+			<answer><p>4</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_simulation_conducting-2">
+			<statement>
+				<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 of the upper management team were "randomly" selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+				<p>You decide to conduct the simulation using the following random number table, assigning numbers 00-16 to the upper management individuals and 17-73 to the remaining employees. Numbers 74-99 are skipped, as are repeated numbers.</p>
+				<pre>
+					52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+					93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+					16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+				</pre>
+				<p>Question: How many upper-management employees received a parking spot on your first trial if you start with the first entry of row two?</p>
+			</statement>
+			<answer><p>7</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_simulation_conduction-3">
+			<statement>
+			<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 of the upper management team were "randomly" selected to receive free parking, the other employees complained that the lottery had been rigged. Use a simulation to determine if their claim has merit.</p>
+				<p>You decide to conduct the simulation using the following random number table, assigning numbers 00-16 to the upper management individuals and 17-73 to the remaining employees. Numbers 74-99 are skipped, as are repeated numbers.</p>
+				<pre>
+					52557 13440 30790 31858 28653 38267 09427 95946 09832 68174
+					93146 91673 22649 29722 35062 19040 67106 96350 82060 51489
+					16645 21177 60697 15577 24381 51084 70974 11304 37199 12631
+				</pre>
+				<p>Question: How many upper-management employees received a parking spot on your first trial if you start with the <q>38</q> that begins the sixth block in row 1?</p>
+			</statement>
+			<answer><p>3</p></answer>
+		</exercise>
+	</subsection>
+
+  <subsection xml:id="sec_simulation_cautions">
+  	<title>Cautions Regarding Simulation</title>
+  	<p>In the simulation we conducted above, there seems to be a lot of variation. Consider a further analysis of this data in the following example.</p>
+  	<example xml:id="examp_simulation_cautions">
+  		<title>Analyzing Simulation Results</title>
+  		<statement>
+  			<p>Recall that the numbers of fish we had to catch in the <xref ref="examp_simulation_conducting_table" text="custom">ten simulated trials</xref> before having one of each kind were <m>4, 5, 14, 7, 4, 14, 3, 3, 6, \text{ and } 4</m>. Use the mean and standard deviation to further analyze this data.</p>
+  		</statement>
+  		<solution>
+  			<p>We saw in <xref ref="examp_simulation_conducting"/> that the mean was <m>\overline{x} = 6.4</m> fish.  Using a calculator or spreadsheet program, we find that the standard deviation in this sample is  <m>s = 4.2</m> fish.</p>
+  			<p>The standard deviation is almost as large as the mean, so there is a lot of variation in the number of fish needed to complete a trial. The 14's are not outliers, but they do have a z-score of <m>z = \frac{14-6.4}{4.2} \approx 1.81</m> which is relatively large.</p>
+  		</solution>
+  	</example>
+  	<p>If we decide that our standard deviation of 4.2 is too large, and we want a more <q>precise</q> mean, meaning we want to see better results from the simulation, what can we do?  There are several ways to improve a simulation.
+  	  <ul>
+  	  	<li><p>Ensure that the underlying assumptions are accurate.</p></li>
+  	  	<li><p>Improve the randomness of the simulation.</p></li>
+  	  	<li><p>Raise the number of trials<mdash/>usually at least 20 should be conducted.</p></li>
+  	  </ul>
+  	</p>
+  	<p>Our underlying assumptions seem to be reasonable, and we did use a random number table to generate randomness. However, we only did 10 trials. for a better simulation, we should do at least 20 trials. Running trials by hand can be very time consuming. Using a spreadsheet program we could get our results much more quickly.</p>
+  	<p>Be very cautious when conducting and reporting on simulations.  The following guidelines should be followed.
+  		<ul>
+  			<li><title>Don't Overstate Your Case</title><p>A simulation is in some sense always wrong. We didn't actually fish in a lake stocked as the example stated. Add to that the fact that a random process will always turn out differently each time we do it, and you need to be cautious about claiming that <q>we must catch 6.4 fish</q> in order to complete the process.</p></li>
+  			<li><title>Model Outcomes Correctly</title><p>We must keep outcomes in the correct proportion to our random digits. Drop digits as necessary to ensure that these proportions are correct. If you have more than 10 outcomes to model, you can use two digits at a time.</p></li>
+  			<li><title>Run Enough Trials</title><p>The purpose of a simulation is to make a long and possibly expensive process short and cheap. So use a large number of trials!</p></li>
+  		</ul>
+  	</p>
+
+  	<figure xml:id="video_simulation_cautions-1">
+  		<caption>Simulation Cautions I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-09.mp4"/>
+  	</figure>
+  	<figure xml:id="video_simulation_cautions-2">
+  		<caption>Simulation Cautions II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-10.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_simulation_cautions-1">
+  		<statement>
+  			<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 upper management employees were <q>randomly</q> selected to receive free parking, the other employees complained that the lottery had been rigged. You decide to use a random number table to simulate the situation. You assign the management employees numbers 00-16, the other employees numbers 17-73, and skip numbers 74-99. You then simulate a 10 trials using a random number table and find that on average 15.2 of the 17 upper management employees were selected. You therefore conclude that the lottery must be fair.</p>
+  			<p>Question: What, if any, mistake did you make?</p>
+  		</statement>
+  		<answer><p>Overstated your Case</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_simulation_cautions-2">
+  		<statement>
+  			<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 upper management employees were <q>randomly</q> selected to receive free parking, the other employees complained that the lottery had been rigged. You decide to use a random number table to simulate the situation. You assign the management employees numbers 00-16, the other employees numbers 17-73, and skip numbers 74-99. You then simulate 100 trials using a random number table and find that an average of 5.4 upper management employees were selected. You therefore conclude that it is unlikely this was a fair lottery.</p>
+  			<p>Question: What, if any, mistake did you make?</p>
+  		</statement>
+  		<answer><p>Made No Mistakes--Your Conclusion is Sound</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_simulation_cautions-3">
+  		<statement>
+  			<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 upper management employees were <q>randomly</q> selected to receive free parking, the other employees complained that the lottery had been rigged. You decide to use a random number table to simulate the situation. You assign the management the even digits (0,2,4,6,8) and the other employees the odd digits (1,3,5,7,9). You then simulate 100 trials using a random number table and find that 8.2 of the 17 upper management employees were selected. You therefore conclude that all 17 being selected is not very likely if the lottery is indeed fair.</p>
+  			<p>Question: What, if any, mistake did you make?</p>
+  		</statement>
+  		<answer><p>Didn't Model Outcomes Correctly</p></answer>
+  	</exercise>
+  </subsection>
+
+</section>

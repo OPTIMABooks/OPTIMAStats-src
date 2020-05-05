@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_descriptive">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_probability">
   <title>Understanding Randomness and Probability</title>
   <introduction>
     <p>Randomness is essential to the study of statistics for many different reasons.  Two of the most important are stated below.
@@ -9,6 +9,7 @@
       </ul>
       Since inferential statistics, which is where we are headed in this text, is all about making claims about a population based on a sample, it is important that we understand randomness and more specifically, the probability of an event.</p>
   </introduction>
+
 
   <xi:include href="sec_simulation.ptx"/>
 <!--
