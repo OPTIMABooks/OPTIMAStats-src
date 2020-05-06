@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_counting">
+  <title>Basic Counting Rules</title>
+
+  <introduction xml:id="sec_counting_intro">
+  	<title>A Theoretical Approach</title>
+  	<p>The simulations that we saw in the last section can be thought of as an experimental approach to understanding a random process. While this is a good way to investigate a random process, it can be time consuming and will yield different results each time it is performed, due to its random nature.</p>
+  	<p>An alternative approach is to be more theoretical. Instead of simulating the process, we try to understand the process by counting the number of different outcomes that could happen and the number of outcomes that lead to each value of the response variable in which we are interested. In order to use this more theoretical approach, which we will talk more about in <xref provisional="sec_probability-rules" />, we first need to know how to count.</p>
+  	<p>In this section we will introduce several important counting rules. Many of these rules may be familiar to you already. Some of them, however, will probably be new. We will focus not only on understanding the formulas that go with these counting rules, but also when to use each rule.</p>
+  </introduction>
+
+  <objectives xml:id="sec_counting_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul cols="2">
+					<li><p>union</p></li>
+					<li><p>addition rule</p></li>
+					<li><p>combination</p></li>
+					<li><p>factorial</p></li>
+					<li><p>inclusion/exclusion rule</p></li>
+					<li><p>intersection</p></li>
+					<li><p>multiplication rule</p></li>
+					<li><p>mutually exclusive</p></li>
+					<li><p>permutation</p></li>
+					<li><p>tree diagram</p></li>
+				</ul></p>
+			</li>					
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Use the addition and multiplication counting rules</p></li>
+					<li><p>Use the inclusion/exclusion counting rule</p></li>
+					<li><p>Correctly compute and use factorials.</p></li>
+					<li><p>Correctly apply the permutation counting rule</p></li>
+					<li><p>Correctly apply the combination counting rule</p></li>
+					<li><p>Identify and use appropriate counting rules to solve story problems</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_counting_addition">
+		<title>Sets and the Addition Rule</title>
+		<p>In this first section of the lesson, we will remind you of one of the most basic counting rules: the <term>addition rule</term>. We will also introduce the idea of set notation.</p>
+		<definition xml:id="def_counting-rule-addition-informal">
+			<statement>
+				<p>If a process can happen in one of two distinct ways, the first way having <m>n</m>n different possibilities and the second having <m>m</m> possibilities, then the entire process can happen <m>n+m</m> ways.  This is referred to as the <term>addition rule</term>.</p>
+		  </statement>
+	  </definition>
+	  <p>To see this counting rule in action, consider the following example.</p>
+	  <example xml:id="examp_counting_addition-informal">
+	  	<title>Using the Addition Rule</title>
+	  	<statement>
+	  		<p>You have won a church raffle. The winning ticket entitles you to choose either one of eight possible home-made pies, or one of six types of home-made cakes. In how many ways can you make your choice?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>Since you may choose either a pie <em>or</em> a cake, and none of your choices are <em>both</em> a pie and a cake, you have <m>8+6=14</m> choices, according to the addition rule.</p>
+	  	</solution>
+	  </example>
+	  <p>Note the emphasized word <em>or</em> in the above solution. The addition rule can be thought of as going with the word <q>or</q> because we have one of two types of objects from which we must choose. In terms of mathematical sets, the word or goes with the notion of a <term>union</term>.</p>
+	  <definition xml:id="def_union">
+	  	<idx>union of two sets</idx>
+	  	<idx><h>sets</h><h>union</h></idx>
+	  	<statement>
+	  		<p>The <term>union</term> of two sets, <m>A</m> and <m>B</m>, is <m>A\cup B</m>, the set containing all elements that are in <m>A</m> or in <m>B</m> (or both).</p>
+	  	</statement>
+	  </definition>
+	  <p>The union of the pies and the cakes in <xref ref="examp_counting_addition-informal"/> above is the set of all 14 baked goods from which you can choose your prize. You may have also noticed that the word <em>both</em> was emphasized in the solution above. This is because it is important that when we use the addition rule, none of the choices be members of both groups<mdash/>that is, none of the elements are in both sets.  Being in both sets <m>A</m> and <m>B</m> also has a mathematical name.</p>
+	  <definition xml:id="def_intersection">
+	  	<idx>intersection of two sets</idx>
+	  	<idx><h>sets</h><h>intersection</h></idx>
+	  	<statement>
+	  		<p>The <term>intersection</term> of two sets, <m>A</m> and <m>B</m>, is <m>A \cap B</m>, the set containing all elements that are in both <m>A</m> and <m>B</m>.</p>
+	  	</statement>
+	  </definition>
+	  <p>One way to keep the union and intersection straight is to associate them with the common English terms. If the word <q>or</q> is used, chances are that we are talking about a <term>union</term>. If the word <q>and</q> is used, we are probably referring to an <term>intersection</term>. In the case of the addition rule, we want to make sure that there are no items in both sets <m>A</m> and <m>B</m>. That is, we want <m>A</m> and <m>B</m> to be <term>mutually exclusive</term>.</p>
+	  <definition xml:id="def_mutually-exclusive">
+	  	<idx>mutually exclusive</idx>
+	  	<idx><h>sets</h><h>mutually exclusive</h></idx>
+	  	<statement>
+	  		<p>Two sets, <m>A</m> and <m>B</m>, are said to be <term>mutually exclusive</term> if their intersection is empty.  Symbolically, we write this as <m>A\cap B = \emptyset</m>.</p>
+	  	</statement>
+	  </definition>
+	  <p>Using these more formal ideas involving sets, we can restate the addition rule as follows.</p>
+	  <definition xml:id="def_counting-rule_addition">
+	  	<idx>addition rule (counting)</idx>
+	  	<idx><h>counting rules</h><h>addition rule</h></idx>
+	  	<statement>
+	  		<p>If <m>A</m> and <m>B</m> are mutually exclusive sets, then the <term>addition rule</term> states that
+	  		  <me>n(A\cup B) = n(A) + n(B)</me>,
+	  		  where <m>n(A)</m> represents the number of elements in set <m>A</m>.</p>
+	  	</statement>
+	  </definition>
+	  <p>The next example will give us a little more practice using sets and the addition rule.</p>
+	  <example xml:id="examp_counting_addition-formal">
+	  	<title>Using the Formal Addition Rule</title>
+	  	<statement>
+	  		<p>Use the sets <m>A = \lbrace a, b, c \rbrace</m>, <m>B = \lbrace 1, 2, 3 \rbrace</m>, and <m>C = \lbrace 1, a, 2, c \rbrace</m> to answer the following questions.
+	  		  <ol label="a">
+	  		  	<li><p>Find <m>A \cup B</m></p></li>
+	  		  	<li><p>Use the addition rule to find <m>n(A\cup B)</m>.</p></li>
+	  		  	<li><p>Find <m>A \cap C</m>.</p></li>
+	  		  	<li><p>Can you use the addition rule to find <m>n(A\cup C)</m>?  Explain.</p></li>
+	  		  	<li><p>What are <m>A\cup C</m> and <m>n(A\cup C)</m>?</p></li>
+	  		  </ol>
+	  		</p>
+	  	</statement>
+	  	<solution>
+	  		<p><ol label="a">
+	  			<li><p><m>A\cup B = \lbrace a,b,c,1,2,3 \rbrace</m> since those are the elements in <m>A</m> <em>or</em> <m>B</m>.</p></li>
+	  			<li><p>According to the addition rule, because <m>A</m> and <m>B</m> are mutually exclusive, <m>n(A\cup B) = n(A) + n(B) = 3 + 3 = 6</m>.</p></li>
+	  			<li><p><m>A\cap C = \lbrace a,c \rbrace</m> because those are the elements in both <m>A</m> and <m>C</m>.</p></li>
+	  			<li><p>We can not use the addition rule because <m>A\cap C</m> is not empty.</p></li>
+	  			<li><p><m>A\cup C = \lbrace a,b,c,1,2 \rbrace</m>. Note that <m>n(A\cup C) = 5</m> (there are 5 things in <m>A\cup C</m>, but <m>n(A) + n(C) = 3+4 = 7</m>). The addition rule fails because the intersection was not empty.</p></li>
+	  		</ol></p>
+	  	</solution>
+	  </example>
+
+	  <figure xml:id="video_counting_addition-1">
+	  	<caption>Sets and the Addition Rule I</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-01.mp4"/>
+	  </figure>
+ 	  <figure xml:id="video_counting_addition-2">
+	  	<caption>Sets and the Addition Rule II</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-02.mp4"/>
+	  </figure>
+
+	  <exercise xml:id="ckpt_counting_addition-1">
+	  	<statement>
+	  		<p>Consider the following sets:
+	  			<me>A = \lbrace 1, 3, x, 5, y, 8 \rbrace \qquad B = \lbrace w, 2, x, 5, z, 8 \rbrace</me>
+	  		</p>
+	  		<p>Question: Find the number of elements in the intersection of these two sets. That is, find: <m>n(A\cap B)</m>.</p>
+	  	</statement>
+	  	<answer><p>3</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_counting_addition-2">
+	  	<statement>
+	  		<p>Consider the following sets:
+	  			<me>A = \lbrace 1, 3, x, 5, y, 8 \rbrace \qquad B = \lbrace w, 2, x, 5, z, 8 \rbrace</me>
+	  		</p>
+	  		<p>Question: Find the number of elements in the union of these two sets. That is, find: <m>n(A\cup B)</m>.</p>
+	  	</statement>
+	  	<answer><p>9</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_counting_addition-3">
+	  	<statement>
+	  		<p>Consider the following sets:
+	  			<md>
+	  				<mrow>A = \lbrace x, y, z \rbrace\amp \qquad B = \lbrace 1, 2, 3 \rbrace\amp \quad C = \lbrace a, 1, x \rbrace</mrow>
+	  				<mrow>D = \lbrace a, 2, b \rbrace\amp \qquad E = \lbrace x, a, 3 \rbrace\amp \quad F = \lbrace a, b, c \rbrace</mrow>
+	  			</md></p>
+	  		<p>Question: Identify each of the following pairs of sets as mutually exclusive or intersecting.
+	  			<ol label="a" cols="2">
+	  				<li><p><m>A</m> and <m>B</m></p></li>
+	  				<li><p><m>B</m> and <m>E</m></p></li>
+	  				<li><p><m>C</m> and <m>F</m></p></li>
+	  				<li><p><m>B</m> and <m>F</m></p></li>
+	  				<li><p><m>A</m> and <m>D</m></p></li>
+	  				<li><p><m>E</m> and <m>F</m></p></li>
+	  			</ol>
+	  		</p>
+	  	</statement>
+	  	<answer><p><ol label="a">
+	  		<li><p><m>A</m> and <m>B</m> are mutually exclusive</p></li>
+				<li><p><m>B</m> and <m>E</m> are intersecting</p></li>
+				<li><p><m>C</m> and <m>F</m> are intersecting</p></li>
+				<li><p><m>B</m> and <m>F</m> are mutually exclusive</p></li>
+				<li><p><m>A</m> and <m>D</m> are mutually exclusive</p></li>
+				<li><p><m>E</m> and <m>F</m> are intersecting</p></li>
+			</ol></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_counting_inclusion-exclusion">
+		<title>Inclusion/Exclusion Rule</title>
+		<p>The addition rule only applies if the two sets whose union we are counting are mutually exclusive. What do we do then if we are asked to count the union of two sets that are not mutually exclusive?</p>
+		<example xml:id="examp_counting_includion-exclusion_double">
+			<title>Avoiding Double Counting</title>
+			<statement>
+				<p>Mary is enrolled in a statistics class and a religion class this term. There are 23 total students, including Mary, in her statistics class.  There are 34 in her religion class. Again including Mary, 10 people are taking both classes. How many people are in the two classes combined?</p>
+			</statement>
+			<solution>
+				<p>If the two classes were <xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref>, then we could use the addition rule to get <m>23+34 = 57</m>57 total people. However, doing this would double-count the 10 people who took both classes. To remedy this, we compute <m>23+34-10=47</m>, subtracting out those who were double-counted.</p>
+			</solution>
+		</example>
+		<p>In the above example, those who were in both classes are included in both the 23 and the 34. So to make up for the fact that they were counted twice, we have to subtract them back out, or exclude them, to get the final total.</p>
+		<definition xml:id="def_counting-rule_inclusion-exclusion">
+			<idx>inclusion/exclusion rule (counting)</idx>
+			<idx><h>counting rules</h><h>inclusion/exclusion rule</h></idx>
+			<statement>
+				<p>The <term>inclusion/exclusion rule</term> states that, for two sets <m>A</m> and <m>B</m>,
+				  <me>n(A\cup B) = n(A) + n(B) - n(A\cap B)</me>.</p>
+			</statement>
+		</definition>
+		<p>You have already seen the inclusion/exclusion rule at work when you worked with <xref ref="def_contingency-table" text="custom">contingency tables</xref> in <xref ref="sec_graphs_qualitative_bivariate"/>. Consider the following example.</p>
+		<example xml:id="examp_counting_inclusion-exclusion_from-table">
+			<title>Using the Inclusion/Exclusion Rule</title>
+			<statement>
+				<p>Those wishing to take a driving test at a certain DMV office are asked what type of vehicle they will be driving, and what history of driving they have. Use the contingency table below, which summarizes their responses, to answer the following questions.</p>
+				<sidebyside widths="40% 60%" margins="auto">
+					<table>
+						<title>DMV Responses</title>
+						<tabular>
+							<col right="medium"></col>
+							<col halign="center" right="medium"></col>
+							<col halign="center" right="medium"></col>
+							<col halign="center"></col>
+							<row bottom="medium">
+								<cell></cell>
+								<cell>car</cell>
+								<cell>van</cell>
+								<cell>truck</cell>
+							</row>
+							<row>
+								<cell><m>\lt</m> 1 year</cell>
+								<cell>19</cell>
+								<cell>2</cell>
+								<cell>11</cell>
+							</row>
+							<row>
+								<cell>1-20 years</cell>
+								<cell>7</cell>
+								<cell>13</cell>
+								<cell>7</cell>
+							</row>
+							<row>
+								<cell>20+ years</cell>
+								<cell>9</cell>
+								<cell>3</cell>
+								<cell>1</cell>
+							</row>
+						</tabular>
+					</table>
+					<p><ol label="a">
+						<li><p>How many people indicated that they drive a van?</p></li>
+						<li><p>How many people indicated that they drive a van and have between 1 and 20 years driving experience?</p></li>
+						<li><p>How many people indicated that they drive a van or have between 1 and 20 years driving experience?</p></li>
+					</ol></p>
+				</sidebyside>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>The first question can be answered using the addition rule. There are three <q>sets</q> of individuals which together make up the set <q>drive a van.</q>These are:
+					  <ul>
+					  	<li><p><q>Drive a van</q> and <q>less than 1 year experience</q> <mdash/> 2 drivers</p></li>
+					  	<li><p><q>Drive a van</q> and <q>1-20 years experience</q> <mdash/> 13 drivers</p></li>
+					  	<li><p><q>Drive a van</q> and <q>20+ years experience</q> <mdash/> 3 drivers</p></li>
+					  </ul>
+					Adding these all together yields <m>2+13+3 = 18</m> drivers.</p></li>
+					<li><p>This is an intersection. The intersection of <q>drives a van</q> and <q>1-20 years experience</q> is the cell with 13 drivers in it.</p></li>
+					<li><p>Here we need to use inclusion/exclusion. If we add the <q>van drivers</q>, 18 from (a), to those with <q>1-20 years of experience</q>, <m>7+13+7 = 27</m>, we double count those from (b) who both drive a van and have 1-20 years experience. Using inclusion/exclusion, our answer is <m>18 + 27-13 = 32</m>.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_counting_inclusion-exclusion-1">
+			<caption>Inclusion/Exclusion I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-03.mp4"/>
+		</figure>
+		<figure xml:id="video_counting_inclusion-exclusion-2">
+			<caption>Inclusion/Exclusion II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_counting_inclusion-exclusion-1">
+			<statement>
+				<p>In a survey of 200 Americans, people were asked two questions. They were first asked if they lived in an urban, suburban, or rural area. Next, they were asked if they had a large garden, small garden, or no garden at all. The results of this survey are tabulated below.</p>
+				<table>
+					<title>Living Situation and Garden Size</title>
+					<tabular>
+						<col right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Urban</cell>
+							<cell>Suburban</cell>
+							<cell>Rural</cell>
+						</row>
+						<row>
+							<cell>Large Garden</cell>
+							<cell>7</cell>
+							<cell>18</cell>
+							<cell>13</cell>
+						</row>
+						<row>
+							<cell>Small Garden</cell>
+							<cell>12</cell>
+							<cell>42</cell>
+							<cell>6</cell>
+						</row>
+						<row>
+							<cell>No Garden</cell>
+							<cell>51</cell>
+							<cell>47</cell>
+							<cell>4</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: How many of the survey participants live a rural area or have a large garden?</p>
+			</statement>
+			<answer><p>48</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_inclusion-exclusion-2">
+			<statement>
+				<p>In a survey of 200 Americans, people were asked two questions. They were first asked if they lived in an urban, suburban, or rural area. Next, they were asked if they had a large garden, small garden, or no garden at all. The results of this survey are tabulated below.</p>
+				<table>
+					<title>Living Situation and Garden Size</title>
+					<tabular>
+						<col right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Urban</cell>
+							<cell>Suburban</cell>
+							<cell>Rural</cell>
+						</row>
+						<row>
+							<cell>Large Garden</cell>
+							<cell>7</cell>
+							<cell>18</cell>
+							<cell>13</cell>
+						</row>
+						<row>
+							<cell>Small Garden</cell>
+							<cell>12</cell>
+							<cell>42</cell>
+							<cell>6</cell>
+						</row>
+						<row>
+							<cell>No Garden</cell>
+							<cell>51</cell>
+							<cell>47</cell>
+							<cell>4</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: How many of the survey participants have a small garden or live in an urban area?</p>
+			</statement>
+			<answer><p>118</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_inclusion-exclusion-3">
+			<statement>
+				<p>In a survey of 200 Americans, people were asked two questions. They were first asked if they lived in an urban, suburban, or rural area. Next, they were asked if they had a large garden, small garden, or no garden at all. The results of this survey are tabulated below.</p>
+				<table>
+					<title>Living Situation and Garden Size</title>
+					<tabular>
+						<col right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Urban</cell>
+							<cell>Suburban</cell>
+							<cell>Rural</cell>
+						</row>
+						<row>
+							<cell>Large Garden</cell>
+							<cell>7</cell>
+							<cell>18</cell>
+							<cell>13</cell>
+						</row>
+						<row>
+							<cell>Small Garden</cell>
+							<cell>12</cell>
+							<cell>42</cell>
+							<cell>6</cell>
+						</row>
+						<row>
+							<cell>No Garden</cell>
+							<cell>51</cell>
+							<cell>47</cell>
+							<cell>4</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: How many of the survey participants live a suburban area or have no garden?</p>
+			</statement>
+			<answer><p>162</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_counting_multiplication">
+		<title>The Multiplication Rule</title>
+		<p>In some instances, a process may have two or more steps, each of which can happen in several different ways. In order to determine the total number of ways that such a multi-step process can happen, we need to use a new rule, called the <term>multiplication rule</term>.</p>
+		<definition xml:id="def_counting-rule_multiplication">
+			<idx>multiplication rule (counting)</idx>
+			<idx><h>counting rules</h><h>multiplication rule</h></idx>
+			<statement>
+				<p>The <term>multiplication rule</term> states that if a process includes two steps where step one can happen in <m>n_1</m> ways and step two can happen in <m>n_2</m> ways, then the entire process can happen in <m>n_1 \times n_2</m> ways.</p>
+				<p>This can be expanded to a process which includes <m>k</m> stages, the <m>i^\text{th}</m> of which can happen in <m>n_i</m> ways, then the total number of ways the process can happen is:
+				<me>n_1 \times n_2 \times \cdots \times n_k</me>.</p>
+			</statement>
+		</definition>
+		<p>To see how this rule works, let's look at several examples.</p>
+		<example xml:id="examp_counting_multiplication_2-step">
+			<title>Applying the Multiplication Rule I</title>
+			<statement>
+				<p>A certain model of car comes in seven different colors, with a choice of 3 different engines. If you limit yourself to these options, how many different configurations are possible?</p>
+			</statement>
+			<solution>
+				<p>The process of configuring the car has two steps:
+					<ol>
+						<li><p>Choose a color <mdash/> 7 choices</p></li>
+						<li><p>Chose an engine <mdash/> 3 choices</p></li>
+					</ol>
+					So the total number of configurations is:
+					<me>7 \times 3 = 21</me>.
+				</p>
+			</solution>
+		</example>
+		<example xml:id="examp_counting_multiplication_3-step">
+			<title>Applying the Multiplication Rule II</title>
+			<statement>
+				<p>To put together your wardrobe on a certain morning, you must select from 5 pairs of slacks, 3 shirts, and 2 pairs of shoes. How many different outfits are possible?</p>
+			</statement>
+			<solution>
+				<p>The process of putting together a wardrobe has three steps:
+					<ol>
+						<li><p>Choose your pants <mdash/> 5 different choices</p></li>
+						<li><p>Choose your shirt <mdash/> 3 choices</p></li>
+						<li><p>Choose your shoes <mdash/> only 2 choices</p></li>
+					</ol>
+					So the total number of outfits is:
+					<me>5\times 3\times 2 = 30</me>.
+				</p>
+			</solution>
+		</example>
+		<p>Both of the examples above could be modeled using a tree diagram. A tree diagram is a useful way of picturing the multiplication rule. It can also be used to help us work through multiple-step problems that don't fit the multiplication rule above.</p>
+		<definition xml:id="def_tree-diagram">
+			<idx>tree diagram</idx>
+			<statement>
+				<p>In a <term>tree diagram</term>, each step in a process is represented by a set of branches leading to the possible outcomes in that step.</p>
+			</statement>
+		</definition>
+		<example xml:id="examp_counting_multiplication_tree-diagram">
+			<title>Constructing Tree Diagrams</title>
+			<statement>
+				<p>Construct a tree diagram to illustrate the solutions to <xref ref="examp_counting_multiplication_2-step"/> and <xref ref="examp_counting_multiplication_3-step"/> above.</p>
+			</statement>
+			<solution>
+				<sidebyside widths="40% 40%" margins="auto">
+					<figure>
+						<caption>Tree Diagram for <xref ref="examp_counting_multiplication_2-step"/></caption>
+						<image>
+							<latex-image>
+								\begin{tikzpicture}[font=\sffamily\tiny]
+								  \node (r) at (0,0);
+								  \node (0) at (1.5,4.5)    [align=left]{Color 1};
+								    \node (00) at (3,4.83)  [align=left]{Engine 1};
+								    \node (01) at (3,4.5)   [align=left]{Engine 1};
+								    \node (02) at (3,4.17)  [align=left]{Engine 1};
+								  \node (1) at (1.5,3)      [align=left]{Color 2};
+								    \node (10) at (3,3.33)  [align=left]{Engine 1};
+								    \node (11) at (3,3)     [align=left]{Engine 2};
+								    \node (12) at (3,2.67)  [align=left]{Engine 3};
+								  \node (2) at (1.5,1.5)    [align=left]{Color 3};
+								    \node (20) at (3,1.83)  [align=left]{Engine 1};
+								    \node (21) at (3,1.5)   [align=left]{Engine 2};
+								    \node (22) at (3,1.17)  [align=left]{Engine 3};								  
+								  \node (3) at (1.5,0)      [align=left]{Color 4};
+								    \node (30) at (3,0.33)  [align=left]{Engine 1};
+								    \node (31) at (3,0)     [align=left]{Engine 2};
+								    \node (32) at (3,-0.33) [align=left]{Engine 3};								  
+								  \node (4) at (1.5,-1.5)   [align=left]{Color 5};
+								    \node (40) at (3,-1.17) [align=left]{Engine 1};
+								    \node (41) at (3,-1.5)  [align=left]{Engine 2};
+								    \node (42) at (3,-1.83) [align=left]{Engine 3};
+								  \node (5) at (1.5,-3)     [align=left]{Color 6};
+								    \node (50) at (3,-2.67) [align=left]{Engine 1};
+								    \node (51) at (3,-3)    [align=left]{Engine 2};
+								    \node (52) at (3,-3.33) [align=left]{Engine 3};								  
+								  \node (6) at (1.5,-4.5)   [align=left]{Color 7};
+								    \node (60) at (3,-4.17) [align=left]{Engine 1};
+								    \node (61) at (3,-4.5)  [align=left]{Engine 2};
+								    \node (62) at (3,-4.83)  [align=left]{Engine 3};								  
+								  \draw[line width=0.25mm]
+								    (r.east) to (0.west)
+								      (0) to (00)
+								      (0) to (01)
+								      (0) to (02)
+								    (r.east) to (1.west)
+								      (1) to (10)
+								      (1) to (11)
+								      (1) to (12)
+								    (r.east) to (2.west)
+								      (2) to (20)
+								    	(2) to (21)
+								    	(2) to (22)
+								    (r.east) to (3.west)
+								      (3) to (30)
+								      (3) to (31)
+								      (3) to (32)
+								    (r.east) to (4.west)
+								      (4) to (40)
+								      (4) to (41)
+								      (4) to (42)
+								    (r.east) to (5.west)
+								      (5) to (50)
+								      (5) to (51)
+								      (5) to (52)
+								    (r.east) to (6.west)
+								      (6) to (60)
+								      (6) to (61)
+								      (6) to (62);
+								\end{tikzpicture}
+							</latex-image>
+						</image>
+					</figure>
+					<figure>
+						<caption>Tree Diagram for <xref ref="examp_counting_multiplication_3-step"/></caption>
+						<image>
+							<latex-image>
+								\begin{tikzpicture}[font=\sffamily\tiny]
+								  \node (r) at (0,0);
+								  \node (0) at (1.5,4)         {pant 1};
+								    \node (00) at (2.5,4.75)    [below right]{shirt 1};
+								      \node (000) at (4.5,4.65)  {shoes 1};
+								      \node (001) at (4.5,4.4)   {shoes 2};
+								    \node (01) at (2.5,4)       [right]{shirt 2};
+								      \node (010) at (4.5,4.15)  {shoes 1};
+								      \node (011) at (4.5,3.9)   {shoes 2};
+								    \node (02) at (2.5,3.25)    [above right]{shirt 3};
+								      \node (020) at (4.5,3.6)    {shoes 1};
+								      \node (021) at (4.5,3.35)   {shoes 2};
+								  \node (1) at (1.5,2)         {pant 2};
+								    \node (10) at (2.5,2.75)    [below right]{shirt 1};
+								      \node (100) at (4.5,2.65)  {shoes 1};
+								      \node (101) at (4.5,2.4)   {shoes 2};
+								    \node (11) at (2.5,2)       [right]{shirt 2};
+								      \node (110) at (4.5,2.15)  {shoes 1};
+								      \node (111) at (4.5,1.9)   {shoes 2};
+								    \node (12) at (2.5,1.25)    [above right]{shirt 3};
+								      \node (120) at (4.5,1.6)   {shoes 1};
+								      \node (121) at (4.5,1.35)  {shoes 2};
+								  \node (2) at (1.5,0)         {pant 3};
+								    \node (20) at (2.5,0.75)    [below right]{shirt 1};
+								      \node (200) at (4.5,0.65)  {shoes 1};
+								      \node (201) at (4.5,0.4)   {shoes 2};
+								    \node (21) at (2.5,0)       [right]{shirt 2};
+								      \node (210) at (4.5,0.15)  {shoes 1};
+								      \node (211) at (4.5,-0.1)  {shoes 2};
+								    \node (22) at (2.5,-0.75)   [above right]{shirt 3};
+								      \node (220) at (4.5,-0.4)   {shoes 1};
+								      \node (221) at (4.5,-0.65)  {shoes 2};
+								  \node (3) at (1.5,-2)        {pant 4};
+								    \node (30) at (2.5,-1.25)   [below right]{shirt 1};
+								      \node (300) at (4.5,-1.35) {shoes 1};
+								      \node (301) at (4.5,-1.6)  {shoes 2};
+								    \node (31) at (2.5,-2)      [right]{shirt 2};
+								      \node (310) at (4.5,-1.85) {shoes 1};
+								      \node (311) at (4.5,-2.1)  {shoes 2};
+								     \node (32) at (2.5,-2.75)   [above right]{shirt 3};								  
+								      \node (320) at (4.5,-2.4)   {shoes 1};
+								      \node (321) at (4.5,-2.65)  {shoes 2};								     
+								  \node (4) at (1.5,-4)        {pant 5};
+								    \node (40) at (2.5,-3.25)   [below right]{shirt 1};
+								      \node (400) at (4.5,-3.35) {shoes 1};
+								      \node (401) at (4.5,-3.6)  {shoes 2};
+								    \node (41) at (2.5,-4)      [right]{shirt 2};
+								      \node (410) at (4.5,-3.85) {shoes 1};
+								      \node (411) at (4.5,-4.1)  {shoes 2};
+								    \node (42) at (2.5,-4.75)   [above right]{shirt 3};								
+								      \node (420) at (4.5,-4.4)   {shoes 1};
+								      \node (421) at (4.5,-4.65)  {shoes 2};								     
+								  \draw[line width=0.25mm]
+								    (r.east) to (0.west)
+								      (0) to (00)
+								        (00) to (000)
+								        (00) to (001)
+								      (0) to (01)
+								        (01) to (010)
+								        (01) to (011)
+								      (0) to (02)
+								        (02) to (020)
+								        (02) to (021)
+								    (r.east) to (1.west)
+								      (1) to (10)
+								      	(10) to (100)
+								      	(10) to (101)
+								      (1) to (11)
+								        (11) to (110)
+								        (11) to (111)
+								      (1) to (12)
+								        (12) to (120)
+								        (12) to (121)
+								    (r.east) to (2.west)
+								      (2) to (20)
+								        (20) to (200)
+								        (20) to (201)
+								    	(2) to (21)
+								    	  (21) to (210)
+								    	  (21) to (211)
+								    	(2) to (22)
+								    	  (22) to (220)
+								    	  (22) to (221)
+								    (r.east) to (3.west)
+								      (3) to (30)
+								        (30) to (300)
+								        (30) to (301)
+								      (3) to (31)
+								        (31) to (310)
+								        (31) to (311)
+								      (3) to (32)
+								        (32) to (320)
+								        (32) to (321)
+								    (r.east) to (4.west)
+								      (4) to (40)
+								        (40) to (400)
+								        (40) to (401)
+								      (4) to (41)
+								        (41) to (410)
+								        (41) to (411)
+								      (4) to (42)
+								        (42) to (420)
+								        (42) to (421);
+								\end{tikzpicture}								
+							</latex-image>
+						</image>
+					</figure>
+				</sidebyside>
+			</solution>
+		</example>
+		<p>Notice that we can model a particular sequence of choices in this process by following a path through the tree. For example, in the second tree diagram, going along the third branch to pant 3, then the first branch to shirt 1, and then the second branch to shoes 2 gives us one complete outfit. Therefore, the total number of outfits is the same as the total number of branches at the last step.</p>
+		<p>There are some instances where the number of choices we have at a given step depends on the choice we made at the previous step. In these cases the multiplication rule will not work. However, a tree diagram can still be a useful tool for counting the total number of ways to complete such a process.</p>
+		<example xml:id="examp_counting_multiplication_unbalanced-tree">
+			<title>Counting with a Tree Diagram</title>
+			<statement>
+				<p>A certain vacation package allows you to pick from three destinations: Hawaii, Florida, and Alaska. There are two resorts available in Hawaii, three in Florida, and one in Alaska. How many choices are available to you in this vacation package?</p>
+			</statement>
+			<solution>
+				<sidebyside widths="50% 40%" margins="3% 4% 3%">
+					<p>This process can be broken up into two steps:
+						<ol>
+							<li><p>pick a destination (there are three of them)</p></li>
+							<li><p>pick a resort (the number depends on the destination chosen in step 1)</p></li>
+						</ol>
+					</p>
+					<figure>
+						<caption>Vacations</caption>
+						<image>
+							<latex-image>
+								\begin{tikzpicture}[font=\sffamily\tiny]
+								  \node (r) at (0,0);
+								  \node (0) at (1,1.5)     [below right]{Hawaii};
+									  \node (00) at (3,1.7)   {resort 1};
+									  \node (01) at (3,1.0)   {resort 2};
+								  \node (1) at (1,0)       [right]{Florida};
+									  \node (10) at (3,0.4)   {resort 1};
+									  \node (11) at (3,0)     {resort 2};
+									  \node (12) at (3,-0.4)  {resort 3};
+								  \node (2) at (1,-1.5)    [above right]{Alaska};
+									  \node (20) at (3,-1.28) {resort 1};
+								  \draw[line width=0.25mm]
+								    (r.east) to (0.west)
+								      (0) to (00)
+								      (0) to (01)
+								    (r.east) to (1.west)
+								      (1) to (10)
+								    	(1) to (11)
+								    	(1) to (12)
+								    (r.east) to (2.west)
+								      (2) to (20);
+								\end{tikzpicture}
+							</latex-image>
+						</image>
+					</figure>
+				</sidebyside>
+				<p>Because the number of options in step 2 depends on our choice in step 1, we can not use the multiplication rule. Instead, we create a tree diagram as shown to the right.	Note that there are a total of six branches in the last step, so there are six different choices in this vacation package. The tree diagram allows us to represent the different number of choices that are available depending on our destination.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_counting_multiplication-1">
+			<caption>Multiplication Rule and Tree Diagrams I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-05.mp4"/>
+		</figure>
+		<figure xml:id="video_counting_multiplication-2">
+			<caption>Multiplication Rule and Tree Diagrams II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_counting_multiplication-1">
+			<statement>
+				<p>A cable company offers a special deal in which subscribers can choose one of three base packages, add on one of four different special movie channels and finally choose to either upgrade to a DVR or receive $5 off their monthly bill for six months.</p>
+				<p>Question: How many different packages are available under this special deal?</p>
+			</statement>
+			<answer><p>24</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_multiplication-2">
+			<statement>
+				<p>A value meal consists of your choice of one sandwich, one drink, and one side. The restaurant offers four different sandwiches, six types of drink, and four sides.</p>
+				<p>Question: How many different value meals are possible?</p>
+			</statement>
+			<answer><p>96</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_multiplication-3">
+			<statement>
+				<p>A new car comes in your choice of three engine types. The highest performing engine is only available with a manual transmission. The other two engines are available with either manual or automatic transmissions.</p>
+				<p>Question: How many different choices of engine and transmission are available for this car?</p>
+			</statement>
+			<answer><p>5</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_counting_factorial">
+		<title>Factorials</title>
+		<p>Let&apos;s look at an example that gives a special case of the multiplication rule.</p>
+		<example xml:id="examp_counting_factorial_trolls">
+			<title>Arranging Items</title>
+			<statement>
+				<p>You wish to arrange your four most treasured possessions: your troll doll, Darth Vader action figure, toy Ewok, and GI Joe doll, in a row on your desk. In how many ways can you order these four items?</p>
+			</statement>
+			<solution>
+				<p>This is an example of the multiplication rule using the following steps.
+					<ol>
+						<li><p>Chose which of the 4 items to place first (4 choices)</p></li>
+						<li><p>Choose which of the 3 remaining items to place 2nd (3 choices)</p></li>
+						<li><p>Choose which of the 2 remaining items to place 3rd (2 choices left)</p></li>
+						<li><p>Choose which of the 1 remaining items to place at the end of the row (only one choice).</p></li>
+					</ol>
+					Therefore, according to the multiplication rule, the number of orderings is:
+					<me> 4\times 3\times 2 \times 1 = 24</me>.
+				</p>
+			</solution>
+		</example>
+		<p>Notice that because we were selecting from our group of items without replacing them, the number of choices went down by one each time. When we use the multiplication rule with this sort of process, we wind up multiplying the numbers between 1 and the original number of choices. This product has a special name.</p>
+		<definition xml:id="def_factorial">
+			<idx>factorial</idx>
+			<idx><h>counting rules</h><h>factorial</h></idx>
+			<statement>
+				<p>For any positive integer <m>n</m>, <m>n!</m> (read <q><m>n</m> <term>factorial</term></q>) is the product of the numbers between <m>1</m> and <m>n</m>. That is:
+				<me>n! = n\times(n-1)\times \cdots \times 2\times 1</me>.
+				Note that <m>0!</m> is defined to be 1.</p>
+			</statement>
+		</definition>
+		<p>In the next example we practice computing factorials. Note how quickly the value of a factorial grows as <m>n</m> grows. Also, note that when dividing factorials, canceling can be a very useful tool.</p>
+		<example xml:id="examp_counting_factorial_compute">
+			<title>Computing Factorials</title>
+			<statement>
+				<p>Find the value of each expression below.
+					<ol label="a" cols="3">
+						<li><p><m>5!</m></p></li>
+						<li><p><m>8!</m></p></li>
+						<li><p><m>\frac{8!}{5!}</m></p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>Using the definition above,
+					<ol label="a">
+						<li><p><m>5! = 5\times 4\times 3\times 2\times 1 = 120</m></p></li>
+						<li><p><m>8! = 8\times 7\times 6\times 5! = 336\times 120 = 40320</m></p></li>
+						<li><p><m>\frac{8!}{5!} = \frac{8\times 7\times 6\times 5!}{5!} = \frac{8\times 7\times 6}{1} = 336</m>.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>We finish our brief discussion of factorials with one final counting example.</p>
+		<example xml:id="examp_factorial_digits">
+			<title>Arranging Digits</title>
+			<statement>
+				<p>In how many ways can the digits from 0 through 9 be arranged in order?</p>
+			</statement>
+			<solution>
+				<p>There are 10 such digits to be arranged in order. According to the multiplication rule, the total number of orderings is:
+					<me>10! = 10\times 9\times 8\times 7\times 6\times 5\times 4\times 3\times 2\times 1 = 3628800</me>.
+				</p>
+			</solution>
+		</example>
+		<p>Factorials will be used in the next two counting rules, but to see more computations and counting problems involving just the factorial operation, watch the following video examples.</p>
+
+		<figure xml:id="video_counting_factorial-1">
+			<caption>Factorials</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-07.mp4"/>
+		</figure>
+		<figure xml:id="video_counting_factorial-2">
+			<caption>Factorials</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_counting_factorial-1">
+			<statement>
+				<p>An athletic coordinator needs to arrange six games into the six time slots available during a given week.</p>
+				<p>Question: In how many ways can the director make up this schedule?</p>
+			</statement>
+			<answer><p>720</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_factorial-2">
+			<statement>
+				<p>Consider the expression <m>\frac{200!}{198!}</m>.</p>
+				<p>Question: What is the value of this expression? Hint: simplify by canceling before attempting to use your calculator.</p>
+			</statement>
+			<answer><p>39800</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_factorial-3">
+			<statement>
+				<p>Suppose that the nine Supreme Court justices are lining up to enter the courtroom on the last day of the court term.</p>
+				<p>Question: In how many ways could they line up?</p>
+			</statement>
+			<answer><p>362880</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_counting_permutations">
+		<title>Permutations</title>
+		<p>In some counting problems, we will find a process that looks much like the <q>factorial</q> questions from the last page, but in which we are not asked to use up or arrange all of the items. One such example can be found below.</p>
+		<example xml:id="examp_counting_permutation_runners">
+			<title>Ordering a Subset</title>
+			<statement>
+				<p>Suppose that ten runners compete in a race in which first, second, and third prizes are awarded. In how many ways can these prizes be won?</p>
+			</statement>
+			<solution>
+				<p>Using the multiplication rule, the steps in this process are:
+					<ol>
+						<li><p>Award first prize to the winner (10 choices since anybody could win).</p></li>
+						<li><p>Award second prize (9 choices since the winner is excluded).</p></li>
+						<li><p>Award third prize (8 choices).</p></li>
+					</ol>
+					This gives the following total number of ways that the prizes can be won:
+					<me>10\times 9\times 8 = 720</me>.
+				</p>
+			</solution>
+		</example>
+		<p>While the solution to this problem started off looking like a factorial, <m>10 \times 9 \times 8</m>, it stopped after 8 because we didn&apos;t need to order the remaining seven runners in this race. In general, when we need to count the number of ways to order or arrange <m>r</m> items chosen from <m>n</m> possible items, we are using a permutation.</p>
+		<definition xml:id="def_permutation">
+			<idx>permutation</idx>
+			<idx><h>counting rules</h><h>permutation</h></idx>
+			<statement>
+				<p>A <term>permutation</term> of n items taken r at a time is used to count the number of ways to arrange (or permute) <m>r</m> items chosen from <m>n</m> possible items. The formula for this permutation is:
+				<me>P(n,r) = \frac{n!}{(n-r)!}</me>.</p>
+			</statement>
+		</definition>
+		<p>Applying this formula to the foot-race example above, we could have computed:
+			<me>P(10,3) = \frac{10!}{(10-3)!} = \frac{10\times 9\times 8\times 7!}{7!} = 10\times 9\times 8 = 720</me>.
+			Permutations are a general rule that can be used to count the number of ways to complete a process in which the order of completion matters. A race is a good example of when order matters. Another example can be found below.</p>
+		<example xml:id="examp_counting_permutation_bands">
+			<title>Using Permutations</title>
+			<statement>
+				<p>Six bands have expressed interest in performing at a concert with time slots for three performances. In how many ways can the concert manager make up a schedule for the concert?</p>
+			</statement>
+			<solution>
+				<p>Since there are 6 bands to choose from, and only 3 are needed, and since the order of performance matters (changing the order would make a different schedule) the number of ways to schedule these bands is:
+					<me>P(6,3) = \frac{6!}{3!} = 6\times 5\times 4 = 120</me>.</p>
+			</solution>
+		</example>
+		<p>There are a few general rules which work no matter what <m>n</m> is used in a permutation. Three of these are shown below.
+		  <ul>
+		  	<li><p><m>P(n,n) = \frac{n!}{(n-n)!} = \frac{n!}{0!} = n!</m></p></li>
+		  	<li><p><m>P(n,0) = \frac{n!}{(n-0)!} = \frac{n!}{n!} = 1</m></p></li>
+		  	<li><p><m>P(n,1) = \frac{n!}{(n-1)!} = \frac{n\times (n-1)!}{(n-1)!} = n</m></p></li>
+		  </ul>
+		  Additionally, there is a short-cut that can be used instead of the formula. This is:
+		  <me>P(n,r) = \underbrace{n\times (n-1) \times \cdots \times (n-r+1)}_{r \text { items}}</me>.
+		</p>
+		<example xml:id="examp_counting_permutation_compute">
+			<title>Computing Permutations</title>
+			<statement>
+				<p>Use the rules and short-cut seen above to find each of the following.
+					<ol label="a" cols="3">
+						<li><p><m>P(5,1)</m></p></li>
+						<li><p><m>P(17,3)</m></p></li>
+						<li><p><m>P(200,0)</m></p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>The values of these expressions are:
+					<ol label="a">
+						<li><p><m>P(5,1) = 5</m> (the third rule above)</p></li>
+						<li><p><m>P(17,3) = 17\times 16\times 15 = 4080</m> (short-cut formula above)</p></li>
+						<li><p><m>P(200,0) = 1</m> (the second rule above)</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_counting_permutation-1">
+			<caption>Permutations I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-09.mp4"/>
+		</figure>
+		<figure xml:id="video_counting_permutation-2">
+			<caption>Permutations II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_counting_permutaton-1">
+			<statement>
+				<p>A law school wishes to schedule speaking appointments for 3 of the 9 Supreme Court justices.</p>
+				<p>Question: In how many ways can this be done if the order of the speeches matters?</p>
+			</statement>
+			<answer><p>504</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_permutation-2">
+			<statement>
+				<p>A <q>32-flavors</q> ice cream shop is offering a special deal. For only $3.00 you can get a large cone with two scoops of your favorite flavors. The only condition is that you can not repeat flavors.</p>
+				<p>Question: How many ice cream cones are possible if the order in which you choose the scoops matters?</p>
+			</statement>
+			<answer><p>992</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_permutation-3">
+			<statement>
+				<p>A librarian wishes to designate books in a special collection using five letter codes in which letters are not repeated. Note that there are 26 letters in the list of allowable letters.</p>
+				<p>Question: How many codes are possible using this scheme?</p>
+			</statement>
+			<answer><p>7,893,600</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_counting_combinations">
+		<title>Combinations</title>
+		<p>Permutations are particularly useful when the order in which we select individuals makes a difference<mdash/>such as in running a race or creating a schedule. But order does not always matter, as seen in the next example.</p>
+		<example xml:id="examp_counting_combination_movies">
+			<title>Counting when Order Doesn&apos;t Matter</title>
+			<statement>
+				<p>You have two extra movie tickets and wish to share them with two of your four good friends. In how many ways can you pick the friends to go with you to the movies?</p>
+			</statement>
+			<solution>
+				<p>Let&apos;s say that your friends names are: Alice, Bob, Candace, and David. If you try to count this using a permutation, you get:
+					<me>P(4,2) = 4\times 3 = 12</me>.
+					Unfortunately, this is not the correct answer. Consider the actual list of possible choices that this produces.</p>
+				<table>
+					<title>Possible Selections</title>
+					<tabular>
+						<row>
+							<cell>AB</cell>
+							<cell>AC</cell>
+							<cell>AD</cell>
+							<cell>BA</cell>
+							<cell>BC</cell>
+							<cell>BD</cell>
+						</row>
+						<row>
+							<cell>CA</cell>
+							<cell>CB</cell>
+							<cell>CD</cell>
+							<cell>DA</cell>
+							<cell>DB</cell>
+							<cell>DC</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Notice that each pair appears twice. For example, AB and BA are counted separately. This is because in a permutation, the order in which we hand out the tickets makes a difference. But really, we don&apos;t care who got the first ticket<mdash/>we just want to know who is going. Since there are two of each possible pairs, the actual number of ways to pick the two friends to go with us is:
+				<me>\frac{P(4,2)}{P(2,2)} = \frac{12}{2} = 6</me>.</p>
+			</solution>
+		</example>
+		<p>In the example above, we arrived at the final solution using two steps. First, we counted the number of ways to pick the friends to go with us if the order did matter, in this case it was 12. Then we counted the number of ways that those two friends could be arranged, which was 2. Finally, we divide the 12 ordered ways by the 2 different orderings to get a total of 6 ways to choose our two friends if the order does not matter. This process can be combined into a single counting rule called a combination.</p>
+		<definition xml:id="def_combination">
+			<idx>combination</idx>
+			<idx><h>counting rules</h><h>combination</h></idx>
+			<statement>
+				<p>A <term>combination</term> of <m>n</m> items taken <m>r</m> at a time is used to count the number of ways to choose <m>r</m> items from <m>n</m> possible items if the order in which we select them does not matter. The formula for this combination is:
+				<me>C(n,r) = \frac{P(n,r)}{r!} = \frac{n!}{r!(n-r)!}</me>.</p>
+			</statement>
+		</definition>
+		<p>Applying this formula to the movie ticket example, we get:
+			<me>C(4,2) = \frac{4!}{2!(4-2)!} = \frac{4\times 3\times 2!}{2!\times 2!} = \frac{4\times 3}{2\times 1} = 6</me>.</p>
+		<p>Let&apos;s try applying this to another example.</p>
+		<example xml:id="examp_counting_combination_committee">
+			<title>Using a Combination</title>
+			<statement>
+				<p>A committee of 10 business executives wishes to choose a sub-committee of 3 to research a certain topic. In how many ways can this sub-committee be chosen?</p>
+			</statement>
+			<solution>
+				<p>The order in which a sub-committee is selected does not matter<mdash/>a person is either on the committee or not on the committee. Therefore, this is a combination and the solution is:
+				<me>C(10,3) = \frac{10!}{3!(10-3)!} = \frac{10\times 9\times 8 \times 7!}{3!\times 7!} = \frac{10\times 9\times 8}{3\times 2\times 1} = 120</me>.</p>
+			</solution>
+		</example>
+		<p>As with permutations, there are a few general rules that combinations follow no matter what the value of <m>n</m> is. Several of these rules are shown below.
+		  <ul>
+		  	<li><p><m>C(n,n) = 1</m></p></li>
+		  	<li><p><m>C(n,1) = n</m></p></li>
+		  	<li><p><m>C(n,r) = C(n,n-r)</m></p></li>
+		  </ul></p>
+		<p>And finally, a short-cut that can be easier to use than the formula above. 
+		 	<me> C(n,r) = \frac{\overbrace{n\times (n-1) \times \cdots \times (n-r+1)}^{r \text{ values}}}{r!}</me>.</p>
+		<p>We finish with an example of how these rules and shortcuts can be useful.</p>
+		<example xml:id="examp_counting_combination_compute">
+		 	<title>Computing Combinations</title>
+		 	<statement>
+		 		<p>Use the rules and short-cut seen above to find the value of each expression.
+		 			<ol label="a" cols="2">
+		 				<li><p><m>C(12,12)</m></p></li>
+		 				<li><p><m>C(250,1)</m></p></li>
+		 				<li><p><m>C(12,0)</m></p></li>
+		 				<li><p><m>C(250,247)</m></p></li>
+		 			</ol>
+		 		</p>
+		 	</statement>
+		 	<solution>
+		 		<p>Applying the rules and short-cut seen above, we get the following values.
+		 			<ol label="a">
+		 				<li><title><m>C(12,12) = 1</m></title><p>Here we use the first rule.  You could also recognize that there is only one way to pick all 12 of the 12 things we have</p></li>
+		 				<li><title><m>C(250,1) = 250</m></title><p>We use the second rule.</p></li>
+		 				<li><title><m>C(12,0) = C(12,12-0) = C(12,12) = 1</m></title><p>We use the third rule and (a) above.  We could also note that there is only 1 way to pick nothing</p></li>
+		 				<li><title><m>C(250,247) = C(250,250-247) = C(250,3) = \frac{250\times 249\times 248}{3\times 2\times 1} = 2573000</m></title><p>We used the third rule and the shortcut formula.</p></li>
+		 			</ol>
+		 		</p>
+		 	</solution>
+		</example>
+
+		<figure xml:id="video_counting_combination-1">
+			<caption>Combinations I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-11.mp4"/>
+		</figure>
+		<figure xml:id="video_counting_combination-2">
+			<caption>Combinations II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-12.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_counting_combination-1">
+			<statement>
+				<p>A pizza restaurant has a special deal<mdash/>a large thin-crust pizza with your choice of 4 toppings for only $13.99. The restaurant offers 12 different toppings.</p>
+				<p>Question: How many different pizzas are possible if the order of the toppings does not matter?</p>
+			</statement>
+			<answer><p>495</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_combination-2">
+			<statement>
+				<p>A student needs to make up a class schedule for summer classes. She has 10 possible classes to choose from, and wants to take 3 of them. None of the classes have scheduling conflicts.</p>
+				<p>Question: How many class schedules are possible?</p>
+			</statement>
+			<answer><p>120</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_combination-3">
+			<statement>
+				<p>A church group of 20 young people wishes to select four of their members to plan a mission trip. Every member of the group is interested in being one of the four selected.</p>
+				<p>Question: In how many ways can the four planners be chosen?</p>
+			</statement>
+			<answer><p>4845</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_counting_mixed">
+		<title>Mixed Counting Techniques</title>
+		<p>One of the hardest parts of counting problems is determining which rules or combinations of rules to use to answer a given question. Here are a few basic things to remember:
+			<ol>
+				<li><p>If the things you are counting come in two distinct groups, count each group then add together the results. (<xref ref="def_counting-rule_addition" text="custom">addition rule</xref> <mdash/> goes with <q>or</q>)</p></li>
+				<li><p>If there is overlap between the two groups, remember to subtract the intersection. (<xref ref="def_counting-rule_inclusion-exclusion" text="custom">inclusion/exclusion rule</xref>)</p></li>
+				<li><p>If the process you are counting can be broken down into steps, count the number of ways each step can be performed and multiply. (<xref ref="def_counting-rule_multiplication" text="custom">multiplication rule</xref> <mdash/> goes with <q>and</q>)</p></li>
+				<li><p>If you are arranging things or selecting multiple items and the order of selection matters, use a permutation. (<xref ref="def_permutation">permutation rule</xref>).</p></li>
+				<li><p>If you are selecting multiple items from a group of items and the order in which you pick them does not matter, use a combination. (<xref ref="def_combination" text="custom">combination rule</xref>).</p></li>
+			</ol>
+		</p>
+		<p>Let&apos;s apply these ideas to several examples. Remember that our fist step should always be to identify the rule or rules that we are going to use to count our options.</p>
+		<example xml:id="examp_counting_mixed_permutation">
+			<title>Picking a Counting Rule</title>
+			<statement>
+				<p>The back row of Professor Duncan&apos;s classroom has only 4 seats. There are 8 students who wish to sit in these seats. In how many ways can the seats be assigned?</p>
+			</statement>
+			<solution>
+				<p>In a seating chart, the order would matter. This must therefore be a permutation, and the solution is:
+					<me>P(8,4) = 8\times 7\times 6\times 5 = 1680</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_counting_mixed_two-combinations">
+			<title>Combining Counting Rules</title>
+			<statement>
+				<p>A committee contains 6 men and 3 women. Four members of the committee are selected for a fact-finding junket. In how many ways can these four be selected if three of them are men and one is a woman?</p>
+			</statement>
+			<solution>
+				<p>The order in which we pick members of a committee to go on a trip does not matter<mdash/>a member either goes on the trip or does not. However, notice that we have two steps to this problem.
+				<ol>
+				  <li><p>Pick the three men to go on the trip.</p></li>
+				  <li><p>Pick the one woman to go on the trip.</p></li>
+				</ol>
+				The number of ways to pick the three men from the 6 male committee members is:
+				<me>C(6,3) = \frac{6\times 5\times 4}{3\times 2\times 1} = 20</me>.
+				The number of ways to pick the one woman is:
+				<me>C(3,1) = 3</me>.
+				Therefore, using the multiplication rule, the total number of ways to pick the four people to go on the junket is:
+				<me>C(6,3)\times C(3,1) = 20\times 3 = 60</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_counting_mixed_permutation-2">
+			<title>Counting by Combining Objects</title>
+			<statement>
+				<p>Trains arrive at a station in random order from Berlin, Munich, Salzberg, Vienna, and Hamburg. In how many ways can the trains arrive so that the train from Berlin arrives immediately after the train from Salzberg?</p>
+			</statement>
+			<solution>
+				<p>This problem specifically mentions the order of the trains, so the order will matter. However, we are not asked in how many ways the trains can arrive in general, which would be <m>P(5,5) = 5!</m>.</p>
+				<p>Instead, we specify that the Berlin and Salzberg train must arrive one after the other. Symbolically, we want to arrange the following four trains in order: BS, M, V, H. BS is listed together because of the condition mentioned above. We can order these in <m>P(4,4) = 4! = 24</m> ways.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_counting_mixed_at-least">
+			<title>Couting Cases with <q>At Least</q></title>
+			<statement>
+				<p>A deli sells 6 types of salads, 8 types of sandwiches, and 3 types of chips. Picnic baskets can be purchased which contain 4 different items from these 17. How many different picnic baskets can be made to contain at least two different sandwiches?</p>
+			</statement>
+			<solution>
+				<p>This is actually the most challenging problem in this section. The reason is that we have to use both the multiplication rule to split the process into steps, and the addition rule to split the process into cases. Here&apos;s how we do it:
+					<ul>
+						<li><title>Case 1</title><p>Pick two from 8 sandwiches and 2 from the remaining 9 items
+						  <me>C(8,2)\times C(9,2) = \frac{8\times 7}{2\times 1}\times\frac{9\times 8}{2\times 1} = 1008</me>.</p></li>
+						<li><title>Case 2</title><p>Pick three sandwiches from 8 available and 1 item from remaining 9
+						  <me>C(8,3)\times C(9,1) = \frac{8\times 7\times 6}{3\times 2\times 1} \times 9 = 504</me>.</p></li>
+						<li><title>Case 3</title><p>Pick four sandwiches from 8 available and none of the remaining 9 items
+						  <me>C(8,4)\times C(9,0) = \frac{8\times 7\times 6\times 5}{4\times 3\times 2\times 1}\times 1 = 70</me>.</p></li>
+					</ul>
+				Note that these three cases are mutually exclusive based on the number of sandwiches chosen, and that a picnic basket with at least two sandwiches would fall into one of these cases. So using the addition rule, the total number of picnic baskets is:
+				<me>1008 + 504 + 70 = 1582</me>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_counting_mixed-1">
+			<caption>Mixed Counting Techniques I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-13.mp4"/>
+		</figure>
+		<figure xml:id="video_counting_mixed-2">
+			<caption>Mixed Counting Techniques II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-14.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_counting_mixed-1">
+			<statement>
+				<p>A restaurant offers a special weekday menu deal. This includes dinner for two with two entrees and one appetizer. The restaurant offers 14 different entrees and six appetizers.</p>
+				<p>Question: In how many ways can a couple select their meal if they agree to order different entrees and split them?</p>
+			</statement>
+			<answer><p>546</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_mixed-2">
+			<statement>
+				<p>A congressional committee consists of 12 Democrats and 7 Republicans. They wish to select a subcommittee of 4 members.</p>
+				<p>Question: In how many ways can this be done if there must be at least one Republican and at least two Democrats on the subcommittee?</p>
+			</statement>
+			<answer><p>2926</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_counting_mixed-3">
+			<statement>
+				<p>You are in charge of a parade. There are five floats and four marching bands scheduled to participate in the parade. You decide that you want to alternate floats and marching bands, starting with a float.</p>
+				<p>Question: In how many different ways could you order the floats and marching bands in this parade?</p>
+			</statement>
+			<answer><p>2880</p></answer>
+		</exercise>
+	</subsection>
+
+</section>
