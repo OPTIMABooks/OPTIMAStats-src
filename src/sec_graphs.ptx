@@ -63,10 +63,10 @@
 		</ul>
 	</objectives>
 
-	<subsection xml:id="sec_graphs_ss1">
+	<subsection xml:id="sec_graphs_qualitative">
 		<title>Qualitative Data</title>
 
-		<introduction xml:id="sec_graphs_ss1_intro">
+		<introduction xml:id="sec_graphs_qualitative_intro">
 			<p>Recall that a <xref ref="def_qualitative-variable" text="custom">qualitative variable</xref> produces data that represents categories, and not numerical values. Consider the following example.</p>
 			<example xml:id="examp_graphs_organizing-data">
 				<title>Organizing Data</title>
@@ -228,7 +228,7 @@
 			</example>
 		</introduction>
 
-		<subsubsection xml:id="sec_grahs_ss1-1">
+		<subsubsection xml:id="sec_grahs_qualitative_frequency-table">
 			<title>Frequency Tables</title>
 			<p>Our first step in constructing a graph for this data is to summarize. With any qualitative variable, we can construct what is called a <term>frequency table</term> to summarize the values in our data set.</p>
 			<definition xml:id="def_frequency-table">
@@ -393,7 +393,7 @@
 			<p>While these tables are a good step in better displaying our data, we still need to translate this into a	picture. To see how we do that, continue on to the next section.</p>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_ss1-2">
+		<subsubsection xml:id="sec_graphs_qualitative_graphs">
 			<title>Graphs</title>
 			<p>One of the most basic ways to graphically represent data collected for a qualitative variable is using a bar graph.</p>
 			<definition xml:id="def_bar-graph">
@@ -464,7 +464,7 @@
 			<p>There is one more situation involving qualitative variables which we must investigate.</p>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_ss1-3">
+		<subsubsection xml:id="sec_graphs_qualitative_bivariate">
 			<title>Bivariate Data</title>
 			<p>The frequency tables and graphs that we've looked at so far work well for <xref ref="def_num-vars" text="custom">univariate data</xref>. But they need to be modified before they will work with data involving more than one variable. <xref ref="def_num-vars" text="custom">Multivariate data</xref> can be very difficult to summarize and display graphically. Because of this, we usually just look at each variable separately. However when we have two variables (<xref ref="def_num-vars" text="custom">bivariate data</xref>) there are	some special techniques that we can use to summarize and display the data.</p>
 			<definition xml:id="def_contingency-table">
@@ -679,13 +679,13 @@
 		</subsubsection>
 	</subsection>
 
-	<subsection xml:id="sec_graphs_ss2">
+	<subsection xml:id="sec_graphs_quantitative">
 		<title>Quantitative Data</title>
 		<introduction>
 			<p>When we wish to describe quantitative variables, we run into many of the same problems that we had with qualitative variables. The raw data itself is usually not very useful and must be summarized before we can construct graphs.</p>
 		</introduction>
 
-		<subsubsection xml:id="sec_graphs_ss2-1">
+		<subsubsection xml:id="sec_graphs_quantitative_tables">
 			<title>Summarizing Quantitative Data with Tables</title>
 			<p>Our first task is to	come up with a way to summarize this data in a table, like we did with <xref ref="def_frequency-table" text="custom">frequency tables</xref> for qualitative variables. To do this, we must create <q>categories</q> to use as the	rows for our table.</p>
 			<definition xml:id="def_frequency-distribution">
@@ -844,7 +844,7 @@
 			<p>Once we have summarized our data in a frequency distribution, we can of course create a relative frequency distribution by dividing each class frequency by the grand total. We can also create a representative graph, which we will learn about in the next section.</p>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_ss2-2">
+		<subsubsection xml:id="sec_graphs_quantitative_histograms">
 			<title>Histograms</title>
 			<p>The graph that we use to describe data summarized by a frequency distribution is very similar to	the <xref ref="def_bar-graph" text="custom">bar graphs</xref> we used to summarize data from a frequency table. There is,	however, some important distinction.</p>
 			<definition xml:id="def_histogram">
@@ -929,7 +929,7 @@
 			</exercise>			
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_ss2-3">
+		<subsubsection xml:id="sec_graphs_quantitative_stem-and-leaf">
 			<title>Stem-and-Leaf Plots</title>
 			<p>One of the disadvantages of summarizing quantitative data with a frequency distribution and histogram is that you lose the specific values.  That is, you can not tell what the individual data values were before the summary was created.</p>
 			<example xml:id="examp_graphs_recovering-data">
@@ -1249,7 +1249,7 @@ Stem &amp; Leaves \\
 			</exercise>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_ss2-4">
+		<subsubsection xml:id="sec_graphs_quantitative_other">
 			<title>Other Graphs</title>
 			<p>There are several other graphs that can be useful to help display certain types of data. One of the most useful <q>other</q> types of graphs is meant to display the value of a single quantitative variable	measured over time.</p>
 			<definition xml:id="def_time-series">
@@ -1398,7 +1398,7 @@ Stem &amp; Leaves \\
 			</exercise>
 		</subsubsection>
 
-		<subsubsection xml:id="sec_graphs_ss2-5">
+		<subsubsection xml:id="sec_graphs_quantitative_interpreting">
 		  <title>Interpreting Graphs</title>
 		  <p>The reason that we create graphs in the first place is to help us better understand a set of data. It is therefore important that we know how to interpret the graphs that we create. In this class, we will spend most of our time working with univariate quantitative variables. We thus need to be sure that	we know how to interpret histograms. There are three major things to look for	in a histogram.</p>
 		  <definition xml:id="def_histogram-center">
@@ -1559,7 +1559,7 @@ Stem &amp; Leaves \\
 		</subsubsection>
 	</subsection>
 
-	<subsection xml:id="sec_graphs_ss3">
+	<subsection xml:id="sec_graphs_avoid">
 		<title>Things to Avoid</title>
 		<p>There are a few common errors in creating and using graphs that should be mentioned. The first	such error is commonly caused either by a <q>helpful</q> computer program with poorly chosen default settings, or by a person who is trying to manipulate the graph to <q>lie</q> with statistics.</p>
 		<example xml:id="examp_graphs_incorrect-axis">
