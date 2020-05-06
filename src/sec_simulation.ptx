@@ -179,7 +179,7 @@
 	  		<p>An otherwise empty lake is stocked with 500 catfish, 750 bass, and 1000 trout. A fisherman decides to catch fish and throw them back until he has caught one of each type of fish. Is this a random or deterministic process?</p>
 	  	</statement>
 	  	<solution>
-	  		<p>This is a <em>random process</em> because the answer to the question will vary randomly. In order to model this, we would either need to either find such a pond and fish (probably impractical), come up with a way to count all of the possibilities (see <xref provisional="sec_counting"/>) or simulate the process using random numbers.</p>
+	  		<p>This is a <em>random process</em> because the answer to the question will vary randomly. In order to model this, we would either need to either find such a pond and fish (probably impractical), come up with a way to count all of the possibilities (see <xref ref="sec_counting"/>) or simulate the process using random numbers.</p>
 	  	</solution>
 	  </example>
 	  <example xml:id="examp_simulation_random-or-deterministic-2">
