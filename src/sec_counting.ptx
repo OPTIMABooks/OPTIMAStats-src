@@ -75,7 +75,46 @@
 	  		<p>The <term>intersection</term> of two sets, <m>A</m> and <m>B</m>, is <m>A \cap B</m>, the set containing all elements that are in both <m>A</m> and <m>B</m>.</p>
 	  	</statement>
 	  </definition>
-	  <p>One way to keep the union and intersection straight is to associate them with the common English terms. If the word <q>or</q> is used, chances are that we are talking about a <term>union</term>. If the word <q>and</q> is used, we are probably referring to an <term>intersection</term>. In the case of the addition rule, we want to make sure that there are no items in both sets <m>A</m> and <m>B</m>. That is, we want <m>A</m> and <m>B</m> to be <term>mutually exclusive</term>.</p>
+	  <p>One way to keep the union and intersection straight is to associate them with the common English terms. If the word <q>or</q> is used, chances are that we are talking about a <term>union</term>. If the word <q>and</q> is used, we are probably referring to an <term>intersection</term>.  While associating specific English words with the set operations is one way to help remember what each does, sometimes a picture can help even more.  When drawing pictures of combinations of sets, we typically use a special type called a <term>Venn diagram</term>.</p>
+	  <definition xml:id="def_venn-diagram">
+	  	<idx>Venn diagram</idx>
+	  	<idx><h>sets</h><h>Venn diagram</h></idx>
+	  	<idx><h>sets</h><h>universal set</h></idx>
+	  	<statement>
+	  		<p>A <term>Venn diagram</term> is a picture used to represent sets and their relationships.  Each set is represented by a circle, with the area inside the circle representing the elements that are in the set.  The entire diagram is enclosed in a rectangle representing the set of all possible elements, called the <term>universal set</term>.</p>
+	  	</statement>
+	  </definition>
+	  <p>Perhaps the best way to understand what a Venn diagram is, is to construct an example.</p>
+	  <example xml:id="examp_counting_addition_venn-diagram">
+	  	<title>Constructing a Venn Diagram</title>	  	
+	  	<statement>
+	      <p>Let <m>A = \lbrace a, c, d, e \rbrace</m> and <m>B = \lbrace d, e, f \rbrace</m> be subsets of the universal set <m>U = \lbrace a, b, c, d, e, f \rbrace</m>.  Draw a Venn diagram representing these sets.</p>
+			</statement>
+			<solution>
+				<p>We draw a box to represent <m>U</m> and one circle for each of <m>A</m> and <m>B</m>, making sure that there is a region inside both circles.  Then we place the elements in the appropriate region as shown below.</p>
+				<figure xml:id="image_counting_examp_addition_venn-diagram">
+					<caption>Venn Diagram</caption>
+					<image width="50%">
+						<latex-image>
+							\begin{tikzpicture}
+							  \draw (-1.5,-1.5) rectangle (2.5,1.5);
+							  \draw (0,0) circle (1);
+							  \draw (1,0) circle (1);
+							  \node at (-1,1) {$A$};
+							  \node at (2,1) {$B$};							  
+							  \node at (0.5,0.35)  {\small $d$};
+							  \node at (0.5,-0.35) {\small $e$};
+							  \node at (-0.5,0.1)  {\small $a$};
+							  \node at (-0.3,-0.3) {\small $c$};
+							  \node at (1.4,0)     {\small $f$};
+							  \node at (2,-1.2)  {\small $b$};
+							\end{tikzpicture}
+						</latex-image>
+					</image>
+				</figure>
+			</solution>
+	  </example>
+	  <p>As you can see in the Venn diagram example above, any element that is in the intersection of two sets is in both sets.  So if we add together the number of elements in both sets, we will wind up double counting anything in the intersection.  To avoid this, we need to make sure that two sets are <term>mutually exclusive</term> before we use the addition rule to count their union.</p>
 	  <definition xml:id="def_mutually-exclusive">
 	  	<idx>mutually exclusive</idx>
 	  	<idx><h>sets</h><h>mutually exclusive</h></idx>
