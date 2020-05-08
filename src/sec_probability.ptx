@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_probability">
+  <title>Probability and Probability Rules</title>
+  
+  <introduction xml:id="sec_probability_intro">
+  	<title>Theoretical Probability</title>
+  	<p>With a list of counting rules and simulation techniques, we are now ready to formally introduce the notion of <term>probability</term>. Probability is something that we use in many different ways in every-day life. Consider the following examples.
+  	  <ul>
+  	  	<li><p>A weather forecaster predicts that there is a 20% chance of rain tomorrow.</p></li>
+  	  	<li><p>A news cast predicts that the probability a ballot measure will pass is 60%.</p></li>
+  	  	<li><p>The lottery introduces a new scratch ticket in which the odds of winning are 1 in 200.</p></li>
+  	  </ul>
+  	  In each of these cases, we are measuring how likely a certain event is to take place. This is probability.</p>
+  	  <p>Probabilities can be computed in several different ways. The simulations that we saw in <xref ref="sec_simulation"/> lead to the following type of probability computation.</p>
+  	<definition xml:id="def_experimental-probability">
+	  	<idx>experimental probability</idx>
+	  	<idx><h>probability</h><h>experimental</h></idx>
+	  	<statement>
+  		  <p>The <term>experimental probability</term>, also called the <term>relative frequency probability</term>, of a certain event <m>A</m> happening in an experiment is found by simulating the experiment and taking the ratio of the number of trials resulting in <m>A</m> to the total number of trials. That is:
+  		  <me>P(A) = \frac{\text{number of times }A\text{ occurred}}{\text{number of trials}}</me>.</p>
+  		</statement>
+  	</definition>
+  	<p>On the other hand, if we use our counting rules to examine the experiment from a more theoretical point of view, we get the following type of probability.</p>
+  	<definition xml:id="def_theoretical-probability">
+  		<idx>theoretical probability</idx>
+  		<idx><h>probability</h><h>theoretical</h></idx>
+  		<statement>
+  			<p>The <term>theoretical probability</term> of a certain event <m>A</m> happening in an experiment is found by counting the number of possibly outcomes of the experiment in which <m>A</m> happens and dividing by the total number of outcomes, assuming each outcome is equally likely. That is:
+  			<me>P(A) = \frac{\text{number of ways }A\text{ can occur}}{\text{number of possible outcomes}}</me>.</p>
+  		</statement>
+  	</definition>
+  	<p><idx><h>probability</h><h>subjective</h></idx>Another type of probability, called <term>subjective probability</term>, is basically just an educated guess of how likely an event is to occur based on one&apos;s previous experience. In this section we will learn about the basic rules and terms of probability, how to illustrate probabilities using pictures called <term>Venn Diagrams</term>, how to compute probabilities of related events, and finally how to compute theoretical probabilities in experiments in which each outcome is equally likely.</p>
+  </introduction>
+
+  <objectives xml:id="sec_probability_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul cols="2">
+					<li><p>experimental probability</p></li>
+					<li><p>subjective probability</p></li>
+					<li><p>complement</p></li>
+					<li><p>complement rule</p></li>
+					<li><p>event</p></li>
+					<li><p>general</p></li>
+					<li><p>addition rule</p></li>
+					<li><p>sample space</p></li>
+					<li><p>theoretical probability</p></li>
+					<li><p>valid probability measure</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Differentiate between experimental and theoretical probability</p></li>
+					<li><p>State and apply basic probability rules.</p></li>
+					<li><p>Identify valid probability measures.</p></li>
+					<li><p>Use Venn Diagrams to assist in computing probabilities.</p></li>
+					<li><p>Finding probabilities when all outcomes are equally likely.</p></li>
+					<li><p>Using counting rules to assist in finding probabilities.</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_probability_basic-rules">
+		<title>Basic Probability Rules</title>
+		<p>Before we start discussing the basic rules of probability, it is important to clarify some terminology that has already been used in the introduction. Consider the following example.</p>
+		<example xml:id="examp_probabilty_basic-rules_coin-flip">
+			<title>Analyzing a Simple Experiment</title>
+			<statement>
+				<p>A fair coin is flipped twice, and the number of heads is noted. What is the probability that exactly one heads appears in these two flips?</p>
+			</statement>
+			<solution>
+				<p>To better understand this question, let&apos;s look at two important sets. The first set is called the <term>sample space</term> and typically named <m>S</m>. It and contains all of the possible outcomes of this experiment.  In this case:
+				<me>S = \lbrace HH, HT, TH, TT \rbrace</me>.</p>
+				<p>The second set is the set containing all of the outcomes from S which meet our criteria of having exactly one heads. Any subset of the sample space is called an <term>event</term>.  For this problem, the event of interest is:
+				<me>A = \lbrace HT, TH \rbrace</me>.</p>
+				<p>If we assume that each of the outcomes is equally likely (see a <xref ref="sec_probability_counting"/>), then 
+					<me>P(A) = \frac{ n(A)}{n(S)} = \frac{2}{4} = \frac{1}{2} = 0.50</me>.</p>
+			</solution>
+		</example>
+		<p>In the example above, there are two sets pointed out. The names of these two sets are of particular importance.</p>
+		<definition xml:id="def_sample-space">
+			<idx>sample space</idx>
+			<idx><h>probability</h><h>sample space</h></idx>
+			<statement>
+				<p>The <term>sample space</term> for an experiment is the set of all possible outcomes of the experiment.</p>
+			</statement>
+		</definition>
+		<definition xml:id="def_event">
+			<idx>event</idx>
+			<idx><h>probability</h><h>event</h></idx>
+			<statement>
+				<p>An <term>event</term> for a particular experiment is a subset of the sample space for that experiment.</p>
+			</statement>
+		</definition>
+		<p>In <xref ref="examp_probabilty_basic-rules_coin-flip"/>, the event of interest was <m>A = \lbrace HT, TH \rbrace</m>. Notice that every outcome in that event is also an outcome in the sample space <m>S</m>. This is what it means to say that <m>A</m> is a <idx><h>sets</h><h>subset</h></idx><term>subset</term> of <m>S</m>. Also notice that because <m>A</m> is a subset of <m>S</m>, it must always be true that <m>A</m> contains at most the same number of elements as <m>S</m>. That is, <m>n(A) \leq n(S)</m>. This, together with our definition of <xref ref="def_theoretical-probability" text="custom">theoretical probability</xref>, leads to the following rules.</p>
+		<theorem>
+			<title>Basic Probability Rules</title>
+			<statement>
+				<p>For any event <m>A</m> in a sample space <m>S</m>, the following rules must hold.
+				  <ul cols="2">
+				  	<li><p><m>0 \leq P(A) \leq 1</m></p></li>
+				  	<li><p><m>P(S) = 1</m></p></li>
+				  </ul>
+				</p>
+			</statement>
+		</theorem>
+		<p>The first rule says that because <m>A</m> is a subset of <m>S</m>, the ratio of <m>n(A)</m> to <m>n(S)</m> can be at most one, and as with any ratio, must be at least 0. The second rule tells us that the probability of something in the sample space happening is 1. Since the sample space contains all possible outcomes, this gives us the maximum possible probability of 1. The following Scale can be useful in judging how likely something is to happen based on its probability.</p>
+		<figure xml:id="image_probability_scale">
+			<caption>Range of Possible Probabilities</caption>
+			<image>
+				<latex-image>
+					Can't Happen
+					50/50 Chance
+					Must Happen
+					0
+					0.50
+					1
+				</latex-image>
+			</image>
+		</figure>
+		<p>Let&apos;s apply these basic rules and interpretations to the following example.</p>
+		<example xml:id="examp_probability_basic-rules_events">
+			<title>Applint Probability Rules to Events</title>
+			<statement>
+				<p>A sample space <m>S</m> contains two <xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref> events, <m>A</m> and <m>B</m> with probabilities <m>P(A) = 0.6</m> and <m>P(B) = 0.2</m>. Use this to answer the following questions.
+				<ol label="a">
+					<li><p>Which event is more likely to occur, <m>A</m> or <m>B</m>?</p></li>
+					<li><p>What is the probability that either <m>A</m> or <m>B</m> will occur?</p></li>
+					<li><p>What if you were told that <m>C</m> is another event in the sample space with <m>P(C) = 7</m>?</p></li>
+				</ol></p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Because <m>P(A)</m> is larger (closer to 1) than <m>P(B)</m>, <m>A</m> is more likely to occur than <m>B</m>.</p></li>
+					<li><p>Because <m>A</m> and <m>B</m> are mutually exclusive (have no intersection), the number of ways that <m>A</m> or <m>B</m> (<xref ref="def_union" text="custom"><m>A</m> union <m>B</m></xref>) can occur is the sum <m>n(A) + n(B)</m>. Therefore, 
+					<me>P(A\cup B) = \frac{n(A\cup B)}{n(S)} = \frac{n(A)}{n(S)} + \frac{n(B)}{n(S)} = P(A) + P(B)</me>.
+					Thus, in our case, the probability that <m>A</m> or <m>B</m> will occur is <m>0.6 + 0.2 = 0.8</m></p></li>
+					<li><p>Finally, based on the rules above, it is impossible to have an event <m>C</m> with <m>P(C) = 7</m>. Remember that probabilities are always between 0 and 1.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>Part (b) in the above example is a specific instance of the following general rule. This rule comes directly from the addition counting rule, so it has a similar name.</p>
+		<definition xml:id="def_prob-rule_addition">
+			<idx>addition rule (probability)</idx>
+			<idx><h>probability</h><h>rules</h><h>addition rule</h></idx>
+			<statement>
+				<p>For <xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref> events <m>A</m> and <m>B</m> in a sample space, 
+				<me>P(A\cup B) = P(A) + P(B)</me>.</p>
+			</statement>
+		</definition>
+
+		<figure xml:id="video_probability_basic-rules-1">
+			<caption>Sample Spaces and Events I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-01.mp4"/>
+		</figure>
+		<figure xml:id="video_probability_basic-rules-2">
+			<caption>Sample Spaces and Events II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_probability_basic-rules-1">
+			<statement>
+				<p>Below you will find several statements about the probability of events. Recall that <m>S</m> stands for the sample space in an experiment.
+				  <ol label="a">
+				  	<li><p><m>P(A) = 0.3</m></p></li>
+						<li><p><m>P(B) = -2</m></p></li>
+				  	<li><p><m>P(C) = \frac{15}{16}</m></p></li>
+						<li><p><m>P(D) = -2</m></p></li>
+						<li><p><m>P(E) = 17</m></p></li>
+				  	<li><p><m>P(S) = 1</m></p></li>
+				  	<li><p><m>P(S) = \frac{1}{2}</m></p></li>
+					</ol></p>
+				<p>Question: Which of these statements could be a correct assignment of probability?</p>
+			</statement>
+			<answer><p>Statements (a), (c), and (f) could be correct.  The others could not.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_basic-rules-2">
+			<statement>
+				<p>An experiment consists of rolling two fair die and noting the sum of the numbers rolled. Below are several sets related to this experiment.
+					<ol label="a">
+						<li><p><m>\lbrace 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12 \rbrace</m></p></li>
+						<li><p><m>\lbrace 2, 4, 6, 8, 10, 12 \rbrace</m></p></li>
+						<li><p><m>\lbrace (1,1), (1,2), ... , (5,6), (6,6) \rbrace</m></p></li>
+						<li><p><m>\lbrace 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 \rbrace</m></p></li>
+						<li><p><m>\lbrace 3, 5, 7, 9, 11 \rbrace</m></p></li>
+					</ol>
+				</p>
+				<p>Question: Which of these sets is the sample space of the experiment?</p>
+			</statement>
+			<answer><p>the set in (d) gives the possible sums.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_basic-rules-3">
+			<statement>
+				<p>A two-step experiment involves tossing a fair coin and noting the result (Heads or Tails) and then rolling a fair die and noting the result (1-6).</p>
+				<p>Question: How many outcomes are in the sample space for this experiment?</p>
+			</statement>
+			<answer><p><m>2\times 6 = 12</m></p></answer>
+		</exercise>
+	</subsection>
+
+  <subsection xml:id="sec_probability_measure">
+  	<title>Valid Probability Measures</title>
+  	<p>The simplest events for a particular experiment are the individual outcomes<mdash/>that is, the elements of the sample space. Each outcome can be assigned a probability based on the process being modeled. Consider the following example.</p>
+  	<example xml:id="examp_probability_measure_urn">
+  		<title>Assigning Probabilities to Outcomes</title>
+  		<statement>
+  			<p>An urn contains four red marbles, three blue marbles, two green marbles, and one white marble. A marble is drawn and its color is noted. Find the sample space in this experiment, and assign each outcome a probability.</p>
+  		</statement>
+  		<solution>
+  			<p>First, we must find the sample space. There are two ways we could look at this.
+  				<ol>
+  					<li><p>We could pretend that we can tell each marble apart, regardless of its color. In that case, the sample space is:
+  						<me>S = \lbraced R_1, R_2, R_3, R_4, B_1, B_2, B_3, G_1, G_2, W_1 \rbrace</me>.</p></li>
+  					<li><p>Since we can&apos;t actually tell the marbles of the same color apart, it is more accurate to say that the sample space is:
+  						<me>S = \lbrace R, B, G, W\rbrace</me>.</p></li>
+  				</ol>
+  				The best answer for the sample space is <m>S = \lbrace R,B,G, W\rbrace</m> as shown in (2). However, the sample space from (1) can be a good way to answer the second part of the problem, what probability each outcome should have.
+  				<ul label="" cols="2">
+  					<li><p><m>P(R) = \frac{n(R)}{n(S)} = \frac{4}{10} = \frac{2}{5} = 0.40</m></p></li>
+  					<li><p><m>P(B) = \frac{n(B)}{n(S)} = \frac{3}{10} = 0.30</m></p></li>
+  					<li><p><m>P(G) = \frac{n(G)}{n(S)} = \frac{2}{10} = \frac{1}{5} = 0.20</m></p></li>
+  					<li><p><m>P(W) = \frac{n(W)}{n(S)} = \frac{1}{10} = 0.10</m>.</p></li>
+  				</ul>
+  			</p>
+  		</solution>
+  	</example>
+  	<p>Note that in the above example, the probabilities of the individual outcomes were <m>0.40</m>, <m>0.30</m>, <m>0.20</m>, and <m>0.10</m>. The sum of all of these probabilities is, not surprisingly, the probability of the sample space, 1. This is a specific application of the addition rule we saw on the previous page. Using this observation, let's work on another example.</p>
+  	<example xml:id="examp_probability_measure_missing-outcome">
+  		<title>Finding a Missing Outcome Probability</title>
+  		<statement>
+  			<p>A sample space <m>S = \lbrace O_1, O_2, O_3, O_4 \rbrace</m>. Outcome <m>O_1</m> is twice as likely as outcome <m>O_2</m>. Outcomes <m>O_2</m> and <m>O_3</m> have the same probability. Finally, outcome <m>O_4</m> is three times as likely as outcome <m>O_1</m>. What is the probability of each of these outcomes?</p>
+  		</statement>
+  		<solution>
+  			<p>To solve this problem, we need to assign a variable to the smallest probability. In this case, the probabilities of outcomes <m>O_2</m> and <m>O_3</m> are equal and we will call them both <m>x</m>. That means that the probability of outcome <m>O_1</m> is <m>2x</m>, and the probability of outcome <m>O_4</m> is <m>3(2x) = 6x</m>. Putting this all together,
+  			<me>1 = P(S) = P(O_1) + P(O_2) + P(O_3) + P(O_4) = 2x + x + x + 6x = 10x</me>.</p>
+  			<p>Therefore, <m>x = \frac{1}{10} = 0.10</m>. From the above discussion, we know that <m>P(O_1) = 0.20</m>, <m>P(O_2) = 0.10</m>, <m>P(O_3) = 0.10</m>, and <m>P(O_4) = 0.60</m>.</p>
+  		</solution>
+  	</example>
+		<p>When each outcome in the sample space has been assigned a valid probability, between 0 and 1,and the sum of those probabilities is one, probabilities make up a valid probability measure.</p>
+		<definition xml:id="def_probability-measure">
+			<idx><h>probability</h><h>probability measure</h></idx>
+			<statement>
+				<p>An assignment of probabilities to the outcomes in a sample space in such a way as to ensure that each outcome has a probability between 0 and 1, and the sum of these probabilities is 1 is called a valid <term>probability measure</term>.</p>
+			</statement>
+		</definition>
+		<example xml:id="examp_probability_measure_validity">
+			<title>Constructing Probability Measures</title>
+			<statement>
+				<p>Let <m>S = \lbrace O_1, O_2, O_3 \rbrace</m>. Construct one valid probability measures for <m>S</m>, and two that are not valid.</p>
+			</statement>
+			<solution>
+				<p>We start with a valid probability measure.
+					<me>P(O_1) = 0.2, \quad P(O_2) = 0.3, \quad P(O_3) = 0.5.</me>
+					This is a valid assignment of probabilities because each probability is between 0 and 1, and the sum of the probabilities is 1.</p>
+				<p>Now let&apos;s look at an invalid probability measure.
+					<me>P(O_1) = P(O_2) = P(O_3) = 0.5</me>.
+					This is not a valid probability measure because the sum of these probabilities is not 1.</p>
+				<p>Another invalid probability measure would be
+					<me>P(O_1) = 0.8, \quad P(O_2) = 0.4, \quad P(O_3) = -0.2</me>.
+					While the sum of these is 1, note that <m>O_3</m> has a negative probability, which is not allowed.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_probability_measure-1">
+			<caption>Valid Probability Measures I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-03.mp4"/>
+		</figure>
+		<figure xml:id="video_probability_measure-2">
+			<caption>Valid Probability Measures II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_probability_measure-1">
+			<statement>
+				<p>A sample space has three ouctomes, <m>S = \lbrace O_1, O_2, O_3 \rbrace</m>.  Possible probability measures include:
+				  <ol label="a">
+				  	<li><p><m>P(O_1) = 0.5, \quad P(O_2) = 0.3, \quad P(O_3) = 0.2</m></p></li>
+				  	<li><p><m>P(O_1) = 5, \quad P(O_2) = -3, \quad P(O_3) = -1</m></p></li>
+				  	<li><p><m>P(O_1) = 0.1, \quad P(O_2) = 0.7, \quad P(O_3) = 0.2</m></p></li>
+				  	<li><p><m>P(O_1) = 0.3, \quad P(O_2) = 0.3, \quad P(O_3) = -0.3</m></p></li>
+				  	<li><p><m>P(O_1) = 0.4, \quad P(O_2) = 0.7, \quad P(O_3) = -0.1</m></p></li>
+				  	<li><p><m>P(O_1) = 0.5, \quad P(O_2) = 0, \quad P(O_3) = 0.5</m></p></li>
+				  </ol>
+				</p>
+				<p>Question: Which of these are valid probability measures for <m>S</m>?</p>
+			</statement>
+			<answer><p>measures (a), (c), and (f) are valid</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_measure-2">
+			<statement>
+				<p>A certain experiment has sample space <m>S = \lbrace O_1, O_2, O_3, O_4 \rbrace</m>. You are told that <m>O_1</m> is twice as likely as <m>O_2</m>, and that <m>O_2</m>, <m>O_3</m>, and <m>O_4</m> are all equally likely.</p>
+				<p>Question: What is <m>P(O_3)</m>?</p>
+			</statement>
+			<answer><p>0.2</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_measure-3">
+			<statement>
+				<p>An experiment has sample space <m>S = \lbrace O_1, O_2, O_3, O_4 \rbrace</m>. You are told that <m>P(O_1) = 0.42</m> and <m>P(O_2) = 0.16</m>.</p>
+				<p>Question: Which of the following could not be <m>P(O_4)</m>?
+				  <ol label="a" cols="2">
+				  	<li><p><m>0.3</m></p></li>
+				    <li><p><m>0.50</m></p></li>
+				    <li><p><m>-0.25</m></p></li>
+				    <li><p><m>17</m></p></li>
+				    <li><p><m>0.21</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(b), (c), and (d)</p></answer>
+		</exercise>
+  </subsection>
+
+  <subsection xml:id="sec_probability_more-rules">
+  	<title>More Probability Rules</title>
+  	<p>There are several other probability rules that can be helpful when working with events. The first is a generalization of the <xref ref="def_prob-rule_addition" text="custom">additionaddition rule</xref>. It follows from the <xref ref="def_counting-rule_inclusion-exclusion">inclusion/exclusion counting rule</xref> that we saw in the previous section.</p>
+  	<definition xml:id="def_prob-rule_general-addition">
+  		<idx>addition rule (general)</idx>
+  		<idx><h>probability</h><h>rules</h><h>general addition rule</h></idx>
+  		<statement>
+  			<p>The <term>general addition rule</term> states that if events <m>A</m> and <m>B</m> are not-necessarily mutually exclusive events in a sample space, then:
+  			<me>P(A\cup B) = P(A) + P(B) - P(A\cap B)</me>.</p>
+  		</statement>
+  	</definition>
+  	<p>Let&apos;s apply this rule to a case where two events have a non-empty intersection.</p>
+  	<example xml:id="examp_probability_more-rules_general-addition">
+  		<title>Using the General Addition Rule</title>
+  		<statement>
+  			<p>Suppose that <m>A</m> and <m>B</m> are events in a sample space <m>S</m> with <m>P(A) = 0.25</m>, <m>P(B) = 0.60</m>, and <m>P(A\cap B) = 0.10</m>. Find <m>P(A\cup B)</m>.</p>
+  		</statement>
+  		<solution>
+  			<p>Using the general addition rule,
+  				<me>P(A\cup B) = P(A) + P(B) - P(A\cap B) = 0.25 + 0.60 - 0.10 = 0.75</me>.</p>
+  		</solution>
+  	</example>
+  	<p>We can also use the general addition rule in reverse, as seen in the next example.</p>
+  	<example xml:id="examp_probability_more-rules_find-intersection">
+  		<title>Using the General Addition Rule to Find an Intersection</title>
+  		<statement>
+  			<p>A sample space contains events <m>X</m> and <m>Y</m> with <m>P(X) = 0.45</m>, <m>P(Y) = 0.65</m>, and <m>P(X\cup Y) = 0.80</m>. Find <m>P(X \cap Y)</m>.</p>
+  		</statement>
+  		<solution>
+  			<p>Using the general addition rule,
+  				<md>
+  					<mrow>P(A\cup B) = P(A) + P(B) - P(A\cap B) \amp\Rightarrow 0.80 = 0.45 + 0.65 - P(A\cap B)</mrow>
+  					<mrow>\amp \Rightarrow P(A\cap B) = 0.30.</mrow>
+  				</md>
+  			</p>
+  		</solution>
+  	</example>
+  	<p>Another rule that is often useful deals with the <term>complement</term> of a set.  We will first define what a complement is and then explore the rule.</p>
+  	<definition xml:id="def_complement">
+  		<statement>
+  			<p>The <term>complement</term> of a set <m>A</m> in a sample space <m>S</m> is the set <m>\overline{A}</m> consisting of all elements of the sample space that are not in <m>A</m>.</p>
+  		</statement>
+  	</definition>
+  	<p>Notice the use of the word <em>not</em> in the definition above.  Just like we used the word <em>or</em> to help recognize the <xref ref="def_union" text="custom">union</xref> of sets and <em>and</em> to recognize the <xref ref="def_intersection" text="custom">intersection</xref> of sets, the word <em>not</em> usuall indicates that we need to take the complement of two sets.</p>
+  	<example xml:id="examp_probability_more-rules_complement">
+  		<title>Finding the Probability of a Complement</title>
+  		<statement>
+  			<p>A fair die is rolled and the number that comes up is noted. This results in the sample space <m>S = \lbrace 1,2,3,4,5,6\rbrace</m>. Consider the event <m>E =</m> "an even number is rolled" and <m>F =</m> "a number greater than 4 is rolled." Find the probabilities of both <m>E</m> and <m>F</m> and their complements.</p>
+  		</statement>
+  		<solution>
+  			<p>The set <m>E = \lbrace 2, 4, 6 \rbrace</m> consists of all even numbers. The complement of <m>E</m>, <m>\overline{E} = \lbrace 1, 3, 5 \rbrace</m>. The probability of each of these sets is <m>\frac{3}{6} = \frac{1}{2}</m>.</p>
+  			<p>The set <m>F = \lbrace 5, 6 \rbrace</m> has probability <m>P(F) = \frac{2}{6} = \frac{1}{3}</m>. The complement of <m>F</m> is <m>\overline{F} = \lbrace 1,2,3,4 \rbrace</m>. The probability of this set is <m>P(\overline{F}) = \frac{4}{6} = \frac{2}{3}</m>.</p>
+  		</solution>
+  	</example>
+  	<p>Did you notice that an event and its complement divide up the sample space?  That is, every element in the sample space is either in the event or in its complement, and never in both.  We can generalize the results from the above example into a rule for finding the probability of the complement of an event.</p>
+  	<definition xml:id="def_prob-rule_complement">
+  		<idx>complement rule</idx>
+  		<idx><h>probability</h><h>rules</h><h>complement rule</h></idx>
+  		<statement>
+  			<p>The <term>complement rule</term> states that if <m>A</m> is an event in a sample space <m>S</m>, then the probability of the complement of <m>A</m> is:
+  			  <me>P(\overline{A}) = 1 - P(A)</me>.</p>
+  		</statement>
+  	</definition>
+  	<p>We finish this section with an example applying the complement rule and the general addition rule.</p>
+  	<example xml:id="examp_probability_more-rules_complement-and-addition">
+  		<title>Combining the Complement and General Addition Rules</title>
+  		<statement>
+  			<p>Sets <m>A</m> and <m>B</m> are events in a sample space <m>S</m> with <m>P(A) = 0.40</m>, <m>P(B) = 0.50</m>, and <m>P(\overline{A\cup B}) = 0.20</m>. Find <m>P(A\cap B)</m>.</p>
+  		</statement>
+  		<solution>
+  			<p>Based on the complement rule,
+  				<me>P(A\cup B) = 1 - P(\overline{A\cup B}) = 1 - 0.20 = 0.80</me>.</p>
+  			<p>Then, using the general addition rule,
+  				<md>
+  					<mrow>P(A\cup B) = P(A) + P(B) - P(A\cap B) \amp \Rightarrow 0.80 = 0.40 + 0.50 - P(A\cap B)</mrow>
+  					<mrow> \amp \Rightarrow P(A\cap B) = 0.10.</mrow>
+  				</md>
+  			</p>
+  		</solution>
+  	</example>
+
+  	<figure xml:id="video_probability_more-rules-1">
+  		<caption>Other Probability Rules</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-05.mp4"/>
+  	</figure>
+  	<figure xml:id="video_probability_more-rules-2">
+  		<caption>Other Probability Rules</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-06.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_probability_more-rules-1">
+  		<statement>
+  			<p>A set <m>A</m> in a sample space <m>S</m> has probability <m>P(A) = 0.23</m>.</p>
+  			<p>Question: What is the probability of the complement of <m>A</m>, <m>P(\overline{A})</m>?</p>
+  		</statement>
+  		<answer><p>0.77</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_probability_more-rules-2">
+  		<statement>
+				<p>Events <m>A</m> and <m>B</m> in a sample space <m>S</m> have probability <m>P(A) = 0.45</m> and <m>P(B) = 0.37</m>. The probability of the union is <m>P(A\cup B) = 0.64</m>.</p>
+				<p>Question: What is <m>P(A\cap B)</m>?</p>
+			</statement>
+			<answer><p>0.18</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_more-rules-3">
+			<statement>
+				<p>The events <m>A</m> and <m>B</m> in the sample space <m>S</m> have probabilities <m>P(A) = 0.62</m> and <m>P(B) = 0.49</m>. The probability of the intersection is <m>P(A\cap B) = 0.33</m>.</p>
+				<p>Question: What is the probability of the complement of the union. That is, what is <m>P(\overline{A\cup B})</m>?</p>
+			</statement>
+			<answer><p>0.22</p></answer>
+		</exercise>
+	</subsection>
+
+  <subsection xml:id="sec_probability_venn">
+  	<title>Venn Diagrams</title>
+  	<idx>Venn diagram</idx>
+  	<p>When we start working with probabilities of unions, intersections, and complements of events, it can be difficult to keep everything straight. Luckily, the <xref ref="def_venn-diagram" text="custom">Venn diagrams</xref> we saw when counting the number of elements in a set can als be useful for organizing probabilities. When using a Venn diagram with probability questions, we always let the box represent the sample space.  This means that, according to the valid probability measure rules we just learned, the total probability inside the box must be one.</p>
+  	<example xml:id="examp_probability_venn_two-set">
+  		<title>Using Venn Diagrams to Compute Probability</title>
+  		<statement>
+  			<p>A weatherman predicts that the probability it will rain tomorrow is 0.35 and the probability it will be windy is 0.64. The probability that it will be clear (no rain) but windy is 0.39. Use a Venn diagram to find the probability it will be clear and calm (no rain and no wind).</p>
+  		</statement>
+  		<solution>
+  			<sbsgroup widths="50% 50%" margins="auto">
+  				<sidebyside>
+  					<p>Our first Venn Diagram shows the information given in the problem statement. There are several things to note: 
+  						<ul>
+  							<li><p>The probability of the entire box is one, as mentioned above.</p></li>
+  							<li><p>The probabilities of <m>R</m> and <m>W</m> (rain and wind) are each split between two regions, as indicated by the arrows.</p></li>
+  							<li><p>The probability of <m>W \cap \overline{R}</m> is written into the appropriate region.</p></li>
+  						</ul>
+  					</p>
+  					<figure xml:id="image_examp_probability_venn_two-set-i">
+  						<caption>Initial Venn diagram</caption>
+  						<image width="80%">
+  							<latex-image>
+  								x
+  							</latex-image>
+  						</image>
+  					</figure>
+  				</sidebyside>
+  				<sidebyside>
+  				  <p>Now we are ready to do some computations to figure out the missing pieces in the Venn diagrams, starting with the intersection of <m>R</m> and <m>W</m>.
+  				    <md>
+  				      <mrow>P(R\cap W) \apos = P(W) - P(R\cap \overline(W)</mrow>
+  				      <mrow>\Rightarrow P(R\cap W) \apos = 0.64 - 0.39 = 0.25</mrow>
+  				    </md>
+  				    Next, we move on to find the union of <m>R</m> and <m>W</m> since we are after the complement of this union (not windy or rainy).
+  				    <md>
+  				    	<mrow>P(R\cup W) \apos = P(R) + P(W) - P(R\cap W)</mrow>
+  				    	<mrow>\Rightarrow P(R\cup W) \apos = 0.35 + 0.64 - 0.25 = 0.74.</mrow>
+  				    </md>
+  				    Finally, using the complement rule, the probability we are looking for is found below. 
+  				    <md>
+  				    	<mrow>P(\overline{R\cup W}) \apos = 1 - P(R\cup W)</mrow>
+  				    	<mrow>\Rightarrow P(\overline{R\cup W}) \apos = 1 - 0.74 = 0.26</mrow>
+  				    </md>
+  				   </p>
+				    <figure xml:id="image_examp_probability_venn_two-set-ii">
+				    	<caption>Final Venn diagram</caption>
+				    	<image width="80%">
+				    		<latex-image>
+				    			x
+				    		</latex-image>
+				    	</image>
+				    </figure>
+				  </sidebyside>
+				</sbsgroup>
+				<p>Note that in the final Venn diagram the sum of all numbers in the box is 1.</p>
+			</solution>
+		</example>
+		<p>Let&apos;s take a look at one more Venn Diagram example, this one involving three events.</p>
+		<example xml:id="examp_probability_venn_three-set">
+			<title>Using a Three-Set Venn Diagram</title>
+			<statement>
+				<p>On a given day, the probability that George the squirrel will spend time napping is 0.27. The probability that he will spend time chasing his tail is 0.45. The probability that he will spend time hunting for nuts is 0.65. If George chases his tail, then he will be too excited to take a nap, so those two events are mutually exclusive. The probability that George will both chase his tail and hunt for nuts is 0.35. Finally, the probability that George does none of these things is 0.16. Find the probability that George chases naps and hunts for nuts but does not chase his tail.</p>
+			</statement>
+			<solution>
+				<p>The final Venn Diagram is shown below. Can you determine how these numbers were found?</p>
+				<figure xml:id="image_examp_probability_venn_three-set">
+					<caption>Three Set Venn Diagram</caption>
+					<image width="60%">
+						<latex-image>
+							x
+						</latex-image>
+					</image>
+				</figure>
+			</solution>
+		</example>
+
+		<figure xml:id="video_probability_venn-1">
+			<caption>Probability and Venn Diagrams I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-07.mp4"/>
+		</figure>
+		<figure xml:id="video_probability_venn-2">
+			<caption>Probability and Venn Diagrams II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_probability_venn-1">
+			<statement>
+				<p>Consider the following Venn Diagram.</p>
+				<figure xml:id="image_ckpt_probability_venn_1">
+					<caption></caption>
+					<image width="50%">
+						<latex-image>
+							x
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: Which of the following could not be used for the value of <m>x</m>?
+				  <ul cols="2">
+				  	<li><p><m>0.46</m></p></li>
+				  	<li><p><m>-0.36</m></p></li>
+				  	<li><p><m>0.72</m></p></li>
+				  	<li><p><m>0.13</m></p></li>
+				  </ul>
+				</p>
+			</statement>
+			<answer><p><m>-0.36</m> and <m>0.72</m> could <em>not</em> be used for <m>x</m>.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_venn-2">
+			<statement>
+				<p>Suppose you are told that in the Venn Diagram below, <m>P(A\cup B) = 0.40</m>.</p>
+				<figure xml:id="image_ckpt_probability_venn-2">
+					<caption></caption>
+					<image width="50%">
+						<latex-image>
+							x
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: what is <m>P(A)</m>?</p>
+			</statement>
+			<answer><p><m>0.24</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_venn-3">
+			<statement>
+				<p>In the following Venn Diagram, <m>P(B) = 0.60</m>.</p>
+				<figure xml:id="image_ckpt_probability_venn-3">
+					<caption></caption>
+					<image width="50%">
+						<latex-image>
+							x
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: what is the value of <m>x</m>?</p>
+			</statement>
+			<answer><p>0</p></answer>
+		</exercise>
+	</subsection>
+
+  <subsection xml:id="sec_probability_counting">
+  	<title>Probability from Counting</title>
+  	<p>We have assumed in this section that each outcome is equally likely. In <xref ref="examp_probability_measure_urn"/> we pulled colored marbles from an urn in which each marble was equally likely, but not each color. This was because there were more marbles of some colors than others. In this example, we start to see how counting can be an important tool for computing probabilities.</p>
+  	<p>Recall the definition of <xref ref="def_theoretical-probability">theoretical probability</xref>. Using the rule given in that definition, we can now answer several more complicated probability questions. In the examples that follow, we will use several different counting rules to help us compute probabilities.  Notice how in each example we must first figure out which counting rule or rules to select and how to combine them to count the number of outcomes in both the sample space and in the event we which to find the probability of.</p>
+  	<example xml:id="examp_probability_counting_basic">
+  		<title>Using Basic Counting Rules to Compute Probability</title>
+  		<statement>
+  			<p>An elderly woman owns 12 cats. She has 3 male tabby cats, 4 female tabby cats, 3 female calico, and 2 male Siamese cats. A single cat is chosen from the herd at random. Find the probability that the cat is:
+  				<ol label="a" cols="3">
+  					<li><p>male</p></li>
+  					<li><p>a tabby cat</p></li>
+  					<li><p>a male or a calico.</p></li>
+  				</ol>
+  			</p>
+  		</statement>
+  		<solution>
+  			<p>Since we are told the cat is chosen at random, we know that each cat is equally likely to be chosen. Thus, we can use the theoretical probability rule above to solve these problems. For each of these events, note that the sample space is all of the cats owned by this woman. So <m>n(S) = 12</m> in each problem. 
+  			<ol label="a">
+  				<li><p>Since we are told that <m>n(M) = 5</m>, we compute <m>P(M) = \frac{5}{12}</m>.</p></li>
+  				<li><p>Because <m>n(T) = 7</m>, we get <m>P(T) = \frac{7}{12}</m>.</p></li>
+  				<li><p>Finally, <m>n(M \cup C) = 5 + 3 = 8</m>, so <m>P(M\cup C) = \frac{8}{12} = \frac{2}{3}</m>.</p></li>
+  			</ol></p>
+  		</solution>
+  	</example>
+  	<p>A process in which we choose one item, as we chose a single cat above, is often much easier to work with than a process in which we must choose two or more items. Consider the next example.</p>
+  	<example xml:id="examp_probability_counting_steps">
+  		<title>Computing Probabilities with Permutations and Combinations</title>
+  		<statement>
+  			<p>A special deck of cards contains only 10 cards. These are the two black aces, two red kings, all four queens, and the two red jacks from the regular deck. Four cards are drawn at random from the deck without replacement. What is the probability that:
+  				<ol label="a">
+  					<li><p>none of the cards are aces?</p></li>
+  					<li><p>two of the cards are black, and two are red?</p></li>
+  					<li><p>at least one of the cards is a queen?</p></li>
+  					<li><p>the cards are the queen of hearts, diamonds, clubs, and spades in that order?</p></li>
+  				</ol>
+  			</p>
+  		</statement>
+  		<solution>
+  			<p>Notice that nothing is said about the order in which cards are drawn for the first three events.  So we will use <xref ref="def_counting-rule_combination" text="custom">combinations</xref> to count both the sample space and the number of outcomes in these events.  The common sample space is found by couting the number of ways to select 4 of the 10 cards if order doesn&apos;t matter: <m>C(10,4) = \frac{10 \times 9\times 8\times 7}{4\times 3\times 2\times 1} = 210</m>.
+  			<ol label="a">
+  				<li><p>If none of the cards are aces, then all four are selected from the remaining 8 non-ace cards. This can be done in <m>C(8,4) = 70</m> ways. So, <m>P(\text{ no aces }) = \frac{70}{210} = \frac{1}{3}</m>.</p></li>
+  				<li><p>We first split the cards into black and red. There are two black aces and two black queens making 4 total black cards. There are two red kings, two red queens, and two red jacks making 6 red cards. Next we must pick 2 of the 4 black cards and 2 of the 6 red cards. This is a multi-step process, so using the multiplication rule: 
+  					<me>n(\text{ 2 black and 2 red }) = n(\text{ 2 black }) x n(\text{ 2 red }) = C(4,2) \times C(6,2) = 6 times 15 = 90</me>.
+  				Thus, <m>P(\text{ 2 black and 2 red }) = \frac{90}{210} = \frac{3}{7}</m>.</p></li>
+  				<li><p><q>At least one queen</q> means we could have one queen, two queens, three queens, or all four queens. If we try to count this directly, we must count these four separate cases and then use the addition rule to add them together. Instead, let&apos;s take a short-cut. The opposite of <q>at least one queen</q> is <q>no queens</q>. If we can find the probability of no queens, then we can use the complement rule to find the probability of at least one queen. If we don&apos;t allow the queens to be chosen, there are only 6 cards available. We can pick our entire hand from these 6 cards in <m>C(6,4) = 15</m> ways. So, <m>P(\text{ no queens }) = \frac{15}{210} = \frac{1}{14}</m>. Therefore,
+  				<me>P(\text{ at least one queen }) = 1 - P(\text{ no queens }) = 1-\frac{1}{14} = \frac{13}{14}.</me></p></li>
+  				<li><p>Our last event is different from the other three because the order in which we pick our cards matters.  We should therefore use a <xref ref="def_counting-rule_permutation" text="custom">permutation</xref> or the <xref ref="def_counting-rule_multiplication" text="custom">multiplication rule</xref> instead of a combination. Keeping in mind that there is only one of each suite&apos;s queen in the deck, we compute
+  				<me>P(\text{ Q of H then Q of D then Q of C then Q of S }) = \frac{1\times 1\times 1\times 1}{P(10,4)} = \frac{1}{10\times 9\times 8\times 7} = \frac{1}{5040}</me>.</p></li>
+  			</ol></p>
+  		</solution>
+  	</example>
+		<p>We conclude this section with one final example.</p>
+		<example xml:id="examp_probability_counting_cases">
+			<title>Computing Probabilities with Cases</title>
+			<statement>
+				<p>An experiment consists of randomly selecting three marbles from an urn containing six red marbles, four white marbles, and two green marbles. What is the probability that:
+					<ol label="a">
+						<li><p>All three marbles are green?</p></li>
+						<li><p>All three marbles are white?</p></li>
+						<li><p>All three marbles are of the same color?</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>We start by counting the sample space, which will be the same for all three events. We are drawing three marbles from an urn containing 12 total marbles. We don't care about the order in which we draw the marbles, just the colors that are drawn. Therefore, <m>n(S) = C(12,3) = 220</m>.
+				  <ol label="a">
+				  	<li><p>Since there are only two green marbles, it is impossible for all three of the marbles we draw to be green. Therefore, <m>P(\text{ all three are green }) = 0</m>.</p></li>
+				  	<li><p>There are four white marbles. The number of ways we can draw three of the four is <m>C(4,3) = 4</m>. Therefore, <m>P(\text{ all three are white }) = \frac{4}{220} = \frac{1}{55}</m>.</p></li>
+				  	<li><p>All three marbles can be the same color by being all green, all white, or all red. We said that <m>P(\text{ all green }) = 0</m> and <m>P(\text{ all white }) = \frac{1}{55}</m>. To determine the probability they are all red, we count <m>n(\text{ all three red }) = C(6,3) = 20</m>. Thus, <m>P(\text{ all red }) = \frac{20}{220} = \frac{1}{11}</m>.</p>
+				  	  <p>Now since these are three different ways that we can get all three marbles to be the same color, and since each of these events is mutually exclusive (we can&apos;t get all three red and all three white), we use the general addition rule to get:
+				  	  <me>P(\text{ all same color }) = P(\text{ all green }) + P(\text{ all white }) + P(\text{ all red } ) = 0 + \frac{4}{220} + \frac{20}{220} = \frac{24}{220} = \frac{6}{55}</me>.
+				  	</p></li>
+				  </ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_probability_counting-1">
+			<caption>Probability from Counting I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-09.mp4"/>
+		</figure>
+		<figure xml:id="video_probability_counting-2">
+			<caption>Probability from Counting II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-10.mp4"/>
+		</figure>
+		<figure xml:id="video_probability_counting-3">
+			<caption>Probability from Counting III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-11.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_probability_counting-1">
+			<statement>
+				<p>A student needs to take 4 classes in a certain quarter. There are 5 science classes and 3 humanities classes from which to choose. The student decides to make her selection randomly.</p>
+				<p>Question: what is the probability she will take exactly 3 science classes?</p>
+			</statement>
+			<answer><p><m>\frac{C(5,3)\times C(3,1)}{C(8,4)} = \frac{10 \times 3}{70} = \frac{3}{7}</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_counting-2">
+			<statement>
+				<p>A cage contains 5 white mice and 4 grey mice. 3 mice are selected at random from the cage.</p>
+				<p>Question: what is the probability that at least one of the mice is grey?</p>
+			</statement>
+			<answer><p><m>1-\frac{C(5,3)}{C(9,3)} = 1 - \frac{10}{84} = \frac{74}{84} = \frac{37}{42}</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_probability_counting-3">
+			<statement>
+				<p>A poker hand consists of 5 cards selected at random from an ordinary deck of 52 cards. The deck is divided into four suits of 13 cards each.</p>
+				<p>Question: what is the probability of getting a flush<mdash/>all five cards of the same suit?</p>
+			</statement>
+			<answer><p><m>\frac{C(4,1)\times C(13,5)}{C(52,5)} = \frac{4\times 1287}{2598960} = \frac{5148}{2598960} \approx 0.0020</m></p></answer>
+		</exercise>
+  </subsection>
+
+</section>
