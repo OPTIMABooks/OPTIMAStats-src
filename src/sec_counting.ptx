@@ -92,9 +92,9 @@
 			</statement>
 			<solution>
 				<p>We draw a box to represent <m>U</m> and one circle for each of <m>A</m> and <m>B</m>, making sure that there is a region inside both circles.  Then we place the elements in the appropriate region as shown below.</p>
-				<figure xml:id="image_counting_examp_addition_venn-diagram">
+				<figure xml:id="fig_examp_counting_addition_venn-diagram">
 					<caption>Venn Diagram</caption>
-					<image width="50%">
+					<image width="50%" xml:id="image_examp_counting_addition_venn-diagram">
 						<latex-image>
 							\begin{tikzpicture}
 							  \draw (-1.5,-1.5) rectangle (2.5,1.5);
@@ -486,9 +486,9 @@
 			</statement>
 			<solution>
 				<sidebyside widths="40% 40%" margins="auto">
-					<figure>
+					<figure xml:id="fig_examp_counting_multiplication_tree-diagram-a">
 						<caption>Tree Diagram for <xref ref="examp_counting_multiplication_2-step"/></caption>
-						<image>
+						<image xml:id="image_examp_counting_multiplication_tree-diagram-a">
 							<latex-image>
 								\begin{tikzpicture}[font=\sffamily\tiny]
 								  \node (r) at (0,0);
@@ -553,9 +553,9 @@
 							</latex-image>
 						</image>
 					</figure>
-					<figure>
+					<figure xml:id="fig_examp_counting_multiplication_tree-diagram-b">
 						<caption>Tree Diagram for <xref ref="examp_counting_multiplication_3-step"/></caption>
-						<image>
+						<image xml:id="image_examp_counting_multiplication_tree-diagram-b">
 							<latex-image>
 								\begin{tikzpicture}[font=\sffamily\tiny]
 								  \node (r) at (0,0);
@@ -682,9 +682,9 @@
 							<li><p>pick a resort (the number depends on the destination chosen in step 1)</p></li>
 						</ol>
 					</p>
-					<figure>
+					<figure xml:id="fig_examp_counting_multiplication_unbalanced-tree">
 						<caption>Vacations</caption>
-						<image>
+						<image xml:id="image_examp_counting_multiplication_unbalanced-tree">
 							<latex-image>
 								\begin{tikzpicture}[font=\sffamily\tiny]
 								  \node (r) at (0,0);
