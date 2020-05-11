@@ -411,9 +411,9 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_frequency-table_table" text="custom">frequency table for this data</xref>, we get the following bar graph.</p>
-					<figure xml:id="image_graphs_examp_bar-graph">
+					<figure xml:id="fig_examp_graphs_bar-graph">
 						<caption>Pizza Topping Bar Graph</caption>
-						<image source="./images/graphs_examp_bar-graph.png" width="80%"/>
+						<image source="./images/graphs_examp_bar-graph.png" width="80%" xml:id="image_examp_graphs_bar-graph"/>
 					</figure>
 				</solution>
 			</example>
@@ -432,9 +432,9 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_relative-frequency-table_table" text="custom">relative frequency table</xref>, we get the following bar graph.</p>
-					<figure xml:id="image_graphs_Examp_relative-frequency-bar-graph">
+					<figure xml:id="fig_examp_graphs_relative-frequency-bar-graph">
 						<caption>Pizza Topping Relative Frequency Bar Graph</caption>
-						<image source="./images/graphs_examp_relative-frequency-bar-graph.png" width="80%"/>
+						<image source="./images/graphs_examp_relative-frequency-bar-graph.png" width="80%" xml:id="image_examp_graphs_relative-frequency-bar-graph"/>
 					</figure>
 					<p>Notice that the bar graph is scaled in terms of percent instead of the relative frequencies from the table.  This is a common quirk with using spreadsheet programs to produce such graphs.</p>
 				</solution>
@@ -454,9 +454,9 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_relative-frequency-table_table" text="custom">relative frequency table</xref> previously constructed for this data, we get the following pie graph.</p>
-					<figure xml:id="image_graphs_examp_pie-graph">
+					<figure xml:id="fig_examp_graphs_pie-graph">
 						<caption>Pizza Topping Pie Graph</caption>
-						<image source="./images/graphs_examp_pie-graph.png" width="80%"/>
+						<image source="./images/graphs_examp_pie-graph.png" width="80%" xml:id="image_examp_graphs_pie-graph"/>
 					</figure>
 					<p>Again, spreadsheet programs often convert relative frequencies into percents when constructing a pie graph.</p>
 				</solution>
@@ -597,14 +597,14 @@
 				</statement>
 				<solution>
 					<p>First we create a graph with class standing as the primary variable.</p>
-					<figure xml:id="image_graphs_stacked-bar-graph-a">
+					<figure xml:id="fig_examp_graphs_stacked-bar-graph-a">
 						<caption>Summer Plans by Class Standing</caption>
-						<image source="./images/graphs_stacked-bar-graph-a.png" width="80%"/>
+						<image source="./images/graphs_stacked-bar-graph-a.png" width="80%" xml:id="image_examp_graphs_stacked-bar-graph-a"/>
 					</figure>
 					<p>And then the graph with summer plans as the primary variable.</p>
-					<figure xml:id="image_graphs_stacked-bar-graph-b">
+					<figure xml:id="fig_examp_graphs_stacked-bar-graph-b">
 						<caption>Class Standing by Summer Plans</caption>
-						<image source="./images/graphs_stacked-bar-graph-b.png" width="80%"/>
+						<image source="./images/graphs_stacked-bar-graph-b.png" width="80%" xml:id="image_examp_graphs_stacked-bar-graph-b"/>
 					</figure>
 				</solution>
 			</example>
@@ -861,9 +861,9 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_frequency-distribution_frequency-distribution" text="custom">frequency distribution</xref> built in the previous example, we construct the following histogram.</p>
-					<figure xml:id="image_graphs_examp_histogram">
+					<figure xml:id="fig_examp_graphs_histogram">
 						<caption>A Histogram if Tomato Plant Heights</caption>
-						<image source="./images/graphs_examp_histogram.png" width="80%"/>
+						<image source="./images/graphs_examp_histogram.png" width="80%" xml:id="image_examp_graphs_histogram"/>
 					</figure>
 					<p>notice that the bars in this graph touch each other, and that they are in order from lowest values (8.1-10) up to highest values (16.1-18). These are both important characteristics for histograms!</p>
 				</solution>
@@ -1006,7 +1006,7 @@
 								<li><p>For each stem, list the associated leaves in ascending order.</p></li>
 							</ol>
 							This produces the following plot.</p>
-							<figure xml:id="examp_graphs_stem-and-leaf_plot">
+							<figure xml:id="fig_examp_graphs_stem-and-leaf">
 								<caption>Stem-and-Leaf Plot</caption>
 								<image xml:id="image_graphs_examp_stem-and-leaf">
 									<latex-image>
@@ -1020,29 +1020,6 @@
                   </latex-image>
 								</image>
 							</figure>
-<!--  
-						<table xml:id="examp_graphs_stem-and-leaf_plot">
-							<title>Stem-and-Leaf Plot</title> 
-							<tabular>
-								<row bottom="medium">
-									<cell halign="right" right="medium">Stem</cell>
-									<cell>Leaves</cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><cd>0</cd></cell>
-									<cell><cd>3689</cd></cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><cd>1</cd></cell>
-									<cell><cd>122334455555666666677889</cd></cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><cd>2</cd></cell>
-									<cell><cd>11</cd></cell>
-								</row>
-							</tabular>
-						</table>
--->						
 					</sidebyside>
 				</solution>
 			</example>
@@ -1061,7 +1038,7 @@
 				<solution>
 					<sidebyside widths="50% 45%" margins="auto" valign="middle">
 						<p>This is done in almost exactly the same way as	<xref ref="examp_graphs_stem-and-leaf_plot" text="custom">our last example</xref>. The only difference is that	each stem gets two rows. The leaves are then split up with 0-4 going in the first row and 5-9 in the second row for a given stem. The result is	shown to the right.</p>
-						<figure xml:id="examp_graphs_expanded-stem-and-leaf_plot">
+						<figure xml:id="fig_examp_graphs_expanded-stem-and-leaf">
 							<caption>Expanded Stem-and-Leaf Plot</caption>
 							<image xml:id="image_graphs_expanded-stem-and-leaf">
 								<latex-image>
@@ -1077,42 +1054,7 @@ Stem &amp; Leaves \\
 \end{tabular}					
 								</latex-image>
 							</image>
-						</figure>
-<!--		
-						<table xml:id="examp_graphs_expanded-stem-and-leaf_plot">
-							<title>Expanded Stem-and-Leaf Plot</title>
-							<tabular>
-								<row bottom="medium">
-									<cell right="medium">Stem</cell>
-									<cell>Leaf</cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><pre>0</pre></cell>
-									<cell><pre>3</pre></cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><pre>0</pre></cell>
-									<cell><pre>689</pre></cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><pre>1</pre></cell>
-									<cell><pre>1223344</pre></cell>
-								</row>
-								<row>
-								  <cell halign="right" right="medium"><pre>1</pre></cell>
-								  <cell><pre>55555666666677889</pre></cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><pre>2</pre></cell>
-									<cell><pre>11</pre></cell>
-								</row>
-								<row>
-									<cell halign="right" right="medium"><pre>2</pre></cell>
-									<cell></cell>
-								</row>
-							</tabular>
-						</table>
--->						
+						</figure>	
 					</sidebyside>
 					<p>This gives us a clearer picture of how the credit hour values are distributed!</p>
 				</solution>
@@ -1168,9 +1110,9 @@ Stem &amp; Leaves \\
 					<p>Construct a stem-and-leaf plot for this data.</p>
 				</statement>
 				<solution>
-					<figure>
+					<figure xml:id="fig_ckpt_graphs_stem-and-leaves-1">
 						<caption>Stem-and-Leaf Plot</caption>
-						<image width="20%">
+						<image width="20%" xml:id="image_ckpt_graphs_stem-and-leaves-1">
 							<latex-image>
 \begin{tabular}{r|l}
   Stem &amp; Leaf \\
@@ -1226,9 +1168,9 @@ Stem &amp; Leaves \\
 					<p>Construct an expanded stem-and-leaf plot for this data.</p>
 				</statement>
 				<solution>
-					<figure>
+					<figure xml:id="fig_ckpt_graphs_stem-and-leaves-2">
 						<caption>Expanded Stem-and-Leaf Plot</caption>
-						<image width="20%">
+						<image width="20%" xml:id="image_ckpt_graphs_stem-and-leaves-2">
 							<latex-image>
 \begin{tabular}{r|l}
   Stem &amp; Leaf\\
@@ -1287,9 +1229,9 @@ Stem &amp; Leaves \\
 				</statement>
 				<solution>
 					<p>Using a spreadsheet program, we can produce the following graph.</p>
-					<figure xml:id="image_graphs_examp_time-series">
+					<figure xml:id="fig_examp_graphs_time-series">
 						<caption>Time Series of Stock Price</caption>
-						<image source="./images/graphs_time-series.png" width="80%"/>
+						<image source="./images/graphs_time-series.png" width="80%" xml:id="image_examp_graphs_time-series"/>
 					</figure>
 				</solution>
 			</example>
@@ -1353,9 +1295,9 @@ Stem &amp; Leaves \\
 				</statement>
 				<solution>
 					<p>Using a spreadsheet, we construct the following scatter plot.</p>
-					<figure xml:id="image_graphs_examp_scatter-plot">
+					<figure xml:id="fig_examp_graphs_scatter-plot">
 						<caption>A Scatter Plot of Mouse Tail Length vs. Weight</caption>
-						<image source="./images/graphs_examp_scatter-plot.png" width="80%"/>
+						<image source="./images/graphs_examp_scatter-plot.png" width="80%" xml:id="image_examp_graphs_scatter-plot"/>
 					</figure>
 					<p>There definitely appears to be a relationship between tail length and weight. Larger tail lengths seem to correspond to larger weights. While this is not always the case (mouse	#6 is an exception) it does appear to be a fairly strong relationship.</p>
 				</solution>
@@ -1432,33 +1374,33 @@ Stem &amp; Leaves \\
 					<p>Locate the center of each histogram and then classify it by number of modes and symmetry.</p>
 					<sbsgroup>
 						<sidebyside margins="5%" widths="40% 40%">
-							<figure xml:id="image_graphs_examp_describing-histograms-a">
+							<figure xml:id="fig_examp_graphs_describing-histograms-a">
 								<caption>(a)</caption>
-								<image source="./images/graphs_examp_describing-histograms-a.png" width="100%"/>
+								<image source="./images/graphs_examp_describing-histograms-a.png" width="100%" xml:id="image_examp_graphs_describing-histograms-a"/>
 							</figure>								
-							<figure xml:id="image_graphs_examp_describing-histograms-b">
+							<figure xml:id="fig_examp_graphs_describing-histograms-b">
 								<caption>(b)</caption>
-							  <image source="./images/graphs_examp_describing-histograms-b.png" width="100%"/>
+							  <image source="./images/graphs_examp_describing-histograms-b.png" width="100%" xml:id="image_examp_graphs_describing-histograms-b"/>
 							</figure>
 						</sidebyside>
 						<sidebyside margins="5%" widths="40% 40%">
-							<figure xml:id="image_graphs_examp_describing-histograms-c">
+							<figure xml:id="fig_examp_graphs_describing-histograms-c">
 								<caption>(c)</caption>
-								<image source="./images/graphs_examp_describing-histograms-c.png" width="100%"/>
+								<image source="./images/graphs_examp_describing-histograms-c.png" width="100%" xml:id="image_examp_graphs_describing-histograms-c"/>
 							</figure>
-							<figure xml:id="image_graphs_examp_describing-histograms-d">
+							<figure xml:id="fig_examp_graphs_describing-histograms-d">
 								<caption>(d)</caption>
-							  <image source="./images/graphs_examp_describing-histograms-d.png" width="100%"/>
+							  <image source="./images/graphs_examp_describing-histograms-d.png" width="100%" xml:id="image_examp_graphs_describing-histograms-d"/>
 							</figure>
 						</sidebyside>
 						<sidebyside margins="5%" widths="40% 40%">
-							<figure xml:id="image_graphs_examp_describing-histograms-e">
+							<figure xml:id="fig_examp_graphs_describing-histograms-e">
 								<caption>(e)</caption>
-								<image source="./images/graphs_examp_describing-histograms-e.png" width="100%"/>
+								<image source="./images/graphs_examp_describing-histograms-e.png" width="100%" xml:id="image_examp_graphs_describing-histograms-e"/>
 							</figure>
-							<figure xml:id="image_graphs_examp_describing-histograms-f">
+							<figure xml:id="fig_examp_graphs_describing-histograms-f">
 								<caption>(f)</caption>
-							  <image source="./images/graphs_examp_describing-histograms-f.png" width="100%"/>
+							  <image source="./images/graphs_examp_describing-histograms-f.png" width="100%" xml:id="image_examp_graphs_describing-histograms-f"/>
 							</figure>
 						</sidebyside>
 					</sbsgroup>						
@@ -1495,9 +1437,9 @@ Stem &amp; Leaves \\
 				<title>Histogram Shapes</title>
 				<statement>
 					<p>Consider the histogram shown below.</p>
-					<figure xml:id="image_graphs_ckpt_describing-histograms-1">
+					<figure xml:id="fig_ckpt_graphs_describing-histograms-1">
 						<caption></caption>
-						<image source="./images/ckpt_graphs_describing-histograms-1.png" width="50%"/>
+						<image source="./images/ckpt_graphs_describing-histograms-1.png" width="50%" xml:id="image_ckpt_graphs_describing-histograms-1"/>
 					</figure>
 					<p>Question: Which of the following terms correctly describes this histogram?
 					  <ul cols="2">
@@ -1517,9 +1459,9 @@ Stem &amp; Leaves \\
 				<title>Histogram Shapes</title>
 				<statement>
 					<p>Consider the histogram shown below.</p>
-					<figure xml:id="image_graphs_ckpt_describing-histograms-2">
+					<figure xml:id="fig_ckpt_graphs_describing-histograms-2">
 						<caption></caption>
-						<image source="./images/ckpt_graphs_describing-histograms-2.png" width="50%"/>
+						<image source="./images/ckpt_graphs_describing-histograms-2.png" width="50%" xml:id="image_ckpt_graphs_describing-histograms-2"/>
 					</figure>
 					<p>Question: Which of the following terms correctly describes this histogram?
 						<ul cols="2">
@@ -1539,9 +1481,9 @@ Stem &amp; Leaves \\
 				<title>Histogram Shapes</title>
 				<statement>
 					<p>Consider the histogram shown below.</p>
-					<figure xml:id="image_graphs_ckpt_describing-histograms-3">
+					<figure xml:id="fig_ckpt_graphs_describing-histograms-3">
 						<caption></caption>
-						<image source="./images/ckpt_graphs_describing-histograms-3.png" width="50%"/>
+						<image source="./images/ckpt_graphs_describing-histograms-3.png" width="50%" xml:id="image_ckpt_graphs_describing-histograms-3"/>
 					</figure>
 					<p>Question: Which of the following terms correctly describes this histogram?
 						<ul cols="2">

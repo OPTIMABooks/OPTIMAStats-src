@@ -130,9 +130,9 @@
 				<p>Note that the maximum value in the data set, 42, is above the upper fence.  So it is an outlier and will not be included in the five number summary.  The minimum and maximum vales of the remaining data are 9 and 19 respectively.  This gives us the following five-number summary.
 					<me>\text{Min} = 9, \quad Q_1 = 11, \quad \text{Median} = 14, \quad Q_3 = 16.5, \text{Max} = 19</me>
 				Using these, we construct the box-plot shown below, remembering to identify the outlier with an asterisk.</p>
-				<figure xml:id="examp_relative-standing_examp_box-plot_plot">
+				<figure xml:id="fig_xamp_relative-standing_box-plot_plot">
 					<caption>Box Plot</caption>
-					<image xml:id="image_relative-standing_examp_box-plot">
+					<image xml:id="image_examp_relative-standing_box-plot">
 						<latex-image>
 							\begin{filecontents}{testdata.dat}
 							  % 0 median q3 q1 max min
@@ -309,9 +309,9 @@
 			</statement>
 		</definition>
 		<p>You can see then why a z-score of less than -3 or more than 3 would make a value an outlier. Only 0.3% of values should be in this range. To help you visualize the empirical rule, take a look at the following picture.</p>
-		<figure xml:id="image_relative-standing_empirical">
+		<figure xml:id="fig_relative-standing_empirical">
 			<caption>Empirical Rule</caption>
-			<image source="./images/relative-standing_empirical.png" width="100%"/>
+			<image source="./images/relative-standing_empirical.png" width="100%" xml:id="image_relative-standing_empirical"/>
 		</figure>
 		<p>Now let's apply the empirical rule to an example.</p>
 		<example xml:id="examp_relative-standing_empirical">
