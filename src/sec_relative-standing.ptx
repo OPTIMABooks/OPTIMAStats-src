@@ -374,12 +374,12 @@
   <subsection xml:id="sec_relative-standing_chebyshev">
   	<title>Chebyshev's Inequality</title>
 		<p>While the empirical rule gives us a good way to estimate how much of a data set will lie within one, two, or three standard deviations of the mean, it does have limitations. First, it only works if we know the distribution is mound-shaped. If the distribution is skewed, bimodal, or otherwise not mound shaped the empirical rule will not give us accurate results. The other drawback is that this rule only tells us how much of the data is within the three ranges given: one, two, or three standard deviations on each side of the mean. The next rule we will examine is much more general.</p>
-		<definition xml:id="def_chebyshev">
+		<theorem xml:id="thm_chebyshev">
 			<idx>Chebyshev's inequality</idx>
 			<statement>
 				<p><term>Chebyshev's Inequality</term> states that the proportion of values in any distribution that lie within <m>k</m> standard deviations of the mean is at least <m>1-\frac{1}{k^2}</m>. Symbolically, if <m>P</m> is the proportion of values in the range from <m>\mu - k\sigma</m> to <m>\mu+k\sigma</m>, then <me>P \geq 1-\frac{1}{k^2}.</me></p>
 			</statement>
-		</definition>
+		</theorem>
 		<p>Now let's revisit <xref ref="examp_relative-standing_empirical"/> and see how this new rule can be applied.</p>
 		<example xml:id="examp_relative-standing_chebyshev_find-P">
 			<title>Using Chebyshev's Inequality to Find Percentages</title>

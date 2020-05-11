@@ -44,11 +44,11 @@
 	<subsection xml:id="sec_counting_addition">
 		<title>Sets and the Addition Rule</title>
 		<p>In this first section of the lesson, we will remind you of one of the most basic counting rules: the <term>addition rule</term>. We will also introduce the idea of set notation.</p>
-		<definition xml:id="def_counting-rule-addition-informal">
+		<principle xml:id="thm_counting-rule_addition-informal">
 			<statement>
 				<p>If a process can happen in one of two distinct ways, the first way having <m>n</m>n different possibilities and the second having <m>m</m> possibilities, then the entire process can happen <m>n+m</m> ways.  This is referred to as the <term>addition rule</term>.</p>
 		  </statement>
-	  </definition>
+	  </principle>
 	  <p>To see this counting rule in action, consider the following example.</p>
 	  <example xml:id="examp_counting_addition-informal">
 	  	<title>Using the Addition Rule</title>
@@ -123,7 +123,7 @@
 	  	</statement>
 	  </definition>
 	  <p>Using these more formal ideas involving sets, we can restate the addition rule as follows.</p>
-	  <definition xml:id="def_counting-rule_addition">
+	  <theorem xml:id="thm_counting-rule_addition">
 	  	<idx>addition rule (counting)</idx>
 	  	<idx><h>counting rules</h><h>addition rule</h></idx>
 	  	<statement>
@@ -131,7 +131,7 @@
 	  		  <me>n(A\cup B) = n(A) + n(B)</me>,
 	  		  where <m>n(A)</m> represents the number of elements in set <m>A</m>.</p>
 	  	</statement>
-	  </definition>
+	  </theorem>
 	  <p>The next example will give us a little more practice using sets and the addition rule.</p>
 	  <example xml:id="examp_counting_addition-formal">
 	  	<title>Using the Formal Addition Rule</title>
@@ -226,14 +226,14 @@
 			</solution>
 		</example>
 		<p>In the above example, those who were in both classes are included in both the 23 and the 34. So to make up for the fact that they were counted twice, we have to subtract them back out, or exclude them, to get the final total.</p>
-		<definition xml:id="def_counting-rule_inclusion-exclusion">
+		<theorem xml:id="thm_counting-rule_inclusion-exclusion">
 			<idx>inclusion/exclusion rule (counting)</idx>
 			<idx><h>counting rules</h><h>inclusion/exclusion rule</h></idx>
 			<statement>
 				<p>The <term>inclusion/exclusion rule</term> states that, for two sets <m>A</m> and <m>B</m>,
 				  <me>n(A\cup B) = n(A) + n(B) - n(A\cap B)</me>.</p>
 			</statement>
-		</definition>
+		</theorem>
 		<p>You have already seen the inclusion/exclusion rule at work when you worked with <xref ref="def_contingency-table" text="custom">contingency tables</xref> in <xref ref="sec_graphs_qualitative_bivariate"/>. Consider the following example.</p>
 		<example xml:id="examp_counting_inclusion-exclusion_from-table">
 			<title>Using the Inclusion/Exclusion Rule</title>
@@ -429,7 +429,7 @@
 	<subsection xml:id="sec_counting_multiplication">
 		<title>The Multiplication Rule</title>
 		<p>In some instances, a process may have two or more steps, each of which can happen in several different ways. In order to determine the total number of ways that such a multi-step process can happen, we need to use a new rule, called the <term>multiplication rule</term>.</p>
-		<definition xml:id="def_counting-rule_multiplication">
+		<theorem xml:id="thm_counting-rule_multiplication">
 			<idx>multiplication rule (counting)</idx>
 			<idx><h>counting rules</h><h>multiplication rule</h></idx>
 			<statement>
@@ -437,7 +437,7 @@
 				<p>This can be expanded to a process which includes <m>k</m> stages, the <m>i^\text{th}</m> of which can happen in <m>n_i</m> ways, then the total number of ways the process can happen is:
 				<me>n_1 \times n_2 \times \cdots \times n_k</me>.</p>
 			</statement>
-		</definition>
+		</theorem>
 		<p>To see how this rule works, let's look at several examples.</p>
 		<example xml:id="examp_counting_multiplication_2-step">
 			<title>Applying the Multiplication Rule I</title>
@@ -772,7 +772,6 @@
 		<p>Notice that because we were selecting from our group of items without replacing them, the number of choices went down by one each time. When we use the multiplication rule with this sort of process, we wind up multiplying the numbers between 1 and the original number of choices. This product has a special name.</p>
 		<definition xml:id="def_factorial">
 			<idx>factorial</idx>
-			<idx><h>counting rules</h><h>factorial</h></idx>
 			<statement>
 				<p>For any positive integer <m>n</m>, <m>n!</m> (read <q><m>n</m> <term>factorial</term></q>) is the product of the numbers between <m>1</m> and <m>n</m>. That is:
 				<me>n! = n\times(n-1)\times \cdots \times 2\times 1</me>.
@@ -868,14 +867,14 @@
 			</solution>
 		</example>
 		<p>While the solution to this problem started off looking like a factorial, <m>10 \times 9 \times 8</m>, it stopped after 8 because we didn&apos;t need to order the remaining seven runners in this race. In general, when we need to count the number of ways to order or arrange <m>r</m> items chosen from <m>n</m> possible items, we are using a permutation.</p>
-		<definition xml:id="def_permutation">
+		<theorem xml:id="thm_counting-rule_permutation">
 			<idx>permutation</idx>
 			<idx><h>counting rules</h><h>permutation</h></idx>
 			<statement>
 				<p>A <term>permutation</term> of n items taken r at a time is used to count the number of ways to arrange (or permute) <m>r</m> items chosen from <m>n</m> possible items. The formula for this permutation is:
 				<me>P(n,r) = \frac{n!}{(n-r)!}</me>.</p>
 			</statement>
-		</definition>
+		</theorem>
 		<p>Applying this formula to the foot-race example above, we could have computed:
 			<me>P(10,3) = \frac{10!}{(10-3)!} = \frac{10\times 9\times 8\times 7!}{7!} = 10\times 9\times 8 = 720</me>.
 			Permutations are a general rule that can be used to count the number of ways to complete a process in which the order of completion matters. A race is a good example of when order matters. Another example can be found below.</p>
@@ -990,14 +989,14 @@
 			</solution>
 		</example>
 		<p>In the example above, we arrived at the final solution using two steps. First, we counted the number of ways to pick the friends to go with us if the order did matter, in this case it was 12. Then we counted the number of ways that those two friends could be arranged, which was 2. Finally, we divide the 12 ordered ways by the 2 different orderings to get a total of 6 ways to choose our two friends if the order does not matter. This process can be combined into a single counting rule called a combination.</p>
-		<definition xml:id="def_combination">
+		<theorem xml:id="thm_counting-rule_combination">
 			<idx>combination</idx>
 			<idx><h>counting rules</h><h>combination</h></idx>
 			<statement>
 				<p>A <term>combination</term> of <m>n</m> items taken <m>r</m> at a time is used to count the number of ways to choose <m>r</m> items from <m>n</m> possible items if the order in which we select them does not matter. The formula for this combination is:
 				<me>C(n,r) = \frac{P(n,r)}{r!} = \frac{n!}{r!(n-r)!}</me>.</p>
 			</statement>
-		</definition>
+		</theorem>
 		<p>Applying this formula to the movie ticket example, we get:
 			<me>C(4,2) = \frac{4!}{2!(4-2)!} = \frac{4\times 3\times 2!}{2!\times 2!} = \frac{4\times 3}{2\times 1} = 6</me>.</p>
 		<p>Let&apos;s try applying this to another example.</p>
@@ -1078,15 +1077,19 @@
 
 	<subsection xml:id="sec_counting_mixed">
 		<title>Mixed Counting Techniques</title>
-		<p>One of the hardest parts of counting problems is determining which rules or combinations of rules to use to answer a given question. Here are a few basic things to remember:
-			<ol>
-				<li><p>If the things you are counting come in two distinct groups, count each group then add together the results. (<xref ref="def_counting-rule_addition" text="custom">addition rule</xref> <mdash/> goes with <q>or</q>)</p></li>
-				<li><p>If there is overlap between the two groups, remember to subtract the intersection. (<xref ref="def_counting-rule_inclusion-exclusion" text="custom">inclusion/exclusion rule</xref>)</p></li>
-				<li><p>If the process you are counting can be broken down into steps, count the number of ways each step can be performed and multiply. (<xref ref="def_counting-rule_multiplication" text="custom">multiplication rule</xref> <mdash/> goes with <q>and</q>)</p></li>
-				<li><p>If you are arranging things or selecting multiple items and the order of selection matters, use a permutation. (<xref ref="def_permutation">permutation rule</xref>).</p></li>
-				<li><p>If you are selecting multiple items from a group of items and the order in which you pick them does not matter, use a combination. (<xref ref="def_combination" text="custom">combination rule</xref>).</p></li>
-			</ol>
-		</p>
+		<p>One of the hardest parts of counting problems is determining which rules or combinations of rules to use to answer a given question. Here are a few basic things to remember:</p>
+		<principle xml:id="thm_counting-rules_principles">
+			<title>Combining Counting Rules</title>
+			<statement>
+				<p><ol>
+					<li><p>If the things you are counting come in two distinct groups, count each group then add together the results. (<xref ref="thm_counting-rule_addition" text="custom">addition rule</xref> <mdash/> goes with <q>or</q>)</p></li>
+					<li><p>If there is overlap between the two groups, remember to subtract the intersection. (<xref ref="thm_counting-rule_inclusion-exclusion" text="custom">inclusion/exclusion rule</xref>)</p></li>
+					<li><p>If the process you are counting can be broken down into steps, count the number of ways each step can be performed and multiply. (<xref ref="thm_counting-rule_multiplication" text="custom">multiplication rule</xref> <mdash/> goes with <q>and</q>)</p></li>
+					<li><p>If you are arranging things or selecting multiple items and the order of selection matters, use a permutation. (<xref ref="thm_counting-rule_permutation">permutation rule</xref>).</p></li>
+					<li><p>If you are selecting multiple items from a group of items and the order in which you pick them does not matter, use a combination. (<xref ref="thm_counting-rule_combination" text="custom">combination rule</xref>).</p></li>
+				</ol></p>
+			</statement>
+		</principle>
 		<p>Let&apos;s apply these ideas to several examples. Remember that our fist step should always be to identify the rule or rules that we are going to use to count our options.</p>
 		<example xml:id="examp_counting_mixed_permutation">
 			<title>Picking a Counting Rule</title>

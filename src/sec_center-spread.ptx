@@ -681,13 +681,13 @@
 			</solution>
 		</example>
 		<p>The number for this example turned out very nice. This is not always the case. Usually the standard deviation will involve decimals. In general, you should not round your answers during any intermediate steps, and then round your standard deviation to one decimal more than the number of decimals in the original data set. One quick way to estimate the standard deviation is based on the range of the data.</p>
-		<definition xml:id="def_stddev-estimate">
+		<principle xml:id="def_stddev-estimate">
 			<idx><h>meausures of spread</h><h>estimating standard deviation</h></idx>
 			<statement>
 				<p>To <term>estimate the standard deviation</term> of a population, use the following general rule:
 				<me>\sigma \approx \frac{\text{range}}{4}.</me></p>
 			</statement>
-		</definition>
+		</principle>
 		<p>In the above example, our estimate of <m>\frac{8-3}{4} = 1.25</m> is not terribly good, but this can be a quick and easy way to approximate the standard deviation if all you have are the minimum and maximum values of your population data.</p>
 
 		<figure xml:id="video_center-spread_mean-stdev-1">

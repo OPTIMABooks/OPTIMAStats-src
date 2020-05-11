@@ -345,7 +345,7 @@
 			</solution>
 		</example>
 		<p>All of these assumptions are important as they will dictate how we design our model. Remember that the goal in simulating is to model the process in a simpler and more easily studied form. The steps we must follow to set up such a simulation are listed below.</p>
-		<definition xml:id="def_simulation-steps">
+		<algorithm xml:id="def_simulation-steps">
 			<idx><h>simulation</h><h>simulation steps</h></idx>
 			<statement>
 				<p>To conduct a simulation, follow these steps.
@@ -359,7 +359,7 @@
 					</ol>
 				</p>
 			</statement>
-		</definition>
+		</algorithm>
 		<p>We have already seen how to identify the components, outcomes, and trials. Let's finish our fishing example by actually conducting the simulation.</p>
 		<example xml:id="examp_simulation_conducting">
 			<title>Conducting a Simulation</title>
@@ -530,13 +530,19 @@
   	  </ul>
   	</p>
   	<p>Our underlying assumptions seem to be reasonable, and we did use a random number table to generate randomness. However, we only did 10 trials. for a better simulation, we should do at least 20 trials. Running trials by hand can be very time consuming. Using a spreadsheet program we could get our results much more quickly.</p>
-  	<p>Be very cautious when conducting and reporting on simulations.  The following guidelines should be followed.
-  		<ul>
-  			<li><title>Don't Overstate Your Case</title><p>A simulation is in some sense always wrong. We didn't actually fish in a lake stocked as the example stated. Add to that the fact that a random process will always turn out differently each time we do it, and you need to be cautious about claiming that <q>we must catch 6.4 fish</q> in order to complete the process.</p></li>
-  			<li><title>Model Outcomes Correctly</title><p>We must keep outcomes in the correct proportion to our random digits. Drop digits as necessary to ensure that these proportions are correct. If you have more than 10 outcomes to model, you can use two digits at a time.</p></li>
-  			<li><title>Run Enough Trials</title><p>The purpose of a simulation is to make a long and possibly expensive process short and cheap. So use a large number of trials!</p></li>
-  		</ul>
-  	</p>
+  	<p>Be very cautious when conducting and reporting on simulations.  The following guidelines should be followed.</p>
+  	<principle xml:id="def_simulation-cautions">
+  		<title>Cautions Regarding Simulations</title>
+  		<statement>
+  			<p>
+	  			<ul>
+		  			<li><title>Don't Overstate Your Case</title><p>A simulation is in some sense always wrong. We didn't actually fish in a lake stocked as the example stated. Add to that the fact that a random process will always turn out differently each time we do it, and you need to be cautious about claiming that <q>we must catch 6.4 fish</q> in order to complete the process.</p></li>
+		  			<li><title>Model Outcomes Correctly</title><p>We must keep outcomes in the correct proportion to our random digits. Drop digits as necessary to ensure that these proportions are correct. If you have more than 10 outcomes to model, you can use two digits at a time.</p></li>
+		  			<li><title>Run Enough Trials</title><p>The purpose of a simulation is to make a long and possibly expensive process short and cheap. So use a large number of trials!</p></li>
+		  		</ul>
+  			</p>
+  		</statement>
+  	</principle>
 
   	<figure xml:id="video_simulation_cautions-1">
   		<caption>Simulation Cautions I</caption>
