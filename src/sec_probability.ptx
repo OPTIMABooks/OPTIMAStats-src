@@ -97,8 +97,9 @@
 			</statement>
 		</definition>
 		<p>In <xref ref="examp_probabilty_basic-rules_coin-flip"/>, the event of interest was <m>A = \lbrace HT, TH \rbrace</m>. Notice that every outcome in that event is also an outcome in the sample space <m>S</m>. This is what it means to say that <m>A</m> is a <idx><h>sets</h><h>subset</h></idx><term>subset</term> of <m>S</m>. Also notice that because <m>A</m> is a subset of <m>S</m>, it must always be true that <m>A</m> contains at most the same number of elements as <m>S</m>. That is, <m>n(A) \leq n(S)</m>. This, together with our definition of <xref ref="def_theoretical-probability" text="custom">theoretical probability</xref>, leads to the following rules.</p>
-		<theorem>
+		<theorem xml:id="thm_basic-probability">
 			<title>Basic Probability Rules</title>
+			<idx><h>probability</h><h>rules</h><h>basic probability rules</h></idx>
 			<statement>
 				<p>For any event <m>A</m> in a sample space <m>S</m>, the following rules must hold.
 				  <ul cols="2">
@@ -109,22 +110,25 @@
 			</statement>
 		</theorem>
 		<p>The first rule says that because <m>A</m> is a subset of <m>S</m>, the ratio of <m>n(A)</m> to <m>n(S)</m> can be at most one, and as with any ratio, must be at least 0. The second rule tells us that the probability of something in the sample space happening is 1. Since the sample space contains all possible outcomes, this gives us the maximum possible probability of 1. The following Scale can be useful in judging how likely something is to happen based on its probability.</p>
-		<figure xml:id="image_probability_scale">
+		<figure xml:id="fig_probability_scale">
 			<caption>Range of Possible Probabilities</caption>
-			<image>
+			<image xml:id="image_probability_scale">
 				<latex-image>
-					Can't Happen
-					50/50 Chance
-					Must Happen
-					0
-					0.50
-					1
+					\begin{tikzpicture}[font=\sffamily\tiny]
+					  \draw[line width=0.25mm] (0,0) -- (8,0);
+					  \draw (0,0.1) -- (0,-0.1) node [below] {0};
+					    \node at (0,0.25) [above center] {Can't Happen};
+					  \draw (4,0.1) -- (4,-0.1) node [below] {0.50};
+					    \node at (4,0.25) [above center] {50/50 Chance};
+					  \draw (8,0.1) -- (8,-0.1) node [below] {1};
+					  \node at (8,0.25) [above center] {Must Happen};
+					\end{tikzpicture}
 				</latex-image>
 			</image>
 		</figure>
 		<p>Let&apos;s apply these basic rules and interpretations to the following example.</p>
-		<example xml:id="examp_probability_basic-rules_events">
-			<title>Applint Probability Rules to Events</title>
+		<example xml:id="examp_probability-riles_basic">
+			<title>Applying Probability Rules to Events</title>
 			<statement>
 				<p>A sample space <m>S</m> contains two <xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref> events, <m>A</m> and <m>B</m> with probabilities <m>P(A) = 0.6</m> and <m>P(B) = 0.2</m>. Use this to answer the following questions.
 				<ol label="a">
@@ -144,14 +148,15 @@
 			</solution>
 		</example>
 		<p>Part (b) in the above example is a specific instance of the following general rule. This rule comes directly from the addition counting rule, so it has a similar name.</p>
-		<definition xml:id="def_prob-rule_addition">
+		<theorem xml:id="thm_probability-rule_addition">
+			<title>Addition Rule</title>
 			<idx>addition rule (probability)</idx>
 			<idx><h>probability</h><h>rules</h><h>addition rule</h></idx>
 			<statement>
-				<p>For <xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref> events <m>A</m> and <m>B</m> in a sample space, 
+				<p>For <xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref> events <m>A</m> and <m>B</m>, 
 				<me>P(A\cup B) = P(A) + P(B)</me>.</p>
 			</statement>
-		</definition>
+		</theorem>
 
 		<figure xml:id="video_probability_basic-rules-1">
 			<caption>Sample Spaces and Events I</caption>
@@ -214,7 +219,7 @@
   			<p>First, we must find the sample space. There are two ways we could look at this.
   				<ol>
   					<li><p>We could pretend that we can tell each marble apart, regardless of its color. In that case, the sample space is:
-  						<me>S = \lbraced R_1, R_2, R_3, R_4, B_1, B_2, B_3, G_1, G_2, W_1 \rbrace</me>.</p></li>
+  						<me>S = \lbrace R_1, R_2, R_3, R_4, B_1, B_2, B_3, G_1, G_2, W_1 \rbrace</me>.</p></li>
   					<li><p>Since we can&apos;t actually tell the marbles of the same color apart, it is more accurate to say that the sample space is:
   						<me>S = \lbrace R, B, G, W\rbrace</me>.</p></li>
   				</ol>
@@ -316,15 +321,15 @@
 
   <subsection xml:id="sec_probability_more-rules">
   	<title>More Probability Rules</title>
-  	<p>There are several other probability rules that can be helpful when working with events. The first is a generalization of the <xref ref="def_prob-rule_addition" text="custom">additionaddition rule</xref>. It follows from the <xref ref="def_counting-rule_inclusion-exclusion">inclusion/exclusion counting rule</xref> that we saw in the previous section.</p>
-  	<definition xml:id="def_prob-rule_general-addition">
+  	<p>There are several other probability rules that can be helpful when working with events. The first is a generalization of the <xref ref="thm_probability-rule_addition" text="custom">addition rule</xref>. It follows from the <xref ref="thm_counting-rule_inclusion-exclusion" text="custom">inclusion/exclusion counting rule</xref> that we saw in the previous section.</p>
+  	<theorem xml:id="thm_probability-rule_general-addition">
   		<idx>addition rule (general)</idx>
   		<idx><h>probability</h><h>rules</h><h>general addition rule</h></idx>
   		<statement>
   			<p>The <term>general addition rule</term> states that if events <m>A</m> and <m>B</m> are not-necessarily mutually exclusive events in a sample space, then:
   			<me>P(A\cup B) = P(A) + P(B) - P(A\cap B)</me>.</p>
   		</statement>
-  	</definition>
+  	</theorem>
   	<p>Let&apos;s apply this rule to a case where two events have a non-empty intersection.</p>
   	<example xml:id="examp_probability_more-rules_general-addition">
   		<title>Using the General Addition Rule</title>
@@ -369,14 +374,14 @@
   		</solution>
   	</example>
   	<p>Did you notice that an event and its complement divide up the sample space?  That is, every element in the sample space is either in the event or in its complement, and never in both.  We can generalize the results from the above example into a rule for finding the probability of the complement of an event.</p>
-  	<definition xml:id="def_prob-rule_complement">
+  	<theorem xml:id="def_probability-rule_complement">
   		<idx>complement rule</idx>
   		<idx><h>probability</h><h>rules</h><h>complement rule</h></idx>
   		<statement>
   			<p>The <term>complement rule</term> states that if <m>A</m> is an event in a sample space <m>S</m>, then the probability of the complement of <m>A</m> is:
   			  <me>P(\overline{A}) = 1 - P(A)</me>.</p>
   		</statement>
-  	</definition>
+  	</theorem>
   	<p>We finish this section with an example applying the complement rule and the general addition rule.</p>
   	<example xml:id="examp_probability_more-rules_complement-and-addition">
   		<title>Combining the Complement and General Addition Rules</title>
@@ -437,7 +442,7 @@
   			<p>A weatherman predicts that the probability it will rain tomorrow is 0.35 and the probability it will be windy is 0.64. The probability that it will be clear (no rain) but windy is 0.39. Use a Venn diagram to find the probability it will be clear and calm (no rain and no wind).</p>
   		</statement>
   		<solution>
-  			<sbsgroup widths="50% 50%" margins="auto">
+  			<sbsgroup widths="50% 40%" margins="0% 10% 0%">
   				<sidebyside>
   					<p>Our first Venn Diagram shows the information given in the problem statement. There are several things to note: 
   						<ul>
@@ -446,11 +451,24 @@
   							<li><p>The probability of <m>W \cap \overline{R}</m> is written into the appropriate region.</p></li>
   						</ul>
   					</p>
-  					<figure xml:id="image_examp_probability_venn_two-set-i">
+  					<figure xml:id="fig_examp_probability_venn_two-set-i">
   						<caption>Initial Venn diagram</caption>
-  						<image width="80%">
+  						<image xml:id="image_examp_probability_venn_two-set-i">
   							<latex-image>
-  								x
+  								\begin{tikzpicture}
+							  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
+							  		\draw (0,0) circle (1);
+							  		\draw (1,0) circle (1);
+							  		\node at (-1,1) {$R$};
+							  		\node at (2,1) {$W$};  
+							  		\node at (1.4,0) {$\scriptstyle 0.39$};
+							  		\node at (-0.4,-1.25) {$\scriptstyle 0.35$};
+							  		\node at (1.2,-1.25) {$\scriptstyle 0.64$};
+							  		\draw[->] (-0.4,-1.1) -- (-0.4,-0.3);
+							  		\draw[->] (-0.4,-1.1) -- (0.4,-0.3);
+							  		\draw[->] (1.2,-1.1) -- (0.6,-0.3);
+							  		\draw[->] (1.2,-1.1) -- (1.4,-0.3);
+									\end{tikzpicture}
   							</latex-image>
   						</image>
   					</figure>
@@ -458,30 +476,43 @@
   				<sidebyside>
   				  <p>Now we are ready to do some computations to figure out the missing pieces in the Venn diagrams, starting with the intersection of <m>R</m> and <m>W</m>.
   				    <md>
-  				      <mrow>P(R\cap W) \apos = P(W) - P(R\cap \overline(W)</mrow>
-  				      <mrow>\Rightarrow P(R\cap W) \apos = 0.64 - 0.39 = 0.25</mrow>
+  				      <mrow>P(R\cap W) \amp = P(W) - P(R\cap \overline(W)</mrow>
+  				      <mrow>\amp = 0.64 - 0.39</mrow>
+  				      <mrow>\amp = 0.25</mrow>
   				    </md>
   				    Next, we move on to find the union of <m>R</m> and <m>W</m> since we are after the complement of this union (not windy or rainy).
   				    <md>
-  				    	<mrow>P(R\cup W) \apos = P(R) + P(W) - P(R\cap W)</mrow>
-  				    	<mrow>\Rightarrow P(R\cup W) \apos = 0.35 + 0.64 - 0.25 = 0.74.</mrow>
+  				    	<mrow>P(R\cup W) \amp = P(R) + P(W) - P(R\cap W)</mrow>
+  				    	<mrow>\amp = 0.35 + 0.64 - 0.25</mrow>
+  				    	<mrow>\amp = 0.74.</mrow>
   				    </md>
-  				    Finally, using the complement rule, the probability we are looking for is found below. 
-  				    <md>
-  				    	<mrow>P(\overline{R\cup W}) \apos = 1 - P(R\cup W)</mrow>
-  				    	<mrow>\Rightarrow P(\overline{R\cup W}) \apos = 1 - 0.74 = 0.26</mrow>
-  				    </md>
-  				   </p>
-				    <figure xml:id="image_examp_probability_venn_two-set-ii">
+  				    </p>
+				    <figure xml:id="fig_examp_probability_venn_two-set-ii">
 				    	<caption>Final Venn diagram</caption>
-				    	<image width="80%">
+				    	<image xml:id="image_examp_probability_venn_two-set-ii">
 				    		<latex-image>
-				    			x
+				    			\begin{tikzpicture}
+							  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
+							  		\draw (0,0) circle (1);
+							  		\draw (1,0) circle (1);
+							  		\node at (-1,1) {$R$};
+							  		\node at (2,1) {$W$};  
+							  		\node at (1.4,0) {$\scriptstyle 0.39$};
+							  		\node at (0.5,0) {$\scriptstyle 0.25$};
+							  		\node at (-0.4,0) {$\scriptstyle 0.10$};
+									\end{tikzpicture}
 				    		</latex-image>
 				    	</image>
 				    </figure>
 				  </sidebyside>
 				</sbsgroup>
+				<p>Finally, using the complement rule, the probability we are looking for is found below. 
+			    <md>
+			    	<mrow>P(\overline{R\cup W}) \amp = 1 - P(R\cup W)</mrow>
+			    	<mrow>\amp = 1 - 0.74</mrow>
+			    	<mrow>\amp  = 0.26.</mrow>
+			    </md>
+			  </p>
 				<p>Note that in the final Venn diagram the sum of all numbers in the box is 1.</p>
 			</solution>
 		</example>
@@ -493,11 +524,27 @@
 			</statement>
 			<solution>
 				<p>The final Venn Diagram is shown below. Can you determine how these numbers were found?</p>
-				<figure xml:id="image_examp_probability_venn_three-set">
+				<figure xml:id="fig_examp_probability_venn_three-set">
 					<caption>Three Set Venn Diagram</caption>
-					<image width="60%">
+					<image width="60%" xml:id="image_examp_probability_venn_three-set">
 						<latex-image>
-							x
+							\begin{tikzpicture}
+					  		\draw (-1.5,-1.25) rectangle (2.5,2.25);
+					  		\draw (0,0) circle (1);
+					  		\draw (1,0) circle (1);
+					  		\draw (0.5,1) circle (1);
+					  		\node at (-1.1,-0.7) {$\scriptstyle C$};
+					  		\node at (2.1,-0.7) {$\scriptstyle H$};  
+					  		\node at (-0.4,1.85) {$\scriptstyle N$};
+					  		\node at (0.5,0.4) {$\scriptstyle 0$};
+					  		\node at (-0.1,0.7) {$\scriptstyle 0$};
+					  		\node at (1.1,0.7) {$\scriptstyle 0.18$};
+					  		\node at (0.5,1.4) {$\scriptstyle 0.09$};
+					  		\node at (-0.6,-0.2) {$\scriptstyle 0.10$};
+					  		\node at (0.5,-0.4) {$\scriptstyle 0.35$};
+					  		\node at (1.6,-0.2) {$\scriptstyle 0.12$};
+					  		\node at (2.1,-1.1) {$\scriptstyle 0.16$};
+							\end{tikzpicture}
 						</latex-image>
 					</image>
 				</figure>
@@ -516,11 +563,19 @@
 		<exercise xml:id="ckpt_probability_venn-1">
 			<statement>
 				<p>Consider the following Venn Diagram.</p>
-				<figure xml:id="image_ckpt_probability_venn_1">
+				<figure xml:id="fig_ckpt_probability_venn_1">
 					<caption></caption>
-					<image width="50%">
+					<image width="50%" xml:id="image_ckpt_probability_venn_1">
 						<latex-image>
-							x
+							\begin{tikzpicture}
+					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
+					  		\draw (0,0) circle (1);
+					  		\draw (1,0) circle (1);
+					  		\node at (1.5,0) {$\scriptstyle y$};
+					  		\node at (0.5,0) {$\scriptstyle x$};
+					  		\node at (-0.5,0) {$\scriptstyle 0.53$};
+					  		\node at (2.1,-1.3) {$\scriptstyle 0.14$};
+							\end{tikzpicture}
 						</latex-image>
 					</image>
 				</figure>
@@ -538,11 +593,19 @@
 		<exercise xml:id="ckpt_probability_venn-2">
 			<statement>
 				<p>Suppose you are told that in the Venn Diagram below, <m>P(A\cup B) = 0.40</m>.</p>
-				<figure xml:id="image_ckpt_probability_venn-2">
+				<figure xml:id="fig_ckpt_probability_venn-2">
 					<caption></caption>
-					<image width="50%">
+					<image width="50%" xml:id="image_ckpt_probability_venn-2">
 						<latex-image>
-							x
+							\begin{tikzpicture}
+					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
+					  		\draw (0,0) circle (1);
+					  		\draw (1,0) circle (1);
+					  		\node at (-1,1) {$A$};
+					  		\node at (2,1) {$B$}; 
+					  		\node at (1.5,0) {$\scriptstyle 0.19$};
+					  		\node at (-0.5,0) {$\scriptstyle 0.16$};
+							\end{tikzpicture}
 						</latex-image>
 					</image>
 				</figure>
@@ -553,11 +616,20 @@
 		<exercise xml:id="ckpt_probability_venn-3">
 			<statement>
 				<p>In the following Venn Diagram, <m>P(B) = 0.60</m>.</p>
-				<figure xml:id="image_ckpt_probability_venn-3">
+				<figure xml:id="fig_ckpt_probability_venn-3">
 					<caption></caption>
-					<image width="50%">
+					<image width="50%" xml:id="image_ckpt_probability_venn-3">
 						<latex-image>
-							x
+							\begin{tikzpicture}
+					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
+					  		\draw (0,0) circle (1);
+					  		\draw (1,0) circle (1);
+					  		\node at (-1,1) {$A$};
+					  		\node at (2,1) {$B$}; 
+					  		\node at (1.5,0) {$\scriptstyle 0.16$};
+					  		\node at (-0.5,0) {$\scriptstyle 0.40$};
+					  		\node at (2.1,-1.3) {$\scriptstyle x$};
+							\end{tikzpicture}
 						</latex-image>
 					</image>
 				</figure>
@@ -605,16 +677,25 @@
   			</p>
   		</statement>
   		<solution>
-  			<p>Notice that nothing is said about the order in which cards are drawn for the first three events.  So we will use <xref ref="def_counting-rule_combination" text="custom">combinations</xref> to count both the sample space and the number of outcomes in these events.  The common sample space is found by couting the number of ways to select 4 of the 10 cards if order doesn&apos;t matter: <m>C(10,4) = \frac{10 \times 9\times 8\times 7}{4\times 3\times 2\times 1} = 210</m>.
+  			<p>Notice that nothing is said about the order in which cards are drawn for the first three events.  So we will use <xref ref="thm_counting-rule_combination" text="custom">combinations</xref> to count both the sample space and the number of outcomes in these events.  The common sample space is found by couting the number of ways to select 4 of the 10 cards if order doesn&apos;t matter: <m>C(10,4) = \frac{10 \times 9\times 8\times 7}{4\times 3\times 2\times 1} = 210</m>.
   			<ol label="a">
-  				<li><p>If none of the cards are aces, then all four are selected from the remaining 8 non-ace cards. This can be done in <m>C(8,4) = 70</m> ways. So, <m>P(\text{ no aces }) = \frac{70}{210} = \frac{1}{3}</m>.</p></li>
+  				<li><p>If none of the cards are aces, then all four are selected from the remaining 8 non-ace cards. This can be done in <m>C(8,4) = 70</m> ways. So, <m>P(\text{no aces}) = \frac{70}{210} = \frac{1}{3}</m>.</p></li>
   				<li><p>We first split the cards into black and red. There are two black aces and two black queens making 4 total black cards. There are two red kings, two red queens, and two red jacks making 6 red cards. Next we must pick 2 of the 4 black cards and 2 of the 6 red cards. This is a multi-step process, so using the multiplication rule: 
-  					<me>n(\text{ 2 black and 2 red }) = n(\text{ 2 black }) x n(\text{ 2 red }) = C(4,2) \times C(6,2) = 6 times 15 = 90</me>.
+  					<md>
+  						<mrow>n(\text{2 black and 2 red}) \amp = n(\text{2 black}) \times n(\text{2 red})</mrow>
+  						<mrow>\amp = C(4,2) \times C(6,2)</mrow>
+  						<mrow>\amp = 6 \times 15</mrow>
+  						<mrow>\amp = 90.</mrow>
+  					</md>
   				Thus, <m>P(\text{ 2 black and 2 red }) = \frac{90}{210} = \frac{3}{7}</m>.</p></li>
-  				<li><p><q>At least one queen</q> means we could have one queen, two queens, three queens, or all four queens. If we try to count this directly, we must count these four separate cases and then use the addition rule to add them together. Instead, let&apos;s take a short-cut. The opposite of <q>at least one queen</q> is <q>no queens</q>. If we can find the probability of no queens, then we can use the complement rule to find the probability of at least one queen. If we don&apos;t allow the queens to be chosen, there are only 6 cards available. We can pick our entire hand from these 6 cards in <m>C(6,4) = 15</m> ways. So, <m>P(\text{ no queens }) = \frac{15}{210} = \frac{1}{14}</m>. Therefore,
-  				<me>P(\text{ at least one queen }) = 1 - P(\text{ no queens }) = 1-\frac{1}{14} = \frac{13}{14}.</me></p></li>
-  				<li><p>Our last event is different from the other three because the order in which we pick our cards matters.  We should therefore use a <xref ref="def_counting-rule_permutation" text="custom">permutation</xref> or the <xref ref="def_counting-rule_multiplication" text="custom">multiplication rule</xref> instead of a combination. Keeping in mind that there is only one of each suite&apos;s queen in the deck, we compute
-  				<me>P(\text{ Q of H then Q of D then Q of C then Q of S }) = \frac{1\times 1\times 1\times 1}{P(10,4)} = \frac{1}{10\times 9\times 8\times 7} = \frac{1}{5040}</me>.</p></li>
+  				<li><p><q>At least one queen</q> means we could have one queen, two queens, three queens, or all four queens. If we try to count this directly, we must count these four separate cases and then use the addition rule to add them together. Instead, let&apos;s take a short-cut. The opposite of <q>at least one queen</q> is <q>no queens</q>. If we can find the probability of no queens, then we can use the complement rule to find the probability of at least one queen. If we don&apos;t allow the queens to be chosen, there are only 6 cards available. We can pick our entire hand from these 6 cards in <m>C(6,4) = 15</m> ways. So, <m>P(\text{no queens}) = \frac{15}{210} = \frac{1}{14}</m>. Therefore,
+  				<me>P(\text{at least one queen}) = 1 - P(\text{no queens}) = 1-\frac{1}{14} = \frac{13}{14}.</me></p></li>
+  				<li><p>Our last event is different from the other three because the order in which we pick our cards matters.  We should therefore use a <xref ref="thm_counting-rule_permutation" text="custom">permutation</xref> or the <xref ref="thm_counting-rule_multiplication" text="custom">multiplication rule</xref> instead of a combination. Keeping in mind that there is only one of each suite&apos;s queen in the deck, we compute
+  				<md>
+  					  <mrow>P(\text{Queen of Hearts, Diamons, Clubs, then Spades}) \amp = \frac{1\times 1\times 1\times 1}{P(10,4)}</mrow>
+  					  <mrow>\amp = \frac{1}{10\times 9\times 8\times 7}</mrow>
+  					  <mrow>\amp  = \frac{1}{5040}.</mrow>
+  				</md></p></li>
   			</ol></p>
   		</solution>
   	</example>
@@ -633,11 +714,15 @@
 			<solution>
 				<p>We start by counting the sample space, which will be the same for all three events. We are drawing three marbles from an urn containing 12 total marbles. We don't care about the order in which we draw the marbles, just the colors that are drawn. Therefore, <m>n(S) = C(12,3) = 220</m>.
 				  <ol label="a">
-				  	<li><p>Since there are only two green marbles, it is impossible for all three of the marbles we draw to be green. Therefore, <m>P(\text{ all three are green }) = 0</m>.</p></li>
-				  	<li><p>There are four white marbles. The number of ways we can draw three of the four is <m>C(4,3) = 4</m>. Therefore, <m>P(\text{ all three are white }) = \frac{4}{220} = \frac{1}{55}</m>.</p></li>
-				  	<li><p>All three marbles can be the same color by being all green, all white, or all red. We said that <m>P(\text{ all green }) = 0</m> and <m>P(\text{ all white }) = \frac{1}{55}</m>. To determine the probability they are all red, we count <m>n(\text{ all three red }) = C(6,3) = 20</m>. Thus, <m>P(\text{ all red }) = \frac{20}{220} = \frac{1}{11}</m>.</p>
+				  	<li><p>Since there are only two green marbles, it is impossible for all three of the marbles we draw to be green. Therefore, <m>P(\text{all three are green}) = 0</m>.</p></li>
+				  	<li><p>There are four white marbles. The number of ways we can draw three of the four is <m>C(4,3) = 4</m>. Therefore, <m>P(\text{all three are white}) = \frac{4}{220} = \frac{1}{55}</m>.</p></li>
+				  	<li><p>All three marbles can be the same color by being all green, all white, or all red. We said that <m>P(\text{all green}) = 0</m> and <m>P(\text{all white}) = \frac{1}{55}</m>. To determine the probability they are all red, we count <m>n(\text{all three red}) = C(6,3) = 20</m>. Thus, <m>P(\text{all red}) = \frac{20}{220} = \frac{1}{11}</m>.</p>
 				  	  <p>Now since these are three different ways that we can get all three marbles to be the same color, and since each of these events is mutually exclusive (we can&apos;t get all three red and all three white), we use the general addition rule to get:
-				  	  <me>P(\text{ all same color }) = P(\text{ all green }) + P(\text{ all white }) + P(\text{ all red } ) = 0 + \frac{4}{220} + \frac{20}{220} = \frac{24}{220} = \frac{6}{55}</me>.
+				  	  <md>
+				  	  	<mrow>P(\text{all same color}) \amp = P(\text{all green}) + P(\text{all white}) + P(\text{all red} )</mrow>
+				  	  	<mrow>\amp = 0 + \frac{4}{220} + \frac{20}{220} = \frac{24}{220}</mrow>
+				  	  	<mrow>\amp = \frac{6}{55}.</mrow>
+				  	  </md>
 				  	</p></li>
 				  </ol>
 				</p>
