@@ -14,7 +14,6 @@
   <xi:include href="sec_simulation.ptx"/>
   <xi:include href="sec_counting.ptx"/> 
   <xi:include href="sec_probability.ptx"/>
-<!--  
   <xi:include href="sec_conditional.ptx"/>
--->
+
 </chapter>

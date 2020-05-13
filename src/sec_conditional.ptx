@@ -1,840 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_conditional">
+  <title>Conditional Probability and Independence</title>
 
+  <introduction xml:id="sec_conditional_intro">
+  	<title>Relationships Between Events</title>
+  	<p>Consider the following problem, which appeared in <em>Parade magazines Ask Marilyn</em> column.</p>
+  	<example xml:id="examp_conditional_monty-hall">
+  		<title>The Monty Hall Problem</title>
+  		<statement>
+  			<p>Suppose you&apos;re on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what&apos;s behind the doors, opens another door, say No. 3, which has a goat. He then says to you, <q>Do you want to pick door No. 2?</q> Is it to your advantage to switch your choice? (<url href="https://en.wikipedia.org/wiki/Monty_Hall_problem">Whitaker 1990</url>)</p>
+  			<p>What would you do? Think carefully and make up your mind before checking out the video which explains the solution.</p>
+  		</statement>
+  		<solution>
+  			<p>It turns out that it is to your advantage to switch, as explained in the video below.</p>
+  			<figure xml:id="fig_examp_conditional_monty-hall">
+  				<caption></caption>
+  				<video youtube="mhlc7peGlGg" width="80%"/>
+  			</figure>
+  		</solution>
+  	</example>
+  	<p>If you guessed wrong, don&apos;t feel bad. After the problem was published with a solution similar to that shown in the video, approximately 10,000 readers, including many with Ph.D.s wrote into the magazine claiming that the solution is wrong.</p>
+  	<p>In this section, we will study how knowing extra information can change probabilities. This means that we will first need to understand how the probability of one event can depend on another event happening or not happening.</p>
+  </introduction>
 
+  <objectives xml:id="sec_conditional_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Bayes&apos; Theorem</p></li>
+					<li><p>conditional probability</p></li>
+					<li><p>conditional probability formula</p></li>
+					<li><p>general multiplication rule</p></li>
+					<li><p>independent</p></li>
+					<li><p>test of independence</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Describe what it means for events to be independent</p></li>
+					<li><p>Identify pairs of events which are independent or mutually exclusive</p></li>
+					<li><p>Compute conditional probabilities</p></li>
+					<li><p>Use the general multiplication rule for probabilities</p></li>
+					<li><p>Use tree diagrams to organize events and compute their probabilities</p></li>
+					<li><p>Use Bayes&apos; Theorem to find conditional probabilities from a tree diagram</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
 
-2.4 -- Conditional Probability and Independence
-Last modified by Jonathan Duncan on Wednesday, 15 January 2020, 5:34 PM
-This document was downloaded on Friday, 10 April 2020, 2:51 PM
-Relationships Between Events
-Consider the following problem, which appeared in Parade magazines Ask Marilyn
-column.
-Suppose you're on a game show, and you're given the choice of three doors:
-Behind one
-door is a car; behind the others, goats. You pick a door, say No. 1, and the
-host, who
-knows what's behind the doors, opens another door, say No. 3, which has a goat.
-He then
-says to you, "Do you want to pick door No. 2?" Is it to your advantage to
-switch your
-choice? (Whitaker 1990)
-What would you do? Think carefully and make up your mind before watching the
-explanation video
-below.
-Monty Hall Problem
-If you guessed wrong, don't feel bad. After the problem was published with a
-solution similar to that
-shown in the video, approximately 10,000 readers, including many with Ph.D.'s
-wrote into the
-magazine claiming that the solution is wrong.
-In this section, we will study how knowing extra information can change
-probabilities. This means
-that we will first need to understand how the probability of one event can
-depend on another event
-happening or not happening. Click the continue button to get started!
-Terms and Definitions
-Skills
-Upon completion of this lesson, you should be able to describe the following
-terms:
-Bayes' Theorem, conditional probability, conditional probability formula,
-general multiplication rule,
-independent, test of independence
-Upon completion of this lesson, you should be able to:
-describe what it means for events to be independent.
-identify pairs of events which are independent or mutually exclusive.
-compute conditional probabilities.
-use the general multiplication rule for probabilities.
-use tree diagrams to organize events and compute their probabilities.
-use Bayes' Theorem to find conditional probabilities from a tree diagram.
-Note: This lesson has 5 checkpoints.
-Independence
-As the Monty Hall problem shows, sometimes knowing something about one event
-can change the
-probability of another event. Let's restate the Monty Hall problem solution in
-a different way.
-Example 2.4.1
-In the context of the Monty Hall problem, define the following events:
-A: the car is behind door number one
-B: the car is behind door number two
-C: the car is behind door number three
-Suppose you pick door number three, and the game show host reveals that behind
-door number
-two there is a goat. Restate the conclusion to the Monty Hall problem in terms
-of these events.
-Solution
-When you choose door three, you are hoping that P(C) = 1. That is, you are
-hoping that even C
-definitely happens.
-When the game show host reveals the goat behind door number two, he tells you
-that event B
-definitely did not happen. This changes the probability of event C, and as we
-saw in the video,
-you should switch to door number one.
-When knowledge about one event happening or not happening changes the
-probability of another
-event happening, the events are called dependent. When knowledge about one
-event makes no
-difference in the probability of another event happening, the events are called
-independent.
-Independent
-Two events, A and B, are called independent if the occurrence of A has no
-influence on the
-probability of B.
-To better understand the idea of independence, let's take a look at a few
-examples.
-Example 2.4.2
-Determine if the pairs of events A and B described below are independent or
-dependent.
-a.A coin is flipped three times and A = "the first flip is a heads" while B =
-"the last flip is a
-heads."
-b.A coin is flipped three times and A = "the first flip is a heads" while B =
-"all flips are
-heads."
-c.An urn contains three marbles: 2 red and 1 white. Two marbles are drawn, with
-replacement. A = "the first marble is white" while B = "the second marble is
-white."
-d.An urn contains three marbles: 2 red and 1 white. Two marbles are drawn,
-without
-replacement. A = "the first marble is white" while B = "the second marble is
-white."
-Solution
-a.Does knowing if the first flip was a heads or tails change the probability
-that the third flip
-will be a heads? Coins do not have memories. Anything we know about the first
-flip has
-no effect on what happens on the second flip, so A and B are independent.
-b.This experiment is different. Knowing that the first flip came up a heads
-does have an
-effect on whether all three flips come up heads. To see this more clearly, note
-that if A
-did not happen, then B can not happen. Therefore, A and B are dependent.
-c.Since we are replacing the marbles after we draw them, the probability of
-getting a red on
-the first draw and on the second draw are the same: 2/3. What happens on the
-first draw
-does not effect the probability of getting a red on the second draw. Because of
-this, A
-and B are independent.
-d.In our final question, we are again drawing marbles, but this time what
-happens on the
-first draw does make a difference. Since we do not replace the marbles we draw,
-if A
-does not happen (we draw red), there are two marbles left: 1 red and 1 white.
-So P(B) =
-1/2. However, if A does happen (we draw a white), then there are two marbles
-left, both
-of which are red. So P(B) = 0. Since P(B) changes depending on whether A
-happens or
-not, A and B are dependent.
-As we shall see moving forward in this lesson, independent and dependent events
-play an
-important role in understanding more complex, multi-step probability
-experiments. This concept
-also becomes important later in the course when we are taking "independent
-random samples"
-and comparing them. For more examples of independent vs. dependent events, see
-the following
-videos.
-Video Examples
-Example 1 - Dependent and
-Independent Events
-Example 2 - Dependent and
-Independent Events
-When you are ready to tell the difference between independent and dependent
-events on your
-own, click continue for a checkpoint question.
-Cluster
-Cluster
-Score: 0
-Independence - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-An urn contains 6 marbles: 4 blue and 2 red. Two marbles are drawn at random,
-without
-replacement, and the resulting colors are noted. Then, a single die is thrown
-and the number is
-noted. An example of an outcome in this experiment would be R-B-3 (1st marble
-was red, 2nd was
-blue, then a 3 was rolled). Consider the following events.
-A = the first marble drawn is red
-B = both marbles drawn are red
-C = the die roll is an even number
-D = the sum of the number of red marbles drawn and the die roll is more than 2
-E = the die rolls a 1
-Question
-Identify each pair of events below as either independent or dependent.
-Correct
-You have correctly identified all pairs of events.
-Score: 1
-Incorrect!
-One or more of the pairs is not correctly
-identified.
-Score: 0
-Events A and B
-Score: 1
-Events A and C
-Score: 0
-Events B and D
-Score: 0
-Events C and E
-Score: 0
-Events B and E
-Score: 0
-Independence - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-Events in everyday life can be classified as dependent or independent using
-common sense and
-the notion of cause-and-effect.
-Question
-Identify the events described below as dependent or independent.
-Correct
-You have correctly identified all pairs of events.
-Score: 1
-Incorrect!
-One or more of the pairs is not correctly
-identified.
-Score: 0
-You forget to put gas in your car, and the next day it won't start.
-Score: 1
-You toss salt over your shoulder for luck, buy a lottery ticket, and win $20.
-Score: 0
-You stay up all night playing games and sleep through a meeting the next day.
-Score: 0
-You miss paying the electricity bill and your lights and other electrical
-appliances stop working.
-Score: 0
-You speed through a school zone on Monday and don't get a ticket.You do the
-same thing on
-Tuesday and are pulled over and ticketed.
-Score: 0
-Independence - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-You toss a fair coin four times, noting whether heads or tails comes up on each
-toss. The event A
-is that the first toss is a heads.
-Question
-Which of the following events are independent from A? Check all that apply.
-The second toss is a heads
-Score: 1
-One of the last three tosses is a heads
-Score: 1
-All tosses are heads
-Score: 0
-None of the tosses are heads
-Score: 0
-An even number of the tosses are tails
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Conditional Probability
-As we saw on the last page, the probability of one event can change depending
-on the occurrence
-of another. Because these probabilities can be different, we need a way to
-denote the probability of
-one event given than another has occurred. This is called the conditional
-probability of the first
-event, given that the second event happens. The formal definition is given
-below.
-Conditional Probability
-The conditional probability of \( A\) given \(B\) is the probability of event \
-(A\) given that
-event \(B\) has occurred. Symbolically, this is written as \(P(A|B)\).
-Many times we read \(P(A|B)\) as "the probability of A given B." This simply
-means the probability
-of A with the extra information that B has happened. In example 2.3.2, we saw
-several pairs of
-events where having that extra information changed the probability of A. These
-dependent events
-provide good examples for computing conditional probabilities.
-Example 2.4.3
-A coin is flipped three times. Events A and B are defined as follows.
-A: the first flip is a heads
-B: all three flips are heads
-Find the sample space for this experiment, the outcomes in A, and the outcomes
-in B. Use this
-information to find P(A) and P(A|B).
-Solution
-Since the experiment involves flipping a coin three times, the outcomes will
-have the form HHT,
-for example, if the first flip were a heads, the second a heads, and the last a
-tails. The set of all
-outcomes is therefore:
-\( S = \{ HHH, HHT, HTH, HTT, THH, THT, TTH, TTT \}. \)
-The first event of interest, A, consists of all of the outcomes above resulting
-in a heads on the
-first flip. This is:
-\( A = \{ HHH, HHT, HTH, HTT \}. \)
-We can therefore conclude that \(P(A) = \frac{n(A)}{n(S)} = \frac{4}{8} = \frac
-{1}{2}\) or 0.50. But
-what about B? The event B is:
-\( B = \{ HHH \}.\)
-If we know that \(B\) has happened, then we automatically know that \(A\) has
-happened as well.
-Because all three flips were heads, the first one must have been a heads.
-Therefore, \( P(A|B) =
-1. \) Note that \( P(A|B)\) and \(P(A)\) are different! This is equivalent to
-saying that \(A\) and \(B\)
-are dependent.
-One good tool for visualizing conditional probability is a Venn Diagram. In the
-two Venn Diagrams
-below, we see how the "extra" information that B has happened changes the
-probability of A by, in
-a sense, redefining the sample space.
-To compute P(A), we ignore B and take the ratio of the yellow area in A, to the
-area of the whole
-box. This is equivalent to saying that
-\(P(A) = \frac{n(A)}{n(S)}\)
-When computing P(A|B), we know that event B has happened, so we are in the
-purple area above.
-To figure out how likely A is, we must take the ratio of the area in common to
-both A and B to all of
-B. This is equivalent to saying that
-\(P(A|B) = \frac{P(A\cap B)}{P(B)}\)
-Conditional Probability Formula
-If A and B are events in a sample space S, then the conditional probability of
-A given B is:
-\(P(A|B) = \frac{P(A\cap B)}{P(B)}.\)
-It is a good idea to have several different ways to think of a difficult
-concept such as conditional
-probability. Let's take a look at another example in which we use a contingency
-table to represent
-two different events and then to compute conditional probabilities.
-Example 2.4.4
-A hospital conducts a research study on 138 patients who have a history of
-serious headaches.
-Several of the patients are given an experimental headache drug, while others
-are given ordinary
-Tylenol. Patients are then checked after 15 minutes to see if they are still
-suffering from
-headaches.
-Suppose one of these people is randomly selected. Use the given table to answer
-the following
-questions.
-1. Find P(H. Gone), the probability the
-person's headache is gone.
-2. Find P(H. Gone| Tylenol), the probability
-the person's headache is gone given
-that they took Tylenol.
-3. Are the events "H. Gone" and "Tylenol"
-independent? Explain.
-Experimental Drug
-TylenolHeadache Persists
-12
-40
-Headache Gone
-53
-33
-Solution
-Our first step is to find the marginal distributions for this contingency
-table. With those added, the
-table becomes:
-Experimental Drug
-Tylenol
-Total
-Headache Persists
-12
-40
-52
-Headache Gone
-53
-33
-86
-Total
-65
-73
-138
-1.P(H. Gone) = 86/138 = 0.6232 since 86 of the 138 peoples' headaches were gone
-after
-15 minutes.
-2.To find P(H. Gone | Tylenol), we use the conditional probability formula.
-\(P(\text{H. Gone}|\text{Tylenol}) = \frac{P(\text{H.
-Gone}\cap\text{Tylenol})}{P(\text{Tylenol})} = \frac{\frac{33}{138}}{\frac{73}
-{138}} =
-\frac{33}{73} = 0.4521\)
-3.Since the probability of the headache being gone changed when we were told
-the person
-took Tylenol, these two events are not independent--they are dependent.
-Note: When we have a contingency table, there is a short-cut to finding
-conditional probability.
-Since we are told in (b) that the person took Tylenol, we restrict ourselves to
-the Tylenol column.
-Then, the probability that their headache is gone is simply 33/73 = 0.4521, as
-above.
-In the following video examples, we will see more instances in which we are
-asked to compute
-conditional probabilities.
-Video Examples
-Example 3 - Conditional Probability
-Example 4 - Conditional Probability
-Click continue for your next checkpoint question.
-Cluster
-Cluster
-Score: 0
-Conditional Probability - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-A large bowl of candy contains 120 colored M&M's in plain and peanut varieties.
-The contingency
-table for these M&Ms is shown below. You randomly select one M&M from this
-bowl.
-Brown Green Yellow Red Blue
-Plain 13 17 12 19 7
-Peanut 9 12 21 8 2
-Question
-What is the probability that the M&M you select is red given that it is a plain
-M&M? Round your
-answer to four decimal places.
-0.27935:0.27944
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-Conditional Probability - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-A large bowl of candy contains 120 colored M&M's in plain and peanut varieties.
-The contingency
-table for these M&Ms is shown below. You randomly select one M&M from this
-bowl.
-Brown Green Yellow Red Blue
-Plain 13 17 12 19 7
-Peanut 9 12 21 8 2
-Question
-What is the probability that the M&M you select is peanut given that it is
-yellow? Round your
-answer to four decimal places.
-0.63635:0.63644
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-Conditional Probability - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-Events A and B in a sample space have probabilities P(A) = 0.45 and P(B) =
-0.36. The probability
-of their union is \(P(A\cup B) = 0.69\).
-Question
-What is P(A|B)? Round your answer to four decimal places.
-0.33325:0.33334
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-General Multiplication Rule
-In lesson 2.3, we saw a rule for finding \(P(A\cup B)\), which we called the
-general addition rule.
-We have not, however, seen a method for finding \(P(A\cap B)\), the probability
-that both A and B
-occur. A little bit of algebra with the conditional probability formula
-produces just such a rule.
-General Multiplication Rule
-If A and B are events in a sample space S, then
-\(P(A\cap B) = P(B)P(A|B)\text{ and } P(A\cap B) = P(A)P(B|A).\)
-This is called the general multiplication rule because it works in general--for
-any A and B.
-Example 2.4.5
-An urn contains 10 marbles: 7 red and 3 white. Two marbles are drawn randomly,
-one after the
-other, without replacement. Find the probabilities that:
-a.The second marble is red given that the first marble was red.
-b.The first and second marbles are both red.
-Solution
-a.Since we are told that the first marble was red, when drawing the second
-marble we have
-9 marbles remaining, 6 of which are red. So, the probability the second marble
-is red is
-6/9 = 2/3.
-b.The probability that the first marble is red will be 7/10 since seven of the
-10 marbles are
-red. In (a), we saw that the probability the second marble is red given that
-the first was
-red is 2/3. Using the general multiplication rule, the probability that the
-first and second
-marbles are red is \(7/10 \times 2/3 = 14/30 = \) 7/15.
-In the special case where A and B are independent, the conditional probability
-for B given A is the
-same as the probability for B. That is, P(B|A) = P(B). The general
-multiplication rule then becomes:
-\(P(A\cap B) = P(A)P(B).\)
-This is in fact one of the best ways to test two events and see if they are
-independent.
-Test of Independence
-Events A and B in a sample space S are independent if and only if \(P(A\cap B)
-= P(A) P(B).\)
-Let's try this new test for independence out on an a few examples.
-Example 2.4.6
-Two events \(A\) and \(B\) in a sample space \(S\) have probabilities \(P(A) =
-0.36\) and \(P(B) =
-0.25\). The probability of their union is 0.52. Are \(A\) and \(B\)
-independent?
-Solution
-We first use the general addition rule to find \(P(A\cap B)\).
-\( \begin{aligned} P(A\cup B) = P(A) + P(B) - P(A\cap B) &\Rightarrow 0.52 =
-0.36 + 0.25 -
-P(A\cap B) \\ &\Rightarrow P(A\cap B) = 0.09. \end{aligned}\)
-Next, we check using our test of independence.
-\(P(A\cap B) = P(A)P(B) \Leftrightarrow 0.09 = 0.36 \times 0.25.\)
-Since the above equation is true, A and B are in fact independent events.
-Example 2.4.7
-A coin is weighted so that the probability of a heads is 1/3 while the
-probability of a tails is 2/3.
-This coin is flipped four times. Find the probability that:
-1.all four flips are tails.
-2.three of the four flips are tails.
-Solution
-Because flipping a coin multiple times gives independent events, (remember the
-coin has no
-memory, so one flip can not affect another), we can use the multiplication rule
-to get:
-\( \begin{aligned} P(\text{1st T}\cap\text{2nd T}\cap\text{3rd T}\cap\text{4th
-T}) &= P(\text{1st
-T})P(\text{2nd T})P(\text{3rd T})P(\text{4th T}) \\ &=
-\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3} \\ &= \frac{16}
-{81} \\ &\approx 0.1975.
-\end{aligned}\)
-For the second part, notice that the process works in much the same way, but
-one of the four
-flips must be a H instead of a T. So, adding together all the ways this could
-happen, we get:
-\(\left(\frac{1}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\right) +
-\left(\frac{2}{3}\times\frac{1}{3}\times\frac{2}{3}\times\frac{2}{3}\right) +
-\left(\frac{2}{3}\times\frac{2}{3}\times\frac{1}{3}\times\frac{2}{3}\right) +
-\left(\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{1}{3}\right) =
-\frac{32}{81} \approx
-0.3951.\)
-More problems involving the general multiplication rule and the test for
-independence can be seen
-in the following video examples.
-Video Examples
-Example 5 - General Multiplication Rule
-and Independence
-Example 6 - General Multiplication Rule
-and Independence
-Click continue when you are ready for your next checkpoint question.
-Cluster
-Cluster
-Score: 0
-General Multiplication - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-An urn contains 10 balls: 5 red, 3 blue, and 2 white. Two balls are drawn
-randomly, without
-replacement, and the colors are noted.
-Question
-What is the probability that the first ball is red and the second is white?
-Round your answer to four
-decimal places.
-0.11105:0.11114
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-General Multiplication - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-A large bowl of candy contains 120 colored M&M's in plain and peanut varieties.
-The contingency
-table for these M&Ms is shown below. You randomly select two M&Ms from this
-bowl.
-Brown Green Yellow Red Blue
-Plain 13 17 12 19 7
-Peanut 9 12 21 8 2
-Question
-What is the probability that the first is a plain M&M and the second is a
-peanut M&M? Round your
-answer to four decimal places.
-0.24755:0.24764
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-General Multiplication - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-A die is weighted so that P(H) = 1/3 and P(T) = 2/3. This die is tossed three
-times. Note that each
-toss is independent of the previous tosses.
-Question
-What is the probability that the first two tosses are heads and the last toss
-is a tails? Round your
-answer to four decimal places.
-0.07405:0.07414
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Tree Diagrams and Probability
-A tree diagram has been useful in the past when working with multi-stage
-experiments. Since the
-multiplication rule naturally fits experiments that can be broken up into
-stages (first A happens,
-then B, etc) it makes sense to look into using a tree diagram again. Consider
-the following
-example.
-Example 2.4.8
-An urn contains six marbles: 3 blue marbles, 2 red marbles, and 1 white marble.
-Two marbles
-are drawn, one after the other, without replacement and their colors are noted.
-Draw a tree
-diagram and label the branches with appropriate probabilities for this
-experiment. Use the tree
-diagram to find P(2nd W|1st R) and P(2nd W)
-Solution
-In the tree diagram to the right, the labels
-represent the color of marble drawn. The
-fractions on the branches represent the
-probability of drawing that color marble at that
-stage in the experiment. Note from the tree:
-P(2nd W| 1st R) can be read right off the
-tree. Since we are given that the first
-marble was red, we go across that
-middle R branch. Now, the probability
-the 2nd is W is the probability on the W
-branch, so 1/5.
-There are two ways the 2nd marble can
-be white. If the 1st is red and if the 1st is
-blue. These are distinct (mutually
-exclusive) paths through the tree. The
-probability of 1st R and 2nd W can be
-found by multiplying probabilities 2/6 and
-1/5 to get 2/30. The probability of 1st B
-and 2nd W can be found by multiplying
-3/6 and 1/5 to get 3/30. Adding these
-two together gives 2/30 + 3/30 = 5/30 =
-1/6.
-Note that the probabilities on the branches of such a tree diagram are
-conditional probabilities. In
-the example above, the 2/5 on the bottom branch from W to R is actually P(2nd
-R|1st W) because
-it connects the event 1st W the event 2nd R. The general multiplication rule is
-then used to find the
-probability of any path through the tree.
-Probability both red: 2/6 x 1/5 = 2/30
-Probability the first is red and the second blue: 2/6 x 3/5 = 6/30
-Etc...
-Finally, as in the second question in our example, we can find the probability
-of events such as
-"the second is red" by adding together all the different probabilities for
-paths in which the second
-marble is red.
-Since tree diagrams lend themselves better to video examples, we will forgo
-another example in
-the lesson, and instead provide a third video example for using tree diagrams
-with conditional
-probability.
-Video Examples
-Example 7 - Tree Diagrams and
-Conditional Probability
-Example 8 - Tree Diagrams and
-Conditional Probability
-Example 9 - Tree Diagrams and
-Conditional Probability
-When you are ready for a checkpoint question of your own, click continue.
-Cluster
-Cluster
-Score: 0
-Tree Diagrams - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-The following tree diagram depicts the outcomes in a two-step experiment. Use
-it to answer the
-question below.
-Question
-What is the probability of outcome X?
-0.4500
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-Tree Diagrams - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-The following tree diagram depicts the outcomes in a two-step experiment. Use
-it to answer the
-question below.
-Question
-What is the probability of outcome Y given that outcome A has occurred?
-0.60
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-Tree Diagrams - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-The following tree diagram depicts the outcomes in a two-step experiment. Use
-it to answer the
-question below.
-Question
-What is the probability of outcome B and then Y occurring?
-0.10
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Bayesian Probability
-Tree diagrams can be very useful for dealing with conditional probabilities, as
-long as the
-conditions are in the correct order. In a multi-stage experiment, the tree
-diagram does a good job
-of showing the probability of a particular outcome on the second step, given
-that a certain outcome
-on the first step occurred. What if, however, we want to look at things in the
-other order? Consider
-the following example.
-Example 2.4.9
-Recall that the tree diagram below gives us the probabilities for an experiment
-in which two
-marbles are drawn, without replacement, from an urn containing 3 blue marbles,
-2 red marbles,
-and 1 white marble. Use the tree to help find the probability that the 1st
-marble was white given
-that the second is red.
-Solution
-We wish to find P(1st W | 2nd R). Unfortunately,
-our tree diagram is "backwards" for this
-computation. The probabilities on the branches
-are the probability of a particular color on the
-2nd marble given that we got a certain color on
-the first. So, we must resort to the conditional
-probability formula.
-\(P(\text{1st W}|\text{2nd R}) = \frac{P(\text{1st
-W}\cap\text{2nd R})}{P(\text{2nd R})}.\)
-The numerator of this fraction can be found by
-multiplying along a single branch in the
-tree--\(1/6 \times 2/5 = 2/30\). To get the
-denominator, we need to add together the
-probabilities for all possible ways the last marble
-can be red. This is:
-\(P(\text{2nd R}) =
-\left(\frac{3}{6}\times\frac{2}{5}\right) +
-\left(\frac{2}{6}\times\frac{1}{5}\right) +
-\left(\frac{1}{6}\times\frac{2}{5}\right) =
-\frac{1}{3}.\)
-Therefore, the desired conditional probability is:
-\(P(\text{1st W}|\text{2nd R}) = \frac{2/30}{1/3} =
-\frac{1}{5} = 0.20.\)
-These "backwards" conditional probability questions make use of a formula
-created by a British
-mathematician and Presbyterian minister, Thomas Bayes. Bayes' theorem, as it
-was named after
-his death, is given below.
-Bayes' Theorem
-If a sample space can be split into mutually exclusive events \(A_1, A_2,
-\ldots, A_n \) and \(E\)
-is an event in \(S\) with \(P(E) > 0\), then:
-\(P(A_i|E) = \frac{P(A_i)P(E|A_i)}{P(A_1)P(E|A_1) + P(A_2)P(E|A_2) + \cdots +
-P(A_n)P(E|A_n)}.\)
-While this theorem formally states the rule we use to solve problems such as
-the one above, it is
-not something you should memorize. Instead, use a tree diagram and the
-conditional probability
-formula to solve these problems as we did in example 2.4.9, and as we will do
-in the video
-examples below.
-Video Examples
-Example 10 - Bayesian Probability
-Example 11 - Bayesian Probability
-Example 12 - Bayesian Probability
-Click continue for your last checkpoint question of chapter 2.
-Cluster
-Cluster
-Score: 0
-Bayesian - Question 1
-Checkpoint
-To check your understanding, please answer the
-following question.
-The following tree diagram depicts the outcomes in a two-step experiment. Use
-it to answer the
-question below.
-Question
-What is the probability A given that X occurred? Round your answer to four
-decimal places.
-0.66665:0.66674
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-Bayesian - Question 2
-Checkpoint
-To check your understanding, please answer the
-following question.
-An urn contains 8 marbles numbered 1-8. The marbles numbered 1-6 are red, and
-marbles 7 and
-8 are blue. Two marbles are drawn randomly, without replacement.
-Question
-What is the probability the first marble was blue, given that the second is
-red? Round your answer
-to four decimal places.
-0.28565:0.28574
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-Bayesian - Question 3
-Checkpoint
-To check your understanding, please answer the
-following question.
-A math professor uses one of two overhead projectors -- A or B. Projector A
-breaks down 20% of
-the time, while projector B breaks down 40% of the time. On Monday, the
-professor chose a
-projector at random, and it broke down.
-Question
-What is the probability that it was projector A? Round your answer to four
-decimal places.
-0.33325:0.33334
-Score: 1
-0:1
-Score: 0
--10000000000:10000000000
-Score: 0
-End of cluster
-End of cluster
-Score: 0
-Lesson Completion
-Lesson Completion
-I certify that I have read the content of this lesson and understand it to the
-best of my ability.
-Select true
-below and click submit to finish the lesson.
-True
-Score: 1
-False
-Score: 1
-Powered by TCPDF (www.tcpdf.org)
+	<subsection xml:id="sec_conditional_independence">
+		<title>Independence</title>
+		<p>As the Monty Hall problem shows, sometimes knowing something about one event can change the probability of another event. Let&apos;s restate the Monty Hall problem solution in a different way.</p>
+		<example xml:id="examp_conditional_monty-hall-formal">
+		  <title>Restating the Monty Hall Problem</title>
+		  <statement>
+		  	<p>In the context of the Monty Hall problem, define the following events:
+		  	  <ul>
+		  	    <li><p><m>A</m>: the car is behind door number one</p></li>
+		  	    <li><p><m>B</m>: the car is behind door number two</p></li>
+		  	    <li><p><m>C</m>: the car is behind door number three</p></li>
+		  	  </ul>
+		  	</p>
+		  	<p>Suppose you pick door number three, and the game show host reveals that behind door number two there is a goat. Restate the conclusion to the Monty Hall problem in terms of these events.</p>
+		  </statement>
+		  <solution>
+		  	<p>When you choose door three, you are hoping that <m>P(C) = 1</m>. That is, you are hoping that even <m>C</m> definitely happens.  When the game show host reveals the goat behind door number two, he tells you that event <m>B</m> definitely did not happen. This changes the probability of event <m>C</m>, and as we saw in the video, you should switch to door number one.</p>
+		  </solution>
+		</example>
+		<p>When knowledge about one event happening or not happening changes the probability of another event happening, the events are called <term>dependent</term>. When knowledge about one event makes no difference in the probability of another event happening, the events are called <term>independent</term>.</p>
+		<definition xml:id="def_independent">
+			<idx><h>independent events</h></idx>
+			<idx><h>probability</h><h>independence</h></idx>
+			<statement>
+				<p>Two events, <m>A</m> and <m>B</m>, are called independent if the occurrence of <m>A</m> has no influence on the probability of <m>B</m>.</p>
+			</statement>
+		</definition>
+		<p>To better understand the idea of independence, let&amp;s practice identifying dependent and independent events.</p>
+		<example xml:id="examp_conditional_independent-or-dependent">
+			<title>Determining if Events are Independent or Dependent</title>
+			<statement>
+				<p>Determine if the pairs of events <m>A</m> and <m>B</m> described below are independent or dependent.
+				  <ol label="a">
+				  	<li><p>A coin is flipped three times and <m>A =</m> <q>the first flip is a heads</q> while <m>B =</m> <q>the last flip is a heads.</q></p></li>
+				  	<li><p>A coin is flipped three times and <m>A =</m> <q>the first flip is a heads"</q> while <m>B =</m> <q>all flips are heads.</q></p></li>
+				  	<li><p>An urn contains three marbles: 2 red and 1 white. Two marbles are drawn, with replacement. <m>A =</m> <q>the first marble is white</q> while <m>B =</m> <q>the second marble is white.</q></p></li>
+				  	<li><p>An urn contains three marbles: 2 red and 1 white. Two marbles are drawn, without replacement. <m>A =</m> <q>the first marble is white</q> while <m>B =</m> <q>the second marble is white.</q></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Does knowing if the first flip was a heads or tails change the probability that the third flip will be a heads? Coins do not have memories. Anything we know about the first flip has no effect on what happens on the second flip, so <m>A</m> and <m>B</m> are <term>independent</term>.</p></li>
+					<li><p>This experiment is different. Knowing that the first flip came up a heads does have an effect on whether all three flips come up heads. After all, if <m>A</m> did not happen, then <m>B</m> can not possibly happen either. Therefore, <m>A</m> and <m>B</m> are <term>dependent</term>.</p></li>
+					<li><p>Since we are replacing the marbles after we draw them, the probability of getting a red on the first draw and on the second draw are the same: <m>\frac{2}{3}</m>. What happens on the first draw does not effect the probability of getting a red on the second draw. Because of this, <m>A</m> and <m>B</m> are <term>independent</term>.</p></li>
+					<li><p>In our final question, we are again drawing marbles, but this time what happens on the first draw does make a difference. Since we do not replace the marbles we draw, if <m>A</m> does not happen (we draw red), there are two marbles left: 1 red and 1 white. So <m>P(B) = \frac{1}{2}</m>. However, if <m>A</m> does happen (we draw a white), then there are two marbles left, both of which are red. So <m>P(B) = 0</m>. Since <m>P(B)</m> changes depending on whether <m>A</m> happens or not, <m>A</m> and <m>B</m> are <term>dependent</term>.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>As we shall see moving forward in this section, independent and dependent events play an important role in understanding more complex, multi-step probability experiments. This concept also becomes important later in the course when we are taking <q>independent random samples</q> and comparing them.</p>
+
+		<figure xml:id="video_conditional_independence-1">
+			<caption>Dependent and Independent Events I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-01.mp4"/>
+		</figure>
+		<figure xml:id="video_conditional_independence-2">
+			<caption>Dependent and Independent Events II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_conditional_independence-1">
+			<statement>
+				<p>An urn contains 6 marbles: 4 blue and 2 red. Two marbles are drawn at random, without replacement, and the resulting colors are noted. Then, a single die is thrown and the number is noted. An example of an outcome in this experiment would be R-B-3 (1st marble was red, 2nd was blue, then a 3 was rolled). Consider the following events.
+					<ul>
+						<li><p><m>A =</m> the first marble drawn is red</p></li>
+						<li><p><m>B =</m> both marbles drawn are red</p></li>
+						<li><p><m>C =</m> the die roll is an even number</p></li>
+						<li><p><m>D =</m> the sum of the number of red marbles drawn and the die roll is more than 2</p></li>
+						<li><p><m>E =</m> the die rolls a 1</p></li>
+					</ul>
+				</p>
+				<p>Question: Which pairs of events are independent?</p>
+			</statement>
+			<answer><p>A and C, A and E, B and C, B and E</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_independence-2">
+			<statement>
+				<p>Events in everyday life can be classified as dependent or independent using common sense and the notion of cause-and-effect.  For example,
+					<ol label="a">
+						<li><p>You forget to put gas in your car, and the next day it won't start.</p></li>
+						<li><p>You toss salt over your shoulder for luck, buy a lottery ticket, and win $20.</p></li>
+						<li><p>You stay up all night playing games and sleep through a meeting the next day.</p></li>
+						<li><p>You miss paying the electricity bill and your lights and other electrical appliances stop working.</p></li>
+						<li><p>You speed through a school zone on Monday and don't get a ticket. You do the same thing on Tuesday and are pulled over and ticketed.</p></li>
+					</ol>
+				</p>
+				<p>Question: which of the pairs of events above are independent?</p>
+			</statement>
+			<answer><p>(b) and (e) are likely independent</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_independence-3">
+			<statement>
+				<p>You toss a fair coin four times, noting whether heads or tails comes up on each toss. The event <m>A</m> is that the first toss is a heads.  Consider the following pairs of events:
+				  <ol label="a">
+				  	<li><p>The second toss is a heads</p></li>
+				  	<li><p>All tosses are heads</p></li>
+				  	<li><p>None of the tosses are heads</p></li>
+				  	<li><p>One of the last three tosses is a heads</p></li>
+				  	<li><p>An even number of the tosses are tails</p></li>
+				  </ol>
+				</p>
+				<p>Question: which of the events described above are independent from A?</p>
+			</statement>
+			<answer><p>(a) and (d) are independent from <m>A</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_conditional_formula">
+		<title>Conditional Probability</title>
+		<p>As we saw on the last page, the probability of one event can change depending on the occurrence of another. Because these probabilities can be different, we need a way to denote the probability of one event given than another has occurred. This is called the <term>conditional probability</term> of the first event, given that the second event happens. The formal definition is given below.</p>
+		<definition xml:id="def_conditional-probability">
+			<idx>conditional probability</idx>
+			<idx><h>probability</h><h>conditional</h></idx>
+			<statement>
+				<p>The <term>conditional probability</term> of <m>A</m> given <m>B</m> is the probability of event <m>A</m> given that event <m>B</m> has occurred. Symbolically, this is written as <m>P(A|B)</m>.</p>
+			</statement>
+		</definition>
+		<p>Many times we read <m>P(A|B)</m> as <q>the probability of <m>A</m> given <m>B</m>.</q> This simply means the probability of <m>A</m> with the extra information that <m>B</m> has happened. In <xref ref="examp_conditional_independent-or-dependent"/> we saw several pairs <m>A</m> and <m>B</m> of events for which having the information that <m>B</m> happened changed the probability of <m>A</m>. These dependent events provide good examples for computing conditional probabilities.</p>
+		<example xml:id="examp_conditional_compute">
+			<title>Computing Conditional Probabilities from Outcomes</title>
+			<statement>
+				<p>A coin is flipped three times. Events <m>A</m> and <m>B</m> are defined as follows.
+				  <ul cols="2">
+				    <li><p><m>A</m>: the first flip is a heads</p></li>
+				    <li><p><m>B</m>: all three flips are heads</p></li>
+				  </ul>
+				</p>
+				<p>Find the sample space for this experiment, the outcomes in <m>A</m>, and the outcomes in <m>B</m>. Use this information to find <m>P(A)</m> and <m>P(A|B)</m>.</p>
+			</statement>
+			<solution>
+				<p>Since the experiment involves flipping a coin three times, a sample outcome would be <m>HHT</m>, representing the first flip coming up heads, the second heads, and the last tails. The set of all outcomes is therefore:
+				  <me>S = \lbrace HHH, HHT, HTH, HTT, THH, THT, TTH, TTT \rbrace</me>.</p>
+				<p>The first event of interest, <m>A</m>, consists of all of the outcomes above resulting in a heads on the first flip. This is:
+				  <me>A = \lbrace HHH, HHT, HTH, HTT \rbrace</me>.
+				  We can therefore conclude that
+				  <me>P(A) = \frac{n(A)}{n(S)} = \frac{4}{8} = \frac{1}{2} = 0.50</me>.
+				</p>
+				<p>But what about B? The event B is:
+					<me>B = \lbrace HHH \rbrace</me>.
+					If we know that <m>B</m> has happened, then we automatically know that <m>A</m> has happened as well.  This is because if all three flips are heads, the first one must have been a heads (<m>B</m> is a subset of <m>A</m>). Therefore, 
+					<me>P(A|B) = 1</me>.</p>
+				<p>Note that <m>P(A|B)</m> and <m>P(A)</m> are different! This is equivalent to saying that <m>A</m> and <m>B</m> are dependent.</p>
+			</solution>
+		</example>
+		<p>One good tool for visualizing conditional probability is a <xref ref="def_venn-diagram" text="custom">Venn Diagram</xref>. In the two Venn Diagrams below, we see how the <q>extra</q> information that <m>B</m> has happened changes the probability of <m>A</m> by, in a sense, redefining the sample space.</p>
+		<sbsgroup widths="45% 45%" margins="auto">
+			<sidebyside>
+				<figure xml:id="fig_conditional_venn-a">
+					<caption></caption>
+					<image xml:id="image_conditional_venn-a">
+						<latex-image>
+							\begin{tikzpicture}
+					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
+					  		\begin{scope}[blend group = soft light]
+                  \fill[yellow!30!white]  (0,0) circle (1);
+                \end{scope}						  		
+					  		\draw (0,0) circle (1);
+					  		\draw (1,0) circle (1);
+					  		\node at (-1,1) {$A$};
+					  		\node at (2,1) {$B$};  
+							\end{tikzpicture}
+						</latex-image>
+					</image>
+				</figure>
+				<figure xml:id="fig_conditional_venn-b">
+					<caption></caption>
+					<image xml:id="image_conditional_venn-b">
+						<latex-image>
+							\begin{tikzpicture}
+					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
+					  		\begin{scope}[blend group = multiply]
+                  \fill[yellow!30!white]  (0,0) circle (1);
+                  \fill[purple!30!white]  (1,0) circle (1);
+                \end{scope}						  		
+					  		\draw (0,0) circle (1);
+					  		\draw (1,0) circle (1);
+					  		\node at (-1,1) {$A$};
+					  		\node at (2,1) {$B$};  
+							\end{tikzpicture}							
+						</latex-image>
+					</image>
+				</figure>
+			</sidebyside>
+			<sidebyside>
+				<p>To compute <m>P(A)</m>, we ignore <m>B</m> and take the ratio of the yellow area in <m>A</m>, to the area of the whole box. This is equivalent to saying that
+				  <me>P(A) = \frac{P(A)}{P(S)} = \frac{P(A)}{1}</me></p>
+				<p>When computing <m>P(A|B)</m>, we know <m>B</m> has happened, so we are in the purple area above.  To figure out how likely <m>A</m> is, we take the ratio of the area in common to <m>A</m> and <m>B</m> to the area in <m>B</m>. This is equivalent to saying that 
+				  <me>P(A|B) = \frac{P(A\cap B)}{P(B)}</me></p>
+			</sidebyside>
+		</sbsgroup>
+		<theorem xml:id="thm_conditional-probability-formula">
+			<title>Conditional Probability Formula</title>
+			<statement>
+				<p>If <m>A</m> and <m>B</m> are events in a sample space <m>S</m>, then the conditional probability of <m>A</m> given <m>B</m> is:
+				<me>P(A|B) = \frac{P(A\cap B)}{P(B)}</me>.</p>
+			</statement>
+		</theorem>
+		<p>It is a good idea to have several different ways to think of a difficult concept such as conditional probability. Let&apos;s take a look at another example in which we use a contingency table to represent two different events and then to compute conditional probabilities.</p>
+		<example xml:id="examp_conditional_table">
+			<title>Computing Conditional Probabilities Using the Formula</title>
+			<statement>
+				<p>A hospital conducts a research study on 138 patients who have a history of serious headaches. Several of the patients are given an experimental headache drug, while others are given ordinary Tylenol. Patients are then checked after 15 minutes to see if they are still suffering from headaches.  The resulting data is summarized in the table below.</p>
+				<table>
+					<title>Headache Study Results</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Experimental Drug</cell>
+							<cell>Tylenol</cell>
+						</row>
+						<row>
+							<cell>Headach Persists</cell>
+							<cell>12</cell>
+							<cell>40</cell>
+						</row>
+						<row>
+							<cell>Headache Gone</cell>
+							<cell>53</cell>
+							<cell>33</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Suppose one of these people is randomly selected. Use the given table to answer the following questions.
+					<ol label="a">
+						<li><p>Find <m>P(\text{H. Gone})</m>, the probability the person&apos;s headache is gone.</p></li>
+						<li><p>Find <m>P(\text{H. Gone}\,|\,\text{Tylenol})</m>, the probability the person&apos;s headache is gone given that they took Tylenol.</p></li>
+						<li><p>Are the events <q>H. Gone</q> and <q>Tylenol</q> independent? Explain.</p></li>
+					</ol></p>
+			</statement>
+			<solution>
+				<p>Our first step is to find the marginal distributions for this contingency table. With those added, the table becomes:</p>
+				<table>
+					<title>Study Results with Marginal Distributions</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="major" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Experimental Drug</cell>
+							<cell>Tylenol</cell>
+							<cell>Total</cell>
+						</row>
+						<row>
+							<cell>Headach Persists</cell>
+							<cell>12</cell>
+							<cell>40</cell>
+							<cell>52</cell>
+						</row>
+						<row bottom="major">
+							<cell>Headache Gone</cell>
+							<cell>53</cell>
+							<cell>33</cell>
+							<cell>86</cell>
+						</row>
+						<row>
+							<cell>Total</cell>
+							<cell>65</cell>
+							<cell>73</cell>
+							<cell>138</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Using this table, we compute the following probabilities.
+					<ol label="a">
+						<li><p><m>P(\text{H. Gone}) = \frac{86}{138} \approx 0.6232</m> since 86 of the 138 peoples&apos; headaches were gone after 15 minutes.</p></li>
+						<li><p>To find <m>P(\text{H. Gone}\,|\,\text{Tylenol})</m>, we use the conditional probability formula. 
+							<me>P(\text{H. Gone}\,|\,\text{Tylenol}) = \frac{P(\text{H. Gone}\,\cap\,\text{Tylenol})}{P(\text{Tylenol})} = \frac{\frac{33}{138}}{\frac{73}{138}} = \frac{33}{73} \approx 0.4521</me>.</p></li>
+						<li><p>Since the probability of the headache being gone changed when we were told the person took Tylenol, these two events are not independent<mdash/>they are dependent.</p></li>
+					</ol>
+				</p>
+				<p>Note: When we have a contingency table, there is a short-cut to finding conditional probability. Since we are told in (b) that the person took Tylenol, we restrict ourselves to the Tylenol column. Then, the probability that their headache is gone is simply <m>\frac{33}{73} \approx 0.4521</m>, as above.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_conditional_formula-1">
+			<caption>Conditional Probability I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-03.mp4"/>
+		</figure>
+		<figure xml:id="video_conditional_formula-2">
+			<caption>Conditional Probability II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_conditional_formula-1">
+			<statement>
+				<p>A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
+				<table>
+					<title>Table for <xref ref="ckpt_conditional_formula-1"/></title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Brown</cell>
+							<cell>Green</cell>
+							<cell>Yellow</cell>
+							<cell>Red</cell>
+							<cell>Blue</cell>
+						</row>
+						<row>
+							<cell>Plain</cell>
+							<cell>13</cell>
+							<cell>17</cell>
+							<cell>12</cell>
+							<cell>19</cell>
+							<cell>7</cell>
+						</row>
+						<row>
+							<cell>Peanut</cell>
+							<cell>9</cell>
+							<cell>12</cell>
+							<cell>21</cell>
+							<cell>8</cell>
+							<cell>2</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the probability that the M&amp;M you select is red given that it is a plain M&amp;M?</p>
+			</statement>
+			<answer><p>0.2794</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_formula-2">
+			<statement>
+				<p>A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
+				<table>
+					<title>Table for <xref ref="ckpt_conditional_formula-1"/></title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Brown</cell>
+							<cell>Green</cell>
+							<cell>Yellow</cell>
+							<cell>Red</cell>
+							<cell>Blue</cell>
+						</row>
+						<row>
+							<cell>Plain</cell>
+							<cell>13</cell>
+							<cell>17</cell>
+							<cell>12</cell>
+							<cell>19</cell>
+							<cell>7</cell>
+						</row>
+						<row>
+							<cell>Peanut</cell>
+							<cell>9</cell>
+							<cell>12</cell>
+							<cell>21</cell>
+							<cell>8</cell>
+							<cell>2</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the probability that the M&amp;M you select is peanut given that it is yellow?</p>
+			</statement>
+			<answer><p>0.6364</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_formula-3">
+			<statement>
+				<p>Events <m>A</m> and <m>B</m> in a sample space have probabilities <m>P(A) = 0.45</m> and <m>P(B) = 0.36</m>. The probability of their union is <m>P(A\cup B) = 0.69</m>.</p>
+				<p>Question: what is <m>P(A|B)</m>?</p>
+			</statement>
+			<answer><p>0.3333</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_conditional_multiplication-rule">
+		<title>General Multiplication Rule</title>
+		<p>In <xref ref="sec_probability_more-rules"/>, we saw a rule for finding <m>P(A\cup B)</m>, which we called the <xref ref="thm_probability-rule_general-addition">general addition rule</xref>.  We have not, however, seen a general rule for finding <m>P(A\cap B)</m>, the probability that both <m>A</m> and <m>B</m> occur. A little bit of algebra with the conditional probability formula produces just such a rule.</p>
+		<theorem xml:id="thm_probability-rule_general-multiplication">
+			<title>General Multiplication Rule</title>
+			<idx>multiplication rule (general)</idx>
+			<idx><h>probability</h><h>rules</h><h>multiplication rule</h></idx>
+			<statement>
+				<p>If <m>A</m> and <m>B</m> are events in a sample space <m>S</m>, then 
+				  <me>P(A\cap B) = P(B)P(A|B)\quad\text{and}\quad P(A\cap B) = P(A)P(B|A)</me>.</p>
+			</statement>
+		</theorem>
+		<p>This is called the <term>general multiplication rule</term> because it works in general<mdash/>for any <m>A</m> and <m>B</m>.</p>
+		<example xml:id="examp_conditional_multiplication-rule">
+			<title>Using the General Multiplication Rule</title>
+			<statement>
+				<p>An urn contains 10 marbles: 7 red and 3 white. Two marbles are drawn randomly, one after the other, without replacement. Find the probabilities that:
+					<ol label="a">
+						<li><p>The second marble is red given that the first marble was red.</p></li>
+						<li><p>The first and second marbles are both red.</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Since we are told that the first marble was red, when drawing the second marble we have 9 marbles remaining, 6 of which are red. So, the probability the second marble is red is <m>\frac{6}{9} = \frac{2}{3}</m>.</p></li>
+					<li><p>The probability that the first marble is red will be <m>\frac{7}{10}</m> since seven of the 10 marbles are red. In (a), we saw that the probability the second marble is red given that the first was red is <m>\frac{2}{3}</m>. Using the general multiplication rule, the probability that the first and second marbles are red is
+					  <me>P(\text{1st }R) \times P(\text{2nd }R\,|\,\text{1st }R) = \frac{7}{10} \times \frac{2}{3} = \frac{14}{30} = \frac{7}{15}</me>.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>In the special case where <m>A</m> and <m>B</m> are <xref ref="def_independent" text="custom">independent</xref>, the conditional probability for <m>B</m> given <m>A</m> is the same as the probability for <m>B</m>. That is, <m>P(B|A) = P(B)</m>. The general multiplication rule then becomes:
+		<me>P(A\cap B) = P(A)P(B)</me>.</p>
+		<p>This is in fact one of the best ways to test two events and see if they are independent.</p>
+		<theorem xml:id="thm_independence-test">
+			<title>Test of Independence</title>
+			<idx>independence, test of</idx>
+			<idx><h>probability</h><h>test of independence</h></idx>
+			<statement>
+				<p>Events <m>A</m> and <m>B</m> in a sample space <m>S</m> are independent if and only if <m>P(A\cap B) = P(A) P(B)</m>.</p>
+			</statement>
+		</theorem>
+		<p>Let&apos;s try this new test for independence out on an a few examples.</p>
+		<example xml:id="examp_conditional_testing-independence">
+			<title>Testing for Independence</title>
+			<statement>
+				<p>Two events <m>A</m> and <m>B</m> in a sample space <m>S</m> have probabilities <m>P(A) = 0.36</m> and <m>P(B) = 0.25</m>. The probability of their union is <m>0.52</m>. Are <m>A</m> and <m>B</m> independent?</p>
+			</statement>
+			<solution>
+				<p>We first use the <xref ref="thm_probability-rule_general-addition" text="custom">general addition rule</xref> to find <m>P(A\cap B)</m>.
+				  <md>
+				  	<mrow>P(A\cup B) \amp = P(A) + P(B) - P(A\cap B)</mrow>
+				  	<mrow>\Rightarrow 0.52 \amp = 0.36 + 0.25 - P(A\cap B)</mrow>
+				  	<mrow>\Rightarrow P(A\cap B) \amp = 0.09.</mrow>
+					</md>
+				</p>
+				<p>Next, we check using our test of independence.
+					<me>P(A\cap B) = P(A)P(B) \Leftrightarrow 0.09 = 0.36 \times 0.25</me>.</p>
+				<p>Since the above equation is true, <m>A</m> and <m>B</m> are in fact independent events.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_conditional_using-independence">
+			<title>Using Independence to Compute Probabilities</title>
+			<statement>
+				<p>A coin is weighted so that the probability of a heads is <m>\frac{1}{3}</m> while the probability of a tails is <m>\frac{2}{3}</m>. This coin is flipped four times. Find the probability that:
+				  <ol label="a">
+				  	<li><p>all four flips are tails.</p></li>
+				  	<li><p>three of the four flips are tails.</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>Because flipping a coin multiple times gives independent events, (remember the coin has no memory, so one flip can not affect another), we can use the multiplication rule.
+				  <ol label="a">
+				    <li><p>The probability  all four flips are tails is computed as follows.
+							<md>
+								<mrow>P(\text{1st T}\cap\text{2nd T}\cap\text{3rd T}\cap\text{4thT}) \amp = P(\text{1st T})P(\text{2nd T})P(\text{3rd T})P(\text{4th T})</mrow>
+								<mrow>\amp = \frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}</mrow>
+								<mrow>\amp = \frac{16}{81} \approx 0.1975.</mrow>
+							</md></p></li>
+						<li><p>This event is simular, but one of the four flips must be a heads instead of a tails. So, we split this into the four different cases that give us one tails and add the results of the multiplication rule together, giving:
+							<md>
+								<mrow>\amp \left(\frac{1}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\right) + \left(\frac{2}{3}\times\frac{1}{3}\times\frac{2}{3}\times\frac{2}{3}\right) + </mrow>
+								<mrow>\amp \left(\frac{2}{3}\times\frac{2}{3}\times\frac{1}{3}\times\frac{2}{3}\right) + \left(\frac{2}{3}\times\frac{2}{3}\times\frac{2}{3}\times\frac{1}{3}\right) = \frac{32}{81} \approx 0.3951.</mrow>
+							</md></p></li>
+					</ol></p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_conditional_multiplication-rule-1">
+			<caption>General Multiplication Rule and Independence I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-05.mp4"/>
+		</figure>
+		<figure xml:id="video_conditional_multiplication-rule-2">
+			<caption>General Multiplication Rule and Independence II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_conditional_multiplication-rule-1">
+			<statement>
+				<p>An urn contains 10 balls: 5 red, 3 blue, and 2 white. Two balls are drawn randomly, without replacement, and the colors are noted.</p>
+				<p>Question: what is the probability that the first ball is red and the second is white?</p>
+			</statement>
+			<answer><p>0.1111</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_multiplication-rule-2">
+			<statement>
+				<p>A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select two M&amp;Ms from this bowl.</p>
+				<table>
+					<title>Table for <xref ref="ckpt_conditional_formula-1"/></title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Brown</cell>
+							<cell>Green</cell>
+							<cell>Yellow</cell>
+							<cell>Red</cell>
+							<cell>Blue</cell>
+						</row>
+						<row>
+							<cell>Plain</cell>
+							<cell>13</cell>
+							<cell>17</cell>
+							<cell>12</cell>
+							<cell>19</cell>
+							<cell>7</cell>
+						</row>
+						<row>
+							<cell>Peanut</cell>
+							<cell>9</cell>
+							<cell>12</cell>
+							<cell>21</cell>
+							<cell>8</cell>
+							<cell>2</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the probability that the first is a plain M&amp;M and the second is a peanut M&amp;M?</p>
+			</statement>
+			<answer><p>0.2476</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_multiplication-rule-3">
+			<statement>
+				<p>A die is weighted so that <m>P(H) = \frac{1}{3}</m> and <m>P(T) = \frac{2}{3}</m>. This die is tossed three times. Note that each toss is independent of the previous tosses.</p>
+				<p>Question: what is the probability that the first two tosses are heads and the last toss is a tails?</p>
+			</statement>
+			<answer><p>0.0741</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_conditional_trees">
+		<title>Tree Diagrams and Probability</title>
+		<p>A <xref ref="def_tree-diagram" text="custom">tree diagram</xref> has been useful in the past when working with multi-stage experiments. Since the multiplication rule naturally fits experiments that can be broken up into stages (first <m>A</m> happens, then <m>B</m>, etc.) it makes sense to look into using a tree diagram again. Consider the following example.</p>
+		<example xml:id="examp_conditional_probability-tree">
+			<title>Computing Probabilities with a Tree Diagram</title>
+			<statement>
+				<p>An urn contains six marbles: 3 blue marbles, 2 red marbles, and 1 white marble. Two marbles are drawn, one after the other, without replacement and their colors are noted. Draw a tree diagram and label the branches with appropriate probabilities for this experiment. Use the tree diagram to find
+				  <ol label="a" cols="2">
+				    <li><p><m>P(\text{2nd }W\,|\,\text{1st }R)</m></p></li>
+				    <li><p><m>P(\text{2nd }W)</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>In the tree diagram below, the labels represent the color of marble drawn. The fractions on the branches represent the probability of drawing that color marble at that stage in the experiment.</p>
+				<p>Now using this tree diagram, we find the desired probabilities.</p>
+				<sidebyside widths="50% 45%" margins="auto">
+					<p>
+						<ol label="a">
+							<li><p>Note that <m>P(\text{2nd }W\,|\,\text{1st }R)</m> can be read right off the tree. Since we are given that the first marble was red, we go across that middle <m>R</m> branch. Now, the probability the second is white is the probability on the <m>W</m> branch, so <m>\frac{1}{5}</m>.</p></li>
+							<li><p>There are two ways the 2nd marble can be white. If the 1st is red or if the 1st is blue. These are distinct (<xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref>) paths through the tree. The probability of each is found by multiplying down the branches.  Together, their probability is the sum of these two products, giving us:
+							<md>
+								<mrow>P(\text{2nd }W) \amp = P(\text{1st }R\cap \text{2nd }W) + P(\text{1st }B\cap \text{2nd }W)</mrow>
+								<mrow>\amp = \left(\frac{2}{6}\times \frac{1}{5}\right) + \left(\frac{3}{6}\times \frac{1}{5}\right)</mrow>
+								<mrow>\amp = \frac{2}{30} + \frac{3}{30}</mrow>
+								<mrow>\amp = \frac{1}{6}</mrow>
+							</md>.</p></li>
+						</ol>
+					</p>
+					<figure xml:id="fig_examp_conditional_probability-tree">
+						<caption>Tree Diagram</caption>
+						<image xml:id="image_examp_conditional_probability-tree" width="80%">
+							<latex-image>
+								\begin{tikzpicture}[font=\sffamily\tiny]
+								  \node (r) at (0,0);
+								  \node (0) at (1.5,1.5)    [align=left]{B};
+								    \node (00) at (3,2)     [align=left]{B};
+								    \node (01) at (3,1.5)   [align=left]{R};
+								    \node (02) at (3,1)     [align=left]{W};
+								  \node (1) at (1.5,0)      [align=left]{R};
+								    \node (10) at (3,0.5)   [align=left]{B};
+								    \node (11) at (3,0)     [align=left]{R};
+								    \node (12) at (3,-0.5)  [align=left]{W};
+								  \node (2) at (1.5,-1.5)   [align=left]{W};
+								    \node (20) at (3,-1)    [align=left]{B};
+								    \node (22) at (3,-2)    [align=left]{W};
+								  \draw[line width=0.25mm] 
+								    (r.east) -- (0.west) node [midway, left] {$\frac{3}{6}$}
+								      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+								      (0) -- (01) node [pos=0.8, above=-1.25mm] {$\frac{2}{5}$}
+								      (0) -- (02) node [midway, below=-0.5mm] {$\frac{1}{5}$}
+								    (r.east) -- (1.west) node [midway, above=-0.5mm] {$\frac{2}{6}$}
+								      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+								      (1) -- (11) node [pos=0.8, above=-1.25mm] {$\frac{1}{5}$}
+								      (1) -- (12) node [midway, below=-0.5mm] {$\frac{1}{5}$}
+								    (r.east) -- (2.west) node [midway, left] {$\frac{1}{6}$}
+								      (2) -- (20) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+								      (2) -- (22) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+								\end{tikzpicture}
+							</latex-image>
+						</image>
+					</figure>
+			  </sidebyside>
+			</solution>
+		</example>
+		<p>Note that the probabilities on the branches of such a tree diagram are conditional probabilities. In the example above, the <m>\frac{2}{5}</m> on the bottom branch from <m>W</m> to <m>R</m> is actually <m>P(\text{2nd }R|\text{1st }W)</m> because it connects the event <q>1st <m>W</m></q> to the event <q>2nd <m>R</m></q>. The general multiplication rule is then used to find the probability of any path through the tree.
+			<ul>
+			  <li><p>Probability both red: <m>\frac{2}{6}\times \frac{1}{5} = \frac{2}{30}</m></p></li>
+			  <li><p>Probability the first is red and the second blue: <m>\frac{2}{6}\times \frac{3}{5} = \frac{6}{30}</m></p></li>
+			  <li><p>Etc...</p></li>
+			</ul>
+		</p>
+		<p>Finally, as in the second question in our example, we can find the probability of events such as <q>the second is red</q> by adding together all the different probabilities for paths in which the second marble is red.</p>
+
+		<figure xml:id="video_conditional_trees-1">
+			<caption>Tree Diagrams and Conditional Probability I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-07.mp4"/>
+		</figure>
+		<figure xml:id="video_conditional_trees-2">
+			<caption>Tree Diagrams and Conditional Probability II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-08.mp4"/>
+		</figure>
+		<figure xml:id="video_conditional_trees-3">
+			<caption>Tree Diagrams and Conditional Probability III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-09.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_conditional_trees-1">
+			<statement>
+				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+				<figure xml:id="fig_ckpt_conditional_trees-1">
+					<caption></caption>
+					<image width="40%" xml:id="image_ckpt_conditional_trees-1">
+						<latex-image>
+							\begin{tikzpicture}[font=\sffamily\tiny]
+							  \node (r) at (0,0);
+							  \node (0) at (1.5,1)      [align=left]{A};
+							    \node (00) at (3,1.5)   [align=left]{X};
+							    \node (01) at (3,0.5)   [align=left]{Y};
+							  \node (1) at (1.5,-1)     [align=left]{B};
+							    \node (10) at (3,-0.5)  [align=left]{X};
+							    \node (11) at (3,-1.5)  [align=left]{Y};
+							  \draw[line width=0.25mm] 
+							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
+							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
+							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
+							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+							\end{tikzpicture}
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: what is the probability of outcome <m>X</m>?</p>
+			</statement>
+			<answer><p>0.4500</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_trees-2">
+			<statement>
+				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+				<figure xml:id="fig_ckpt_conditional_trees-2">
+					<caption></caption>
+					<image width="40%" xml:id="image_ckpt_conditional_trees-2">
+						<latex-image>
+							\begin{tikzpicture}[font=\sffamily\tiny]
+							  \node (r) at (0,0);
+							  \node (0) at (1.5,1)      [align=left]{A};
+							    \node (00) at (3,1.5)   [align=left]{X};
+							    \node (01) at (3,0.5)   [align=left]{Y};
+							  \node (1) at (1.5,-1)     [align=left]{B};
+							    \node (10) at (3,-0.5)  [align=left]{X};
+							    \node (11) at (3,-1.5)  [align=left]{Y};
+							  \draw[line width=0.25mm] 
+							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
+							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
+							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
+							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+							\end{tikzpicture}							
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: what is the probability of outcome Y given that outcome A has occurred?</p>
+			</statement>
+			<answer><p>0.60</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_trees-3">
+			<statement>
+				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+				<figure xml:id="fig_ckpt_conditional_trees-3">
+					<caption></caption>
+					<image width="40%" xml:id="image_ckpt_conditional_trees-3">
+						<latex-image>
+							\begin{tikzpicture}[font=\sffamily\tiny]
+							  \node (r) at (0,0);
+							  \node (0) at (1.5,1)      [align=left]{A};
+							    \node (00) at (3,1.5)   [align=left]{X};
+							    \node (01) at (3,0.5)   [align=left]{Y};
+							  \node (1) at (1.5,-1)     [align=left]{B};
+							    \node (10) at (3,-0.5)  [align=left]{X};
+							    \node (11) at (3,-1.5)  [align=left]{Y};
+							  \draw[line width=0.25mm] 
+							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
+							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
+							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
+							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+							\end{tikzpicture}							
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: what is the probability of outcome <m>B</m> and then <m>Y</m> occurring?</p>
+			</statement>
+			<answer><p>0.10</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_conditional_bayes">
+		<title>Bayesian Probability</title>
+		<p>Tree diagrams can be very useful for dealing with conditional probabilities, as long as the conditions are in the correct order. In a multi-stage experiment, the tree diagram does a good job of showing the probability of a particular outcome on the second step, given that a certain outcome on the first step occurred. What if, however, we want to look at things in the other order? Consider the following example.</p>
+		<example xml:id="examp_conditional_bayes">
+			<title>Computing <q>Backwards</q> Probabilities</title>
+			<statement>
+				<p>Recall from <xref ref="examp_conditional_probability-tree"/> that the tree diagram below gives us the probabilities for an experiment in which two marbles are drawn, without replacement, from an urn containing 3 blue marbles, 2 red marbles, and 1 white marble. Use the tree to help find the probability that the 1st marble was white given that the second is red.</p>
+				<figure xml:id="fig_examp_conditional_bayes">
+					<caption>Tree Diagram</caption>
+					<image width="50%" xml:id="image_examp_conditional_bayes">
+						<latex-image>
+							\begin{tikzpicture}[font=\sffamily\tiny]
+							  \node (r) at (0,0);
+							  \node (0) at (1.5,1.5)    [align=left]{B};
+							    \node (00) at (3,2)     [align=left]{B};
+							    \node (01) at (3,1.5)   [align=left]{R};
+							    \node (02) at (3,1)     [align=left]{W};
+							  \node (1) at (1.5,0)      [align=left]{R};
+							    \node (10) at (3,0.5)   [align=left]{B};
+							    \node (11) at (3,0)     [align=left]{R};
+							    \node (12) at (3,-0.5)  [align=left]{W};
+							  \node (2) at (1.5,-1.5)   [align=left]{W};
+							    \node (20) at (3,-1)    [align=left]{B};
+							    \node (22) at (3,-2)    [align=left]{W};
+							  \draw[line width=0.25mm] 
+							    (r.east) -- (0.west) node [midway, left] {$\frac{3}{6}$}
+							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+							      (0) -- (01) node [pos=0.8, above=-1.25mm] {$\frac{2}{5}$}
+							      (0) -- (02) node [midway, below=-0.5mm] {$\frac{1}{5}$}
+							    (r.east) -- (1.west) node [midway, above=-0.5mm] {$\frac{2}{6}$}
+							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+							      (1) -- (11) node [pos=0.8, above=-1.25mm] {$\frac{1}{5}$}
+							      (1) -- (12) node [midway, below=-0.5mm] {$\frac{1}{5}$}
+							    (r.east) -- (2.west) node [midway, left] {$\frac{1}{6}$}
+							      (2) -- (20) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+							      (2) -- (22) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+							\end{tikzpicture}							
+						</latex-image>
+					</image>
+				</figure>
+			</statement>
+			<solution>
+				<p>We wish to find <m>P(\text{1st }W\,|\,\text{2nd }R)</m>. Unfortunately, our tree diagram is <q>backwards</q> for this computation. The probabilities on the branches are the probability of a particular color on the 2nd marble given that we got a certain color on the first. So, we must resort to the conditional probability formula.
+					<me>P(\text{1st }W\,|\,\text{2nd }R) = \frac{P(\text{1st }W\cap\text{2nd }R)}{P(\text{2nd }R)}</me>.</p>
+				<p>The numerator of this fraction can be found by multiplying along a single branch in the tree<mdash/><m>\frac{1}{6} \times \frac{2}{5} = \frac{2}{30}</m>. To get the denominator, we need to add together the probabilities for all possible ways the last marble can be red. This is:
+				  <me>P(\text{2nd }R) = \left(\frac{3}{6}\times\frac{2}{5}\right) + \left(\frac{2}{6}\times\frac{1}{5}\right) + \left(\frac{1}{6}\times\frac{2}{5}\right) = \frac{1}{3}</me>.</p>
+				<p>Therefore, the desired conditional probability is:
+				  <me>P(\text{1st }W\,|\,\text{2nd }R) = \frac{2/30}{1/3} = \frac{1}{5} = 0.20</me>.</p>
+			</solution>
+		</example>
+		<p>These <q>backwards</q> conditional probability questions make use of a formula created by a British mathematician and Presbyterian minister, Thomas Bayes. Bayes&apos; theorem, as it was named after his death, is given below.</p>
+		<theorem xml:id="thm_bayes">
+			<title>Bayes&apos; Theorem</title>
+			<idx>Bayes&apos; theorem</idx>
+			<idx><h>probability</h><h>rules</h><h>Bayes&apos; theorem</h></idx>
+			<statement>
+				<p>If a sample space can be split into mutually exclusive events <m>A_1</m>, <m>A_2</m>, <m>\ldots</m>, <m>A_n</m> and <m>E</m> is an event in <m>S</m> with  <m>P(E) > 0</m>, then:
+				  <me>P(A_i|E) = \frac{P(A_i)P(E|A_i)}{P(A_1)P(E|A_1) + P(A_2)P(E|A_2) + \cdots + P(A_n)P(E|A_n)}</me>.</p>
+			</statement>
+		</theorem>
+		<p>While this theorem formally states the rule we use to solve problems such as the one above, it is not something you should memorize. Instead, use a tree diagram and the conditional probability formula to solve these problems as we did in <xref ref="examp_conditional_bayes"/>.</p>
+
+		<figure xml:id="video_conditional_bayes-1">
+			<caption>Bayesian Probability I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-10.mp4"/>
+		</figure>
+		<figure xml:id="video_conditional_bayes-2">
+			<caption>Bayesian Probability II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-11.mp4"/>
+		</figure>
+		<figure xml:id="video_conditional_bayes-3">
+			<caption>Bayesian Probability III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-12.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_conditional_bayes-1">
+			<statement>
+				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
+				<figure xml:id="fig_ckpt_conditional_bayes-1">
+					<caption></caption>
+					<image width="60%" xml:id="image_ckpt_conditional_bayes-1">
+						<latex-image>
+							\begin{tikzpicture}[font=\sffamily\tiny]
+							  \node (r) at (0,0);
+							  \node (0) at (1.5,1)      [align=left]{A};
+							    \node (00) at (3,1.5)   [align=left]{X};
+							    \node (01) at (3,0.5)   [align=left]{Y};
+							  \node (1) at (1.5,-1)     [align=left]{B};
+							    \node (10) at (3,-0.5)  [align=left]{X};
+							    \node (11) at (3,-1.5)  [align=left]{Y};
+							  \draw[line width=0.25mm] 
+							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
+							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
+							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
+							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+							\end{tikzpicture}							
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: what is the probability A given that <m>X</m> occurred?</p>
+			</statement>
+			<answer><p>0.6667</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_bayes-2">
+			<statement>
+				<p>An urn contains 8 marbles numbered 1-8. The marbles numbered 1-6 are red, and marbles 7 and 8 are blue. Two marbles are drawn randomly, without replacement.</p>
+				<p>Question: what is the probability the first marble was blue, given that the second is red?</p>
+			</statement>
+			<answer><p>0.2857</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_conditional_bayes-3">
+			<statement>
+				<p>A math professor uses one of two overhead projectors <mdash/> <m>A</m> or <m>B</m>. Projector <m>A</m> breaks down 20% of the time, while projector <m>B</m> breaks down 40% of the time. On Monday, the professor chose a projector at random, and it broke down.</p>
+				<p>Question: what is the probability that it was projector <m>A</m>?</p>
+			</statement>
+			<answer><p>0.3333</p></answer>
+		</exercise>
+  </subsection>
+
+</section>
