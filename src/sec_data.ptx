@@ -446,7 +446,7 @@
 						<p>A <term>systematic sample</term> is a random sample collected from an ordered population by randomly choosing one of the first <m>k</m> subjects, and then selecting every <m>k</m>th subject thereafter.</p>
 						<figure xml:id="fig_def_systematic-sample">
 							<caption>Systematic Sample</caption>
-							<image source="./images/data_def_systematic-sample.png" width="50%" xml:id="image_def_systematic-sample">
+							<image source="./images/data_def_systematic-sample.png" width="50%" archive="image_def_systematic-sample">
 								<description>
 									One of the first 5 dots was randomly selected, and then every 5th dot thereafter is selected for the sample.
 								</description>
@@ -461,7 +461,7 @@
 						<p>In a <term>stratified sample</term>, a population is broken into several groups (called strata) and then a simple random sample is collected from each of these groups.</p>
 						<figure xml:id="fig_def_stratified-sample">
 							<caption>Stratified Sample</caption>
-							<image source="./images/data_def_stratified-sample.png" width="50%" xml:id="image_def_stratified-sample">
+							<image source="./images/data_def_stratified-sample.png" width="50%" archive="image_def_stratified-sample">
 								<description>
 									The dots have been divided into six groups, and then two dots are randomly selected from each group to form the sample.
 								</description>
@@ -476,7 +476,7 @@
 						<p>A <term>cluster sample</term> is taken by dividing the population into several groups (called clusters) and then picking a simple random sample of the clusters. We then sample each individual in the selected clusters.</p>
 						<figure xml:id="fig_def_cluster-sample">
 							<caption>Cluster Sample</caption>
-							<image source="./images/data_def_cluster-sample.png" width="50%" xml:id="image_def_cluster-sample">
+							<image source="./images/data_def_cluster-sample.png" width="50%" archive="image_def_cluster-sample">
 								<description>
 									The dots have been divided into six groups, and then three of those groups are randomly selected and every dot from the selected groups is added to the sample.
 								</description>

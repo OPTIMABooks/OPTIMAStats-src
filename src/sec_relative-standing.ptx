@@ -311,7 +311,7 @@
 		<p>You can see then why a z-score of less than -3 or more than 3 would make a value an outlier. Only 0.3% of values should be in this range. To help you visualize the empirical rule, take a look at the following picture.</p>
 		<figure xml:id="fig_relative-standing_empirical">
 			<caption>Empirical Rule</caption>
-			<image source="./images/relative-standing_empirical.png" width="100%" xml:id="image_relative-standing_empirical"/>
+			<image source="./images/relative-standing_empirical.png" width="100%" archive="image_relative-standing_empirical"/>
 		</figure>
 		<p>Now let's apply the empirical rule to an example.</p>
 		<example xml:id="examp_relative-standing_empirical">
