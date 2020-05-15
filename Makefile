@@ -84,10 +84,19 @@ html:
 	cp -a $(IMAGESOUT) $(HTMLOUT)
 	cp -a $(IMAGESRC) $(HTMLOUT)
 	-rm $(OUTPUT)/xsltreport.txt
-	cd $(HTMLOUT); \
-	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/index.ptx 2> $(OUTPUT)/xsltreport.txt
+	@if [ -z "$(sec)" ]; then make htmlIndex; else make htmlSingle; fi
 	google-chrome-stable --new-window http://localhost/
 	@if [ -s $(OUTPUT)/xsltreport.txt ]; then less $(OUTPUT)/xsltreport.txt; else echo "No errors found"; fi
+
+htmlIndex:
+	cd $(HTMLOUT); \
+	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/index.ptx 2> $(OUTPUT)/xsltreport.txt;
+
+htmlSingle:
+	sed 's/%%sec%%/$(sec)/' $(PRJ)/helper/single_section.tpl > $(SRC)/single_section.ptx
+	cd $(HTMLOUT); \
+	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/single_section.ptx 2> $(OUTPUT)/xsltreport.txt;	
+	-rm $(SRC)/single_section.ptx
 
 images:
 	install -d $(OUTPUT)
