@@ -6,9 +6,9 @@
     <p>You may have noticed that similar types of experiments required similar methods for counting and computing probabilities.  In this chapter, we will take advantage of those similarities to develop formulas for computing probabilities for experiments in several different <q>families.</q>  We will also extend our toolbox to include ways to compute probability for <xref ref="def_continuous" text="custom">continuous</xref>  sets of outcomes.</p>
   </introduction>
 
-  <xi:include href="sec_random-vars.ptx"/>
-<!--  
+  <xi:include href="sec_random-vars.ptx"/>  
   <xi:include href="sec_binomial.ptx"/> 
+<!--
   <xi:include href="sec_normal.ptx"/>
   <xi:include href="sec_approximating.ptx"/>
   <xi:include href="sec_sampling.ptx"/>

@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_binomial">
+  <title>Families of Discrete Distributions: Uniform and Binomial</title>
+
+  <introduction xml:id="sec_binomial_intro">
+  	<title>Families of Probability Distributions</title>
+  	<p><xref ref="sec_random-vars"/> gave us a general introduction to probability distributions. In the next several sections we will introduce some specific families of probability distributions. What makes these specific families of probability distributions interesting is that:
+  	  <ol>
+  	  	<li><p>they are very common in every-day situations.</p></li>
+  	  	<li><p>we can develop general rules for finding the mean and standard deviation for probability distributions that are members of a specific family.</p></li>
+  	  </ol>
+  	  This means that we can avoid the work of computing expected value and standard deviation from the probability distribution table, and instead create a formula for finding these parameters for common random processes.</p>
+  	  <p>In this section we will look at two discrete probability distribution families. The first is a fairly straightforward, but common none-the-less distribution seen whenever you roll a fair die or flip a fair coin. The second is more involved, but is very common when dealing with yes/no sorts of questions such as <q>do you support candidate <m>X</m></q> or <q>did you draw a red ball?</q>
+  	</p>
+  </introduction>
+
+	<objectives xml:id="sec_random-vars_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Bernoulli trial</p></li>
+					<li><p>binomial distribution</p></li>
+					<li><p>binomial probability formula</p></li>
+					<li><p>binomial process</p></li>
+					<li><p>binomial random variable</p></li>
+					<li><p>discrete uniform probability distribution</p></li>
+					<li><p>mean and standard deviation of a binomial random variable</p></li>
+					<li><p>mean and standard deviation of a discrete uniform random variable</p></li>
+					<li><p>the 5% condition</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Identify and work with random variables having a discrete uniform distributions</p></li>
+					<li><p>Identify a Bernoulli process</p></li>
+					<li><p>Identify a binomial random variable</p></li>
+					<li><p>Correctly apply the binomial probability formula</p></li>
+					<li><p>Find probabilities that a binomial random variable is at least or at most a given value</p></li>
+					<li><p>Compute the mean and standard deviation of a binomial random variable</p></li>
+					<li><p>Determine when a binomial random variable has a mound-shaped distribution</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_binomial_uniform">
+		<title>Discrete Uniform Distribution</title>
+		<p>When you roll a fair die or flip a fair coin, each of the outcomes is equally likely. If you assign the values of those outcomes to a random variable, then each value of the variable is equally likely. One could say that the probabilities are <term>uniform</term>. These are members of the following family of distributions.</p>
+		<definition xml:id="def_discrete-uniform">
+			<idx>uniform distribution (discrete)</idx>
+			<idx><h>probability</h><h>distributions</h><h>discrete uniform</h></idx>
+			<statement>
+				<p>A random variable <m>X</m> has a <term>discrete uniform</term> probability distribution if <term>X</term> can take on one of <m>k</m> possible values, <m>x_1</m>, <m>x_2</m>, <m>\ldots</m>, <m>x_k</m>, each with probability <m>P(X=x_i) = \frac{1}{k}</m>.</p>
+			</statement>
+		</definition>
+		<p>Consider the following, very common, member of this family.</p>
+		<example xml:id="examp_binomial_uniform-graph">
+			<title>Identifying a Discrete Uniform Random Variable</title>
+			<statement>
+				<p>A fair die is rolled and a random variable <m>X</m> is defined to be the number that appears. Show that <m>X</m> has a discrete uniform probability distribution.</p>
+			</statement>
+			<solution>
+				<p>The random variable has six values, <m>X = 1, 2, 3, 4, 5, \text{ and } 6</m>. So, for each of these values, <m>P(X=x) = \frac{1}{6}</m>. Therefore, this is a discrete uniform distribution with <m>k=6</m>. To help visualize this, we construct the following probability histogram.</p>
+				<figure xml:id="fig_examp_binomial_uniform-graph">
+					<caption>Probability Histogram for <m>X</m></caption>
+					<image source="./images/examp_binomial_uniform-graph.png" archive="image_examp_binomial_uniform-graph"/>
+				</figure>
+			</solution>
+		</example>
+		<p>The second reason to study families of distributions is to develop general rules for computation. For example, a discrete uniform distribution has the following property.</p>
+		<theorem xml:id="thm_discrete-uniform-mean-stdev">
+			<title>Mean and Standard Deviation of a Discrete Uniform Random Variable</title>
+			<statement>
+				<p>If a random variable <m>X</m> has a discrete uniform distribution then the mean and standard deviation of the random variable <m>X</m> are the mean and standard deviation of the set of possible values of <m>X</m>.</p>
+			</statement>
+		</theorem>
+		<p>Let&apos;s apply this to the die example above.</p>
+		<example xml:id="examp_binomial_uniform-mean-stdev">
+			<title>Finding the Mean and Standard Deviation of a Discrete Uniform Random Variable</title>
+			<statement>
+				<p>A fair die is rolled and a random variable <m>X</m> is defined to be the number that appears. Find the expected value (mean) and standard deviation of <m>X</m>.</p>
+			</statement>
+			<solution>
+				<p>To show that the mean and standard deviation really are as stated above, we will do the computation two ways.
+					<ol>
+						<li><p>First, we use the probability distribution method of <xref ref="sec_random-vars"/>:</p>
+					  	<table>
+					  		<title>Distribution for <m>X</m></title>
+					  		<tabular>
+					  			<col right="medium" halign="center"></col>
+					  			<col right="medium" halign="center"></col>
+					  			<col right="medium" halign="center"></col>
+					  			<col halign="center"></col>
+					  			<row bottom="medium">
+					  				<cell><m>x</m></cell>
+					  				<cell><m>P(X=x)</m></cell>
+					  				<cell><m>x\times P(X=x)</m></cell>
+					  				<cell><m>(x-\mu)^2\times P(X=x)\)</m></cell>
+					  			</row>
+					  			<row>
+					  				<cell><m>1</m></cell>
+					  				<cell><m>\frac{1}{6} \approx 0.1667</m></cell>
+					  				<cell><m>1(0.1667) = 0.1667</m></cell>
+					  				<cell><m>(1-3.5)^2(0.1667) = 1.0417</m></cell>
+					  			</row>
+					  			<row>
+					  				<cell><m>2</m></cell>
+					  				<cell><m>\frac{1}{6} \approx 0.1667</m></cell>
+					  				<cell><m>2(0.1667) = 0.3333</m></cell>
+					  				<cell><m>(2-3.5)^2(0.1667) = 0.3750</m></cell>
+					  			</row>
+					  			<row>
+					  				<cell><m>3</m></cell>
+					  				<cell><m>\frac{1}{6} \approx 0.1667</m></cell>
+					  				<cell><m>3(0.1667) = 0.5000</m></cell>
+					  				<cell><m>(3-3.5)^2(0.1667) = 0.0417</m></cell>
+					  			</row>
+					  			<row>
+					  				<cell><m>4</m></cell>
+					  				<cell><m>\frac{1}{6} \approx 0.1667</m></cell>
+					  				<cell><m>4(0.1667) = 0.6667</m></cell>
+					  				<cell><m>(4-3.5)^2(0.1667) = 0.0417</m></cell>
+					  			</row>
+					  			<row>
+					  				<cell><m>5</m></cell>
+					  				<cell><m>\frac{1}{6} \approx 0.1667</m></cell>
+					  				<cell><m>5(0.1667) = 0.8333</m></cell>
+					  				<cell><m>(5-3.5)^2(0.1667) = 0.3750</m></cell>
+					  			</row>
+					  			<row bottom="medium">
+					  				<cell><m>6</m></cell>
+					  				<cell><m>\frac{1}{6} \approx 0.1667</m></cell>
+					  				<cell><m>6(0.1667) = 1.0000</m></cell>
+					  				<cell><m>(6-3.5)^2(0.1667) = 1.0417</m></cell>
+					  			</row>
+					  			<row>
+					  				<cell colspan="2" right="none"></cell>
+					  				<cell right="none"><m>\mu = 3.5</m></cell>
+					  				<cell><m>\sigma^2= 2.9168</m></cell>
+					  			</row>
+					  		</tabular>
+					  	</table>
+					  	<p>So from the table to the left, we can read off the mean (expected value) and variance, which gives: 
+					  		<md>
+					  			<mrow>\mu \amp = 3.5</mrow>
+					  			<mrow>\sigma \amp = \sqrt{2.9168} = 1.71</mrow>
+					  		</md>
+					  	</p></li>
+						<li><p>Next, we use the methods from <xref ref="sec_center-spread_mean-stdev"/>.</p>
+					  	<p>We first compute the mean:
+					  		<me>\mu = \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3.5</me>
+								Then we can construct the table below to find the standard deviation.</p>
+							<table>
+								<title>Finding the Variance</title>
+								<tabular>
+									<col right="medium" halign="center"></col>
+									<col right="medium" halign="center"></col>
+									<col halign="center"></col>
+									<row bottom="medium">
+										<cell><m>x</m></cell>
+										<cell><m>(x-\mu)</m></cell>
+										<cell><m>(x-\mu)^2</m></cell>
+									</row>
+									<row>
+										<cell><m>1</m></cell>
+										<cell><m>-2.5</m></cell>
+										<cell><m>6.25</m></cell>
+									</row>
+									<row>
+										<cell><m>2</m></cell>
+										<cell><m>-1.5</m></cell>
+										<cell><m>2.25</m></cell>
+									</row>
+									<row>
+										<cell><m>3</m></cell>
+										<cell><m>-0.5</m></cell>
+										<cell><m>0.25</m></cell>
+									</row>
+									<row>
+										<cell><m>4</m></cell>
+										<cell><m>0.5</m></cell>
+										<cell><m>0.25</m></cell>
+									</row>
+									<row>
+										<cell><m>5</m></cell>
+										<cell><m>1.5</m></cell>
+										<cell><m>2.25</m></cell>
+									</row>
+									<row bottom="medium">
+										<cell><m>6</m></cell>
+										<cell><m>2.5</m></cell>
+										<cell><m>6.25</m></cell>
+									</row>
+									<row>
+										<cell colspan="2" right="none" halign="right">Total:</cell>
+										<cell><m>17.5</m></cell>
+									</row>
+								</tabular>
+							</table>
+							<p>Based on that table,
+							  <md>
+							  	<mrow>\sigma^2 \amp = \frac{17.5}{6} \approx 2.9167</mrow>
+							  	<mrow>\Rightarrow \sigma \amp = \sqrt{2.9167} \approx 1.71</mrow>
+							  </md>.</p>
+						</li>
+					</ol>
+				</p>
+				<p>Note that the answers found agreed.</p>
+			</solution>
+		</example>
+		<p>The reason we may be interested in the result from the last example is that the method from <xref ref="sec_center-spread_mean-stdev"/> is more familiar and involves fewer computations.  This allows us to cut down on the amount of work necessary to find the expected value of a random variable with a discrete uniform distribution.</p>
+
+		<figure xml:id="video_binomial_uniform-1">
+			<caption>Discrete Uniform Distributions I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-01.mp4"/>
+		</figure>
+		<figure xml:id="video_binomial_uniform-2">
+			<caption>Discrete Uniform Distributions II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_binomial_uniform-1">
+			<statement>
+				<p>A discrete random variable <m>X</m> has possible values 1, 3, 5, and 7.</p>
+				<p>Question: if <m>X</m> is to be a discrete uniform random variable, what is <m>P(X=3)</m>?</p>
+			</statement>
+			<answer><p><m>\frac{1}{4}</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_uniform-2">
+			<statement>
+				<p>A discrete uniform random variable <m>X</m> has several possible values including the value <m>4</m>. Suppose that <m>P(X=4) = \frac{1}{9}</m>.</p>
+				<p>Question: how many possible values does <m>X</m> have?</p>
+			</statement>
+			<answer><p>9</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_uniform-3">
+			<statement>
+				<p>A discrete uniform random variable <m>X</m> has possible values 1, 4, 7, and 12.</p>
+				<p>Question: What is the expected value of <m>X</m>?</p>
+			</statement>
+			<answer><p>6</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_binomial_bernoulli">
+		<title>Bernoulli Trials</title>
+		<p>The family of binomial probability distributions is based on one of the simplest random processes around. This basic process is called a <term>Bernoulli trial</term>. Bernoulli Trial.</p>
+		<definition xml:id="def_bernoulli-trial">
+			<idx>Bernoulli trial</idx>
+			<statement>
+				<p>A <term>Bernoulli trial</term> is a random process in which there are only two possible outcomes: success and failure. The probability of a success is denoted by <m>p</m>, and the probability of a failure by <m>q = 1 - p</m>.</p>
+			</statement>
+		</definition>
+		<p>The key property of a Bernoulli trial is that there are only two possible outcomes. We call them <q>success</q> and <q>failure,</q> but there is nothing inherently good or bad about these outcomes. We simply refer to the particular outcome that we wish to observe as a success, and the other outcome as a failure.</p>
+		<example xml:id="examp_binomial_is-bernoulli-1">
+			<title>Identifying a Bernoulli Trial</title>
+			<statement>
+				<p>A coin is weighted so that a heads is twice as likely as a tails. The coin is flipped and the result noted. Is this a Bernoulli Trial?</p>
+			</statement>
+			<solution>
+				<p>There are only two outcomes, so this is a Bernoulli trial. We could choose to call flipping a heads a <em>success</em> and a tails a <em>failure</em>. In that case, <m>p = \frac{2}{3}</m> and <m>q = 1 - \frac{2}{3} = \frac{1}{3}</m>.</p>
+			</solution>
+		</example>
+		<p>It is possible to have a Bernoulli trial even when there are more than two outcomes. To do this, you must designate a certain set of outcomes as the desired or successful outcomes, and lump all others together into the failures. Consider the following example.</p>
+		<example xml:id="examp_binomial_is-bernoulli-2">
+			<title>More Identifying of Bernoulli Trials</title>
+			<statement>
+				<p>An urn contains 15 marbles: 6 red, 4 green, 3 blue, and 2 white. A single marble is drawn at random and we note either:
+					<ol label="a">
+						<li><p>the color of the marble drawn, or</p></li>
+						<li><p>whether we got a red or white marble, or something else.</p></li>
+					</ol>
+				  Which of these, if either of them, is a Bernoulli trial?</p>
+			</statement>
+			<solution>
+				<p>While the underlying experiment is the same, the result variable is different in these two cases.
+					<ol label="a">
+						<li><p>If we note the color drawn, then the results are either <m>R</m>, <m>G</m>, <m>B</m>, or <m>W</m>. Since there are more then two possible outcomes, this is not a Bernoulli trial.</p></li>
+						<li><p>In this case the outcomes are categorized as either a success (<m>R</m> or <m>W</m>) or failure (<m>G</m> or <m>B</m>). Therefore this is a Bernoulli trial with <m>p = \frac{8}{15}</m> and <m>q = 1 - \frac{8}{15} = \frac{7}{15}</m>.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_binomial_bernoulli-1">
+			<caption>Bernoulli Processes I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-03.mp4"/>
+		</figure>
+		<figure xml:id="video_binomial_bernoulli-2">
+			<caption>Bernoulli Processes II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_binomial_bernoulli-1">
+			<statement>
+				<p>Consider the following random processes.
+					<ol label="a">
+						<li><p>A weighted coin is flipped and the outcome of heads or tails is recorded.</p></li>
+						<li><p>A fair die is rolled and the outcome 1-6 is recorded.</p></li>
+						<li><p>A marble is drawn from an urn containing 10 marbles: 4 red, 3 blue, and 3 green and the color of the marble is noted.</p></li>
+						<li><p>Two cards are drawn from a deck of 52 cards and note whether the cards are of the same suit.</p></li>
+					</ol>
+				</p>
+				<p>Question: identify each process as a Bernoulli trial or not a Bernoulli trial.</p>
+			</statement>
+			<answer><p><ol label="a">
+				<li><p>Bernoulli trial</p></li>
+				<li><p>Not a Bernoulli trial</p></li>
+				<li><p>Not a Bernoulli trial</p></li>
+				<li><p>Bernoulli trial</p></li>
+			</ol></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_bernoulli-2">
+			<statement>
+				<p>Refer to the <xref ref="def_bernoulli-trial" text="custom">definition of a Bernoulli Trial</xref> and compare it with te following statements.
+				  <ol label="a">
+				  	<li><p>The random variable is discrete.</p></li>
+				  	<li><p>The random variable is continuous.</p></li>
+				  	<li><p>The random variable has at least three values.</p></li>
+				  	<li><p>The random variable has only two outcomes.</p></li>
+				  </ol>
+				</p>
+				<p>Question: which of these is the defining characteristic of a Bernoulli Trial?</p>
+			</statement>
+			<answer><p>Statement (d)</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_bernoulli-3">
+			<statement>
+				<p>Suppose that you are told that in a Bernoulli trial, the probability of a success is <m>0.17</m>.</p>
+				<p>Question: what is <m>q</m>?</p>
+			</statement>
+			<answer><p><m>0.83</m></p></answer>
+		</exercise>
+	</subsection>
+
+  <subsection xml:id="sec_binomial_binomial">
+  	<title>Binomial Process</title>
+  	<p>There are many situations in which we wish to repeat a string of identical Bernoulli processes and determine the number of times that we were successful.
+  		<ul>
+  			<li><p>You take a 20 question multiple choice exam in which each question has 4 possible answers, only one of which is correct.</p></li>
+  			<li><p>You survey 100 individuals from a large population asking them if they own a truck.</p></li>
+  			<li><p>You examine a sample of 50 widgets taken from a production batch and determine how many of them are defective.</p></li>
+  		</ul>
+  		What do each of these examples have in common? They are all examples of a <term>binomial process</term> resulting in a <term>binomial random variable</term>.</p>
+  	<definition xml:id="def_binomial-process">
+  		<idx>binomial process</idx>
+  		<statement>
+  			<p>A <term>binomial process</term> is a random process with the following four characteristics.
+  				<ol label="1">
+  					<li><p>The process consists of a fixed number of Bernoulli trials, referred to as <m>n</m>.</p></li>
+  					<li><p>Each trial has the same probability of a success, called <m>p</m>.</p></li>
+  					<li><p>The Bernoulli trials are all <xref ref="def_independent" text="custom">independent</xref> of each other.</p></li>
+  					<li><p>The result variable is the number of trials which result in successes.</p></li>
+  				</ol>
+  			</p>
+  		</statement>
+  	</definition>
+  	<p>If a random variable is the result variable for a binomial process, then it too has a special name.</p>
+  	<definition xml:id="def_binomial">
+  		<idx>binomial distribution</idx>
+  		<idx><h>probability</h><h>distributions</h><h>binomial</h></idx>
+  		<statement>
+  			<p>A <term>binomial random variable</term> is a random variable representing the number of successes in a binomial process. Such a variable is said to have a <term>binomial distribution</term>.</p>
+  		</statement>
+  	</definition>
+  	<p>Let&apos;s take a look at each of the examples above to verify that they are indeed binomial processes and identify the binomial random variable that goes with each process.</p>
+  	<example xml:id="examp_binomial_is-binomial-1">
+  		<title>Identifying a Binomial Distribution</title>
+  		<statement>
+  			<p>You take a 20 question multiple choice exam in which each question has 4 possible answers, only one of which is correct. You randomly answer each question and define a random variable <m>X</m> to be the number of correctly answered questions. Is <m>X</m> a binomial random variable?</p>
+  		</statement>
+	  	<solution>
+	  		<p>To verify that this is a binomial process, we go through the four characteristics mentioned above.
+	  			<ol label="1">
+	  				<li><p>There are 20 questions and answering each question is a Bernoulli trial since we are either right (success) or wrong (failure).</p></li>
+	  				<li><p>Since we are guessing, the probability of getting a question right is <m>p=\frac{1}{4}</m> and the probability of getting question wrong is <m>q = \frac{3}{4}</m>.</p></li>
+	  				<li><p>How we answer one question does not affect how we answer the next question (remember, we are guessing) so the trials are independent.</p></li>
+	  				<li><p>Finally, the variable <m>X</m> represents the number of questions we get right<mdash/>that is the number of successes in our 20 trials.</p></li>
+	  			</ol>
+	  			This is a binomial process and <m>X</m> is a binomial random variable.
+	  		</p>
+	  	</solution>
+	  </example>
+	  <example xml:id="examp_binomial_is-binomial-2">
+	  	<title>Identifying Another Binomial Distribution</title>
+	  	<statement>
+	  		<p>You survey 100 individuals from a large population asking them if they own a truck. You define a random variable <m>Y</m> to be the number of individuals who own a truck.  Is <m>Y</m> a binomial random variable?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>We again verify the four characteristics of a binomial process.
+	  			<ol label="1">
+	  				<li><p>There are 100 individuals who are asked if they own are truck. They will either answer <q>yes</q> or <q>no</q>, so this is a binomial process with <m>n = 100</m> trials.</p></li>
+	  				<li><p>We do not know what the probability of a success is, but since the population is large, it is safe to assume that <m>p</m> will not change as we ask each person (see below).</p></li>
+	  				<li><p>How one person answers is not affected by how another person answers the question. Therefore the trials are independent.</p></li>
+	  				<li><p>Again, the random variable <m>Y</m> is the number of successes (people who had a truck).</p></li>
+	  			</ol>
+	  			Therefore this is a binomial process and <m>Y</m> is a binomial random variable.
+	  		</p>
+	  	</solution>
+	  </example>
+	  <p>Before we look at our next example, consider the answer to question 2 above.  Why did we say that it is safe to assume that the probability will not change? How can the sample size effect how much a probability changes? Consider the following.</p>
+	  <example xml:id="examp_binomial_not-binomial">
+	  	<title>Identifying a Distribution that is Not Binomial</title>
+	  	<statement>
+	  		<p>An urn contains 20 marbles: 10 blue and 10 red. You draw 5 marbles without replacement noting how many red marbles are drawn. Is this a binomial process?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>Let&apos;s review the four questions again.
+	  			<ol label="1">
+	  				<li><p>We are repeating the act of drawing a marble a fixed number of times (<m>n = 5</m>).</p></li>
+	  				<li><p>There are only two options, red or blue, and since we are counting the number of red marbles drawn, we will count drawing a red marble as a success.  On the first draw, the probability of a success is <m>\frac{10}{20}</m> since there are 10 red marbles.</p></li>
+	  				<li><p>However, the trials are <em>not independent</em> and the probabilities change. To see this, note that on the second draw the probability of a success is either <m>\frac{9}{19}</m>, if we drew a red on the first draw, or <m>\frac{10}{19}</m>, if we drew a blue marble on the first draw. So the probabilities change and the new probabilities depend on what happened on the previous draw.</p></li>
+	  				<li><p>Our random variable is the number of successes (red marbles).</p></li>
+	  			</ol>
+	  			Because the probabilities change between trials and depend on what happend on previous trials, this process does not meet criteria 2 or 3.  It is therefore not a binomial process.
+	  		</p>
+	  	</solution>
+	  </example>
+	  <p>The above example was not a binomial process because of the small population from which we are drawing our sample. In <xref ref="examp_binomial_is-binomial-2"/>  the population was assumed to be large. Suppose that there were 10,000 people in the population and that 5,000 of them own trucks. When we pick our first individual for the sample, the probability they will own a truck is <m>\frac{5000}{10000} = 0.5</m>. If our first pick owned a truck, the probability the second individual will also own a truck is now <m>\frac{4999}{9999} = 0.499995</m>. While this is not <m>0.5</m>, it is extremely close. Because the population is so large, the probabilities did not change by very much at all. In fact, as we pick our 100 individuals, the probability of getting a person with a truck will stay very close to <m>0.5</m> no matter which people we select.</p>
+	  <p>How do we tell how large a population needs to be in order to assume that as we draw individuals for our sample we do not change the probabilities? The following rule is a good way to determine this.</p>
+	  <principle xml:id="def_five-percent-rule">
+	  	<title>The 5% Condition</title>
+	  	<idx>five percent condition</idx>
+	  	<statement>
+	  		<p>If in repeating a Bernoulli trial <m>n</m> times we choose individuals from a population of size <m>N</m> without replacement, we can assume that the trials are independent and the probability <m>p</m> does not change as long as <m>n</m> is less than 5% of <m>N</m>. That is, as long as <m>\frac{n}{N} \lt 0.05</m>.</p>
+	  	</statement>
+	  </principle>
+	  <p>In <xref ref="examp_binomial_not-binomial"/> we selected 5 marbles from 20. This gives <m>\frac{5}{20} = 0.25</m>, which means we are sampling 25% of the population. This is far too big to assume this is a binomial process.</p>
+	  <example xml:id="examp_binomial_five-percent">
+	  	<title>Applying the 5% Rule</title>
+	  	<statement>
+	  		<p>You examine a sample of 50 widgets taken from a production batch and determine how many of them are defective. How many widgets must be in the batch in order to claim that this is a binomial process?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>The batch must contain at least <m>N</m> widgets so that 50 is less than 5% of <m>N</m>.  We find <m>N</m> by solving the inequality
+	  		  <me>\frac{50}{N} \lt 0.05 \quad \Rightarrow \quad 50 \lt 0.05N \quad \Rightarrow \quad N \gt 1000</me>. 
+	  		  If we do not have more than 1000 widgets to select from, then the trials of selecting individual widgets without replacement will not be independent and this will not be a binomial process.</p>
+	  	</solution>
+	  </example>
+
+	  <figure xml:id="video_binomial_binomial-1">
+	  	<caption>Binomial Processes I</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-05.mp4"/>
+	  </figure>
+	  <figure xml:id="video_binomial_binomial-2">
+	  	<caption>Binomial Processes II</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-06.mp4"/>
+	  </figure>
+
+	  <exercise xml:id="ckpt_binomial_binomial-1">
+	  	<statement>
+	  		<p>An urn contains 12 marbles: 6 red, 4 white, and 2 blue. You draw 4 marbles without replacement and note the number of blue marbles drawn.</p>
+	  		<p>Question: which, if any, characteristics of a binomial process does this experiment have?</p>
+	  	</statement>
+	  	<answer><p>It has a fixed number of Bernoulli trials and the random variable is the number of successes.</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_binomial_binomial-2">
+	  	<statement>
+	  		<p>A 60% free-throw shooter decides to practice by shooting free-throws until he has made 3 in a row. A random variable <m>Y</m> is defined to be the number of free-throw attempts that he makes.</p>
+	  		<p>Question: which, if any, characteristics of a binomial process does this experiment have?</p>
+	  	</statement>
+	  	<answer><p>The probability of a success is fixed and the trials are independet of each other.</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_binomial_binomial-3">
+	  	<statement>
+	  		<p>A statistics student wishes to conduct a survey of fellow students at her university. She decides to contact 65 randomly selected students, ask them if they have taken a mathematics class and let a random variable <m>X</m> represent the number who have taken a mathematics class.</p>
+	  		<p>Question: how large must the student body be for this study to be a binomial process?</p>
+	  	</statement>
+	  	<answer><p>1300</p></answer>
+	  </exercise>
+	</subsection>
+
+	<subsection xml:id="sec_binomial_formula">
+		<title>Binomial Probability Formula</title>
+		<p>Once we have identified a binomial random variable, we want to be able to quickly compute probabilities for that variable. The key to doing that is the general <xref ref="thm_probability-rule_general-multiplication" text="custom">multiplication rule</xref>. Because one of the assumptions is that the Bernoulli trials are independent, we can use this multiplication rule to compute the probability of a given string of outcomes. Consider the following example.</p>
+		<example xml:id="examp_binomial_derive">
+			<title>Deriving a Formula for Binomial Probabilities</title>
+			<statement>
+				<p>A coin is weighted so that the probability of getting a heads is twice that of getting a tails. The coin is tossed four times, and the random variable <m>X</m> is defined to be the number of heads. Find <m>P(X=1)</m> and <m>P(X=2)</m>.</p>
+			</statement>
+			<solution>
+				<p>Notice that each flip is a Bernoulli trial with <m>p = \frac{2}{3}</m> and <m>q = \frac{1}{3}</m> when we consider getting a heads to be a success. We repeat this trial four times, and each time <m>p</m> and <m>q</m> remain unchanged. Because each flip is independent and <m>X</m> is the number of successes (heads), <m>X</m> is a binomial random variable.</p>
+				<p><ul>
+					<li><title>Finding <m>P(X=1)</m></title>
+					  <p>Since we want <m>X=1</m> head, we compute the probability to be 
+					    <me>\frac{2}{3}\times\frac{1}{3}\times\frac{1}{3}\times\frac{1}{3} = \left(\frac{2}{3}\right)^1\left(\frac{1}{3}\right)^3</me>.
+					    The problem with this is that it only counts the probability of HTTT. We could also get THTT, TTHT, and TTTH. In fact, a little counting shows that there are <m>C(4,1)</m> ways to pick the one toss out of 4 that will be heads. So the total probability is:
+					    <me>C(4,1)\left(\frac{2}{3}\right)^1\left(\frac{1}{3}\right)^3 = \frac{8}{81} \approx 0.0988</me>.</p></li>
+					<li><title>Finding <m>P(X=2)</m></title>
+					  <p>This analysis is very similar except that we get a heads twice and a tails twice and we have to choose 2 of 4 four flips that will be our tails. This results in the probability:
+					  	<me>C(4,2)\left(\frac{2}{3}\right)^2\left(\frac{1}{3}\right)^2 = \frac{24}{81} \approx 0.2963</me>.
+					  </p>
+					</li>
+				</ul></p>
+			</solution>
+		</example>
+		<p>Hopefully you see that there is a pattern to determining the probability of a certain value of <m>X</m>. We first choose which of the <m>n</m> trials are going to be our successes. Then we multiply that by <m>p</m> for each success and by <m>q</m> for each failure. This results in the following formula.</p>
+		<theorem xml:id="thm_binomial-probability">
+			<title>Binomial Probability Formula</title>
+			<idx>binomial probability formula</idx>
+			<idx><h>probability</h><h>distributions</h><h>binomial formula</h></idx>
+			<statement>
+				<p>If a <m>X</m> is the number of successes in a binomial process of n trials where <m>p</m> is the probability of a success and <m>q = 1 - p</m> the probability of a failure, then 
+				<me>P(X=x) = C(n,x)p^xq^{n-x}</me>.</p>
+			</statement>
+		</theorem>
+		<p>Let&apos;s put this formula into use with a few more examples.</p>
+		<example xml:id="examp_binomial_forumla">
+			<title>Using the Binomial Formula</title>
+			<statement>
+				<p>A scientist has determined that 40% of plants in a certain field are infected with a disease. You randomly select 10 plants from this large field. Find the probability that:
+					<ol label="a">
+						<li><p>none of the plants are infected</p></li>
+						<li><p>half of the plants are infected</p></li>
+						<li><p>all of the plants are infected.</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>First note that <m>p = 0.40</m>, <m>q = 0.60</m>, and <m>n = 10</m> in this binomial process. Let the random variable <m>Y</m> equal the number of plants that are infected in the 10 that we select. Then, the probabilities (rounded to four decimal places) are:
+				  <ol label="a">
+				  	<li><p><me>P(Y=0) = C(10,0)(0.40)^0(0.60)^{10} = 1(1)(0.0060) = 0.0060</me></p></li>
+				  	<li><p><me>P(Y=5) = C(10,5)(0.40)^5(0.60)^5 = 252(0.0102)(0.0778) \approx 0.2007</me></p></li>
+				  	<li><p><me>P(Y=10) = C(10,10)(0.40)^{10}(0.60)^0 = 1(0.0001)(1) = 0.0001</me></p></li>
+				  </ol>
+				</p>
+			</solution>
+		</example>
+		<p>Note that there is a pattern in this formula. <m>C(n,x)</m> is always a combination where we choose from the total number of trials the <m>x</m> that are to be successful. Next we raise <m>p</m> to the <m>x</m> power and <m>q</m> to the <m>n-x</m> power. But note that <m>p + q</m> is always one. In the above example, <m>0.40 + 0.60 = 1</m>. Also, note that the exponents of <m>p</m> and <m>q</m> add up to <m>n</m>, the total number of trials. These patters can be good ways to check your work and make sure you didn&apos;t miss anything.</p>
+
+		<figure xml:id="video_binomial_formula-1">
+			<caption>Binomial Probability Formula I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-07.mp4"/>
+		</figure>
+		<figure xml:id="video_binomial_formula-2">
+			<caption>Binomial Probability Formula II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_binomial_formula-1">
+			<statement>
+				<p>A binomial random variable <m>X</m> measures the number of successes in <m>n=10</m> trials in which the probability of a success is <m>p=0.40</m>.</p>
+				<p>Question: what is <m>P(X=3)</m>? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p>0.2150</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_formula-2">
+			<statement>
+				<p>A McDonald&apos;s worker has determined that when asked the question <q>would you like fries with that?</q> 72% of customers will say yes. In a given day, the worker serves 20 customers, asking each one of them <q>would you like fries with that?</q> Let the random variable <m>Y</m> be the number who answered yes.</p>
+				<p>Question: what is <m>P(Y=15)</m>? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p>0.1933</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_formula-3">
+			<statement>
+				<p>According to a recent study, 32.2% of adult Americans are obese. You randomly select 16 Americans and determine if they are obese.</p>
+				<p>Question: what is the probability exactly 2 of the 16 selected Americans are obese?</p>
+			</statement>
+			<answer><p>0.0540</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_binomial-at-least-most">
+		<title>At Least and At Most</title>
+		<p>The binomial probability formula from the last page tells us the probability that <m>X</m> will be exactly equal to <m>x</m>. When we say <m>P(X=3)</m>, for example, this gives the probability that <m>X</m> will equal 3<mdash/>not more than 3, not less than 3, but exactly 3. It is important to keep that in mind because there are many examples in which we really want at least or at most some number of successes. Consider the following.</p>
+		<example xml:id="examp_binomial_at-most">
+			<title>Computing <q>At Most</q> Probabilities</title>
+			<statement>
+				<p>Only 4% of widgets produced at a certain manufacturing plant are defective. In a quality control sample of 20 widgets, what is the probability that at most 2 of them will be defective?</p>
+			</statement>
+			<solution>
+				<p>Note that this is a binomial process with <m>n=20</m> trials, assuming that the number of widgets produced is large. If we let a success mean getting a defective widget, then <m>p = 0.04</m> and <m>q = 0.96</m>. Let the random variable <m>X</m> be the number of defective widgets in our sample of 20 widgets.</p>
+				<p>We wish to find the probably that <m>X</m> is less than or equal to 2. This means that <m>X</m> can be 0, 1, or 2. We use the binomial probability formula to compute <m>P(X=0)</m>, <m>P(X=1)</m>, and <m>P(X=2)</m>. These are mutually exclusive events (we can&amp;t have exactly one defective widget and exactly two defective widgets at the same time), so we then use the addition rule to get our final probability. The computation is shown below.
+				<md>
+					<mrow>P(X\leq 2) \amp = P(X=0) + P(X=1) + P(X=2)</mrow>
+					<mrow>\amp = C(20,0)(0.04)^0(0.96)^{20} + C(20,1)(0.04)^1(0.96)^{19} + C(20,2)(0.04)^2 (0.96)^{18}</mrow>
+					<mrow>\amp \approx 1(1)(0.4420) + 20(0.04)(0.4604) + 190(0.0016)(0.4796)</mrow>
+					<mrow>\amp \approx 0.4420 + 0.3683 + 0.1458</mrow>
+					<mrow>\amp = 0.9561</mrow>
+				</md>.</p>
+			</solution>
+		</example>
+		<p>Since <q>at most</q> includes the 2, we had to add together the probabilities of 0, 1, or 2 defective widgets. Be sure that you don&apos;t forget the possibility that there are 0 successes, or in this case 0 defective widgets! What if the question above had asked for the probability of at least 2 defective widgets? We could follow the same procedure, but the values of <m>X</m> that are at least 2 include <m>2</m>, <m>3</m>, <m>4</m>, <m>\dots</m>, <m>20</m>. That is 18 different probabilities to compute! Luckily, there is a short-cut. You can always use the <xref ref="def_probability-rule_complement" text="custom">complement rule</xref> to ease in a computation such as this. The following example shows how this works.</p>
+		<example xml:id="examp_binomial_at-least-complement">
+			<title>Computing <q>At Least</q> Probabilities With the Compliment Rule</title>
+			<statement>
+				<p>A biologist claims that at least 30% of fish in a certain large lake have been contaminated. To test his theory, he randomly samples 10 fish and determines the number that are contaminated. If only 20% of fish are actually contaminated, what is the probability that the biologist will mistakenly confirm his claim?</p>
+			</statement>
+			<solution>
+				<p>First note that this is a binomial process with <m>n=10</m> fish. The true proportion of contaminated fish is <m>p = 0.20</m>, so <m>q = 0.80</m>. We wish to know the probability that the biologist finds at least 30% of his 10 fish contaminated. That means, we want the probability that <m>X</m> is at least 3.</p>
+				<p>We could compute this directly by finding <m>P(X=3)</m>, <m>P(X=4)</m>, <m>P(X=5)</m>, <m>P(X=6)</m>, <m>P(X=7)</m>, <m>P(X=8)</m>, <m>P(X=9)</m>, and <m>P(X=10)</m>. However, this is a lot of work! The complement of <q>at least 3</q> is <q>less than 3</q>. That would mean <m>X</m> could be 0, 1, or 2. This includes only three probabilities to compute, which is a lot less work.  So we will use the complement rule as follows.
+				<md>
+					<mrow>P(X\geq 3) \amp = 1 - P(X \lt 3)</mrow>
+					<mrow>\amp = 1 - ( P(X=0) + P(X=1) + P(X=2) )</mrow>
+					<mrow>\amp = 1 - ( C(10,0)(0.2)^0(0.8)^{10}+ C(10,1)(0.2)^1(0.8)^9+ C(10,2) (0.2)^2(0.8)^8)</mrow>
+					<mrow>\amp\approx 1 - ( 1(1)(0.1074) + 10(0.2)(0.1342) + 45(0.04)(0.1678) )</mrow>
+					<mrow>\amp\approx 1 - ( 0.1074 + 0.2684 + 0.3020 )</mrow>
+					<mrow>\amp= 1 - 0.6778</mrow>
+					<mrow>\amp= 0.3222</mrow>
+				</md>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_binomial_at-least-most-1">
+			<caption>Binomial Probability Ranges I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-09.mp4"/>
+		</figure>
+		<figure xml:id="video_binomial_at-least-most-2">
+			<caption>Binomial Probability Ranges II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_binomial_at-least-most-1">
+			<statement>
+				<p>A coin is weighted so that the probability of a heads is <m>\frac{5}{7}</m>. You flip the coin 10 times.</p>
+				<p>Question: what is the probability that you get at least one tails? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p>0.9654</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_at-least-most-2">
+			<statement>
+				<p>A binomial random variable <m>X</m> counts the number of successes in <m>n=7</m> trials in which the probability of a success is <m>p=0.63</m>.</p>
+				<p>Question: what is <m>P(X > 5)</m>? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p>0.2013</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_at-least-most-3">
+			<statement>
+				<p>A fair die is rolled 8 times and the number of times that it shows a number greater than 4 is counted.</p>
+				<p>Question: find the probability that it shows a number greater than 4 at most once.</p>
+			</statement>
+			<answer><p>0.1951</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_binomial_mean-stdev">
+		<title>Mean and Standard Deviation</title>
+		<p>Our last task in this lesson is to determine the mean and standard deviation of a binomial random variable. We could certainly use the general technique of finding these by constructing a probability distribution. This method is shown in the following example.</p>
+		<example xml:id="examp_binomial_direct-mean">
+			<title>Computing the Mean for a Binomial Distribution</title>
+			<statement>
+				<p>A basketball player is a 70% free-throw shooter, meaning that the probability he will make a given shot is 0.70. Suppose that this player takes 10 free-throws in a certain game. If we assume that these free-throws are independent Bernoulli processes, how many of the 10 shots should the basketball player expect to make?</p>
+			</statement>
+			<solution>
+				<p>The number of shots made, we will call it <m>X</m>, is a binomial random variable with <m>n = 10</m>, and <m>p = 0.70</m>. To find the expected value of <m>X</m><mdash/>the expected number of shots the player will make, we use the probability distribution method shown below.</p>
+				<table xml:id="table_examp_binomial_direct-mean">
+					<title>Computing the Mean</title>
+					<tabular>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell><m>x</m></cell>
+							<cell><m>P(X=x)</m></cell>
+							<cell><m>x\times P(X=x)</m></cell>						
+						</row>
+						<row>
+							<cell><m>0</m></cell>
+							<cell><m>C(10,0)(0.7)^0(0.3)^{10} \approx 0.0000</m></cell>
+							<cell><m>0.0000</m></cell>
+						</row>
+						<row>
+							<cell><m>1</m></cell>
+							<cell><m>C(10,1)(0.7)^1(0.3)^9 \approx 0.0001</m></cell>
+							<cell><m>0.0001</m></cell>
+						</row>
+						<row>
+							<cell><m>2</m></cell>
+							<cell><m>C(10,2)(0.7)^2(0.3)^8 \approx 0.0014</m></cell>
+							<cell><m>0.0029</m></cell>
+						</row>
+						<row>
+							<cell><m>3</m></cell>
+							<cell><m>C(10,3)(0.7)^3(0.3)^7 \approx 0.0090</m></cell>
+							<cell><m>0.0270</m></cell>
+						</row>
+						<row>
+							<cell><m>4</m></cell>
+							<cell><m>C(10,4)(0.7)^4(0.3)^6 \approx 0.0368</m></cell>
+							<cell><m>0.1470</m></cell>
+						</row>
+						<row>
+							<cell><m>5</m></cell>
+							<cell><m>C(10,5)(0.7)^5(0.3)^5 \approx 0.1029</m></cell>
+							<cell><m>0.5146</m></cell>
+						</row>
+						<row>
+							<cell><m>6</m></cell>
+							<cell><m>C(10,6)(0.7)^6(0.3)^4 \approx 0.2001</m></cell>
+							<cell><m>1.2007</m></cell>
+						</row>
+						<row>
+							<cell><m>7</m></cell>
+							<cell><m>C(10,7)(0.7)^7(0.3)^3 \approx 0.2668</m></cell>
+							<cell><m>1.8678</m></cell>
+						</row>
+						<row>
+							<cell><m>8</m></cell>
+							<cell><m>C(10,8)(0.7)^8(0.3)^2 \approx 0.2335</m></cell>
+							<cell><m>1.8678</m></cell>
+						</row>
+						<row>
+							<cell><m>9</m></cell>
+							<cell><m>C(10,9)(0.7)^9(0.3)^1 \approx 0.1211</m></cell>
+							<cell><m>1.0895</m></cell>
+						</row>
+						<row>
+							<cell><m>10</m></cell>
+							<cell><m>C(10,10)(0.7)^{10}(0.3)^0 \approx 0.0282</m></cell>
+							<cell><m>0.2825</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Summing the final column, we get <m>E(X) = 7</m>. So the mean of this binomial random variable is 7 and we expect the player to make 7 out of 10 shots.</p>
+			</solution>
+		</example>
+		<p>But wait a minute. Couldn&apos;t you have guessed that using intuition? A 70% free-throw shooter should make 70% of the 10 shots, which is 7 shots. It turns out that there are extremely simple formulas for finding both the mean and the standard deviation of a normal distribution. They are stated below.</p>
+		<theorem xml:id="tmp_binomial-mean-stdev">
+			<title>Mean and Standard Deviation of a Binomial Random Variable</title>
+			<idx><h>binomial distribution</h><h>mean and standard deviation</h></idx>
+			<statement>
+				<p>If <m>X</m> is a binomial random variable for a binomial process involving <m>n</m> trials in which the probability of a success in each trial is <m>p</m>, then the mean and standard deviation of <m>X</m> are:
+				  <me>\text{Mean: } \mu = n \times p \qquad \text{Standard Deviation: } \sigma = \sqrt{n\times p\times q}</me></p>
+			</statement>
+		</theorem>
+		<p>We now apply these formulas to another example, similar to the one above.</p>
+		<example xml:id="examp_binomial_comput-mean-stdev">
+			<title>Finding the Mean and Standard Deviation of a Binomial Random Variable</title>
+			<statement>
+				<p>The same basketball player from <xref ref="examp_binomial_direct-mean"/> takes 350 free-throws during the course of the season.
+				  <ol label="a">
+				  	<li><p>How many of those free-throws do you expect him to make?</p></li>
+				  	<li><p>Would it be unusual for him to make 300 or more shots?</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>To determine the number of shots we expect, we compute the mean of the random variable.
+					  <me>\mu = n\times p = (350)(0.70) = 245</me>.</p></li>
+					<li><p>Recall that in <xref ref="sec_relative-standing_z-score"/> we used <xref ref="def_z-score" text="custom">z-scores</xref> to decide if a particular value of a variable was unusual. If that value had a z-score bigger than 3 or less than -3, then it is more than 3 standard deviations away from the mean and should be considered unusual. The formula for a z-score, using the formula above for standard deviation, is:
+					  <me>z = \frac{x - \mu}{\sigma} = \frac{300 - 245}{\sqrt{350(0.7)(0.3)}} \approx \frac{55}{8.5732} \approx 6.42</me>.
+					So yes, making 300 or more shots would definitely be unusual. If this happens, we might suspect that he has raised his free-throw percentage above the 70% we were given.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_binomial_mean-stdev-1">
+			<caption>Mean and Standard Deviation I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-11.mp4"/>
+		</figure>
+		<figure xml:id="video_binomial_mean-stdev-2">
+			<caption>Mean and Standard Deviation II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-12.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_binomial_mean-stdev-1">
+			<statement>
+				<p>Forty-eight percent of registered voters in a certain county support a new property tax. You decide to randomly select 250 registered voters and ask them if they support a new property tax.</p>
+				<p>Question: how many would you expect to say that yes, they support the tax?</p>
+			</statement>
+			<answer><p>120</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_mean-stdev-2">
+			<statement>
+				<p>A coin is weighted so that the probability of a heads is <m>\frac{1}{4}</m>. You repeatedly flip the coin 200 times and let <m>X</m> be the number of heads observed. Assume that <m>X</m> has a mound-shaped distribution.</p>
+				<p>Question: sixty-eight percent of the time the number of heads will be in a range from some minimum to some maximum number. What is the minimum number in this range? Round your answer to one decimal place.</p>
+			</statement>
+			<answer><p>43.9</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_binomial_mean-stdev-3">
+			<statement>
+				<p>An 80 question multiple choice test has five possible answers on each question, only one of which is correct. You decide to take the test by randomly selecting an answer on each question. A random variable <m>Y</m> is defined to be your final score on the test<mdash/>that is, the number you answered correctly.</p>
+				<p>Question: what is the standard deviation of <m>Y</m>? Round your answer to one decimal place.</p>
+			</statement>
+			<answer><p>3.56</p></answer>
+		</exercise>
+	</subsection>
+	
+</section>
