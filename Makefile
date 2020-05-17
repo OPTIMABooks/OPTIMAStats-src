@@ -93,7 +93,7 @@ htmlIndex:
 	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/index.ptx 2> $(OUTPUT)/xsltreport.txt;
 
 htmlSingle:
-	sed 's/%%sec%%/$(sec)/' $(PRJ)/helper/single_section.tpl > $(SRC)/single_section.ptx
+	sed 's/%%sec%%/sec_$(sec)/' $(PRJ)/helper/single_section.tpl > $(SRC)/single_section.ptx
 	cd $(HTMLOUT); \
 	xsltproc -xinclude $(PTXXSL)/mathbook-html.xsl $(SRC)/single_section.ptx 2> $(OUTPUT)/xsltreport.txt;	
 	-rm $(SRC)/single_section.ptx
