@@ -6,6 +6,9 @@
     <latex-image-preamble>
       \usepackage{pgfplots}
       \usepackage{filecontents}
+      \pgfmathdeclarefunction{gauss}{3}{%
+        \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+      }
     </latex-image-preamble>
   </docinfo>
 
