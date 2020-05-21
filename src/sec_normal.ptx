@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_normal">
+  <title>The Normal Distribution</title>
+
+  <introduction xml:id="sec_normal_intro">
+  	<title>Continuous Distributions</title>
+  	<p>The random variables and probability distributions we have looked at thus far have all been <xref ref="def_discrete" text="custom">discrete</xref>. In this section, we introduce <xref ref="def_continuous" text="custom">continuous</xref> random variables. Recall that a continuous variable can take on any possible value in a range of values. That is, there are infinitely many values that the variable could have, and there are no gaps between those values.</p>
+  	<p>The way that probability works with continuous random variables can be strange. The probability of any particular value of the variable is always going to be 0. To get non-zero probabilities, we must look at a range of possible values for the variable. To better understand this concept, suppose that a random variable <m>X</m> is defined to be the height, in feet, of a randomly selected person in the city of Seattle. What is <m>P(X=6)</m>? In other words, what is the chance that a randomly selected person will be exactly 6 feet tall?</p>
+  	<p>If you are being picky, you will have to say the probability is zero. This is because nobody is exactly 6 feet tall. You can&apos;t be exactly six feet tall down to the atom. Instead, you can say that you are within less than <m>\frac{1}{32}</m>nd of an inch of 6 feet tall, or in some similar tiny range around the exact 6 foot height.</p>
+  	<p>We will start our exploration of continuous random variables and probability distributions by looking at the <term>continuous uniform distribution</term>, or just the uniform distribution. Most of our time in this section will, however, be spent introducing the <term>normal distribution</term>. The normal distribution is probably the most important distribution you will see in this text, and is certainly one of the most common in every day life.</p>
+  </introduction>
+
+  <objectives xml:id="sec_normal_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>normal distribution</p></li>
+					<li><p>probability density curve</p></li>
+					<li><p>standard normal distribution</p></li>
+					<li><p>uniform distribution</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Understand the area principle for continuous probability curves</p></li>
+					<li><p>Identify and find probabilities in a uniform distribution</p></li>
+					<li><p>Graph normal distribution curves and regions under those curves</p></li>
+					<li><p>Use z-scores to convert to the standard normal distribution</p></li>
+					<li><p>Use the normal distribution table to look up probabilities for a given range of z-scores</p></li>
+					<li><p>Use the normal distribution table in reverse to look up z-scores for a given probability</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_normal_uniform">
+		<title>Uniform Distribution</title>
+		<p>When dealing with discrete distributions and histograms, we were reminded of the special role that the area principle plays in probability graphs. That is, the area of a given bar in those graphs was exactly equal to the probability of the outcome associated with that bar. This principal holds true with continuous probability distributions as well. In the case of a continuous variable, however, we no longer have a histogram, but instead a smooth (and continuous for those of you who have seen Calculus) curve called a <term>density curve</term>.</p>
+		<definition xml:id="def_density-curve">
+		  <idx>probability density curve</idx>
+		  <idx><h>probability</h><h>density curve</h></idx>
+		  <statement>
+		  	<p>The <term>probability density</term> curve for a random variable <m>X</m> is a graph in which the possible values of <m>X</m> are listed as a continuous range on the horizontal axis, and the area in a range of <m>X</m> values and below the curve corresponds to the probability that <m>X</m> takes on one of those values.</p>
+		  </statement>
+		</definition>
+		<p>There are certain things that all probability density curves have in common.</p>
+		<principle xml:id="def_density-curve-properties">
+		  <title>Properties of Probability Density Curves</title>
+		  <statement>
+		  	<p>Any probability density curve for a continuous random variable <m>X</m> will have the following properties.
+		  	  <ul>
+		  	  	<li><p>The density curve is represented by a smooth curve</p></li>
+		  	  	<li><p>The total area under the curve is 1</p></li>
+		  	  	<li><p><m>P(a \lt X \lt b)</m> is the area between the vertical lines <m>X=a</m> and <m>X=b</m> and below the curve.</p></li>
+		  	  	<li><p><m>P(X=a) = 0</m> for any single value <m>a</m>.</p></li>
+		  	  </ul>
+		  	</p>
+		  </statement>
+		</principle>
+	  <p>To better understand this connection between area and probability, we will briefly examine one of the simplest probability distributions for a continuous random variable.</p>
+	  <definition xml:id="def_continuous-uniform">
+	  	<idx>uniform distribution (continuous)</idx>
+	  	<idx><h>probability</h><h>distributions</h><h>continuous uniform</h></idx>
+	  	<statement>
+	  		<p>A continuous random variable <m>X</m> has a <term>uniform distribution</term>, and is called a <term>uniform random variable</term>, if the probability of <m>X</m> is spread evenly within the range of possible values of <m>X</m>.</p>
+	  	</statement>
+	  </definition>
+	  <p>Graphs are an excellent tool for helping us understand continuous probability distributions. In the example below, and in those that follow, we will always start with a graph of the distribution and mark the regions containing the outcomes in which we are interested.</p>
+	  <example xml:id="examp_normal_uniform">
+	  	<title>Finding Probabilities in a Uniform Distribution</title>
+	  	<statement>
+	  		<p>A random variable <m>X</m> has a uniform distribution with possible values between 5 and 10. Sketch a graph of the probability density curve, and use this graph to find the probability that:
+	  		  <ol label="a">
+	  		  	<li><p>X is between 7 and 8</p></li>
+	  		  	<li><p>X is greater than 8.5</p></li>
+	  		  </ol>
+	  		</p>
+	  	</statement>
+	  	<solution>
+	  		<p>We start by drawing a graph of the density curve for <m>X</m>. Because the distribution is uniform, this means the curve will be a horizontal line above the range of possible values of <m>X</m>, which is from 5 to 10. Since the area under the curve must equal the probability and the probability that <m>X</m> is between 5 and 10 is 1 (this is the sample space because all possible values of <m>X</m> are between 5 and 10), we must make the height <m>h</m> the number for which <m>h \times (10-5) = 1</m>. That means, <m>h \times 5 = 1</m>, so <m>h = \frac{1}{5}</m>. This yields the first graph.</p>
+	  		<figure xml:id="fig_examp_normal_uniform-1">
+	  			<caption>Uniform density curve for <m>X</m></caption>
+	  			<image width="60%" xml:id="image_examp_normal_uniform-1">
+	  				<latex-image>
+	  					\begin{tikzpicture}
+	  					  \draw[line width=0.5mm,gray!20] 
+	  					    (5,0) -- (5,3.5)
+	  					    (10,0) -- (10,3.5);
+	  					  \draw[line width=0.5mm,->] (0,4) -- (0,0) -- (10.5,0);
+	  					  \draw[line width=0.5mm] (0.1,3.5) -- (-0.1,3.5) node [left] {$\scriptstyle \frac{1}{5}$};
+	  					  \foreach \i in {1,...,10} {
+	  					    \draw[line width=0.5mm] (\i,-0.1) -- (\i,0.1) node [below, pos=-0.1mm] {$\scriptstyle \i$};
+	  					  }
+	  					  \draw[line width=0.5mm] (4.975,3.5) -- (10.025,3.5);
+	  					\end{tikzpicture}
+	  				</latex-image>
+	  			</image>
+	  		</figure>
+	  		<p>Now let&apos;s look at how this graph can help us to find the probability that <m>X</m> has a value in the ranges listed above. For each of the ranges of values of <m>X</m> given, we shade in the area under the graph and then find that area using <m>\text{width } \times \text{ height}</m> (since this is a rectangular region).
+	  		  <ol label="a">
+	  		  	<li><sidebyside widths="45% 45%" margins="auto">
+	  		  		<p>The probability of <m>X</m> between 7 and 8 is found by taking the width of the range <m>(8 - 7) = 1</m> and multiplying by the height, which is <m>\frac{1}{5}</m>. This gives a probability of
+		  		  		<me>P(7 \leq X \leq 8) = 1 \times \frac{1}{5} = \frac{1}{5}</me>.</p>
+	  		  		<figure xml:id="fig_examp_norm_uniform-2">
+	  		  			<caption><m>P(7 \leq X \leq 8)</m></caption>
+	  		  			<image width="90%" xml:id="image_examp_normal_uniform-2">
+	  		  				<latex-image>
+	  		  				  \begin{tikzpicture}
+				  					  \draw[line width=0.5mm,gray!20] 
+				  					    (5,0) -- (5,3.5)
+				  					    (10,0) -- (10,3.5);				  					  
+	  		  				    \draw[fill=purple!50,line width=0.5mm,purple!50] (7,0) rectangle (8,3.5);
+				  					  \draw[line width=0.5mm,->] (0,4) -- (0,0) -- (10.5,0);
+				  					  \draw[line width=0.5mm] (0.1,3.5) -- (-0.1,3.5) node [left] {$\scriptstyle \frac{1}{5}$};
+				  					  \foreach \i in {1,...,10} {
+				  					    \draw[line width=0.5mm] (\i,-0.1) -- (\i,0.1) node [below, pos=-0.1mm] {$\scriptstyle \i$};
+				  					  }
+				  					  \draw[line width=0.5mm] (4.975,3.5) -- (10.025,3.5);
+				  					\end{tikzpicture}
+	  		  				</latex-image>
+	  		  			</image>
+	  		  		</figure>
+	  		  	</sidebyside></li>
+	  		  	<li><sidebyside widths="45% 45%" margins="auto">
+	  		  		<p>The probability that <m>X</m> is more than 8.5 is the area in the shaded region shown. That has a width of <m>(10 - 8.5) = 1.5 = \frac{3}{2}</m> and a height of <m>\frac{1}{5}</m>. Therefore, 
+	  		  		  <me>P(X \geq 8.5) = \frac{3}{2} \times \frac{1}{5} = \frac{3}{10}</me>.</p>
+	  		  		<figure xml:id="fig_examp_norm_uniform-3">
+	  		  			<caption><m>P(X \geq 8.5)</m></caption>
+	  		  			<image width="90%" xml:id="image_examp_normal_uniform-3">
+	  		  				<latex-image>
+	  		  					\begin{tikzpicture}
+				  					  \draw[line width=0.5mm,gray!20] 
+				  					    (5,0) -- (5,3.5)
+				  					    (10,0) -- (10,3.5);
+				  					  \draw[fill=purple!50,line width=0.5mm,purple!50] (8.5,0) rectangle (10,3.5);	  		  					
+				  					  \draw[line width=0.5mm,->] (0,4) -- (0,0) -- (10.5,0);
+				  					  \draw[line width=0.5mm] (0.1,3.5) -- (-0.1,3.5) node [left] {$\scriptstyle \frac{1}{5}$};
+
+				  					  \foreach \i in {1,...,10} {
+				  					    \draw[line width=0.5mm] (\i,-0.1) -- (\i,0.1) node [below, pos=-0.1mm] {$\scriptstyle \i$};
+				  					  }
+				  					  \draw[line width=0.5mm] (4.975,3.5) -- (10.025,3.5);
+				  					\end{tikzpicture}
+	  		  				</latex-image>
+	  		  			</image>
+	  		  		</figure>
+	  		  	</sidebyside></li>
+	  	  	</ol>
+	  	  </p>
+	  	</solution>
+	  </example>
+	  <p>Note that in the above example, it did not matter if we were looking for <m>P(X > 8.5)</m> or <m>P(X \geq 8.5)</m> because the only difference is whether the single point, <m>X=8.5</m>, is included. Remember than in a continuous random variable, the probability that <m>X=8.5</m> is zero.  So,
+	    <me>P(X\geq 8.5) = P(X=8.5) + P(X>8.5) = 0 + P(X>8.5) = P(X>8.5)</me>.</p>
+
+	  <figure xml:id="video_normal_uniform-1">
+	    <caption>Uniform Distributions I</caption>
+	    <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-01.mp4"/>
+	  </figure>
+	  <figure xml:id="video_normal_uniform-2">
+	    <caption>Uniform Distributions II</caption>
+	    <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-02.mp4"/>
+	  </figure>
+
+	  <exercise xml:id="ckpt_normal_uniform-1">
+	  	<statement>
+	  		<p>A random variable <m>X</m> has a uniform distribution with values ranging from 2 to 5.</p>
+	  		<p>Question: what is <m>P(X \gt 2.5)</m>? Round your answer to four decimal places.</p>
+	  	</statement>
+	  	<answer><p>0.8333</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_normal_uniform-2">
+	  	<statement>
+	  		<p>A random variable <m>X</m> has a uniform distribution with values ranging from 2 to 5.</p>
+	  		<p>Question: what is <m>P(2.5 \lt X \leq 4)</m>? Round your answer to four decimal places.</p>
+	  	</statement>
+	  	<answer><p>0.5000</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_normal_uniform-3">
+	  	<statement>
+	  		<p>A random variable <m>X</m> has a uniform distribution where the height of the probability density curve is <m>\frac{1}{5}</m> and the smallest possible value of <m>X</m> is 4.</p>
+	  		<p>Question: if the values of <m>X</m> are all in one contiguous range, what is the maximum possible value of <m>X</m>?</p>
+	  	</statement>
+	  	<answer><p>9</p></answer>
+	  </exercise>
+	</subsection>
+
+	<subsection xml:id="sec_normal_normal">
+		<title>From Mound-Shaped to Normal</title>
+		<p>Several times in this book we have referred to a <q>mound-shaped</q> distribution, going so far as to give this <xref ref="def_histogram-mound-shaped" text="custom">a definintion</xref> in chapter 1. We now give the continuous distribution with this shape its more formal name.</p>
+		<definition xml:id="def_normal-dist">
+			<idx>normal distribution</idx>
+			<idx><h>probability</h><h>distributions</h><h>normal</h></idx>
+			<statement>
+				<p>A random variable <m>X</m> has a <term>normal distribution</term> if the probability density curve of <m>X</m> is mound-shaped with a single peak at the mean.</p>
+			</statement>
+		</definition>
+		<p>Notice that we said that the random variable has <em>a</em> normal distribution, not <em>the</em> normal distribution. This is because there is an entire family of normal distributions.</p>
+		<sidebyside widths="50% 45%" margins="auto">
+			<p>The shape of a normal distribution is controlled by two things: the mean of <m>X</m> (which gives the center) and the standard deviation (which gives how spread out the graph is). The picture to the right shows several different normal distributions with their associated mean and standard deviation. To help you visualize how these two parameters affect the normal density curve, play with the following interactive normal distribution, changing the values of <m>\mu</m> and <m>\sigma</m> to affect its shape.</p>
+			<figure xml:id="fig_normal_normal-distributions">
+				<caption>Normal Distributions</caption>
+				<image width="100%" xml:id="image_normal_normal-distributions">
+					<latex-image>
+						\begin{tikzpicture}
+					    \begin{axis}[
+					      no markers,
+					      axis lines=middle,
+		            domain=-6:6,
+		            samples=500,
+		            ymin=0,
+			    	    ymax=2,
+		            axis lines*=left,
+		            xlabel=\empty,
+		            ticklabel style={font=\small},
+		            xtick={-4,-2,0,2,4},
+		            ytick=\empty,
+		            enlargelimits=false,
+		            clip=false,
+		            axis on top,
+		            grid = none,
+		            hide y axis
+		  		      ]
+				        \addplot[very thick,purple!60!white] {gauss(x,-2,0.5)};
+				        \addplot[very thick,green!50!black] {gauss(x,0,1)};
+				        \addplot[very thick,red!80!white] {gauss(x,0,0.4)};
+				        \addplot[very thick,blue!50!black] {gauss(x,0,2)};
+					    \end{axis}
+					    \node[right,purple!60!white] at (5,3) {$\scriptstyle \mu = -2, \sigma = 0.5$};
+					    \node[right,green!50!black] at (5,2.75) {$\scriptstyle \mu = 0, \sigma = 1$};
+					    \node[right,red!80!white] at (5,2.5) {$\scriptstyle \mu = 0, \sigma = 0.4$};
+					    \node[right,blue!50!black] at (5,2.25) {$\scriptstyle \mu = 0, \sigma = 2$};
+						\end{tikzpicture}
+					</latex-image>
+				</image>
+			</figure>
+		</sidebyside>
+		<p>So what are the properties common to every normal distribution? These are summarized below.</p>
+		<theorem xml:id="thm_normal-dist-properties">
+			<title>Properties of Normal Distributions</title>
+			<statement>
+				<p>If <m>X</m> is a random variable with a normal distribution, then the probability density curve for <m>X</m> has the following properties.
+				  <ul>
+				  	<li><p>The total area under the curve is 1</p></li>
+				  	<li><p>The curve is mound-shaped, meaning that it has a single peak at the mean and is symmetric about the mean</p></li>
+				  	<li><p><m>P(X \lt \mu) = P(X \gt \mu) = 0.5</m></p></li>
+				  </ul>
+				</p>
+			</statement>
+		</theorem>
+		<p>Let&apos;s take a look at an example which compares two different normal distributions drawn from two similar populations, or random variables.</p>
+		<example xml:id="examp_two-normal-distributions">
+			<title>Comparing Populations from Different Normal Distributions</title>
+			<statement>
+				<p>The blue curve below represents the distribution of womens&apos; heights, which we will call <m>X</m>. The red curve represents the distribution of mens&apos; heights, which we will call <m>Y</m>. What, if anything, can you tell from these distributions?</p>
+				<figure xml:id="fig_two-normal-distributions">
+					<caption>Two Normal Distributions</caption>
+					<image width="80%" xml:id="image_two-normal-distributions">
+						<latex-image>
+							\begin{tikzpicture}
+							    \begin{axis}[
+							            no markers,
+							            domain=54:79,
+							            samples=500,
+							            ymin=0,
+							            ymax=0.3,
+							            axis lines=middle,
+							            axis line style={-},
+							            x label style={at={(axis description cs: 0.5,-0.1)},anchor=north},
+							            xlabel={\scriptsize Height (inches)},
+							            ticklabel style={font=\scriptsize},
+							            xtick={63.6,69.0},
+							            ytick=\empty,
+							            enlargelimits=false,
+							            clip=false,
+							            axis on top,
+							            grid = none,
+							            hide y axis
+							        ]
+							        \draw[gray,dashed] (axis cs: 69,0) -- (axis cs: 69,{gauss(69,69,2.8)});
+							        \draw[gray,dashed] (axis cs: 63.6,0) -- (axis cs: 63.6,{gauss(63.6,63.6,2.5)});
+							        \addplot[very thick,red!80!white] {gauss(x,69,2.8)};
+							        \addplot[very thick,blue!50!black] {gauss(x,63.6,2.5)};
+							    \end{axis}
+							    \node[red!80!white,align=left, execute at begin node=\setlength{\baselineskip}{1em}] at (5.5,2.5) {
+							        \scriptsize Men:\\ 
+							        \hspace{1em}$\scriptstyle \mu_Y = 69.0$\\ 
+							        \hspace{1em}$\scriptstyle \sigma_Y = 2.8$
+							    };
+							    \node[blue!50!black,align=left, execute at begin node=\setlength{\baselineskip}{1em}] at (0.75,2.25) {
+							        \scriptsize Women:\\ 
+							        \hspace{1em}$\scriptstyle \mu_X = 63.6$\\ 
+							        \hspace{1em}$\scriptstyle \sigma_X = 2.5$
+							    };
+							\end{tikzpicture}							
+						</latex-image>
+					</image>
+				</figure>
+			</statement>
+			<solution>
+				<p>Based on the distributions above, there are two observations that can be made: 
+					<ul>
+						<li><p>It is clear that the average woman is shorter than the average man. Note that  he peak for women is at <m>\mu_X = 63.6</m> inches while for men it is at <m>\mu_Y = 69.0</m> inches. Graphically, this is represented by the fact that the peak of the blue curve is to the left of the peak of the red curve.</p></li>
+						<li><p>The variability in womens&apos; heights is less than that in mens&apos; heights. This can be seen either by observing that for women <m>\sigma_X = 2.5</m> is less than <m>\sigma_Y = 2.8</m> for men. Graphically, notice that the blue graph is taller and does not spread as wide as the red graph.</p></li>
+					</ul>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_normal_normal-1">
+			<caption>Normal Distributions I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-03.mp4"/>
+		</figure>
+		<figure xml:id="video_normal_normal-2">
+			<caption>Normal Distributions II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_normal_normal-1">
+			<statement>
+				<p>A random variable <m>Y</m> has a normal distribution with <m>E(Y) = 4</m> and standard deviation <m>2.5</m>. Another random variable <m>W</m> has <m>E(W) = 6</m> and standard deviation <m>1.5</m>.</p>
+				<p>Question: Determine if each of the following statements is True or False.
+				  <ol label="a">
+				  	<li><p>The <q>peak</q> of the probability density curve for <m>Y</m> is at 4.</p></li>
+				  	<li><p>The <q>peak</q> of the probability density curve for <m>Y</m> is at 2.5.</p></li>
+				  	<li><p>The probability density curve for <m>W</m> is more spread out than the one for <m>Y</m>.</p></li>
+				  	<li><p>The probability density curve for <m>Y</m> is shorter than the one for <m>W</m>.</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(a) and (d) are true</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_normal-2">
+			<statement>
+				<p>Below are several properties of a probability density curve.
+					<ol label="a">
+						<li><p>The curve is flat, like a rectangle</p></li>
+						<li><p>The curve has a single peak at the mean</p></li>
+						<li><p>The curve has stair-steps and is not smooth</p></li>
+						<li><p>The curve is symmetric</p></li>
+						<li><p><m>P(X \gt \mu) = 0.50</m></p></li>
+						<li><p><m>P(X \lt \mu) = 1</m></p></li>
+					</ol>
+				</p>
+				<p>Question: which of these are properties of the normal probability distribution's curve?</p>
+			</statement>
+			<answer><p>(b), (d), and (e) are properties of a normal density curve.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_normal-3">
+			<statement>
+			<p>Consider the graph of a normal distribution below and several statements about that distribution.</p>
+				<figure xml:id="fig_ckpt_normal_normal-3">
+					<caption>A Normal Distribution</caption>
+					<image width="80%" xml:id="image_ckpt_normal_normal-3">
+						<latex-image>
+							\begin{tikzpicture}
+						    \begin{axis}[
+				            no markers,
+				            domain=300:500,
+				            samples=500,
+				            ymin=0,
+				            ymax=0.3,
+				            axis lines=middle,
+				            axis line style={-},
+				            xlabel=\empty,
+				            ticklabel style={font=\scriptsize},
+				            xtick={400},
+				            extra x ticks={310,340,370,430,460,490},
+				            extra x tick labels={},
+				            ytick=\empty,
+				            enlargelimits=false,
+				            clip=false,
+				            axis on top,
+				            grid = none,
+				            hide y axis,
+				            width=10cm,
+				            height=50cm
+			        		]
+					        \draw[gray,dashed] (axis cs: 400,0) -- (axis cs: 400,{gauss(400,400,30)});
+					        \addplot[very thick,red!80!white] {gauss(x,400,30)};
+						    \end{axis}
+							\end{tikzpicture}								
+						</latex-image>
+					</image>
+				</figure>
+				<p><ol label="a">
+					<li><p>The standard deviation is <m>\sigma = 400</m>.</p></li>
+					<li><p>The variance is <m>\sigma^2 = 400</m>.</p></li>
+					<li><p>the mean is <m>\mu = 400</m>.</p></li>
+					<li><p>The area under the curve and above 400 is one</p></li>
+				</ol></p>
+				<p>Question: which of the statements above must be true?</p>
+			</statement>
+			<answer><p>only (c)</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_normal_standard">
+		<title>Standard Normal Distribution</title>
+		<p>Now that we know what a normal distribution looks like, it should be easy to use the picture to find probabilities. After all, the probability that <m>X</m> is between two numbers <m>a</m> and <m>b</m>is simply the area in  that range. Consider the following example.</p>
+
+		<example xml:id="examp_normal_area-sketch">
+			<title>Sketching Probablity in a Normal Distribution</title>
+			<statement>
+				<p>Use a sketch of the normal distribution for a man&apos;s height as seen in <xref ref="examp_two-normal-distributions"/> to identify the area corresponding to the probability that a randomly selected man will be between 65 and 70 inches tall.</p>
+			</statement>
+			<solution>
+				<p>Using the normal distribution from the last example, we have shaded the appropriate area. This area is the probability we are looking for.
+				</p>
+				<figure xml:id="fig_examp_normal_area-sketch">
+					<caption>Probability Between <m>Y=65</m> and <m>Y=70</m></caption>
+					<image width="80%" xml:id="image_examp_normal_area-sketch">
+						<latex-image>
+							\begin{tikzpicture}
+						    \begin{axis}[
+				            no markers,
+				            domain=57.5:80,
+				            samples=500,
+				            ymin=0,
+				            ymax=0.3,
+				            axis lines=middle,
+				            axis line style={-},
+				            xlabel=\empty,
+				            ticklabel style={font=\scriptsize},
+				            xtick={65,70},
+				            ytick=\empty,
+				            enlargelimits=false,
+				            clip=false,
+				            axis on top,
+				            grid = none,
+				            hide y axis
+						      ]
+					        \draw[gray,dashed] (axis cs: 69,0) -- (axis cs: 69,{gauss(69,69,2.8)});
+					        \addplot[name path=A,very thick,red!80!white] {gauss(x,69,2.8)};
+					        \path[name path=B] (axis cs:65,0) -- (axis cs:70,0);
+					        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=65:70}];
+						    \end{axis}
+							\end{tikzpicture}					
+						</latex-image>
+					</image>
+				</figure>
+			</solution>
+		</example>
+		<p>The problem with the above strategy is that the blue region, whose area is the probability we need to find, is not a simple region. That is, it is not a rectangle like was the case in the uniform distribution. It is not even a triangle, circle, or other object that we can easily find the area of. In fact, if we want to find the exact area of this region, we would need to make use of the following formula, in which <m>\mu</m> is the mean and <m>\sigma</m> is the standard deviation of the variable <m>X</m>.
+		  <me>f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}</me>
+		</p>
+		<p>This formula gives the height of the curve at a particular value of <m>x</m>.  To actually use this formula to find the area above, we would need to use calculus, which is beyond the scope of this course. We therefore take another approach. We instead use tables for a single normal distribution, and convert all other normal distributions to that one <term>standard normal distribution</term>.</p>
+		<definition xml:id="def_standard-normal-dist">
+			<idx>standard normal distribution</idx>
+			<idx><h>probability</h><h>distributions</h><h>standard normal</h></idx>
+			<statement>
+				<p>The <term>standard normal distribution</term> is the normal distribution with mean <m>\mu = 0</m> and standard deviation <m>\sigma = 1</m>. We use the random variable <m>Z</m> to represent values taken from the standard normal distribution.</p>
+			</statement>
+		</definition>
+		<p>We have actually already used the standard normal distribution to some extent. Values of a standard normal random variable <m>Z</m> are called <xref ref="def_z-score" text="custom">z-scores</xref>. These same z-scores were used in <xref ref="sec_relative-standing"/> to help measure relative standing<mdash/>that is, where a value lies relative to the mean and standard deviation of a data set. The standard normal distribution has the same properties as any other normal distribution, with these additional properties added to that list.</p>
+		<theorem xml:id="thm_standard-normal-properties">
+			<title>Properties of the Standard Normal Distribution</title>
+			<statement>
+				<p>The standard normal distribution has values <m>Z</m> such that:
+				  <ul>
+				  	<li><p><m>Z</m> is the number of standard deviations away from the mean</p></li>
+				  	<li><p>negative z-scores are to the left of the mean</p></li>
+				  	<li><p>positive z-scores are to the right of the mean</p></li>
+				  </ul>
+				</p>
+			</statement>
+		</theorem>
+		<p>The advantage to having a standard normal distribution is that the areas which were hard to compute in <xref ref="examp_normal_area-sketch"/> can be computed ahead of time for this single normal distribution and compiled into a table. We can then look up probabilities in that table for regions in the standard normal distribution table. This table is called the standard normal table, and will be useful in many of the problems which follow. The example below shows a reproduction of this table along with an explanation of how to use it.</p>
+		<example xml:id="examp_normal_table-positive">
+			<title>Using the Standard Normal Table with Positive z-Scores</title>
+			<statement>
+				<p>Below is a reproduction of the positive half of the standard normal distribution table.</p>
+				<figure xml:id="fig_examp_normal_table-positive">
+					<caption>Standard Normal Table</caption>
+					<image source="./images/normal_examp_table-positive.png" width="100%"/>
+				</figure>
+				<p>Use it to find the following probabilities.
+					<ol label="a" cols="2">
+						<li><p><m>P(Z \lt 1.10)</m></p></li>
+						<li><p><m>P(Z \gt 1.24)</m></p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>The tables give us the probability of the shaded area in the picture. The left-most column gives the first two digits of the z-score, and the column headers give the second decimal place.
+					<ol label="a">
+						<li><title><m>P(Z \lt 1.10)</m></title>
+						  <p>This is the probability that <m>Z</m> is less than 1.10. To find this we need to look up 1.10 in the table. We go to the 1.10 in the left-most column and then go over to the 0.00 column. The blue lines show these entries. The entry in the blue box is then the probability that <m>Z \lt 1.10</m>. So, our answer is <m>0.8643</m>.</p></li>
+						<li><title><m>P(Z \gt 1.24)</m></title>
+						  <p>This is the probability that <m>Z</m> is greater than 1.24. We must find this in two steps. First, we find <m>P(Z \lt 1.24)</m> using the table. The red lines show how this is done, by going to the 1.20 entry in the left-most column, and then over to the 0.04 entry in the column headings. The boxed entry, <m>0.8925</m>, is <m>P(Z \lt 1.24)</m>. But we want <m>P(Z \gt 1.24)</m>. This is the complement, so using the complement rule,
+						  <me>P(Z \gt 1.24) = 1 - P(Z \lt 1.24) = 1 - 0.8925 = 0.1075</me>.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>The standard normal distribution table contains two parts. The part used above is used for looking up probabilities associated with positive z-scores. In the next example we see how to use the negative part of this table.</p>
+		<example xml:id="examp_normal_table-negative">
+			<title>Using the Standard Normal Table with Negative z-Scores</title>
+			<statement>
+				<p>Below is a reproduction of the negative side of the standard normal distribution table.</p>
+				<figure xml:id="fig_examp_normal_table-negative">
+			    <caption>Standard Normal Table</caption>
+			    <image source="./images/normal_examp_table-negative.png" width="100%"/>
+			  </figure>
+			  <p>Use it to find the following probabilities.
+			  	<ol label="a" cols="2">
+			  		<li><p><m>P(Z \lt -1.82)</m></p></li>
+			  		<li><p><m>P(Z \gt -1.68)</m></p></li>
+			  	</ol>
+			  </p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><title><m>P(Z \lt -1.82)</m></title>
+					  <p>The probability that <m>Z</m> is less than -1.82 can be found by looking up -1.8 row, and then going over to the 0.02 column. The red lines in the table above show this computation. The boxed probability gives <m>P(Z \lt -1.82) = 0.0344</m>.</p></li>
+					<li><title><m>P(Z \gt -1.68)</m></title>
+					  <p>The blue lines in the table above show how the probability 0.0465 is found. Note, however, that this is the probability that <m>Z \lt -1.68</m>. To get the probability that <m>Z</m> is greater than -1.68, we again use the complement rule to get:
+					  <me>P(Z \gt -1.68) = 1 - P(Z \lt - 1.68) = 1 - 0.0465 = 0.9535</me>.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>Finally, there are times when we wish to find the probability that <m>Z</m> is between two values. In those cases, we look up the probabilities of being below the two endpoints of our range and then subtract to find the probability in the middle.  It is usually a good idea to sketch a picture to help us keep track of the various areas involved in a problem like the one shown below.</p>
+		<example xml:id="examp_normal_table-range">
+			<title>Using the Standard Normal Table to Find Probability in a Range</title>
+			<statement>
+				<p>Use the two tables above to find <m>P(-1.82 \lt Z \lt 1.24)</m>.  Sketch a picture of the area that corresponds to this probability.</p>
+			</statement>
+			<solution>
+				<p>We begin by sketching the standard normal distribution and the area corresponding to the probability we want.</p>
+				<figure xml:id="fig_examp_normal_table-range">
+					<caption>Finding Probablity in a Range</caption>
+					<image width="70%" xml:id="image_examp_normal_table-range">
+						<latex-image>
+							\begin{tikzpicture}
+						    \begin{axis}[
+				            no markers,
+				            domain=-3.5:3.5,
+				            samples=500,
+				            ymin=0,
+				            ymax=0.5,
+				            axis lines=middle,
+				            axis line style={-},
+				            xlabel=\empty,
+				            ticklabel style={font=\small},
+				            xtick={-1.82,0,1.24},
+				            ytick=\empty,
+				            enlargelimits=false,
+				            clip=false,
+				            axis on top,
+				            grid = none,
+				            hide y axis
+						       ]
+					        \draw[gray,dashed] (axis cs: 0,0) -- (axis cs: 0,{gauss(0,0,1)});
+					        \addplot[name path=A,very thick] {gauss(x,0,1)};
+					        \path[name path=B] (axis cs:-3.5,0) -- (axis cs:3.5,0);
+					        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=-1.82:1.24}];
+						    \end{axis}
+							\end{tikzpicture}							
+						</latex-image>
+					</image>
+				</figure>
+				<p>Now, according to the positive standard normal distribution table, <m>P(Z \lt 1.24) = 0.8925</m>. That means that the area under the curve from <m>z=1.24</m> all the way to the left is <m>0.8925</m>.  From the negative standard normal distribution table, <m>P(Z \lt -1.82) = 0.0344</m>. So the area from <m>z=-1.82</m> all the way to the left is <m>0.0344</m>.  Subtracting these leaves us with the area of the shaded region as shown below.
+					<me>P(-1.82 \lt Z \lt 1.24) = 0.8925 - 0.0344 = 0.8581</me>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_normal_standard-1">
+			<caption>Standard Normal Distribution I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-05.mp4"/>
+		</figure>
+		<figure xml:id="video_normal_standard-2">
+			<caption>Standard Normal Distribution II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_normal_standard-1">
+			<statement>
+				<p>Using the standard normal distribution table, answer the following question.</p>
+				<p>Question: what is <m>P(Z \gt 2.41)</m>?</p>
+			</statement>
+			<answer><p>0.0080</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_standard-2">
+			<statement>
+				<p>Use the standard normal distribution table to find the following probability.</p>
+				<p>Question: what is P(Z \lt -0.89)?</p>
+			</statement>
+			<answer><p>0.1867</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_standard-3">
+			<statement>
+				<p>Use the standard normal distribution table to answer the following question.</p>
+				<p>Question: what is <m>P(0.16 \lt Z \lt 2.55)</m>?</p>
+			</statement>
+			<answer><p>0.4310</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_normal_non-standard">
+		<title>Other Normal Distributions</title>
+		<p>As we saw earlier, there are many different normal distributions. Our goal now is to learn how all of those can be modeled using the standard normal distribution table. To do this, we make use of <xref ref="def_z-score" text="custom">z-scores</xref>. We incorporate this definition into the following principle for converting from any normal dikstribution to the standard normal distribution.</p>
+		<principle xml:id="thm_convert-to-standard-normal">
+			<title>Converting to the Standard Normal Distribution</title>
+			<statement>
+				<p>To convert a random variable <m>X</m> from a normal distribution with mean <m>\mu</m> and standard deviation <m>\sigma</m> to a random variable <m>Z</m> with the standard normal distribution, use:
+				  <me>z = \frac{x - \mu}{\sigma}</me>.
+				</p>
+			</statement>
+		</principle>
+		<p>By using z-scores, which measure how many standard deviations above or below the mean an <m>x</m>-value lies, we can convert any normal distribution to the standard normal distribution, and then use the standard normal distribution table to look up probabilities. Note that because our table uses two-digit z-scores, we should always round z-scores to two digits. On the other hand, probabilities in this table are four digits.  This can be helpful in differentiating between z-scores and probabilities.</p>
+		<example xml:id="examp_normal_to-standard-normal">
+			<title>Finding Probabilities by Converting to a Standard Normal Distribution</title>
+			<statement>
+				<p>A random variable <m>X</m> has a normal distribution with mean <m>\mu = 37.5</m> and standard deviation <m>\sigma = 4.32</m>. Use z-scores and the standard normal distribution table to find the following probabilities.
+				  <ol label="a" cols="3">
+				  	<li><p><m>P(X \lt 40.1)</m></p></li>
+				  	<li><p><m>P(X \gt 29.7)</m></p></li>
+				  	<li><p><m>P(12.5 \lt X \lt 43.2)</m></p></li>
+				  </ol></p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><title><m>P(X \lt 40.1)</m></title>
+					  <p>We use the z-score formula to convert our range involving <m>X</m> into one involving <m>Z</m> and then use the standard normal distribution table to look up that probability.
+					    <me>P(X \lt 40.1) = P\left(\frac{X-\mu}{\sigma} \lt \frac{40.1-37.5}{4.32}\right) = P(Z \lt 0.60) = 0.7257</me>.</p></li>
+					<li><title><m>P(X \gt 29.7)</m></title>
+					  <p>Since this range is in the right tail of the distribution, we make use of the complelemtn rule before we convert to a standard normal distribution.
+					  	<md>
+					  		<mrow>P(X \gt 29.7) \amp = 1 - P(X \lt 29.7)</mrow>
+					  		<mrow>\amp = 1 - P\left(\frac{X-\mu}{\sigma} \lt \frac{29.7 - 37.5}{4.32}\right)</mrow>
+					  		<mrow>\amp = 1 - P(Z \lt -1.81)</mrow>
+					  		<mrow>\amp = 1 - 0.0351</mrow>
+					  		<mrow>\amp = 0.9649</mrow>
+					  	</md>.</p></li>
+					<li><title><m>P(12.5 \lt X \lt 43.2)</m></title>
+					  <p>For this problem we need z-scores for both the bottom and top of the range of values.
+					    <md>
+					    	<mrow>P(12.5 \lt X \lt 43.2) \amp = P\left(\frac{12.5 - 37.5}{4.32} \lt \frac{X-\mu}{\sigma} \lt \frac{43.2 - 37.5}{4.32}\right)</mrow>
+					    	<mrow>\amp = P(-5.79 \lt Z \lt 1.32)</mrow>
+					    	<mrow>\amp = 0.9066 - 0.0001</mrow>
+					    	<mrow>\amp = 0.9065</mrow>
+					    </md>.
+					    We didn&apos;t find the z-score -5.79 in the table. But the note at the bottom says that for z-scores less than -3.49, we should use a probability of 0.0001.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>Note that in the table no z-scores above 3.49 or below -3.49 can be found. Earlier in the text, we said that z-scores above 3 or below -3 should be considered unusual, and the associated values are outliers. This is because the probability of being this far away from the mean is so small. So small, in fact, that it does not appear in the table.</p>
+		<example xml:id="examp_normal_story-problem">
+		  <title>Solving a Normal Distribution Application Problem</title>
+		  <statement>
+		  	<p>A certain computer manufacturer has determined that the time it takes their computers to have their first hardware failure follows a normal distribution with a mean of 31.3 months and a standard deviation of 8.5 months. The manufacturer is considering offering either a 2-year or 3-year warranty. What proportion of the computers would require service under each of these plans?</p>
+		  </statement>
+		  <solution>
+		  	<p>If the manufacturer offers the 2-year warranty, then only computers that go bad within the first 24 months will be eligible for service. Therefore, we want to know what the probability is that <m>X \lt 25</m> (within the first 24 months). This has a probability of
+		  	  <md>
+		  	  	<mrow>P(X \lt 25) \amp = P\left(\frac{X-\mu}{\sigma} \lt \frac{25 - 31.3}{8.5}\right)</mrow>
+		  	  	<mrow>\amp = P(Z \lt -0.74)</mrow>
+		  	  	<mrow>\amp = 0.2296</mrow>
+		  	  </md>.
+					So 22.96%, or approximately 23% of their computers will require service.</p>
+		  	<p>On the other hand, if they offer a 3-year warranty, then computers that go bad within the first 36 months will receive warranty service.  
+		  		The probability of this is
+		  		<md>
+		  			<mrow>P(X \lt 37) \amp = P\left(\frac{X-\mu}{\sigma} \lt \frac{37 - 31.3}{8.5}\right)</mrow>
+		  			<mrow>\amp = P(Z \lt 0.67)</mrow>
+		  			<mrow>\amp = 0.7486</mrow>
+		  		</md>.
+		  	 	In this case, 74.86%, or almost 75% of the computers will require warranty service.</p>
+		  	<p>The company should probably stick with the 2-year plan.</p>
+		  </solution>
+		</example>
+
+		<figure xml:id="video_normal_non-standard-1">
+			<caption>Normal Distribution Applications I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4"/>
+		</figure>
+		<figure xml:id="video_normal_non-standard-2">
+			<caption>Normal Distribution Applications II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_normal_non-standard-1">
+			<statement>
+				<p>A population of sand crabs has weights which follow a normal distribution with mean <m>\mu = 2.3</m> ounces and standard deviation <m>\sigma = 0.55</m> ounces.</p>
+				<p>Question: what percentage of crabs in this population weigh between 1 and 3 ounces? Use the probabilities from the standard normal distribution table to help find your answer and state your answer as a percent (i.e. 50.0 for 50%).</p>
+			</statement>
+			<answer><p>88.89%</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_non-standard-2">
+			<statement>
+				<p>A population of sand crabs has weights which follow a normal distribution with mean <m>\mu = 2.3</m> ounces and standard deviation <m>\sigma = 0.55</m> ounces.</p>
+				<p>Question: if you randomly select a crab from this population, what is the probability that it weighs more than 3.5 ounces? Use the probabilities from the standard normal distribution table to help find your answer.</p>
+			</statement>
+			<answer><p>0.0146</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_non-standard-3">
+			<statement>
+				<p>A population of sand crabs has weights which follow a normal distribution with mean <m>\mu = 2.3</m> ounces and standard deviation <m>\sigma = 0.55</m> ounces.</p>
+				<p>Question: what is the probability that a randomly selected crab from this population weighs less than a half an ounce? Use the standard normal distribution table to help you in finding this probability.</p>
+			</statement>
+			<answer><p>0.0005</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_normal_reverse">
+		<title>Reverse Look-up</title>
+		<p>So far we have used the standard normal distribution table to look up probabilities based on a given z-score. We can, however, also use this table in reverse. Consider the following example.</p>
+		<example xml:id="examp_normal-reverse">
+			<title>Using the Standard Normal Distribution Table in Reverse</title>
+			<statement>
+				<p>Use the standard normal distribution table to find the z-score that separates:
+					<ol label="a">
+						<li><p>The bottom 80% of data from the top 20% of data in a normal distribution.</p></li>
+						<li><p>The middle 68% of data from the rest of the data in a normal distribution.</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>Since we are using the table in reverse, we will look in the body of the table for the given probability, and find the z-scores in the row and column headings.
+					<ol label="a">
+						<li><p>The bottom 80% of data in a normal distribution would have probability 0.8000, as shown in the picture below.</p>
+							<figure xml:id="fig_examp_normal-reverse-a">
+								<caption>The Bottom 80%</caption>
+								<image width="60%" xml:id="image_examp_normal-reverse-a">
+									<latex-image>
+										\begin{tikzpicture}
+									    \begin{axis}[
+							            no markers,
+							            domain=-3.5:3.5,
+							            samples=500,
+							            ymin=0,
+							            ymax=0.5,
+							            axis lines=middle,
+							            axis line style={-},
+							            xlabel=\empty,
+							            ticklabel style={font=\small},
+							            xtick={0.84},
+							            xticklabel={$z$},
+							            ytick=\empty,
+							            enlargelimits=false,
+							            clip=false,
+							            axis on top,
+							            grid = none,
+							            hide y axis
+								        ]
+								        \draw[gray,dashed] (axis cs: 0,0) -- (axis cs: 0,{gauss(0,0,1)});
+								        \addplot[name path=A,very thick] {gauss(x,0,1)};
+								        \path[name path=B] (axis cs:-3.5,0) -- (axis cs:3.5,0);
+								        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=-3.5:0.84}];
+								        \node (1) at (axis cs: -2,0.25) {$0.8000$};
+								        \node (2) at (axis cs: -0.7,0.15);
+								        \path[-stealth,thick] (1.east) edge[bend left] (2.north);
+									    \end{axis}
+										\end{tikzpicture}										
+									</latex-image>
+								</image>
+							</figure>
+							<p>We look in the body of the table to find the probability closest to 0.8000. This is 0.7995 going with the z-score of 0.84.</p></li>
+						<li><p>The second problem may look familiar from the empirical rule. Since 68% of the data is in this middle range, that leaves <m>1 - 0.68 = 0.32</m>, or 32% of the data in the two tails. Since the distribution is symmetric, the left and right tails will contain the same proportion, which is <m>0.32 \div 2 = 0.16</m>.  This is shown in the following picture.</p>
+						<figure xml:id="fig_examp_normal-reverse-b">
+							<image width="60%" xml:id="image_examp_normal-reverse-b">
+								<latex-image>
+									\begin{tikzpicture}
+									  \begin{axis}[
+									    no markers,
+									    domain=-3.5:3.5,
+									    samples=500,
+									    ymin=0,
+									    ymax=0.5,
+									    axis lines=middle,
+									    axis line style={-},
+									    xlabel=\empty,
+									    ticklabel style={font=\small},
+									    xtick={0.84},
+									    xticklabel={$z$},
+									    ytick=\empty,
+									    enlargelimits=false,
+									    clip=false,
+									    axis on top,
+									    grid = none,
+									    hide y axis
+									  	]
+							        \draw[gray!20,dashed] (axis cs: -1,0.42) -- (axis cs: -1,{gauss(-1,0,1)});
+							        \draw[gray!20,dashed] (axis cs: 1,0.42) -- (axis cs: 1,{gauss(1,0,1)});
+							        \draw[gray,dashed] (axis cs: 0,0) -- (axis cs: 0,{gauss(0,0,1)});
+							        \addplot[name path=A,very thick] {gauss(x,0,1)};
+							        \path[name path=B] (axis cs:-3.5,0) -- (axis cs:3.5,0);
+							        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=-1:1}];
+							        \draw (axis cs: -1,0.42) -- (axis cs: 1,0.42) node[midway,above] {$\scriptstyle 0.6800$};
+							        \draw (axis cs: -1,0.42) -- (axis cs: -1,0.41);
+							        \draw (axis cs: 1,0.42) -- (axis cs: 1,0.41);
+							        \node (1) at (axis cs: 2.5,0.10) {$\scriptstyle 0.1600$};
+							        \node (2) at (axis cs: 1.5,0.05) {};
+							        \path[-stealth] (1.west) edge[bend right] (2.north);
+							        \node (3) at (axis cs: -2.5,0.10) {$\scriptstyle 0.1600$};
+							        \node (4) at (axis cs: -1.5,0.05) {};
+							        \path[-stealth] (3.east) edge[bend left] (4.north);
+							    	\end{axis}
+							  	\end{tikzpicture}
+    						</latex-image>
+    					</image>
+    				</figure>
+    				<p>
+						  <ul>
+						  	<li><p>Looking up 0.1600 in the table we find 0.1611 goes with z = -0.99 and 0.1587 goes with z=-1.00. So the z-score is very close to -1.00 for the bottom of this range of values.</p></li>
+						  	<li><p>If there is 0.16 in the right tail, then we need to look up 1 - 0.16 = 0.84 in the table. the closest probability in the table is 0.8413. This goes with the z-score of 1.00.</p></li>
+						  </ul>
+						  Therefore, the middle 68% lies within the range of 1 standard deviation above and 1 standard deviation below the mean.
+						</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>At first, this may not seem terribly useful. However, it can be a very useful tool in real-world problems. We will use this reverse look-up technique extensively in inferential statistics in the second part of this text. We can also use it in applied problems such as the following.</p>
+		<example xml:id="examp_normal-reverse-application">
+		  <title>Solving an Application Problem Using the Standard Normal Distribution Table in Reverse</title>
+		  <statement>
+		  	<p>A mathematics professor at a large university gives an exam to 186 students. She decides that she will give A&apos;s on the final exam to those who scored in the top 10% of the class, and B&apos;s to those who scored in the top 25%. If the final exam scores had a normal distribution with mean <m>\mu = 65.3</m> and standard deviation <m>\sigma = 11.6</m>, What was the lowest score on the exam that earned an A, and what was the lowest score for a B?</p>
+		  </statement>
+		  <solution>
+		  	<p>We will first determine the z-scores that separate the A&apos;s and B&apos;s from the rest of the grades, and then turn those z-scores into exam scores.  The image below will serve as our guide.</p>
+		  	<figure xml:id="fig_examp_normal-reverse-application">
+		  		<caption>Grade Ranges</caption>
+		  		<image width="70%" xml:id="image_examp_normal-reverse-application">
+		  			<latex-image>
+							\begin{tikzpicture}
+							    \begin{axis}[
+							            no markers,
+							            domain=30:100,
+							            samples=500,
+							            ymin=0,
+							            ymax=0.1,
+							            axis lines=middle,
+							            axis line style={-},
+							            xlabel=\empty,
+							            ticklabel style={font=\small},
+							            xtick={65.3,73.07,80.14},
+							            xticklabels={65.3,$z_B$,$z_A$},
+							            ytick=\empty,
+							            enlargelimits=false,
+							            clip=false,
+							            axis on top,
+							            grid = none,
+							            hide y axis
+							        ]
+							        \draw[gray!30,dashed] (axis cs: 30,0.045) -- (axis cs: 30,0);
+							        \draw[gray!30,dashed] (axis cs: 73.07,0.036) -- (axis cs: 73.07,{gauss(73.07,65.3,11.6)});
+							        \draw[gray!30,dashed] (axis cs: 80.14,0.045) -- (axis cs: 80.14,{gauss(80.14,65.3,11.6)});
+							        \draw[gray,dashed] (axis cs: 65.3,0) -- (axis cs: 65.3,{gauss(65.3,65.3,11.6)});
+							        \addplot[name path=A,very thick] {gauss(x,65.3,11.6)};
+							        \path[name path=B] (axis cs: 30,0) -- (axis cs:100,0);
+							        \begin{scope}[blend group = multiply]
+							            \addplot[blue!20] fill between [of=A and B,soft clip={domain=30:80.14}];
+							            \addplot[blue!30] fill between [of=A and B,soft clip={domain=30:73.07}];
+							        \end{scope}	
+							        \draw (axis cs: 30,0.036) -- (axis cs: 73.07,0.036) node[midway,above] {$\scriptstyle 0.7500$};
+							        \draw (axis cs: 30,0.036) -- (axis cs: 30,0.035);
+							        \draw (axis cs: 73.07,0.036) -- (axis cs: 73.07,0.035);
+							        \draw (axis cs: 30,0.045) -- (axis cs: 80.14,0.045) node[midway,above] {$\scriptstyle 0.9000$};
+							        \draw (axis cs: 30,0.045) -- (axis cs: 30,0.044);
+							        \draw (axis cs: 80.14,0.045) -- (axis cs: 80.14,0.044);        
+							    \end{axis}
+							\end{tikzpicture}
+		  			</latex-image>
+		  		</image>
+		  	</figure>
+		  	<p>
+		  	  <ul>
+		  	    <li><p>The top 10% of the class will get A&apos;s, meaning the bottom 90% will not. Therefore, we are looking for the z-score that separates the bottom 90% from the top 10%. Looking for 0.9000 in the table, the closest we find is 0.8997, which goes with a z-score of <m>z_A=1.28</m>.</p></li>
+		  	    <li><p>The top 25% will be separated by the z-score which has probability 0.7500 in the table. The closest probability is 0.7486. The associated z-score is <m>z_B=0.67</m>.</p></li>
+		  	  </ul>
+		  	  Now we need to turn these z-scores back into exam scores. That means we need to use the z-score formula in reverse. This yields, for A&apos;s, the following.
+		  	  <me>1.28 = \frac{x - 65.3}{11.6} \Rightarrow 1.28(11.6) = x - 65.3 \Rightarrow 14.848 + 65.3 = x \Rightarrow x = 80.14</me>.
+		  	  It appears that those with a score of 80.14 or better will get A&apos;s. In practical terms, this probably means you need to score 80.5 or 81 to get an A, depending on if the professor gives half points.</p>
+		  	<p>For B&apos;s, we repeat the above using the z-score 0.67. 
+		  	  <me>0.67 = \frac{x - 65.3}{11.6} \Rightarrow 0.67(11.6) = x - 65.3 \Rightarrow 7.772 + 65.3 = x \Rightarrow x = 73.072</me>.
+		  	</p>
+		  	<p>So a student needs to score between 73.072 and 80.14 to get a B.</p>
+		  </solution>
+		</example>
+
+		<figure xml:id="video_normal_reverse-1">
+			<caption>Reverse Look-ups I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-09.mp4"/>
+		</figure>
+		<figure xml:id="video_normal_reverse-2">
+			<caption>Reverse Look-ups II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_normal_reverse-1">
+			<statement>
+				<p>A population of sand crabs has weights which follow a normal distribution with mean <m>\mu = 2.3</m> ounces and standard deviation <m>\sigma = 0.55</m> ounces.</p>
+				<p>Question: eighty-five percent of crabs in this population weigh at least how much? Give two decimal places of accuracy. (Hint: you need the z-score that divides the top 85% from the bottom 15%. Use the number closest to .1500 in the table.)</p>
+			</statement>
+			<answer><p>1.73</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_reverse-2">
+			<statement>
+				<p>Scores on an exam have a normal distribution with mean 43.2 and standard deviation 8.95. The professor decides that the bottom 20% of the class will receive an F on the exam.</p>
+				<p>Question: what score is required to avoid getting an F? That is, what score separates the bottom 20% of the class from the top 80%. Round your answer to the nearest whole point.</p>
+			</statement>
+			<answer><p>36</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_normal_reverse-3">
+			<statement>
+				<p>A McDonald&apos;s worker has determined that the time it takes to fill a customer&apos;s order follows a normal distribution with a mean of 2.1 minutes and standard deviation of 0.72 minutes.</p>
+				<p>Question: those unlucky customers who fall into the top 3% of wait times must wait at least how long? State your answer in minutes and round it to two decimal places.</p>
+			</statement>
+			<answer><p>3.45 mintes</p></answer>
+		</exercise>
+	</subsection>
+
+</section>
