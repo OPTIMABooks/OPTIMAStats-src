@@ -103,7 +103,7 @@ images:
 	-rm -rf $(IMAGESOUT) || :
 	install -d $(IMAGESOUT)
 	install -d $(OUTPUT)/preview
-	$(PTX)/script/mbx -c latex-image -f svg -d $(IMAGESOUT) $(SRC)/index.ptx
+	$(PTX)/script/my_mbx -c latex-image -f svg -d $(IMAGESOUT) $(SRC)/index.ptx
 	$(PTX)/script/mbx -c youtube -d $(OUTPUT)/preview $(SRC)/index.ptx
 	$(PTX)/script/mbx -c preview -f png -d $(OUTPUT)/preview $(SRC)/index.ptx
 
