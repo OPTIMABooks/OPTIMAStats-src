@@ -7,8 +7,33 @@
       \usepackage{pgfplots}
       \usepackage{filecontents}
       \usepgfplotslibrary{fillbetween}
+      \usetikzlibrary{patterns}
       \pgfmathdeclarefunction{gauss}{3}{%
         \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+      }
+      \pgfplotsset{compat=newest}
+      \tikzset{
+        hatch distance/.store in=\hatchdistance,
+        hatch distance=10pt,
+        hatch thickness/.store in=\hatchthickness,
+        hatch thickness=2pt,
+        hatch color/.store in=\hatchcolor,
+        hatch color=black,
+      }
+      \pgfdeclarepatternformonly[%
+        \hatchdistance,%
+        \hatchthickness,%
+        \hatchcolor%
+      ]{flexible hatch}
+      {\pgfqpoint{0pt}{0pt}}
+      {\pgfqpoint{\hatchdistance}{\hatchdistance}}
+      {\pgfpoint{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+      {
+        \pgfsetlinewidth{\hatchthickness}
+        \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+        \pgfpathlineto{\pgfqpoint{\hatchdistance}{\hatchdistance}}
+        \pgfsetstrokecolor{\hatchcolor}%
+        \pgfusepath{stroke}
       }
     </latex-image-preamble>
   </docinfo>
