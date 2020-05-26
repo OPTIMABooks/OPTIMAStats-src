@@ -760,6 +760,7 @@
 							<p>We look in the body of the table to find the probability closest to 0.8000. This is 0.7995 going with the z-score of 0.84.</p></li>
 						<li><p>The second problem may look familiar from the empirical rule. Since 68% of the data is in this middle range, that leaves <m>1 - 0.68 = 0.32</m>, or 32% of the data in the two tails. Since the distribution is symmetric, the left and right tails will contain the same proportion, which is <m>0.32 \div 2 = 0.16</m>.  This is shown in the following picture.</p>
 						<figure xml:id="fig_examp_normal-reverse-b">
+							<caption>Visualizing the Given Probability</caption>
 							<image width="60%" xml:id="image_examp_normal-reverse-b">
 								<latex-image>
 									\begin{tikzpicture}

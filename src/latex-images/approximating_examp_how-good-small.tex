@@ -1,0 +1,62 @@
+\begin{tikzpicture}[
+    declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);}
+  ]
+  \begin{axis}[
+      scale only axis,
+      axis lines=left,
+      no markers,
+      xmin = 2.64, xmax = 15,
+      ymin = 0, ymax = 0.25,
+      samples at={10},  
+      xtick={10},
+      ytick=\empty,
+      y tick label style={
+        /pgf/number format/.cd,
+        fixed,
+        fixed zerofill,
+        precision=2,
+        /tikz/.cd
+      },
+      ticklabel style={font=\small},
+      enlargelimits=false,
+      clip=false,
+      axis on top,
+      grid = none,
+      ybar=0pt, 
+      bar width=1,
+      height=5cm,
+      width=8cm
+    ]
+    \addplot [fill=green!30,fill opacity=0.5] {binom(x,14,0.63)};
+    \node [right] at (axis description cs: 1,0) {\scriptsize $x$};
+  \end{axis}
+
+  \begin{axis}[
+      scale only axis,
+      no markers,
+	  domain=2.64:15,
+      samples=500,
+      xmin = 2.64, xmax = 15,
+	  ymin = 0, ymax = 0.25,
+	  axis lines=none,
+      xtick=\empty,
+	  ytick=\empty,
+      grid = none,
+      hide y axis,
+      height=5cm,
+      width=8cm
+    ]
+    \path[name path=A] (axis cs: 9.5,0) -- (15,0);
+    \addplot+[name path=B,thick] { gauss(x, {14*.63}, {sqrt(14*.63*.37)}) };
+    \addplot [
+      draw=blue!50,
+      pattern=flexible hatch,
+      hatch distance=6pt,
+      hatch thickness=0.5pt,
+      hatch color=blue!50,
+    ] fill between [
+      of=A and B,
+      soft clip={domain=9.5:15},
+    ];
+  \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_approximating">
+  <title>Normal Approximation to the Binomial Distribution</title>
+
+  <introduction xml:id="sec_approximating_intro">
+  	<title>Approximating the Binomial Distribution</title>
+  	<p>In this section we will see how the normal distribution can be used to approximate probabilities from the binomial distribution. It may seem strange that we would want to approximate binomial probabilities. After all, we can compute their exact value using the <xref ref="thm_binomial-probability" text="custom">binomial probability formula</xref>.
+  	<me>P(X=x) = C(n,x)p^xq^{n-x}</me>.</p>
+  	<p>To see why an approximation may be useful, consider the following example.</p>
+  	<example xml:id="examp_approximating_why">
+  		<title>Recognizing a Complex Binomial Probability Computation</title>
+  		<statement>
+  			<p>A recent study has determined that 32.2% of Americans are obese. A research group wishing to study this phenomena samples <m>12,000</m> individuals in a large metropolitan area. Describe how to find the probability that no more than <m>3750</m> of these individuals are obese, but do not perform the actual computation.</p>
+  		</statement>
+  		<solution>
+  			<p>In order to find this probability using the binomial probability formula above, we need to find the sum:
+  				<me>P(X\leq 3750) = P(X=0) + P(X=1) + \cdots + P(X=1199) + P(X=3750)</me>.
+  				This involves 3751 instances of the binomial probability formula, and would take a lot of time.</p>
+  		</solution>
+  	</example>
+  	<p>If it were possible, we would certainly be interested in being able to approximate the sum above if it can save us from performing 1201 separate computations.  Even using a computer, this process would be time consuming.  In this section we will learn when we can use the normal distribution to approximate the binomial distribution, as well as how to carry out that approximation.</p>
+  </introduction>
+
+  <objectives xml:id="sec_approximating_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>continuity correction</p></li>
+					<li><p>criteria for approximation</p></li>
+					<li><p>normal approximation to the binomial distribution</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Determine if it is appropriate to use the normal approximation</p></li>
+					<li><p>Correctly apply the continuity correction</p></li>
+					<li><p>Use the normal distribution to approximate binomial probabilities</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_approximating_visual">
+		<title>Visualizing the Binomial Distribution</title>
+		<p>Before we even start talking about how we can approximate binomial probabilities using the normal distribution, let&apos;s think a little about why we can. Below are three probability histograms for a binomial random variable <m>X</m> resulting from <m>n = 10</m> trials. The first shows the distribution of <m>X</m> when <m>p = 0.1</m>, the middle when <m>p = 0.5</m>, and the right when <m>p = 0.9</m>.</p>
+		<figure xml:id="fig_approximating_visual_small-n">
+			<caption>Visualizing Binomial Distributions with <m>n=10</m></caption>
+			<sidebyside widths="30% 30% 30%" margins="auto">
+				<figure xml:id="fig_approximating_visual_small-n-small-p">
+					<caption><m>p=0.1</m></caption>
+					<image xml:id="image_approximating_visual_small-n-small-p">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_visual-small-n-small-p.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<figure xml:id="fig_approximating_visual_small-n-middle-p">
+					<caption><m>p=0.5</m></caption>
+					<image xml:id="image_approximating_visual_small-n-middle-p">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_visual-small-n-middle-p.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<figure xml:id="fig_approximating_visual_small-n-large-p">
+					<caption><m>p=0.9</m></caption>
+					<image xml:id="image_approximating_visual_small-n-large-p">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_visual-small-n-large-p.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+			</sidebyside>
+		</figure>
+		<p>Which of these distributions would we call mound<ndash/>shaped? The one in the middle appears to be the most mound-shaped of the three. The other two are skewed either to the right or to the left. Note that the one in the middle has a probability of <m>0.5</m>. The binomial distribution looks the most like the normal distribution when <m>p = 0.5</m>. However, as <m>n</m> increases, the value of <m>p</m> becomes less important. Consider the distributions below with the same values of <m>p</m>, but with <m>n = 80</m>.</p>
+		<figure xml:id="fig_approximating_visual_large-n">
+			<caption>Visualizing Binomial Distributions with <m>n=80</m></caption>
+			<sidebyside widths="30% 30% 30%" margins="auto">
+				<figure xml:id="fig_approximating_visual_large-n-small-p">
+					<caption><m>p=0.1</m></caption>
+					<image xml:id="image_approximating_visual_large-n-small-p">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_visual-large-n-small-p.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<figure xml:id="fig_approximating_visual_large-n-middle-p">
+					<caption><m>p=0.5</m></caption>
+					<image xml:id="image_approximating_visual_large-n-middle-p">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_visual-large-n-middle-p.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<figure xml:id="fig_approximating_visual_large-n-large-p">
+					<caption><m>p=0.9</m></caption>
+					<image xml:id="image_approximating_visual_large-n-large-p">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_visual-large-n-large-p.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+			</sidebyside>
+		</figure>
+		<p>Notice that with the larger value of <m>n</m>, all three of these probability histograms look pretty mound shaped. Also notice that as <m>n</m> increases, the number of bars increases as well, and the distribution of probabilities starts to look less stair-stepped, and more like a smooth curve. Try playing with this yourself by performing the following steps.
+		  <ol>
+		  	<li><p>Open the <url href="https://www.stat.berkeley.edu/~stark/Java/Html/BinHist.htm">interactive binomial distribution page</url>.</p></li>
+		  	<li><p>Change the value of <m>p</m> (in the bottom right-hand corner) to several different percents to see what happens (for example, try 25, 50, and 75).</p></li>
+		  	<li><p>Change the value of <m>n</m> (in the bottom left-hand corner) to several different numbers to see what happens (for example, try <m>n=10</m>, <m>30</m>, <m>50</m>, and so on).</p></li>
+		  	<li><p>Try different combinations of <m>n</m> and <m>p</m> and notice how mound-shaped or skewed the distribution looks.</p></li>
+		  	<li><p>Finally, click the <q>Show Normal Curve</q> button to see how the normal curve <q>fits</q> on top of the binomial probability histogram.</p></li>
+		  </ol>
+		Hopefully you have noticed that the larger <m>n</m> is and the closer <m>p</m> is to <m>0.5</m>, the less <q>gap</q> there is between the normal curve and the bars. That is, the less of the bar sticks up above, or does not reach up to the normal curve. The smaller this <q>gap</q> is, the better our approximation will be.</p>
+
+		<figure xml:id="video_approximating_visual-1">
+			<caption>Normal Distribution Shape</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-01.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_approximating_visual-1">
+			<statement>
+				<p>Let <m>X</m> be a binomial random variable with <m>n</m> trials and a probability of success <m>p</m>.</p>
+				<p>Question: which values for <m>n</m> and <m>p</m> will produce the most mound-shaped probability histogram?n
+				  <ol label="a" cols="2">
+				  	<li><p><m>n=500, p=0.5</m></p></li>
+				  	<li><p><m>n=10, p=0.5</m></p></li>
+				  	<li><p><m>n=100, p=0.2</m></p></li>
+				  	<li><p><m>n=50, p=0.85</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(a)</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_visual-2">
+			<statement>
+				<p>The shape of a binomial distribution histogram depends not only on the value of <m>p</m>, but also on the size of <m>n</m>. In fact, as the size of <m>n</m> increases, the distribution looks less <q>stair-stepped</q> and more like a smooth probability density curve.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>true</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_visual-3">
+			<statement>
+				<p>Let <m>X</m> be a binomial random variable with <m>n</m> trials, probability of success <m>p</m>, and a probability of failure <m>q = 1-p</m>.</p>
+				<p>Question: which of the following will make the probability histogram for <m>X</m> more mound<ndash/>shaped?
+				  <ol label="a" cols="2">
+				  	<li><p>Making <m>n</m> larger</p></li>
+				  	<li><p>Making <m>n</m> smaller</p></li>
+				  	<li><p>Making <m>p</m> closer to <m>1</m></p></li>
+				  	<li><p>Making <m>p</m> closer to <m>0</m></p></li>
+				  	<li><p>Making <m>q</m> closer to <m>0.5</m></p></li>
+				  	<li><p>Making <m>q</m> closer to <m>1</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(a) and (e)</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_approximating_when">
+		<title>When can We Approximate?</title>
+		<p>If then the binomial distribution can have so many different shapes depending on the parameters <m>n</m> and <m>p</m>, when is is enough like the mound<ndash/>shaped normal distribution to allow us to use the normal distribution to approximate probabilities?</p>
+		<principle xml:id="def_binomial-approx-criteria">
+			<title>Criteria for Approximation</title>
+			<statement>
+				<p>A normal distribution can be used to approximate binomial probabilities as long as both <m>n\times p</m> and <m>n\times q</m> are greater than <m>5</m>.</p>
+			</statement>
+		</principle>
+		<p>Of course the larger <m>n\times p</m> and <m>n\times q</m> get, the better the approximation will be. However, the criteria above tells us when an approximation will be <q>good enough</q> for us to use. Notice that this criteria has nothing to do with the specific probability that we want to compute. It doesn&apos;t matter if we are looking for the probability that <m>X</m> is greater than a number, less than a number, or between two numbers. What matters is how large <m>n\times p</m> and <m>n\times q</m> are. This is because, as we saw on the last page, these two parameters control the shape of the binomial probability histogram, and this histogram is what either matches a normal distribution well or does not match well.</p>
+		<example xml:id="examp_approximating_can-we">
+			<title>Determining if We Can Approximate</title>
+			<statement>
+				<p>A binomial random variable <m>X</m> is the result of <m>50</m> trials in which the probability of a success is <m>0.93</m>. We wish to approximate the probability that <m>X</m> is at least <m>30</m>. Can we do this using a normal distribution?</p>
+			</statement>
+			<solution>
+				<p>To answer this we check both <m>n\times p</m> and <m>n\times q</m>.
+				  <ul>
+				    <li><p><m>n\times p = 50(0.93) = 46.5</m> which is greater than <m>5</m>, so we are okay here.</p></li>
+				    <li><p>However, <m>n\times q = 50(1-0.93) = 50(0.07) = 3.5</m>, which is not greater than <m>5</m>. Therefore, we can not use a normal distribution to approximate this binomial probability.</p></li>
+				  </ul>
+				</p>
+			</solution>
+		</example>
+		<example xml:id="examp_approximating_how-many-trials">
+			<title>Determining a Minimum Number of Trials to Approximate</title>
+			<statement>
+				<p>A factory has determined that its manufacturing process produces bad widgets 0.5% of the time. Suppose that they wish to take a sample of <m>n</m> widgets to run quality control tests. How many widgets must they sample before they can use a normal approximation to get probabilities?</p>
+			</statement>
+			<solution>
+				<p>We must ensure that <m>n\times p</m> and <m>n\times q</m> are both greater than <m>5</m>. 
+				  <ul>
+				  	<li><p>To get <m>n\times p > 5</m>, we solve 
+				  	  <me>n(0.005) > 5 \Rightarrow n > 1000</me>.</p></li>
+				  	<li><p>To get <m>n\times q > 5</m>, we solve 
+				  	  <me>n(0.995) > 5 \Rightarrow n > 5.02</me>.</p></li>
+				 	</ul>
+				Taking the larger of these two, the factory must sample at least 1001 widgets to be able to use the normal approximation to compute probabilities.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_approximating_when-1">
+			<caption>Criteria for Approximation I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-02.mp4"/>
+		</figure>
+		<figure xml:id="video_approximating_when-2">
+			<caption>Criteria for Approximation II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-03.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_approximating_when-1">
+			<statement>
+				<p>A binomial random variable <m>X</m> comes from a process with <m>n=20</m> trials in which the probability of a success is <m>p=0.15</m>.</p>
+				<p>Question: can we use a normal distribution to approximate probabilities for <m>X</m>?</p>
+			</statement>
+			<answer><p>No</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_when-2">
+			<statement>
+				<p>A binomial random variable <m>X</m> comes from a process with <m>n=20</m> trials in which the probability of a success is <m>p=0.8</m>.</p>
+				<p>Question: can we use a normal distribution to approximate probabilities for <m>X</m>?</p>
+			</statement>
+			<answer><p>No</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_when-3">
+			<statement>
+				<p>A binomial random variable <m>X</m> comes from a process with <m>20</m> trials in which the probability of a success is <m>p=0.60</m>.</p>
+				<p>Question: can we use a normal distribution to approximate probabilities for <m>X</m>?</p>
+			</statement>
+			<answer><p>Yes</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_approximating_correction">
+		<title>Continuity Correction</title>
+		<p>There is one final issue to address before we are ready to start approximating binomial probabilities with the normal distribution. This issue has to do with the fact that we are using a continuous probability density curve to approximate a discrete random variable. To see why this may be a problem, consider the following picture. Suppose that the binomial random variable <m>X</m> (shown by the bar) is being approximated using a normal random variable <m>Y</m> (shown by the curve).</p>
+		<figure xml:id="fig_approximating_correction">
+			<caption>Continuity Correction</caption>
+			<image width="80%" xml:id="image_approximating_correction">
+				<latex-image>
+					<xi:include href="./latex-images/approximating_correction.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>In the normal distribution, the probability <m>P(Y=10)</m> is exactly zero because it is a single line. In the binomial distribution, however, the entire green bar represents <m>P(X=10)</m>. If we wish to use the normal distribution to find <m>P(X=10)</m> in the binomial distribution, we need to translate this bar into a range of <m>Y</m> values. That range will extend from the bottom end of the bar, which is at <m>10 - 0.5</m>, to the top end of the bar at <m>10 + 0.5</m>. Therefore,
+		<me>P(X=10) \approx P(9.5 \lt Y \lt 10.5)</me>.
+		When we change a whole number into a range like this we are correcting for the fact that we use a continuous random variable in place of a discrete random variable.</p>
+		<definition xml:id="def_continuity-correction">
+			<idx>continuity correction</idx>
+			<statement>
+				<p>When we add or subtract <m>0.5</m> to a whole number as we approximate a binomial probability using a normal probability distribution, we are using a <term>continuity correction</term>.</p>
+			</statement>
+		</definition>
+		<p>In the following examples, we will apply the continuity correction to translate a probability statement for a discrete random variable <m>X</m> into an approximately equivalent statement for a continuous random variable <m>Y</m>.</p>
+		<example xml:id="examp_approximating_continuity-correction">
+			<title>Applying a Continuity Correction</title>
+			<statement>
+				<p>A binomial random variable <m>X</m> is to be approximated by a normal random variable <m>Y</m>. Convert each of the probability statements about a value or range of values for <m>X</m> into a statement about an approximately equivalent range of values for <m>Y</m>.
+				  <ol label="a" cols="3">
+				  	<li><p><m>P(X \gt 26)</m></p></li>
+				  	<li><p><m>P(X \leq 60)</m></p></li>
+				  	<li><p><m>P(19 \leq X \lt 24)</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>To help us make the translation, we will draw example pictures for each one of these ranges.  We will indicate the associated area under the normal curve using diagonal blue lines.
+					<ol label="a">
+						<li><title><m>P(X \gt 26)</m></title>
+						  <sidebyside widths="55% 35%" margins="auto" valign="middle">
+						  	<p>We need to take the bar for 26 in the binomial distribution, and shade everything above that bar but not including the bar itself. So using the top of the bar, which is 26.5, we translate this into <m>P(Y > 26.5)</m>.</p>
+						  	<figure xml:id="fig_approximating_examp_continuity-correction-a">
+						  		<caption></caption>
+						  		<image width="100%" xml:id="image_approximating_examp_continuity-correction-a">
+						  			<latex-image>
+						  			  <xi:include href="./latex-images/approximating_examp_continuity-correction-a.tex" parse="text"/>
+						  			</latex-image>
+						  		</image>
+						  	</figure>
+						  </sidebyside></li>
+						<li><title><m>P(X \leq 60)</m></title>
+						  <sidebyside widths="55% 35%" margins="auto" valign="middle">						
+						  	<p>In this example, we want to shade everything less than and including the bar for 60. Since we want to include that bar and everything below, we use the range <m>P(Y \lt 60.5)</m>.</p>
+						  	<figure xml:id="fig_approximating_examp_continuity-correction-b">
+						  		<caption></caption>
+						  		<image width="100%" xml:id="image_approximating_examp_continuity-correction-b">
+						  			<latex-image>
+						  			  <xi:include href="./latex-images/approximating_examp_continuity-correction-b.tex" parse="text"/>
+						  			</latex-image>
+						  		</image>
+						  	</figure>
+						  </sidebyside>
+						</li>
+						<li><title><m>P(19 \leq X \lt 24)</m></title>
+						  <sidebyside widths="55% 35%" margins="auto" valign="middle">												
+						  	<p>For the lower limit, we want to include the 19 bar, so we subtract 0.5 and start with 18.5. For the upper limit we do not want to include the bar for 24, so we only go up to 24 - 0.5, or 23.5. This makes the range <m>P(18.5 \lt Y \lt 23.5)</m>.</p>
+						  	<figure xml:id="fig_approximating_examp_continuity-correction-c">
+						  		<caption></caption>
+						  		<image width="100%" xml:id="image_approximating_examp_continuity-correction-c">
+						  			<latex-image>
+						  			  <xi:include href="./latex-images/approximating_examp_continuity-correction-c.tex" parse="text"/>
+						  			</latex-image>
+						  		</image>
+						  	</figure>
+						  </sidebyside>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>One caution on using the continuity correction. It should only be used when we are approximating a binomial distribution with a normal distribution. If we start with a normal distribution, then the variable is already continuous, and no correction is needed.</p>
+
+		<figure xml:id="video_approximating_correction-1">
+			<caption>Continuity Correction I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-04.mp4"/>
+		</figure>
+		<figure xml:id="video_approximating_correction-2">
+			<caption>Continuity Correction II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-05.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_approximating_correction-1">
+			<statement>
+				<p>A binomial random variable <m>X</m> is to be approximated by a normal random variable <m>Y</m> in order to find <m>P(12 \lt X \leq 17)</m>.</p>
+				<p>Question: which of the following is the correct range for <m>Y</m>?
+				  <ol label="a" cols="2">
+				  	<li><p><m>P(11.5 \lt Y \lt 16.5)</m></p></li>
+				  	<li><p><m>P(11.5 \lt Y \lt 17.5)</m></p></li>
+				  	<li><p><m>P(12 \lt Y \lt 17)</m></p></li>
+				  	<li><p><m>P(12.5 \lt Y \lt 16.5)</m></p></li>
+				  	<li><p><m>P(12.5 \lt Y \lt 17.5)</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(e)</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_correction-2">
+			<statement>
+				<p>A normal random variable <m>Y</m> is to be used to approximate <m>P(X > 45)</m> for a binomial random variable <m>X</m>.</p>
+				<p>Question: what is the approximately equivalent probability statement for <m>Y</m>?</p>
+			</statement>
+			<answer><p><m>P(Y>45.5)</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_correction-3">
+			<statement>
+				<p>When using a normal distribution to find <m>P(a \lt X \lt b)</m>, we should always use a continuity correction.</p>
+				<p>Question: is this statement true or false?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_approximating_computation">
+		<title>Normal Approximations</title>
+		<p>tools in place to use a normal distribution to approximate probabilities for a binomial distribution. Recall that a binomial random variable has mean and standard deviation as shown below.</p>
+		<theorem xml:id="def_normal-approximation">
+			<title>Normal Approximation to the Binomial Distribution</title>
+			<statement>
+				<p>If <m>X</m> is a binomial random variable for a binomial process involving <m>n</m> trials in which the probability of a success in each trial is <m>p</m>, then probabilities for <m>X</m> can be approximated by a normal distribution with mean and standard deviation as shown below provided that <m>n\times p</m> and <m>n\times q</m> are both greater than <m>5</m>.
+				  <me>\text{Mean: } \mu = n\times p \qquad \text{Standard Deviation: } \sigma = \sqrt{n\times p\times q}</me>.</p>
+			</statement>
+		</theorem>
+		<p>So when we use a normal distribution to approximate a binomial probability, the mean of that normal distribution will be <m>\mu = n\times p</m> and the standard deviation will be <m>\sigma = \sqrt{n\times p\times q}</m>. Putting this together with the criteria for approximation and the continuity correction, we can solve examples such as the following.</p>
+		<example xml:id="examp_approximating_computation-at-least">
+			<title>Approximating a Binomial Probability Involving <q>At Least</q></title>
+			<statement>
+				<p>A binomial process involves <m>400</m> trials in which the probability of a success is <m>p = 0.35</m>. What is the probability that there are at least <m>168</m> successes in this process?</p>
+			</statement>
+			<solution>
+				<p>We first must be sure that we can use a normal approximation. To assess this, we check <m>n\times p</m> and <m>n\times q</m>.
+				  <me>n\times p = 400(0.35) = 140 \quad \text{ and } \quad n\times q = 400(0.65) = 260</me>.
+				  Since both of these are greater than <m>5</m>, we can continue with a normal approximation.</p>
+				<p>Next, we need to compute the mean and standard deviation to use for the normal distribution. We have actually already found the mean above, but we repeat this computation together with that of the standard deviation below.
+					<md>
+						<mrow>\mu \amp = n\times p = 400(0.35) = 140</mrow>
+						<mrow>\sigma \amp = \sqrt{n\times p\times q} = \sqrt{400(0.35)(0.65)} \approx 9.54</mrow>
+					</md>
+				</p>
+				<p>Our final task is to use the normal distribution given by this mean and standard deviation to find <m>P(X \geq 168)</m>. We draw a picture to help us visualize the appropriate continuity correction, zooming in on the right tail of the distribution since 168 is above the mean of 140.</p>
+				<figure xml:id="fig_approximating_examp_computation-at-least">
+					<caption>Continuity Correction</caption>
+					<image width="70%" xml:id="image_approximating_examp_computation-at-least">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_examp_computation-at-least.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>The picture and the z-score formula help us make the following computation.
+					<md>
+						<mrow>P(X \geq 168) \amp = P(Y > 167.5)</mrow>
+						<mrow>\amp = P\left(\frac{Y-\mu}{\sigma} > \frac{167.5 - 140}{9.54}\right)</mrow>
+						<mrow>\amp = P(Z > 2.88)</mrow>
+						<mrow>\amp = 1 - P(Z\lt 2.88)</mrow>
+						<mrow>\amp = 1 - 0.9980</mrow>
+					  <mrow>\amp = 0.0020</mrow>
+					</md>.
+				</p>
+			</solution>
+		</example>
+		<p>Observe that in this question, we are actually using three different distributions. There is the binomial distribution for which we are actually wanting to find probabilities, represented by the variable <m>X</m>. Then there is the normal distribution we use to approximate it, represented by the variable <m>Y</m>. Finally, there is the standard normal distribution to which we convert in order to use the standard normal distribution table, represented by the variable <m>Z</m>. Our next example picks up where <xref ref="examp_approximating_why"/> left off.</p>
+		<example xml:id="examp_approximating_computation-no-more-than">
+			<title>Approximating a Binomial Probability Involving <q>No More Than</q></title>
+			<statement>
+				<p>A recent study has determined that 32.2% of Americans are obese. A research group wishing to study this phenomena samples <m>12,000</m> individuals in a large metropolitan area. What is the probability that no more than <m>3750</m> of these individuals are obese?  Use a normal approximation.</p>
+			</statement>
+			<solution>
+				<p>Checking our criteria for approximating yields
+				  <me>n\times p = 12000(.322) = 3864 \quad \text{ and } \quad n\times q = 12000(0.678) = 8136</me>.
+				  Since both of these are greater than <m>5</m>, we may approximate this probability using a normal distribution.</p>
+				<p>That normal distribution will have a mean and standard deviation of
+					<md>
+						<mrow>\mu \amp = 12000(0.322) = 3864</mrow>
+						<mrow>\sigma \amp = \sqrt{12000(0.322)(0.678)} = 51.1839</mrow>
+					</md>.
+				</p>
+				<p>We note that <q>no more than 3750</q> means we want <m>X</m> to be less than or equal to 3750.  So we draw the picture shown below to help us correctly apply the continuity correction, this time zooming in on the left tail since 3750 is less than the mean of 3864.</p>
+				<figure xml:id="fig_approximating_examp_computation-no-more-than">
+					<caption>Continuity Correction</caption>
+					<image width="70%" xml:id="image_approximating_examp_computation-no-more-than">
+						<latex-image>
+							<xi:include href="./latex-images/approximating_examp_computation-no-more-than.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>This gives us the following probability computation
+					<md>
+						<mrow>P(X \leq 3750) \amp = P(Y \lt 3750.5)</mrow>
+						<mrow>\amp = P\left(\frac{Y-\mu}{\sigma} \lt \frac{3750.5-3864}{51.1839}\right)</mrow>
+						<mrow>\amp = P(Z \lt -2.22)</mrow>
+						<mrow>\amp = 0.0132</mrow>
+					</md>.</p>
+				<p>Therefore, the probability of no more than <m>3750</m> obese individuals is approximately <m>0.0132</m>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_approximating_computation-1">
+			<caption>Normal Approximation I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-06.mp4"/>
+		</figure>
+		<figure xml:id="video_approximating_computation-2">
+			<caption>Normal Approximation II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-07.mp4"/>
+		</figure>
+		<figure xml:id="video_approximating_computation-3">
+			<caption>Normal Approximation II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_approximating_computation-1">
+			<statement>
+				<p>At a certain large hotel knows that about 7% of guests who make reservations on any given night will, for one reason or another, not show up to claim their room. Because of that, the hotel, which has 250 rooms, books a total of 260 reservations. Suppose that each of these 260 reservations can be treated as an independent Bernoulli trial.</p>
+				<p>Question: what is the probability that the hotel will be over-booked? Use a normal approximation to this binomial probability and give all four decimals of the probability from the standard normal distribution table.</p>
+			</statement>
+			<answer><p>0.0174</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_computation-2">
+			<statement>
+				<p>A binomial distribution has 500 trials and a probability of success <m>p = 0.74</m>. You wish to find <m>P(X \lt 350)</m>.</p>
+				<p>Question: what is the probability approximated by a normal distribution?</p>
+			</statement>
+			<answer><p>0.0183</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_computation-3">
+			<statement>
+				<p>A farmer knows that about 19% of his cherry crop will need to be used for juice, jams, or other products because the cherries will have split and be bruised. A large bin contains approximate 12,000 cherries. Suppose that inspecting each cherry can be thought of as an independent Bernoulli trial.</p>
+				<p>Question: what is the probability that a large bin contains more than 2400 bad cherries? Use a normal approximation to get this probability.</p>
+			</statement>
+			<answer><p>0.0026</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_approximating_how-good">
+		<title>How Good are These Approximations?</title>
+		<p>We have made a point of identifying the probabilities we get from a normal distribution as approximations for the probabilities from a binomial distribution. Any time we are approximating, the question naturally arises, how good is that approximation? In the next several examples we will look at both the normal approximation and, with the help of a computer, the binomial probability to see how good these approximations really are.</p>
+		<example xml:id="examp_approximating_how-good-small">
+			<title>Approximating with Few Trials</title>
+			<statement>
+				<p>A baseball player gets a hit 63% of the time that he is at bat. Suppose that in a certain double header this player is at bat 14 times, and that these at-bats can be treated as a binomial process. Find the probability that he gets at least 10 hits using:
+					<ol label="a">
+						<li><p>the binomial probability formula, and</p></li>
+						<li><p>a normal approximation.</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>From the problem statement, <m>n = 14</m>, <m>p = 0.63</m>, and <m>q = 1-p=0.37</m>. We want to compute <m>P(X \geq 10)</m>.
+				  <ol label="a">
+				  	<li><p>Using the <xref ref="thm_binomial-probability">binomial formula</xref> yields:
+				  	  <md>
+				  	  	<mrow>P(X \geq 10) \amp= P(X=10) + P(X=11) + P(X=12)</mrow>
+				  	  	<mrow>\amp\quad + P(X=13) + P(X=14)</mrow>
+				  	  	<mrow>\amp= C(14,10)(.63)^{10}(.37)^4 + C(14,11)(.63)^{11}(.37)^3</mrow>
+				  	  	<mrow>\amp\quad + C(14,12)(.63)^{12}(.37)^2+ C(14,13)(.63)^{13}(.37)^1</mrow>
+				  	  	<mrow>\amp\quad + C(14,14)(.63)^{14}(.37)^0</mrow>
+				  	  	<mrow>\amp\approx 0.1848 + 0.1144 + 0.0487 + 0.0128 + 0.0016</mrow>
+				  	  	<mrow>\amp= 0.3622</mrow>
+				  	  </md>.</p>
+				  	</li>
+				  	<li><p>Now using a normal approximation, we first check <m>n\times p</m> and <m>n\times q</m>.
+				  	  <me>n\times p = 14(0.63) = 8.82 \quad \text{ and } \quad n\times q = 14(0.37) = 5.18</me>.
+				  	  Notice that both of these are very close to 5. This means we can just barely use a normal approximation. Next, the mean and standard deviation are
+				  	  <md>
+				  	  	<mrow>\mu \amp = n\times p = 8.82</mrow>
+				  	  	<mrow>\sigma \amp = \sqrt{n\times p\times q} = \sqrt{14(0.63)(0.37)} \approx 1.8065</mrow>
+				  	  </md>.</p>
+				  	  <p>We wish to know <m>P(X \geq 10)</m>.  This region, along with the continuity correction, is illustrated below.</p>
+				  	  <figure xml:id="fig_approximating_examp_how-good-small">
+				  	  	<caption>Normal Approximation</caption>
+				  	  	<image width="60%" xml:id="image_approximating_examp_how-good-small">
+				  	  		<latex-image>
+				  	  			<xi:include href="./latex-images/approximating_examp_how-good-small.tex" parse="text"/>
+				  	  		</latex-image>
+				  	  	</image>
+				  	  </figure>
+				  	  <p>Completing the computation, we get the following probability.
+				  	  	<md>
+				  	  		<mrow>P(X \geq 10) \amp = P(Y > 9.5)</mrow>
+				  	  		<mrow> \amp = P\left(\frac{Y-\mu}{\sigma} \gt \frac{9.5 - 8.82}{1.8065}\right)</mrow>
+				  	  		<mrow> \amp = P(Z \gt 0.38)</mrow>
+				  	  		<mrow> \amp = 1 - P(Z \lt 0.38)</mrow>
+				  	  		<mrow> \amp = 1 - 0.6480</mrow>
+				  	  		<mrow> \amp = 0.3520</mrow>
+				  	  	</md>.
+				  	  </p>
+				  	  <p>The approximation of <m>0.3520</m> is close to the actual probability of <m>0.3622</m>, but we are about one one-hundredth off.</p>
+				  	</li>
+				  </ol>
+				</p>
+			</solution>
+		</example>
+		<p>Notice that in this case, <m>n\times p</m> and <m>n\times q</m> were very close to 5. Therefore, the approximation was acceptable, but not great. In the next example, let&apos;s look at what happens when <m>n\times p</m> and <m>n\times q</m> are much larger than 5.</p>
+		<example xml:id="examp_approximating_how-good-large">
+			<title>Approximating with Many Trials</title>
+			<statement>
+				<p>Suppose that 13% of people are left-handed. In a school of 200 students, what is the probability that fewer than 20 students are left-handed? Find this probability using both:
+					<ol label="a">
+						<li><p>the binomial probability formula, and</p></li>
+						<li><p>a normal approximation.</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>According to the problem, <m>n = 200</m>, <m>p = 0.13</m>, <m>q = 1-0.13 = 0.87</m>, and we want <m>P(X \lt 20)</m>.
+					<ol label="a">
+						<li><p>Using the binomial probability formula, this means we need
+							<md>
+								<mrow>P(X=0) \amp + P(X=1) + P(X=2) + P(X=3) + P(X=4)</mrow>
+								<mrow>\amp + P(X=5) + P(X=6) + P(X=7) + P(X=8)</mrow>
+								<mrow>\amp + P(X=9) + P(X=11) + P(X=12) + P(X=13)</mrow>
+								<mrow>\amp + P(X=14) + P(X=15) + P(X=16) + P(X=17)</mrow>
+								<mrow>\amp + P(X=18) + P(X=19)</mrow>
+							</md>.</p>
+							<p>In the interest of sanity, we used a computer (spreadsheet programs can perform these computations easily) to get <m>P(X \lt 20) \approx 0.0817</m>.
+						</p></li>
+						<li><p>We first check that a normal approximation is appropriate.
+							<me>n\times p = 200(0.13) = 26 \quad \text{ and } \quad n\times q = 200(0.87) = 17</me>.
+							Both of these are much bigger than 5, so we expect a good approximation. Next the mean and standard deviation for the normal approximation must be computed.
+							<md>
+								<mrow>\mu \amp = n\times p = 200(0.13) = 26</mrow>
+								<mrow>\sigma \amp = \sqrt{n\times p\times q} = \sqrt{200(0.13)(0.87)} \approx 4.7560</mrow>
+							</md>.</p>
+							<p>Applying the continuity correction, we see that we need the shaded region shown below, which does not include <m>X=20</m>.</p>
+							<figure xml:id="fig_approximating_examp_how-good-large">
+								<caption>Normal Approximation</caption>
+								<image width="60%" xml:id="image_approximating_examp_how-good-large">
+									<latex-image>
+				  	  			<xi:include href="./latex-images/approximating_examp_how-good-large.tex" parse="text"/>
+				  	  		</latex-image>
+				  	  	</image>
+				  	  </figure>
+				  	  <p>This produces the following computation.
+				  	  	<md>
+				  	  		<mrow>P(X \lt 20) \amp = P(Y \lt 19.5)</mrow>
+				  	  		<mrow> \amp = P\left(\frac{Y-\mu}{\sigma} \lt \frac{19.5 - 26}{4.7560}\right)</mrow>
+				  	  		<mrow> \amp = P(Z \lt -1.37)</mrow>
+				  	  		<mrow> \amp = 0.0853</mrow>
+				  	  	</md>.
+				  	  </p>
+				  	  <p>This approximation is accurate to about 4 one-thousandths. Much better than the 1 one- hundredth we saw in the previous example.</p>
+				  	</li>
+				  </ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_approximating_how-good-1">
+			<caption>How Good are the Approximations I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-09.mp4"/>
+		</figure>
+		<figure xml:id="video_approximating_how-good-2">
+			<caption>How Good are the Approximations II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_approximating_how-good-1">
+			<statement>
+				<p>The normal approximation to the binomial distribution is always accurate to at least four decimals places.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_how-good-2">
+			<statement>
+				<p>A normal approximation to a binomial probability will be especially good when <m>n\times p</m> and <m>n\times q</m> are very close to 5.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_approximating_how-good-3">
+			<statement>
+				<p>If it is just as easy to use the binomial probability formula to compute a binomial probability as it would be to use a normal approximation, then we should use the binomial probability formula.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>True</p></answer>
+		</exercise>
+	</subsection>
+
+</section>

@@ -1,0 +1,47 @@
+\begin{tikzpicture}[
+    declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);}
+  ]
+  \begin{axis}[
+      scale only axis,
+      axis lines=left,
+      no markers,
+      xmin = 2.5, xmax = 24.5,
+      ymin = 0, ymax = 0.16,
+      samples at={10},  
+      xtick={10},
+      ytick=\empty,
+      y tick label style={
+        /pgf/number format/.cd,
+        fixed,
+        fixed zerofill,
+        precision=2,
+        /tikz/.cd
+      },
+      ticklabel style={font=\small},
+      enlargelimits=false,
+      clip=false,
+      axis on top,
+      grid = none,
+      ybar=0pt, 
+      bar width=1
+    ]
+    \addplot [fill=green!30] {binom(x,26,0.5)};
+    \node [right] at (axis description cs: 1,0) {\scriptsize $x$};
+  \end{axis}
+
+  \begin{axis}[
+      scale only axis,
+      no markers,
+	  domain=0:30,
+      samples=500,
+      xmin = 2.5, xmax = 24.5,
+	  ymin = 0, ymax = 0.16,
+	  axis lines=none,
+      xtick=\empty,
+	  ytick=\empty,
+      grid = none,
+	  hide y axis
+    ]
+    \addplot+[thick] { gauss(x, {26*.5}, {sqrt(26*.5*.5)}) };
+  \end{axis}
+\end{tikzpicture}
