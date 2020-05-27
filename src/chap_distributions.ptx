@@ -10,8 +10,6 @@
   <xi:include href="sec_binomial.ptx"/> 
   <xi:include href="sec_normal.ptx"/>
   <xi:include href="sec_approximating.ptx"/>
-<!--
   <xi:include href="sec_sampling.ptx"/>
--->
 
 </chapter>

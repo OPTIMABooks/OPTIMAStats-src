@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      scale only axis,
+      axis lines=left,
+      no markers,
+      domain=75:90,
+      samples=500,
+      xmin = 75, xmax = 90,
+      ymin = 0, ymax = 0.35,
+      xtick={82.5,85},
+      ytick=\empty,
+      ticklabel style={font=\scriptsize},
+      enlargelimits=false,
+      clip=false,
+      axis on top,
+      grid = none,
+      height=5cm,
+      width=8cm
+    ]
+    \draw[gray,dashed] (axis cs:82.5,0) -- (axis cs:82.5,{gauss(82.5,82.5,1.31)});
+    \path[name path=A] (axis cs: 75,0) -- (90,0);
+    \addplot+[name path=B,thick,blue] { gauss(x, 82.5, 1.853) };
+    \addplot+[name path=C,thick,red] { gauss(x, 82.5, 1.31) };
+    \addplot [
+      draw=blue!50,
+      pattern=flexible hatch,
+      hatch distance=6pt,
+      hatch thickness=0.5pt,
+      hatch color=blue!50,
+    ] fill between [
+      of=A and B,
+      soft clip={domain=85:90},
+    ];
+    \addplot [
+        draw=red!50,
+        fill=red!50,
+        fill opacity=0.5,
+      ] fill between [
+        of=A and C,
+        soft clip={domain=85:90},
+      ];  
+    \node [right] at (axis description cs: 1,0) {\scriptsize $x$};
+  \end{axis}
+\end{tikzpicture}

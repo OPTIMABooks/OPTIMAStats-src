@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_sampling">
+  <title>Sampling Distributions and the Central Limit Theorem</title>
+
+  <introduction xml:id="sec_sampling_intro">
+  	<title>What Are Sampling Distributions?</title>
+  	<p>Starting with our next section, we are going to be looking at how to make inferences (i.e. estimations or decisions) about a population based on what we observe in a sample. It is therefore important that we understand how sampling works, and in particular, how the sample mean and sample proportions work.  Recall that the <xref ref="def_mean" text="custom">mean of s sample</xref> containing values <m>x_1, x_2, \ldots, x_n</m> is computed as follows.
+      <me>\overline{x} = \frac{x_1+x_2+\cdots+ x_n}{n}</me></p>
+    <p>This formula should look familiar from <xref ref="sec_center-spread_mean-stdev"/>. We restate it here, however, to consider a question. If we select a sample of <m>n</m> values and look at their average over and over again, will we see more or less variation between these averages than we would if we look at the individual values in the population? We shall see that there is in fact less variation between the means of different samples than between individual values. This is because it is a lot harder to get a group of <m>n</m> individuals who all vary in the same way from the population average than it is to get a single individual who varies from the population average.</p>
+    <p>Besides taking the average of some variable in a sample, we may also wish to examine the proportion of individuals in a sample who have some characteristic. This is similar to the binomial processes we studied in <xref ref="sec_binomial"/>. The only real difference is that instead of looking at <m>x</m>, the number of successes, we look at <m>\frac{x}{n}</m>, the proportion of successes.</p>
+    <definition xml:id="def_sample-proportion">
+    	<statement>
+    		<p>If a sample of size <m>n</m> is drawn from a population and <m>x</m> of those <m>n</m> individuals have some characteristic, then the sample proportion with that characteristic is:
+    		  <me>\hat p = \frac{x}{n}</me>.</p>
+      </statement>
+    </definition>
+    <p>In this section, we will try to develop our understanding of how these sample statistics, <m>\overline x</m> and <m>\hat p</m> work. In particular, we will introduce an extremely important theorem called the <term>central limit theorem</term>.</p>
+  </introduction>
+
+  <objectives xml:id="sec_approximating_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>central limit theorem</p></li>
+					<li><p>criteria for applying the central limit theorem</p></li>
+					<li><p>sample mean</p></li>
+					<li><p>sample proportion</p></li>
+					<li><p>sampling distribution for a mean</p></li>
+					<li><p>sampling distribution for a proportion</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Understand the concept of a distribution of sample means</p></li>
+					<li><p>Understand the central limit theorem</p></li>
+					<li><p>Use the sampling distribution of the mean to determine the likelihood of a given sample mean or range of sample means</p></li>
+					<li><p>Use the sampling distribution for a proportion</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_sampling_mean-dist">
+		<title>Sample Means</title>
+		<p>To better understand how means of samples behave, let&apos;s take a look at a sampling example.</p>
+		<example xml:id="examp_sampling_mean-dist_distribution">
+			<title>Finding the Sampling Distribution of the Mean</title>
+			<statement>
+				<p>You wish to draw samples of size three from a finite population of values <m>\lbrace 0, 3, 6, 9, 12 \rbrace</m>.
+				  <ol label="a">
+				  	<li><p>What are the possible samples of size three and what are their sample means?</p></li>
+				  	<li><p>If <m>\overline{X}</m> is a random variable whose value is the mean of the sample, give the probability distribution for <m>\overline{X}</m>.</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Our first task is to list all possible samples of size three and compute their means. We know that there are <m>C(5,3) = 10</m> of them, and they are:</p>
+						<table xml:id="table_sampling_examp_mean-dist_distribution-samples">
+							<title>Samples and their Means</title>
+							<tabular>
+								<col halign="center" right="medium"></col>
+								<col halign="center"></col>
+								<row bottom="medium">
+									<cell>Sample</cell>
+									<cell>Sample Mean (<m>\overline x</m>)</cell>
+								</row>
+								<row>
+					  			<cell><m>\lbrace 0, 3, 6 \rbrace</m></cell>
+					  			<cell><m>3</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 0, 3, 9 \rbrace</m></cell>
+					  			<cell><m>4</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 0, 3, 12 \rbrace</m></cell>
+					  			<cell><m>5</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 0, 6, 9 \rbrace</m></cell>
+					  			<cell><m>5</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 0, 6, 12 \rbrace</m></cell>
+					  			<cell><m>6</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 0, 9, 12 \rbrace</m></cell>
+					  			<cell><m>7</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 3, 6, 9 \rbrace</m></cell>
+					  			<cell><m>6</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 3, 6, 12 \rbrace</m></cell>
+					  			<cell><m>7</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 3, 9, 12 \rbrace</m></cell>
+					  			<cell><m>8</m></cell>
+					  		</row>
+					  		<row>
+					  			<cell><m>\lbrace 6, 9, 12 \rbrace</m></cell>
+					  			<cell><m>9</m></cell>
+					  		</row>
+					  	</tabular>
+					  </table>
+					</li>
+					<li><p>Our final task is to construct a probability distribution for <m>\overline X</m>, the sample means. This is done by counting the number of samples that have each value and dividing by the total of <m>10</m> possible samples.  While we are at this, we&apos;ll also find the expected value of <m>\overline X</m>.</p>
+					<table xml:id="table_sampling_examp_mean-dist_distribution-dist">
+						<title>Distribution of Sample Means</title>
+						<tabular>
+						  <col halign="center" right="medium"></col>
+						  <col halign="center" right="medium"></col>
+						  <col halign="center"></col>
+						  <row bottom="medium">
+						  	<cell><m>\overline x</m></cell>
+						  	<cell><m>P\left(\overline X = \overline x\right)</m></cell>
+						  	<cell><m>\overline x \times P\left(\overline X = \overline x\right)</m></cell>
+						  </row>
+						  <row>
+						  	<cell><m>3</m></cell>
+						  	<cell><m>\frac{1}{10}</m></cell>
+						  	<cell><m>\frac{3}{10}</m></cell>
+						  </row>
+						  <row>
+						  	<cell><m>4</m></cell>
+						  	<cell><m>\frac{1}{10}</m></cell>
+						  	<cell><m>\frac{4}{10}</m></cell>
+						  </row>
+						  <row>
+						  	<cell><m>5</m></cell>
+						  	<cell><m>\frac{2}{10}</m></cell>
+						  	<cell><m>\frac{10}{10}</m></cell>
+						  </row>
+						  <row>
+						  	<cell><m>6</m></cell>
+						  	<cell><m>\frac{2}{10}</m></cell>
+						  	<cell><m>\frac{12}{10}</m></cell>
+						  </row>
+						  <row>
+						  	<cell><m>7</m></cell>
+						  	<cell><m>\frac{2}{10}</m></cell>
+						  	<cell><m>\frac{14}{10}</m></cell>
+						  </row>
+						  <row>
+						  	<cell><m>8</m></cell>
+						  	<cell><m>\frac{1}{10}</m></cell>
+						  	<cell><m>\frac{8}{10}</m></cell>
+						  </row>
+						  <row bottom="medium">
+						  	<cell><m>9</m></cell>
+						  	<cell><m>\frac{1}{10}</m></cell>
+						  	<cell><m>\frac{9}{10}</m></cell>
+						  </row>
+						  <row>
+						  	<cell colspan="2" right="none" halign="right"><m>E(\overline{X}) =</m></cell>
+						  	<cell><m>6</m></cell>
+						  </row>
+						</tabular>
+					</table></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>Note that several interesting things have happened. First, when we take the mean of all of our possible samples, we see repetition. That is, more than one sample produces the values <m>5</m>, <m>6</m>, and <m>7</m> as a mean. Consider the graphs below of the individual values from the population, which is uniform, versus the sample means, which is starting to look more mound shaped.</p>
+		<figure xml:id="fig_sampling_mean-dist_comparison">
+			<caption>Distributions Based on <m>\lbrace 0, 3, 6, 9, 12\rbrace</m></caption>
+			<sidebyside width="45%" margins="auto">
+				<figure xml:id="fig_sampling_mean-dist_comparision-a">
+					<caption>Individual Values</caption>
+					<image xml:id="image_sampling_mean-dist_comparison-a">
+						<latex-image>
+							<xi:include href="./latex-images/sampling_mean-dist_comparison-a.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<figure xml:id="fig_sampling_mean-dist_comparision-b">
+					<caption>Sample Means</caption>
+					<image xml:id="image_sampling_mean-dist_comparison-b">
+						<latex-image>
+							<xi:include href="./latex-images/sampling_mean-dist_comparison-b.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+			</sidebyside>
+		</figure>
+		<p>Also notice that the distribution of sample means has less variation than the distribution of individual values from the population. Another interesting thing that has happened is that the expected value of <m>\overline X</m> is <m>6</m>, which is exactly the population mean. That is, when we take the mean of the sample means, the average of the averages, we get the same thing as the mean of the entire population.</p>
+		<p>These two factors combined will play an important role on the next page, where we introduce one of the most important theorems in statistics.</p>
+
+		<figure xml:id="video_sampling_mean-dist-1">
+			<caption>Distribution of Sample Means I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-01.mp4"/>
+		</figure>
+		<figure xml:id="video_sampling_mean-dist-2">
+			<caption>Distribution of Sample Means II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_sampling_mean-dist-1">
+			<statement>
+				<p>Samples of size three are drawn from the finite population <m>\lbrace 1, 3, 5, 7, 9 \rbrace</m> without replacement.</p>
+				<p>Question: what is the mean of the sampling distribution for this sample?</p>
+			</statement>
+			<answer><p>5</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_sampling_mean-dist-2">
+			<statement>
+				<p>A sample of size three is drawn from the population <m>\lbrace 5, 10, 15, 20, 25, 30 \rbrace</m> without replacement.</p>
+				<p>Question: which of the following is NOT a valid sample?
+				  <ol label="a">
+				  	<li><p><m>\lbrace 5, 25, 15 \rbrace</m></p></li>
+				  	<li><p><m>\lbrace 10, 30, 25 \rbrace</m></p></li>
+				  	<li><p><m>\lbrace 5, 15, 15 \rbrace</m></p></li>
+				  	<li><p><m>\lbrace 25, 15, 20 \rbrace</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(c)</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_sampling_mean-dist-3">
+			<statement>
+				<p>If a population is uniformly distributed, then the distribution of sample means for a sample of any size <m>n</m> will also be uniformly distributed.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_sampling_theorem">
+		<title>The Central Limit Theorem</title>
+		<p>Making inferences about populations based on samples relies heavily on an understanding of how these samples behave. We must know what we can expect to see in samples that are drawn from a population with a uniform distribution, a normal distribution, or some other distribution. In the  previous subsection, we saw an example in which a sample drawn from a uniform distribution had sample means that had a more mound-shaped distribution. This is a particular instance of the next theorem.</p>
+		<theorem xml:id="thm_central-limit">
+			<title>Central Limit Theorem</title>
+			<statement>
+				<p>The distribution of the sample mean of a random sample of <m>n</m> values can be approximated by the normal distribution with mean and standard deviation shown below, where <m>\mu</m> and <m>\sigma</m> are the mean and standard deviation of the population.</p>
+				<sidebyside width="25%" margins="15% 30%" valign="middle">
+					<p><me>\mu_{\overline{x}} = \mu</me></p>
+					<p><me>\overline{x} = \frac{\sigma}{\sqrt{n}}</me></p>
+				</sidebyside>
+				<p>The larger the value of <m>n</m>, the better this approximation becomes.</p>
+			</statement>
+		</theorem>
+		<p>According to the <term>central limit theorem</term>, if we take samples and look at their means, they will have approximately a normal distribution, and the bigger the sample we take, the better the sample means will match a normal distribution. How big does <m>n</m> need to be? That depends on the way the individual population values are distributed.</p>
+		<principle xml:id="thm_central-limit-criteria">
+			<title>Criteria for Applying the Central Limit Theorem</title>
+			<statement>
+				<p>We may use the normal distribution given by the central limit theorem to approximate probabilities for means of samples of size <m>n</m> when:
+				  <ul>
+				  	<li><p>the population itself has a normal distribution, or</p></li>
+				  	<li><p>the population has any distribution and <m>n</m> is at least 30.</p></li>
+				  </ul>
+				</p>
+			</statement>
+		</principle>
+		<p>Let&apos;s apply this to several examples.</p>
+		<example xml:id="examp_sampling_criteria-not-normal">
+			<title>Determining if We Can Apply the Central Limit Theorem I</title>
+			<statement>
+				<p>A population of church mice has tail lengths that are uniformly distributed between 1.5 and 3 inches long. In which of the following situations could you use a normal distribution to compute the likelihood of getting a sample of <m>n</m> church mice that has a mean tail length of at least 2 inches?
+				  <ol label="a">
+				  	<li><p>You sample <m>n = 5</m> church mice</p></li>
+				  	<li><p>You sample <m>n = 100</m> church mice</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>The answer to this question relies on the central limit theorem. Note that the distribution of individual church mouse tails is not normal, but uniform.
+					<ol label="a">
+						<li><p>We can not use a normal distribution because the population distribution is not normal, and <m>n</m> is less than 30.</p></li>
+						<li><p>We can use a normal distribution. The sample size of <m>n=100</m> is big enough (at leat 30) that even though the population distribution is uniform, the distribution of sample means will be very close to a normal distribution.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<example xml:id="examp_sampling_criteria-normal">
+			<title>Determining if We Can Apply the Central Limit Theorem II</title>
+			<statement>
+				<p>At a certain golf club, the members have handicaps that have a normal distribution with a mean of <m>\mu = 9.6</m> and standard deviation of <m>\sigma = 1.85</m>. A sample of these golfers is selected for a tournament. In which of the following instances can we use a normal distribution to compute the probability that the average handicap for the selected golfers will be less than 10?
+					<ol label="a">
+						<li><p>The club selects <m>n = 10</m> members for the tournament</p></li>
+						<li><p>The club selects <m>n = 60</m> members for the tournament</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>Again, we must use the central limit theorem. In this case, however, the underlying distribution for the population is already normal.
+					<ol label="a">
+						<li><p>Since the population distribution is normal, the distribution for <m>\overline x</m> is also normal, no matter what <m>n</m> is.</p></li>
+						<li><p>See the answer above<mdash/>we can again use a normal distribution for <m>\overline x</m>.</p></li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_sampling_theorem-1">
+			<caption>Central Limit Theorem I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-03.mp4"/>
+		</figure>
+		<figure xml:id="video_sampling_theorem-2">
+			<caption>Central Limit Theorem II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_sampling_theorem-1">
+			<statement>
+				<p>According to the central limit theorem, the distribution of the sample means for samples of size <m>n</m> is always normal.</p>
+				<p>Question: is the following statement true or false?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_sampling_theorem-2">
+			<statement>
+				<p>Samples of size <m>45</m> are drawn from a population of values and the mean of the samples are exampled.</p>
+				<p>Question: can we use a normal distribution to approximate the distribution of these sample means?</p>
+			</statement>
+			<answer><p>Yes</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_sampling_theorem-3">
+			<statement>
+				<p>The population of penny dates is skewed to the right. Samples of 20 pennies are drawn and the average of these sets of 20 dates are noted.</p>
+				<p>Question: can we approximate the distribution of sample means with a normal distribution?</p>
+			</statement>
+			<answer><p>No</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sampling_means">
+		<title>Sampling Distribution of the Mean</title>
+		<p>In those cases where the central limit theorem applies, it gives us a powerful tool for dealing with sample means. It not only tells us that these sample means will have a normal distribution, it also provides the mean and standard deviation of that normal distribution.</p>
+		<theorem xml:id="thm_mean-sampling-dist">
+			<title>Sampling Distribution for a Mean</title>
+			<statement>
+				<p>The sampling distribution for a mean of a sample of size <m>n</m>, where the central limit theorem applies, is a normal distribution with mean and standard deviation</p>
+				<sidebyside width="25%" margins="20% 30%" valign="middle">
+				  <p><me>\mu_{\overline{x}} = \mu</me></p>
+				  <p><me>\sigma_{\overline{x}} = \frac{\sigma}{\sqrt{n}}</me></p>
+				</sidebyside>
+				<p>where <m>\mu</m> and <m>\sigma</m> are the mean and standard deviation of the population from which the sample is drawn.</p>
+			</statement>
+		</theorem>
+		<p>In the next several examples, we will be asked to find probabilities for sample means. It is important to remember that we must differentiate between the probability of an individual being in a certain range, and the probability of the mean of a sample being in that range. These probabilities will be different, and we must use the appropriate normal distribution for each one.</p>
+		<example xml:id="examp_sampling_means_two-ranges">
+			<title>Applying the Sampling Distribution for a Mean</title>
+			<statement>
+				<p>The postal service has determined that the weight of a certain size shipping container will be normally distributed with a mean of <m>\mu = 19.4</m> ounces and a standard deviation of <m>\sigma = 4.5</m> ounces.
+				  <ol label="a">
+				  	<li><p>What is the probability that a randomly selected container will weigh more than 22 ounces?</p></li>
+				  	<li><p>What is the probability that a sample of 10 such containers will have an average weight of more than 22 ounces?</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>Since the population has a normal distribution, we can use the central limit theorem. However, we do not need it for the first question as we are selecting an individual from a normally distributed population. Let&apos;s let \(W\) be the weight of an individual, and <m>\overline W</m> the weight of the sample of 10. From the central limit theorem, both <m>W</m> and <m>\overline W</m> will have the same mean, but the standard deviation for <m>\overline W</m> will be 
+				  <me>\sigma_{\overline W} = \frac{\sigma_W}{\sqrt{n}} = \frac{4.5}{\sqrt{10}} \approx 1.423</me>.
+				We sketch both the normal distribution for <m>W</m> (blue) and the one for <m>\overline W</m> (red) in the same picture to see how they compare.</p>
+				<figure xml:id="fig_sampling_examp_means_two-regions">
+					<caption>Distributions for <m>W</m> and <m>\overline W</m></caption>
+					<image width="80%" xml:id="image_sampling_examp_means_two-regions">
+						<latex-image>
+							<xi:include href="./latex-images/sampling_examp_means_two-regions.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p><ol label="a">
+					<li><p>We want to find <m>P(W \gt 22)</m>. Note that this is not a binomial approximation, so we do not apply a continuity correction! Instead, we compute the z-score for 22 and compute as shown.
+						<md>
+							<mrow>P(W \gt 22) \amp = P\left(\frac{W-\mu}{\sigma} \gt \frac{22-19.4}{4.5}\right)</mrow>
+							<mrow>\amp = P(Z \gt 0.58)</mrow>
+							<mrow>\amp = 1 - P(Z \lt 0.58)</mrow>
+							<mrow>\amp = 1 - 0.7190</mrow>
+							<mrow>\amp = 0.2810</mrow>
+						</md>
+						This is a fairly likely occurrence.</p>
+					</li>
+					<li><p>Now we need to find \(P(\overline{W} \gt 22)\). The variable \(\overline{W}\).  We do a very similar computation to the one shown above, but we use the standard deviation for the sampling distribution when computing the z-score.
+						<md>
+							<mrow>P(\overline W \gt 22) \amp = P\left(\frac{\overline{W} - \mu}{\sigma/\sqrt{n}} \gt \frac{22-19.4}{4.5/\sqrt{10}}\right)</mrow>
+							<mrow>\amp = P(Z \gt 1.83)</mrow>
+							<mrow>\amp = 1 - P(Z \lt 1.83)</mrow>
+							<mrow>\amp = 1 - 0.9664</mrow>
+							<mrow>\amp = 0.0336</mrow>
+						</md>
+						This is a much less likely occurrence.</p>
+					</li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>In the example above, note how much less likely it is to get a sample, even a small one of size 10, that varies too much from the mean. To see how sample size affects the sampling distribution, consider the following example.</p>
+		<example xml:id="examp_sampling_means_two-sizes">
+			<title>Comparing Probabilities for Different Sample Sizes</title>
+			<statement>
+				<p>The time it takes an adult to complete a certain standardized test follows am unknown distribution with mean <m>\mu = 82.5</m> minutes and standard deviation <m>\sigma = 13.1</m> minutes.
+				  <ol label="a">
+				  	<li><p>Suppose that a sample of 50 adults are given the test. Find the probability that the average time they take to complete the test is at least 85 minutes.</p></li>
+				  	<li><p>If a second sample of 100 adults is selected, what is the probability that their average completion time is at least 85 minutes?</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>Since the standard deviation for our sampling distribution depends on the sample size, the two parts of this example will have different distributions.
+					<ol label="a">
+						<li><p>The average time it takes a sample of 50 adults to complete this test will have a normal distribution (because <m>n \gt 30</m>) with mean 82.5 and standard deviation <me>\frac{13.1}{\sqrt{50}} \approx 1.853</me>.   The probability their mean score is at least 85 can be computed as shown.
+						  <md>
+						  	<mrow>P(\overline{X} \geq 85) \amp = P\left(\frac{\overline{X}-\mu}{\sigma/\sqrt{n}} \geq \frac{85-82.5}{1.853}\right)</mrow>
+						  	<mrow>\amp = P(Z \geq 1.35)</mrow>
+						  	<mrow>\amp = 1 - P(Z \lt 1.35)</mrow>
+						  	<mrow>\amp = 1 - 0.9115</mrow>
+						  	<mrow>\amp = 0.0885</mrow>
+						  </md>
+						  This is not likely, but not unusual either.</p>
+						</li>
+						<li><p>For a sample of 100 adults, the mean is still 82.5, but the standard deviation is now
+						  <me>\frac{13.1}{\sqrt{100}} = 1.31</me>.
+						  The probability computation therefore looks a little different.
+						    <md>
+							  	<mrow>P(\overline{X} \geq 85) \amp = P\left(\frac{\overline{X}-\mu}{\sigma/\sqrt{n}} \geq \frac{85-82.5}{1.31}\right)</mrow>
+							  	<mrow>\amp = P(Z \geq 1.91)</mrow>
+							  	<mrow>\amp = 1 - P(Z \lt 1.91)</mrow>
+							  	<mrow>\amp = 1 - 0.9719</mrow>
+							  	<mrow>\amp = 0.0281</mrow>
+							  </md>
+							So the probability that the group of 100 averages more than 85 minutes is about a fourth as likely as for the group of 50.</p>
+						</li>
+					</ol>
+				</p>
+				<p>The graph below shows the two sampling distributions that we used in this example.  Notice how much smaller the shaded area under the red curve (where <m>n=100</m>) is as compared to the blue (where <m>n=50</m>)</p>
+				<figure xml:id="fig_sampling_examp_means_two-sizes">
+					<caption>Sampling Distribution for <m>\overline X</m> when <m>n=50</m> and <m>n=100</m></caption>
+					<image width="80%" xml:id="image_sampling_examp_means_two-sizes">
+						<latex-image>
+							<xi:include href="./latex-images/sampling_examp_means_two-regions.tex" parse="text"/>										
+						</latex-image>
+					</image>
+				</figure>
+			</solution>
+		</example>
+
+    <figure xml:id="video_sampling_means-1">
+    	<caption>Sampling Distribution for the Mean I</caption>
+    	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-05.mp4"/>
+    </figure>
+    <figure xml:id="video_sampling_means-2">
+    	<caption>Sampling Distribution for the Mean II</caption>
+    	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-06.mp4"/>
+    </figure>
+
+    <exercise xml:id="ckpt_sampling_means-1">
+    	<statement>
+    		<p>The loudness of a cat&amp;s meow has a normal distribution with a mean of 50 decibels and a standard deviation of 9 decibels. A sample of 10 cats are collected and the average loudness of their meows is measured.</p>
+    		<p>Question: what is the probability that the average loudness of these 10 cats&apos; meows is at least 56 decibels?</p>
+    	</statement>
+    	<answer><p>0.0174</p></answer>
+    </exercise>
+    <exercise xml:id="ckpt_sampling_means-2">
+    	<statement>
+				<p>The distribution of penny dates is skewed to the left with a mean of 2001 and standard deviation 2.4 years. A sample of 49 pennies is drawn and the average date of the pennies is noted.</p>
+				<p>Question: what is the probability that the mean date for this sample is less than 2000?</p>
+			</statement>
+			<answer><p>0.0018</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_sampling_means-3">
+    	<statement>
+    		<p>The distribution of gas mileage in a certain fleet of automobiles is normal with a mean of 23.6 mpg and a standard deviation of 4.1 mpg. A sample of 5 cars is selected at random from this fleet and their gas mileage is tested.</p>
+    		<p>Question: what is the probability that the average gas mileage in this sample is more than 25 mpg?</p>
+    	</statement>
+    	<answer><p>0.2236</p></answer>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="sec_sampling_proportions">
+  	<title>Sample Distribution of a Proportion</title>
+  	<p>At the beginning of this section, we introduced the idea of a <xref ref="def_sample-proportion" text="custom">sample proportion</xref>. To help solidify this concept, the next example shows how we might compute such a proportion.</p>
+  	<example xml:id="examp_sampling_proportions-compute">
+  		<title>Computing a Sample Proportion</title>
+  		<statement>
+  			<p>In a sample of 200 butterflies, 75 were yellow monarchs. What is the proportion of yellow Monarch butterflies in this sample?</p>
+  		</statement>
+  		<solution>
+  			<p>The sample proportion is the number of individuals who have the desired characteristic, which we call <m>x</m>, divided by the sample size, which is <m>n</m>. In this case,
+  			  <me>\hat p = \frac{x}{n} = \frac{75}{200} = 0.375</me>.</p>
+  		</solution>
+  	</example>
+  	<p>Note that we use <m>\hat p</m> for a proportion in a sample instead of <m>p</m>. The variable <m>p</m> was used in binomial probabilities where it stood for the probability of a success. Thought of another way, <m>p</m> is the proportion of individuals in the population with the desired characteristic. So <m>p</m> and <m>\hat p</m> really measure the likelihood of the same characteristic. It is just that one does it for the population and the other for a sample.</p>
+  	<p>To understand how sample proportions will be distributed<mdash/>and thus how we can compute their probabilities<mdash/>we need to think back to <xref ref="sec_approximating" />. There we saw how to approximate binomial probabilities using a normal distribution. As long as the criteria for approximation was met, we could use a normal distribution to figure out <m>P(X=x)</m>, the probability of <m>x</m> successes in <m>n</m> trials.</p>
+  	<p>How does this relate to proportions? A proportion in a sample is simply a ratio of the <m>x</m> successes to the <m>n</m> trials in a binomial process. Thus, the distribution of sample proportions will have a mean which is the mean of a binomial distribution divided by <m>n</m>. It will have a standard deviation which is the standard deviation of the binomial distribution divided by <m>n</m>. These formulas are summarized below.</p>
+
+  	<theorem xml:id="thm_proportion-sampling-dist">
+  		<title>Sampling Distribution for a Proportion</title>
+  		<statement>
+  			<p>If <m>p</m> is the proportion of individuals in a population with a given characteristic and a sample of size <m>n</m> is drawn from that population, then the proportion of individuals in the sample with that characteristic, <m>\hat p</m>, will have a normal distribution with the following mean and standard deviation.</p>
+  			<sidebyside width="30%" margins="10% 20%" valign="middle">
+  				<p><me>\mu_{\hat p} = \frac{np}{n} = p</me></p>
+  				<p><me>\sigma_{\hat p} = \frac{\sqrt{npq}}{n} = \sqrt{\frac{pq}{n}}</me></p>
+  			</sidebyside>
+  			<p>This approximation is appropriate as long as both <m>n\times p</m> and <m>n\times q</m> are greater than 5.</p>
+  		</statement>
+  	</theorem>
+  	<p>Note that we are not restricted to a sample size of 30 or more, as we are when using the central limit theorem for sample means. Instead, we must check to make sure that the <xref ref="def_binomial-approx-criteria" text="custom">criteria for approximating</xref> a binomial distribution with a normal distribution are met.  Namely, we need to verify that <m>n\times p</m> and <m>n\times q</m> are both greater than 5. Consider the following example.</p>
+  	<example xml:id="examp_sampling_proportions_appropriate">
+  		<title>Computing Probabilities for a Sample Proportion</title>
+  		<statement>
+  			<p>Only 2% of the world&apos;s population has naturally blond hair. Suppose that you were drawing a sample from the world population, and you wished to use a normal distribution to compute probabilities for the sample proportion, <m>\hat p</m>, of people with blond hair. How large a sample should you take?</p>
+  		</statement>
+  		<solution>
+  			<p>In order to use a normal distribution to compute probabilities for <m>\hat p</m> we need to ensure that <m>n\times p</m> and <m>n\times q</m> are both greater than 5. Note that the <m>p</m> in this formula is the proportion of people in the population with blond hair, not the proportion in our sample. We therefore need to have
+  			  <me>n\times p \gt 5 \Rightarrow n(0.02) \gt 5 \Rightarrow n \gt \frac{5}{0.02} \Rightarrow n \gt 250</me>.</p>
+  			<p>Since <m>q = .98</m> is much larger than <m>p</m>, we do not need to check <m>n\times q</m>. We therefore must sample at least 251 individuals to apply the sampling distribution formulas above.</p>
+  		</solution>
+  	</example>
+
+  	<figure xml:id="video_sampling_proportion-1">
+  		<caption>Sampling Distribution for a Proportion I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-07.mp4"/>
+  	</figure>
+  	<figure xml:id="video_sampling_proportion-2">
+  		<caption>Sampling Distribution for a Proportion I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-08.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_sampling_proportion-1">
+  		<statement>
+  			<p>Thirteen percent of the people in a certain population like pickled beets. A sample of 80 individuals is drawn from the population and the proportion of the sample that like pickled beets is measured.</p>
+  			<p>Question: can the sampling distribution for <m>\hat p</m> be used to approximate probabilities?</p>
+  		</statement>
+  		<answer><p>Yes</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_sampling_proportion-2">
+  		<statement>
+  			<p>Suppose that 8 percent of fish in a certain lake are trout. A fisherman catches 40 fish over the course of a long weekend, and notes the proportion of those fish which are trout.</p>
+  			<p>Question: can a normal distribution be used to approximate probabilities for the sample proportion <m>\hat p</m>?</p>
+  		</statement>
+  		<answer><p>No</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_sampling_proportion-3">
+  		<statement>
+  			<p>Suppose that 32% of individuals in a certain large city have been mugged. A sample of <m>n</m> individuals is to be collected and the sample proportion <m>\hat p</m> will be analyzed using a normal distribution.</p>
+  			<p>Question: what is the smallest sample size n for which the sampling distribution of <m>\hat p</m> can be approximated by a normal distribution?</p>
+  		</statement>
+  		<answer><p>16</p></answer>
+  	</exercise>
+
+  	<p>With this information in mind, we are ready to look at examples involving sample proportions. Several of these can be found below.</p>
+  	<example xml:id="examp_sampling_proportions_less-than">
+  		<title>Computing Probabilities for a Sample Proportion I</title>
+  		<statement>
+  			<p>As seen in <xref ref="examp_sampling_proportions_appropriate"/>, only 2% of the world&apos;s population are naturally blond. Suppose that you take a sample of 500 individuals from the world population. What is the probability that you will find less than 1.5% of your sample has blond hair?</p>
+  		</statement>
+  		<solution>
+  			<p>First note that <m>n\times p = 500(0.02) = 10</m> and <m>n\times q = 500(0.98) = 490</m> are both bigger than 5. We can therefore use the sampling distribution for a sample proportion. The mean and standard deviation are shown below.
+  			  <md>
+  			  	<mrow>\mu_{\hat p} \amp = p = 0.02</mrow>
+  			  	<mrow>\sigma_{\hat p} \amp = \sqrt{\frac{pq}{n}} = \sqrt{\frac{(0.02)(0.98)}{500}} \approx 0.00626</mrow>
+  			  </md>
+  			Therefore, we can compute the probability that less than 1.5% of our sample has blond hair as follows.
+  			  <md>
+  			  	<mrow>P(\hat P \lt 0.015) \amp = P\left(\frac{\hat P - p}{\sqrt{\frac{pq}{n}}} \lt \frac{0.015 - 0.02}{0.00626}\right)</mrow>
+  			  	<mrow>\amp = P(Z \lt -0.80)</mrow>
+  			  	<mrow>\amp = 0.2119</mrow>
+  			  </md>
+  			</p>
+  		</solution>
+  	</example>
+  	<example xml:id="examp_sampling_proportions_greater-than">
+  		<title>Computing Probabilities for a Sample Proportion II</title>
+  		<statement>
+  			<p>A certain ballot measure needs 60% approval to pass. Suppose that there is actually 58% support for the ballot measure amongst registered voters. A polling organization wishes to determine if the ballot measure is likely to pass. To do this, they randomly select a sample of 900 registered voters. If they predict the measure will pass when <m>\hat p \geq 0.60</m>, what is the probability that they will mistakenly predict passage of the ballot measure?</p>
+  		</statement>
+  		<solution>
+  			<p>Checking that we can apply the normal distribution, we compute <m>n\times p = 900(0.58) = 522</m> and <m>n\times q = 900(0.42) = 378</m>, both of which are greater than 5. Now the mean and standard deviation for our normal distribution of <m>\hat p</m> are:
+  			  <md>
+  			  	<mrow>\mu_{\hat p} \amp = 0.58</mrow>
+  			  	<mrow>\sigma_{\hat p} \amp = \sqrt{\frac{(0.58)(0.42)}{900}} \approx 0.01645</mrow>
+  			  </md>
+  			Therefore, the probability that they mistaken predict passage of the ballot measure is:
+  			  <md>
+  			  	<mrow>P(\hat P \geq 0.60) \amp = P\left(\frac{\hat P - p}{\sqrt{\frac{pq}{n}}} \geq \frac{0.60 - 0.58}{0.01645}\right)</mrow>
+  			  	<mrow>\amp = P(Z \geq 1.22)</mrow>
+  			  	<mrow>\amp = 1 - P(Z \lt 1.22)</mrow>
+  			  	<mrow>\amp = 1 - 0.8888</mrow>
+  			  	<mrow>\amp = 0.1112</mrow>
+  			  </md>
+  			So, there is approximately an 11% chance the polling organizaiton will get it wrong.</p>
+  		</solution>
+  	</example>
+  	<p>The failure rate of 11% is not very good if one wants to develop a reputation for being reliable. How could the polling organization lower the likelihood that they make a wrong prediction? As we shall see in the next chapter, one method is to recognize that there is the possibility of an <q>error</q> in sampling. Therefore, the pollsters should not predict a win based on a sample proportion of 0.60. Another method is to lower the variation between samples by raising the sample size. If <m>n</m> gets bigger, <m>\sigma_{\hat p}</m> gets smaller, and the probability of being wrong will go down.</p>
+
+  	<figure xml:id="video_sampling_proportion-3">
+  	  <caption>Sampling Distribution for a Proportion III</caption>
+  	  <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-09.mp4"/>
+  	</figure>
+  	<figure xml:id="video_sampling_proportion-4">
+  	  <caption>Sampling Distribution for a Proportion IV</caption>
+  	  <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-10.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_sampling_proportion-4">
+  		<statement>
+  			<p>Twelve percent of frogs in a certain swamp region are, for one reason or another, unable to croak. A sample of 100 frogs is collected and the proportion, <m>\hat p</m>, of frogs that can not croak is measured.</p>
+  			<p>Question: what is the probability that at least 10% of the frogs in the sample can not croak?</p>
+  		</statement>
+  		<answer><p>0.7324</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_sampling_proportion-5">
+  		<statement>
+  			<p>In a recent survey of American households, 83% were found to have multiple television sets. Suppose that a sample of 2000 American households are called and the proportion that have multiple television sets is noted.</p>
+  			<p>Question: what is <m>P(\hat P \lt 0.84)</m>?</p>
+  		</statement>
+  		<answer><p>0.8830</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_sampling_proportion-6">
+  		<statement>
+  			<p>Thirty percent of a certain population have characteristic <m>X</m>. A sample of 1500 individuals is selected from this population, and the proportion of those with characteristic <m>X</m> is noted.</p>
+  			<p>Question: what is <m>P(\hat P \gt 0.33)</m>?</p>
+  		</statement>
+  		<answer><p>0.0055</p></answer>
+  	</exercise>
+  </subsection>
+
+</section>
