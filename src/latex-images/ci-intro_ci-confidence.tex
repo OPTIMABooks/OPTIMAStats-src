@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+  \edef\pts{{0.5,0.7,0,0.6,-1.5,-0.7,1,0.7,0.8,0.5,-1.9,-0.2,1,-1.3,-0.4,0.3,-1,0.9,-1,0.9,-1.5}};
+  \edef\me{1.8};
+  \newcounter{bad};
+  \setcounter{bad}{10};
+  \draw[gray,thick,dashed] (0,0) -- (21,0);
+  \foreach \i in {1,2,...,20} {
+      % define point and interval bounds
+      \edef\pt{\pts[\i]};
+      \edef\lb{{\pt-\me}};
+      \edef\ub{{\pt+\me}};
+      % pick color
+      \ifthenelse{\value{bad}=\i}{\colorlet{mycolor}{red}}{\colorlet{mycolor}{blue}};
+      \draw[line width=0.5mm,mycolor] (\i,\lb) -- (\i,\ub);
+      \draw[line width=0.5mm,mycolor] ({\i-0.1},\lb) -- ({\i+0.1},\lb);
+      \draw[line width=0.5mm,mycolor] ({\i-0.1},\ub) -- ({\i+0.1},\ub);
+  };
+  \node[left] at (0,0) {\large $\theta$};
+\end{tikzpicture}

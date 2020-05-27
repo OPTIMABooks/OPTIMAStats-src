@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      axis lines*=middle,
+      no markers,
+	  domain=-4:4,
+      samples=500,
+      xmin = -4, xmax = 4,
+	  ymin = -0.01, ymax = 0.41,
+      xtick={0,1.645},
+      xticklabels={,$z_{\alpha}$},
+	  ytick=\empty,
+      grid = none,
+      axis on top,
+      hide y axis,
+      height=5cm,
+      width=8cm
+    ]
+    \draw (axis cs: 0,-0.01) -- (axis cs: 0,0.01);
+    \path[name path=A] (axis cs: -4,0) -- (4,0);
+    \addplot+[name path=B,thick] { gauss(x, 0, 1) };
+    \addplot [
+        draw=red!50,
+        fill=red!50,
+        fill opacity=0.5,
+      ] fill between [
+        of=A and B,
+        soft clip={domain=-4:1.645}
+      ];
+      \node at (axis cs: 0,0.15) {$1-\alpha$};
+      \node (r) at (axis cs: 3.25,0.1) {$\alpha$};
+      \draw[-stealth] (r.200) -- (axis cs: 2.1,0.01);
+  \end{axis}
+\end{tikzpicture}

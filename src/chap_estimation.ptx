@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_estimation">
+  <title>Estimating Means and Proportions</title>
+  <introduction>
+    <title>Inferential Statistics</title>
+    <p>You are now past the half-way point in the text! During the first half you learned how to use descriptive statistics and how to calculate probabilities and use probability distributions. In the second half, we will use these tools to make inferences about a population based on an observed sample drawn from that population. To summarize:
+      <ul>
+        <li><p>In <xref ref="chap_descriptive" /> on descriptive statistics we describe a set of data using a table, graph, and numerical measures of center and variation.</p></li>
+        <li><p>In <xref ref="chap_probability" /> on probability we learned how to determine if a particular outcome is likely or unlikely.</p></li>
+        <li><p>In <xref ref="chap_distributions" /> we saw several probability distributions in which we could calculate the probability of outcomes based on their relationship to population parameters such as the mean, standard deviation, or a proportion.</p></li>
+        <li><p>Now, web begin our study of inferential statistics, in which we put these two tools together. In particular, in this chapter you will learn how to estimate a population mean or proportion based on the results of a sample drawn from that population.</p></li>
+      </ul>
+    </p>
+  </introduction>
+
+
+  <xi:include href="sec_ci-intro.ptx"/>
+<!--
+  <xi:include href="sec_ci-means.ptx"/> 
+  <xi:include href="sec_ci-proportions.ptx"/>
+  <xi:include href="sec_ci-differences.ptx"/>
+  <xi:include href="sec_ci-small-samples.ptx"/>
+-->
+</chapter>

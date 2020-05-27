@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ci-intro">
+  <title>Introduction to Estimation and Confidence intervals</title>
+
+  <introduction xml:id="sec_ci-intro_intro">
+  	<title>Estimating Based on a Sample</title>
+  	<p>One of the most useful tools we learn in a statistics class is how to estimate the value of a <xref ref="def_parameter" text="custom">population parameter</xref> based on the value of a <xref ref="def_statistic" text="custom">statistic</xref> seen in a sample. In this first section of <xref ref="chap_estimation"/>, we will focus on the process of estimation.  That includes describing two different types of <term>estimators</term>, how they are computed, and how to correctly interpret them.  Consider the following situation.</p>
+  	<example xml:id="examp_ci-intro_intro">
+  		<title>Motivating Estimation</title>
+  		<statement>
+  			<p>You wish to estimate the average speed that a certain fast-ball pitcher will throw the ball. In order to make this estimation, you observe 40 throws by this pitcher, in random settings, and record the speed of each of these 40 throws. How can you use this sample to estimate the actual speed of this pitcher's throws?</p>
+  		</statement>
+  		<solution>
+  			<p>One simple way to do this is to compute the sample mean for our sample of 40 throws.  But as we shall see, this estimation does not provide us enough information.  Instead, we will learn to construct a <term>confidence interval</term> to estimate the average speed of the pitcher&amp;s throws.</p>
+  		</solution>
+  	</example>
+  </introduction>
+
+  <objectives xml:id="sec_ci-intro_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>confidence interval</p></li>
+					<li><p>confidence level</p></li>
+					<li><p>critical value</p></li>
+					<li><p>estimator</p></li>
+					<li><p>interval estimator</p></li>
+					<li><p>lower confidence bound</p></li>
+					<li><p>margin of error</p></li>
+					<li><p>one-sided confidence interval</p></li>
+					<li><p>point estimator</p></li>
+					<li><p>standard error</p></li>
+					<li><p>unbiased estimator</p></li>
+					<li><p>upper confidence bound</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Identify point estimates and explain what is meant by an unbiased estimator</p></li>
+					<li><p>Describe a margin of error</p></li>
+					<li><p>Explain how a margin of error and a point estimate go together to form a confidence interval</p></li>
+					<li><p>Find critical values for various confidence levels using the standard normal distribution table</p></li>
+					<li><p>Find critical values for a one-sided confidence interval</p></li>
+					<li><p>Explain what a confidence interval represents</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ci-intro_point-estimate">
+		<title>Point Estimators</title>
+		<p>There are many instances in which it is either impossible or impractical to conduct a <xref ref="def_census" text="custom">census</xref> and collect data from an entire population in order to find a parameter such as a mean or proportion. In these situations, one common practice is to collect a representative sample from the population and use that sample to estimate the population parameter.</p>
+		<definition xml:id="def_estimator">
+			<idx>estimator</idx>
+			<idx><h>estimation</h><h>estimator</h></idx>
+			<statement>
+				<p>An <term>estimator</term> is a tool used to approximate the value of a population parameter based on a random sample drawn from that population.</p>
+			</statement>
+		</definition>
+		<p>There are many different tools one could use as an estimator. Our goal is to come up with a method that is both simple and accurate. Perhaps the simplest estimator is one that uses a single value from the sample to estimate the population proportion.</p>
+		<definition xml:id="def_point-estimator">
+			<statement>
+				<p>A <term>point estimator</term> uses a single statistic from a sample to approximate a population parameter.</p>
+			</statement>
+		</definition>
+		<p>In <xref ref="examp_ci-intro_intro"/>, our goal was to estimate the speed of a pitcher&apos;s throw. What one measure computed from our sample of 40 throwing speeds would be best for this estimation? There are several possibilities including the mode, the mean, the median, or any other measure of center from this sample. However, which one is best? Which one will routinely give us an estimate that is close to the actual average? Such an estimator is called <term>unbiased</term>.</p>
+		<definition xml:id="def_unbiased-estimator">
+			<idx>unbiased estimator</idx>
+			<idx><h>estimation</h><h>unbiased estimator</h></idx>
+			<statement>
+				<p>An <term>unbiased estimator</term> is one that will have a sampling distribution centered about the population parameter that is to be estimated.</p>
+			</statement>
+		</definition>
+		<p>To better understand this, consider the diagram below.</p>
+		<figure xml:id="fig_ci-intro_unbiased-estimator">
+			<caption>Biased vs. Unbiased Estimators</caption>
+			<image width="70%" xml:id="image_ci-intro_unbiased-estimator">
+				<latex-image>
+					<xi:include href="./latex-images/ci-intro_unbiased-estimator.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>In this image, <m>\theta</m> is the population parameter we are attempting to estimate. An unbiased estimator might have a distribution like the blue curve. That is, it may sometimes be too large, sometimes too small, but it will cluster around and have a mean equal to the population parameter <m>\theta</m>. On the other hand, a biased estimator like the one with the red probability density curve will be habitually too low (or to high) and will not cluster around the population parameter we are trying to estimate.</p>
+		<example xml:id="examp_ci-intro_point-estimate">
+			<title>Selecting a Point Estimator</title>
+			<statement>
+				<p>In order to estimate the mean cost of lunch, <em>without a tip</em>, at a certain restaurant, you collect a random sample of 50 checks and look at the total cost, <em>including tip</em>, for each customer. You use the average of these checks as your point estimate for the mean lunch cost. Is this an unbiased estimator?</p>
+			</statement>
+			<solution>
+				<p>No! The checks you sampled include a tip. They will have a distribution that is centered above the true average price of a lunch without tip.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-intro_point-estimate-1">
+			<caption>Unbiased Estimators I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-intro_point-estimate-2">
+			<caption>Unbiased Estimators I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-intro_point-estimate-1">
+			<statement>
+				<p>An unbiased point estimator will always produce the exact value of the population parameter.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-intro_point-estimate-2">
+			<statement>
+				<p>An unbiased estimator should have a distribution centered at the population parameter.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>True</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-intro_interval">
+		<title>Interval Estimators</title>
+		<p>The problem with a point estimate is that while it fulfills the simplicity requirement for an estimator, it does not give us a very accurate estimation. This is because point estimators leave out an important part of the true picture<mdash/>the variation. To see this, consider the following example.</p>
+		<example xml:id="examp_ci-intro_interval-variation">
+			<title>Factoring in Variation</title>
+			<statement>
+				<p>Suppose that the following samples of three values are randomly selected from the same population and the sample mean <m>\overline x</m> is used as a point estimator for <m>\mu</m>, the population mean. What difference, if any, is there between the estimates?  Should there be any difference?
+				  <ol label="a" cols="2">
+				  	<li><p><m>\lbrace 0, 20, 40 \rbrace</m></p></li>
+				  	<li><p><m>\lbrace 19, 20, 21 \rbrace</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>Both samples have the same mean, <m>\overline x = 20</m>.  So there would be no difference in their point estimates.  However, the variances in the samples are very different. Sample (a) suggests that the real population mean, while close to 20, could be quite different because the sample has such a large range. On the other hand, sample (b) suggests that the real population mean should be very close to 20 since the sample is not spread out very much.</p>
+			</solution>
+		</example>
+		<p>As this example shows, a point estimator ignores any information about variance that we may be able to gather from the sample. Another way to say this is that there is error in any point estimate because of the randomness of the sampling process. This error is called the <term>standard error</term>.</p>
+		<definition xml:id="def_standard-error">
+			<idx>standard error</idx>
+			<idx><h>estimation</h><h>standard error</h></idx>
+			<statement>
+				<p>The <term>standard error</term> in a point estimate <m>x</m> is the standard deviation in the sampling distribution for <m>x</m>.</p>
+			</statement>
+		</definition>
+		<p>In the next section we will see how to find the standard error when using a sample mean to estimate a population mean. But for now, the important point to recognize is that a single value is not a reliable estimator. To factor in the standard error, we will use an interval to estimate population parameters.</p>
+		<definition xml:id="def_interval-estimator">
+			<idx>interval estimator</idx>
+			<idx><h>estimation</h><h>interval estimator</h></idx>
+			<statement>
+				<p>An <term>interval estimator</term> is a range of values, centered at a point estimate, into which we estimate the true value of a population parameter will fall.</p>
+			</statement>
+		</definition>
+		<p>Note that there are two parts to an interval estimator. The point estimate, which establishes the center, and the radius of the interval. That is, the distance that we move above and below the point estimate to establish the limits of the interval. The picture below shows this.</p>
+		<figure xml:id="fig_ci-intro_interval-estimator">
+			<caption>Construction of an Interval Estimator</caption>
+			<image width="60%" xml:id="image_ci-intro_interval-estimator">
+				<latex-image>
+					<xi:include href="./latex-images/ci-intro_interval-estimator.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>The true value of the population parameter should lie somewhere between the lower limit and upper limit of this interval. Unfortunately, even when we use an interval to estimate a population parameter, we can not be positive that the population parameter is in the interval. We could, for instance, have drawn a sample of unusual values making the interval estimate unrepresentative of the population.</p>
+
+		<figure xml:id="video_ci-intro_interval-1">
+			<caption>Interval Estimators I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-03.mp4"/>
+		</figure>
+
+    <exercise xml:id="ckpt_ci-intro_interval-1">
+    	<statement>
+    		<p>A point estimate gives a complete picture of a population parameter based on the sample taken from that population.</p>
+    		<p>Question: is the above statement true or false?</p>
+    	</statement>
+    	<answer><p>False</p></answer>
+    </exercise>
+    <exercise xml:id="ckpt_ci-intro_interval-2">
+    	<statement>
+				<p>An interval estimator uses a range of values to approximate a population parameter.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>True</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-intro_ci">
+		<title>Confidence Intervals</title>
+		<p>The interval estimate that is most commonly used is called a confidence interval. To construct a confidence interval we need three things:
+			<ol label="1">
+				<li><p>A point estimate to serve as the center of the interval</p></li>
+				<li><p>The standard error for our point estimate</p></li>
+				<li><p>A <term>confidence level</term></p></li>
+			</ol>
+		</p>
+		<p>We have already talked about the first two. That leaves the confidence level.</p>
+		<definition xml:id="def_confidence-leve">
+			<idx>confidence level</idx>
+			<idx><h>estimation</h><h>confidence interval</h><h>confidence level</h></idx>
+			<statement>
+				<p>A <term>confidence level</term> is the probability that a confidence interval contains the true population proportion.</p>
+			</statement>
+		</definition>
+		<p>In can be helpful to think of a confidence levels in conjunction with its complement. That is, if we want to be 95% confident that the confidence interval we are constructing contains the true population parameter, then there will be a 5% probability that it does not. This probability that our interval <q>misses</q> the parameter is called <m>\alpha</m>, and the confidence interval is referred to as a <m>1-\alpha</m> confidence interval.</p>
+		<p>Often phrases such as the following are used to explain what we mean by a 95% confidence interval.
+		  <ul>
+		  	<li><p>95% of the time the interval will contain the true population parameter.</p></li>
+		  	<li><p>We are 95% confident that the true population parameter lies in this interval.</p></li>
+		  	<li><p>The probability that our confidence interval contains the true population proportion is 95%.</p></li>
+		  </ul>
+		  To help understand what these phrases mean, consider the following picture.</p>
+		<figure xml:id="fig_ci-intro_ci-confidence">
+			<caption>Twenty 95% Confidence Intervals</caption>
+			<image width="90%" xml:id="image_ci-intro_ci-confidence">
+				<latex-image>
+					<xi:include href="./latex-images/ci-intro_ci-confidence.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>Each of the twenty confidence intervals depicted by the vertical bars is constructed by taking a sample from the population with parameter <m>\theta</m>.  Since these represent 95% confidence intervals, we would expect 95% of them (the blue ones) to contain the true population proportion, and 5% of them (the red one) to miss the true population proportion.  While it wouldn&apos;t always work out exactly this way in reality<mdash/>with eactly one of twenty intervals missing the mean<mdash/>this illustration gives us an idea what the 95% (or any other confidence level) means.</p>
+		<p>In most of our confidence intervals, the population we are sampling will have a normal distribution, or the sample size will be large enough that we can use the central limit theorem to assume that the distribution is normal. We can then use the standard normal distribution to determine what is called the <term>critical value</term> for a given confidence level.</p>
+		<definition xml:id="dev_critical-value">
+			<idx>critical value</idx>
+			<idx><h>estimation</h><h>confidence interval</h><h>critical value</h></idx>
+			<idx><h>hypothesis testing</h><h>critical value</h></idx>
+			<statement>
+				<p>A <term>critical value</term> at the <m>(1-\alpha)</m> confidence level is the value of the random variable that divides the middle <m>(1-\alpha)</m> percent of the data from the remainbing <m>\alpha</m> percent which is split between the two tails.</p>
+			</statement>
+		</definition>
+		<p>In a standard normal distribution, these critical values are called <m>\pm z_{\alpha/2}</m>, with the positive one separating the right tail from the body of the distribution, and the negative one separating the left tail.  This is illustrated in the diagram below.</p>
+		<figure xml:id="fig_ci-intro_ci-critical">
+			<caption>Critical Values in a Normal Distribution</caption>
+			<image width="60%" xml:id="image_ci-intro_ci-critical">
+				<latex-image>
+					<xi:include href="./latex-images/ci-intro_ci-critical.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>We make use of the standard normal distribution table to find critical values in the following example.</p>
+		<example xml:id="examp_ci-intro_ci-critical">
+			<title>Finding Critical Values in a Standard Normal Distribution</title>
+			<statement>
+				<p>Find the critical values for each of the following confidence levels.
+				  <ol label="a" cols="2">
+				  	<li><p>95% Confidence Level</p></li>
+				  	<li><p>98% Confidence Level</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>To find the critical values for these confidence levels, we must find the z-score that separates the middle <m>(1-\alpha)</m> percent of the data from the top and bottom <m>\alpha/2</m> percent of the data.
+					<ol label="a">
+						<li><p>For the 95% confidence level, there is 0.9500 in the middle of the normal distribution, and half of the remaining 0.0500 in each of the tails. That means that there is 0.0250 in the upper tail and 0.0250 in the lower tail as shown below.</p>
+							<figure xml:id="fig_ci-intro_examp_ci-critical-a">
+								<caption>Critical Values for a 95% Confidence Level</caption>
+								<image width="60%" xml:id="image_ci-intro_examp_ci-critical-a">
+									<latex-image>
+										<xi:include href="./latex-images/ci-intro_examp_ci-critical-a.tex" parse="text"/>
+									</latex-image>
+								</image>
+							</figure>
+							<p>Looking up the probability 0.0250 in the body of negative part of the standard normal distribution table, we find the z-score <m>-1.96</m>. Because the standard normal distribution is symmetric, we know that if we looked up the probability <m>1-0.0250 = 0.9750</m> in the body of the positive part of the table, we would find the positive version of this z-score. Thus the critical values are <m>-z_{\alpha/2} = -1.96</m> and <m>z_{\alpha/2} = 1.96</m>.</p>
+						</li>
+						<li><p>For the 98% confidence level, the process is similar. There is 0.9800 in the middle of the normal distribution leaving 0.0200 in the tails. Dividing this in half, there is 0.0100 in the upper tail and 0.0100 in the lower tail, as shown below.</p>
+							<figure xml:id="fig_ci-intro_examp_ci-critical-b">
+								<caption>Critical Values for a 95% Confidence Level</caption>
+								<image width="60%" xml:id="image_ci-intro_examp_ci-critical-b">
+									<latex-image>
+										<xi:include href="./latex-images/ci-intro_examp_ci-critical-b.tex" parse="text"/>
+									</latex-image>
+								</image>
+							</figure>
+							<p>Again looking up the lower tail probability 0.0100 we find the closest probability in the table is 0.0099 which goes with a z-score of <m>-2.33</m>. Therefore, the critical values are <m>-z_{\alpha/2} = -2.33</m> and <m>z_{\alpha/2} = 2.33</m>.</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>These critical values are put together with the standard error, which is the standard deviation in the sampling distribution to give us the radius of our confidence interval. This radius is called the <term>margin of error</term>.</p>
+		<definition xml:id="def_margin-error">
+			<idx>margin of error</idx>
+			<idx><h>estimation</h><h>confidnece interval</h><h>margin of error</h></idx>
+			<statement>
+				<p>The <term>margin of error</term> for a confidence interval is the standard deviation of the sampling distribution for the population parameter multiplied by the critical value for the confidence level.</p>
+			</statement>
+		</definition>
+		<p>The margin of error comes from solving the z-score equation in reverse. In the case of a sample mean, the z-score of a particular value <m>\overline x</m> is found using:
+		  <me>z = \frac{\overline x - \mu}{\sigma_x}</me>.
+		  If we solve this equation for the mean <m>\mu</m> of the population, we get: 
+		  <me>z\sigma_x = \overline x - \mu \quad\Rightarrow\quad \mu = \overline x - z\sigma_x</me>.
+		  Now <m>\overline x</m> is the sample mean which is our point estimate. The margin of error is then <m>z \sigma_x</m>. For a specific confidence level, we pick the correct critical values for z, allowing us to find the margin of error. An example of this is shown below.</p>
+		<example xml:id="examp_ci-intro_ci-margin">
+			<title>Finding the Margin of Error</title>
+			<statement>
+				<p>Suppose that the standard deviation of the sampling distribution for a population parameter is <m>\sigma_x = 4.35</m>. Find the margin of error for:
+				  <ol label="a" cols="2">
+				  	<li><p>A 95% confidence interval</p></li>
+				  	<li><p>A 98% confidence interval</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>The margin of error is <m>\sigma_x</m> times <m>z_{\alpha/2}</m>. Based on our work in <xref ref="examp_ci-intro_ci-critical"/>, this gives the following values.
+				  <ol label="a">
+				  	<li><p>For a 95% confidence interval, <m>z_{\alpha/2} = \pm 1.96</m> so that the margin of error is:
+				  	  <me>\pm 1.96 \times 4.35 = \pm 8.526</me>.</p></li>
+				  	<li><p>For a 98% confidence interval, <m>z_{\alpha/2} = \pm 2.33</m> so that the margin of error is:
+				  	  <me>\pm 2.33 \times 4.35 = \pm 10.1355</me>.</p></li>
+				 	</ol>
+			  </p>
+			</solution>
+		</example>
+		<p>Finally, by adding the margin of error to our point estimate, we can construct the upper and lower bounds of the confidence interval.</p>
+		<definition xml:id="def_confidence-interval">
+			<idx>confidence interval</idx>
+			<idx><h>estimation</h><h>confidence interval</h></idx>
+			<statement>
+				<p>A <term>confidence interval</term> for a population parameter is found by adding and subtracting the margin of error to the point estimate. That is, the confidence interval has the form:
+				  <me>\text{ point estimate } \pm \text{ margin of error }</me>.</p>
+			</statement>
+		</definition>
+
+		<figure xml:id="video_ci-intro_ci-1">
+			<caption>Confidence Intervals I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-04.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-intro_ci-2">
+			<caption>Confidence Intervals II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-intro_ci-3">
+			<caption>Confidence Intervals III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-06.mp4"/>
+		</figure>
+			<figure xml:id="video_ci-intro_ci-4">
+			<caption>Confidence Intervals IV</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-09.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-intro_ci-1">
+			<statement>
+				<p>Suppose that a population parameter <m>\theta</m> is to be estimated using a 95% confidence interval. The standard error in the point estimate is 3.4.</p>
+				<p>Question: what is the margin of error? Round your answer to three decimal places.</p>
+			</statement>
+			<answer><p><m>\pm 6.664</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-intro_ci-2">
+			<statement>
+				<p>You wish to construct a 97% confidence interval using a standard normal distribution.</p>
+				<p>Question: what is the positive critical value, <m>z_{\alpha/2}</m>?</p>
+			</statement>
+			<answer><p>2.17</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-intro_ci-3">
+			<statement>
+				<p>If we construct a confidence interval at the 96% confidence level, that means that if we were to take 50 samples and build such a confidence interval, we expect the true population parameter to be inside approximately 48 of those 50 intervals.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>True</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-intro_ci-4">
+			<statement>
+				<p>A confidence interval will always contain the true population proportion.</p>
+				<p>Question: is the above statement true or false?</p>
+			</statement>
+			<answer><p>False</p></answer>
+		</exercise>
+	</subsection>
+
+  <subsection xml:id="sec_ci-intro_one-sided">
+  	<title>One-Sided Confidence Intervals</title>
+  	<p>Occasionally we may be interested in only an upper bound or a lower bound of a confidence interval. That is, instead of specifying a range into which the population parameter must fall, we want to say the parameter is either <q>no bigger</q> than or <q>no less than</q> acertain value. In these cases, we can construct a one-sided confidence interval.</p>
+  	<definition xml:id="def_upper-confidence-bound">
+  	  <idx>upper confidence bound</idx>
+  	  <idx><h>estimation</h><h>upper confidence bound</h></idx>
+  	  <statement>
+  	  	<p>An <term>upper confidence</term> bound for a population parameter is found by taking the point estimate for that parameter and adding the critical value times the standard error. That is: 
+  	  	  <me>\text{ point estimate } + z_\alpha \times \text{ standard error }</me>.</p>
+  	  </statement>
+  	</definition>
+  	<p>The picture below shows how in an upper confidence bound, the entire probability <m>\alpha</m> is placed in the right tail since we only care about the upper limit, not the lower limit. This means that we need to use a critical value <m>z_{\alpha}</m> as opposed to <m>z_{\alpha/2}</m>. The critical value <m>z_{\alpha}</m> separates the top <m>\alpha</m> percent of the data from the bottom <m>(1-\alpha)</m> percent of the data.</p>
+  	<figure xml:id="fig_ci-intro_one-sided_upper">
+  		<caption>Critical Value for an Upper Confidence Bound</caption>
+  		<image width="60%" xml:id="image_ci-intro_one-sided_upper">
+  			<latex-image>
+  				<xi:include href="./latex-images/ci-intro_one-sided_upper.tex" parse="text"/>
+  			</latex-image>
+  		</image>
+  	</figure>
+  	<definition xml:id="def_lower-confidence-bound">
+  		<idx>lower confidence bound</idx>
+  		<idx><h>estimation</h><h>lower confidence bound</h></idx>
+  		<statement>
+  			<p>A <term>lower confidence bound</term> for a population parameter is found by taking the point estimate for that parameter and subtracting the critical value times the standard error. That is:
+  			  <me>\text{ point estimate } - z_\alpha \times \text{ standard error }</me>.</p>
+  		</statement>
+  	</definition>
+  	<p>The picture below shows how to find the critical value for a lower confidence bound. This time the probability that the confidence interval does not contain the true proportion is all placed in the left tail. Thus, we would use a critical value <m>-z_{\alpha}</m>, separating the bottom <m>\alpha</m> from the top <m>(1-\alpha)</m> percent of the data. The negative sign in front of <m>z_{\alpha}</m> becomes the subtraction in the formula above.</p>
+  	<figure xml:id="fig_ci-intro_one-sided_lower">
+  		<caption>Critical Value for an Upper Confidence Bound</caption>
+  		<image width="60%" xml:id="image_ci-intro_one-sided_lower">
+  			<latex-image>
+  				<xi:include href="./latex-images/ci-intro_one-sided_lower.tex" parse="text"/>
+  			</latex-image>
+  		</image>
+  	</figure>
+  	<definition xml:id="def_one-sided-ci">
+  		<idx>one-sided confidence interval</idx>
+  		<idx><h>estimation</h><h>confidnece interval</h><h>one-sided</h></idx>
+  		<statement>
+  			<p>An upper or lower confidence bound is called a <term>one-sided confidence interval</term>.</p>
+  		</statement>
+  	</definition>
+  	<p>The following example shows how we might build one-sided confidence intervals.</p>
+  	<example xml:id="examp_one-sided-intervals">
+  		<title>Finding One-Sided Confidence Intervals</title>
+  		<statement>
+  			<p>Suppose that <m>x=10</m> is the point estimate for a population parameter, and that the standard error is <m>\sigma_x = 1.5</m>. Find:
+  			  <ol label="a">
+  			  	<li><p>A 95% upper confidence bound for the population parameter</p></li>
+  			  	<li><p>A 98% lower confidence bound for the population parameter</p></li>
+  			  </ol>
+  			</p>
+  		</statement>
+  		<solution>
+  			<p><ol label="a">
+  				<li><title>95% Upper Confidence Bound</title>
+  				  <p>To get a 95% upper confidence bound, we need a critical value <m>z_{0.05}</m> that separates the bottom 95% of the data from the top 5%. Looking up <m>0.9500</m> in the standard normal distribution table, we find <m>0.9495</m> goes with a z-score of <m>1.64</m> and <m>0.9505</m> goes with <m>1.65</m>. So the z-score we want is half-way between <m>1.64</m> and <m>1.65</m>, which gives <m>z_\alpha = 1.645</m> (Note: we only average this way because 0.95 is exactly half way between <m>0.9495</m> and <m>0.9505</m>). Then, computing the upper confidence bound, we get:
+  				    <me>10 + 1.645 \times 1.5 = 10 + 2.4675 = 12.4675</me>.</p>
+  				</li>
+  				<li><title>98% Lower Confidence Bound</title>
+  				  <p>In this case we want 2% in the bottom tail and 98% in the top tail. Looking up <m>0.0200</m> in the standard normal distribution table we find a z-score of <m>-2.05</m>. Note that the critical value is negative, so when we multiply by the standard error and add it to the point estimate, we will actually subtract. This computation yields:
+  				    <me>10 - 2.05 \times 1.5 = 10 - 3.075 = 6.925</me>.</p>
+  				</li>
+  			</ol></p>
+  		</solution>
+  	</example>
+
+		<figure xml:id="video_ci-intro_one-sided-1">
+			<caption>One-Sided Confidence Intervals I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-07.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-intro_one-sided-2">
+			<caption>One-Sided Confidence Intervals II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-intro_one-sided-1">
+			<statement>
+				<p>We wish to find a 97% upper confidence bound.</p>
+				<p>Question: what critical value should we use for <m>z_\alpha</m>?</p>
+			</statement>
+			<answer><p>1.88</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-intro_one-sided-2">
+			<statement>
+				<p>Suppose that the point estimate for a population parameter <m>\theta</m> is 0.4 and the standard error in this point estimate is 0.02.</p>
+				<p>Question: what is the 99% lower confidence bound for <m>\theta</m>? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p>0.3534</p></answer>
+		</exercise>
+	</subsection>
+
+</section>
