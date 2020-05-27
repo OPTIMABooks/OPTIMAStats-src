@@ -6,6 +6,7 @@
     <latex-image-preamble>
       \usepackage{pgfplots}
       \usepackage{filecontents}
+      \usepackage{ifthen}
       \usepgfplotslibrary{fillbetween}
       \usetikzlibrary{patterns}
       \pgfmathdeclarefunction{gauss}{3}{%
