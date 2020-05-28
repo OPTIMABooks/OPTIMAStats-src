@@ -150,7 +150,7 @@
 	<subsection xml:id="sec_ci-proportions_interval">
 		<title>Confidence Interval</title>
 		<p>Confidence intervals for proportions are found in the same way as they were for means. We take the point estimate, which is <m>\hat p</m> in this case, and we add and subtract the margin of error we just saw. This formula is summarized below.</p>
-		<theorem xml:id="thm_ci=proportion">
+		<theorem xml:id="thm_ci-proportion">
 			<title>Confidence Interval for a Proportion</title>
 			<statement>
 				<p>The <m>(1-\alpha)100%</m> confidence interval for a population proportion <m>p</m> is given by: 
@@ -217,7 +217,7 @@
 			</statement>
 			<answer><p><m>0.5503 \lt p \lt 0.6435</m></p></answer>
 		</exercise>
-		<exercise xml:id="ckpt_ci-proportions_interval-1">
+		<exercise xml:id="ckpt_ci-proportions_interval-2">
 			<statement>
 				<p>In a sample of 100 bags of M&amp;M&apos;s candy, you find that 34.4% of them contain more brown candies than any other color.</p>
 				<p>Question: what is the confidence interval for this problem?  Round your confidence bounds to four decimal places.</p>
@@ -229,7 +229,7 @@
 	<subsection xml:id="sec_ci-proportions_sample-size">
 		<title>Sample Size</title>
 		<p>A polling organization needs to construct a 95% confidence interval. They want to be sure that their margin of error is no more than 4%. How many individuals do they need to sample to make this happen? This is just one example of a common situation. Before we even start to collect data, we need to know how big a sample we should plan on gathering. Selecting too large of a sample will be expensive and time consuming. On the other hand if we pick too small of a sample, we will get a large margin of error, and may not even be able to use the normal distribution methods from this section.</p>
-		<p>To find the <q>just right</q> sample size, we need to refer back to the <xref ref="thm_proportion-margin-error" text="custom">margin of error formula</xref>. Suppose that we want to know how big <m>n</m> must be so that our margin of error is no more than some fixed amount <m>E</m>. Then, we need to solve the following inequality for <m>n</m>.
+		<p>To find the <q>just right</q> sample size, we need to refer back to the <xref ref="thm_margin-error-proportion" text="custom">margin of error formula</xref>. Suppose that we want to know how big <m>n</m> must be so that our margin of error is no more than some fixed amount <m>E</m>. Then, we need to solve the following inequality for <m>n</m>.
 		  <me>z_{\alpha/2}\times \sqrt{\frac{pq}{n}} \leq E</me>.
 		  Squaring both sides yields the following.
 		  <me>\frac{(z_{\alpha/2})^2pq}{n} \leq E^2</me>.
