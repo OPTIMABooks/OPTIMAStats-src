@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ci-proportions">
+  <title>Confidence Intervals for a Proportion</title>
+
+  <introduction xml:id="sec_ci-proportions_intro">
+  	<title>Estimating a Proportion</title>
+  	<p>The process for estimating the proportion of a population which has a given characteristic is very similar to the <xref ref="sec_ci-means_intro" text="custom">process for estimating population means</xref>. In order to build a confidence interval for <m>p</m>, the population proportion, we follow these steps.
+  	  <ol label="1">
+  	  	<li><p>Get a point estimate for <m>p</m>.</p></li>
+  	  	<li><p>Find the margin of error for <m>p</m>.</p></li>
+  	  	<li><p>Add the margin of error to and subtract it from the point estimate to get the confidence interval.</p></li>
+  	  </ol>
+  	The tools we use to find the margin of error again rely on the assumption that the sample proportion, <m>\hat p</m>, will have a normal distribution. Recall that this is true as long as <m>n\times p</m> and <m>n\times q</m> are both greater than 5.</p>
+  </introduction>
+
+  <objectives xml:id="sec_ci-proportions_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Confidence Interval for a Proportion</p></li>
+					<li><p>Margin of Error for a Proportion</p></li>
+					<li><p>Point Estimate for a Proportion</p></li>
+					<li><p>Sample Size when Estimating a Proportion</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Identify the best point estimate for a population proportion</p></li>
+					<li><p>Find the margin of error for a population proportion</p></li>
+					<li><p>Construct a confidence interval for a population proportion</p></li>
+					<li><p>Understand and list the assumptions that must be made to construct this confidence interval</p></li>
+					<li><p>Compute the minimum sample size necessary for a given margin of error</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ci-proportions_point">
+		<title>Point Estimate</title>
+		<p>How do we use a sample from a population to estimate the population proportion? Consider the following example.</p>
+		<example xml:id="examp_ci-proportions_point-general">
+			<title>Describing the Process for Finding a Point Estimate for a Proportion</title>
+			<statement>
+				<p>An urn contains a large number of colored marbles. You wish to estimate how many of those marbles are red. Describe how this might be done.</p>
+			</statement>
+			<solution>
+				<p>Assuming that the urn contains too many marbles to go through, we will base our estimate on a sample. Draw a sample of 100 marbles, so that <m>n=100</m>.  Then count the number that are red and call that <m>x</m>. The proportion of red marbles in the sample is 
+				  <me>\hat p = \frac{x}{100}</me>.</p>
+				<p>We should use <m>\hat p</m> to estimate <m>p</m>, the proportion of all of the marbles that are red.</p>
+			</solution>
+		</example>
+		<p>This is a specific example of using the sample proportion as a point estimate for the population proportion.</p>
+		<theorem xml:id="thm_point-estimate-proportion">
+			<title>Point Estimate for a Proportion</title>
+			<statement>
+				<p>The best point estimate for a population proportion <m>p</m> is the sample proportion <m>\hat p</m>.</p>
+			</statement>
+		</theorem>
+		<p>In many examples, such as the last one, we are not directly given the value of <m>\hat p</m>. Instead, we are told the sample size, <m>n</m>, and the number of individuals in the sample that have the desired characteristic, <m>x</m>. It is up to us then to compute <m>\hat p = \frac{x}{n}</m>. Another example of this can be seen below.</p>
+		<example xml:id="examp_ci-proportions_point-find">
+			<title>Finding a Point Estimate for a Proportion</title>
+			<statement>
+				<p>A storybook writer wishes to know the proportion of 2nd graders who believe in unicorns. He randomly samples <m>350</m> 2nd graders and finds that <m>183</m> of them believe in unicorns. What should he use as an estimate for the proportion of all 2nd graders who believe in unicorns?</p>
+			</statement>
+			<solution>
+				<p>The best estimate for the population proportion <m>p</m> is the sample proportion <m>\hat p</m> which is:
+				  <me>\hat p = \frac{x}{n} = \frac{183}{350} \approx 0.5229</me>.
+				  The storybook writer should conclude that 52.3% of 2nd graders believe in unicorns.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-proportions_point-1">
+			<caption>Point Estimates for a Proportion I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-proportions_point-2">
+			<caption>Point Estimates for a Proportion II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-proportions_point-1">
+			<statement>
+				<p>You wish to estimate the proportion of men who know how to cook. To do this, you collect a random sample of <m>725</m> men and find that <m>433</m> of them know how to cook.</p>
+				<p>Question: what should you use as a point estimate for <m>p</m>, the proportion of men who know how to cook?</p>
+			</statement>
+			<answer><p>0.5972</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-proportions_point-2">
+			<statement>
+				<p>In a sample of 100 bags of M&amp;M&apos;s candy, you find that 34.4% of them contain more brown candies than any other color.</p>
+				<p>Question: what is the best estimate of the proportion of M&amp;M&apos;s candy bags that contain more brown candies than any other color?</p>
+			</statement>
+			<answer><p>0.344</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_proportions_margin-error">
+		<title>Margin of Error</title>
+		<p>How good is a point estimate for a proportion? To answer this question we need to find the margin of error for such an estimate. The basic formula for margin of error is the same as in the past two lessons. We multiply a critical value by the standard deviation of the sampling distribution. In this case, we are using the <xref ref="thm_proportion-sampling-dist" text="custom">sampling distribution for <m>\hat p</m></xref>.</p>
+		<theorem xml:id="thm_margin-error-proportion">
+			<title>Margin of Error for a Proportion</title>
+			<statement>
+				<p>The margin of error when estimating a population proportion with a sample proportion <m>\hat p</m> drawn from a sample of size <m>n</m> at the <m>(1-\alpha)</m> significance level is:
+				  <me>z_{\alpha/2}\times \sqrt{\frac{pq}{n}}</me>.
+				  Note that since <m>p</m> is not known, we approximate with <m>p approx \hat p</m> and <m>q \approx 1-\hat p</m>.</p>
+			</statement>
+		</theorem>
+		<p>Let&apos;s apply this formula to the <xref ref="examp_ci-proportions_point-find" text="custom">storybook writer example</xref>.</p>
+		<example xml:id="examp_ci-proportions_margin-error-99">
+			<title>Finding the Margin of Error for a Proportion</title>
+			<statement>
+				<p>A storybook writer wishes to know the proportion of 2nd graders who believe in unicorns. He randomly samples <m>350</m> 2nd graders and finds that <m>183</m> of them believe in unicorns. What is the margin of error in estimating the proportion of 2nd graders who believe in unicorns with this sample at the 99% confidence level?</p>
+			</statement>
+			<solution>
+				<p>At the 99% confidence level our critical value is <m>z_{\alpha/2} = \pm 2.575</m>. We use our point estimate <m>\hat p = \frac{183}{350} \approx 0.5229</m> to approximate <m>p</m>. This gives a margin of error of:
+				  <me>z_{\alpha/2} \times \sqrt{\frac{pq}{n}} = \pm 2.575\sqrt{\frac{(0.5229)(0.4771)}{350}} \approx \pm 0.0687</me>.</p>
+				<p>We are therefore 99% confident that the 52.3% of 2nd graders that we estimate believe in unicorns is no more than 6.9% different from the true population proportion.</p>
+			</solution>
+		</example>
+		<p>One final note on the margin of error formula above. To use critical values, <m>z_{\alpha/2}</m>, from the standard normal distribution, we have to assume that <m>n\times p</m> and <m>n\times q</m> are greater than 5. Since we don&apos;t know <m>p</m><mdash/>after all, that is what we are trying to estimate, we again substitute <m>\hat p</m>. So we must make sure that <m>n\times \hat p = x</m> and <m>n\times \hat q = n-x</m> are both greater than 5 before we can use the formula above for margin of error.  In other words, we must have more than five <q>successes</q> and more than five <q>failures</q> in our sample in order to proceed.</p>
+
+		<figure xml:id="video_ci-proportions_margin-error-1">
+			<caption>Margin of Error for a Proportion I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-03.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-proportions_margin-error-2">
+			<caption>Margin of Error for a Proportion II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-proportions_margin-error-1">
+			<statement>
+				<p>You wish to estimate the proportion of men who know how to cook. To do this, you collect a random sample of <m>725</m> men and find that <m>433</m> of them know how to cook.</p>
+				<p>Question: what is the margin of error at the 95% confidence level in the estimation of <m>p</m> by <m>\hat p</m>? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p><m>\pm 0.0357</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-proportions_margin-error-2">
+			<statement>
+				<p>In a sample of 100 bags of M&amp;M&apos;s candy, you find that 34.4% of them contain more brown candies than any other color.</p>
+				<p>Question: what is the 98% margin of error in your estimation, based on this sample, of the proportion of M&amp;M&apos;s bags that contain more brown candies than any other color? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p><m>\pm 0.1107</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-proportions_interval">
+		<title>Confidence Interval</title>
+		<p>Confidence intervals for proportions are found in the same way as they were for means. We take the point estimate, which is <m>\hat p</m> in this case, and we add and subtract the margin of error we just saw. This formula is summarized below.</p>
+		<theorem xml:id="thm_ci=proportion">
+			<title>Confidence Interval for a Proportion</title>
+			<statement>
+				<p>The <m>(1-\alpha)100%</m> confidence interval for a population proportion <m>p</m> is given by: 
+				  <me>\hat p \pm z_{\alpha/2}\times \sqrt{\frac{p q}{n}}</me>.</p>
+			</statement>
+		</theorem>
+		<p>In the example below we make use of this formula to construct a confidence interval.</p>
+		<example xml:id="examp_ci-proportions_interval">
+			<title>Constructing a Confidence Interval for a Proportion</title>
+			<statement>
+				<p>In order to judge the popularity of a certain politician, a polling firm surveys <m>1500</m> registered voters and finds that 53.5% of them have a favorable opinion of the politician. Construct a 98% confidence interval for the proportion of registered voters who have a favorable opinion of the politician.</p>
+			</statement>
+			<solution>
+				<p>In this example we are given <m>\hat p = 0.535</m>. Since we are using the 98% confidence level, our critical value is <m>z_{\alpha/2}= 2.33</m>. Putting this together yields the formula:
+				  <me>0.535 \pm 2.33\sqrt{\frac{(0.535)(0.465)}{1500}} = 0.535 \pm 0.0300</me>.</p>
+				<p>Therefore, we are 98% confident that the true proportion of registered voters who have a favorable opinion of the politician is in the range:
+					  <me>0.505 \lt p \lt 0.565</me>.</p>
+				<p>Note that this result could also have been reported as a 53.5% favorable rating with a margin of error of plus or minus 3%.</p>
+			</solution>
+		</example>
+		<p>We can also construct upper or lower confidence bounds for a population proportion.</p>
+		<example xml:id="examp_ci-proportions_one-sided">
+			<title>Constructing a One-Sided Confidence Interval</title>
+			<statement>
+				<p>A cereal company claims that at least 20% of its cereal boxes contain a special prize. You collect samples of <m>500</m> cereal boxes and find that <m>83</m> of them contain prizes. Based on this sample you suspect that less than 20% of boxes actually contain a prize. Can you be:
+				  <ol label="a">
+				  	<li><p>95% confident of this?</p></li>
+				  	<li><p>99% confident?</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>This question calls for an upper confidence bound on the proportion of cereal boxes that contain a prize. Using our sample data,
+				  <me>\hat p = \frac{83}{500} = 0.166</me>.
+				  <ol label="a">
+				    <li><p>For a 95% upper confidence bound, <m>z_\alpha = 1.645</m>. Therefore, the upper confidence bound is:
+				      <me>0.166 + 1.645\sqrt{\frac{(0.166)(0.834)}{500}} \approx 0.1934</me>.
+				      Yes, we can be 95% certain that <m> p \lt 0.20 </m> because <m>0.20</m> is not in the one-sided confidence interval that lies below <m>0.1934</m>.</p></li>
+				    <li><p>Now for a 99% upper confidence bound, <m>z_\alpha = 2.33</m>. Therefore, the upper confidence bound is:
+				      <me>0.166 + 2.33\sqrt{\frac{(0.166)(0.834)}{500}} \approx 0.2048</me>.
+				      In this case we can not be 99% confident that <m>p \lt 0.20</m> since 0.20 is below the upper confidence bound, and hence still in the one-sided confidence interval.</p></li>
+				  </ol>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-proportions_interval-1">
+			<caption>Confidence Interval for a Proportion I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-proportions_interval-2">
+			<caption>Confidence Interval for a Proportion II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-06.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-proportions_interval-3">
+			<caption>Confidence Interval for a Proportion III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-07.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-proportions_interval-1">
+			<statement>
+				<p>You wish to estimate the proportion of men who know how to cook with a 99% confidence interval. To do this, you collect a random sample of 725 men and find that 433 of them know how to cook.</p>
+				<p>Question: what is the confidence interval for this problem?  Round your confidence bounds to four decomal places.</p>
+			</statement>
+			<answer><p><m>0.5503 \lt p \lt 0.6435</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-proportions_interval-1">
+			<statement>
+				<p>In a sample of 100 bags of M&amp;M&apos;s candy, you find that 34.4% of them contain more brown candies than any other color.</p>
+				<p>Question: what is the confidence interval for this problem?  Round your confidence bounds to four decimal places.</p>
+			</statement>
+			<answer><p><m>0.2333 \lt p \lt 0.4547</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-proportions_sample-size">
+		<title>Sample Size</title>
+		<p>A polling organization needs to construct a 95% confidence interval. They want to be sure that their margin of error is no more than 4%. How many individuals do they need to sample to make this happen? This is just one example of a common situation. Before we even start to collect data, we need to know how big a sample we should plan on gathering. Selecting too large of a sample will be expensive and time consuming. On the other hand if we pick too small of a sample, we will get a large margin of error, and may not even be able to use the normal distribution methods from this section.</p>
+		<p>To find the <q>just right</q> sample size, we need to refer back to the <xref ref="thm_proportion-margin-error" text="custom">margin of error formula</xref>. Suppose that we want to know how big <m>n</m> must be so that our margin of error is no more than some fixed amount <m>E</m>. Then, we need to solve the following inequality for <m>n</m>.
+		  <me>z_{\alpha/2}\times \sqrt{\frac{pq}{n}} \leq E</me>.
+		  Squaring both sides yields the following.
+		  <me>\frac{(z_{\alpha/2})^2pq}{n} \leq E^2</me>.
+		  Finally, multiplying both sides by <m>n</m> and dividing by <m>E^2</m> gives us the formula below.
+		  <me>n \geq \frac{(z_{\alpha/2})^2pq}{E^2}</me>.
+		  The results are summarized in the following theorem.</p>
+		<theorem xml:id="thm_proportion-sample-size">
+			<title>Sample Size when Estimating a Proportion</title>
+			<statement>
+				<p>To get a maximum margin of error of <m>E</m> at the <m>(1-\alpha)</m> confidence level, we must take a sample of size <m>n</m> where:
+				  <me>n \geq \frac{(z_{\alpha/2})^2pq}{E^2}</me>.</p>
+			</statement>
+		</theorem>
+		<p>Note that we usually don&apos;t know <m>p</m> and <m>q</m> before we take our sample. The population proportion <m>p</m> is, after all, what we are trying to estimate. To make up for this we can do one of two things. We must either have an estimate for <m>p</m> from a previous study, or we can assume the <q>worst case scenario</q> that <m>p = q = 0.5</m>.  We call this the <q>worst case scenario</q> because these values for <m>p</m> and <m>q</m> will lead to the largest sample size. To see examples of both of these, consider the following.</p>
+		<example xml:id="examp_ci-proportions_sample-size">
+			<title>Finding the Sample Size for a Given Margin of Error</title>
+			<statement>
+				<p>You wish to estimate the proportion of fish in a given lake that are too small to be legally kept by fishermen with a 95% confidence interval. To minimize the cost of your sample, you want to know the minimum number of fish you need to catch so that your margin of error is no more than 2%. Find this value of <m>n</m> if:
+				  <ol label="a">
+				  	<li><p>a previous study showed that 60% of the fish were too small to be kept.</p></li>
+				  	<li><p>you have no additional information.</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<solution>
+				<p>We use the two options mentioned above to find our sample sizes.
+					<ol label="a">
+						<li><p>If we estimate <m>p = 0.6</m> based on the previous study, we get
+						  <me>n \geq \frac{(1.96)^2(0.60)(0.40)}{(0.02)^2} = 2304.96</me>.
+						  Since we must sample a whole number of fish, we round this up to a sample size of <m>n = 2305</m> fish. Remember to always round sample sizes up!</p></li>
+						<li><p>If we have no additional information, we must assume that both <m>p</m> and <m>q</m> are <m>0.5</m>. This gives
+						  <me>n \geq \frac{(1.96)^2(0.5)(0.5)}{(0.02)^2} = 2401</me>.
+						  Thus, we must sample <m>n = 2401</m> fish.</p></li>
+					</ol>
+					Note that if we use the <q>worse case scenario</q> estimate of <m>p = q = 0.5</m>, we get a bigger sample size, by almost 100, than we did using the information from a previous study.
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-proportions_sample-size-1">
+			<caption>Sample Size I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-08.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-proportions_sample-size-2">
+			<caption>Sample Size II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-09.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-proportions_sample-size-1">
+			<statement>
+				<p>In an effort to determine support for a certain ballot measure, sponsors of the ballot measure wish to construct a 99% confidence interval for the proportion of registered voters who plan to vote for the measure. They have no previous information on level of support for this measure, but they wish to get a margin of error that is no more than 4%.</p>
+				<p>Question: what is the smallest number of individuals that they can sample to meet these requirements?</p>
+			</statement>
+			<answer><p>1037</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-proportions_sample-size-2">
+			<statement>
+				<p>A grocery store chain wishes to determine what proportion of its customers use coupons. They will construct a 95% confidence interval for this proportion based on a sample of size <m>n</m>, and they want the margin of error to be no more than 3.5%. Studies at other grocery stores have indicated that approximately 30% of customers actually use coupons.</p>
+				<p>Question: what is the minimum number of customers that the store should survey to meet the above requirements?</p>
+			</statement>
+			<answer><p>659</p></answer>
+		</exercise>
+  </subsection>
+
+</section>
