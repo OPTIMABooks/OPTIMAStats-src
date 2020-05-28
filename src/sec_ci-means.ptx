@@ -56,12 +56,12 @@
 			</solution>
 		</example>
 		<p>The results of this example are summarized below.</p>
-		<principle xml:id="thm_point-estimate-mean">
+		<theorem xml:id="thm_point-estimate-mean">
 			<title>Point Estimator for a Mean</title>
 			<statement>
 				<p>The best point estimator for a mean is the sample mean, <m>\overline{x}</m>.</p>
 			</statement>
-		</principle>
+		</theorem>
 		<p>While this may seem obvious, there is some background knowledge that is important. In <xref ref="sec_sampling"/> we saw that as long as the population was normal, or the sample size was at least 30, then the distribution of sample means, <m>\overline{X}</m>, will be approximately normal and have as its mean <m>\mu_{\overline{x}}</m> the population mean <m>\mu</m>. At this point, we don&apos;t need to know that the sample means have a normal distribution, although that will be important shortly. What is more important is that
 		  <me>\mu_{\overline{x}} = \mu</me>.
 		In other words, if we take the average of the sample means <m>\overline{x}</m> for all possible samples of a set size, that will equal the population mean. So <m>\overline{x}</m> is an <xref ref="def_unbiased-estimator" text="custom">unbiased estimator</xref> for <m>\mu</m>.</p>
@@ -97,13 +97,13 @@
 		<p>Now that we know the best point estimator for a population mean is the sample mean, we have the first piece of our confidence interval. But we need to know how much error we should expect when using this approximation. That is, we need to know how to compute the margin of error. Remember that in general,
 			<me>\text{ ME } = z_{\alpha/2} \times \text{ SE }</me>SE,
 		  where the standard error is the standard deviation in the sampling distribution. From <xref ref="sec_sampling"/>, we know that if the distribution of <m>\overline{x}</m> is normal, then its standard deviation is <m>\frac{\sigma}{\sqrt{n}}</m>. This yields the following.</p>
-		<principle xml:id="tmp_margin-error-mean">
+		<theorem xml:id="tmp_margin-error-mean">
 			<title>Margin of Error for a Mean</title>
 			<statement>
 				<p>When approximating a single population mean <m>\mu</m> with a sample mean <m>\overline x</m>, the margin of error is:
 				  <me>z_{\alpha/2} \times \left(\frac{\sigma}{\sqrt{n}}\right)</me>.</p>
 			</statement>
-		</principle>
+		</theorem>
 		<p>There are several things to note about this margin of error computation.
 			<ul>
 				<li><p>The distribution of the sample means must be normal. That means either the original population must have a normal distribution or we must have a sample size of at least 30 so that we can apply the central limit theorem.</p></li>
@@ -168,7 +168,7 @@
 		</theorem>
 		<p>Consider the following examples.</p>
 		<example xml:id="examp_ci-means_interval">
-			<title>Constructing Confidence Intervals for the Mean</title>
+			<title>Constructing Confidence Intervals for a Mean</title>
 			<statement>
 				<p>To estimate the average weight of a Taco Bell bean burrito, you collect a sample of 40 bean burritos. You find that the sample mean is <m>\overline{x} = 7.4</m> oz with a standard deviation of <m>s = 1.42</m> oz. Construct the following.
 				  <ol label="a">

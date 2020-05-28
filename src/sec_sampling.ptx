@@ -488,7 +488,6 @@
   	<p>Note that we use <m>\hat p</m> for a proportion in a sample instead of <m>p</m>. The variable <m>p</m> was used in binomial probabilities where it stood for the probability of a success. Thought of another way, <m>p</m> is the proportion of individuals in the population with the desired characteristic. So <m>p</m> and <m>\hat p</m> really measure the likelihood of the same characteristic. It is just that one does it for the population and the other for a sample.</p>
   	<p>To understand how sample proportions will be distributed<mdash/>and thus how we can compute their probabilities<mdash/>we need to think back to <xref ref="sec_approximating" />. There we saw how to approximate binomial probabilities using a normal distribution. As long as the criteria for approximation was met, we could use a normal distribution to figure out <m>P(X=x)</m>, the probability of <m>x</m> successes in <m>n</m> trials.</p>
   	<p>How does this relate to proportions? A proportion in a sample is simply a ratio of the <m>x</m> successes to the <m>n</m> trials in a binomial process. Thus, the distribution of sample proportions will have a mean which is the mean of a binomial distribution divided by <m>n</m>. It will have a standard deviation which is the standard deviation of the binomial distribution divided by <m>n</m>. These formulas are summarized below.</p>
-
   	<theorem xml:id="thm_proportion-sampling-dist">
   		<title>Sampling Distribution for a Proportion</title>
   		<statement>
