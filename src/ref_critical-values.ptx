@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="ref_critical-values">
+	<title>Common Critical Values</title>
+
+	<table>
+		<title>Normal Distribution</title>
+		<tabular>
+			<col right="medium" halign="center"></col>
+			<col right="medium" halign="center"></col>
+			<col right="medium" halign="center"></col>
+			<col halign="center"></col>
+			<row bottom="medium">
+				<cell><m>(1-\alpha)</m></cell>
+				<cell><m>\alpha</m></cell>
+				<cell><m>z_{\alpha/2}</m></cell>
+				<cell><m>z_\alpha</m></cell>
+			</row>
+			<row>
+				<cell>90%</cell>
+				<cell><m>0.10</m></cell>
+				<cell><m>1.645</m></cell>
+				<cell><m>1.28</m></cell>
+			</row>
+			<row>
+				<cell>95%</cell>
+				<cell><m>0.05</m></cell>
+				<cell><m>1.96</m></cell>
+				<cell><m>1.645</m></cell>
+			</row>
+			<row>
+				<cell>98%</cell>
+				<cell><m>0.02</m></cell>
+				<cell><m>2.33</m></cell>
+				<cell><m>2.05</m></cell>
+			</row>
+			<row>
+				<cell>99%</cell>
+				<cell><m>0.01</m></cell>
+				<cell><m>2.575</m></cell>
+				<cell><m>2.33</m></cell>
+			</row>
+		</tabular>
+	</table>
+</section>
