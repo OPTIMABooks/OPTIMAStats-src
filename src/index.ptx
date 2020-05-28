@@ -97,14 +97,15 @@
       </part>
     
     <backmatter>
- <!-- 
       <appendix xml:id="apx_reference">
-        <xi:include href=./ref_critical-values.ptx">
+        <title>Reference</title>
+        <xi:include href="./ref_critical-values.ptx"/>
       </appendix>
+<!--       
       <appendix xml:id="apx_tables">
-        <xi:include href=./table_normal.ptx">
-        <xi:include href=./table_student-t.ptx">
-        <xi:include href=./table_chi-squared.ptx">
+        <xi:include href="./table_normal.ptx"/>
+        <xi:include href="./table_student-t.ptx"/>
+        <xi:include href="./table_chi-squared.ptx"/>
       </appendix>
 -->
       <index>
