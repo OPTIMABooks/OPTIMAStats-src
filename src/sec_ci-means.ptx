@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ci-means">
+  <title>Confidence Intervals for a Mean</title>
+
+  <introduction xml:id="sec_ci-means_intro">
+  	<title>Estimating a Mean</title>
+  	<p>We have now seen the basics of constructing a confidence interval. To review, these steps are:
+  		<ol label="1">
+  			<li><p>find a point estimate,</p></li>
+  			<li><p>find the margin of error, and</p></li>
+  			<li><p>add the margin of error to and subtract it from the point estimate.</p></li>
+  		</ol>
+  	</p>
+  	<p>In this section we will learn how to complete these steps when the parameter we are estimating is the mean, <m>\mu</m>, of a single population which is either normal or from which we&apos;ve taken a large enough sample that we can apply the <xref ref="thm_central-limit" text="title"/>. As we work through this process, we will give formulas for the point estimate, standard error, and finally the margin of error that are used to construct such a confidence interval. We will also remind you of the assumptions which must be made in order to use a normal distribution and these formulas.</p>
+  	<p>The margin of error computation involves a critical value. Since we will be using a normal distribution in most of our computations, we should look the value of <m>z_{\alpha/2}</m> up in the table every time we need it. However, if we know the critical values for some of the more common confidence levels, that will save us some time. In <xref ref="ref_critical-values" text="global">Appendix</xref> you can find a quick reference table that can be useful for finding the more common critical values.</p>
+  </introduction>
+
+  <objectives xml:id="sec_ci-means_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Confidence Interval for a Mean</p></li>
+					<li><p>Margin of Error for a Mean</p></li>
+					<li><p>point estimator for a mean</p></li>
+					<li><p>Sample Size when Estimating a Mean</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Identify the best point estimate for a population mean</p></li>
+					<li><p>Find the margin of error for a confidence interval for a mean</p></li>
+					<li><p>Construct a confidence interval for a population mean</p></li>
+					<li><p>Understand and list the assumptions that must be made to construct this confidence interval</p></li>
+					<li><p>Compute the minimum sample size necessary for a given margin of error</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ci-means_point">
+		<title>Point Estimate</title>
+		<p>Since the goal of this section is to understand how to estimate a population mean, it makes sense to start by asking what the best point estimate is for a mean. That is, if we draw a random sample from a population, and we want to compute one number from that sample that best approximates the mean of the population, what number should we use?</p>
+		<example xml:id="examp_ci-means_point">
+			<title>Computing a Point Estimate</title>
+			<statement>
+				<p>In order to estimate the mean weight of a widget, a manufacturing facility randomly selects 10 widgets and finds the following weights.
+					<me>\lbrace 10, 13, 12, 9, 10, 14, 10, 12, 11, 9 \rbrace</me>
+					What one number should they use to best approximate the mean weight of a widget?</p>
+			</statement>
+			<solution>
+				<p>This is not a trick question. The answer is very straight forward if you think back to <xref ref="sec_center-spread"/>. The best point estimate for a population mean is the mean of the sample. In this case, they should use:
+				  <me>\overline{x} = \frac{10+13+12+9+10+14+10+12+11+9}{10} = 11</me>.</p>
+			</solution>
+		</example>
+		<p>The results of this example are summarized below.</p>
+		<principle xml:id="thm_point-estimate-mean">
+			<title>Point Estimator for a Mean</title>
+			<statement>
+				<p>The best point estimator for a mean is the sample mean, <m>\overline{x}</m>.</p>
+			</statement>
+		</principle>
+		<p>While this may seem obvious, there is some background knowledge that is important. In <xref ref="sec_sampling"/> we saw that as long as the population was normal, or the sample size was at least 30, then the distribution of sample means, <m>\overline{X}</m>, will be approximately normal and have as its mean <m>\mu_{\overline{x}}</m> the population mean <m>\mu</m>. At this point, we don&apos;t need to know that the sample means have a normal distribution, although that will be important shortly. What is more important is that
+		  <me>\mu_{\overline{x}} = \mu</me>.
+		In other words, if we take the average of the sample means <m>\overline{x}</m> for all possible samples of a set size, that will equal the population mean. So <m>\overline{x}</m> is an <xref ref="def_unbiased-estimator" text="custom">unbiased estimator</xref> for <m>\mu</m>.</p>
+		<p>Note that this does not by any means guarantee that <m>\overline{x} = \mu</m>. Our sample mean will probably not equal the actual population mean. But it should be consistently close. And if we were to take many different samples, the average of all of their means should be extremely close to the population mean which we are trying to estimate.</p>
+
+		<figure xml:id="video_ci-means_point-1">
+			<caption>Point Estimates for a Mean I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-means_point-2">
+			<caption>Point Estimates for a Mean II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-means_point-1">
+			<statement>
+				<p>To estimate the mean chewing speed of a rabbit, which you believe to be normally distributed, you take a sample of 5 rabbits and find that their chewing speeds are: 3, 4.2, 2.5, 3.3, and 2.7 bites per second.</p>
+				<p>Question: what one value should you use as a point estimate for <m>\mu</m>, the mean chewing speed of rabbits? Round your answer to two decimal places.</p>
+			</statement>
+			<answer><p>3.14</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-means_point-2">
+			<statement>
+				<p>In order to estimate the average number of fumbles in an NFL football game, you watch three different games on Sunday and find that there are 3, 5, and 4 fumbles in those games.</p>
+				<p>Question: what one number should be used as a point estimate for the mean number of fumbles in an NFL game?</p>
+			</statement>
+			<answer><p>4</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-means_margin-error">
+		<title>Margin of Error</title>
+		<p>Now that we know the best point estimator for a population mean is the sample mean, we have the first piece of our confidence interval. But we need to know how much error we should expect when using this approximation. That is, we need to know how to compute the margin of error. Remember that in general,
+			<me>\text{ ME } = z_{\alpha/2} \times \text{ SE }</me>SE,
+		  where the standard error is the standard deviation in the sampling distribution. From <xref ref="sec_sampling"/>, we know that if the distribution of <m>\overline{x}</m> is normal, then its standard deviation is <m>\frac{\sigma}{\sqrt{n}}</m>. This yields the following.</p>
+		<principle xml:id="tmp_margin-error-mean">
+			<title>Margin of Error for a Mean</title>
+			<statement>
+				<p>When approximating a single population mean <m>\mu</m> with a sample mean <m>\overline x</m>, the margin of error is:
+				  <me>z_{\alpha/2} \times \left(\frac{\sigma}{\sqrt{n}}\right)</me>.</p>
+			</statement>
+		</principle>
+		<p>There are several things to note about this margin of error computation.
+			<ul>
+				<li><p>The distribution of the sample means must be normal. That means either the original population must have a normal distribution or we must have a sample size of at least 30 so that we can apply the central limit theorem.</p></li>
+				<li><p>We must know the value of <m>\sigma</m>, the population standard deviation. If we are trying to estimate the population mean, it seems unreasonable that we would already know <m>\sigma</m>. However, as long as our sample size is at least 30, we can use the sample standard deviation s as an approximation for <m>\sigma</m>.</p></li>
+			</ul>
+			With these notes in mind, let&apos;s look at several examples.</p>
+		<example xml:id="examp_ci-means_margin-error-95">
+			<title>Finding the Margin of Error for a 95% Confidence Interval</title>
+			<statement>
+				<p>In order to estimate the average number of Skittles in a snack-sized bag, you collect a sample of 50 bags and find that the average of your sample is <m>\overline{x} = 14.3</m> candies with a standard deviation of <m>s = 1.65</m> candies. What do you estimate the average number of candies is in the population of all snack-sized Skittles bags, and what is the 95% margin of error for this estimate?1</p>
+			</statement>
+			<solution>
+				<p>The best point estimate for <m>\mu</m> is <m>\overline{x}</m>. We therefore estimate that there are 14.3 candies in each bag. How good is this estimate? Recalling that the critical value from a normal distribution at the 95% confidence level is <m>z_{\alpha/2} = \pm 1.96</m>, we get the following margin of error.
+				  <me>z_{\alpha/2} \times \left(\frac{\sigma}{\sqrt{n}}\right) = \pm 1.96\left(\frac{1.65}{\sqrt{50}}\right) \approx \pm 0.457</me>
+				  Therefore the margin of error in our estimate is <m>\pm 0.45</m> candies.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ci-means_margin-error-99">
+			<title>Finding the Margin of Error for a 99% Confidence Interval</title>
+			<statement>
+				<p>A biologist wishes to estimate the average length of a certain type of fish in a secluded lake. She knows that the length of this species of fish is normally distributed with a standard deviation of <m>\sigma = 2.7</m> inches. After collecting a sample of 8 randomly selected fish, she finds that the sample mean is <m>\overline{x} = 14.1</m> inches. She therefore claims that the population of fish in this lake has an average length of 14.1 inches. If we wish to be 99% confident, what is the margin of error in her estimation?</p>
+			</statement>
+			<solution>
+				<p>Using the formula for the margin of error with <m>\alpha = 0.01</m>, so that <m>z_{\alpha/2} = 2.575</m>, we get:
+				  <me>z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) = \pm 2.575\left(\frac{2.7}{\sqrt{8}}\right) \approx \pm 2.458</me>.
+				  Therefore, the estimated length of 14.1 inches has a margin of error of <m>\pm 2.458</m> inches.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-means_margin-error-1">
+			<caption>Margin of Error I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-03.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-means_margin-error-2">
+			<caption>Margin of Error I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-means_margin-error-1">
+			<statement>
+				<p>In order to estimate the mean length of walrus tusks, a sample of 35 tusks are measured and their mean is found to be <m>\overline{x} = 29.5</m> inches with a standard deviation of <m>s = 3.6</m> inches. The sample mean 29.5 is used as a point estimate for the population mean <m>\mu</m>.</p>
+				<p>Question: what is the margin of error at the 95% confidence level for this point estimate? Round your answer to three decimal places.</p>
+			</statement>
+			<answer><p><m>\pm 1.193</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-means_margin-error-2">
+			<statement>
+				<p>Scores on a certain standardized test are normally distributed with a standard deviation of <m>\sigma = 121.4</m> points. To estimate the mean score on the test, a sample of 100 scores is collected. The average of these 100 scores is found to be 1351.5.</p>
+				<p>Question: if we use <m>\overline{x} = 1351.5</m> as a point estimate for <m>\mu</m>, what is the margin of error at the 99% confidence level? Round your answer to three decimal places.</p>
+			</statement>
+			<answer><p>31.261</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-means_interval">
+		<title>Confidence Interval</title>
+		<p>By simply adding and subtracting the margin of error to the point estimate, we can construct our confidence interval. For a mean, this is done as follows.</p>
+		<theorem xml:id="thm_ci-mean">
+			<title>Confidence Interval for a Mean</title>
+			<p>The <m>(1-\alpha)100\%</m> confidence interval for a single population mean <m>\mu</m> is given by:
+			  <me>\overline{x} \pm z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right)</me>.</p>
+		</theorem>
+		<p>Consider the following examples.</p>
+		<example xml:id="examp_ci-means_interval">
+			<title>Constructing Confidence Intervals for the Mean</title>
+			<statement>
+				<p>To estimate the average weight of a Taco Bell bean burrito, you collect a sample of 40 bean burritos. You find that the sample mean is <m>\overline{x} = 7.4</m> oz with a standard deviation of <m>s = 1.42</m> oz. Construct the following.
+				  <ol label="a">
+				  	<li><p>A 95% confidence interval for the mean weight of a Taco Bell bean burrito</p></li>
+				    <li><p>A 99% confidence interval for the mean weight of a Taco Bell bean burrito</p></li>
+				  </ol></p>
+			</statement>
+			<solution>
+				<p>The process with be almost identical for these to intervals.  Only the critical values used will differ.
+					<ol label="a">
+						<li><p>For the 95% interval, we use <m>z_{\alpha/2} = \pm 1.96</m> and get
+						  <me>\overline{x} \pm z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) = 7.4 \pm 1.96\left(\frac{1.42}{\sqrt{40}}\right) = 7.4 \pm 0.440</me>.</p>
+						  <p>Therefore, the 95% confidence interval for <m>\mu</m>, the mean weight of a Taco Bell bean burrito, is:
+						  <me>6.960 \lt \mu \lt 7.840</me>.</p>
+						</li>
+						<li><p>Now for a 99% confidence interval, the only thing we change is the value of <m>z_{\alpha/2}</m>.
+						  <me>\overline{x} \pm z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) = 7.4 \pm 2.58\left(\frac{1.42}{\sqrt{40}}\right) = 7.4 \pm 0.579</me>.</p>
+						  <p>Therefore, the 99% confidence interval for <m>\mu</m>, the mean weight of a Taco Bell bean burrito, is:
+						  <me>6.821 \lt \mu \lt 7.979</me>.</p>
+						</li>
+					</ol>
+				</p>
+			</solution>
+		</example>
+		<p>In the above example, note what happened when we increased our confidence level. If we only want to be 95% confident that our confidence interval will contain the true mean weight of a burrito, we get a smaller interval than if we want to be 99% confident. Whenever we increase the confidence level, this will also increase the width of our confidence intervals. At the extremes, we can be 0% confident, in which case our interval is just the point estimate <m>\overline{x}</m>. We can also be 100% confident, in which case our confidence interval extends infinitely in both directions. Neither of these is practical, so we settle for <q>statistically significant</q> confidence levels such as 95% and 99%.</p>
+		<p>We can also construct upper or lower confidence bound. These one-sided confidence intervals work in much the same way as the two-tailed confidence interval above, except that we use <m>z_\alpha</m> instead of <m>z_{\alpha/2}</m> for our critical value.</p>
+		<example xml:id="examp_ci-means_one-sided">
+			<title>Constructing a One-Sided Confidence Interval</title>
+			<statement>
+				<p>You wish to place an upper bounds on the average waiting time in line at McDonald&apos;s. To do this, you take a random sample of 70 different waiting times for customers at McDonald&apos;s. You find that the average waiting time in the sample is <m>\overline{x} = 3.4</m> minutes with a standard deviation of <m>s = 1.97</m> minutes. With 99% confidence, what is the largest that the average waiting time could be?</p>
+			</statement>
+			<solution>
+				<p>In this setting, we really don&apos;t care how short the waiting time is. People are, after all, happier if they get through line more quickly. Instead, we want to place an upper bound on the waiting time. We want to be able to say that the average waiting time is <q>no more than</q> a certain amount.</p>
+				<p>To do this, we use the formula for a 99% upper confidence bound.
+				  <me>\overline{x} + z_\alpha\times \left(\frac{\sigma}{\sqrt{n}}\right) = 3.4 + 2.33\left(\frac{1.97}{\sqrt{70}}\right) = 3.948</me>
+				  Therefore, the upper confidence bound for the average waiting time at the 99% confidence level is 3.948 minutes.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-means_interval-1">
+			<caption>Confidence Intervals</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-means_interval-2">
+			<caption>Confidence Intervals</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-06.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-means_interval-3">
+			<caption>Confidence Intervals</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-07.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-means_interval-1">
+			<statement>
+				<p>A band wishes to estimate the average number of fans at their concerts using a 98% confidence interval. They count fans at a sample of 35 different concerts and find that the sample mean is <m>\overline{x} = 83.4</m> fans with a standard deviation of <m>s = 17.85</m> fans.</p>
+				<p>Question: What is the confidence interval for the true mean number of fans at a concert? Round your confidence bounds to two decimal places.</p>
+			</statement>
+			<answer><p><m>76.37 \lt \mu \lt 90.43</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-means_interval-2">
+			<statement>
+				<p>The mean weight of a fully loaded hay truck follows a normal distribution with standard deviation <m>\sigma = 29.4</m> pounds. To estimate this mean weight, 47 different hay trucks are weighted and the sample mean for these trucks is found to be <m>\overline{x} = 4973.2</m> pounds. You wish to construct a 95% confidence interval.</p>
+				<p>Question: what is this interval, with the bounds rounded to two decimal places?</p>
+			</statement>
+			<answer><p><m>4964.79 \lt \mu \lt 4981.61</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-means_sample-size">
+		<title>Sample Size</title>
+		<p>In many instances we may want to design our sample to get a particular width for our confidence interval. That is, we decide ahead of time what we want the margin of error to be, and then we figure out how big our sample needs to be to get us that margin of error. To do this, we need to work with the formula for the margin of error. Suppose we want our margin of error to be no more than some upper bound <m>E</m>. That is, 
+		<me>z_{\alpha/2}\times \left(\frac{\sigma}{\sqrt{n}}\right) \leq E</me>.
+		To solve this inequality for <m>n</m>, the sample size, we start by squaring both sides. This gives:
+		<me>\frac{(z_{\alpha/2})^2\sigma^2}{n} \leq E^2</me>.
+		Then multiplying both sides by <m>n</m> and dividing by <m>E^2</m> gives us the final inequality:
+		<me>n \geq \frac{(z_{\alpha/2})^2\sigma^2}{E^2}</me>.
+		Again, we don&apos;t usually know the value of <m>\sigma</m> before we take a sample. To get around this, we can either use a value of <m>\sigma</m> from some previous study, or we can <xref ref="def_stddev-estimate" text="custom">estimate the standard deviation</xref>.</p>
+		<theorem xml:id="thm_sample-size-single-mean">
+			<title>Sample Size when Estimating a Mean</title>
+			<statement>
+				<p>To get a maximum margin of error of <m>E</m>, at the <m>(1-\alpha)</m> confidence level, we must take a sample of size <m>n</m> where:
+				  <me>n \geq \frac{(z_{\alpha/2})^2\sigma^2}{E^2}</me>.
+				</p>
+			</statement>
+		</theorem>
+		<p>To see this in action, consider the following example.</p>
+		<example xml:id="examp_ci-means_sample-size">
+			<title>Finding the Sample Size for a Given Margin of Error</title>
+			<statement>
+				<p>You wish to construct a 95% confidence interval for the mean height of a population of rose bushes. You want your margin of error to be no more than <m>\pm 6</m> inches. If you know that the maximum height obtained by a rose bush is 73 inches, and the minimum is 8 inches, how many rose bushes should you include in your sample?</p>
+			</statement>
+			<solution>
+				<p>Since we are told the range of rose bush heights, we will use the approximation
+					<me>\sigma \approx \frac{73 - 8}{4} = \frac{65}{4} = 16.25</me>
+					for the standard deviation. Plugging this, together with the critical value <m>z_{\alpha/2} = 1.96</m>, into the inequality, we get:
+					<me>n \geq \frac{(1.96)^2(16.25)^2}{(6)^2} \approx 28.18</me>.</p>
+				<p>Since we can not sample a fraction of a rose bush, we round up to get <m>n = 29</m>. Note that we should always round up, even though the decimal is not <m>0.5</m> or greater. If we were to round down, we would get a margin of error that is larger than the <m>\pm 6</m> that was specified.</p>
+			</solution>
+		</example>
+		<p>In the above example, it would probably be a good idea to use <m>n = 30</m> as the sample size, since then we can apply the central limit theorem and treat this as a normal distribution. We can always use a larger sample that this formula indicates. That will only lead to better results.</p>
+
+		<figure xml:id="video_ci-means_sample-size-1">
+			<caption>Sample Size I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-08.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-means_sample-size-2">
+			<caption>Sample Size II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-09.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-means_sample-size-1">
+			<statement>
+				<p>You wish to estimate the mean length of a certain breed of caterpillar using a 98% confidence interval. A previous study has shown that these caterpillars have a normally distributed length with standard deviation <m>\sigma = 14</m> mm.</p>
+				<p>Question: what is the smallest sample size you can use to get a margin of error of less than 1 mm?</p>
+			</statement>
+			<answer><p>1065</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-means_sample-size-2">
+			<statement>
+				<p>You wish to estimate the average number of cars your local Walmart parking lot at noon on a weekday using a 95% confidence interval. You decide to assume that the number of cars has a normal distribution, and estimate <m>\sigma</m> using the minimum and maximum number of cars that you have observed, which were 194 and 82 respectively.</p>
+				<p>Question: how many days must you observe in order to get a margin of error of less than 5 cars?</p>
+			</statement>
+			<answer><p>121</p></answer>
+		</exercise>
+  </subsection>
+
+</section>
