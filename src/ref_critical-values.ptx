@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="ref_critical-values">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ref_critical-values">
 	<title>Common Critical Values</title>
 
+	<figure xml:id="fig_ref_critical-values">
+		<caption>Normal Distribution Critical Values</caption>
+		<sidebyside width="40%" margins="auto">
+		  <figure xml:id="fig_ref_critical-values_two-tailed">
+		  	<caption>Two-Tailed</caption>
+		    <image xml:id="image_ref_critical-values_two-tailed-a">
+		    	<latex-image>
+		    		<xi:include href="./latex-images/ci-intro_ci-critical.tex" parse="text"/>
+		    	</latex-image>
+		    </image>
+		  </figure>
+		  <figure xml:id="fig_ref_critical-values_one-tailed">
+		  	<caption>One-Tailed</caption>
+		  	<image xml:id="image_ref_critical-values_two-tailed-b">
+		    	<latex-image>
+		    		<xi:include href="./latex-images/ci-intro_one-sided_upper.tex" parse="text"/>
+		    	</latex-image>
+		  	</image>
+		  </figure>
+		</sidebyside>
+	</figure>
+
 	<table>
-		<title>Normal Distribution</title>
+		<title>Common Normal Distribution Critical Values</title>
 		<tabular>
 			<col right="medium" halign="center"></col>
 			<col right="medium" halign="center"></col>
