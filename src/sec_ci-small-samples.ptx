@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ci-small-samples">
+  <title>Confidence Intervals for Means Using Small Samples</title>
+
+  <introduction xml:id="sec_ci-small-samples_intro">
+  	<title>When Samples are too Small</title>
+  	<p>When we had a large sample of 30 or more, we were able to use the <xref ref="thm_central-limit" text="title"/> to estimate the population mean based on the sample mean <m>\overline{x}</m> and sample standard deviation <m>s</m>. That is, we compute our margin of error, such as <m>z_{\alpha/2}\times \frac{s}{\sqrt{n}}</m>, using z-scores with a normal distribution and we freely replace <m>\sigma</m>, the population standard deviation, with <m>s</m>, the sample standard deviation.  Unfortunately, if our sample size is small, we can not make these assumptions.</p>
+  	<p>Consider the following situations in which this becomes a problem.
+  		<ul>
+  			<li><p>You wish to estimate the average amount of iron contained in one cubic inch of moon rock. Because of the rarity of moon rocks, you are only able to get a sample of 6 rocks to test. You can, however, assume that the amount of iron follows a normal distribution.</p></li>
+  			<li><p>A widget manufacturer wishes to estimate the difference between the lifespan of a basic widget and the lifespan of a deluxe widget. Because this test destroys the widget, and widgets are expensive, they must use a small sample of 14 of each type of widget. The lifespan of a widget is known to follow a normal distribution.</p></li>
+  		</ul>
+  	</p>
+  	<p>Even though the underlying distributions are normal, because we do not know <m>\sigma</m>, the methods from the previous sections in this chapter will not work in these situations.  In this lesson we will introduce a new distribution which will allow us to work with small samples such as those described here, assuming that the distribution of the individual values in the population is normal.</p>
+  </introduction>
+  
+  <objectives xml:id="sec_ci-small-samples_obj">
+		<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Degrees of Freedom for a Single Sample Student&apos;s t-Distribution</p></li>
+					<li><p>Degrees of Freedom for a Two Sample Student&apos;s t-Distribution</p></li>
+					<li><p>Pooled Variance</p></li>
+					<li><p>Small Sample Confidence Interval for a Population Mean</p></li>
+					<li><p>Small Sample Confidence Interval for the Difference Between Means</p></li>
+					<li><p>Student&apos;s t-Distribution</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Describe the properties of the Student&apos;s t-Distribution</p></li>
+					<li><p>Look up critical values in the t-distribution table</p></li>
+					<li><p>Find the margin of error for a small sample estimate of a single population mean or the difference between two means</p></li>
+					<li><p>Find a confidence interval for a small sample mean or the difference between two small sample means</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ci-small-samples_t-dist">
+		<title>Student&apos;s t Distribution</title>
+		<p>To construct confidence intervals for means based on small samples drawn from normal populations, we must either know what <m>\sigma</m> is, or we must come up with a new distribution. It is unreasonable, as mentioned previouly, to know the population standard deviation when we are trying to estimate the population mean. We therefore introduce a new distribution.</p>
+		<p>This distribution is actually an entire family of distributions, one for each possible sample size less than 30. It is called the <term>student&apos;s t-distribution</term> because the author, who worked for a brewery, was not allowed to publish his results so as to keep these tools away from competing breweries. The author believed, however, that this information should be shared and so he published it under the pen-name <q>Student.</q></p>
+		<definition xml:id="def_student-t-distribution">
+			<idx>student t-distribution</idx>
+			<statement>
+				<p>The <term>student's t-distribution</term> is the name given to the distribution of the variable <m>t</m> based on a random sample of size <m>n</m> with mean <m>\overline{x}</m> and standard deviation <m>s</m>, drawn from a normal population. The variable <m>t</m> is:
+			  <me>t = \frac{\overline{x} - \mu}{s/\sqrt{n}}</me>.</p>
+			</statement>
+		</definition>
+		<p>Note that the formula for <m>t</m> looks a lot like the the formula for the standard normal variable <m>z</m>. The main difference is that we are using <m>s</m>, the sample standard deviation, instead of <m>\sigma</m>, the population standard deviation. This is no longer just an <q>approximation,</q> which we could get away with in larger samples. This is now the exact value of <m>t</m>. So what does the distribution of <m>t</m> look like? Below is a graph of the normal distribution, along with the distribution of <m>t</m> for several different sample sizes.</p>
+		<figure xml:id="fig_ci-small-samples_student-t-dist">
+			<caption>Normal Distribution and Several Student t-Distributions</caption>
+			<image width="90%" xml:id="image_ci-small-samples_student-t-dist">
+				<latex-image>
+					<xi:include href="./latex-images/ci-small-samples_student-t-dist.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>Notice that the normal distribution, in black, is the tallest with the shortest tails. The t-distributions look very similar, but they are shorter and have thicker tails. The notation <m>df</m> stands for <term>degrees of freedom</term>. This is a measure of how big the sample size is<mdash/>although it is not exactly equal to the sample size. The bigger the degrees of freedom, the more closely the student&apos;s t-distribution matches the normal distribution. In fact, when the degrees of freedom is 30 or more, the student&apos;s t-distribution will be so close to the normal distribution that we can just use the normal distribution critical values.</p>
+		<p>Because there are so many different student&apos;s t-distributions, the table that we use to look up critical values looks somewhat different than the normal distribution table. We list the five most common right-tail areas across the top:
+		  <me>t_{0.10}\quad t_{0.05}\quad t_{0.025}\quad t_{0.01}\quad \text{and}\quad t_{0.005}</me>.
+		We list the different degrees of freedom from 1 to 30 down the left side.  The critical values, or t-scores, are found in the body of the table in the row corresponding to the appropriate degrees of freedom and the column corresponding to the area in the right tail. Note that there are no negative critical values listed in the table, and no left-tail probabilities. This is because we can use symmetry, just as in the normal distribution, to look up those critical values based on the positive values in the table.</p>
+		<example xml:id="examp_ci-small-samples_t-dist-positive">
+			<title>Looking Up Critical Values in the Student&apos; t-Distribution</title>
+			<statement>
+				<p>Use the portion of the t-table shown below to find the value of t that: 
+					<ol label="a">
+						<li><p>has nine degrees of freedom and separates the top 2.5% of data from the bottom 97.5% of data.</p></li>
+						<li><p>has seven degrees of freedom and is the positive critical value at the 99% confidence level.</p></li>
+					</ol>
+				</p>
+				<figure xml:id="fig_ci-small-samples_student-t-table-positive">
+					<caption>t-Distribution Table</caption>
+					<image source="./images/ci-small-samples_student-t-table-positive.png" width="90%"/>
+				</figure>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Since there are nine degrees of freedom, we go to the row with <m>df=9</m>. Then, since we want 2.5%, or <m>0.025</m>, in the right tail, we go over to <m>t_{0.025}</m>. The blue box shows the resulting t-score critical value is <m>2.262</m>.</p></li>
+					<li><p>This time there are seven degrees of freedom, and we want <m>0.005</m> in the right tail, since this is half of <m>1 - 0.99 = 0.01</m>. The red box shows us the critical value <m>t_{\alpha/2} = 3.499</m>.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<p>Now some negative examples.</p>
+		<example xml:id="examp_ci-small-samples_t-dist-negative">
+			<title>Finding Negative Critical Values from the Student&apos; t-Distribution</title>
+			<statement>
+				<p>Use the portion of the t-table shown below to find the value of <m>t</m> that:
+				  <ol label="a">
+				    <li><p>has 12 degrees of freedom and separates the left tail with area 0.05 from the rest of the graph.</p></li>
+				    <li><p>has 14 degrees of freedom and is the negative critical value at the 98% confidence level.</p></li>
+				  </ol>
+				</p>
+				<figure xml:id="fig_ci-small-samples_student-t-table-negative">
+					<caption>t-Distribution Table</caption>
+					<image source="./images/ci-small-samples_student-t-table-negative.png" width="90%"/>
+				</figure>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Going to the <m>df=12</m> row, we move over the the column labeled <m>t_{0.050}</m>. The entry in the blue box is the t-score separating the body of the data from the right tail with an area of <m>0.05</m>. Since we want the left tail, we just change the sign to get a t-score of <m>-1.782</m>.</p></li>
+					<li><p>The red lines show the entry with <m>df=14</m> and a right-tail probability of <m>0.010</m>. Since we want the negative critical value, we switch the sign to get <m>t_{\alpha/2} = -2.624</m>.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-small-samples_t-dist-1">
+			<caption>Using the t-Distribution Table I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-small-samples_t-dist-2">
+			<caption>Using the t-Distribution Table II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-small-samples_t-dist-1">
+			<statement>
+				<p>You wish to look up the positive critical t-value in the student&apos;s t-distribution that has 11 degrees of freedom and goes with a confidence level of 98%.</p>
+				<p>Question: what is this critical value?</p>
+			</statement>
+			<answer><p>2.718</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-small-samples_t-dist-2">
+			<statement>
+				<p>You wish to find the negative critical value that goes with a 95% lower confidence bound. There are <m>df = 17</m> degrees of freedom.</p>
+				<p>Question: what is the critical t-value in this situation?</p>
+			</statement>
+			<answer><p>-1.740</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-small-samples_mean">
+		<title>Single Population Mean</title>
+		<p>The process for building a confidence interval for a population mean based on a small sample should be very familiar. Aside from using the t-distribution to look up critical values, it is in fact exactly the same as what was done for large-sample estimation. Below you will find the formula for this confidence interval.</p>
+		<theorem xml:id="thm_ci-small-sample-mean">
+			<title>Small Sample Confidence Interval for a Population Mean</title>
+			<statement>
+				<p>The <m>(1-\alpha)100\%</m> small sample confidence interval for a population mean based on a sample of size <m>n</m> taken from a normal population with sample mean <m>\overline{x}</m> and standard deviation <m>s</m> is given by:
+				  <me>\overline{x} \pm t_{\alpha/2}\times \left(\frac{s}{\sqrt{n}}\right)</me>.
+				  where <m>t_{\alpha/2}</m> is a critical value taken from the student&apos;s t-distribution with <m>df=n-1</m> degrees of freedom.</p>
+			</statement>
+		</theorem>
+		<p>This confidence interval is still made up of a point estimate plus-or-minus a margin of error. Again the sample mean is the point estimate, and the margin of error is based on the critical value t-score for a given confidence level and degrees of freedom.  Note that we do need to assume that the distribution whose mean we are trying to estimate is normal.</p>
+		<example xml:id="examp_ci-small-samples_ci-single-mean">
+			<title>Finding a Confidence Interval for a Small Sample Mean</title>
+			<statement>
+				<p>You wish to estimate the average amount of iron contained in one cubic inch of moon rock. Because of the rarity of moon rocks, you are only able to get a sample of 6 rocks to test. You can, however, assume that the amount of iron follows a normal distribution. Your tests show that in these six rocks, there is a mean of <m>\overline{x} = 2.4</m> grams per cubic inch with a standard deviation of 0.35 grams per cubic inch. Use this information to construct a 99% confidence interval for the amount of iron contained in one cubic inch of moon rock.</p>
+			</statement>
+			<solution>
+				<p>From the t-distribution table with <m>df = 6-1 = 5</m> and <m>0.005</m> in the right tail, the critical value is <m>t_{0.005} = 4.032</m>.  Plugging this into the formula for the confidence interval, we get:
+				  <me>2.4 \pm 4.032\left(\frac{0.35}{\sqrt{6}}\right) = 2.4 \pm 0.5761</me>.</p>
+				<p>Adding and subtracting gives us the following confidence interval. 
+					<me>1.8239 \lt \mu \lt 2.9761</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ci-small-smaples_upper-bound-single-mean">
+			<title>Finding an Upper Confidence Bound for a Small Sample Mean</title>
+			<statement>
+				<p>The salaries from the top 10 business executives in your state have a mean value of $84 million with a standard deviation of $12.4 million. Assuming that the salaries of top business executives are normally distributed, find a 95% upper confidence bound for the average salary of a top business executive in your state.</p>
+			</statement>
+			<solution>
+			  <p>Because this is an upper confidence bound, we want the entire <m>\alpha = 0.05</m> in the right tail. That means, we want to find <m>t_{0.05}</m> with <m>n - 1 = 10 - 1 = 9</m> degrees of freedom. Using the value <m>t_{0.05} = 1.833</m> found in the t-distribution table, we get the following upper bound.
+			    <me>84 + 1.833\left(\frac{12.4}{\sqrt{10}}\right) = 84 + 7.188 = 91.188</me>.
+			  </p>
+			  <p>Therefore, we conclude that we are 95% confident that the average salary of top executives in your state is less than $91.188 million.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-small-samples_single-mean-1">
+			<caption>Confidence Intervals for Single Small-Sample Means I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-03.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-small-samples_single-mean-2">
+			<caption>Confidence Intervals for Single Small-Sample Means II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-04.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-small-samples_single-mean-3">
+			<caption>Confidence Intervals for Single Small-Sample Means III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-05.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-small-samples_single-mean-1">
+			<statement>
+				<p>To estimate the mean weight of a blue whale, you somehow manage to measure 6 different blue whales and find a sample mean of <m>\overline x= 297,451</m> pounds with a standard deviation of <m>s = 9,542.5</m> pounds.</p>
+				<p>Question: what is the 99% confidence interval for the true average weight of a blue whale?</p>
+			</statement>
+			<answer><p><m>281,744 \lt \mu \lt 313,158</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-small-samples_single-mean-2">
+			<statement>
+				<p>In order to estimate the number of times a week that an NBA player eats at home, a sample of 16 NBA players are interviewed and the mean number of times is found to be 6.8 with a standard deviation of 2.8 days.</p>
+				<p>Question: what is the 95% confidence interval for the true average number of times a week that an NBA player eats at home?</p>
+			</statement>
+			<answer><p><m>5.308 \lt \mu \lt 8.292</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-small-samples_differences">
+		<title>Difference Between Means</title>
+		<p>When using large samples to estimate the difference between two population means, we found that we could use the following for the standard deviation of the sampling distribution for the difference between the sample means.
+			<me>\sigma_{\overline{x}_1 - \overline{x}_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</me>.</p>
+		<p>As long as both samples contain 30 or more individuals, we can approximate <m>\sigma_1 \approx s_1</m> and <m>\sigma_2 \approx s_2</m> and the distribution of <m>\overline{x}_1 - \overline{x}_2</m> will be normal with this standard deviation. Unfortunately, for samples of size less than 30, the approximation using sample means will not work, and it will not even have a t-distribution.</p>
+		<p>It turns out that in order to get critical values for the difference between two sample means, we have to make one more assumption. We have to assume that the two populations from which we are sampling have the same variance and therefore standard deviation, so <m>\sigma_1^2</m> and <m>\sigma_2^2</m> are the same. However when we draw samples we can not expect that they will come out with exactly the same variance. To get as accurate an estimate of what that single variance is, we must combine the variances of our two samples into a <term>pooled variance</term> as shown below.</p>
+		<definition xml:id="def_pooled-variance">
+			<title>Pooled Variance</title>
+			<statement>
+				<p>If samples of sizes <m>n_1</m> and <m>n_2</m> with variances <m>s_1^2</m> and <m>s_2^2</m> respectively are drawn from independent populations with a common variance <m>\sigma^2</m>, then the pooled estimate for this variance based on these samples is:
+				  <me>s^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}</me>.
+				</p>
+			</statement>
+		</definition>
+		<p>We can then use this pooled variance in place of both <m>\sigma_1^2</m> and <m>\sigma_2^2</m> in the standard error formula above to get the following confidence interval formula for small samples.</p>
+		<theorem xml:id="thm_ci-small-sample-differences">
+			<title>Small Sample Confidence Interval for the Difference Between Means</title>
+			<statement>
+				<p>The <m>(1-\alpha)100\%</m> small sample confidence interval for the difference between population means, <m>\mu_1 - \mu_2</m>, based on two independent samples of sizes <m>n_1</m> and <m>n_2</m> drawn from normal populations with a common variance, estimated by the pooled variance <m>s^2</m>, and having sample means <m>\overline{x}_1</m> and <m>\overline{x}_2</m> is:
+				  <me>(\overline{x}_1 - \overline{x}_2) \pm t_{\alpha/2}\times \sqrt{s^2\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}</me>.
+				 where <m>t_{\alpha/2}</m> is taken from a student&apos;s t-distribution with <m>n_1 + n_2 - 2</m> degrees of freedom.</p>
+			</statement>
+		</theorem>
+		<p>Notice that the degrees of freedom depends on the size of the two samples used to construct the confidence interval. It can also be seen in the denominator of the pooled variance estimate, in case you forget. Now let&apos;s take a look at several examples in which we must make use of these formulas.</p>
+		<example xml:id="examp_ci-small-samples_ci-differences">
+			<title>Finding a Confidence Interval for a Difference Between Small Sample Means</title>
+			<statement>
+				<p>A widget manufacturer wishes to estimate the difference between the lifespan of a basic widget and the lifespan of a deluxe widget, both of which are known to have a normal distribution. Two samples are taken and the following information is gathered. Find the 90% confidence interval for the difference between the mean lifespan of a basic widget and a deluxe widget.</p>
+				<table>
+					<title>Widget Sample Statistics</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Sample Mean</cell>
+							<cell>Sample StDev</cell>
+						</row>
+						<row>
+							<cell>Basic</cell>
+							<cell><m>n_1 = 14</m></cell>
+							<cell><m>\overline{x}_1 = 742</m> days</cell>
+							<cell><m>s_1 = 42.1</m> days</cell>
+						</row>
+						<row>
+							<cell>Deluxe</cell>
+							<cell><m>n_2 = 12</m></cell>
+							<cell><m>\overline{x}_2 = 951</m> days</cell>
+							<cell><m>s_2 = 39.6</m> days</cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>We first find the critical value for this confidence interval. A 90% confidence interval will have an area of <m>0.05</m> in each tail. The degrees of freedom is <m>df = 14 + 12 - 2 = 24</m>. This gives us a critical value <m>t_{0.050} = 1.711</m>.</p>
+				<p>Our pooled variance is: 
+					<me>s^2 = \frac{(14-1)(42.1)^2 + (12 - 1)(39.6)^2}{14 + 12 - 2} \approx 1678.7954</me>.</p>
+			  <p>Finally, we put this all together into our confidence interval formula.
+			    <me>(742-951) \pm 1.711\sqrt{1678.7954\left(\frac{1}{14} + \frac{1}{12}\right)} = -209 \pm 27.5792</me>.</p>
+			  <p>Adding and subtracting gives the following confidence interval.
+			  	<me>-236.5792 \lt \mu_1 - \mu_2 \lt -181.4208</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ci-small-smaples_upper-bound-differences">
+			<title>Finding an Lower Confidence Bound for a Difference Between Two Small Sample Means</title>
+			<statement>
+				<p>A researcher wishes to estimate the difference between achievement test scores in affluent neighborhoods and low-income neighborhoods using the few test scores which he has collected from parents. To assist in this he is going to construct a 99% lower confidence bound for the mean test scores in affluent neighborhoods and mean test scores in low-income neighborhoods. The following data is collected.</p>
+				<table>
+					<title>Achievement Test Statistics</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Sample Mean</cell>
+							<cell>Sample StDev</cell>
+						</row>
+						<row>
+							<cell>Affluent</cell>
+							<cell><m>n_1 = 16</m></cell>
+							<cell><m>\overline{x}_1 = 94</m></cell>
+							<cell><m>s_1^2 = 71</m></cell>
+						</row>
+						<row>
+							<cell>Low-Income</cell>
+							<cell><m>n_2 = 19</m></cell>
+							<cell><m>\overline{x}_2 = 73</m></cell>
+							<cell><m>s_2^2 = 185</m></cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>Again we start by finding the critical value. The degrees of freedom in this case is <m>df = 16 + 19 - 2 = 33</m>. For a 99% lower confidence bound, we want <m>0.01</m> in the left tail, so the critical value is <m>-t_{0.010} = -2.326</m>.</p>
+				<p>The pooled variance is:
+					<me>s^2 = \frac{(16-1)(71) + (19-1)(185)}{16+19-2} = 133.1818</me>.</p>
+				<p>We use the formula for a confidence interval, but only subtract the margin of error to find the lower confidence bound.
+					<me>(94 - 73) - 2.326\sqrt{133.1818\left(\frac{1}{16} + \frac{1}{19}\right)} = 21 - 9.1081 = 11.8919</me>.</p>
+				<p>We are therefore 99% confident that students in the affluent neighborhoods score at least 11.9 points better on standardized tests than do those in low-income neighborhoods.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-small-samples_differences-1">
+			<caption>Small-Sample Confidence Intervals for Differences I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-06.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-small-samples_differences-2">
+			<caption>Small-Sample Confidence Intervals for Differences II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-07.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-small-samples_differences-3">
+			<caption>Small-Sample Confidence Intervals for Differences III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-small-samples_differences-1">
+			<statement>
+				<p>To estimate the difference between the time it takes fire and police to respond to emergencies, you randomly select several recent emergencies and collect the following data.</p>
+				<table>
+					<title>Emergence Response Time Statistics</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Mean Time</cell>
+							<cell>StDev Time</cell>
+						</row>
+						<row>
+							<cell>Fire</cell>
+							<cell><m>n_1 = 12</m></cell>
+							<cell><m>\overline{x}_1 = 6.3</m> minutes</cell>
+							<cell><m>s_1 = 1.46</m> minutes</cell>
+						</row>
+						<row>
+							<cell>Police</cell>
+							<cell><m>n_2 = 8</m></cell>
+							<cell><m>\overline{x}_2 = 5.2</m> minutes</cell>
+							<cell><m>s_2 = 2.33</m> minutes</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the 99% confidence interval for the difference between the average response times for fire and police?</p>
+			</statement>
+			<answer><p><m>-1.327 \lt \mu_1-\mu_2 \lt 3.527</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-small-samples_differences-2">
+		<statement>
+			<p>You wish to estimate the difference between the number of Skittles in a regular sized bag and the number of M&amp;M&apos;s in a regular sized bag. To do this, you collect the following information:
+				<ul>
+					<li><p>Number of Skittles: 62, 67, 64, 71, 59, 63</p></li>
+					<li><p>Number of M&amp;M&apos;s: 58, 63, 55, 59, 42</p></li>
+				</ul></p>
+			<p>Using this data you compute the sample means and standard deviations shown below.</p>
+			<table>
+				<title>Statistics for Candy Counts</title>
+				<tabular>
+					<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Mean</cell>
+							<cell>StDev</cell>
+						</row>
+						<row>
+							<cell>Skittles</cell>
+							<cell>6</cell>
+							<cell>64.33</cell>
+							<cell>4.18</cell>
+						</row>
+						<row>
+							<cell>M&amp;M&apos;s</cell>
+							<cell>5</cell>
+							<cell>55.4</cell>
+							<cell>8.02</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the 95% confidence interval for the difference between the mean number of Skittles and M&amp;M&apos;s in a regular sized bag?</p>
+			</statement>
+			<answer><p><m>0.454 \lt \mu_1 - \mu_2 \lt 17.406</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-small-samples_when">
+		<title>When to Use the Student&apos;s t-Distribution</title>
+		<p>Since the formulas we&apos;ve seen in this lesson are a lot like the formulas for a normal distribution, trying to decide which type of critical values to use can be difficult. The following rules of thumb should help you to choose the correct type of distribution to use.
+			<ul>
+				<li><p>For estimating means:
+					<ul>
+						<li><p>If the sample size or sizes are greater than 30, we should use the normal distribution techniques from previous sections.</p></li>
+						<li><p>If any sample size is less than 30 and the population has a normal distribution, then:
+							<ul>
+								<li><p>If we somehow know the population standard deviation, we should still use the normal distribution techniques from previous sections.</p></li>
+								<li><p>If the population standard deviation is not known, then we must use the t-distribution techniques from this section.</p></li>
+							</ul></p>
+						</li>
+					</ul></p>
+				</li>
+				<li><p>For estimating proportions:
+					<ul>
+					  <li><p>If each of <m>n\times p_1</m>, <m>n\times q_1</m>, and if necessary, <m>n\times p_2</m> and <m>n\times q_2</m> are all greater than 5, then we can use the normal techniques seen in previous sections.</p></li>
+					</ul></p>
+				</li>
+			</ul></p>
+		<p>Notice that if we have small samples and we do not know that the population has a normal distribution, then none of the above apply. Also, if we have a proportion in which one of the products is not greater than 5, none of the above apply. In these cases, will not be able to perform estimation using the tools described in this text.</p>
+		<example xml:id="examp_ci-small-samples_when">
+			<title>Determining Which Distribution to Use</title>
+			<statement>
+				<p>For each of the situations below, determine what distribution we should use to construct a confidence interval: normal, t-distribution, or neither.
+					<ol label="a">
+						<li><p>The proportion of a population with a given characteristic is to be approximated using a sample of 40 individuals, 12 of which have the desired characteristic.</p></li>
+						<li><p>A population mean is to be estimated using a sample of size 50. The standard deviation of the population is not known, and the population may not be normal.</p></li>
+						<li><p>The difference between proportions in two independent populations is to be estimated, but only one individual in the second sample had the desired characteristic.</p></li>
+						<li><p>The difference between two population means is to be estimated using samples of size 20 and 40. The population distributions are known to be normal.</p></li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Since <m>n\times p = 12</m> and <m>n\times q = 28</m>, we can use the normal distribution for our critical values.</p></li>
+					<li><p>Because the sample size is 30 or more, we can use the normal distribution and approximate <m>\sigma</m> with the sample standard deviation.</p></li>
+					<li><p>Since <m>n\times p = 1</m> for one of the two samples, we can not use the normal distribution. We will unfortunately not be able to build a confidence interval for this difference with the tools we have available.</p></li>
+					<li><p>Because one of the two samples is smaller than 30, we must use small sample techniques and the t-distribution to construct this confidence interval.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-small-samples_when-1">
+			<caption>Choosing Distributions</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-09.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-small-samples_when-1">
+			<statement>
+				<p>Consider the following estimation tasks.
+					<ol label="a">
+						<li><p>Constructing a confidence interval for a single population proportion in which <m>n\times p</m> and <m>n\times q</m> are both greater than five.</p></li>
+						<li><p>Constructing a confidence interval for a single mean in which the population has a normal distribution, and the sample size is <m>n = 100</m>.</p></li>
+						<li><p>Constructing a confidence interval for a single mean in which the population has a normal distribution, and the sample size is <m>n = 20</m>.</p></li>
+						<li><p>Constructing a confidence interval for a difference between means in which the two populations have normal distributions, but different standard deviations, using samples of size 10.</p></li>
+					</ol>
+				</p>
+			  <p>Question: which distribution, if any, can be used to construct these intervals</p>
+			</statement>
+			<answer><p><ol label="a" cols="2">
+				<li><p>normal</p></li>
+				<li><p>normal</p></li>
+				<li><p>t-distribution</p></li>
+				<li><p>none</p></li>
+			</ol></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-small-samples_when-2">
+			<statement>
+				<p>Consider the following estimation tasks.
+					<ol label="a">
+						<li><p>Constructing a confidence interval for a single population mean in which the population has a uniform distribution and the sample size is n = 10.</p></li>
+						<li><p>Constructing a confidence interval for a difference between means in which the populations have a normal distribution and the sample sizes are 100 and 150.</p></li>
+						<li><p>Constructing a confidence interval for the difference between proportions where <m>n\times p_1 = 1</m>.</p></li>
+						<li><p>Constructing a confidence interval for the difference between means when the sample sizes are 10 and 15, and the populations have a normal distribution with equal variances.</p></li>
+					</ol>
+				</p>
+				<p>Question: which distribution, if any, can be used to construct these intervals</p>
+			</statement>
+			<answer><p><ol label="a" cols="2">
+				<li><p>none</p></li>
+				<li><p>normal</p></li>
+				<li><p>none</p></li>
+				<li><p>t-distribution</p></li>
+			</ol></p></answer>
+		</exercise>
+	</subsection>
+
+</section>
