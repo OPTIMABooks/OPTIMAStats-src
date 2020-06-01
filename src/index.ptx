@@ -89,11 +89,11 @@
 
       <part>
         <title>Inferential Statistics</title>
-        <xi:include href="./chap_estimation.ptx"/>
-<!--        
+        <xi:include href="./chap_estimation.ptx"/>   
         <xi:include href="./chap_testing.ptx"/>
+<!--
         <xi:include href="./chap_other-tests.ptx"/>
--->        
+-->
       </part>
     
     <backmatter>

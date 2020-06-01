@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chap_testing">
+  <title>Testing Hypotheses for Means and Proportions</title>
+  <introduction>
+    <title>Statistical Tests of Hypothesis</title>
+    <p>Estimation is only half of the inferential statistics picture. The other half is decision making. Instead of trying to approximate the value of a population parameter, we make a statement about its value and then test, using a sample, to see if this statement is reasonable. This process is called a <term>Statistical Test of Hypothesis</term> or just a <term>Hypothesis Test</term> for short.</p>
+    <p>The sections that follow will mirror those sections found in the <xref ref="chap_estimation" />.  We start with an introduction to the hypothesis testing process, and then proceed to look at specific hypothesis tests for means, proportions, differences between means and proportions, and small sample means and differences between means.</p>
+  </introduction>
+
+  <xi:include href="sec_ht-intro.ptx"/>
+<!--  
+  <xi:include href="sec_ht-means.ptx"/>
+  <xi:include href="sec_ht-proportions.ptx"/>
+  <xi:include href="sec_ht-differences.ptx"/>
+  <xi:include href="sec_ht-small-samples.ptx"/>
+-->
+</chapter>
