@@ -236,7 +236,7 @@
 		  Finally, multiplying both sides by <m>n</m> and dividing by <m>E^2</m> gives us the formula below.
 		  <me>n \geq \frac{(z_{\alpha/2})^2pq}{E^2}</me>.
 		  The results are summarized in the following theorem.</p>
-		<theorem xml:id="thm_proportion-sample-size">
+		<theorem xml:id="thm_sample-size-proportion">
 			<title>Sample Size when Estimating a Proportion</title>
 			<statement>
 				<p>To get a maximum margin of error of <m>E</m> at the <m>(1-\alpha)</m> confidence level, we must take a sample of size <m>n</m> where:
