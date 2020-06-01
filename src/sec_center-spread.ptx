@@ -624,7 +624,7 @@
 				</sidebyside>
 			</statement>
 		</definition>
-		<p>Let's test out these new formulas on an example.</p>
+		<p>Let&apos;s test out these new formulas on an example.</p>
 		<example xml:id="examp_center-spread_mean-stdev_computation">
 			<title>Computing the Mean and Standard Deviation</title>
 			<statement>
