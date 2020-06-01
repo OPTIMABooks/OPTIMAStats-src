@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ci-differences">
+  <title>Confidence Intervals for the Difference Between Means or Proportions</title>
+
+  <introduction xml:id="sec_ci-differences_intro">
+  	<title>Estimating Differences</title>
+		<p>While estimating a mean or a proportion for a single population is useful, there are instances where we need to compare two (or more) populations. In any sort of comparative study, estimating the difference between two populations plays an important role. This section will show us how to estimate the difference between two population means or two population proportions.</p>
+		<p>Consider the following situations, which will appear as examples later in the section.
+			<ul>
+				<li><p>A researcher believes that on average, adults can hold their breath longer than children. The research collects a sample of 80 adults and finds that the average time they can hold their breath is 72 seconds with a standard deviation of 4.9 seconds. He also collects a sample of 43 children and finds that the average time they can hold their breaths is 58 seconds, with a standard deviation of 12.1. Estimate the difference, <m>\mu_1 - \mu_2</m>, between the average time an adult can hold their breath and the average time a child can hold their breath.</p></li>
+				<li><p>A certain mathematics department wishes to estimate the difference between the proportion of students who pass calculus having had high school geometry, and those who pass without having high school geometry. 50 Students who have had high school geometry and took calculus are randomly selected, and it was found that 46 of them passed calculus. 37 students who did not have high school geometry before taking calculus were also selected, and only 32 of them were found to have passed calculus. Estimate the difference, <m>p_1 - p_2</m>, between the proportion of students with high school geometry who pass calculus and the proportion without high school geometry who pass calculus.</p></li>
+			</ul>
+		</p>
+	</introduction>
+
+	<objectives xml:id="sec_ci-differences_obj">
+		<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Confidence Interval for the Difference Between Means</p></li>
+					<li><p>Confidence Interval for the Difference Between Proportions</p></li>
+					<li><p>Margin of Error for a Difference Between Means</p></li>
+					<li><p>Margin of Error for a Difference Between Proportions</p></li>
+					<li><p>Point Estimate for a Difference Between Means</p></li>
+					<li><p>Point Estimate for a Difference Between Proportions</p></li>
+					<li><p>Sample Size when Estimating a Difference Between Means</p></li>
+					<li><p>Sample Size when Estimating a Difference Between Proportions</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Identify the best point estimate for a difference between means or proportions</p></li>
+					<li><p>Find the margin of error for a difference between means or proportions</p></li>
+					<li><p>Construct a confidence interval for a difference between means or proportions</p></li>
+					<li><p>Understand and list the assumptions that must be made to construct these confidence intervals</p></li>
+					<li><p>Compute the minimum sample size necessary for a given margin of error</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ci-differences_point">
+		<title>Point Estimate</title>
+		<p>It should come as no surprise by now that the point estimate we use for the difference between population means or proportions is the difference between the sample means or proportions. We state this formally below, first for means and then for proportions.</p>
+		<theorem xml:id="tmp_point-estimate-difference-means">
+			<title>Point Estimate for a Difference Between Means</title>
+			<statement>
+				<p>If samples with means <m>\overline{x}_1</m> and <m>\overline{x}_2</m> are drawn from two independent populations with means <m>\mu_1</m> and <m>\mu_2</m>, then the best point estimate for <m>\mu_1 - \mu_2</m> is <m>\overline{x}_1 - \overline{x}_2</m>.</p>
+			</statement>
+		</theorem>
+		<example xml:id="examp_ci-differences_point-means">
+			<title>Finding a Point Estimate for the Difference Between Means</title>
+			<statement>
+				<p>A researcher believes that on average, adults can hold their breath longer than children. The research collects a sample of 80 adults and finds that the average time they can hold their breath is 72 seconds with a standard deviation of 4.9 seconds. He also collects a sample of 43 children and finds that the average time they can hold their breath is 58 seconds, with a standard deviation of 12.1. What is the best point estimate for <m>\mu_1 - \mu_2</m>, the difference between the average time an adult can hold their breath and the average time a child can hold their breath?</p>
+			</statement>
+			<solution>
+				<p>As stated above, the best point estimate for <m>\mu_1 - \mu_2</m> is <m>\overline{x}_1 - \overline{x}_2</m>. Thus, we should use <m>72-58 = 14</m> for our estimate.</p>
+			</solution>
+		</example>
+		<p>And now we repeat this process for proportions.</p>
+		<theorem xml:id="tmp_point-estimate-difference-proportions">
+			<title>Point Estimate for a Difference Between Proportions</title>
+			<statement>
+				<p>If samples with proportions <m>\hat p_1</m> and <m>\hat p_2</m> are drawn from two independent populations with proportions <m>p_1</m> and <m>p_2</m>, then the best point estimate for <m>p_1 - p_2</m> is <m>\hat p_1 - \hat p_2</m>.</p>
+			</statement>
+		</theorem>
+		<example xml:id="examp_ci-differences_point-proportions">
+			<title>Finding a Point Estimate for the Difference Between Proportions</title>
+			<statement>
+				<p>A certain mathematics department wishes to estimate the difference between the proportion of students who pass calculus having had high school geometry, and those who pass without having high school geometry. 50 Students who have had high school geometry and took calculus are randomly selected, and it was found that 46 of them passed calculus. 37 students who did not have high school geometry before taking calculus were also selected, and only 32 of them were found to have passed calculus. What point estimate for <m>p_1 - p_2</m>, the difference between the proportion of students with high school geometry who pass calculus and the proportion without high school geometry who pass calculus, should be used?</p>
+			</statement>
+			<solution>
+				<p>Again, the best point estimate is the difference between the sample statistics, <m>\hat p_1 - \hat p_2</m> in this case. This yields:
+				  <me>\frac{46}{50} - \frac{32}{37} = 0.92 - 0.8649 = 0.0551</me>.</p>
+		  </solution>
+		</example>
+
+		<figure xml:id="video_ci-differences_point-1">
+			<caption>Point Estimates for Differences I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-differences_point-2">
+			<caption>Point Estimates for Differences II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-differences_point-1">
+			<statement>
+				<p>You wish to estimate the difference between the average proportion of Skittles that are yellow and the average proportion of M&amp;M&apos;s that are yellow. You randomly sample bags of each type of candy and find the following statistics. </p>
+				<table>
+					<title>Candy Statistics</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Candy</cell>
+							<cell>Sample Size</cell>
+							<cell>Mean</cell>
+							<cell>Standard Deviation</cell>
+						</row>
+						<row>
+							<cell>Skittles</cell>
+							<cell><m>n_1 = 43</m></cell>
+							<cell><m>0.2990</m></cell>
+							<cell><m>0.01650</m></cell>
+						</row>
+						<row>
+							<cell>M&amp;M&apos;s</cell>
+							<cell><m>n_2 = 39</m></cell>
+							<cell><m>0.3210</m></cell>
+							<cell><m>0.02231</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the best point estimate for the difference between the average proportion of yellow skittles and yellow M&amp;M&apos;s? </p>
+			</statement>
+			<answer><p><m>-0.0224</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-differences_point-2">
+			<statement>
+				<p>You wish to estimate the difference between the proportion of men who regularly play video games and the proportion of women who regularly play video games. To do this, you take a sample from each gender and ask each person if they play video games at least once a week. The summary of these surveys is provided below.</p>
+				<table>
+					<title>Video Game Statistics</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Gender</cell>
+							<cell>Sample Size</cell>
+							<cell>Number who play</cell>
+						</row>
+						<row>
+							<cell>Male</cell>
+							<cell><m>n_1 = 63</m></cell>
+							<cell><m>x_1 = 49</m></cell>
+						</row>
+						<row>
+							<cell>Female</cell>
+							<cell><m>n_2 = 67</m></cell>
+							<cell><m>x_2 = 38</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the best estimate for the difference between the proportion of males and females who regularly play video games?</p>
+			</statement>
+			<answer><p>0.2106</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-differences_margin-error">
+		<title>Margin of Error</title>
+		<p>We will need to be careful when computing the margin of error for a difference between means or proportions. The standard deviation of both samples will need to be taken into account. We start with the difference between two means. Recall that the standard deviations for each of the sampling distributions is as follows. 
+			<ul>
+				<li><p>The standard deviation for <m>\overline{x}_1</m> is <m>\frac{\sigma_1}{\sqrt{n_1}}</m> so the variance is <m>\frac{\sigma_1^2}{n_1}</m>.</p></li>
+				<li><p>The standard deviation for <m>\overline{x}_2</m> is <m>\frac{\sigma_2}{\sqrt{n_2}}</m> so the variance is <m>\frac{\sigma_2^2}{n_2}</m>.</p></li>
+			</ul>
+			When we subtract the two sample means, the variances from both samples need to be added together to get the combined variance for the difference. This becomes:
+			<me>\sigma_{(\overline{x}_1 - \overline{x}_2)}^2 = \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}</me>
+			and taking the square root of this gives us the standard deviation for <m>\overline{x}_1 - \overline{x}_2</m>.</p>
+		<theorem xml:id="thm_margin-error-difference-means">
+			<title>Margin of Error for a Difference Between Means</title>
+			<statement>
+				<p>The margin of error when estimating the difference between two population means at the <m>(1-\alpha)100\%</m> confidence level is given by:
+				  <me>z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</me>.</p>
+			</statement>
+		</theorem>
+		<p>As was the case with a single population, to use this margin of error we need to know that both <m>\overline{x}_1</m> and <m>\overline{x}_2</m> have normal distributions. This is true if either the populations from which they are sampled have normal distributions, or the sample sizes are both at least thirty. This is the case in the <xref ref="examp_ci-differences_point-means" text="custom">breath-holding example</xref>, continued below.</p>
+		<example xml:id="examp_ci-differences_margin-error-means">
+			<title>Finding the Margin of Error for a Difference Between Means</title>
+			<statement>
+				<p>A researcher believes that on average, adults can hold their breath longer than children. The research collects a sample of 80 adults and finds that the average time they can hold their breath is 72 seconds with a standard deviation of 4.9 seconds. He also collects a sample of 43 children and finds that the average time they can hold their breaths is 58 seconds, with a standard deviation of 12.1. What is the 95% margin of error for the estimate of <m>\mu_1 - \mu_2</m> given by the point estimate <m>72 - 58 = 14</m>?</p>
+			</statement>
+			<solution>
+				<p>The margin of error is computed as shown.
+				  <md>
+				  	<mrow>z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}} \amp = \pm 1.96\sqrt{\frac{(4.9)^2}{80} + \frac{(12.1)^2}{43}}</mrow>
+				  	<mrow>\amp \approx \pm 3.77269</mrow>
+				  </md>
+				</p>
+			</solution>
+		</example>
+		<p>For the difference between proportions, things work in much the same way. By taking the square root of the sum of the variances for both <m>\hat p_1</m> and <m>\hat p_2</m>, we get the standard deviation for their difference <m>\hat p_1 - \hat p_2</m>. This computation is shown below.
+		  <me>\sigma_{(\hat p_1 - \hat p_2)} = \sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</me>
+		</p>
+		<p>The margin of error is then the following.</p>
+		<theorem xml:id="thm_margin-error-difference-proportions">
+			<title>Margin of Error for a Difference Between Proportions</title>
+			<statement>
+				<p>The margin of error when estimating the difference between two population proportions at the <m>(1-\alpha)100\%</m> confidence level is given by:
+			  	<me>z_{\alpha/2}\times \sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</me>.</p>
+			</statement>
+		</theorem>
+		<p>Note that we use <m>p_1 \approx \hat p_1</m> and <m>p_2 \approx \hat p_2</m> since <m>p</m> and <m>q</m> are not know.  Again, we must make sure that <m>\hat p_1</m> and <m>\hat p_2</m> both have normal distributions. This is true so long as <m>\hat p_1 \times n_1</m>, <m>\hat q_1\times n_1</m>, <m>\hat p_2\times n_2</m>, and <m>\hat q_2\times n_2</m> are all greater than 5. We revisit the <xref ref="examp_ci-differences_point-proportions" text="custom">calculus example</xref> to see how to use this formula.</p>
+		<example xml:id="examp_ci-differences_margin-error-proportions">
+			<title>Finding the Margin of Error for a Difference Between Proportions</title>
+			<statement>
+				<p>A certain mathematics department wishes to estimate the difference between the proportion of students who pass calculus having had high school geometry, and those who pass without having high school geometry. 50 Students who have had high school geometry and took calculus are randomly selected, and it was found that 46 of them passed calculus. 37 students who did not have high school geometry before taking calculus were also selected, and only 32 of them were found to have passed calculus. Find the 99% margin of error in the estimate of <m>p_1 - p_2</m>, the difference between the proportion of students with high school geometry who pass calculus and the proportion without high school geometry who pass calculus.</p>
+			</statement>
+			<solution>
+				<p>Computing <m>\hat p_1 = \frac{46}{50} = 0.92</m> and <m>\hat p_2 = \frac{32}{37} = 0.8649</m> we get the following.
+				  <md>
+				  	<mrow>z_{\alpha/2}\times \sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}} \amp = \pm 2.575\sqrt{\frac{(0.92)(0.08)}{50} + \frac{(0.8649)(0.1351)}{37}}</mrow>
+				  	<mrow>\amp \approx \pm 0.1752</mrow>
+				  </md>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-difference_margin-error-1">
+			<caption>Margins of Error for Differences I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-03.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-difference_margin-error-2">
+			<caption>Margins of Error for Differences II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-differences_magin-error-1">
+			<statement>
+				<p>You wish to estimate the difference between the average proportion of Skittles that are yellow and the average proportion of M&amp;M&apos;s that are yellow. You randomly sample bags of each type of candy and find the following statistics.</p>
+				<table>
+					<title>Candy Statistics</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Candy</cell>
+							<cell>Sample Size</cell>
+							<cell>Mean</cell>
+							<cell>Standard Deviation</cell>
+						</row>
+						<row>
+							<cell>Skittles</cell>
+							<cell><m>n_1 = 43</m></cell>
+							<cell><m>0.2990</m></cell>
+							<cell><m>0.01650</m></cell>
+						</row>
+						<row>
+							<cell>M&amp;M&apos;s</cell>
+							<cell><m>n_2 = 39</m></cell>
+							<cell><m>0.3210</m></cell>
+							<cell><m>0.02231</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the 99% margin of error for the difference between these means? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p>0.0113</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-differences_magin-error-2">
+			<statement>
+				<p>You wish to estimate the difference between the proportion of men who regularly play video games and the proportion of women who regularly play video games. To do this, you take a sample from each gender and ask each person if they play video games at least once a week. The summary of these surveys is provided below.</p>
+				<table>
+					<title>Video Game Statistics</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Gender</cell>
+							<cell>Sample Size</cell>
+							<cell>Number who play</cell>
+						</row>
+						<row>
+							<cell>Male</cell>
+							<cell><m>n_1 = 63</m></cell>
+							<cell><m>x_1 = 49</m></cell>
+						</row>
+						<row>
+							<cell>Female</cell>
+							<cell><m>n_2 = 67</m></cell>
+							<cell><m>x_2 = 38</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the 98% margin of error for the difference between these two proportions? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p>0.1865</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-differences_interval">
+		<title>Confidence Interval</title>
+		<p>Once we have found the point estimate and margin of error, putting together the confidence interval is a fairly straight-forward task. The confidence interval formulas for the differences between means and proportions are given below, along with examples.</p>
+		<theorem xml:id="thm_ci-difference-means">
+			<title>Confidence Interval for the Difference Between Means</title>
+			<statement>
+				<p>The <m>(1-\alpha)100\%</m> confidence interval for the difference <m>\mu_1 - \mu_2</m> between means of independent populations is given by:
+				  <me>(\overline{x}_1 - \overline{x}_2) \pm z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</me>.</p>
+		  </statement>
+		</theorem>
+		<example xml:id="examp_ci-differences_ci-means">
+			<title>Finding the Confidence Interval for a Difference Between Means</title>
+			<statement>
+				<p>A researcher believes that on average, adults can hold their breath longer than children. The research collects a sample of 80 adults and finds that the average time they can hold their breath is 72 seconds with a standard deviation of 4.9 seconds. He also collects a sample of 43 children and finds that the average time they can hold their breaths is 58 seconds, with a standard deviation of 12.1. Construct the 95% confidence interval for <m>\mu_1 - \mu_2</m> based on these samples.</p>
+			</statement>
+			<solution>
+				<p>Using the formula above, we get the following.
+					<me>(72 - 58) \pm 1.96\sqrt{\frac{(4.9)^2}{80} + \frac{(12.1)^2}{43}} \approx 14 \pm 3.7727</me></p>
+				<p>Adding and subtracting these values gives us the confidence interval below.
+				  <me>10.2273 \lt \mu_1 - \mu _2 \lt 17.7727</me></p>
+				<p>This means that we are 95% confident that the average adult can hold his or her breath between 10.2 seconds and 17.8 seconds longer than the average child.</p>
+			</solution>
+		</example>
+		<p>And now we look at population proportions.</p>
+		<theorem xml:id="thm_ci-difference-proportions">
+		  <title>Confidence Interval for the Difference Between Proportions</title>
+		  <statement>
+		  	<p>The <m>(1-\alpha)100\%</m> confidence interval for the difference <m>p_1 - p_2</m> between proportions in independent populations is given by:
+		  	  <me>(\hat p_1 - \hat p_2) \pm z_{\alpha/2}\sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</me>.</p>
+		  	<p>Note that we use <m>p_1 \approx \hat p_1</m> and <m>p_2 \approx \hat p_2</m> since <m>p</m> and <m>q</m> are unknown.</p>
+		  </statement>
+		</theorem>
+		<example xml:id="examp_ci-differences_ci-proportions">
+			<title>Finding the Confidence Interval for a Difference Between Proportions</title>
+			<statement>
+				<p>A certain mathematics department wishes to estimate the difference between the proportion of students who pass calculus having had high school geometry, and those who pass without having high school geometry. 50 Students who have had high school geometry and took calculus are randomly selected, and it was found that 46 of them passed calculus. 37 students who did not have high school geometry before taking calculus were also selected, and only 32 of them were found to have passed calculus. Construct the 99% confidence interval for <m>p_1 - p_2</m>, the difference between the proportion of students with high school geometry who pass calculus and the proportion without high school geometry who pass calculus.</p>
+			</statement>
+			<solution>
+				<p>Recall that in <xref ref="examp_ci-differences_point-proportions"/> we determined that <m>\hat p_1 = 0.92</m> and <m>\hat p_2 = 0.8649</m>. Using these values in the formula for a confidence interval yields the following.
+				  <me>(0.9200 - 0.8649) \pm 2.575\sqrt{\frac{(0.92)(0.08)}{50} + \frac{(0.8649) (0.1351)}{37}} \approx 0.0551 \pm 0.1752</me></p>
+				<p>Again we add and subtract to get the following confidence interval.
+					<me>-0.1201 \lt p_1 - p_2 \lt 0.2303</me></p>
+				<p>Note that according to this confidence interval, <m>p_1</m> may be:
+				  <ul>
+				    <li><p>bigger than <m>p_2</m> because there are positive differences in the interval,</p></li>
+				    <li><p>equal to <m>p_2</m> because zero is in the interval, or</p></li>
+				    <li><p>smaller than <m>p_2</m> because there are negative differences in the interval.</p></li>
+				  </ul>
+				</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-differences_ci-1">
+			<caption>Confidence Intervals for Differences I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-differences_ci-2">
+			<caption>Confidence Intervals for Differences II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-06.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-differences_ci-3">
+			<caption>Confidence Intervals for Differences III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-07.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-differences_ci-4">
+			<caption>Confidence Intervals for Differences IV</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-differences_ci-1">
+			<statement>
+				<p>You wish to estimate the difference between the average proportion of Skittles that are yellow and the average proportion of M&amp;M&apos;s that are yellow using a 99% confidence interval. You randomly sample bags of each type of candy and find the following statistics.</p>
+				<table>
+					<title>Candy Statistics</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Candy</cell>
+							<cell>Sample Size</cell>
+							<cell>Mean</cell>
+							<cell>Standard Deviation</cell>
+						</row>
+						<row>
+							<cell>Skittles</cell>
+							<cell><m>n_1 = 43</m></cell>
+							<cell><m>0.2990</m></cell>
+							<cell><m>0.01650</m></cell>
+						</row>
+						<row>
+							<cell>M&amp;M&apos;s</cell>
+							<cell><m>n_2 = 39</m></cell>
+							<cell><m>0.3210</m></cell>
+							<cell><m>0.02231</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the 99% confidence interval for the difference between the average proportion of yellow Skittles and yellow M&amp;M&apos;in a bag of candy? Round your confidence bounds to four decimal places.</p>
+			</statement>
+			<answer><p><m>-0.0332 \lt \mu_1 - \mu_2 \lt -0.0108</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-differences_ci-2">
+			<statement>
+				<p>You wish to estimate the difference between the proportion of men who regularly play video games and the proportion of women who regularly play video games using a 98% confidence interval. To do this, you take a sample from each gender and ask each person if they play video games at least once a week. The summary of these surveys is provided below.</p>
+				<table>
+					<title>Video Game Statistics</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center" right="medium"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Gender</cell>
+							<cell>Sample Size</cell>
+							<cell>Number who play</cell>
+						</row>
+						<row>
+							<cell>Male</cell>
+							<cell><m>n_1 = 63</m></cell>
+							<cell><m>x_1 = 49</m></cell>
+						</row>
+						<row>
+							<cell>Female</cell>
+							<cell><m>n_2 = 67</m></cell>
+							<cell><m>x_2 = 38</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the 98% confidnece interval for this difference? Round your answer to four decimal places.</p>
+			</statement>
+			<answer><p><m>0.0241 \lt p_1 - p_2 \lt 0.3971</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ci-differences_sample-size">
+		<title>Sample Size</title>
+		<p>When trying to determine the sample size that we need for a given margin of error in a confidence interval for differences, we need to make an 
+		extra assumption. Note that in the two margin of error formulas below, there are two, potentially different, values of <m>n</m>.</p>
+		<figure xml:id="fig_ci-differences_sample-size-me">
+			<caption>Margin of Error for Differences</caption>
+			<sidebyside width="45%" margins="auto" valign="middle">
+				<figure xml:id="fig_ci-differences_sample-size-me-mean">
+					<caption>Means</caption>
+					<image xml:id="image_ci-differences_sample-size-me-mean">
+						<latex-image>\displaystyle z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</latex-image>
+					</image>
+				</figure>
+				<figure xml:id="fig_ci-differences_sample-size-me-proportions">
+					<caption>Proportions</caption>
+					<image xml:id="image_ci-differences_sample-size-me-proportions">
+						<latex-image>\displaystyle z_{\alpha/2}\times \sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</latex-image>
+					</image>
+				</figure>
+			</sidebyside>
+		</figure>
+		<p>Because we can not solve a single inequality for both <m>n_1</m> and <m>n_2</m>, we must make the simplifying assumption that both samples will be of the same size. That is, we assume that <m>n_1 = n_2 = n</m>.  When dealing with the mean, we can now find the value of <m>n</m> that guarantees that we will have a margin of error no bigger than some fixed <m>E</m>.
+		  <md>
+		  	<mrow>z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{n}} \leq E \amp \Rightarrow z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2 + \sigma_2^2}{n}} \leq E</mrow>
+		  	<mrow>\amp\Rightarrow \frac{(z_{\alpha/2})^2(\sigma_1^2 + \sigma_2^2)}{n} \leq E^2</mrow>
+		  	<mrow>\amp\Rightarrow n \geq \frac{(z_{\alpha/2})^2(\sigma_1^2 + \sigma_2^2)}{E^2}</mrow>
+		  </md>
+		</p>
+		<p>This result is summarized below.</p>
+		<theorem xml:id="thm_sample-size-difference-means">
+			<title>Sample Size when Estimating a Difference Between Means</title>
+			<p>To get a maximum margin of error of <m>E</m> at the <m>(1-\alpha)100\%</m> confidence level, we must take samples of size <m>n</m> from each population where:
+			  <me>n \geq \frac{(z_{\alpha/2})^2(\sigma_1^2 + \sigma_2^2)}{E^2}</me>.</p>
+		</theorem>
+		<p>As was the case with a single population mean, we need to know the standard deviations before we can use this formula. Since we haven&apos;t yet onducted our survey, we must have some other way to approximate the standard deviations. Recall that our method was to either:
+			<ul>
+				<li><p>use standard deviations from a previous or preliminary study, or</p></li>
+				<li><p>use the <xref ref="def_stddev-estimate" text="custom">range approximation</xref>.</p></li>
+			</ul>
+		  In the question below, we will use the range approximation.</p>
+		<example xml:id="examp_ci-difference_sample-size-means">
+			<title>Finding the Sample Size for a Difference Between Means</title>
+			<statement>
+				<p>You wish to determine the difference between the average time adults spend watching television, and the average time children spend watching television. To do this you will use a 95% confidence interval, and you wish your margin of error to be no more than 15 minutes. You assume that both adults and children watch between zero and 12 hours of television a day. How many individuals will you need to include in your samples to achieve this goal?</p>
+			</statement>
+			<solution>
+				<p>Both standard deviations<mdash/>for adults and children<mdash/>will be approximated by <m>\frac{12 - 0}{4} = 3</m> hours. Plugging this into the formula above, and recognizing that 15 minutes is 0.25 hours, we get the following.
+				  <me>n \geq \frac{(1.96)^2(3^2 + 3^2)}{(0.25)^2} \approx 1106.3808</me>.
+				Remembering to always round up, we must include at least 1107 adults and 1107 children in this study.</p>
+				<p>This sounds quite large, and it would be wise to either get a better approximation for the standard deviation with a preliminary study, or to allow for a larger margin of error.</p>
+			</solution>
+		</example>
+		<p>Following a procedure similar to that above, we get the following formula for the minimum sample size for a difference between proportions.</p>
+		<theorem xml:id="thm_sample-size-difference-proportions">
+			<title>Sample Size when Estimating a Difference Between Proportions</title>
+			<statement>
+				<p>To get a maximum margin of error of <m>E</m> at the <m>(1-\alpha)100\%</m> confidence level, we must take samples of size <m>n</m> from each population where:
+				  <me>n \geq \frac{(z_{\alpha/2})^2(p_1q_1+ p_2q_2)}{E^2}</me>.</p>
+			</statement>
+		</theorem>
+		<p>To fill in the unknown values of <m>p_1</m> and <m>p_2</m>, we again have two methods available:
+		  <ul>
+		  	<li><p>we can use values for <m>p_1</m> and <m>p_2</m> from previous studies, or</p></li>
+		  	<li><p>we can use the <q>worst case scenario</q> that <m>p_1 = p_2 = 0.5</m>.</p></li>
+		  </ul>
+		</p>
+		<example xml:id="examp_ci-difference_sample-size-proportions">
+			<title>Finding the Sample Size for a Difference Between Proportions</title>
+			<statement>
+				<p>A study is to be conducted to determine the difference between the proportion of Democrats and Republicans who support the death penalty. A study from five years ago found that 39% of Democrats and 67% of Republicans support the death penalty. How many persons should be surveyed from each party if we wish to construct a 98% confidence interval for the difference between these two proportions, and we want a margin of error of no more than 4%?</p>
+			</statement>
+			<solution>
+				<p>We will use the provided values <m>p_1= 0.39</m> and <m>p_2 = 0.67</m> from the previous study in the following formula.
+				  <me>n \geq \frac{(2.33)^2((0.39)(0.61)+ (0.67)(0.33))}{(0.04)^2} \approx 1557.42</me>
+				  As usual, we round this up to 1558. We must include both 1558 Democrats and 1558 Republicans in our survey in order to meet the criteria specified.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ci-differences_sample-size-1">
+			<caption>Sample Sizes I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-09.mp4"/>
+		</figure>
+		<figure xml:id="video_ci-differences_sample-size-2">
+			<caption>Sample Sizes II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ci-differences_sample-size-1">
+			<statement>
+				<p>The average reading speed, in words per minute, is to be measured among children in school districts designated as <q>low income</q> and school districts designated as <q>affluent.</q> A previous study suggests that the standard deviation of this reading score will be approximately 12 words per minute in the low income children, and 11.5 words per minute in the affluent children. A 99% confidence interval is to be constructed for the difference between the reading speeds of these two groups of children and a margin of error of 5 words per minute or less is desired.</p>
+				<p>Question: what minimum sample size must we collect from each school district?</p>
+			</statement>
+			<answer><p>74</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ci-differences_sample-size-2">
+			<statement>
+				<p>The local human society plans on conducting a survey to compare the proportion of cats that have been spayed or neutered against the proportion of dogs that have been spayed or neutered. They wish to construct a 80% confidence interval for the difference between these two proportions with a margin of error of less than 5%.</p>
+				<p>Question: how many dogs and cats total (combined) must they sample?</p>
+			</statement>
+			<answer><p>656 (328 of each)</p></answer>			
+		</exercise>
+  </subsection>
+
+</section>
