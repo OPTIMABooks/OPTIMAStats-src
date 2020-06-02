@@ -7,6 +7,7 @@
       \usepackage{pgfplots}
       \usepackage{filecontents}
       \usepackage{ifthen}
+      \usepackage{colortbl}
       \usepgfplotslibrary{fillbetween}
       \usetikzlibrary{patterns}
       \pgfmathdeclarefunction{gauss}{3}{%
