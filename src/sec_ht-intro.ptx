@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ht-intro">
+  <title>Introduction to Hypothesis Testing</title>
+
+  <introduction xml:id="sec_ht-intro_intro">
+  	<title>Why Do We Need Hypothesis Tests?</title>
+  	<p>While we now have a good set of tools for estimating the value of a population mean, proportion, or differences between means and proportions, there are some times when we wish to make a decision instead of estimate a value. Consider the following situations.
+  		<ul>
+  			<li><p>In order to be profitable, a bus route must have an average of at least 25 paying customers. We wish to decide if a certain route is profitable by collecting ridership information on 15 different occasions during a given month.</p></li>
+  			<li><p>In order to pass, a new school bond measure needs to get at least 60% support among voters. You collect a sample of 500 likely voters and find that 61% of them plan to vote for the bond. Is this sufficient evidence to claim that the bond will pass on election day?</p></li>
+  			<li><p>A researcher claims that men and women do not get the same number of hours of sleep a night. To test this claim, you take a sample of 250 men and 200 women and determine the number of hours of sleep that each individual in these samples gets.</p></li>
+  		</ul>
+  	</p>
+  	<p>In each case we make a claim about a population and then gather a sample from that population to determine if our claim is reasonable. As we shall see, we do this in a very methodical way. For example, the 61% of voters who support the school bond in our sample will probably not be enough for us to claim with any level of statistical significance that the bond will pass.  A random sample of only 500 voters is likely to have a proportion supporting the bond that is one percent or more different from proportion of support in the entire population.</p>
+  	<definition xml:id="def_hypothesis-test">
+  		<title>Statistical Test of Hypothesis</title>
+  		<idx>hypothesis test</idx>
+  		<statement>
+  			<p>A <term>statistical test of hypothesis</term>, or just a <term>hypothesis test</term>, is a four-step process used to make a decision about a population based on a sample.  These steps are:
+  			  <ol label="1">
+  			  	<li><p>Identify the hypothesis being tested and the underlying assumptions that go with that hypothesis.</p></li>
+  			  	<li><p>From a given sample, compute a test statistic based on the sample statistics and the underlying assumptions about the population.</p></li>
+  			  	<li><p>Determine the likelihood of observing a test statistic at least as extreme as the one computed if our assumptions are correct.</p></li>
+  			  	<li><p>Come to a conclusion about the hypothesis based on the likelihood found above.</p></li>
+  			  </ol>
+  			</p>
+  		</statement>
+  	</definition>
+  	<p>We begin <xref ref="chap_testing"/> by examining these steps in detail.</p>
+  </introduction>
+
+  <objectives xml:id="sec_ci-intro_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Left-Tailed Hypothesis Test</p></li>
+					<li><p>Null and Alternative Hypothesis</p></li>
+					<li><p>P-Value</p></li>
+					<li><p>Right-Tailed Hypothesis Test</p></li>
+					<li><p>Significance Level</p></li>
+					<li><p>Statistical Test of Hypothesis</p></li>
+					<li><p>Test Statistic</p></li>
+					<li><p>Two-Tailed Hypothesis Test</p></li>
+					<li><p>Type I Error</p></li>
+					<li><p>Type II Error</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Formulate null and alternative hypotheses</p></li>
+					<li><p>Understand what a test statistic tells us</p></li>
+					<li><p>Be able to perform a traditional hypothesis test using a test statistic and critical regions</p></li>
+					<li><p>Be able to perform a p-value hypothesis test using a normal distribution</p></li>
+					<li><p>Understand and identify type I and type II errors</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ht-intro_hypothesis">
+		<title>Formulating Hypotheses</title>
+		<p>The first step in conducting a hypothesis test is to figure out what we are hypothesizing. While this may seem obvious, it is often overlooked or thought to be <q>understood.</q> However we must be very careful that we explicitly state two hypotheses, called the <term>null</term> and <term>alternative hypothesis</term>, before we begin a hypothesis test. This is done not only to ensure our own understanding, but also because the numbers used in these hypotheses will be needed in the next step of the hypothesis test.</p>
+		<definition xml:id="def_hypotheses">
+			<idx><h>hypothesis test</h><h>null hypothesis</h></idx>
+			<idx><h>hypothesis test</h><h>alternative hypothesis</h></idx>
+			<idx><h>null hypothesis</h></idx>
+			<idx><h>alternative hypothesis</h></idx>
+			<statement>
+				<p>In a statistical test of hypothesis, we compare the <term>alternative hypothesis</term> against the <term>null hypothesis</term>. These hypotheses are:
+				  <ul>
+				  	<li><title>Alternative Hypothesis: <m>H_A</m></title>
+				  	  <p>This is generally the hypothesis that the researcher wishes to support. The alternative hypothesis claims that a population parameter is <q>greater than,</q> <q>less than,</q> or <q>not equal to</q> a certain value.</p></li>
+				  	<li><title>Null Hypothesis: <m>H_0</m></title>
+				  	  <p>The null hypothesis is a contradiction of the alternative hypothesis. This is the commonly held belief about the population parameter, and must involve equality. The null hypothesis is the claim that the research is trying to disprove, reject, or nullify.</p></li>
+				  </ul>
+				</p>
+			</statement>
+		</definition>
+		<p>As a general rule, the best way to identify these hypothesis is to start by looking for the null hypothesis. It is usually easiest to find <m>H_0</m> because it must involve equality. Then, you can find <m>H_A</m> by contradicting <m>H_0</m>. Consider the following examples.</p>
+		<example xml:id="examp_ht-intro_hypothesis-mean">
+			<title>Stating Hypotheses About a Mean</title>
+			<statement>
+				<p>In order to be profitable, a bus route must have an average of at least 25 paying customers. We wish to decide if a certain route is profitable by collecting ridership information on 15 different occasions during a given month. State the null and alternative hypotheses for this test.</p>
+			</statement>
+			<solution>
+				<p>We wish to determine if the number of customers on the bus is <q>at least 25</q> in order to continue the bus route. Turning this around, we will cancel the bus route if the number of customers is <q>less than 25.</q> This then should be our alternative hypothesis. Note also that <q>less than 25</q> does not involve equality, while <q>at least 25,</q> meaning greater-than-or-equal-to 25 does involve equality, making it a null hypothesis. Since these are average ridership numbers, our hypotheses are:
+				  <me>H_0:\ \mu \geq 25 \qquad \qquad H_A:\ \mu \lt 25</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-intro_hypothesis-difference">
+			<title>Stating Hypotheses About a Difference Between Means</title>
+			<statement>
+				<p>A researcher claims that men and women do not get the same number of hours of sleep a night. To test this claim, you take a sample of 250 men and 200 women and determine the number of hours of sleep that each individual in these samples gets.</p>
+			</statement>
+			<solution>
+				<p>In this example, the research claims that two means<mdash/>hours of sleep for men and hours of sleep for women<mdash/>are not equal. The opposite of that is that the means are equal. If the means are equal, then their difference is zero, and if the means are not equal, their difference is not zero.</p>
+				<p>These are stated as the null and alternative hypotheses below.
+					<me>H_0:\ \mu_1 - \mu_2 = 0 \qquad \qquad H_A:\ \mu_1 - \mu_2 \not= 0</me>.</p>
+			</solution>
+		</example>
+		<p>While we will spend more time on this later in the section, it should be noted here that the outcome of a hypothesis test will be one of two conclusions:
+			<ul>
+				<li><title><q>We reject the null hypothesis</q></title>
+				  <p>This means that the sample we found is very unlikely if the null hypothesis were indeed true, so we conclude that the null hypothesis can not be true. Note that because <m>H_A</m> is the opposite of <m>H_0</m>, we must therefore support the alternative hypothesis.</p></li>
+				<li><title><q>We fail to reject the null hypothesis</q></title>
+				  <p>Notice the wording. We do not say that we have proven the null hypothesis, or even that we support it. We are simply stating that the sample we found is consistent with the assumptions put forth in the null hypothesis. That means that we have found no support for the alternative hypothesis.</p></li>
+			</ul>
+		</p>
+
+		<figure xml:id="video_ht-intro_hypothesis-1">
+			<caption>Stating Hypotheses I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-intro_hypothesis-2">
+			<caption>Stating Hypotheses II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-intro_hypothesis-1">
+			<statement>
+				<p>You wish to test the claim that the average weight of a black bear is more than 300 pounds.</p>
+				<p>Question: which of the following should be your null hypothesis?
+					<ol label="a" cols="2">
+						<li><p><m>\mu \lt 300</m></p></li>
+						<li><p><m>\mu \leq 300</m></p></li>
+						<li><p><m>\mu \not= 300</m></p></li>
+						<li><p><m>\mu \geq 300</m></p></li>
+						<li><p><m>\mu \gt 300</m></p></li>
+					</ol>
+				</p>
+			</statement>
+			<answer><p>(b)</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-intro_hypothesis-2">
+			<statement>
+				<p>A restaurant claims that more than 80% of their customers call them their favorite eating establishment. You wish to test this claim.</p>
+				<p>Question: what is the alternative hypothesis, <m>H_A</m>, in this situation?
+				  <ol label="a" cols="2">
+				  	<li><p><m>\mu lt 80</m></p></li>
+				  	<li><p><m>\mu \leq 80</m></p></li>
+				  	<li><p><m>p \leq 0.8</m></p></li>
+				  	<li><p><m>p \gt 0.80</m></p></li>
+				  	<li><p><m>p \leq 80</m></p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(d)</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-intro_test-stat">
+		<title>Test Statistics and Significance Levels</title>
+		<p>Once we have stated our hypotheses, it is time to see if our sample supports those claims. To do this we must translate the information from our sample<mdash/>which will be a mean, a proportion, a difference between means, etc<mdash/>into a standardized random variable. That is, we need to find the z-score or t-score that goes with the sample we observed, under the assumption that the null hypothesis is true.</p>
+		<definition xml:id="def_test-statistic">
+			<idx>test statistic</idx>
+			<idx><h>hypothesis test</h><h>test statistic</h></idx>
+			<statement>
+				<p>The test statistic for a sample is a numerical summary that reduces the sample data to a single value based on the assumptions of the null hypothesis.</p>
+			</statement>
+		</definition>
+		<p>Notice that the test statistic is computed based on two pieces of information: the observed sample, and the assumptions made in the null hypothesis. In later sections we will see how to compute test statistics for single means, proportions, and differences between means and proportions.</p>
+		<p>This test statistic is the first step in determining if the sample we found is unusual. We must also have some guidance as to what the word <q>unusual</q> should mean. In this context, the term <q>unusual</q> refers to how likely we would be to see this test statistic for a sample if the null hypothesis is indeed true. We have seen this notion of how likely a sample is before. Recall that to construct a confidence interval, we need to pick a <xref ref="def_confidence-level" text="custom">confidence level</xref>. If, for example, we decide to use the 95% confidence level, we are willing for our confidence interval to be <q>wrong</q> 5% of the time. In general, in a <m>(1-\alpha)100\%</m> confidence interval, <m>\alpha</m> is the likelihood that our sample is unlikely enough that the confidence interval won&apos;t contain the true population parameter. When conducting hypothesis tests, this same <m>\alpha</m> has a special role.</p>
+		<definition xml:id="def_significance-level">
+			<idx>significance level</idx>
+			<idx><h>hypothesis test</h><h>significance level</h></idx>
+			<statement>
+				<p>The significance level <m>\alpha</m> in a statistical test of hypothesis is the probability of incorrectly rejecting the null hypothesis with which we are willing to live.</p>
+			</statement>
+		</definition>
+		<p>The following chart shows commonly used significance levels, the corresponding confidence level, and the term applied to those values of <m>\alpha</m>.</p>
+		<table>
+			<title>Common Significance Levels</title>
+			<tabular>
+				<col right="medium" halign="center"></col>
+				<col right="medium" halign="center"></col>
+				<col halign="center"></col>
+				<row bottom="medium">
+					<cell><m>\alpha</m></cell>
+					<cell>Confidence Level</cell>
+					<cell>Terminology</cell>
+				</row>
+				<row>
+					<cell>0.10</cell>
+					<cell>90%</cell>
+					<cell halign="left">Tends Towards Significance</cell>
+				</row>
+				<row>
+					<cell>0.05</cell>
+					<cell>95%</cell>
+					<cell halign="left">Statistically Significant</cell>
+				</row>
+				<row>
+					<cell>0.01</cell>
+					<cell>99%</cell>
+					<cell halign="left">Highly Significant</cell>
+				</row>
+			</tabular>
+		</table>
+
+		<figure xml:id="video_ht-intro_test-stat-1">
+			<caption>Test Statistics and Significance Levels</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-03.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-intro_test-stat-1">
+			<statement>
+				<p>Recall that significance level and confidence level are related. Suppose that you wish to use the <m>\alpha = 0.03</m> significance level.</p>
+				<p>Question: what confidence level goes with this?</p>
+			</statement>
+			<answer><p>97%</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-intro_test-stat-2">
+			<statement>
+				<p>We have seen that certain significance levels have special names.</p>
+				<p>Question: which significance level is called <q>highly significant?</q></p>
+			</statement>
+			<answer><p><m>\alpha = 0.01</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-intro_critical-region">
+		<title>Critical Regions and the Traditional Test</title>
+		<p>In order to reach a conclusion in our hypothesis test, we need to compare the test statistic with the significance level.  However, the test statistic will typically be a z-score or t-score, while the significance level is a probability.  So we need to convert one or the other of them before we can compare them.  This can be done in two ways.
+			<ol>
+				<li><p>We can convert our significance level to critical values and then compare the test statistic to those critical values. This is called a <term>traditional hypothesis test</term>. This is the first method we will use.</p></li>
+				<li><p>We can find convert our test statistic to a probability by finding the probability of getting a test statistic at least as extreme as our test statistic and compare this to <m>\alpha</m>. This is called a <term>p-value hypothesis test</term>.</p></li>
+			</ol>
+			To conduct a traditional hypothesis test, we must divide the test statistic&apos;s distribution up into two regions. The <term>rejection region</term> will be those values of the test statistic which are more unusual than the significance level, and will therefore lead to rejecting <m>H_0</m>. The <term>acceptance region</term> is the rest of the distribution, containing those values of the test statistic which are not unusual. How we draw these regions depends on the alternative hypothesis being tested. In the pictures that follow, the red areas are the rejection regions and the blue areas are the acceptance regions. Note that <m>\theta</m> could be a mean or proportion.</p>
+		<definition xml:id="def_left-tailed-test">
+			<idx>left-tailed test</idx>
+			<idx><h>hypothesis test</h><h>left-tailed</h></idx>
+			<statement>
+				<p>In a <term>left-tailed hypothesis test</term>, we test the alternative that the population parameter is less-than a given value against the null hypothesis that it is greater-than-or-equal-to that value. We therefore put the full significance level <m>\alpha</m> in the left tail as shown.</p>
+				<figure xml:id="fig_ht-intro_def_left-tailed-test">
+					<caption>Left-Tailed Test with Alternative Hypothesis <m>H_A:\ \theta \lt \theta_0</m></caption>
+					<image width="75%" xml:id="image_ht-intro_def_left-tailed-test">
+						<latex-image>
+							<xi:include href="./latex-images/ht-intro_def_left-tailed-test.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+			</statement>
+		</definition>
+		<definition xml:id="def_right-tailed-test">
+			<idx>right-tailed test</idx>
+			<idx><h>hypothesis test</h><h>right-tailed</h></idx>
+			<statement>			
+				<p>In a <term>right-tailed hypothesis test</term>, we test the alternative that the population parameter is greater-than a given value against the null hypothesis that it is less-than-or-equal-to that value. We therefore put the full significance level <m>\alpha</m> in the right tail as shown.</p>
+				<figure xml:id="fig_ht-intro_def_right-tailed-test">
+					<caption>Right-Tailed Test with Alternative Hypothesis <m>H_A:\ \theta > \theta_0</m></caption>
+					<image width="75%" xml:id="image_ht-intro_def_right-tailed-test">
+						<latex-image>
+							<xi:include href="./latex-images/ht-intro_def_right-tailed-test.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+			</statement>
+		</definition>
+		<definition xml:id="def_two-tailed-test">
+			<idx>two-tailed test</idx>
+			<idx><h>hypothesis test</h><h>two-tailed</h></idx>
+			<statement>
+				<p>In a two-tailed hypothesis test, we test the alternative that the population parameter is not equal to a given value against the null hypothesis that it is equal to that value. We therefore split the significance level <m>\alpha</m> equally between the left and right tails.</p>
+				<figure xml:id="fig_ht-intro_def_two-tailed-test">
+					<caption>Right-Tailed Test with Alternative Hypothesis <m>H_A:\ \theta \not= \theta_0</m></caption>
+					<image width="75%" xml:id="image_ht-intro_def_two-tailed-test">
+						<latex-image>
+							<xi:include href="./latex-images/ht-intro_def_two-tailed-test.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+			</statement>
+		</definition>
+		<p>To determine if a test statistic lies in a rejection region, we find the critical value from the appropriate distribution which separates the rejection region from the acceptance region.  In a normal distribution, these would be <m>-z_\alpha</m>, <m>z_\alpha</m>, or <m>\pm z_{\alpha/2}</m>.  If our test statistic is more extreme<mdash/>that is, further into the tail<mdash/>than this critical value, we reject the null hypothesis. If it is less extreme<mdash/>closer to the middle<mdash/>we fail to reject the null hypothesis. Consider the following example.</p>
+		<example xml:id="examp_ht-intro_critical-region-right">
+			<title>Conducting a Right-Tailed Traditional Test</title>
+			<statement>
+				<p>You wish to test the null hypothesis <m>H_0:\ \mu \leq 0.5</m> against the alternative <m>H_A:\ \mu > 0.5</m> at the <m>\alpha = 0.05</m> significance level. If your test statistic of <m>z_\text{test} = 2.04</m> comes from a standard normal distribution, what conclusion do you make?</p>
+			</statement>
+			<solution>
+				<p>We first note that this is a right-tailed test since the alternative hypothesis involves <q><m>\gt</m></q>. At the <m>\alpha = 0.05</m> significance level, our critical value is <m>z_{0.05} = 1.645</m>. Since the test statistic <m>z_\text{test} = 2.04</m> is further into the tail (and thus more unusual) than the critical value, we reject the null hypothesis.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-intro_critical-region-two">
+			<title>Conducting a Two-Tailed Traditional Test</title>
+			<statement>
+				<p>You wish to test the null hypothesis <m>H_0:\ p = 0.4</m> against the alternative <m>H_A:\ p \not= 0.4</m> at the <m>\alpha = 0.01</m>significance level. Your test statistic of <m>z_\text{test} = 2.40</m> comes from a standard normal distribution. What conclusion do you make?</p>
+			</statement>
+			<solution>
+				<p>Because the alternative hypothesis involves <q>not equal to,</q> this is a two tailed test. So we split the significance level <m>\alpha = 0.01</m> evenly between the two tails, giving us critical values <m>z_{0.005} = \pm 2.575</m>. To be more extreme, our test statistic would either need to be bigger than 2.575, or less than -2.575. Because 2.40 is neither, the test statistic lies in the acceptance region. We must therefore fail to reject the null hypothesis.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-intro_critical-region-1">
+			<caption>Test Statistics and Significance Levels I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-04.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-intro_critical-region-2">
+			<caption>Test Statistics and Significance Levels II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-intro_critical-region-3">
+			<caption>Test Statistics and Significance Levels III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-intro_critical-region-1">
+			<statement>
+				<p>In testing the hypotheses:
+					<me>H_0:\ \mu \geq 10 \qquad \qquad H_A:\ \mu \lt 10</me>,
+					you find a test statistic of <m>z_\text{test} = -1.88</m>.</p>
+			  <p>Question: if this test statistic comes from a standard normal distribution, what decision do you make at the <m>\alpha = 0.05</m> significance level?</p>
+			</statement>
+			<answer><p>Reject The Null Hypothesis</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-intro_critical-region-2">
+			<statement>
+				<p>In testing the hypotheses:
+					<me>H_0:\ p = 0.45 \qquad \qquad H_A:\ p \not= 0.45</me>,
+					you find a test statistic of <m>z_\text{test} = 2.41</m>.</p>
+				<p>Question: if this test statistic comes from a standard normal distribution, what decision should you make at the <m>\alpha = 0.01</m> significance level?</p>
+			</statement>
+			<answer><p>Fail to Reject the Null Hypothesis</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-intro_p-value">
+		<title>p-Value Tests</title>
+		<p>The second method of deciding if a test statistic is unusual enough to warrant rejecting the null hypothesis is called a p-value test. In the traditional test seen on the last page, we looked up critical values based on the probability <m>\alpha</m> and then compared our test statistics to those critical values. In a p-value test, we look up a probability for the test statistic, and then compare it directly with the significance level <m>\alpha</m>.</p>
+		<definition xml:id="def_p-value">
+			<idx>p-value</idx>
+			<idx><h>hypothesis test</h><h>p-value</h></idx>
+			<statement>
+				<p>The p-value of a test statistic is the probability of observing a sample that is at least as unusual as the sample on which the test statistic is based.</p>
+			</statement>
+		</definition>
+		<p>When computing p-values, we must still pay attention to the type of test being conducted.
+			<ul>
+				<li><title>Left-Tailed Test</title>
+				  <p>The p-value of the test statistic is the probability to the left of that test statistic in the distribution. This is the probability of finding a value less than the test statistic.</p></li>
+				<li><title>Right-Tailed Test</title>
+				  <p>The p-value of the test statistic is the probability to the right of the test statistic in the distribution. This is the probability of finding a value greater than the test statistic.</p></li>
+				<li><title>Two-Tailed Test</title>
+				  <p>The p-value of the test statistic is the probability further into either the left or right tail than the test statistic. To determine this we find the probability of being further to the left than the left-tailed <q>version</q> of the test statistic, and add the probability of being further to the right than the right-tailed <q>version</q> of the test statistic.</p></li>
+			</ul>
+		</p>
+		<p>Once we have computed the p-value of a test static, we then compare this probability to the significance level <m>\alpha</m>. If the p-value is less than <m>\alpha</m>, then our sample is less likely than our significance level, so we reject the null hypothesis. We have seen a sample that is too unusual for us to accept that the null hypothesis is true. If the p-value is greater than <m>\alpha</m>, then we fail to reject the null hypothesis. Our sample is more likely than the significance level, so there is no reason to suspect that <m>H_0</m> is incorrect.</p>
+		<p>Compare the example below with <xref ref="examp_ht-intro_critical-region-right"/> to see how the same test is conducted using a p-value.</p>
+		<example xml:id="examp_ht-intro_p-value-right">
+			<title>Finding the p-Value for a Right-Tailed Hypothesis Test</title>
+			<statement>
+				<p>You wish to test the null hypothesis <m>H_0:\ \mu \leq 0.5</m> against the alternative <m>H_A:\ \mu > 0.5</m> at the <m>\alpha = 0.05</m> significance level. If your test statistic of <m>z_\text{test} = 2.04</m> comes from a standard normal distribution, find its p-value and decide what conclusion should be made.</p>
+			</statement>
+			<solution>
+				<p>This is a right-tailed test. The p-value is therefore the probability to the right of <m>2.04</m> in the standard normal distribution. Using the table, this is 
+				  <me>1-P(Z\lt 2.04) = 1 - 0.9793 = 0.0207</me>.</p>
+				<p>Because the p-value is less than the significance level <m>0.05</m>, our sample is less likely they we are willing to tolerate. We must therefore reject the null hypothesis.</p>
+			</solution>
+		</example>
+		<p>And compare the following example with <xref ref="examp_ht-intro_critical-region-two"/>.</p>
+		<example xml:id="examp_ht-intro_p-value-two">
+			<title>Finding the p-Value for a Two-Tailed Hypothesis Test</title>
+			<statement>
+				<p>You wish to test the null hypothesis <m>H_0:\ p = 0.4</m> against the alternative <m>H_A:\ p \not= 0.4</m> at the <m>\alpha = 0.01</m> significance level. Your test statistic of <m>z_\text{test} = 2.40</m> comes from a standard normal distribution.  Find the associated p-value and state the conclusion you should reach.</p>
+			</statement>
+			<solution>
+				<p>This test is a two-tailed test. The p-value is therefore the area above 2.40, and below -2.40 in the standard normal distribution. This can be found by taking twice the area above 2.40, which is
+				  <me>2\times P(Z\gt 2.40) = 2(1 - 0.9918) = 2(0.0082) = 0.0164</me>.</p>
+				<p>Because this p-value is greater than the significance level <m>\alpha = 0.01</m>, we fail to reject the null hypothesis.</p>
+			</solution>
+		</example> 
+		<p>Notice that in the two examples above the results we found, either rejecting or failing to reject <m>H_0</m>, were the same as when we made our decision using a critical region and a traditional test.  That is not a coincidence! A p-value test and a traditional test will always give you the same results when conducted at the same significance level. The p-value test can, however, provide more information since the reader can see not only the final conclusion, but the actual probability of getting the sample that was collected.</p>
+
+		<figure xml:id="video_ht-intro_p-value-1">
+			<caption>P-Value Hypothesis Tests I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-07.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-intro_p-value-2">
+			<caption>P-Value Hypothesis Tests II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-08.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-intro_p-value-3">
+			<caption>P-Value Hypothesis Tests III</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-09.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-intro_p-value-1">
+			<statement>
+				<p>In conducting a right-tailed test, you find a test statistic of <m>z_\text{test} = 1.70</m> from a standard normal distribution.</p>
+				<p>Question: what is the p-value of this test statistic?</p>
+			</statement>
+			<answer><p>0.0446</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-intro_p-value-2">
+			<statement>
+				<p>In conducting a two-tailed test, you find a test statistic <m>z_\text{test} = 2.44</m> from a standard normal distribution.</p>
+				<p>Question: what is the p-value of this test statistic?</p>
+			</statement>
+			<answer><p>0.0146</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-intro_errors">
+		<title>Type I and Type II Errors</title>
+		<p>Whenever we conduct a hypothesis test, there is a chance that we will make an error. When we talk about an error in a hypothesis test, we are not talking about a mistake in the computation, or missing a step in the process. The errors we could make are statistical errors. A statistical error happens when we get an unusual sample and wind up <q>correctly</q> making the wrong decision. Consider the following table.</p>
+		<figure xml:id="fig_ht-intro_errors_types">
+			<caption>Type I and Type II Errors</caption>
+			<image xml:id="image_ht-intro_errors_types" width="80%">
+				<latex-image>
+					<xi:include href="./latex-images/ht-intro_errors_types.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>The green boxes represent the two correct decisions that we can make. The red boxes represent the two ways in which we can make an error. We can mistakenly reject a true null hypothesis, or we can fail to reject a null hypothesis that is false. These errors have specific names as defined below.</p>
+		<definition xml:id="def_type-1-error">
+			<idx>type I error</idx>
+			<idx><h>hypothesis test</h><h>type I error</h></idx>
+			<statement>
+				<p>A <term>type I error</term> in a hypothesis test is the error of mistakenly rejecting a true null hypothesis. The probability of making a type I error is <m>\alpha</m>, the significance level.</p>
+			</statement>
+		</definition>
+		<definition xml:id="def_type-2-error">
+			<idx>type II error</idx>
+			<idx><h>hypothesis test</h><h>type II error</h></idx>
+			<statement>
+				<p>A <term>type II error</term> in a hypothesis test is the error of failing to reject a false null hypothesis. The probability of making a type II error is called <m>\beta</m> and depends on the true value of the population parameter.</p>
+			</statement>
+		</definition>
+		<p>In the following examples, we will identify type I and type II errors and compute their probabilities.</p>
+		<example xml:id="examp_ht-intro_errors-type-1">
+			<title>Computing the Probability of a Type I Error</title>
+			<statement>
+				<p>In order to be profitable, a bus route must have an average of at least 25 paying customers. We wish to decide if a certain route is profitable by collecting ridership information on 15 different occasions during a given month and conducting a hypothesis test at the <m>\alpha = 0.05</m> significance level.</p>
+				<p>After collecting your sample, you decide that the bus route is not profitable, even though the true average number of riders is 25. What type of error did you make, and what was its probability?</p>
+			</statement>
+			<solution>
+				<p>Recall that the null and alternative hypotheses were:
+				  <me>H_0:\ \mu \geq 25 \qquad \qquad H_A:\ \mu \lt 25</me>.
+				  If the true average is 25, then the null hypothesis is correct. But when we said the bus route was not profitable, we rejected <m>H_0</m>. This is therefore a type I error<mdash/>rejecting a true null hypothesis.</p>
+				<p>The probability of this error is the significance level, <m>\alpha = 0.05</m>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-intro_errors-type-2">
+			<title>Identifying a Type II Error</title>
+			<statement>
+				<p>In order to pass, a new school bond measure needs to get at least 60% support among voters. You collect a sample of 500 likely voters and find that 61% of them plan to vote for the bond. You conduct a hypothesis test at the <m>\alpha = 0.10</m> significance level and conclude that there is at least 60% support for the bond, and it will pass. However, come election day only 59% of voters vote for the bond and it fails. What type of error did you make?</p>
+			</statement>
+			<solution>
+				<p>The null and alternative hypotheses for this test are:
+				  <me>H_0:\ p \geq 0.60 \qquad \qquad H_A:\ p \lt 0.60</me>.
+				  The true population proportion was 0.59, meaning the null hypothesis was wrong. But in our test we decided the bond would pass, meaning we failed to reject the null hypothesis. This is therefore a type II error.</p>
+			</solution>
+		</example>
+		<p>Note that finding the value of <m>\beta</m>, the probability of a type II error, is more difficult and will not be covered in this text.</p>
+
+		<figure xml:id="fig_ht-intro_errors-1">
+			<caption>Type I and Type II Errors I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-10.mp4"/>
+		</figure>
+		<figure xml:id="fig_ht-intro_errors-2">
+			<caption>Type I and Type II Errors II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-11.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-intro_errors-1">
+			<statement>
+				<p>The null hypothesis states that <m>p = 0.4</m>. Based on your test statistic, you reject this null hypothesis. But in actuality, <m>p = 0.4</m>.</p>
+				<p>Question: what type of error have you made?</p>
+			</statement>
+			<answer><p>Type I Error</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-intro_errors-2">
+			<statement>
+				<p>The null hypothesis states that a mean is 20. You fail to reject this hypothesis based on your test statistic. However, in actuality the mean is 21.</p>
+				<p>Question: what type of error have you made?</p>
+			</statement>
+			<answer><p>Type II Error</p></answer>
+		</exercise>
+	</subsection>
+
+</section>

@@ -1,0 +1,32 @@
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|}
+  \cline{2-3}
+  \multicolumn{1}{c|}{} \amp Reject $H_0$ \amp Fail to Reject $H_0$ \\
+  \hline
+    \begin{minipage}{1in}
+      \par\vskip 15pt $H_0$ is True\par\vskip 0pt\null
+    \end{minipage}
+    \amp
+    \cellcolor{red!50}\begin{minipage}{1.25in}
+      \centering\par\vskip 15pt Type I Error\par\vskip 0pt\null
+    \end{minipage}
+    \amp
+    \cellcolor{green!50}\begin{minipage}{1.25in}
+      \null
+    \end{minipage}
+    \\
+  \hline
+    \begin{minipage}{1in}
+      \par\vskip 15pt $H_0$ is False\par\vskip 0pt\null
+    \end{minipage}
+    \amp
+    \cellcolor{green!50}\begin{minipage}{1.25in}
+      \null
+    \end{minipage}
+    \amp
+    \cellcolor{red!50}\begin{minipage}{1.25in}
+      \centering\par\vskip 15pt Type II Error\par\vskip 0pt\null
+    \end{minipage}
+    \\
+  \hline
+\end{tabular}

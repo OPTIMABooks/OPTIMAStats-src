@@ -1,0 +1,49 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      axis x line*=bottom,
+      no markers,
+	  domain=-4:4,
+      samples=500,
+      xmin = -4, xmax = 4,
+	  ymin = 0, ymax = 0.41,
+      xtick={-3,-2,-1,0,1,2,3},
+      xticklabels={,,,$\theta_0$,,,},
+      ticklabel style={font=\scriptsize},
+      ytick=\empty,
+      grid = none,
+      axis on top,
+      hide y axis,
+      height=5cm,
+      width=8cm
+    ]
+    \path[name path=A] (axis cs: -4,0) -- (4,0);
+    \addplot+[name path=B,thick] { gauss(x, 0, 1) };
+    \addplot [
+        fill=red!50,
+        fill opacity=0.5,
+    ] fill between [
+        of=A and B,
+        soft clip={domain=1.8:4}
+    ];
+    \addplot [
+        draw=black,
+        fill=blue!50,
+        fill opacity=0.5,
+    ] fill between [
+        of=A and B,
+        soft clip={domain=-4:1.8}
+    ];
+    \node at (axis cs: 0,0.15) {\scriptsize $1-\alpha$};
+    \node at (axis cs: 2.15,0.02) {\scriptsize $\alpha$};
+    \node[right,align=left,execute at begin node=\setlength{\baselineskip}{0.6em}] (R) at (axis cs: 2.5,0.13) {
+        \tiny Rejection\\
+        \tiny Region
+    };
+    \node[left,align=left,execute at begin node=\setlength{\baselineskip}{0.6em}] (A) at (axis cs: -2,0.25) {
+        \tiny Acceptance\\
+        \tiny Region
+    };
+    \draw[-stealth] (R.270) -- (axis cs: 2.4,0.03);
+    \draw[-stealth] (A.340) -- (axis cs: -1.28,0.19);
+  \end{axis}
+\end{tikzpicture}
