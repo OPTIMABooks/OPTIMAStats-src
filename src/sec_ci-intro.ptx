@@ -194,7 +194,7 @@
 			</ol>
 		</p>
 		<p>We have already talked about the first two. That leaves the confidence level.</p>
-		<definition xml:id="def_confidence-leve">
+		<definition xml:id="def_confidence-level">
 			<idx>confidence level</idx>
 			<idx><h>estimation</h><h>confidence interval</h><h>confidence level</h></idx>
 			<statement>
