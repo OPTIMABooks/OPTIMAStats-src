@@ -24,7 +24,7 @@
 		</sidebyside>
 	</figure>
 
-	<table>
+	<table xml:id="table_ref_critical-values">
 		<title>Common Normal Distribution Critical Values</title>
 		<tabular>
 			<col right="medium" halign="center"></col>
