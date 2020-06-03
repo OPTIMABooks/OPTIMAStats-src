@@ -171,7 +171,7 @@
 			</statement>
 		</definition>
 		<p>The following chart shows commonly used significance levels, the corresponding confidence level, and the term applied to those values of <m>\alpha</m>.</p>
-		<table>
+		<table xml:id="table_significance-levels">
 			<title>Common Significance Levels</title>
 			<tabular>
 				<col right="medium" halign="center"></col>
