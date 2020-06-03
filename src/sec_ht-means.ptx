@@ -67,7 +67,7 @@
 			</statement>
 		</principle>
 	  <p>Let&apos;s look at each of the three examples from the introduction and see if we can determine which of these sets of hypotheses should be used.</p>
-	  <example xml:id="examp_ht-means_hypothesis-left">
+	  <example xml:id="examp_ht-means_hypotheses-left">
 	  	<title>Stating Hypotheses for a Left-Tailed Test</title>
 	  	<statement>
 	  		<p>A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles. Find the null and alternative hypotheses for this test.</p>
@@ -81,7 +81,7 @@
 	  		</p>
 	  	</solution>
 	  </example>
-	  <example xml:id="examp_ht-means_hypothesis-right">
+	  <example xml:id="examp_ht-means_hypotheses-right">
 	  	<title>Stating Hypotheses for a Right-Tailed Test</title>
 	  	<statement>
 	  		<p>An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm. Find the null and alternative hypotheses for this test.</p>
@@ -154,7 +154,7 @@
 		  </ul>
 		  we will use <m>\mu = \mu_0</m> in computing our test statistic. Examples of this can be found as we continue working on the problems from the beginning of this lesson.</p>
 		<exercise xml:id="examp_ht-means_test-stat-left">
-			<title>Finding the Test Statistic for a Left-Tailed Test</title>
+			<title>Computing the Test Statistic for a Left-Tailed Test</title>
 			<statement>
 				<p>A certain line of tires is said to have an average lifespan of 60,000 miles or more. To test this claim, a consumer advocacy group collects data for a random sample of 160 different customers who purchased these tires and subsequently had them fail. They find that mean lifespan of tires in the sample was 58,952.1 miles with a standard deviation of 6,439.6 miles. Find the test statistic for this sample.</p>
 			</statement>
@@ -170,7 +170,7 @@
 			</solution>
 		</exercise>
 		<exercise xml:id="examp_ht-means_test-stat-right">
-			<title>Finding the Test Statistic for a Right-Tailed Test</title>
+			<title>Computing the Test Statistic for a Right-Tailed Test</title>
 			<statement>
 				<p>An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm. Find the test statistic for this sample.</p>
 			</statement>
@@ -186,7 +186,7 @@
 			</solution>
 		</exercise>
 		<example xml:id="examp_ht-means_test-stat-two">
-			<title>Finding the Test Statistic for a Two-Tailed Test</title>
+			<title>Computing the Test Statistic for a Two-Tailed Test</title>
 			<statement>
 				<p>A parts manufacturer has just set up a new production line to make gears with an average width of 8 centimeters. One of their customers complains that the gears being produced do not have an average width of 8 centimeters. To test this claim, the manufacturer takes a sample of 125 gears and finds that they have a mean width of 7.9 centimeters with a standard deviation of 0.88 centimeters. Find the test statistic for this sample.</p>
 			</statement>
@@ -261,7 +261,7 @@
 						</latex-image>
 					</image>
 				</figure>
-				<p>Since our test statistic of <m>z_\text{test} = -2.06</m> is in the rejection region (less than -1.645), we reject the null hypothesis. There is statistically significant evidence that the tires have a lifespan that is less than 60,000 miles.</p>
+				<p>Since our test statistic of <m>z_\text{test} = -2.06</m> is in the rejection region (less than -1.645), we reject the null hypothesis. There is <xref ref="table_significance-levels" text="custom">statistically significant</xref> evidence that the tires have a lifespan that is less than 60,000 miles.</p>
 			</solution>
 		</example>
 		<example xml:id="examp_ht-means_traditional-right">
@@ -287,7 +287,7 @@
 						</latex-image>
 					</image>
 				</figure>
-				<p>Because our test statistic 3.16 is greater than the critical value of 2.33, and hence in the rejection region, we reject the null hypothesis. There is highly significant evidence that this stream contains more than 2 ppm mercury.</p>
+				<p>Because our test statistic 3.16 is greater than the critical value of 2.33, and hence in the rejection region, we reject the null hypothesis. There is <xref ref="table_significance-levels" text="custom">highly significant</xref> evidence that this stream contains more than 2 ppm mercury.</p>
 			</solution>
 		</example>
 		<example xml:id="examp_ht-means_traditional-two">
@@ -313,7 +313,7 @@
 						</latex-image>
 					</image>
 				</figure>
-				<p>Because our test statistic <m>-1.27</m> is not in the rejection region, we fail to reject the null hypothesis. There is no statistically significant evidence that the average width of these gears does not equal 8 cm.</p>
+				<p>Because our test statistic <m>-1.27</m> is not in the rejection region, we fail to reject the null hypothesis. There is no <xref ref="table_significance-levels" text="custom">statistically significant</xref> evidence that the average width of these gears does not equal 8 cm.</p>
 			</solution>
 		</example>
 
@@ -376,11 +376,11 @@
 						</latex-image>
 					</image>
 				</figure>
-				<p>From the standard normal distribution table, that probability is <m>P(Z \lt -2.06) = 0.0197</m>. Therefore, the p-value for this test statistic is <m>0.0197</m>. Since this p-value is less than the significance level of <m>\alpha = 0.05</m>, this sample is less likely than we are willing to tolerate. We must therefore reject the null hypothesis. There is statistically significant evidence that the tires have a lifespan that is less than 60,000 miles.</p>
+				<p>From the standard normal distribution table, that probability is <m>P(Z \lt -2.06) = 0.0197</m>. Therefore, the p-value for this test statistic is <m>0.0197</m>. Since this p-value is less than the significance level of <m>\alpha = 0.05</m>, this sample is less likely than we are willing to tolerate. We must therefore reject the null hypothesis. There is <xref ref="table_significance-levels" text="custom">statistically significant</xref> evidence that the tires have a lifespan that is less than 60,000 miles.</p>
 			</solution>
 		</example>
 		<p>In the above example, note that had we been using the <m>0.01</m> significance level, we would have failed to reject the null hypothesis. This is because our p-value of <m>0.0192</m> is greater than <m>0.01</m>. This shows one advantage of a p-value test. By reporting the p-value, the reader can see that, while the null hypothesis may have been rejected at this significance level, at others it may not have been rejected. This allows the reader to make a decision for themselves as to how significant a test they would like to conduct.</p>
-			<example xml:id="examp_ht-means_p-value-right">
+		<example xml:id="examp_ht-means_p-value-right">
 			<title>Conducting a Right-Tailed p-Value Hypothesis Test</title>
 			<statement>
 				<p>An environmentalist claims that the level of mercury in a local stream has risen above the government mandated 2 parts per million (ppm). To test this, he collects 40 random samples of stream water and has them tested for mercury content. He finds that the average mercury content in these samples is 2.3 ppm with a standard deviation of 0.6 ppm. Conduct a p-value hypothesis test to check the environmentalist&apos;s claim at the <m>\alpha = 0.01</m> significance level.</p>
@@ -403,7 +403,7 @@
 						</latex-image>
 					</image>
 				</figure>
-				<p>Using the standard normal distribution table, this gives a probability of <m>1 - 0.09992 = 0.0008</m>. Therefore, as this p-value is less than the significance level of <m>0.01</m>, this sample is more unusual than we are willing to accept. Thus we must reject the null hypothesis. There is highly significant evidence that this stream contains more than 2 ppm mercury.</p>
+				<p>Using the standard normal distribution table, this gives a probability of <m>1 - 0.09992 = 0.0008</m>. Therefore, as this p-value is less than the significance level of <m>0.01</m>, this sample is more unusual than we are willing to accept. Thus we must reject the null hypothesis. There is <xref ref="table_significance-levels" text="custom">highly significant</xref> evidence that this stream contains more than 2 ppm mercury.</p>
 			</solution>
 		</example>
 		<example xml:id="examp_ht-means_p-value-two">
@@ -429,7 +429,7 @@
 						</latex-image>
 					</image>
 				</figure>
-				<p>This computation can be simplified using symmetry. We find <m>P(Z \lt -1.27)</m> and double it. This gives a p-value of <m>2(.1020) = 0.2040</m>. Since our p-value is greater than the significance level of <m>0.05</m>, we fail to reject the null hypothesis. There is no statistically significant evidence that the average width of these gears does not equal 8 cm. In fact, our p-value is greater than <m>0.10</m> so there is not even evidence tending towards significance that the mean width is other than 8 cm. For more examples of conducting a traditional hypothesis test, see the following videos.</p>
+				<p>This computation can be simplified using symmetry. We find <m>P(Z \lt -1.27)</m> and double it. This gives a p-value of <m>2(.1020) = 0.2040</m>. Since our p-value is greater than the significance level of <m>0.05</m>, we fail to reject the null hypothesis. There is no <xref ref="table_significance-levels" text="custom">statistically significant</xref> evidence that the average width of these gears does not equal 8 cm. In fact, our p-value is greater than <m>0.10</m> so there is not even evidence <xref ref="table_significance-levels" text="custom">tending towards significance</xref> that the mean width is other than 8 cm. For more examples of conducting a traditional hypothesis test, see the following videos.</p>
 			</solution>
 		</example>
 
