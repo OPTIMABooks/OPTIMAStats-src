@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ht-proportions">
+  <title>Hypothesis Tests for a Proportion</title>
+
+  <introduction xml:id="sec_ht-proportions_intro">
+  	<title>Testing Claims About a Proportion</title>
+  	<p>The second type of hypothesis test that we will study is the test for a population proportion. The following situations will provide the examples for this section.
+  	  <ul>
+  	    <li><p>A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical.</p></li>
+  	    <li><p>A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires.</p></li>
+  	    <li><p>A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boyscout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law.</p></li>
+  	  </ul>
+  	</p>
+  </introduction>
+
+  <objectives xml:id="sec_ht-proportions_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Hypotheses for a Single Population Proportion</p></li>
+					<li><p>Test Statistic for a Single Population Proportion</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Formulate null and alternative hypotheses for tests of a single proportion.</p></li>
+					<li><p>Compute the test statistic for a single proportion.</p></li>
+					<li><p>Use this test statistic to conduct a traditional hypothesis test.</p></li>
+					<li><p>Use this test statistic to conduct a p-value hypothesis test.</p></li>
+					<li><p>Understand and identify type I and type II errors.</p></li>
+					</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ht-proportions_hypotheses">
+		<title>Formulating Hypotheses</title>
+		<p>We start once more by identifying the null and alternative hypothesis. When testing a claim about a single population proportion, the three basic types of null/alternative hypothesis combinations are as follows.</p>
+		<principle xml:id="thm_hypotheses-proportions">
+			<title>Hypotheses for a Single Population Proportion</title>
+			<statement>
+				<p>To test a claim about a single population mean, we use one of the following sets of hypotheses, where <m>p_0</m> is a given value.
+				  <ul cols="3">
+		  	  	<li><title>Left-Tailed</title>
+		  	  	  <p><md>
+		  	  	  	<mrow>H_0\amp:\ p \geq p_0</mrow>
+		  	  	  	<mrow>H_A\amp:\ p \lt p_0</mrow>
+		  	  	  </md></p></li>
+		  	  	<li><title>Two-Tailed</title>
+		  	  	  <p><md>
+		  	  	  	<mrow>H_0\amp:\ p = p_0</mrow>
+		  	  	  	<mrow>H_A\amp:\ p \not= p_0</mrow>
+		  	  	  </md></p></li>
+		  	  	<li><title>Right-Tailed</title>
+		  	  	  <p><md>
+		  	  	  	<mrow>H_0\amp:\ p \leq p_0</mrow>
+		  	  	  	<mrow>H_A\amp:\ p \gt p_0</mrow>
+		  	  	  </md></p>
+		  	  	</li>
+		  	  </ul>
+		  	</p>
+		  </statement>
+	  </principle>
+	  <p>Let&apos;s look at each of the three examples from the introduction and see if we can determine which of these sets of hypotheses should be used.</p>
+	  <example xml:id="examp_ht-proportions_hypotheses-left-1">
+	  	<title>Stating Hypotheses for a Left-Tailed Test</title>
+	  	<statement>
+	  		<p>A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Find the null and alternative hypotheses for this test.</p>
+	  	</statement>
+	  	<solution>
+	  		<p>The physician&apos;s claim is that the proportion of 80% is too big. This does not involve inequality, and should therefore be the alternative hypothesis. This gives us a left-tailed test with the following hypotheses.
+	  			<md>
+	  				<mrow>H_0\amp:\ p \geq 0.80</mrow>
+	  				<mrow>H_A\amp:\ p \lt 0.80</mrow>
+	  			</md>
+	  		</p>
+	  	</solution>
+	  </example>
+	  <example xml:id="examp_ht-proportions_hypotheses-two">
+	  	<title>Stating Hypotheses for a Two-Tailed Test</title>
+	  	<statement>
+	  		<p>A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Find the null and alternative hypotheses for this test.</p>
+	  	</statement>
+	  	<solution>	  		
+  			<p>The official&apos;s claim is that the proportion of cars on the road with under-inflated tires is exactly 50%. This involves equality, and is therefore the null hypothesis. The following are the hypotheses for this two-tailed test.
+  				<md>
+  					<mrow>H_0\amp:\ p = 0.50</mrow>
+  					<mrow>H_A\amp:\ p \not= 0.50</mrow>
+  				</md>
+  			</p>
+	  	</solution>
+	  </example>
+	  <example xml:id="examp_ht-proportions_hypotheses-left-2">
+	  	<title>STating Hypotheses for another Left-Tailed Test</title>
+	  	<statement>
+	  		<p>A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boyscout troupes fifteen years in the past and find that 11 of these former boy-scouts have had trouble with the law. Find the null and alternative hypotheses for this test.</p>
+	  	</statement>
+	  	<solution>
+	  		<p>Finally, the scout leader claims that the proportion is less than 0.10. This is an alternative hypothesis since it does not involve equality. Therefore, we get a left-tailed test with hypotheses:
+	  			<md>
+	  				<mrow>H_0\amp:\ p \geq 0.10</mrow>
+	  				<mrow>H_A\amp:\ p \lt 0.10</mrow>
+	  			</md>
+	  		</p>
+	  	</solution>
+	  </example>
+
+  	<figure xml:id="video_ht-proportions_hypotheses-1">
+  		<caption>Hypotheses for a Single Proportion I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-01.mp4"/>
+  	</figure>
+  	<figure xml:id="video_ht-proportions_hypotheses-2">
+  		<caption>Hypotheses for a Single Proportion II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-02.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_ht-proportions_hypotheses-1">
+  		<statement>
+  			<p>A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test.</p>
+  			<p>Question: what should your null hypothesis be?</p>
+  		</statement>
+  		<answer><p><m>p = 0.5</m></p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_ht-proportions_hypotheses-2">
+  		<statement>
+  			<p>A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+  			<p>Question: what is the null hypothesis in this hypothesis test?</p>
+  		</statement>
+  		<answer><p><m>p \leq 0.50</m></p></answer>
+  	</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-proportions_test-stat">
+		<title>Computing the Test Statistic</title>
+		<p>When testing a claim about a population proportion, the test statistic measures how unusual the observed sample is if the null hypothesis is true. The test statistic is really just a z-score for the sample proportion based on the assumption <m>p</m> is as indicated in the null hypothesis. Below we remind you of this formula in the context of a hypothesis test.</p>
+		<theorem xml:id="thm_test-statistic-proportion">
+			<title>Test Statistic for a Single Sample Proportion</title>
+			<statement>
+				<p>The test statistic for a sample proportion <m>\hat p</m> used to test the assumption of the null hypothesis that <m>p = p_0</m> is:
+				  <me>z_{\text{test}} = \frac{\hat p - p_0}{\sqrt{\frac{p_0q_0}{n}}}</me>.</p>
+			</statement>
+		</theorem>
+		<p>When computing a test statistic, the null hypothesis must give us one value for <m>p</m>. In the case of a two-tailed test, the null hypothesis that <m>p = p_0</m> does just that. In a left- or right-tailed test, we use the <q>worst-case</q> value of <m>p_0</m> from the null hypothesis. That is, even if we have: 
+		  <ul cols="2">
+		  	<li><p><m>H_0:\ p \geq p_0</m>, or</p></li>
+		  	<li><p><m>H_0:\ p \leq p_0</m></p></li>
+		  </ul>
+		  we will use <m>p = p_0</m> in computing our test statistic. Examples of this can be found as we continue working on the problems from the beginning of this section.
+		</p>
+		<example xml:id="examp_ht-proportions_test-stat-left-1-">
+			<title>Coimputing the Test Statistic for a Left-Tailed Test</title>
+			<statement>
+				<p>A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Find the test statistic for this sample.</p>
+			</statement>
+			<solution>
+				<p>Recall that the null and alternative hypothesis were:
+					<md>
+						<mrow>H_0\amp:\ p \geq 0.80</mrow>
+						<mrow>H_A\amp:\ p \lt 0.80</mrow>
+					</md>
+				</p>
+				<p>Using the assumption that <m>p = 0.80</m> from the null hypothesis, we compute the test statistic for our sample as follows.
+				  <me>z_{\text{test}} = \frac{0.7739 - 0.80}{\sqrt{\frac{(0.80)(0.20)}{115}}} \approx -0.70</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-proportions_test-stat-two">
+			<title>Computing the Test Statistic for a Two-Tailed Test</title>
+			<statement>
+				<p>A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Find the test statistic for this sample.</p>
+			</statement>
+			<solution>
+				<p>In a previous example, we found the null and alternative hypotheses to be:
+					<md>
+						<mrow>H_0\amp:\ p = 0.50</mrow>
+						<mrow>H_A\amp:\ p \not= 0.50</mrow>
+					</md>
+				</p>
+				<p>Under the assumption that <m>p = 0.50</m>, we compute the test statistic for this sample as follows.
+				  <me>z_{\text{test}} = \frac{0.465- 0.50}{\sqrt{\frac{(0.5)(0.5)}{600}}} \approx - 1.71</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-proportions_test-stat-left-2">
+			<title>Computing the Test Statistic for another Left-Tailed Test</title>
+			<statement>
+				<p>A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boy-scout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law. Find the test statistic for this sample.</p>
+			</statement>
+			<solution>
+				<p>Previously, we found the following hypotheses for this situation.
+					<md>
+						<mrow>H_0\amp:\ p \geq 0.10</mrow>
+						<mrow>H_A\amp:\ p \lt 0.10</mrow>
+					</md>
+				</p>
+				<p>Under the null hypothesis assumption that <m>p = 0.10</m>, the test statistic is as shown below.
+				  <me>z_{\text{test}} = \frac{0.1375 - 0.1000}{\sqrt{\frac{(0.1)(0.9)}{80}}} \approx 1.12</me>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-proportions_test-stat-1">
+			<caption>Test Statistics for a Single Proportion I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-03.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-proportions_test-stat-2">
+			<caption>Test Statistics for a Single Proportion II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-proportions_test-stat-1">
+			<statement>
+				<p>A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test.</p>
+				<p>Question: what is the test statistic for this hypothesis test?</p>
+			</statement>
+			<answer><p>2.01</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-proportions_test-stat-2">
+			<statement>
+				<p>A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+				<p>Question: what is the test statistic for this hypothesis test?</p>
+			</statement>
+			<answer><p>0.72</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-proportions_traditional">
+		<title>The Traditional Test</title>
+		<p>To conduct a traditional hypothesis test and draw conclusions, we must complete the following steps.
+			<ol label="1">
+				<li><p>State the null and alternative hypotheses (done).</p></li>
+				<li><p>Compute the test statistic (done).</p></li>
+				<li><p>Find the rejection region and their critical values.</p></li>
+				<li><p>Compare the test statistic with the critical values to reach your conclusion.</p></li>
+			</ol>
+		</p>
+		<p>We have already completed steps one and two. Thus, we have only to finish steps 3 and 4 to conduct a traditional hypothesis test in each of our examples.</p>
+		<example xml:id="examp_ht-proportions_traditional-left-1">
+			<title>Conducting a Left-Tailed Traditional Hypothesis Test</title>
+			<statement>
+				<p>A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Conduct a traditional hypothesis test at the <m>\alpha = 0.05</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>Recall that the null and alternative hypothesis were:
+					<md>
+						<mrow>H_0\amp:\ p \geq 0.80</mrow>
+						<mrow>H_A\amp:\ p \lt 0.80</mrow>
+					</md>
+				</p>
+				<p>We computed the test statistic as follows:
+					<me>z_{\text{test}} = \frac{0.7739 - 0.80}{\sqrt{\frac{(0.8)(0.2)}{115}}} \approx -0.70</me>.</p>
+				<p>Now we must identify the rejection region and the critical value. Since the alternative hypothesis involves <m>\lt</m>, this is a left-tailed test with the entire significance level of <m>\alpha = 0.05</m> in that left tail. This gives a critical value <m>z_\alpha = -1.645</m> as shown below.</p>
+				<figure xml:id="fig_ht-proportions_examp_traditional-left-1">
+					<caption>Critical Region for <xref ref="examp_ht-proportions_traditional-left-1"/></caption>
+					<image width="60%" xml:id="image_ht-proportions_examp_traditional-left-1">
+						<latex-image>
+							<xi:include href="./latex-images/ht-proportions_examp_traditional-left-1.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Because our test statistic of <m>-0.70</m> is not less than the critical value <m>-1.645</m>, it is not in the rejection region. We therefore fail to reject the null hypothesis. There is no <xref ref="table_significance-levels" text="custom">statistically significant</xref> evidence that the pharmaceutical company is inflating the claims about this drug&apos;s effectiveness.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-proportions_traditional-two">
+			<title>Conducting a Two-Tailed Traditional Hypothesis Test</title>
+			<statement>
+				<p>A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Use a traditional hypothesis test at the <m>\alpha = 0.10</m> significance level to test the government officials claim.</p>
+			</statement>
+			<solution>
+				<p>The hypotheses for this test were:
+					<md>
+						<mrow>H_0\amp:\ p = 0.50</mrow>
+						<mrow>H_A\amp:\ p \not= 0.50</mrow>
+					</md>
+				</p>
+				<p>And we found that the test statistic was:
+					<me>z_{\text{test}} = \frac{0.465- 0.50}{\sqrt{\frac{(0.5)(0.5)}{600}}} \approx - 1.71</me>.</p>
+				<p>The rejection region in this two-tailed test is show below, separated from the body of the standard normal distribution by the critical values <m>-1.645</m> and <m>+1.645</m>.</p>
+				<figure xml:id="fig_ht-proportions_examp_traditional-two">
+					<caption>Critical Region for <xref ref="examp_ht-proportions_traditional-two"/></caption>
+					<image width="60%" xml:id="image_ht-proportions_examp_traditional-two">
+						<latex-image>
+							<xi:include href="./latex-images/ht-proportions_examp_traditional-two.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Since our test statistic of <m>z_\text{test} = -1.71</m> is in one of these rejection regions, we must reject the null hypothesis. There is evidence <xref ref="table_significance-levels" text="custom">tending towards significance</xref> that the true proportion of cars on the road with under-inflated tires is different from 0.50.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-proportions_traditional-left-2">
+			<title>Conducting Another Left-Tailed Traditional Hypothesis Test</title>
+			<statement>
+				<p>A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boy-scout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law. Conduct a traditional hypothesis test to test this claim at the <m>\alpha = 0.10</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>Recall that the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ p \geq 0.10</mrow>
+						<mrow>H_A\amp:\ p \lt 0.10</mrow>
+					</md>
+				</p>
+				<p>The test statistic under the null hypothesis above is:
+					<me>z_{\text{test}} = \frac{0.1375 - 0.1000}{\sqrt{\frac{(0.1)(0.9}{80}}} \approx 1.12</me>.</p>
+				<p>Because the alternative hypothesis involves <m>\lt</m>, this is a left-tailed test with the entire <m>\alpha = 0.10</m> in the left tail. The corresponding critical value is -1.28 as shown below.</p>
+				<figure xml:id="fig_ht-proportions_examp_traditional-left-2">
+					<caption>Critical Region for <xref ref="examp_ht-proportions_traditional-left-2"/></caption>
+					<image width="60%" xml:id="image_ht-proportions_examp_traditional-left-2">
+						<latex-image>
+							<xi:include href="./latex-images/ht-proportions_examp_traditional-left-2.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Our test statistic of 1.12 is clearly not in the rejection region. Therefore we fail to reject the null hypothesis. There is not even <xref ref="table_significance-levels" text="custom">evidence tending towards significance</xref> that fewer than 10% of boyscout members have trouble with the law before their 20th birthday. For more examples of conducting a traditional hypothesis test, see the following videos.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-proportions_traditional-1">
+			<caption>Traditional Hypothesis Tests I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-proportions_traditional-2">
+			<caption>Traditional Hypothesis Tests II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-proportions_traditional-1">
+			<statement>
+				<p>A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test.</p>
+				<p>Question: what decision do you make at the <m>\alpha = 0.05</m> significance level? Use a traditional test.</p>
+			</statement>
+			<answer><p>Reject the Null Hypothesis</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-proportions_traditional-2">
+			<statement>
+				<p>A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+				<p>Question: what decision do you make at the <m>\alpha = 0.10</m> significance level? Use a traditional test.</p>
+			</statement>
+			<answer><p>Fail to Reject the Null Hypothesis</p></answer>			
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-proportions_p-value">
+		<title>The p-Value Test</title>
+		<p>To conduct a p-value test, recall that we must change the last two steps of the hypothesis testing process. This altered process is as follows.
+			<ol label="1">
+				<li><p>State the null and alternative hypotheses (done).</p></li>
+				<li><p>Compute the test statistic (done).</p></li>
+				<li><p>Find the p-value for this test statistic.</p></li>
+				<li><p>Compare the p-value with the significance level to reach your conclusion.</p></li>
+			</ol>
+		</p>
+		<p>Using <xref ref="examp_ht-proportions_traditional-left-1"/>, <xref ref="examp_ht-proportions_hypotheses-two"/>, and <xref ref="examp_ht-proportions_traditional-left-2"/>, we will repeat the hypothesis tests using the p-value approach.</p>
+		<example xml:id="examp_ht-proportions_p-value-left-1">
+			<title>Conducting a Left-Tailed p-Value Hypothesis Test</title>
+			<statement>
+				<p>A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. Conduct a p-value hypothesis test at the <m>\alpha = 0.05</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>Recall that the null and alternative hypothesis were:
+					<md>
+						<mrow>H_0\amp:\ p \geq 0.80</mrow>
+						<mrow>H_A\amp:\ p \lt 0.80</mrow>
+					</md>
+				</p>
+				<p>We computed the test statistic as follows:
+					<me>z_{\text{test}} = \frac{0.7739 - 0.80}{\sqrt{\frac{(0.8)(0.2)}{115}}} \approx -0.70</me>.</p>
+				<p>The p-value for our test statistic in this left-tailed test (because the alternative uses <m>\lt</m>) is the probability of getting a test statistic further into that left tail than -0.70.</p>
+				<figure xml:id="fig_ht-proportions_examp_p-value-left-1">
+					<caption>Critical Region for <xref ref="examp_ht-proportions_p-value-left-1"/></caption>
+					<image width="60%" xml:id="image_ht-proportions_examp_p-value-left-1">
+						<latex-image>
+							<xi:include href="./latex-images/ht-proportions_examp_p-value-left-1.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>As depicted above, this is 
+					<me>P(Z \lt -0.70) = 0.2420</me>.</p>
+				<p>Clearly our p-value is greater than the significance level of <m>\alpha = 0.05</m> (and in fact would be greater than any commonly used significance level). We therefore fail to reject the null hypothesis. There is no evidence (<xref ref="table_significance-levels" text="custom">statistically significant</xref> or otherwise) that the pharmaceutical company is inflating the claims about this drug&apos;s effectiveness.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-proportions_p-value-two">
+			<title>Conducting a Two-Tailed p-Value Hypothesis Test</title>
+			<statement>
+				<p>A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. Use a p-value hypothesis test at the <m>\alpha = 0.10</m> significance level to test the government officials claim.</p>
+			</statement>
+			<solution>
+				<p>The hypotheses for this test were:
+				  <md>
+				  	<mrow>H_0\amp:\ p = 0.50</mrow>
+				  	<mrow>H_A\amp:\ p \not= 0.50</mrow>
+				  </md>
+				</p>
+				<p>And we found that the test statistic was:
+					<me>z_{\text{test}} = \frac{0.465- 0.50}{\sqrt{\frac{(0.5)(0.5)}{600}}} \approx - 1.71</me>.</p>
+			  <p>Since this is a two-tailed test, the p-value of our test statistic will be twice the probability of being further into the left tail (since the test statistic is negative).</p>
+			  <figure xml:id="fig_ht-proportions_examp_p-value-two">
+					<caption>Critical Region for <xref ref="examp_ht-proportions_p-value-two"/></caption>
+					<image width="60%" xml:id="image_ht-proportions_examp_p-value-two">
+						<latex-image>
+							<xi:include href="./latex-images/ht-proportions_examp_p-value-two.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+			  <p>As shown above, this gives 
+			  	<me>2 \times P(Z \lt -1.71) = 2(0.0436) = 0.0872</me>.</p>
+			  <p>Because this p-value is less than the significance level we reject the null hypothesis. There is <xref ref="table_significance-levels" text="custom">evidence tending towards significance</xref> that the true proportion of cars on the road with under-inflated tires is different from 0.50.</p>
+			</solution>
+		</example>
+		<p>Note that in the problem above, while we wound up rejecting the null hypothesis at the 0.10 significance level, we would not have rejected it at the 0.05 or 0.01 significance level. In fact, the p-value of 0.0854 tells us that if we decide to reject the null hypothesis, there is an 8.54% chance that we are wrong. Typically that is too big of a chance to take.</p>
+		<example xml:id="examp_ht-proportions_p-value-left-2">
+			<title>Conducting Another Left-Tailed p-Value Hypothesis Test</title>
+			<statement>
+				<p>A scout leader claims that being a boyscout promotes character development and respect for the law. In fact, he claims that fewer than 10% of boys who spend at least one year in a boyscout troupe will get into trouble with the law before their 20th birthday. To test this claim, you take a random sample of 80 names from the rosters of boyscout troupes fifteen years in the past and find that 11 of these former boyscouts have had trouble with the law. Conduct a p-value hypothesis test of this claim at the <m>\alpha = 0.01</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>Recall that the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ p \geq 0.10</mrow>
+						<mrow>H_A\amp:\ p \lt 0.10</mrow>
+					</md>
+				</p>
+				<p>The test statistic under the null hypothesis above is:
+					<me>z_{\text{test}} = \frac{0.1375 - 0.1000}{\sqrt{\frac{(0.1)(0.9)}{80}}} \approx 1.12</me>.</p>
+				<p>Now this is a left-tailed test because the alternative hypothesis involves <m>\lt</m>. Therefore, the p-value of our test statistic is the probability of being further into the left tail than 1.12. Note, however, that 1.12 is on the right of the mean of 0 as shown below.  All this means is that not only is there no evidence tosupport the claim, but the evidence seems to point to the opposite being true<mdash/>that is to more than 10% being in trouble with the law.</p>
+				<figure xml:id="fig_ht-proportions_examp_p-value-left-2">
+					<caption>Critical Region for <xref ref="examp_ht-proportions_p-value-left-2"/></caption>
+					<image width="60%" xml:id="image_ht-proportions_examp_p-value-left-2">
+						<latex-image>
+							<xi:include href="./latex-images/ht-proportions_examp_p-value-left-2.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Finishing this test, the p-value is <m>P(Z \lt 1.12) = 0.8686</m>. This is clearly much larger than the significance level of <m>\alpha = 0.01</m>. We therefore fail to reject the null hypothesis. There is not even <xref ref="table_significance-levels" text="custom">evidence tending towards significance</xref> that fewer than 10% of boyscout members have trouble with the law before their 20th birthday.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-proportions_p-value-1">
+			<caption>p-Value Hypothesis Tests I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-07.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-proportions_p-value-2">
+			<caption>p-Value Hypothesis Tests II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-proportions_p-value-1">
+			<statement>
+				<p>A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him  attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test, testing the following claims:
+					<md>
+						<mrow>H_0\amp: p \leq 0.5</mrow>
+						<mrow>H_1\amp: p > 0.5</mrow>
+					</md>
+				</p>
+				<p>Question: what is the p-value of the test statistic for this hypothesis test?</p>
+			</statement>
+			<answer><p>0.0222</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-proportions_p-value-2">
+			<statement>
+				<p>A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position.</p>
+				<p>Question: what is the p-value of the test statistic for this problem?</p>
+			</statement>
+			<answer><p>0.2358</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-proportions_errors">
+		<title>Type I and Type II Errors</title>
+		<p>Recall that part of the hypothesis testing process is the possibility of making errors. These errors come in two types, as outlined below.
+			<ul>
+				<li><title>Type I Error</title>
+				  <p>This is the error of rejecting a null hypothesis even though it is true.</p></li>
+				<li><title>Type II Error</title>
+				  <p>This is the error of failing to reject the null hypothesis even though it is in fact wrong.</p></li>
+			</ul>
+		</p>
+		<p>Let&apos;s look back at two of our examples of hypothesis tests for proportions and see what these errors might look like in those cases.</p>
+		<example xml:id="examp_ht-proportions_errors-type-2">
+			<title>Detecting a Type II Error</title>
+			<statement>
+				<p>A pharmaceutical company has developed a new drug for the common cold. They claim that this drug shortens the duration of the cold in 80% of individuals. A physician believes that this proportion is inflated. He finds 115 individuals who have just developed a cold, administers the drugs, and observes that 89 of them recover more quickly than is typical. If you conduct a hypothesis test at the <m>\alpha = 0.05</m> significance level using this sample, and in actuality the drug is only effective in 75% of patients, what error will be made?</p>
+			</statement>
+			<solution>
+				<p>In both the <xref ref="examp_ht-proportions_traditional-left-1" text="custom">traditional</xref> and <xref ref="examp_ht-proportions_p-value-left-1" text="custom">p-value</xref> test we failed to reject the null hypothesis. If, however, the drug only works in 75% of individuals, then the null hypothesis is false. Failing to reject a false null hypothesis is a <term>type II error</term>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-proportions_errors-type-1">
+			<title>Detecting a Type I Error</title>
+			<statement>
+				<p>A government official claims that 50% of cars on the road have under-inflated tires, and are therefore getting less-than-optimal gas  mileage. To test this claim, a random sample of 600 cars is selected and 279 of them are found to have under-inflated tires. If a hypothesis test is conducted at the <m>\alpha = 0.10</m> significance level to test the government officials claim, and the true proportion of cars with under-inflated tires actually is 0.50, what type of error has been made?</p>
+			</statement>
+			<solution>
+				<p>For <xref ref="examp_ht-proportions_p-value-two" text="custom">this example</xref>, we rejected the null hypothesis. If in fact it is true that <m>p = 0.50</m>, then we made a <term>type I error</term> by rejecting a true null hypothesis.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-proportions_errors-1">
+			<caption>Type I and Type II Errors I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-09.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-proportions_errors-2">
+			<caption>Type I and Type II Errors II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.3-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-proportions_errors-1">
+			<statement>
+				<p>A self-proclaimed psychic claims that he can predict the flipping of a coin. To test his claim you flip a coin 120 times and have him attempt to predict the outcome. He successfully predicts 71 of the flips. Based on this sample, you perform a hypothesis test and conclude that the man does have skill in predicting coin flips.</p>
+				<p>Question: if in fact the probability the <q>psychic</q> can predict a coin flip is 0.5. What type of error have you made?</p>
+			</statement>
+			<answer><p>Type I Error</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-proportions_errors-2">
+			<statement>
+				<p>A politician claims that a majority of voters support his stance on a certain issue. To verify this claim, he has his staff contact 500 voters and finds that 258 of them support his position. Based on this sample, you find no evidence that the majority of voters support his position. However, in actuality, 51% support the politicians position.</p>
+				<p>Question: what type of error did you make?</p>
+			</statement>
+			<answer><p>Type II Error</p></answer>
+		</exercise>
+	</subsection>
+
+</section>
