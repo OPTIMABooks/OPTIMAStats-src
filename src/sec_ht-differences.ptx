@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ht-differences">
+  <title>Hypothesis Tests for Differences Between Means and Proportions</title>
+
+  <introduction xml:id="sec_ht-differences_intro">
+  	<title>Testing Claims about Differences</title>
+  	<p>Just as we constructed confidence intervals for the difference between two population means or proportions in <xref ref="sec_ci-differences"/>,  we can also conduct hypothesis tests for the difference between two means or proportions. The most common tests for differences are tests which seek to determine if two population parameters are equal to each other (so their difference is zero) or if one is greater than the other (so their difference is greater than or less than zero). Consider the following tests.
+  	  <ul>
+  	  	<li><p>Early childhood education researchers wish to determine if babies whose parents spend time reading to them will have more success in school than babies who are not read to. To test this claim, they select a sample of 100 high school seniors who were read to as infants and 100 seniors who were not read to as infants. The mean G.P.A. for those who were read to was found to be 2.46 with a standard deviation of 0.77. The mean G.P.A. for the students who were not read to was found to be 2.33 with a standard deviation of 0.86.</p></li>
+  	  	<li><p>An independent senator believes that she has equal support among members of both the Republican and Democrat parties. To test this belief, she commissions a study in which 340 Republicans and 418 Democrats are polled. 138 of the Republicans and 157 of the Democrats are found to support the senator.</p></li>
+  	  </ul></p>
+  	<p>In this section we will review how to state the null and alternative hypotheses for examples such as those above, present the test statistic formula for these differences, and finish by conducting both traditional and p-value tests.</p>
+  </introduction>
+
+  <objectives xml:id="sec_ht-differences_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Hypotheses for a Difference Between Population Means</p></li>
+					<li><p>Hypotheses for a Difference Between Population Proportions</p></li>
+					<li><p>Pooled Estimate for a Proportion</p></li>
+					<li><p>Test Statistic for a Difference Between Sample Means</p></li>
+					<li><p>Test Statistic for a Difference Between Sample Proportions</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Formulate null and alternative hypotheses for tests of differences</p></li>
+					<li><p>Compute the test statistic for a difference between means</p></li>
+					<li><p>Compute the test statistic for a difference between proportions</p></li>
+					<li><p>Use this test statistic to conduct a traditional hypothesis test</p></li>
+					<li><p>Use this test statistic to conduct a p-value hypothesis test</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ht-differences_hypotheses">
+		<title>Formulating Hypotheses</title>
+		<p>When formulating hypotheses for the comparison of two means, we will rephrase these comparisons in terms of the difference. For example, if we claim that proportions from two populations are equal,
+			<me>p_1 = p_2</me>,
+		we would state the null hypothesis as 
+		  <me>p_1 - p_2 = 0</me>.</p>
+		<p>The possible null and alternative hypotheses for comparing two population proportions are listed below.</p>
+		<principle xml:id="thm_hypotheses-diff-proportions">
+			<title>Hypotheses for a Difference Between Population Proportions</title>
+			<statement>
+				<p>To test a claim comparing two population proportions, we use one of the following sets of hypotheses.
+					<ul cols="3">
+						<li><title>Left-Tailed</title>
+						  <p><md>
+						  	<mrow>H_0\amp:\ p_1 - p_2 \geq 0</mrow>
+						  	<mrow>H_A\amp:\ p_1 - p_2 \lt 0</mrow>
+						  </md>(tests  <m>p_1 \lt p_2</m>)</p>
+						</li>
+						<li><title>Two-Tailed</title>
+						  <p><md>
+						  	<mrow>H_0\amp:\ p_1 - p_2 = 0</mrow>
+						  	<mrow>H_A\amp:\ p_1 - p_2 \not= 0</mrow>
+						  </md>(tests <m>p_1 \not= p_2</m>)</p>
+						</li>
+						<li><title>Right-Tailed</title>
+						  <p><md>
+						  	<mrow>H_0\amp:\ p_1 - p_2 \leq 0</mrow>
+						  	<mrow>H_A\amp:\ p_1 - p_2 \gt 0</mrow>
+						  </md>(tests <m>p_1 \gt p_2</m>)</p>
+						</li>
+					</ul>
+				</p>
+			</statement>
+		</principle>
+		<p>In each of these tests, the assumption from the null hypothesis is that <m>p_1 = p_2</m>, or in other words <m>p_1 - p_2 = 0</m>.</p>
+		<p>When dealing with means, however, we sometimes want a little more flexibility. Instead of saying that the mean of one population is larger than the mean of another, we may wish to say how much larger. For example, the statement <q>dogs live at least 5 years longer than cats.</q> can be written as
+		  <me>\mu_1 \gt \mu_2 + 5 \quad \text{ or }\quad \mu_1 - \mu_2 \gt 5</me>.
+		To get this added flexibility, we state our null and alternative hypothesis in terms of some difference <m>d_0</m>, which would have been 5 in this example. If we are testing a claim that two means are equal to each other, we set <m>d_0 = 0</m>. In most of our tests, we will use <m>d_0 = 0</m>.</p>
+		<principle xml:id="thm_hypotheses-diff-means">
+			<title>Hypotheses for a Difference Between Population Means</title>
+			<statement>
+				<p>To test a claim comparing two population means, we use one of the following sets of hypotheses, where <m>d_0</m> is the claimed difference.
+				  <ul cols="3">
+				  	<li><title>Left-Tailed</title>
+				  	  <p><md>
+				  	  	<mrow>H_0\amp:\ \mu_1 - \mu_2 \geq d_0</mrow>
+				  	  	<mrow>H_A\amp:\ \mu_1 - \mu_2 \lt d_0</mrow>
+				  	  </md>(tests <m>\mu_1 \lt \mu_2 + d_0</m>)</p>
+				  	</li>
+				  	<li><title>Two-Tailed</title>
+				  	  <p><md>
+				  	  	<mrow>H_0\amp:\ \mu_1 - \mu_2 = d_0</mrow>
+				  	  	<mrow>H_A\amp:\ \mu_1 - \mu_2 \not= d_0</mrow>
+				  	  </md>(tests <m>\mu_1 \not= \mu_2 + d_0</m>)</p>
+				  	</li>
+				  	<li><title>Right-Tailed</title>
+				  	  <p><md>
+				  	  	<mrow>H_0\amp:\ \mu_1 - \mu_2 \leq d_0</mrow>
+				  	  	<mrow>H_A\amp:\ \mu_1 - \mu_2 >d_0</mrow>
+				  	  </md>(tests <m>\mu_1 > \mu_2 + d_0</m>)</p>
+				  	</li>
+				  </ul>
+				</p>
+			</statement>
+		</principle>
+		<p>Let&apos;s look at several examples involving these hypotheses.</p>
+		<example xml:id="examp_ht-differences_hypotheses-means">
+		  <title>Stating Hypotheses for Differences Between Means</title>
+		  <statement>
+		  	<p>Early childhood education researchers wish to determine if babies whose parents spend time reading to them will have more success in school than babies who are not read to. To test this claim, they select a sample of 100 high school seniors who were read to as infants and 100 seniors who were not read to as infants. The mean G.P.A. for those who were read to was found to be 2.46 with a standard deviation of 0.77. The mean G.P.A. for the students who were not read to was found to be 2.33 with a standard deviation of 0.86. Formulate hypotheses for this test.</p>
+		  </statement>
+		  <solution>
+		  	<p>This is a claim about two population means. The researchers believe that those in population 1, the students whose parents read to them, will have a higher mean G.P.A. The null hypothesis is that it makes no difference, so in other words the two means are equal. Therefore the difference is <m>d_0 = 0</m>. This gives the following hypotheses:
+		  	  <md>
+		  	  	<mrow>H_0\amp:\ \mu_1 - \mu_2 \leq 0</mrow>
+		  	  	<mrow>H_A\amp:\ \mu_1 - \mu_2 > 0</mrow>
+		  	  </md>.</p>
+		  </solution>
+		</example>
+		<example xml:id="examp_ht-differences_hypotheses-proportions">
+			<title>Stating Hypotheses for Differences Between Proportions</title>
+			<statement>
+				<p>An independent senator believes that she has equal support among members of both the Republican and Democrat parties. To test this belief, she commissions a study in which 340 Republicans and 418 Democrats are polled. 138 of the Republicans and 157 of the Democrats are found to support the senator. Formulate hypotheses for this test.</p>
+			</statement>
+			<solution>
+				<p>This is a claim about two population proportions. The senator believes that the proportions of Republicans (<m>p_R</m>) and Democrats (<m>p_D</m>) who support her are equal. Thus, the hypotheses are: 
+					<md>
+						<mrow>H_0\amp:\ p_R - p_D = 0</mrow>
+						<mrow>H_A\amp:\ p_R - p_D \not= 0</mrow>
+					</md>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-differences_hypotheses-1">
+			<caption>Hypotheses for Differences I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-differences_hypotheses-2">
+			<caption>Hypotheses for Differences II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-differences_hypotheses-1">
+			<statement>
+				<p>A veterinarian believes that dogs and cats have, on average, the same number of offspring in each birth. To test this claim, she takes observes that in 96 cat pregnancies, the average number of offspring was 4.9 with a standard deviation of 1.26 offspring. In 85 dog pregnancies, the vet observed an average of 3.7 offspring with a standard deviation of 0.84 offspring.</p>
+				<p>Question: what null hypothesis should the vet use to test her claim?</p>
+			</statement>
+			<answer><p><m>\mu_1 = \mu_2</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-differences_hypotheses-2">
+			<statement>
+				<p>An IRS agent believes that tax fraud is more prevalent on income tax returns where the gross adjusted income is more than $200,000. He takes a sample of 400 returns with income of less than $200,000 and finds that 12 of them are fraudulent. He also takes a sample of 300 returns with more than $200,000 reported income and finds that 15 of them are fraudulent.</p>
+				<p>Question: if those making under $200,000 are population 1, what should your alternative hypothesis be in this test?</p>
+			</statement>
+			<answer><p><m>p_1 \lt p_2</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-differences_test-stats-means">
+		<title>Test Statistic for a Difference Between Means</title>
+		<p>The test statistic for a difference between means measures how unusual the difference between our two sample means would be if the assumed difference from the null hypothesis is true. This measure of <q>unusualness</q> is again a z-score from the normal distribution. To find that z-score, we look at the difference between our observed difference and the assumed difference, and then divide that by the standard deviation for the difference between sample means. That mouth-full is represented symbolically below.</p>
+		<theorem xml:id="thm_test-statistic-difference-means">
+			<title>Test Statistic for a Difference Between Sample Means</title>
+			<statement>
+				<p>The test statistic for a difference between sample means <m>(\overline{x}_1 - \overline{x}_2)</m> used to test the assumption of the null hypothesis that <m>(\mu_1 - \mu_2) = d_0</m> is:
+				  <me>z_{\text{test}} = \frac{ (\overline{x}_1 - \overline{x}_2) - d_0}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}</me>.</p>
+				<p>Note that if <m>n_1</m> and <m>n_2</m> are both at least 30, we can use <m>\sigma_1 \approx s_1</m> and <m>\sigma_2 \approx s_2</m>.</p>
+			</statement>
+		</theorem>
+		<p>The following examples show this computation.</p>
+		<example xml:id="examp_ht-differences_test-stat-means">
+			<title>Computing the Test Statistic for a Difference Between Means</title>
+			<statement>
+				<p>Early childhood education researchers wish to determine if babies whose parents spend time reading to them will have more success in school than babies who are not read to. To test this claim, they select a sample of 100 high school seniors who were read to as infants and 100 seniors who were not read to as infants. The mean G.P.A. for those who were read to was found to be 2.46 with a standard deviation of 0.77. The mean G.P.A. for the students who were not read to was found to be 2.33 with a standard deviation of 0.86. Find the test statistic for the difference between these sample means.</p>
+			</statement>
+			<solution>
+				<p>In <xref ref="examp_ht-differences_hypotheses-means" />, we formulated the following hypotheses.
+				  <md>
+				  	<mrow>H_0\amp:\ \mu_1 - \mu_2 \leq 0</mrow>
+				  	<mrow>H_A\amp:\ \mu_1 - \mu_2 > 0</mrow>
+				  </md>
+				</p>
+				<p>From this null hypothesis, we assume <m>d_0  = 0</m> giving the following test statistic for these samples:
+				  <me>z_{\text{test}} = \frac{(2.46 - 2.33) - 0}{\sqrt{\frac{(0.77)^2}{100} + \frac{(0.86)^2}{100}}} \approx 1.13</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-differences_test-stat-nonzero-d">
+			<title>Computing the Test Statistic for a Non-Zero Difference Between Means</title>
+			<statement>
+				<p>A pet lover believes that dogs live on average at least 5 years longer than cats. To test this claim, he collects data on 63 randomly selected dogs, and 55 randomly selected cats. The average lifespan of the dogs is found to be 18.7 years, with a standard deviation of 3.1 years. The average lifespan for the sample of cats is 12.3 years with a standard deviation of 1.9 years. Find the test statistic for the difference between these sample means.</p>
+			</statement>
+			<solution>
+				<p>Because we are testing the claim that <m>\mu_1</m> is at least 5 more than <m>\mu_2</m>, our hypotheses will be:
+				  <md>
+				  	<mrow>H_0\amp:\ \mu_1 - \mu_2 \leq 5</mrow>
+				  	<mrow>H_A\amp:\ \mu_1 - \mu_2 > 5</mrow>
+				  </md>
+				</p>
+				<p>Under this null hypothesis, the test statistic for the above samples is:
+					<me>z_{\text{test}} = \frac{(18.7 - 12.3) - 5}{\sqrt{\frac{(3.1)^2}{63} + \frac{(1.9)^2}{55}}} \approx 3.00</me>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-differences_test-stat-means-1">
+			<caption>Test Statistic for Differences Between Means I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-03.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-differences_test-stat-means-2">
+			<caption>Test Statistic for Differences Between Means II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-differences_test-stat-means-1">
+			<statement>
+				<p>A veterinarian believes that dogs and cats have, on average, the same number of offspring in each birth. To test this claim, she takes observes that in 96 cat pregnancies, the average number of offspring was 4.9 with a standard deviation of 1.26 offspring. In 85 dog pregnancies, the vet observed an average of 3.7 offspring with a standard deviation of 0.84 offspring. The cat population is designated as population number one.</p>
+				<p>Question: what is the test statistic? Round your answer to two decimal places.</p>
+			</statement>
+			<answer><p>7.61</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-differences_test-stat-means-2">
+			<statement>
+				<p>A widget manufacturer uses two assembly lines to build widgets. The quality control engineer believes that the average weight of a widget made by the first assembly line is greater than the average weight of a widget made by the second assembly line. To test this theory he takes a sample of widgets from each assembly line and finds the following information.</p>
+				<table>
+				  <title>Widget Statistics</title>
+				  <tabular>
+				  	<col right="medium"></col>
+				  	<col right="medium" halign="center"></col>
+				  	<col right="medium" halign="center"></col>
+				  	<col halign="center"></col>
+				  	<row bottom="medium">
+				  		<cell></cell>
+				  		<cell>Sample Size</cell>
+				  		<cell>Mean</cell>
+				  		<cell>Standard Dev.</cell>
+				  	</row>
+				  	<row>
+				  		<cell>Assembly Line #1</cell>
+				  		<cell><m>n_1 = 120</m></cell>
+				  		<cell>12.2 ounces</cell>
+				  		<cell>0.72 ounces</cell>
+				  	</row>
+				  	<row>
+				  		<cell>Assembly Line #2</cell>
+				  		<cell><m>n_2 = 120</m></cell>
+				  		<cell>11.9 ounces</cell>
+				  		<cell>0.81 ounces</cell>
+				  	</row>
+				  </tabular>
+				</table>
+				<p>Question: what is the test statistic for this hypothesis test?</p>
+			</statement>
+			<answer><p>3.03</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-differences_test-stat-proportions">
+		<title>Test Statistic for a Difference Between Proportions</title>
+		<p>When computing the test statistic for a difference between proportions, we again want to measure how unusual the observed difference is. However, because our null hypotheses will always use the assumption that the two proportions are equal, the test statistic formula is slightly simpler.</p>
+		<theorem xml:id="thm_test-statistic-difference-proportions">
+			<title>Test Statistic for a Difference Between Sample Proportions</title>
+			<statement>
+				<p>The test statistic for a difference between sample proportions <m>(p_1 - p_2)</m> used to test the assumption of the null hypothesis that <m>p_1 = p_2</m> is:
+				  <me>z_{\text{test}} = \frac{(\hat p_1 - \hat p_2)}{\sqrt{\frac{pq}{n_1} + \frac{pq}{n_2}}}</me>
+				where <m>p</m> is the proportion of successes in both populations.</p>
+			</statement>
+		</theorem>
+		<p>The null hypothesis asserts that <m>p_1 = p_2</m>, but doesn&apos;t tell us what that proportion of successes is. We must approximate <m>p</m> using the two samples that were drawn from these populations. While it is unlikely that these two sample proportions will equal <m>p</m> exactlyu, or even each other, by pooling them into a single proportion <m>\hat p_{\text{pooled}}</m>, we can get an estimate for the populations&apos; proportion <m>p</m>.</p>
+		<definition xml:id="def_pooled-proportion">
+			<idx>pooled proportion</idx>
+			<statement>
+				<p>The <term>pooled estimate for a proportion</term> based on the sample proportions <m>\hat p_1</m> and <m>\hat p_2</m> is:
+				  <me>\hat p_{\text{pooled}} = \frac{n_1 \hat p_1 + n_2 \hat p_2}{n_1 + n_2}</me>.</p>
+			</statement>
+		</definition>
+		<p>If your sample data is reported in terms of number of successes instead of proportion of successes, then you should use <m>x_1</m> in place of <m>n_1 \hat p_1</m> in the above formula, and similarly for <m>x_2</m>. Let&apos;s see how this pooling works in the examples below.</p>
+		<example xml:id="examp_ht-differences_test-stat-proportions-1">
+			<title>Computing the Test Statistic for a Difference Between Proportions</title>
+			<statement>
+				<p>An independent senator believes that she has equal support among members of both the Republican and Democrat parties. To test this belief, she commissions a study in which 340 Republicans and 418 Democrats are polled. 138 of the Republicans and 157 of the Democrats are found to support the senator. Find the test statistic for this hypothesis test.</p>
+			</statement>
+			<solution>
+				<p>We have already seen that the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ p_1 - p_2 = 0</mrow>
+						<mrow>H_A\amp:\ p_1 - p_2 \not= 0</mrow>
+					</md>
+				</p>
+				<p>Under the assumption that <m>p_1 = p_2 = p</m> for some population proportion <m>p</m>, we must approximate <m>p</m> using a pooled estimate.
+				  <me>\hat p_{\text{pooled}} = \frac{138 + 157}{340+418} = \frac{295}{758} \approx 0.3892</me>.</p>
+				<p>Plugging this pooled estimate in for <m>p</m> in the test statistic formula above yields:
+					<me>z_{\text{test}} = \frac{138/340 - 157/418}{\sqrt{\frac{(0.3892)(0.6108)}{340} + \frac{(0.3892)(0.6108)}{418}}} \approx 0.85</me>.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-differences_test-stat-proportions-2">
+			<title>Computing the Test Statistic for Another Difference Between Proportions</title>
+			<statement>
+				<p>An educator believes that the proportion of females in the US who have completed college is greater than the proportion of males. To test this claim, a sample of 600 women is randomly selected and 227 of them are found to have completed college. A sample of 570 men is randomly selected and only 192 of them are found to have completed college. Find the test statistic for this hypothesis test.</p>
+			</statement>
+			<solution>
+				<p>The claim in this test is that <m>p_W</m>, the proportion of women who finish college, is bigger than <m>p_M</m>, the proportion of men who finish college. This leads to the following hypotheses.
+				  <md>
+				  	<mrow>H_0\amp:\ p_W - p_M \leq 0</mrow>
+				  	<mrow>H_A\amp:\ p_W - p_M > 0</mrow>
+				  </md>
+				</p>
+				<p>If we assume that <m>p_W = p_M = p</m>, we must approximate <m>p</m> using a pooled proportion from the samples.
+				  <me>\hat p_{\text{pooled}} = \frac{227 + 192}{600+570} = \frac{419}{1170} \approx 0.3581</me>.</p>
+				<p>Using this in our test statistic formula yields the following test statistic.
+					<me>z_{\text{test}} = \frac{ 227/600 - 192/570}{\sqrt{\frac{(0.3581)(0.6419)}{600} + \frac{(0.3581)(0.6419)}{570}}} \approx 1.48</me>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-differences_test-stat-proportions-1">
+			<caption>Test Statistic for Differences Between Proportions I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-differences_test-stat-proportions-2">
+			<caption>Test Statistic for Differences Between Proportions II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-differences_test-stat-proportions-1">
+			<statement>
+				<p>An IRS agent believes that tax fraud is more prevalent on income tax returns where the gross adjusted income is more than $200,000. He takes a sample of 400 returns with income of less than $200,000 and finds that 12 of them are fraudulent. He also takes a sample of 300 returns with more than $200,000 reported income and finds that 15 of them are fraudulent. Suppose that tax returns for those making over $200,000 make up population one.</p>
+				<p>Question: what is the test statistic for this test?</p>
+			</statement>
+			<answer><p>1.36</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-differences_test-stat-proportions-2">
+			<statement>
+				<p>A used car salesperson believes that a larger proportion of sports cars sold on her lot are red than the proportion of sedans that are red. To test this hypothesis, she collects the following samples.</p>
+				<table>
+					<title>Used Car Statistics</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Number Red</cell>
+						</row>
+						<row>
+							<cell>Sports Cars</cell>
+							<cell><m>n_1 = 73</m></cell>
+							<cell><m>x_1 = 21</m></cell>
+						</row>
+						<row>
+							<cell>Sedans</cell>
+							<cell><m>n_2 = 129</m></cell>
+							<cell><m>x_2 = 33</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the test statistic for this situation?</p>
+			</statement>
+			<answer><p>0.49</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-differences_traditional">
+		<title>The Traditional Test</title>
+		<p>Conducting a hypothesis test for a difference between means or proportions requires a different set of hypotheses, and a different test statistic formula. However, once we have the test statistic, the rest of the hypothesis test works just as it did for single means or proportions. On this page, we will finish two of the previously seen examples using the traditional test method.</p>
+		<example xml:id="examp_ht-differences_traditional-means">
+			<title>Conducting a Traditional Hypothesis Test for a Difference Between Means</title>
+			<statement>
+				<p>Early childhood education researchers wish to determine if babies whose parents spend time reading to them will have more success in school than babies who are not read to. To test this claim, they select a sample of 100 high school seniors who were read to as infants and 100 seniors who were not read to as infants. The mean G.P.A. for those who were read to was found to be 2.46 with a standard deviation of 0.77. The mean G.P.A. for the students who were not read to was found to be 2.33 with a standard deviation of 0.86. Conduct a traditional hypothesis test at the <m>\alpha = 0.05</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>As seen before, the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ \mu_1 - \mu_2 \leq 0</mrow>
+						<mrow>H_A\amp:\ \mu_1 - \mu_2 > 0</mrow>
+					</md>
+				</p>
+				<p>From this null hypothesis, we computed the test statistic:
+					<me>z_{\text{test}} = \frac{(2.46 - 2.33) - 0}{\sqrt{\frac{(0.77)^2}{100} + \frac{(0.86)^2}{100}}} \approx 1.13</me>.</p>
+				<p>Because the alternative hypothesis involves <q><m>\gt</m></q>, this is a right-tailed test. Therefore, at the <m>\alpha = 0.05</m> significance level, our critical value is <m>z_{0.05} = 1.645</m> as shown below.</p>
+				<figure xml:id="fit_ht-differences_examp_traditional-means">
+					<caption>Critical Region for <xref ref="examp_ht-differences_traditional-means"/></caption>
+					<image width="60%" xml:id="image_ht-differences_examp_traditional-means">
+						<latex-image>
+							<xi:include href="./latex-images/ht-differences_examp_traditional-means.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Since the test statistic is not larger than the critical value, it is not in that right-tailed rejection region. We must therefore fail to reject the null hypothesis. There is no <xref ref="table_significance-levels" text="custom">statistically significant</xref> evidence that G.P.A.s are higher for those seniors who were read to as infants.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-differences_traditional-proportions">
+			<title>Conducting a Traditional Hypothesis Test for a Difference Between Proportions</title>
+			<statement>
+				<p>An educator believes that the proportion of females in the US who have completed college is greater than the proportion of males. To test this claim, a sample of 600 women is randomly selected and 227 of them are found to have completed college. A sample of 570 men is randomly selected and only 192 of them are found to have completed college. Test this educator&apos;s claim using a traditional hypothesis test at the <m>\alpha = 0.10</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>From previous work, we have hypotheses:
+					<md>
+						<mrow>H_0\amp:\ p_1 - p_2 \leq 0</mrow>
+						<mrow>H_A\amp:\ p_1 - p_2 > 0</mrow>
+					</md>
+				</p>
+				<p>The pooled proportion for the population is:
+					<me>\hat p_{\text{pooled}} = \frac{227 + 192}{600+570} = \frac{419}{1170} \approx 0.3581</me>.</p>
+				<p>Using this in our test statistic formula yielded the following test statistic.
+				  <me>z_{\text{test}} = \frac{ 227/600 - 192/570}{\sqrt{\frac{(0.3581)(0.6419)}{600} + \frac{(0.3581)(0.6419)}{570}}} \approx 1.48</me>.</p>
+				<p>Now because the alternative hypothesis involves <q><m>\gt</m></q>, this is a right-tailed test. At the <m>\alpha = 0.10</m> significance level, the critical value is <m>z_{0.10} = 1.28</m> as shown below.</p>
+				<figure xml:id="fit_ht-differences_examp_traditional-proportions">
+					<caption>Critical Region for <xref ref="examp_ht-differences_traditional-proportions"/></caption>
+					<image width="60%" xml:id="image_ht-differences_examp_traditional-proportions">
+						<latex-image>
+							<xi:include href="./latex-images/ht-differences_examp_traditional-proportions.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Because the test statistic 1.48 is further into the right tail than 1.28, it is in the rejection region. We therefore reject the null hypothesis. There is evidence <xref ref="table_significance-levels" text="custom">tending towards significance</xref> that a higher proportion of women have finished college than men.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-differences_traditional-1">
+			<caption>Traditional Hypothesis Test for Differences</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-07.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-differences_traditional-2">
+			<caption>Traditional Hypothesis Test for Differences</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-differences_traditional-1">
+			<statement>
+				<p>A veterinarian believes that dogs and cats have, on average, the same number of offspring in each birth. To test this claim, she takes observes that in 96 cat pregnancies, the average number of offspring was 4.9 with a standard deviation of 1.26 offspring. In 85 dog pregnancies, the vet observed an average of 3.7 offspring with a standard deviation of 0.84 offspring. The cat population is designated as population number one.</p>
+				<p>Question: what conclusion do you reach using a traditional hypothesis test at the <m>\alpha = 0.01</m> significance level?</p>
+			</statement>
+			<answer><p>Reject the Null Hypothesis</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-differences_traditional-2">
+			<statement>
+				<p>A used car salesperson believes that a larger proportion of sports cars sold on her lot are red than the proportion of sedans that are red. To test this hypothesis, she collects the following samples.</p>
+				<table>
+					<title>Used Car Statistics</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Number Red</cell>
+						</row>
+						<row>
+							<cell>Sports Cars</cell>
+							<cell><m>n_1 = 73</m></cell>
+							<cell><m>x_1 = 21</m></cell>
+						</row>
+						<row>
+							<cell>Sedans</cell>
+							<cell><m>n_2 = 129</m></cell>
+							<cell><m>x_2 = 33</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what conclusion do you reach using a traditional hypothesis test at the <m>\alpha = 0.05</m> significance level?</p>
+			</statement>
+			<answer><p>Fail to Reject the Null Hypothesis</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-differences_p-value">
+		<title>The p-Value Test</title>
+		<p>As with the traditional hypothesis test, the p-value test is the same for testing claims about differences as it was for testing claims about individual population parameters. The following examples show how the p-value test works for tests of differences.</p>
+		<example xml:id="examp_ht-differences_p-value-means">
+			<title>Conducting a p-Value Hypothesis Test for a Difference Between Means</title>
+			<statement>
+				<p>A pet lover believes that dogs live on average at least 5 years longer than cats. To test this claim, he collects data on 63 randomly selected dogs, and 55 randomly selected cats. The average lifespan of the dogs is found to be 18.7 years, with a standard deviation of 3.1 years. The average lifespan for the sample of cats is 12.3 years with a standard deviation of 1.9 years. Conduct a p-value test to see if the pet lover&apos;s claim has merit.</p>
+			</statement>
+			<solution>
+				<p>As seen earlier in this section, the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ \mu_1 - \mu_2 \leq 5</mrow>
+						<mrow>H_A\amp:\ \mu_1 - \mu_2 > 5</mrow>
+					</md>
+				</p>
+				<p>Under this null hypothesis, the test statistic for the above samples was:
+					<me>z_{\text{test}} = \frac{(18.7 - 12.3) - 5}{\sqrt{\frac{(3.1)^2}{63} + \frac{(1.9)^2}{55}}} \approx 3.00</me>.</p>
+				<p>Now because the alternative hypothesis involves <q><m>\gt</m></q>, this is a right-tailed test. The p-value for the test statistic is the area of the region shown below.</p>
+				<figure xml:id="fit_ht-differences_examp_p-value-means">
+					<caption>Critical Region for <xref ref="examp_ht-differences_p-value-means"/></caption>
+					<image width="60%" xml:id="image_ht-differences_examp_p-value-means">
+						<latex-image>
+							<xi:include href="./latex-images/ht-differences_examp_p-value-means.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>This gives us
+					<me>P(Z > 3.00) = 1 - 0.9987 = 0.0013</me>,
+					which is smaller than all of our standard significance levels of 0.10, 0.05, and 0.01. We therefore reject the null hypothesis at each of these significance levels. There is <xref ref="table_significance-levels" text="custom">highly significant</xref> evidence that dogs live at least 5 years longer than cats.</p>
+			</solution>
+		</example>
+		<p>You may have noticed that we did not give a significance level at which to conduct our test in this last example. When a p-value test is being conducted, we sometimes don't state a significance level as part of the problem statement.  Instead, once we have the p-value for the test, we compare it with all three of the <xref ref="table_significance-levels" text="title"/> to see at which levels, if any, we can reject the null hypothesis.</p>
+		<example xml:id="examp_ht-differences_p-value-proportions">
+			<title>Conducting a p-Value Hypothesis Test for a Difference Between Proportions</title>
+			<statement>
+				<p>An independent senator believes that she has equal support among members of both the Republican and Democrat parties. To test this belief, she commissions a study in which 340 Republicans and 418 Democrats are polled. 138 of the Republicans and 157 of the Democrats are found to support the senator. Conduct a p-value test to determine if the senator&apos;s support levels are different.</p>
+			</statement>
+			<solution>
+				<p>We have already seen that the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ p_1 - p_2 = 0</mrow>
+						<mrow>H_A\amp:\ p_1 - p_2 \not= 0</mrow>
+					</md>
+				</p>
+				<p>Our pooled estimate for the common proportion was:
+					<me>\hat p_{\text{pooled}} = \frac{138 + 157}{340+418} = \frac{295}{758} \approx 0.3892</me>.</p>
+				<p>Finally, the test statistic was:
+					<me>z_{\text{test}} = \frac{138/340 - 157/418}{\sqrt{\frac{(0.3892)(0.6108)}{340} + \frac{(0.3892)(0.6108)}{418}}} \approx 0.85</me>.</p>
+				<p>Now as the alternative hypothesis involves <q><m>\not =</m></q>, this is a two tailed test. The p-value is therefore the probability of being further into either tail than the test statistic of 0.85. This is twice the area in the right tail, as shown.</p>
+				<figure xml:id="fit_ht-differences_examp_p-value-proportions">
+					<caption>Critical Region for <xref ref="examp_ht-differences_p-value-proportions"/></caption>
+					<image width="60%" xml:id="image_ht-differences_examp_p-value-proportions">
+						<latex-image>
+							<xi:include href="./latex-images/ht-differences_examp_p-value-proportions.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>S from the standard normal distribution table, the p-value is:
+					<me>2\times P(Z > 0.85) = 2(1 - .8023) = 2(0.1977) = 0.3954</me>.</p>
+				<p>Therefore, if the null hypothesis is true and support levels are equal in Republicans and Democrats, we could see samples like this 39.5% of the time. That is not unusual. The p-value of 0.3954 is larger than all common significance levels, 0.10, 0.05, and 0.01. We therefore fail to reject the null hypothesis. There is no evidence that support levels differ between Republicans and Democrats. The senator could well be correct.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-differences_p-value-1">
+			<caption>P-Value Tests for Differences I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-09.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-differences_p-value-2">
+			<caption>P-Value Tests for Differences II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-differences_p-value-1">
+			<statement>
+				<p>An IRS agent believes that tax fraud is more prevalent on income tax returns where the gross adjusted income is more than $200,000. He takes a sample of 400 returns with income of less than $200,000 and finds that 12 of them are fraudulent. He also takes a sample of 300 returns with more than $200,000 reported income and finds that 15 of them are fraudulent. Suppose that tax returns for those making over $200,000 make up population one.</p>
+				<p>Question: what is the p-value of the test statistic for these samples?</p>
+			</statement>
+			<answer><p>0.0869</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-differences_p-value-2">
+			<statement>
+				<p>A widget manufacturer uses two assembly lines to build widgets. The quality control engineer believes that the average weight of a widget made by the first assembly line is greater than the average weight of a widget made by the second assembly line. To test this theory he takes a sample of widgets from each assembly line and finds the following information.</p>
+				<table>
+				  <title>Widget Statistics</title>
+				  <tabular>
+				  	<col right="medium"></col>
+				  	<col right="medium" halign="center"></col>
+				  	<col right="medium" halign="center"></col>
+				  	<col halign="center"></col>
+				  	<row bottom="medium">
+				  		<cell></cell>
+				  		<cell>Sample Size</cell>
+				  		<cell>Mean</cell>
+				  		<cell>Standard Dev.</cell>
+				  	</row>
+				  	<row>
+				  		<cell>Assembly Line #1</cell>
+				  		<cell><m>n_1 = 120</m></cell>
+				  		<cell>12.2 ounces</cell>
+				  		<cell>0.72 ounces</cell>
+				  	</row>
+				  	<row>
+				  		<cell>Assembly Line #2</cell>
+				  		<cell><m>n_2 = 120</m></cell>
+				  		<cell>11.9 ounces</cell>
+				  		<cell>0.81 ounces</cell>
+				  	</row>
+				  </tabular>
+				</table>
+				<p>Question: what is the p-value for this test statistic?</p>
+			</statement>
+			<answer><p>0.0012</p></answer>
+		</exercise>
+	</subsection>
+	
+</section>

@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      axis x line*=bottom,
+      no markers,
+	  domain=-4:4,
+      samples=500,
+      xmin = -4, xmax = 4,
+	  ymin = 0, ymax = 0.41,
+      xtick={-3,-2,-1,0,1,1.645,2,3},
+      xticklabels={,,,$\theta_0$,,1.645,,},
+      ticklabel style={font=\scriptsize},
+      ytick=\empty,
+      grid = none,
+      axis on top,
+      hide y axis,
+      height=5cm,
+      width=8cm
+    ]
+    \path[name path=A] (axis cs: -4,0) -- (4,0);
+    \addplot+[name path=B,thick] { gauss(x, 0, 1) };
+    \addplot [
+        fill=red!50,
+        fill opacity=0.5,
+    ] fill between [
+        of=A and B,
+        soft clip={domain=1.645:4}
+    ];
+    \addplot [
+        draw=black,
+        fill=blue!50,
+        fill opacity=0.5,
+    ] fill between [
+        of=A and B,
+        soft clip={domain=-4:1.645}
+    ];
+    \node at (axis cs: 0,0.15) {\scriptsize $0.95$};
+    \draw[-stealth] (axis cs: 2.5,0.07) node[above right]  {\scriptsize $0.05$} to (axis cs: 2.15,0.045);
+    \draw[line width=0.4mm,->] (axis cs: 1.13,0.03) node[above] {\scriptsize $z_{test}$} to (axis cs: 1.13,0);
+  \end{axis}
+\end{tikzpicture}
