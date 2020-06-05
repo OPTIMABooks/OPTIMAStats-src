@@ -376,7 +376,7 @@
 				<p>From this null hypothesis, we computed the test statistic:
 					<me>z_{\text{test}} = \frac{(2.46 - 2.33) - 0}{\sqrt{\frac{(0.77)^2}{100} + \frac{(0.86)^2}{100}}} \approx 1.13</me>.</p>
 				<p>Because the alternative hypothesis involves <q><m>\gt</m></q>, this is a right-tailed test. Therefore, at the <m>\alpha = 0.05</m> significance level, our critical value is <m>z_{0.05} = 1.645</m> as shown below.</p>
-				<figure xml:id="fit_ht-differences_examp_traditional-means">
+				<figure xml:id="fig_ht-differences_examp_traditional-means">
 					<caption>Critical Region for <xref ref="examp_ht-differences_traditional-means"/></caption>
 					<image width="60%" xml:id="image_ht-differences_examp_traditional-means">
 						<latex-image>
@@ -404,7 +404,7 @@
 				<p>Using this in our test statistic formula yielded the following test statistic.
 				  <me>z_{\text{test}} = \frac{ 227/600 - 192/570}{\sqrt{\frac{(0.3581)(0.6419)}{600} + \frac{(0.3581)(0.6419)}{570}}} \approx 1.48</me>.</p>
 				<p>Now because the alternative hypothesis involves <q><m>\gt</m></q>, this is a right-tailed test. At the <m>\alpha = 0.10</m> significance level, the critical value is <m>z_{0.10} = 1.28</m> as shown below.</p>
-				<figure xml:id="fit_ht-differences_examp_traditional-proportions">
+				<figure xml:id="fig_ht-differences_examp_traditional-proportions">
 					<caption>Critical Region for <xref ref="examp_ht-differences_traditional-proportions"/></caption>
 					<image width="60%" xml:id="image_ht-differences_examp_traditional-proportions">
 						<latex-image>
@@ -482,7 +482,7 @@
 				<p>Under this null hypothesis, the test statistic for the above samples was:
 					<me>z_{\text{test}} = \frac{(18.7 - 12.3) - 5}{\sqrt{\frac{(3.1)^2}{63} + \frac{(1.9)^2}{55}}} \approx 3.00</me>.</p>
 				<p>Now because the alternative hypothesis involves <q><m>\gt</m></q>, this is a right-tailed test. The p-value for the test statistic is the area of the region shown below.</p>
-				<figure xml:id="fit_ht-differences_examp_p-value-means">
+				<figure xml:id="fig_ht-differences_examp_p-value-means">
 					<caption>Critical Region for <xref ref="examp_ht-differences_p-value-means"/></caption>
 					<image width="60%" xml:id="image_ht-differences_examp_p-value-means">
 						<latex-image>
@@ -513,7 +513,7 @@
 				<p>Finally, the test statistic was:
 					<me>z_{\text{test}} = \frac{138/340 - 157/418}{\sqrt{\frac{(0.3892)(0.6108)}{340} + \frac{(0.3892)(0.6108)}{418}}} \approx 0.85</me>.</p>
 				<p>Now as the alternative hypothesis involves <q><m>\not =</m></q>, this is a two tailed test. The p-value is therefore the probability of being further into either tail than the test statistic of 0.85. This is twice the area in the right tail, as shown.</p>
-				<figure xml:id="fit_ht-differences_examp_p-value-proportions">
+				<figure xml:id="fig_ht-differences_examp_p-value-proportions">
 					<caption>Critical Region for <xref ref="examp_ht-differences_p-value-proportions"/></caption>
 					<image width="60%" xml:id="image_ht-differences_examp_p-value-proportions">
 						<latex-image>
@@ -578,5 +578,5 @@
 			<answer><p>0.0012</p></answer>
 		</exercise>
 	</subsection>
-	
+
 </section>
