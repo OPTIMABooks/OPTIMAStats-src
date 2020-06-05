@@ -11,7 +11,6 @@
   <xi:include href="sec_ht-means.ptx"/>
   <xi:include href="sec_ht-proportions.ptx"/>
   <xi:include href="sec_ht-differences.ptx"/>
-<!--
   <xi:include href="sec_ht-small-samples.ptx"/>
--->
+
 </chapter>

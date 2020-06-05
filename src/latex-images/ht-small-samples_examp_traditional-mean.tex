@@ -1,0 +1,51 @@
+\begin{tikzpicture}[
+    declare function={gamma(\z)=2.506628274631*sqrt(1/\z)+ 0.20888568*(1/\z)^(1.5)+ 0.00870357*(1/\z)^(2.5)- (174.2106599*(1/\z)^(3.5))/25920- (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z;},
+    declare function={student(\x,\n)= gamma((\n+1)/2.)/(sqrt(\n*pi) *gamma(\n/2.)) *((1+(\x*\x)/\n)^(-(\n+1)/2.));}
+]
+  \begin{axis}[
+      axis x line*=bottom,
+      no markers,
+	  domain=-4:4,
+      samples=500,
+      xmin = -4, xmax = 4,
+	  ymin = 0, ymax = 0.41,
+      xtick={-3,-1.943,-1,0,1,1.943,3},
+      xticklabels={,-1.943,,0,,1.943,},
+      ticklabel style={font=\scriptsize},
+      ytick=\empty,
+      grid = none,
+      axis on top,
+      hide y axis,
+      height=5cm,
+      width=8cm
+    ]
+    \path[name path=A] (axis cs: -4,0) -- (4,0);
+    \addplot+[name path=B,thick] { student(x, 6) };
+    \addplot [
+        fill=red!50,
+        fill opacity=0.5,
+    ] fill between [
+        of=A and B,
+        soft clip={domain=1.943:4}
+    ];
+    \addplot [
+        fill=red!50,
+        fill opacity=0.5,
+    ] fill between [
+        of=A and B,
+        soft clip={domain=-4:-1.943}
+    ];
+    \addplot [
+        draw=black,
+        fill=blue!50,
+        fill opacity=0.5,
+    ] fill between [
+        of=A and B,
+        soft clip={domain=-1.96:1.96}
+    ];
+    \node at (axis cs: 0,0.15) {\scriptsize $0.90$};
+    \draw[-stealth] (axis cs: -2.75,0.055) node[above left]  {\scriptsize $0.05$} to (axis cs: -2.55,0.035);
+    \draw[-stealth] (axis cs: 2.75,0.055) node[above right]  {\scriptsize $0.05$} to (axis cs: 2.55,0.035);
+    \draw[line width=0.4mm,->] (axis cs: -2.142,0.08) node[above] {\scriptsize $t_{test}$} to (axis cs: -2.142,0);
+  \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_ht-small-samples">
+  <title>Hypothesis Tests for Means Using Small Samples</title>
+
+  <introduction xml:id="sec_ht-small-samples_intro">
+  	<title>Small Sample Hypothesis Tests</title>
+  	<p>When constructing confidence intervals in chapter 4, we saw that if the sample size was less than 30, we could not assume that the sampling distribution for <m>\overline{x}</m> was normal with a standard deviation of <m>\frac{s}{\sqrt{n}}</m>. This required us to introduce the <xref ref="def_student-t-distribution" text="custom">student&apos;s t-distribution</xref> in order to work with smaller samples. The same is true when conducting hypothesis tests. Consider the following examples.
+  	  <ul>
+  	  	<li><p>You believe that the average lifespan of a supernova is 74 days. Because supernovas are so rare (approximately one every 50 years in our galaxy), you can only find accurate records from 7 supernovas to use in your data. Their average lifespan was 63.8 days with a standard deviation of 12.6 days.</p></li>
+  	  	<li><p>You believe that moon rocks contain less iron than do earth rocks. To test this hypothesis, you collect a sample of 300 rocks from all over the earth and find that they contain an average of 6.7 grams per cubic inch of iron with a standard deviation of 2.9 grams per cubic inch. You only have access to six moon rocks, however, and find that they have an average of 2.4 grams per cubic inch with a standard deviation of 0.35 grams per cubic inch.</p></li>
+  	  </ul>
+  	</p>
+  	<p>In each of these cases the hypothesis testing procedures we&apos;ve been using up to this point will no longer work. We can not assume that our critical values will have a normal distribution. Under the appropriate assumptions about the population, however, we can use the t-distribution to conduct these tests. Click the continue button to find out how.</p>
+  </introduction>
+
+  <objectives xml:id="sec_ht-small-samples_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Test Statistic for a Difference Between Small-Sample Means</p></li>
+					<li><p>Test Statistic for a Single Small-Sample Mean</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Compute test statistics for small sample tests of a single mean</p></li>
+					<li><p>Compute test statistics for small sample tests of a difference between means</p></li>
+					<li><p>Use the t-distribution to conduct traditional hypothesis tests with small sample test statistics</p></li>
+					<li><p>Use the t-distribution to give ranges for the p-value of a small sample test statistic</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_ht-small-samples_means">
+		<title>Test Statistic for a Single Population Mean</title>
+		<p>The test statistic for a single mean when using a small sample will be a t-score. This t-score measures how unusual the observed sample is under the assumption of the null hypothesis. The formula is very similar to the one used with large samples with the exception that it is a t-score and not a z-score, and that it explicitly uses the sample standard deviation <m>s</m> instead of the population standard deviation <m>\sigma</m>.</p>
+		<theorem xml:id="thm_test-statistics-small-sample-means">
+			<title>Test Statistic for a Single Small-Sample Mean</title>
+			<statement>
+				<p>The test statistic for the sample mean <m>\overline{x}</m> from a sample of size less than 30 drawn from a normal distribution and used to test the null hypothesis that <m>\mu = \mu_0</m> is:
+				<me>t_{\text{test}} = \frac{\overline{x} - \mu_0}{s/\sqrt{n}}</me>.</p>
+			</statement>
+		</theorem>
+		<p>Note that just as in the case of a <xref ref="thm_ci-small-sample-mean" text="custom">confidence interval</xref>, the test statistic will belong to a certain member of the t-distribution family based on the degrees of freedom. This will become important later on when we actually conduct the hypothesis test. For now, consider the example below.</p>
+		<example xml:id="examp_ht-small-samples_test-statistic-means">
+			<title>Computing a Test Stastic for a Small Sample Mean</title>
+			<statement>
+				<p>You believe that the average lifespan of a supernova is 74 days. Because supernovas are so rare (approximately one every 50 years in our galaxy), you can only find accurate records from 7 supernovas to use in your data. Their average lifespan was 63.8 days with a standard deviation of 12.6 days. State the hypotheses for this test, and find the test statistic.</p>
+			</statement>
+			<solution>
+				<p>The claim we are testing is that the lifespan of a supernova is 74 days. This involves equality, and the alternative is that it is not 74 days<mdash/>being either larger or smaller. This will give us a two-tailed test with hypotheses:
+				  <md>
+				  	<mrow>H_0\amp:\ \mu = 74</mrow>
+				  	<mrow>H_A\amp:\ \mu \not= 74</mrow>
+				  </md>
+				</p>
+				<p>Our test statistic is the following t-score.
+					<me>t_{\text{test}} = \frac{63.8 - 74}{12.6/\sqrt{7}} \approx -2.142</me>.</p>
+				<p>One final note. We must assume that the lifespan of an individual supernova is normally distributed for this test statistic to work.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-small-samples_means-1">
+			<caption>Critical Values for Small Sample Means I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-01.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-small-samples_means-2">
+			<caption>Critical Values for Small Sample Means II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-02.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-small-samples_means-1">
+			<statement>
+				<p>You believe that the average loudness of a rock concert in decibels is at least 117 db. To test this, you visit eleven rock concerts and find an average decibel level of 121 db with a standard deviation of 7.8 db.</p>
+				<p>Question: what is the test statistic for this hypothesis test? Round your answer to three decimals.</p>
+			</statement>
+			<answer><p>1.701</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-small-samples_means-2">
+			<statement>
+				<p>A dentist believes that professional boxers require more than the average 3 fillings found in the average person. To test this hypothesis, the dentist contacts a sample of 13 professional boxers and finds that they have an average of 4.2 fillings with a standard deviation of 1.83.</p>
+				<p>Question: what is the test statistic for this sample? Round your answer to three decimal places.</p>
+			</statement>
+			<answer><p>2.364</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-small-samples_differences">
+		<title>Test Statistic for a Difference Between Means</title>
+		<p>We may also wish to conduct a hypothesis test for the difference between population means when the sample from one or both of those populations is small, meaning less than 30. To do this, we must make one additional assumption. Just as was done when building confidence intervals for differences using small sample means, we must assume that the variances of the two populations are equal. Recall that this assumption lead us to use a <xref ref="def_pooled-variance" text="custom">pooled variance estimate</xref>, given by:
+			<me>s^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}</me>,
+		where <m>s_1</m> is the standard deviation of the first sample of size <m>n_1</m> and <m>s_2</m> is the standard deviation of the second sample of size <m>n_2</m>. While we do not expect that <m>s_1^2 = s_2^2</m>, we do assume that they both will be close to the same common variance <m>\sigma^2</m>, and we therefore use <m>\sigma^2 \approx s^2</m> as our approximation in the following test statistic computation.</p>
+		<theorem xml:id="thm_test-statistics-small-sample-differences">
+			<title>Test Statistic for a Difference Between Small-Sample Means</title>
+			<statement>
+				<p>The test statistic for a difference between sample means <m>(\overline{x}_1 - \overline{x}_2)</m> use to test the assumption that <m>(\mu_1 - \mu_2) = d_0</m> where at least one of the sample sizes is less than 30 is given by:
+				  <me>t_{\text{test}} = \frac{(\overline{x}_1 - \overline{x}_2) - d_0}{\sqrt{s^2\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}</me>.
+				  where <m>s^2</m> is the pooled variance estimator.</p>
+			</statement>
+		</theorem>
+		<p>Once again the test statistic we get is a member of the particular t-distribution having <m>n_1 + n_2 - 2</m> degrees of freedom. This will be important once we start actually conducting the hypothesis test. An example of this computation can be seen in the following problem.</p>
+		<example xml:id="examp_ht-small-samples_differences">
+			<title>Computing the Test Statistic for a Small Sample Difference Between Means</title>
+			<statement>
+				<p>You believe that moon rocks contain less iron than do earth rocks. To test this hypothesis, you collect a sample of 300 rocks from all over the earth and find that they contain an average of 6.7 grams per cubic inch of iron with a standard deviation of 2.9 grams per cubic inch. You only have access to six moon rocks, however, and find that they have an average of 2.4 grams per cubic inch with a standard deviation of 0.35 grams per cubic inch. State hypotheses for this test and determine the test statistic.</p>
+			</statement>
+			<solution>
+				<p>The claim we are testing is that moon rocks contain less iron than do earth rocks. This is a claim involving <q><m>\lt</m></q> and should therefore be the alternative hypothesis. This leads to the following hypotheses, where the moon rocks are population one and earth rocks population two.
+				  <md>
+				  	<mrow>H_0\amp:\ \mu_1 - \mu_2 \geq 0</mrow>
+				  	<mrow>H_A\amp:\ \mu_1 - \mu_2 \lt 0</mrow>
+				  </md>
+				</p>
+				<p>We must assume that the standard deviations are the same in both populations<mdash/>even though in our samples they are fairly different. We therefore combine the standard deviations to get the following pooled estimate:
+				  <me>s^2 = \frac{ (6-1)(0.35)^2 + (300-1)(2.9)^2}{6+300-2} = 8.27369</me>.</p>
+				<p>Using this in the computation of the test statistic, along with the null hypothesis assumption that the two means are equal, we get the value shown below.
+					<me>t_{\text{test}} = \frac{ (2.4-6.7) - 0 }{\sqrt{8.27369\left(\frac{1}{6}+\frac{1}{300}\right)}} \approx -3.626</me>.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-small-samples_differences-1">
+			<caption>Test Statistic for a Difference Between Small-Sample Means I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-03.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-small-samples_differences-2">
+			<caption>Test Statistic for a Difference Between Small-Sample Means II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-small-samples_differences-1">
+			<statement>
+				<p>A sports statistician believes that the winner of the super bowl, on average, scores at least one touch-down (seven points) more than the loser. To test this theory, the scores of 12 winning teams are averaged to get 26.4 with a standard deviation of 4.6 points. The scores of 11 losing teams are also averaged to get 17.5 with a standard deviation of 5.2 points.</p>
+				<p>Question: what is the test statistic for this test? Round your answer to three decimal places.</p>
+			</statement>
+			<answer><p>0.9295</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-small-samples_differences-2">
+			<statement>
+				<p>The air force is evaluating two possible jet fighters based on their top speed. They wish to decide if the top speeds of fighter A and fighter B are the same. In a sample of flights from fighters A and B the following average top speeds are observed.</p>
+				<table>
+					<title>Fighter Speed Statistics</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Sample Mean</cell>
+							<cell>Sample St.Dev.</cell>
+						</row>
+						<row>
+							<cell>Fighter A</cell>
+							<cell><m>n_1 = 8</m></cell>
+							<cell>mach 2.89</cell>
+							<cell>mach 0.19</cell>
+						</row>
+						<row>
+							<cell>Fighter B</cell>
+							<cell><m>n_2 = 6</m></cell>
+							<cell>mach 2.71</cell>
+							<cell>mach 0.14</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the test statistic for this hypothesis test?</p>
+			</statement>
+			<answer><p>1.95</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-small-samples_traditional">
+		<title>The Traditional Test</title>
+		<p>A traditional hypothesis test using test statistics and critical values drawn from a t-distribution works in much the same way as tests using the normal distribution. Recall that the four steps are:
+			<ol label="1">
+				<li><p>State the null and alternative hypotheses (done).</p></li>
+				<li><p>Compute the test statistic (done).</p></li>
+				<li><p>Find the rejection region and the critical values that separate it from the acceptance region.</p></li>
+				<li><p>Determine if the test statistic is in the rejection region, in which case we reject the null hypothesis, or in the acceptance region, in which case we fail to reject the null hypothesis.</p></li>
+			</ol>
+		</p>
+		<p>The one catch, as mentioned previously, is that we must choose our critical values from the t-distribution with the appropriate number of degrees of freedom. The value of df will vary with the sample size or sizes with which we are working, but the formulas are the same as those
+		found in <xref ref="sec_ci-small-samples"/> and restated below.
+		  <ul>
+		  	<li><title>Single Sample Mean</title>
+		  	  <p>Degrees of freedom is one less than the sample size: <m>df = n - 1</m>.</p></li>
+		  	<li><title>Difference Between Means</title>
+		  	  <p>Degrees of freedom is two less than the sum of the sample sizes: <m>df = n_1 + n_2 - 2</m>.</p></li>
+		  </ul>
+		</p>
+		<p>Let&apos;s revisit the two examples we've seen in this lesson so far, finishing them off with a traditional hypothesis test.</p>
+		<example xml:id="examp_ht-small-samples_traditional-mean">
+			<title>Conducting a Traditional Hypothesis Test for a Small Sample Mean</title>
+			<statement>
+				<p>You believe that the average lifespan of a supernova is 74 days. Because supernovas are so rare (approximately one every 50 years in our galaxy), you can only find accurate records from 7 supernovas to use in your data. Their average lifespan was 63.8 days with a standard deviation of 12.6 days. Conduct a traditional hypothesis test at the <m>\alpha = 0.10</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>We have previously seen that the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ \mu = 74</mrow>
+						<mrow>H_A\amp:\ \mu \not= 74</mrow>
+					</md>
+				</p>
+				<p>And the test statistic is:
+					<me>t_{\text{test}} = \frac{63.8 - 74}{12.6/\sqrt{7}} \approx -2.142</me>.</p>
+				<p>Since this is a two-tailed hypothesis test, the rejection region will split the significance level of <m>\alpha = 0.10</m> into two tails with area <m>0.05</m> each as shown below.</p>
+				<figure xml:id="fig_ht-small-samples_examp_traditional-mean">
+					<caption>Critical Region for <xref ref="examp_ht-small-samples_traditional-mean"/></caption>
+					<image width="60%" xml:id="image_ht-small-samples_examp_traditional-mean">
+						<latex-image>
+							<xi:include href="./latex-images/ht-small-samples_examp_traditional-mean.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>The number of degrees of freedom is <m>7 - 1 = 6</m>. Therefore, from the t-distribution table, the critical values are <m>1.943</m> for the right tail, and <m>-1.943</m> for the left tail. Because our test statistic of <m>t_\text{test} = -2.142</m> is further into the left tail than the critical value -1.943, it is in the rejection region. We therefore must reject the null hypothesis. There is evidence <xref ref="table_significance-levels" text="custom">tending towards significance</xref> that supernovas do not have an average lifespan of 74 days.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-small-samples_traditional-differences">
+			<title>Conducting a Traditional Hypothesis Test for a Difference Between Small Sample Means</title>
+			<statement>
+				<p>You believe that moon rocks contain less iron than do earth rocks. To test this hypothesis, you collect a sample of 300 rocks from all over the earth and find that they contain an average of 6.7 grams per cubic inch of iron with a standard deviation of 2.9 grams per cubic inch. You only have access to six moon rocks, however, and find that they have an average of 2.4 grams per cubic inch with a standard deviation of 0.35 grams per cubic inch. Conduct a traditional hypothesis test at the <m>\alpha = 0.05</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>From previous work, the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ \mu_1 - \mu_2 \geq 0</mrow>
+						<mrow>H_A\amp:\ \mu_1 - \mu_2 \lt 0</mrow>
+					</md>
+				</p>
+				<p>Our test statistic is:
+					<me>t_{\text{test}} = \frac{ (2.4-6.7) - 0 }{\sqrt{8.27369\left(\frac{1}{6}+\frac{1}{300}\right)}} \approx -3.626</me>.</p>
+				<p>This is a left-tailed test (note that the alternative hypothesis involves <q><m>\lt</m></q>) and therefore our critical value will be negative. To find it, we look up the positive critical value in the t-distribution table that leaves an area of <m>0.05</m> (the significance level) in the right tail and has 
+				  <me>df = 300 + 6 - 2 = 304</me>
+				degrees of freedom. This is clearly 30+, so we use the value <m>1.645</m> from the t-distribution table. To get the left-tail critical value, we change the sign to get -1.645 as shown below.</p>
+				<figure xml:id="fig_ht-small-samples_examp_traditional-differences">
+					<caption>Critical Region for <xref ref="examp_ht-small-samples_traditional-differences"/></caption>
+					<image width="60%" xml:id="image_ht-small-samples_examp_traditional-differences">
+						<latex-image>
+							<xi:include href="./latex-images/ht-small-samples_examp_traditional-differences.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Since our test statistic of <m>t_\text{test} = -3.626</m> is much more extreme than the critical value <m>-1.645</m>, we reject the null hypothesis. There is statistically significant evidence that the iron content of moon rocks is less than that of rocks on earth.</p>
+			</solution> 
+		</example>
+
+		<figure xml:id="video_ht-small-samples_traditional-1">
+			<caption>Traditional Hypothesis Tests</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-05.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-small-samples_traditional-2">
+			<caption>Traditional Hypothesis Tests</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-small-samples_traditional-1">
+			<statement>
+				<p>A sports statistician believes that the winner of the super bowl, on average, scores at least one touch-down (seven points) more than the loser. To test this theory, the scores of 12 winning teams are averaged to get 26.4 with a standard deviation of 4.6 points. The scores of 11 losing teams are also averaged to get 17.5 with a standard deviation of 5.2 points.</p>
+				<p>Question: what conclusion should be made about the statistician&apos;s claim? Use a traditional hypothesis test at the <m>\alpha = 0.10</m> significance level.</p>
+			</statement>
+			<answer><p>No evidence the winners score at least one touch-down more than the losers.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-small-samples_traditional-2">
+			<statement>
+				<p>You believe that the average loudness of a rock concert in decibels is at least 117 db. To test this, you visit eleven rock concerts and find an average decibel level of 121 db with a standard deviation of 7.8 db.</p>
+				<p>Question: what conclusion should you make? Use a traditional test at the <m>\alpha = 0.10</m> significance level.</p>
+			</statement>
+			<answer><p>Reject the null hypothesis</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_ht-small-samples_p-value">
+		<title>Difficulties of the P-Value Test</title>
+		<p>What about p-value tests? Up to this point, while we&apos;ve done both traditional and p-value hypothesis tests, p-value tests have been a little more useful since we find the actual probability of finding a sample at least as extreme as the one we got. This allows those who are reading our work to make up their own minds on what significance level should be used. However, when dealing with t-distributions, we run into a problem. Consider the portion of the t-distribution table show below.</p>
+		<table xml:id="table_ht-small-samples_p-value">
+			<title>t-Distribution Table</title>
+			<tabular>
+				<col right="medium" halign="center"></col>
+				<col></col>
+				<col halign="right"></col>
+				<col></col>
+				<col halign="right"></col>
+				<col></col>
+				<col halign="right"></col>
+				<col></col>
+				<col halign="right"></col>
+				<col></col>
+				<col halign="right"></col>
+				<row bottom="medium">
+					<cell>df</cell>
+					<cell></cell>
+					<cell halign="center"><m>t_{0.100}</m></cell>
+					<cell></cell>
+					<cell halign="center"><m>t_{0.050}</m></cell>
+					<cell></cell>
+					<cell halign="center"><m>t_{0.025}</m></cell>
+					<cell></cell>
+					<cell halign="center"><m>t_{0.010}</m></cell>
+					<cell></cell>
+					<cell halign="center"><m>t_{0.005}</m></cell>
+				</row>
+				<row>
+					<cell>1</cell>
+					<cell></cell>
+					<cell>3.078</cell>
+					<cell></cell>
+					<cell>6.314</cell>
+					<cell></cell>
+					<cell>12.706</cell>
+					<cell></cell>
+					<cell>31.821</cell>
+					<cell></cell>
+					<cell>63.657</cell>
+				</row>
+				<row>
+					<cell>2</cell>
+					<cell></cell>
+					<cell>1.886</cell>
+					<cell></cell>
+					<cell>2.920</cell>
+					<cell></cell>
+					<cell>4.303</cell>
+					<cell></cell>
+					<cell>6.965</cell>
+					<cell></cell>
+					<cell>9.925</cell>
+				</row>
+				<row>
+					<cell>3</cell>
+					<cell></cell>
+					<cell>1.638</cell>
+					<cell></cell>
+					<cell>2.353</cell>
+					<cell></cell>
+					<cell>3.182</cell>
+					<cell></cell>
+					<cell>4.541</cell>
+					<cell></cell>
+					<cell>5.841</cell>
+				</row>
+				<row>
+					<cell>4</cell>
+					<cell></cell>
+					<cell>1.533</cell>
+					<cell></cell>
+					<cell>2.132</cell>
+					<cell></cell>
+					<cell>2.776</cell>
+					<cell></cell>
+					<cell>3.747</cell>
+					<cell></cell>
+					<cell>4.604</cell>
+				</row>
+				<row>
+					<cell>5</cell>
+					<cell></cell>
+					<cell>1.476</cell>
+					<cell></cell>
+					<cell>2.015</cell>
+					<cell></cell>
+					<cell>2.571</cell>
+					<cell></cell>
+					<cell>3.365</cell>
+					<cell></cell>
+					<cell>4.032</cell>
+				</row>
+			</tabular>
+		</table>
+		<p>Suppose we wanted to find the p-value for a right-tailed test statistic <m>t_\text{test} = 2.316</m> with four degrees of freedom. In the normal distribution table, we would look up the z-score for our test statistic and find the probability. But the t-distribution table is much more limited. The t-scores are in the body of the table, and the probabilities for this small selection of t-scores are listed in the column headings. </p>
+		<p>So, for this example, we would have to look in the <m>df = 4</m> row and observe that the test statistic of <m>2.316</m> is between <m>2.132</m> and <m>2.776</m>. Therefore it&apos;s p-value is between <m>0.05</m> and <m>0.025</m>, the probabilities that are at the top of those two columns. Notice that the order changed because a larger test statistic will have a smaller p-value. So, we&apos;ll reorder this and state that the p-value is between 0.025 and 0.05.</p>
+		<p>While this is the best we can do with test statistics from t-distributions using tables, we could use a computer to find p-values for any <m>t_\text{test}</m> statistic.  That process depends on the specific computer program being used and is beyond the scope of this text.</p>
+		<example xml:id="examp_ht-small-samples_p-value_mean">
+			<title>Estimating p-Values for a Small Sample Mean</title>
+			<statement>
+				<p>You believe that the average lifespan of a supernova is 74 days. Because supernovas are so rare (approximately one every 50 years in our galaxy), you can only find accurate records from 7 supernovas to use in your data. Their average lifespan was 63.8 days with a standard deviation of 12.6 days. Conduct a p-value test for this claim, giving a range into which the p-value must fall.</p>
+			</statement>
+			<solution>
+				<p>We have previously seen that the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ \mu = 74</mrow>
+						<mrow>H_A\amp:\ \mu \not= 74</mrow>
+					</md>
+				</p>
+				<p>The test statistic is:
+					<me>t_{\text{test}} = \frac{63.8 - 74}{12.6/\sqrt{7}} \approx -2.142</me>.</p>
+				<p>This test statistic has an absolute value between the entries <m>1.943</m> and <m>2.447</m> in the <m>df = 7 - 1 = 6</m> degrees of freedom row of the t-distribution table. Therefore, it lies between the critical values <m>-2.447</m> and <m>-1.943</m> on the negative side of the distribution. The probability of being further into the left-tail must therefore be somewhere between 0.025 and 0.050. Doubling these because this is a two-tailed test, the p-value for this test statistic is somewhere between 0.05 and 0.10.</p>
+				<p>We therefore will reject the null hypothesis at the <m>\alpha = 0.10</m> significance level, but fail to reject it at the 0.05 and 0.01 significance level. There is evidence <xref ref="table_significance-levels" text="custom">tending towards significance</xref> that the mean lifespan of a supernova is different from 74 days, but there is not statistically significant or highly significant evidence that the mean is different from 74 days.</p>
+			</solution>
+		</example>
+		<example xml:id="examp_ht-small-samples_p-value_difference">
+			<title>Estimating p-Values for a Small Sample Difference Between Means</title>
+			<statement>
+				<p>You believe that moon rocks contain less iron than do earth rocks. To test this hypothesis, you collect a sample of 300 rocks from all over the earth and find that they contain an average of 6.7 grams per cubic inch of iron with a standard deviation of 2.9 grams per cubic inch. You only have access to six moon rocks, however, and find that they have an average of 2.4 grams per cubic inch with a standard deviation of 0.35 grams per cubic inch. Conduct a p-value test for this claim, giving a range into which the p-value must fall.</p>
+			</statement>
+			<solution>
+				<p>From previous work, the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ \mu_1 - \mu_2 \geq 0</mrow>
+						<mrow>H_A\amp:\ \mu_1 - \mu_2 \lt 0</mrow>
+					</md>
+				</p>
+				<p>The test statistic is:
+					<me>t_{\text{test}} = \frac{ (2.4-6.7) - 0 }{\sqrt{8.27369\left(\frac{1}{6}+\frac{1}{300}\right)}} \approx -3.626</me>.</p>
+				<p>Because we have a degrees of freedom that is 30 or more, (6 + 300 - 2 = 304), we use the bottom row of the t-distribution table. The test statistic of -3.626 has an absolute value greater than the largest value of 2.576, which goes with a probability of 0.005 in the tail. Therefore, the p-value for this test statistic is smaller than 0.005 and we would reject the null hypothesis at any significance level. The evidence that moon rocks contain less iron than do rocks found on earth is extremely strong.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_ht-small-samples_p-value-1">
+			<caption>P-Values for t-Distribution Test Statistics I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-07.mp4"/>
+		</figure>
+		<figure xml:id="video_ht-small-samples_p-value-2">
+			<caption>P-Values for t-Distribution Test Statistics II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_ht-small-samples_p-value-1">
+			<statement>
+				<p>A dentist believes that professional boxers require more than the average 3 fillings found in the average person. To test this hypothesis, the dentist contacts a sample of 13 professional boxers and finds that they have an average of 4.2 fillings with a standard deviation of 1.83.</p>
+				<p>Question: the P-value for this test is no more than what value from the t-distribution table?</p>
+			</statement>
+			<answer><p>0.025</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_ht-small-samples_p-value-2">
+			<statement>
+				<p>The air force is evaluating two possible jet fighters based on their top speed. They wish to decide if the top speeds of fighter A and fighter B are the same. In a sample of flights from fighters A and B the following average top speeds are observed.</p>
+				<table>
+					<title>Fighter Speed Statistics</title>
+					<tabular>
+						<col right="medium"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell></cell>
+							<cell>Sample Size</cell>
+							<cell>Sample Mean</cell>
+							<cell>Sample St.Dev.</cell>
+						</row>
+						<row>
+							<cell>Fighter A</cell>
+							<cell><m>n_1 = 8</m></cell>
+							<cell>mach 2.89</cell>
+							<cell>mach 0.19</cell>
+						</row>
+						<row>
+							<cell>Fighter B</cell>
+							<cell><m>n_2 = 6</m></cell>
+							<cell>mach 2.71</cell>
+							<cell>mach 0.14</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the smallest upper bound on the p-value for this test from the t-distribution table?</p>
+			</statement>
+			<answer><p>0.100</p></answer>
+		</exercise>
+	</subsection>
+
+</section>
