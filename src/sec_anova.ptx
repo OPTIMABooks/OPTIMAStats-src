@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_anova">
+  <title>Analysis of Variance</title>
+
+  <introduction xml:id="sec_anova_intro">
+  	<title>Testing Multiple Means</title>
+  	<p>In chapter five, we saw how a hypothesis test could be used to decide if there is evidence that two populations have the same mean. What do we do, however, if we want to look at more than two populations? Consider the following example.</p>
+  	<example xml:id="examp_anova_multiple-tests">
+  		<title>Testing a Claim About Three Populations</title>
+  		<statement>
+  			<p>A tomato farmer wishes to determine if there is any difference in the heights of tomato plants grown with three different types of fertilizer. To test this, he grows four tomato plants each using fertilizers <m>A</m>, <m>B</m>, and <m>C</m>. He finds the following data. How can this data be used to test the farmer&apos;s claim?</p>
+  			<table>
+  				<title>Tomato Plant Heights</title>
+  				<tabular>
+  					<col></col>
+  					<col></col>
+  					<row>
+  						<cell>Fertilizer A:</cell>
+  						<cell>32, 29, 34, 31</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer B:</cell>
+  						<cell>30, 27, 33, 32</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer C:</cell>
+  						<cell>28, 31, 29, 30</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  		</statement>
+  		<solution>
+  			<p>We could test this using three hypothesis tests for the mean heights observed using fertilizers A, B, and C.</p>
+  			<sidebyside width="25%" margins="auto">
+  				<p>Test 1:
+  				  <md>
+  				  	<mrow>H_0\amp:\ \mu_A = \mu_B</mrow>
+  				  	<mrow>H_A\amp:\ \mu_A \not= \mu_B</mrow>
+  				  </md>
+  				</p>
+   				<p>Test 2:
+  				  <md>
+  				  	<mrow>H_0\amp:\ \mu_A = \mu_C</mrow>
+  				  	<mrow>H_A\amp:\ \mu_A \not= \mu_C</mrow>
+  				  </md>
+  				</p>
+  				<p>Test 3:
+  				  <md>
+  				  	<mrow>H_0\amp:\ \mu_B = \mu_C</mrow>
+  				  	<mrow>H_A\amp:\ \mu_B \not= \mu_C</mrow>
+  				  </md>
+  				 </p>
+  			</sidebyside>
+  			<p>If in each of the three tests we fail to reject the null hypothesis, then there is no evidence that the fertilizers correspond to different heights.</p>
+  		</solution>
+  	</example>
+  	<p>There is, however, a problem. In each of these hypothesis tests, there is a chance that we make the wrong decision. For example, suppose we used the <m>\alpha = 0.05</m> significance level on each test. The <xref ref="def_probability-rule_complement" text="custom">complement rule</xref> tells us that there is a <m>1 - \alpha = 0.95</m> probability that we will correctly identify equal means. But if we do this three times, using the <xref ref="thm_probability-rule_general-multiplication" text="custom">multiplication rule</xref>, the probability that we correctly identify all three means as equal is only 
+  	<me>(0.95)(0.95)(.95) = 0.8574</me>.
+  	The more means we add to this mix (suppose there were, for example, four fertilizers) the worse our chances become. The above is an example of how conducting multiple tests increases the probability that we make an error. To remedy this, we will introduce a way to check if multiple means are equal using a single test. This process is called an Analysis of Variance test, or <term>ANOVA test</term> for short.</p>
+  	<definition xml:id="def_anova">
+  		<idx>analysis of variance</idx>
+  		<idx><h>hypothesis test</h><h>anova test</h></idx>
+  		<statement>
+  			<p>An <term>ANOVA Test</term>, short for <term>Analysis of Variance test</term>, is used to test hypotheses concerning three or more population means.</p>
+  		</statement>
+  	</definition>
+  	<p>In this section, we will see how to set up and conduct this type of test.</p>
+  </introduction>
+
+  <objectives xml:id="sec_anova_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>ANOVA Hypotheses</p></li>
+					<li><p>ANOVA Table</p></li>
+					<li><p>ANOVA Test</p></li>
+					<li><p>F-Distribution</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Formulate hypotheses for an ANOVA test</p></li>
+					<li><p>Identify the parts of an ANOVA table</p></li>
+					<li><p>Fill in missing parts of an ANOVA table</p></li>
+					<li><p>Determine the results of an ANOVA test for a given critical value and test statistic</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_anova_hypotheses">
+		<title>ANOVA Hypotheses</title>
+		<p>Because the Analysis of Variance test is a single hypothesis test, it uses a single null and alternative hypothesis involving the means of our populations. In an ANOVA test, the various populations are often referred to as the treatment groups. This is because the test was originally designed to test for differences between groups in an experiment that received differing treatments. The null hypothesis for an ANOVA test is that the different treatments all have the same mean. The alternative, is that at least one of those means is different. This is summarized below.</p>
+		<principle xml:id="thm_hypotheses-anova">
+			<title>ANOVA Hypotheses</title>
+			<statement>
+				<p>To conduct an ANOVA test for treatments <m>1, 2, \ldots, n</m> we use the following hypotheses.
+				  <md>
+				  	<mrow>H_0\amp:\ \mu_1 = \mu_2 = \cdots = \mu_n</mrow>
+				  	<mrow>H_A\amp:\ \text{at least one mean is different}</mrow>
+				  </md>
+				</p>
+			</statement>
+		</principle>
+		<p>Let&apos;s see what this would look like in the example from the first page of this lesson.</p>
+		<example xml:id="examp_anova_hypotheses">
+			<title>Stating Hypotheses for an ANOVA Test</title>
+			<statement>
+				<p>A tomato farmer wishes to determine if there is any difference in the heights of tomato plants grown with three different types of fertilizer. To test this, he grows four tomato plants each using fertilizers A, B, and C. He finds the following data. What hypotheses should be used to test the farmer&apos;s claim?</p>
+				<table>
+  				<title>Tomato Plant Heights</title>
+  				<tabular>
+  					<col></col>
+  					<col></col>
+  					<row>
+  						<cell>Fertilizer A:</cell>
+  						<cell>32, 29, 34, 31</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer B:</cell>
+  						<cell>30, 27, 33, 32</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer C:</cell>
+  						<cell>28, 31, 29, 30</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  		</statement>
+  		<solution>
+  			<p>To conduct an ANOVA test of the farmer&apos;s claim, the null hypothesis is that the average height found in all three groups of tomatos are the same. These three groups represent the three treatments<mdash/>the different types of fertilizer. Thus, the null and alternative hypotheses are:
+  			  <md>
+  			  	<mrow>H_0\amp:\ \mu_A = \mu_B = \mu_C</mrow>
+  			  	<mrow>H_A\amp:\ \text{at least one group of plants has a different mean height}</mrow>
+  			  </md>
+  			Notice that the null hypothesis says that all three means are equal.  The opposite of that is not <m>\mu_A \not= \mu_B \not=\mu_C</m>, which says none of the means are equal.  If the mean height for fertilizaer A and B were the same, but C was different, the null hypothesis would still be false.  So we usually just state in words that <q>at least one of the means is different</q> instead of trying to write out our alternative hypothesis symbolically.</p>
+  		</solution>
+  	</example>
+
+  	<figure xml:id="video_anova_hypotheses-1">
+  		<caption>ANOVA Hypotheses I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-01.mp4"/>
+  	</figure>
+  	<figure xml:id="video_anova_hypotheses-2">
+  		<caption>ANOVA Hypotheses II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-02.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_anova_hypotheses-1">
+  		<statement>
+  			<p>Suppose that the ANOVA null hypothesis for a certain test is: 
+  				<me>H_0:\ \mu_1 = \mu_2 = \mu_3 = \mu_4</me>
+  			</p>
+  			<p>Question: what is the alternative to this null hypothesis?</p>
+  		</statement>
+  		<answer><p><m>H_A:\ \text{At least one of the means is not equal}</m></p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_anova_hypotheses-2">
+  		<statement>
+  			<p>A consumer watchdog group wishes to determine if three toothpaste brands have the same whitening power. To test this, they collect samples from all three types of toothpastes and record their whitening power. They plan to conduct an ANOVA test using this data.</p>
+  			<p>Question: if <m>\mu_1</m>, <m>\mu_2</m>, and <m>\mu_3</m> are the average whitening powers of the three toothpaste brands, what should the null hypothesis be for this ANOVA test?</p>
+  		</statement>
+  		<answer><p><m>H_0:\ \mu_1 = \mu_2 = \mu_3</m></p></answer>
+  	</exercise>
+  </subsection>
+
+  <subsection xml:id="sec_anova_tables">
+  	<title>ANOVA Tables</title>
+  	<p>Computing the test statistic for an ANOVA test can, unfortunately, be somewhat involved. The basic idea is that we are going to compare the variation within treatment groups to the variation between treatment groups. This will allow us to determine how much of the overall variation in our data is due to the randomness of our samples, and how much is due to an actual difference between treatment means. While the mathematics of how these variations are computed is beyond the scope of this text, in the example below, we examine a graphical representation of these variations to help us understand what is being computed.</p>
+  	<example xml:id="examp_anova-graphical">
+  		<title>Illustrating the ANOVA Test</title>
+  		<statement>
+  			<p>Use a graph to illustrate and compare the variation in heights within each group of tomato plants to that between the groups of tomato plants seen in <xref ref="examp_anova_hypotheses"/>.  The heights are given in the table below.</p>
+  			<table>
+  				<title>Tomato Plant Heights</title>
+  				<tabular>
+  					<col></col>
+  					<col></col>
+  					<row>
+  						<cell>Fertilizer A:</cell>
+  						<cell>32, 29, 34, 31</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer B:</cell>
+  						<cell>30, 27, 33, 32</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer C:</cell>
+  						<cell>28, 31, 29, 30</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  		</statement>
+  		<solution>
+  			<p>In the figure below, each tomato plant height is represented by a black shape. They are grouped by the type of fertilizer used.</p>
+  			<figure xml:id="fig_anova_examp_graphical">
+  				<caption>Illustration of Tomato Plant Heights</caption>
+  				<image width="80%" xml:id="image_anova_examp_graphical">
+  					<latex-image>
+  						<xi:include href="./latex-images/anova_examp-graphical.tex" parse="text"/>
+  					</latex-image>
+  				</image>
+  			</figure>
+  			<p>As we try to understand the variation in our data, observe the following from this illustration.
+  				<ul>
+  					<li><p>Each of the three groups overlaps<mdash/>that is, the highest value in each group is larger than the lowest value in either of the other groups and the lowest value in each group is lower than the highest value in each of the others.</p></li>
+  					<li><p>The overall mean of all twelve data points is relatively close to the individual means of each group.</p></li>
+  					<li><p>If we measure the horizontal variation within each group and compare that to the variation between the means of the groups, we see that they are very similar<mdash/>one is not clearly larger than the other.</p></li>
+  				</ul>
+  			</p>
+  		</solution>
+  	</example>
+
+  	<p>Creating a graph like this any time we wish to conduct an ANOVA test would be involved and would require a lot of <q>guess-work</q> when analyzing it.  Instead, we use the mathematical computations mentioned earlier to create what is called an <term>ANOVA table</term>.  While we won&apos;t go into the details of how each entry in the table is computed, it is important to understand what the entries represent and how they are related to each other.</p>
+  	<definition xml:id="def_anova-table">
+  		<idx>anova table</idx>
+  		<idx><h>hypotheses tests</h><h>anova</h><h>anova table</h></idx>
+  		<statement>
+				<p>A table for a one-way analysis of variance test of <m>k</m> different treatment groups containing a total of <m>n</m> values, called an <term>ANOVA Table</term>, has the following entries.</p>
+				<table xml:id="table_anova-table">
+					<title>General ANOVA Table</title>
+					<tabular>
+						<col halign="left"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Source</cell>
+							<cell>df</cell>
+							<cell>Sum Squares</cell>
+							<cell>Mean Squares</cell>
+							<cell><m>F_\text{test}</m></cell>
+						</row>
+						<row>
+							<cell>Treatments</cell>
+							<cell><m>k - 1</m></cell>
+							<cell>SST</cell>
+							<cell>MST</cell>
+							<cell>MST/MSE</cell>
+						</row>
+						<row bottom="medium">
+							<cell>Error</cell>
+							<cell><m>n - k</m></cell>
+							<cell>SSE</cell>
+							<cell>MSE</cell>
+							<cell></cell>
+						</row>
+						<row>
+							<cell>Total</cell>
+							<cell><m>n - 1</m></cell>
+							<cell>TSS</cell>
+							<cell></cell>
+							<cell></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>The components of the table are:
+					<ul>
+						<li><title>Treatment degrees of freedom (df)</title>
+						  <p>The number of treatments, which we call <m>k</m>, minus one.</p></li>
+						<li><title>Error degrees of freedom (df)</title>
+						  <p>The total number of values, <m>n</m>, minus the number of treatments, <m>k</m>.</p></li>
+						<li><title>Total degrees of freedom</title>
+						  <p>Sum of the treatment and error degrees of freedom: <m>(k-1) + (n - k) = n - 1</m>.</p></li>
+						<li><title>Sum of the Squares of the Treatments (SST)</title>
+						  <p>This measures the variation between the treatment groups.</p></li>
+						<li><title>Sum of the Squares of the Error (SSE)</title>
+						  <p>This measures the variation within the treatment groups, due to random sampling <q>error</q>.</p></li>
+						<li><title>Total Sum of the Squares (TSS)</title>
+						  <p>Again, the total is the sum of treatment and error values: TSS = SST + SSE.</p></li>
+						<li><title>Mean Squares of the Treatments (MST)</title>
+						  <p>This is SST divided by the treatments degrees of freedom, <m>k-1</m></p></li>
+						<li><title>Mean Squares of the Error (MSE)</title>
+						  <p>This is SSE divided by the errors degree of freedom, <m>n-k</m>.</p></li>
+						<li><title>Test Statistic (<m>F_\text{test}</m>)</title>
+						  <p>This is the test statistic which is the ratio of the average variation due to differences between treatments to the average variation due to sampling error (MST / MSE).</p></li>
+					</ul>
+				</p>
+  		</statement>
+  	</definition>
+  	<p>Just because we will not not learn how to compute these values doesn&apos;t mean we can&apos;t build ANOVA tables.  Software packages that do statistics, such as Excel, can create ANOVA tables for us. Our task will be to identify and interpret the values contained in such tables.</p>
+  	<example xml:id="examp_anova_table">
+  		<title>Filling In an ANOVA Table</title>
+  		<statement>
+  			<p>A tomato farmer wishes to determine if there is any difference in the heights of tomato plants grown with three different types of fertilizer. To test this, he grows four tomato plants each using fertilizers A, B, and C. He finds the following data.</p>
+  			<table>
+  				<title>Tomato Plant Heights</title>
+  				<tabular>
+  					<col></col>
+  					<col></col>
+  					<row>
+  						<cell>Fertilizer A:</cell>
+  						<cell>32, 29, 34, 31</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer B:</cell>
+  						<cell>30, 27, 33, 32</cell>
+  					</row>
+  					<row>
+  						<cell>Fertilizer C:</cell>
+  						<cell>28, 31, 29, 30</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>A computer program indicates that the sum of the squares of the treatments is SST = 8 and the total sum of the squares is TSS = 47.  Use this information to construct an ANOVA table for the farmer&apos; data.</p>
+  		</statement>
+  		<solution>
+  			<p>We will analyze the data and fill in the ANOVA table one column at a time.
+  				<ul>
+  					<li><title>Degrees of Freedom</title>
+  					  <p>In our height data we see a total of twelve measurements, so <m>n=12</m>.  We have three different treatment groups (the three fertilizers), so <m>k = 3</m>.  This gives us the following degrees of freedom:
+  					    <ul>
+  					    	<li><p>Treatments: <m>k - 1 = 3 - 1 = 2</m></p></li>
+  					    	<li><p>Error: <m>n - k = 12 - 3 = 9</m></p></li>
+  					    	<li><p>Total: <m>n - 1 = 12 - 1 = 11</m></p></li>
+  					    </ul>
+  					  	As a double-check, we verify that the sum of the degrees of freedom for the treatments and error is equal to the total degrees of freedom, and indeed, <m>2 + 9 = 11</m>.</p></li>
+  					<li><title>Sum of the Squares</title>
+  					  <p>We are told that SST = 9 and TSS = 47.  Since we know that SST + SSE = SST, we can solve:
+  					  	<me>9 + \text{SSE} = 47 \Rightarrow \text{SSE} = 47 - 9 = 39</me></p></li>
+  					<li><title>Mean Squares</title>
+  					  <p>We get the mean squares by dividing the sum of the squares by the degrees of freedom.  In particular,
+  					  	<ul>
+  					  		<li><p>Treatment: <m>\text{MST} = \text{SST} / \text{df} = 8 / 2 = 4</m></p></li>
+  					  		<li><p>Error: <m>\text{MSE} = \text{SSE} / \text{df} = 39 / 9 \approx 4.3333</m></p></li>
+  					  	</ul>
+  					  	Note that there is no <q>total mean square</q> to compute.</p></li>
+  					<li><title><m>F_\text{test}</m> Statistic</title>
+  					  <p>Finally, we compute our test statistic by dividing the mean squares of the treatment by the mean squares of the error.  This gives
+  					  	<me>F_\text{test} = \text{MST} / \text{MSE} = 4 / 4.3333 \approx 0.923</me></p>
+  					</li>
+  				</ul>
+  				This results in the following ANOVA table.
+  			</p>
+  			<table xml:id="table_anova-examp_table">
+					<title>ANOVA Table for Tomato Plant Heights</title>
+					<tabular>
+						<col halign="left"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Source</cell>
+							<cell>df</cell>
+							<cell>Sum Squares</cell>
+							<cell>Mean Squares</cell>
+							<cell><m>F_\text{test}</m></cell>
+						</row>
+						<row>
+							<cell>Treatments</cell>
+							<cell><m>2</m></cell>
+							<cell><m>8</m></cell>
+							<cell><m>4</m></cell>
+							<cell><m>0.923</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Error</cell>
+							<cell><m>9</m></cell>
+							<cell><m>39</m></cell>
+							<cell><m>4.3333</m></cell>
+							<cell></cell>
+						</row>
+						<row>
+							<cell>Total</cell>
+							<cell><m>11</m></cell>
+							<cell><m>47</m></cell>
+							<cell></cell>
+							<cell></cell>
+						</row>
+					</tabular>
+  			</table>
+  		</solution>
+  	</example>
+  	<p>As we have stated, the <m>F_\text{test}</m> statistic measures how much of the variation within our samples can be attributed to difference between the treatments. The larger the value of this test statistic, the more variation there is between the populations, and the less likely it is that the means are all the same.  In order to make decisions based on this test statistic, we will need to know what distribution it comes from.</p>
+
+  	<figure xml:id="video_anova_table-1">
+  		<caption>ANOVA Tables I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-03.mp4"/>
+  	</figure>
+  	<figure xml:id="video_anova_table-2">
+  		<caption>ANOVA Tables II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-04.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_anova_tables-1">
+  		<statement>
+  			<p>Consider the following ANOVA table.</p>
+  			<table xml:id="table_ckpt_anova_tables-1">
+  				<title>ANOVA Table for Tomato Plant Heights</title>
+	  			<tabular>
+	  				<col halign="left"></col>
+	  				<col halign="center"></col>
+	  				<col halign="center"></col>
+	  				<col halign="center"></col>
+	  				<col halign="center"></col>
+	  				<row bottom="medium">
+	  					<cell>Source</cell>
+	  					<cell>df</cell>
+	  					<cell>Sum Squares</cell>
+	  					<cell>Mean Squares</cell>
+	  					<cell><m>F_\text{test}</m></cell>
+	  				</row>
+	  				<row>
+	  					<cell>Treatments</cell>
+	  					<cell><m>5</m></cell>
+	  					<cell><m>4.562</m></cell>
+	  					<cell><m>0.912</m></cell>
+	  					<cell><m>2.980</m></cell>
+	  				</row>
+	  				<row bottom="medium">
+	  					<cell>Error</cell>
+	  					<cell><m>12</m></cell>
+	  					<cell><m>3.667</m></cell>
+	  					<cell><m>0.306</m></cell>
+	  					<cell></cell>
+	  				</row>
+	  				<row>
+	  					<cell>Total</cell>
+	  					<cell><m>17</m></cell>
+	  					<cell><m>8.229</m></cell>
+	  					<cell></cell>
+	  					<cell></cell>
+	  				</row>
+	  			</tabular>
+  			</table>
+  			<p>Question: how many individuals were sampled in total? That is, what is <m>n</m>?</p>
+  		</statement>
+  		<answer><p>18</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_anova_tables-2">
+  		<statement>
+  			<p>Consider the following ANOVA table.</p>
+  			<table xml:id="table_ckpt_anova_tables-2">
+  				<title>ANOVA Table for Tomato Plant Heights</title>
+	  			<tabular>
+	  				<col halign="left"></col>
+	  				<col halign="center"></col>
+	  				<col halign="center"></col>
+	  				<col halign="center"></col>
+	  				<col halign="center"></col>
+	  				<row bottom="medium">
+	  					<cell>Source</cell>
+	  					<cell>df</cell>
+	  					<cell>Sum Squares</cell>
+	  					<cell>Mean Squares</cell>
+	  					<cell><m>F_\text{test}</m></cell>
+	  				</row>
+	  				<row>
+	  					<cell>Treatments</cell>
+	  					<cell><m>5</m></cell>
+	  					<cell><m>4.562</m></cell>
+	  					<cell><m>0.912</m></cell>
+	  					<cell><m>2.980</m></cell>
+	  				</row>
+	  				<row bottom="medium">
+	  					<cell>Error</cell>
+	  					<cell><m>12</m></cell>
+	  					<cell><m>3.667</m></cell>
+	  					<cell><m>0.306</m></cell>
+	  					<cell></cell>
+	  				</row>
+	  				<row>
+	  					<cell>Total</cell>
+	  					<cell><m>17</m></cell>
+	  					<cell><m>8.229</m></cell>
+	  					<cell></cell>
+	  					<cell></cell>
+	  				</row>
+	  			</tabular>
+  			</table>
+  			<p>Question: how many populations are involved? In other words, what is <m>k</m>?</p>
+  		</statement>
+  	</exercise>
+  </subsection>
+
+  <subsection xml:id="sec_anova_f-distribution">
+  	<title>The F Distribution</title>
+  	<p>The critical value in an ANOVA test is called <m>F_\text{test}</m> because it comes from the <term>F-distribution</term>. The F-distribution is a continuous probability distribution much like the <xref ref="def_normal-dist" text="custom">normal</xref> and <xref ref="def_student-t-distribution" text="custom">t-distributions</xref> with which we&apos;ve already worked. Like the t-distribution, the F-distribution is actually a family of distributions depending on a pair of degrees of freedom<mdash/>one for the numerator and one for the denominator. There are, however, several properties of the F-distribution which are different.</p>
+  	<definition xml:id="def_f-distribution">
+  		<idx>f-distribution</idx>
+  		<idx><h>probability</h><h>distributions</h><h>f-distribution</h></idx>
+  		<statement>
+  			<p>The <term>f-distribution</term> is a family of probability distributions depending on two degrees of freedom<mdash/>one for the numerator and one for the denominator. The f-distribution has the following properties:
+  			  <ul>
+  			  	<li><p>values in the f-distribution are non-negative (zero or greater)</p></li>
+  			  	<li><p>the F-distribution curve is skewed to the right</p></li>
+  			  	<li><p>The larger the two degrees of freedom become, the more mound-shaped the f-distribution becomes</p></li>
+  			  </ul>
+  			</p>
+  		</statement>
+  	</definition>
+  	<p>The picture below shows the f-distribution with several different pairs of degrees of freedom.</p>
+  	<figure xml:id="fig_anova_f-distributions">
+  		<caption>Various f-Distributions</caption>
+  		<image width="60%" xml:id="image_anova_f-distributions">
+  			<latex-image>
+  				<xi:include href="./latex-images/anova_f-distributions.tex" parse="text"/>
+  			</latex-image>
+  		</image>
+  	</figure>
+  	<p>We could use a table of critical values to look up probabilities for the f-distribution, or to look up critical values for a given probability in the tail. However, because we will only use this distribution in this one section, and will rely on technology for constructing our ANOVA tables, it also makes sense to rely on technology to compute critical values and probabilities from the f-distribution.</p>
+
+  	<exercise xml:id="ckpt_anova_f-distribution-1">
+  		<statement>
+  			<p>Recall that the f-distribution has the following probability density curve.</p>
+  			<figure xml:id="fig_anova_ckpt_f-distribution-1">
+  				<caption>f-Distribution Density Curve</caption>
+  				<image xml:id="image_anova_ckpt_f-distribution-1" width="60%">
+  					<latex-image>
+  						<xi:include href="./latex-images/anova_ckpt_f-distribution.tex" parse="text"/>
+  					</latex-image>
+  				</image>
+  			</figure>
+				<p>Question: which of the following is <em>not</em> a property of the f-distribution?
+				  <ol label="a" cols="2">
+				  	<li><p>It has both positive and negative values.</p></li>
+				  	<li><p>The probability under the curve is one.</p></li>				  	
+				  	<li><p>It is mound shaped.</p></li>
+				  	<li><p>It is symmetric.</p></li>
+				  	<li><p>It is skewed left.</p></li>
+				  	<li><p>It is skewed right.</p></li>
+				  </ol>
+				</p>
+			</statement>
+			<answer><p>(a), (c), (d), and (e) are not properties fo the f-distribution</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_anova_f-distribution-2">
+			<statement>
+				<p>Recall that the f-distribution has the following probability density curve.</p>
+				<figure xml:id="fig_anova_ckpt_f-distribution-2">
+					<caption>f-Distribution Density Curve</caption>
+  				<image xml:id="image_anova_ckpt_f-distribution-2" width="60%">
+  					<latex-image>
+  						<xi:include href="./latex-images/anova_ckpt_f-distribution.tex" parse="text"/>
+  					</latex-image>
+  				</image>
+  			</figure>
+  			<p>Question: which of the following is a property of the f-distribution?
+  				<ol label="a" cols="2">
+  					<li><p>It has both positive and negative values.</p></li>
+  					<li><p>It has no negative values</p></li>
+  					<li><p>It is skewed right</p></li>
+  					<li><p>The area under the curve is 0.5</p></li>
+  					<li><p>It has two peaks</p></li>
+  					<li><p>It is symmetric</p></li>
+  				</ol>
+  			</p>
+  		</statement>
+  		<answer><p>(b) and (c)</p></answer>
+  	</exercise>
+  </subsection>
+
+  <subsection xml:id="sec_anova_test">
+  	<title>ANOVA Test</title>
+  	<p>Recall that a <m>F_\text{test}</m> statistic is larger when the variation due to differences between treatments is bigger than the variation due to sampling error. Because the null hypothesis in an ANOVA test is that the treatment groups all have the same mean, we will only reject this if we get a large test statistic. Therefore, all ANOVA tests are right-tailed tests.</p>
+  	<figure xml:id="fig_anova_test">
+  		<caption>f-Distribution Density Curve</caption>
+			<image xml:id="image_anova_test" width="60%">
+				<latex-image>
+					<xi:include href="./latex-images/anova_test.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>Like with the normal and t-distributions, we will reject the null hypothesis when our test statistic is further into the tail than the critical value allows. In the picture above, if the critical value <m>F_\text{test}</m> was approximately 3 and the red region is the rejection region. As mentioned previously, critical values for ANOVA tests in this class will always be supplied or found using technology, so we will not need to learn how to read an f-distribution table.</p>
+		<example xml:id="examp_anova_test">
+			<title>Conducting an ANOVA Test</title>
+			<statement>
+				<p>A tomato farmer wishes to determine if there is any difference in the heights of tomato plants grown with three different types of fertilizer. To test this, he grows four tomato plants each using fertilizers A, B, and C. He finds the following data.</p>
+				<table>
+					<title>Tomato Plant Heights</title>
+					<tabular>
+						<col></col>
+						<col></col>
+						<row>
+							<cell>Fertilizer A:</cell>
+							<cell>32, 29, 34, 31</cell>
+						</row>
+						<row>
+							<cell>Fertilizer B:</cell>
+							<cell>30, 27, 33, 32</cell>
+						</row>
+						<row>
+							<cell>Fertilizer C:</cell>
+							<cell>28, 31, 29, 30</cell>
+						</row>
+					</tabular>
+			  </table>
+				<p>This data leads to the following ANOVA table.</p>
+				<table xml:id="table_anova-examp_test">
+					<title>ANOVA Table for Tomato Plant Heights</title>
+					<tabular>
+						<col halign="left"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Source</cell>
+							<cell>df</cell>
+							<cell>Sum Squares</cell>
+							<cell>Mean Squares</cell>
+							<cell><m>F_\text{test}</m></cell>
+						</row>
+						<row>
+							<cell>Treatments</cell>
+							<cell><m>2</m></cell>
+							<cell><m>8</m></cell>
+							<cell><m>4</m></cell>
+							<cell><m>0.923</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Error</cell>
+							<cell><m>9</m></cell>
+							<cell><m>39</m></cell>
+							<cell><m>4.3333</m></cell>
+							<cell></cell>
+						</row>
+						<row>
+							<cell>Total</cell>
+							<cell><m>11</m></cell>
+							<cell><m>47</m></cell>
+							<cell></cell>
+							<cell></cell>
+						</row>
+					</tabular>
+  			</table>
+				<p>If the critical value from the f-distribution with 2 and 9 degrees of freedom at the <m>\alpha = 0.05</m> significance level is <m>F_{0.05} = 4.256</m>, what conclusion should we make?</p>
+			</statement>
+			<solution>
+				<p>The test statistic is <m>F_\text{test} = 0.923</m> while the critical value is <m>F_\alpha = 4.256</m>. This situation is shown below.</p>
+				<figure xml:id="fig_anova_examp_test">
+					<caption>Rejection Region in f-Distribution</caption>
+					<image width="60%" xml:id="image_anova_examp_test">
+						<latex-image>
+							<xi:include href="./latex-images/anova_examp_test.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>To reject the null hypothesis we would need our test statistic to be further into the right tail than 4.256. But <m>0.923 \lt 4.256</m>, so we must fail to reject the null hypothesis. There is no evidence that these fertilizers produce tomato plants with different average heights.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_anova_test-1">
+			<caption>ANOVA Test I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-05.mp4"/>
+		</figure>
+		<figure xml:id="video_anova_test-2">
+			<caption>ANOVA Test II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_anova_test-1">
+			<statement>
+				<p>Consider the following ANOVA table.</p>
+				<table xml:id="table_anova-ckpt_test-1">
+					<title>ANOVA Table</title>
+					<tabular>
+						<col halign="left"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Source</cell>
+							<cell>df</cell>
+							<cell>Sum Squares</cell>
+							<cell>Mean Squares</cell>
+							<cell><m>F_\text{test}</m></cell>
+						</row>
+						<row>
+							<cell>Treatments</cell>
+							<cell><m>5</m></cell>
+							<cell><m>4.562</m></cell>
+							<cell><m>0.912</m></cell>
+							<cell><m>2.980</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Error</cell>
+							<cell><m>12</m></cell>
+							<cell><m>3.667</m></cell>
+							<cell><m>0.306</m></cell>
+							<cell></cell>
+						</row>
+						<row>
+							<cell>Total</cell>
+							<cell><m>17</m></cell>
+							<cell><m>8.229</m></cell>
+							<cell></cell>
+							<cell></cell>
+						</row>
+					</tabular>
+  			</table>
+  			<p>Question: if the critical value from the f-distribution with 5 and 12 degrees of freedom is <m>F_{0.05} = 3.106</m>, what decision do you make at the <m>\alpha = 0.05</m> significance level?</p>
+  		</statement>
+  		<answer><p>Fail to Reject the Null Hypothesis</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_anova_test-2">
+  		<statement>
+  			<p>Consider the following ANOVA table.</p>
+  			<table xml:id="table_anova-ckpt_test-2">
+					<title>ANOVA Table</title>
+					<tabular>
+						<col halign="left"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Source</cell>
+							<cell>df</cell>
+							<cell>Sum Squares</cell>
+							<cell>Mean Squares</cell>
+							<cell><m>F_\text{test}</m></cell>
+						</row>
+						<row>
+							<cell>Treatments</cell>
+							<cell><m>5</m></cell>
+							<cell><m>4.562</m></cell>
+							<cell><m>0.912</m></cell>
+							<cell><m>2.980</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Error</cell>
+							<cell><m>12</m></cell>
+							<cell><m>3.667</m></cell>
+							<cell><m>0.306</m></cell>
+							<cell></cell>
+						</row>
+						<row>
+							<cell>Total</cell>
+							<cell><m>17</m></cell>
+							<cell><m>8.229</m></cell>
+							<cell></cell>
+							<cell></cell>
+						</row>
+					</tabular>
+  			</table>
+  			<p>Question: if the critical value from the f-distribution with 5 and 12 degrees of freedom is <m>F_{0.10} = 2.394</m>, what decision do you make at the <m>\alpha = 0.10</m> significance level?</p>
+  		</statement>
+  		<answer><p>Reject the Null Hypothesis</p></answer>
+  	</exercise>
+	</subsection>
+
+</section>

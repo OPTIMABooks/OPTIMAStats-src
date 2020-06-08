@@ -1,0 +1,40 @@
+\begin{tikzpicture}[
+    declare function={
+        gamma(\z)=2.506628274631*sqrt(1/\z)+ 0.20888568*(1/\z)^(1.5)+ 0.00870357*(1/\z)^(2.5)- (174.2106599*(1/\z)^(3.5))/25920- (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z;
+    },
+    declare function={
+        beta(\x,\y)=gamma(\x)*gamma(\y)/gamma(\x+\y);
+    },
+    declare function={
+        fdist(\x,\a,\b) = 1 / beta(\a/2, \b/2) * (\a/\b)^(\a/2) * \x^(\a/2-1) * (1 + \a/\b*\x)^(-(\a + \b)/2);
+    }
+  ]
+    \begin{axis}[
+        axis lines*=middle,
+        no markers,
+        domain=0.01:4,
+        samples=500,
+        xmin = 0, xmax = 4,
+        ymin = -0.05, ymax = 1,
+        xtick={0,1,2,3},
+        ticklabel style={font=\scriptsize},
+        ytick=\empty,
+        grid = none,
+        axis on top,
+        height=5cm,
+        width=8cm
+      ]
+      \path[name path=A] (axis cs: 0,0) -- (4,0);
+      \addplot+[thick,blue,name path=B] { fdist(x, 10,10) };
+      \addplot [
+        draw=black!50,
+        fill=red!50,
+        fill opacity=0.5,
+      ] fill between [
+        of=A and B,
+        soft clip={domain=2.98:4}
+      ];
+      \node at (axis cs:0.80,0.35) {\scriptsize $0.95$};
+      \draw[-stealth] (axis cs: 3.5,0.2) node[above]  {\scriptsize $0.05$} to (axis cs: 3.2,0.05);
+    \end{axis}
+\end{tikzpicture}
