@@ -30,27 +30,28 @@
   			</table>
   		</statement>
   		<solution>
-  			<p>We could test this using three hypothesis tests for the mean heights observed using fertilizers A, B, and C.</p>
-  			<sidebyside width="25%" margins="auto">
-  				<p>Test 1:
-  				  <md>
-  				  	<mrow>H_0\amp:\ \mu_A = \mu_B</mrow>
-  				  	<mrow>H_A\amp:\ \mu_A \not= \mu_B</mrow>
-  				  </md>
-  				</p>
-   				<p>Test 2:
-  				  <md>
-  				  	<mrow>H_0\amp:\ \mu_A = \mu_C</mrow>
-  				  	<mrow>H_A\amp:\ \mu_A \not= \mu_C</mrow>
-  				  </md>
-  				</p>
-  				<p>Test 3:
-  				  <md>
-  				  	<mrow>H_0\amp:\ \mu_B = \mu_C</mrow>
-  				  	<mrow>H_A\amp:\ \mu_B \not= \mu_C</mrow>
-  				  </md>
-  				 </p>
-  			</sidebyside>
+  			<p>We could test this using three hypothesis tests for the mean heights observed using fertilizers A, B, and C.
+  				<ol label="1" cols="3">
+  					<li><title>First Test</title>
+  					  <p><md>
+	  				  	<mrow>H_0\amp:\ \mu_A = \mu_B</mrow>
+	  				  	<mrow>H_A\amp:\ \mu_A \not= \mu_B</mrow>
+	  				  </md></p>
+	  				</li>
+	  				<li><title>Second Test</title>
+	  				  <p><md>
+	  				  	<mrow>H_0\amp:\ \mu_A = \mu_C</mrow>
+	  				  	<mrow>H_A\amp:\ \mu_A \not= \mu_C</mrow>
+	  				  </md></p>
+	  				</li>
+	  				<li><title>Third Test</title>
+	  				  <p><md>
+	  				  	<mrow>H_0\amp:\ \mu_B = \mu_C</mrow>
+	  				  	<mrow>H_A\amp:\ \mu_B \not= \mu_C</mrow>
+	  				  </md></p>
+	  				</li>
+	  			</ol>
+  			</p>
   			<p>If in each of the three tests we fail to reject the null hypothesis, then there is no evidence that the fertilizers correspond to different heights.</p>
   		</solution>
   	</example>
