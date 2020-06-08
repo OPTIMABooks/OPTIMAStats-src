@@ -3,12 +3,21 @@
   <title>Other Tests of Significance</title>
   <introduction>
     <title>Other Tests</title>
-    <p></p>
+    <p>In this final chapter we will examine several additional hypothesis tests that are especially designed to help us make certain types of decisions.  These are:
+      <ul>
+        <li><title>The Analysis of Variance Test</title>
+          <p>This test will help us determine if the means of more than two populations are equal or if at least one differs from the rest.</p></li>
+        <li><title>The Goodness-of-Fit Test</title>
+          <p>We use this test to see how well data from an observed frequency distribution fits a hypothesized distribution.</p></li>
+        <li><title>Tests of Independence and Homogenaity</title>
+          <p>Theses tests help us decide if observations that are classified using two variables in a <xref ref="def_contingency-table" text="custom">contingency table</xref> indicatest that the varaiables are dependent.</p></li>
+      </ul>
+    </p>
   </introduction>
 
   <xi:include href="sec_anova.ptx"/>
-<!--  
   <xi:include href="sec_goodness-of-fit.ptx"/>
+<!--
   <xi:include href="sec_contingency.ptx"/>
 -->
 </chapter>
