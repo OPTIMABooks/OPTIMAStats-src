@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_goodness-of-fit">
+  <title>Goodness-of-Fit Tests</title>
+
+  <introduction xml:id="sec_goodness-of-fit_intro">
+  	<title>Testing Multiple Proportions</title>
+  	<p>As was the case with testing multiple means, we need to be careful how we test multiple proportions. Consider the following example.</p>
+  	<example xml:id="examp_goodness-of-fit_multiple-tests">
+  		<title>Testing a Statement About Multiple Proportions</title>
+  		<statement>
+  			<p>A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. How could this be done using the hypothesis tests we&apos;ve seen thus far?</p>
+  		</statement>
+  		<solution>
+  			<p>We could conduct five different hypothesis tests:
+  				<ol label="1" cols="3">
+  					<li><title>Peanuts</title>
+  					  <p><md>
+  					  	<mrow>H_0\amp:\ p_1 = 0.40</mrow>
+  					  	<mrow>H_A\amp:\ p_1 \not= 0.40</mrow>
+  					  </md></p>
+  					</li>
+  					<li><title>Hazelnuts</title>
+  					  <p><md>
+  					  	<mrow>H_0\amp:\ p_2 = 0.25</mrow>
+  					  	<mrow>H_A\amp:\ p_2 \not= 0.25</mrow>
+  					  </md></p>
+  					</li>
+  					<li><title>Cashews</title>
+  					  <p><md>
+  					  	<mrow>H_0\amp:\ p_3 = 0.15</mrow>
+  					  	<mrow>H_A\amp:\ p_3 \not= 0.15</mrow>
+  					  </md></p>
+  					</li>
+  					<li><title>Brazil Nuts</title>
+  					  <p><md>
+  					  	<mrow>H_0\amp:\ p_4 = 0.10</mrow>
+  					  	<mrow>H_A\amp:\ p_4 \not= 0.10</mrow>
+  					  </md></p>
+  					</li>
+  					<li><title>Other</title>
+  					  <p><md>
+  					  	<mrow>H_0\amp:\ p_5 = 0.10</mrow>
+  					  	<mrow>H_A\amp:\ p_5 \not= 0.10</mrow>
+  					  </md></p>
+  					</li>
+  				</ol>
+  			</p>
+  		</solution>
+  	</example>
+  	<p>Once again, the problem we run into is that with each test, we increase the likelihood that we will make a mistake. Also, if we conduct these separate tests, we are treating the process as if it were binomial<mdash/>with only two outcomes. In actuality, this process has five possible outcomes<mdash/>the five types of nuts. In this section we will introduce a hypothesis test designed to check if a process with more than two  possible outcomes like this has a given distribution of probabilities. Because it is designed to check how well an observed set of outcomes fits a given list of probabilities, the test is called the <term>goodness-of-fit test</term>.</p>
+  </introduction>
+
+  <objectives xml:id="sec_goodness-of-fit_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Chi-Squared Distributions</p></li>
+					<li><p>Chi-Squared Test Statistic</p></li>
+					<li><p>Degrees of Freedom for a Goodness-of-Fit Test</p></li>
+					<li><p>Expected Counts</p></li>
+					<li><p>Hypotheses for Goodness-of-Fit Tests</p></li>
+					<li><p>Multinomial Process</p></li>
+					<li><p>Observed Counts</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Identify multinomial processes</p></li>
+					<li><p>Formulate hypotheses for a goodness-of-fit test</p></li>
+					<li><p>Compute the expected counts for a goodness-of-fit test</p></li>
+					<li><p>Compute the chi-squared test statistic</p></li>
+					<li><p>Look up critical values in the chi-squared distribution table</p></li>
+					<li><p>Conduct a traditional goodness-of-fit test</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_goodness-of-fit_multinomial">
+		<title>Multinomial Processes</title>
+		<p>Recall that in <xref ref="sec_binomial"/> we introduced the concept of a <xref ref="def_binomial-process" text="custom">binomial process</xref>. The characteristics of a binomial process were defined to be:
+		  <ol label="1">
+		  	<li><p>The process consists of a fixed number of trials, each of which had only two possible outcomes: success or failure.</p></li>
+		  	<li><p>Each trial has the same probability of a success, <m>p</m>.</p></li>
+		  	<li><p>The trials are all independent of each other.</p></li>
+		  	<li><p>The result variable is the number of trials which result in successes.</p></li>
+		  </ol>
+		</p>
+		<p>Our mixed nuts example from the introduction has many of these same properties. However, the process of categorizing nuts is not binomial because each nut may fall into one of five different categories (peanut, hazelnut, etc). In a binomial process we are only allowed two possible categories: success and failure. Since our hypothesis tests for proportions are based on the assumption that we are dealing with a binomial process with only two outcomes, we need a new type of process that will work with problems such as the mixed nuts example.</p>
+		<definition xml:id="def_multinomial-process">
+			<idx>multinomial process</idx>
+			<statement>
+				<p>A <term>multinomial process</term> is a random process in which:
+				  <ol label="1">
+				  	<li><p>there is a fixed number of identical trials, called <m>n</m></p></li>
+				  	<li><p>the outcomes of each trial fall into one of <m>k</m> possible categories</p></li>
+				  	<li><p>the probability of the <m>i^\text{th}</m> category is a fixed probability <m>p_i</m> with <m>p_1 + p_2 + \cdots p_k = 1</m>.</p></li>
+				  	<li><p>each of the trials is independent</p></li>
+				  </ol>
+				</p>
+				<p>The result of the process is the frequency with which each of the possible categories appear.</p>
+			</statement>
+		</definition>
+		<p>Let&apos;s look at a couple of examples to see if we can identify multinomial processes.</p>
+	  <example xml:id="examp_goodness-of-fit_identify-multinomial-true">
+	  	<title>Identifying a Multinomial Process</title>
+	  	<statement>
+	  		<p>A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. Is this a multinomial process?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>Let&apos;s check to see if this process is multinomial by checking each property.
+	  		  <ol label="1">
+	  		    <li><title>The process consists of a fixed number of identical trials</title>
+	  		      <p>The trials are drawing a single nut from the container. There are a fixed number of trials because there are a fixed number of nuts in the container.</p></li>
+	  		    <li><title>The outcome of each trial is one of a set number of possibilities</title>
+	  		      <p>In this case, there are five classifications of nuts. Thus, there are only five possible outcomes: peanut, hazelnut, cashew, brazil nut, or other type of nut.</p></li>
+	  		    <li><title>The probability of each category is fixed</title>
+	  		      <p>although we don&apos;t yet know what it is (we want to test to see if it is 40% peanuts, 25% hazelnuts, etc), the probability of getting a nut of each type is fixed (assuming there are enough nuts in the population).</p></li>
+	  		    <li><title>The trials are independent</title>
+	  		      <p>If we consider the container of nuts we purchased to be a sample from the larger population of nuts. In this case, it is almost certain that the sample container is much smaller than (less than 5% of) the population of nuts in the packing facility.</p></li>
+	  		  </ol>
+	  		</p>
+	  		<p>Because each of the four properties is true, this is a multinomial process.</p>
+	  	</solution>
+	  </example>
+	  <example xml:id="examp_goodness-of-fit_multinomial-false">
+	  	<title>Identifying When a Process is Not Multinomial</title>
+	  	<statement>
+	  		<p>A process consists of drawing marbles from an urn containing 1000 red marbles, 500 blue marbles, and 250 green marbles without replacement. Marbles are drawn until two green marbles have been observed. Is this a multinomial process?</p>
+	  	</statement>
+	  	<solution>
+	  		<p>This process violates the very first condition. There is no fixed number of times that we draw a marble. If our first two marbles are green, we will stop at <m>n = 2</m> draws. On the other hand, it could take us hundreds of draws before we see two green marbles. Because there is not a set number of trials, this is not a multinomial process.</p>
+	  	</solution>
+	  </example>
+
+	  <figure xml:id="video_goodness-of-fit_multinomial-1">
+	  	<caption>Multinomial Processes I</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-01.mp4"/>
+	  </figure>
+	  <figure xml:id="video_goodness-of-fit_multinomial-2">
+	  	<caption>Multinomial Processes II</caption>
+	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-02.mp4"/>
+	  </figure>
+
+	  <exercise xml:id="ckpt_goodness-of-fit_multinomial-1">
+	  	<statement>
+	  		<p>Suppose that a certain gym membership comes with a <q>bonus feature</q> of either four massage sessions, four sessions with a personal trainer, or free energy drinks at the juice bar. One hundred people sign up for the gym membership, and their <q>bonus feature</q> selection is recorded.</p>
+	  		<p>Question: is this a multinomial process?</p>
+	  	</statement>
+	  	<answer><p>Yes</p></answer>
+	  </exercise>
+	  <exercise xml:id="ckpt_goodness-of-fit_multinomial-2">
+	  	<statement>
+	  		<p>Suppose that a certain gym membership comes with a <q>bonus feature</q> of either four massage sessions, four sessions with a personal trainer, or free energy drinks at the juice bar. People are signed up until a total of at least 20 individuals have chosen each <q>bonus feature</q> and the number of individuals it took to reach that mark is recorded.</p>
+	  	  <p>Question: is this a multinomial process?</p>
+	  	</statement>
+	  	<answer><p>No</p></answer>
+	  </exercise>
+	</subsection>
+
+	<subsection xml:id="sec_goodness-of-fit_hypotheses">
+		<title>Formulating Hypotheses</title>
+		<p>A goodness-of-fit test is used to test a claim about the probabilities in a multinomial process. That is, we specify ahead of time what we believe the probability of each of the <m>k</m> categories should be. We then take a sample and look at the observed probability of those categories. If they are different enough from what we claimed the probabilities should be, we conclude that our claim was wrong. Since this claim involves equality (we specify what we assume the probabilities will be), it is the null hypothesis.</p>
+		<principle xml:id="thm_hypotheses-goodness-of-fit">
+			<title>Hypotheses for Goodness-of-Fit Tests</title>
+			<statement>
+				<p>In a goodness-of-fit hypothesis test, we assume that a multinomial process will have probabilities <m>p_1, p_2, \ldots, p_k</m>. The opposite of this claim is that at least one of the probabilities is different from what we specify.  Thus, the null and alternative hypotheses are:
+				  <md>
+				  	<mrow>H_0\amp:\ \text{Category probabilities are } p_1, p_2, \ldots, p_k</mrow>
+				  	<mrow>H_A\amp:\ \text{At least one of the category probabilities is different from those above}</mrow>
+				  </md>
+				</p>
+			</statement>
+		</principle>
+		<p>Null hypotheses can be phrased in one of two ways. The first is as a set probabilities, as was the case in our mixed nuts example.</p>
+		<example xml:id="examp_goodness-of-fit_hypotheses-set">
+			<title>Stating Hypotheses for a Goodness-of-Fit Test Based on Given Probabilities</title>
+			<statement>
+				<p>A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. What are your hypotheses?</p>
+			</statement>
+			<solution>
+				<p>In this problem statement, we are told what the probabilities of each outcome should be. Stating those as our null hypothesis, we get:
+					<md>
+						<mrow>H_0\amp :\ p_1 = 0.40,\ \ p_2 = 0.25,\ \ p_3 = 0.15,\ \ p_4 = 0.10,\ \ p_5 = 0.10</mrow>
+						<mrow>H_A\amp:\ \text{At least one of these probabilities is different}</mrow>
+					</md>
+				</p>
+			</solution>
+		</example>
+		<p>Another common way that the null hypothesis can be phrased is in terms of relative proportions. We could claim that the outcomes are all equally likely, that one outcome is twice as likely as another, or some similar statement.</p>
+		<example xml:id="examp_goodness-of-fit_hypotheses-relative">
+			<title>Stating Hypotheses for a Goodness-of-Fit Test Based on Relative Probabilities</title>
+			<statement>
+				<p>A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 183 of them are Republicans, 142 of them are Democrats, and 175 of them are independents. What should the null hypothesis be for a goodness-of-fit test of the politician&apos;s claim?</p>
+			</statement>
+			<solution>
+				<p>In this case, the claim is that all three political parties are equally likely. If the probability of one of them is called <m>x</m>, then stating they are equal and recognizing that their probabilities have to sum to one gives us the following equation.
+				  <me>x + x + x = 1</me>
+				</p>
+				<p>If we solve that for <m>x</m>, we find that <m>x = \frac{1}{3}</m>. Thus, our null and alternative hypothesis should be:
+				  <md>
+				  	<mrow>H_0\amp:\ p_R = p_D = p_I = \frac{1}{3}</mrow>
+				  	<mrow>H_A\amp:\ \text{The probabilities are not as described above}</mrow>
+				  </md></p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_goodness-of-fit-hypotheses-1">
+			<caption>Goodness-of-Fit Hypotheses I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-03.mp4"/>
+		</figure>
+		<figure xml:id="video_goodness-of-fit-hypotheses-2">
+			<caption>Goodness-of-Fit Hypotheses II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-04.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_goodness-of-fit_hypotheses-1">
+			<statement>
+				<p>A farmer believes that in any given growing season, the probability of having a bumper crop, an average crop, or a low-yield crop is the same. He wishes to conduct a goodness-of-fit test to check this claim.</p>
+				<p>Question: what should his null hypothesis be?</p>
+			</statement>
+			<answer><p><m>H_0:\ p_1 = p_2 = p_3 = \frac{1}{3}</m></p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_goodness-of-fit_hypotheses-2">
+			<statement>
+				<p>A business man believes that 60% of his customers find him through referrals, 30% through advertising, and 10% are walk-ins. He wishes to test this claim by collecting a sample of customers and seeing how well their answers to the question <q>how did you find our business</q> matches these percents.</p>
+				<p>Question: what should his null hypothesis be?</p>
+			</statement>
+			<answer><p><m>H_0:\ p_1 = 0.6, \quad p_2 = 0.3, \quad p_3 = 0.1</m></p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_goodness-of-fit_counts">
+		<title>Observed and Expected Counts</title>
+		<p>In a goodness-of-fit test, our goal is to compare what happens in a sample drawn from the population being studied with what we expected to happen based on the null hypothesis. The result of the sample we draw will be a list of frequencies, or counts, for each category.</p>
+		<definition xml:id="def_observed-counts">
+			<idx>observed counts</idx>
+			<statement>
+				<p>The number of times in a process that each category of outcome occurred are together called the <term>observed counts</term> for that category.</p>
+			</statement>
+		</definition>
+		<p>Our null hypothesis tells us what we expect the probability of each category to be. In order to compare these expected outcomes, we must convert these probabilities into expected counts. We can then compare the counts that we observed with the counts that we expected. To compute the expected counts for each category, we use the following procedure.</p>
+		<theorem xml:id="thm_expected-counts_multinomial">
+			<title>Expected Counts</title>
+			<statement>
+				<p>The <term>expected count</term> for category <m>i</m> in a multinomial process is <m>n\times p_i</m>, where <m>n</m> is the total number of trials and <m>p_i</m> is the probability of the <m>i^\text{th}</m> category according to the null hypothesis.</p>
+			</statement>
+		</theorem>
+		<p>To see how these are computed, consider the following examples.</p>
+		<example xml:id="examp_goodness-of-fit_counts-set">
+			<title>Finding Expected Counts Based on Given Probabilities</title>
+			<statement>
+				<p>A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. The following number of each type of nuts were observed. Find the expected counts for this problem.</p>
+				<table>
+					<title>Observed Counts</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Nut</cell>
+							<cell>Peanut</cell>
+							<cell>Hazelnut</cell>
+							<cell>Cashews</cell>
+							<cell>Brazil Nuts</cell>
+							<cell>Other</cell>
+						</row>
+						<row>
+							<cell>Observed:</cell>
+							<cell>156</cell>
+							<cell>96</cell>
+							<cell>42</cell>
+							<cell>28</cell>
+							<cell>33</cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>The values above are the observed counts. To find the expected counts, we multiply the total number of trials<mdash/>in this case, the total number of nuts<mdash/>by the probabilities of each outcome according to the null hypothesis. Recall that the null hypothesis was:
+				  <me>H_0:\ p_1 = 0.40,\ \ p_2 = 0.25,\ \ p_3 = 0.15,\ \ p_4 = 0.10,\ \ p_5 = 0.10</me>
+				</p>
+				<p>Putting this together with the counts above in tabular form gives the following table.</p>
+				<table>
+					<title>Observed and Expected Counts</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+						</row>
+						<row>
+							<cell>Peanut</cell>
+							<cell>156</cell>
+							<cell><m>0.40(355) = 142</m></cell>
+						</row>
+						<row>
+							<cell>Hazelnut</cell>
+							<cell>96</cell>
+							<cell><m>0.25(355) = 88.75</m></cell>
+						</row>
+						<row>
+							<cell>Cashew</cell>
+							<cell>42</cell>
+							<cell><m>0.15(355) = 53.25</m></cell>
+						</row>
+						<row>
+							<cell>Brazil Nut</cell>
+							<cell>28</cell>
+							<cell><m>0.10(355) = 35.5</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Other</cell>
+							<cell>33</cell>
+							<cell><m>0.10(355) = 35.5</m></cell>
+						</row>
+						<row>
+							<cell>Total:</cell>
+							<cell>355</cell>
+							<cell>355</cell>
+						</row>
+					</tabular>
+				</table>
+			</solution>
+		</example>
+		<p>Note that the expected counts are not necessarily whole numbers. This is because these <q>expected</q> counts are, much like the <xref ref="def_expected-value" text="custom">expected value</xref>, averages.  Therefore they may not be numbers that can actually be observed. However, when we add together the expected counts, the total must be the same (less any rounding errors) as the observed counts. Let&apos;s look at another example.</p>
+		<example xml:id="examp_goodness-of-fit_counts-relative">
+			<title>Finding Expected Counts Based on Relative Probabilities</title>
+			<statement>
+				<p>A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 179 of them are Republicans, 146 of them are Democrats, and 175 of them are independents. What should the null hypothesis be for a goodness-of-fit test of the politician&apos;s claim?</p>
+			</statement>
+			<solution>
+				<p>As we noted last time, the null hypothesis is that the probability for each political party is <m>\frac{1}{3}</m>. Placing the above information into a table as we did in the last example, yields the following table.</p>
+				<table>
+					<title>Observed and Expected Counts</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+						</row>
+						<row>
+							<cell>Republican</cell>
+							<cell>179</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+						</row>
+						<row>
+							<cell>Democrats</cell>
+							<cell>146</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Independents</cell>
+							<cell>175</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+						</row>
+						<row>
+							<cell>Total:</cell>
+							<cell>500</cell>
+							<cell>500.01</cell>
+						</row>
+					</tabular>
+				</table>
+			</solution>
+		</example>
+		<p>In the above example, we got a total of 500.01 for the expected counts because we rounded the fraction <m>\frac{500}{3}</m> to <m>166.67</m>.</p>
+
+		<figure xml:id="video_goodness-of-fit_counts-1">
+			<caption>Observed and Expected Counts I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-05.mp4"/>
+		</figure>
+		<figure xml:id="video_goodness-of-fit_counts-2">
+			<caption>Observed and Expected Counts II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-06.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_goodness-of-fit_counts-1">
+			<statement>
+				<p>In a goodness of fit test of the null hypothesis: 
+					<me>H_0:\ p_1 = 0.3, \quad p_2 = 0.5, \quad p_3 = 0.2</me>
+					the following observed counts were collected.</p>
+				<table>
+					<title>Observed Counts</title>
+					<tabular>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Frequency</cell>
+						</row>
+						<row>
+							<cell>1</cell>
+							<cell>35</cell>
+						</row>
+						<row>
+							<cell>2</cell>
+							<cell>68</cell>
+						</row>
+						<row>
+							<cell>3</cell>
+							<cell>27</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the expected count for category 2? Round your answer to one decimal place.</p>
+			</statement>
+			<answer><p>64.5</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_goodness-of-fit_counts-2">
+			<statement>
+				<p>In a goodness of fit test of the null hypothesis:
+					<me>H_0:\ p_1 = 0.3, \quad p_2 = 0.5, \quad p_3 = 0.2</me>
+				the following observed counts were collected.</p>
+				<table>
+					<title>Observed Counts</title>
+					<tabular>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Frequency</cell>
+						</row>
+						<row>
+							<cell>1</cell>
+							<cell>35</cell>
+						</row>
+						<row>
+							<cell>2</cell>
+							<cell>68</cell>
+						</row>
+						<row>
+							<cell>3</cell>
+							<cell>27</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the expected count for category 3? Round your answer to one decimal place.</p>
+			</statement>
+			<answer><p>25.5</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_goodness-of-fit_chi-squared">
+		<title>The <m>\chi^2</m>-Distribution</title>
+		<p>In order to measure the differences between observed and expected counts, we will need yet another distribution. This distribution is useful in hypothesis tests involving squares. As we shall see, we will use squares in the goodness-of-fit test statistic. The family of distributions, called <m>\chi^2</m> (pronounced /&apos;kai skwered/) distributions, are described below.</p>
+		<definition xml:id="def_chi-squared-distribution">
+			<idx><m>\chi^2</m>-distribution</idx>
+			<idx><h>probability</h><h>distributions</h><h><m>\chi^2</m>-distribution</h></idx>
+			<statement>
+				<p>The <term><m>\chi^2</m>-distribution</term> is a continuous probability distribution with the following properties
+				  <ul>
+				  	<li><p>Like the <xref ref="def_f-distribution" text="custom">F-distribution</xref>, the <m>\chi^2</m>-distribution is not symmetric, but skewed to the right.</p></li>
+				  	<li><p>The values of the <m>\chi^2</m>-distribution are non-negative (zero or larger).</p></li>
+				  	<li><p>The distribution is different for each degree of freedom.</p></li>
+				  	<li><p>As the degrees of freedom increases, the distribution becomes less skewed.</p></li>
+				  </ul>
+				</p>
+			</statement>
+		</definition>
+		<p>The picture below shows the members of the <m>\chi^2</m>-distribution family with 1, 10, and 20 degrees of freedom.</p>
+		<figure xml:id="fig_goodness-of-fit_chi-squared">
+			<caption>Various <m>\chi^2</m>-Distributions</caption>
+			<image width="60%" xml:id="image_goodness-of-fit_chi-squared">
+				<latex-image>
+					<xi:include href="./latex-images/goodness-of-fit_chi-squared.tex" parse="text"/>
+				</latex-image>
+			</image>
+		</figure>
+		<p>As was the case in the F-distribution, because we are always looking for large differences between observed and expected counts, we will reject the null hypothesis, which generates the expected counts, when we have large test statistics. Therefore, we will usually use right-tailed tests.  However, we can use left-tailed tests to look for observed and expected counts that match too well. The following examples allow us to practice looking up critical values using the table for members of the <m>\chi^2</m>-distribution family.</p>
+		<example xml:id="examp_goodness-of-fit_chi-squared-one">
+			<title>Using the <m>\chi^2</m>-Distribution Table</title>
+			<statement>
+				<p>Use the table below to find the following values.
+					<ol label="a">
+						<li><p>The <m>\chi^2</m> critical value with 8 degrees of freedom at the <m>\alpha = 0.05</m> significance level.</p></li>
+						<li><p>The <m>\chi^2</m> critical value with 10 degrees of freedom at with <m>0.05</m> in the left tail.</p></li>
+					</ol>
+				</p>
+				<figure xml:id="fig_goodness-of-fit_examp_chi-squared-one">
+					<caption>Protion of the <m>\chi^2</m>-Distribution Table</caption>
+					<image width="100%" source="./images/goodness-of-fig_examp_chi-squared-one.png"/>
+				</figure>
+			</statement>
+			<solution>
+				<p><ol label="a">
+					<li><p>Since there are 8 degrees of freedom, and 0.05 in the right tail, we read across the 8 <m>df</m> row to the 0.05 column finding the critical value of 15.507. The red lines show this process.</p></li>
+					<li><p>With 10 degrees of freedom, and 0.05 in the left tail, there would be 0.95 in the right tail. Thus, we read across the 10 <m>df</m> row to the 0.95 column, finding a critical value of 3.940. The blue lines show this process.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+		<example xml:id="examp_goodness-of-fit_chi-squared-two">
+			<title>Using the <m>\chi^2</m>-Distribution Table In Reverse</title>
+			<statement>
+				<p>Use the table below to find the following values.
+				  <ol label="a">
+				  	<li><p>The probability that a <m>\chi^2</m> test statistic with 29 degrees of freedom is greater than 18.493.</p></li>
+				  	<li><p>The probability that a <m>\chi^2</m> test statistic with 36 degrees of freedom is less than 51.805.</p></li>
+				  </ol>
+				</p>
+				<figure xml:id="fig_goodness-of-fit_examp_chi-squared-two">
+					<caption>Protion of the <m>\chi^2</m>-Distribution Table</caption>
+					<image width="100%" source="./images/goodness-of-fig_examp_chi-squared-two.png"/>
+				</figure>
+			</statement>
+			<solution>
+				<p><ol label="a">
+				  <li><p>Because the table does not contain a row for 29 degrees of freedom, we round up to the closest <m>df</m> value that is in the table, which is 30. Looking across the <m>df = 30</m> row, the value 18.493 goes with a probability of 0.95 in the right tail, so the answer is 0.95. This process is outlined using the blue lines above.</p></li>
+				  <li><p>As the table does not contain a row for 36 degrees of freedom, we must round up to the next lowest df in the table, which is 40. Reading across the 40 line, we find that 51.805 goes with 0.10 in the right tail. Thus, the probability of being less than 51.805 is the <m>1 - 0.10 = 0.90</m> in the left tail.</p></li>
+				</ol></p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_goodness-of-fit_chi-squared-1">
+			<caption><m>\chi^2</m>-Distribution I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-07.mp4"/>
+		</figure>
+		<figure xml:id="video_goodness-of-fit_chi-squared-2">
+			<caption><m>\chi^2</m>-Distribution II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-08.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_goodness-of-fit_chi-squared-1">
+			<statement>
+				<p>Recall that the <m>\chi^2</m> distribution has the following probability density curves, depending on the degrees of freedom.</p>
+				<figure xml:id="fig_goodness-of-fit_ckpt_chi-squared-1">
+					<caption>Various <m>\chi^2</m>-Distributions</caption>
+					<image width="60%" xml:id="image_goodness-of-fit_ckpt_chi-squared-1">
+						<latex-image>
+							<xi:include href="./latex-images/goodness-of-fit_ckpt_chi-squared-1.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Question: which of the following are properties of the chi-squared distribution?
+					<ol label="a">
+						<li><p>It is skewed right</p></li>
+						<li><p>It is symmetric</p></li>
+						<li><p>It is skewed left</p></li>
+						<li><p>It has two modes</p></li>
+						<li><p>It is no negative values</p></li>
+						<li><p>As the degrees of freedom increase, it becomes more mound-shaped</p></li>
+					</ol>
+				</p>
+			</statement>
+			<answer><p>(a), (d), and (e)</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_goodness-of-fit_chi-squared-2">
+			<statement>
+				<p>A <m>\chi^2</m>-distribution has 14 degrees of freedom.</p>
+				<p>Question: what critical value separates the top 10% of the data from the bottom 90%?</p>
+			</statement>
+			<answer><p>21.064</p></answer>
+		</exercise>
+	</subsection>
+
+	<subsection xml:id="sec_goodness-of-fit_test-stat">
+		<title>The Test Statistic</title>
+		<p>To compute the test statistic for a goodness-of-fit test, our goal is to measure how far off our observed counts are from our expected counts. To do this, we want to examine the difference between observed and expected, but we don&apos;t care which is larger. Thus, we square that difference. Finally, we scale the difference by dividing by the expected counts. This is done because a difference of 10 means a lot more when only 15 were expected than it would if 100 were expected.</p>
+		<theorem xml:id="thm_chi-squared-test-stat">
+			<title><m>\chi^2</m> Test Statistic</title>
+			<statement>
+				<p>The <m>\chi^2</m> test statistic for a goodness-of-fit test having observed counts <m>O_i</m> and expected counts <m>E_i</m> in category <m>i</m> is given by:
+				  <me>\chi^2_{\text{test}} = \sum \frac{(O_i - E_i)^2}{E_i}</me>
+				</p>
+			</statement>
+		</theorem>
+		<p>Let&apos;s look at the test statistic computation four our two examples.</p>
+		<example xml:id="examp_goodness-of-fit_test-stat-set">
+			<title>Computing the <m>\chi^2</m> Test Statistic for Set Probabilities</title>
+			<statement>
+				<p>A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. The following number of each type of nuts were observed. Find the <m>\chi^2</m> test statistic.</p>
+				<table>
+					<title>Observed Counts</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Nut</cell>
+							<cell>Peanut</cell>
+							<cell>Hazelnut</cell>
+							<cell>Cashews</cell>
+							<cell>Brazil Nuts</cell>
+							<cell>Other</cell>
+						</row>
+						<row>
+							<cell>Observed:</cell>
+							<cell>156</cell>
+							<cell>96</cell>
+							<cell>42</cell>
+							<cell>28</cell>
+							<cell>33</cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>To complete this task, we will add one column to the table we saw <xref ref="examp_goodness-of-fit_counts-set" text="custom">last time</xref> we worked on this example. In that column, we will compute the observed count, minus the expected count, squared and then divided by the expected count.</p>
+				<table>
+					<title>Observed and Expected Counts</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+							<cell><m>\frac{(O-E)^2}{E}</m></cell>
+						</row>
+						<row>
+							<cell>Peanut</cell>
+							<cell>156</cell>
+							<cell><m>0.40(355) = 142</m></cell>
+							<cell><m>\frac{(156-142)^2}{142} \approx 1.3081</m></cell>
+						</row>
+						<row>
+							<cell>Hazelnut</cell>
+							<cell>96</cell>
+							<cell><m>0.25(355) = 88.75</m></cell>
+							<cell><m>\frac{(96-88.75)^2}{88.75} \approx 0.5923</m></cell>
+						</row>
+						<row>
+							<cell>Cashew</cell>
+							<cell>42</cell>
+							<cell><m>0.15(355) = 53.25</m></cell>
+							<cell><m>\frac{(42-53.25)^2}{53.25} \approx 2.1230</m></cell>
+						</row>
+						<row>
+							<cell>Brazil Nut</cell>
+							<cell>28</cell>
+							<cell><m>0.10(355) = 35.5</m></cell>
+							<cell><m>\frac{(28-35.5)^2}{35.5} \approx 1.5845</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Other</cell>
+							<cell>33</cell>
+							<cell><m>0.10(355) = 35.5</m></cell>
+							<cell><m>\frac{(33-35.5)^2}{35.5} \approx 0.1761</m></cell>
+						</row>
+						<row>
+							<cell>Total:</cell>
+							<cell>355</cell>
+							<cell>355</cell>
+							<cell><m>\chi^2_{\text{test}} \approx 5.7840</m></cell>
+						</row>
+					</tabular>
+				</table>
+			</solution>
+		</example>
+		<example xml:id="examp_goodness-of-fit_test-stat-relative">
+			<title>Computing the <m>\chi^2</m> Test Statistic for Relative Probabilities</title>
+			<statement>
+				<p>A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 183 of them are Republicans, 142 of them are Democrats, and 175 of them are independents. What is the <m>\chi^2</m> test statistic for a goodness-of-fit test of the politician&apos;s claim?</p>
+			</statement>
+			<solution>
+				<p>Again, we add a column to our table of observed and expected counts to compute the <m>\chi^2</m> test statistic.</p>
+				<table>
+					<title>Observed and Expected Counts</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+							<cell><m>\frac{(O-E)^2}{E}</m></cell>
+						</row>
+						<row>
+							<cell>Republican</cell>
+							<cell>179</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+							<cell><m>\frac{(183-166.67)^2}{166.67} \approx 1.6000</m></cell>
+						</row>
+						<row>
+							<cell>Democrats</cell>
+							<cell>146</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+							<cell><m>\frac{(142-166.67)^2}{166.67} \approx 3.6516</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Independents</cell>
+							<cell>175</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+							<cell><m>\frac{(175-166.67)^2}{166.67} \approx 0.4163</m></cell>
+						</row>
+						<row>
+							<cell>Total:</cell>
+							<cell>500</cell>
+							<cell>500.01</cell>
+							<cell><m>\chi^2_{\text{test}} = 5.6679</m></cell>
+						</row>
+					</tabular>
+				</table>
+			</solution>
+		</example>
+
+		<figure xml:id="video_goodness-of-fit_test-stat-1">
+			<caption><m>\chi^2</m> Test Statistic I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-09.mp4"/>
+		</figure>
+		<figure xml:id="video_goodness-of-fit_test-stat-2">
+			<caption><m>\chi^2</m> Test Statistic II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-10.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_goodness-of-fit_test-stat-1">
+			<statement>
+				<p>To test the null hypothesis:
+					<me>H_0:\ p_1 = 0.2, \quad p_2 = 0.4, \quad p_3 = 0.3, \quad p_4 = 0.3</me>
+					the following observed counts were collected, and the given expected counts were computed.</p>
+				<table>
+					<title>Goodness-of-Fit Table</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+						</row>
+						<row>
+							<cell>1</cell>
+							<cell>16</cell>
+							<cell>20</cell>
+						</row>
+						<row>
+							<cell>2</cell>
+							<cell>33</cell>
+							<cell>40</cell>
+						</row>
+						<row>
+							<cell>3</cell>
+							<cell>27</cell>
+							<cell>30</cell>
+						</row>
+						<row>
+							<cell>4</cell>
+							<cell>24</cell>
+							<cell>30</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the value of <m>\chi^2_{\text{test}}</m> for this goodness-of-fit test?</p>
+			</statement>
+			<answer><p>3.525</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_goodness-of-fit_test-stat-2">
+			<statement>
+				<p>To test the null hypothesis:
+					<me>H_0:\ p_1 = p_2 = p_3 = p_4 = 0.25</me>,
+					the following observed counts were collected, and the given expected counts were computed.</p>
+				<table>
+					<title>Goodness-of-Fit Table</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+						</row>
+						<row>
+						  <cell>1</cell>
+						  <cell>19</cell>
+						  <cell>25</cell>
+						</row>
+						<row>
+							<cell>2</cell>
+							<cell>32</cell>
+							<cell>25</cell>
+						</row>
+						<row>
+							<cell>3</cell>
+							<cell>28</cell>
+							<cell>25</cell>
+						</row>
+						<row>
+							<cell>4</cell>
+							<cell>21</cell>
+							<cell>25</cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what is the value of <m>\chi^2_{\text{test}}</m> for this goodness-of-fit test?</p>
+			</statement>
+			<answer><p>4.400</p></answer>
+		</exercise>
+	</subsection>
+
+  <subsection xml:id="sec_goodness-of-fit_test">
+  	<title>The Goodness-of-Fit Test</title>
+  	<p>The goodness-of-fit test is, like any other hypothesis test, completed by comparing the test statistic from the sample to the significance level. In the case of a <m>\chi^2</m> test statistic, we again must use a traditional test because the table is not set up to give a p-values. That means that we need a degrees of freedom in order to look up the critical value.</p>
+  	<theorem xml:id="thm_chi-squared-df">
+  		<title>Degrees of Freedom for a Goodness-of-Fit Test</title>
+  		<statement>
+  			<p>The degrees of freedom for a goodness-of-fit test of a multinomial process in which there are k categories is <m>df = k-1</m>.</p>
+  		</statement>
+  	</theorem>
+  	<p>Let&apos;s finish our two examples by conducting a traditional test.</p>
+  	<example xml:id="examp_goodness-of-fit_test-set">
+  	  <title>Conducting a Goodness-of-Fit Test for Set Probabilities</title>
+  	  <statement>
+  	    <p>A mixed nut product claims to contain 40% peanuts, 25% hazelnuts, 15% cashews, 10% Brazil nuts, and 10% other assorted nuts. You wish to test this claim by purchasing a container of mixed nuts and determining the proportion of each type of nut in your sample. Does this sample fit the distribution claimed on the package? Use the <m>\alpha = 0.05</m> significance level.</p>
+  	    <table>
+					<title>Observed Counts</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Nut</cell>
+							<cell>Peanut</cell>
+							<cell>Hazelnut</cell>
+							<cell>Cashews</cell>
+							<cell>Brazil Nuts</cell>
+							<cell>Other</cell>
+						</row>
+						<row>
+							<cell>Observed:</cell>
+							<cell>156</cell>
+							<cell>96</cell>
+							<cell>42</cell>
+							<cell>28</cell>
+							<cell>33</cell>
+						</row>
+					</tabular>
+				</table>
+			</statement>
+			<solution>
+				<p>We now put our previous work on this problem together to complete the hypothesis test. Recall that the hypotheses are:
+					<md>
+						<mrow>H_0\amp:\ p_1 = 0.40,\ \ p_2 = 0.25,\ \ p_3 = 0.15,\ \ p_4 = 0.10,\ \ p_5 = 0.10</mrow>
+						<mrow>H_A\amp:\ \text{At least one probability is different}</mrow>
+					</md>
+				</p>
+				<p>We then construct the goodness-of-fit table below to compare the observed and expected counts and compute the test statistic.</p>
+				<table>
+					<title>Goodness-of-Fit Table</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+							<cell><m>\frac{(O-E)^2}{E}</m></cell>
+						</row>
+						<row>
+							<cell>Peanut</cell>
+							<cell>156</cell>
+							<cell><m>0.40(355) = 142</m></cell>
+							<cell><m>\frac{(156-142)^2}{142} \approx 1.3081</m></cell>
+						</row>
+						<row>
+							<cell>Hazelnut</cell>
+							<cell>96</cell>
+							<cell><m>0.25(355) = 88.75</m></cell>
+							<cell><m>\frac{(96-88.75)^2}{88.75} \approx 0.5923</m></cell>
+						</row>
+						<row>
+							<cell>Cashew</cell>
+							<cell>42</cell>
+							<cell><m>0.15(355) = 53.25</m></cell>
+							<cell><m>\frac{(42-53.25)^2}{53.25} \approx 2.1230</m></cell>
+						</row>
+						<row>
+							<cell>Brazil Nut</cell>
+							<cell>28</cell>
+							<cell><m>0.10(355) = 35.5</m></cell>
+							<cell><m>\frac{(28-35.5)^2}{35.5} \approx 1.5845</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Other</cell>
+							<cell>33</cell>
+							<cell><m>0.10(355) = 35.5</m></cell>
+							<cell><m>\frac{(33-35.5)^2}{35.5} \approx 0.1761</m></cell>
+						</row>
+						<row>
+							<cell>Total:</cell>
+							<cell>355</cell>
+							<cell>355</cell>
+							<cell><m>\chi^2_{\text{test}} \approx 5.7840</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>To make our decision, we want to compare this test statistic with the critical value that separates the top <m>\alpha = 0.05</m> in the right tail of a <m>\chi^2</m>-distribution with with <m>df = 5-1 = 4</m> degrees of freedom (since there are five categories of nuts) from the rest of the distribution. Looking this up in the chi-squared distribution table, we find <m>\chi^2_{0.05} = 9.488</m> as shown below.</p>
+				<figure xml:id="fig_goodness-of-fit_examp_test-set">
+					<caption>Comparing <m>\chi^2</m> Values</caption>
+					<image width="60%" xml:id="image_goodness-of-fit_examp_test-set">
+						<latex-image>
+							<xi:include href="./latex-images/goodness-of-fit_examp_test-set.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Since the test statistic of 5.784 is not further into the right-tail than the critical value, we fail to reject the null hypothesis. It looks like this sample does fit the claimed distribution of nuts.</p>
+			</solution>
+		</example>
+
+		<example xml:id="examp_goodness-of-fit_test-relative">
+			<title>Conducting a Goodness-of-Fit Test for Relative Probabilities</title>
+			<statement>
+				<p>A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 183 of them are Republicans, 142 of them are Democrats, and 175 of them are independents. Test this claim at the <m>\alpha = 0.10</m> significance level.</p>
+			</statement>
+			<solution>
+				<p>We stated before that the our hypothesis are:
+					<md>
+						<mrow>H_0\amp:\ p_R = p_D = p_I = \frac{1}{3}</mrow>
+						<mrow>H_A\amp:\ \text{At least one is different}</mrow>
+					</md>
+				</p>
+				<p>We computed then constructed a goodness-of-fit table to compute the test statistic and found the following.</p>
+				<table>
+					<title>Goodness-of-Fit Table</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+							<cell><m>\frac{(O-E)^2}{E}</m></cell>
+						</row>
+						<row>
+							<cell>Republican</cell>
+							<cell>179</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+							<cell><m>\frac{(183-166.67)^2}{166.67} \approx 1.6000</m></cell>
+						</row>
+						<row>
+							<cell>Democrats</cell>
+							<cell>146</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+							<cell><m>\frac{(142-166.67)^2}{166.67} \approx 3.6516</m></cell>
+						</row>
+						<row bottom="medium">
+							<cell>Independents</cell>
+							<cell>175</cell>
+							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
+							<cell><m>\frac{(175-166.67)^2}{166.67} \approx 0.4163</m></cell>
+						</row>
+						<row>
+							<cell>Total:</cell>
+							<cell>500</cell>
+							<cell>500.01</cell>
+							<cell><m>\chi^2_{\text{test}} = 5.6679</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>We need the critical value for the <m>\alpha=0.10</m> significance level in a <m>\chi^2</m> distribution with <m>df = 3 - 1 = 2</m> degrees of freedom.  Looking this up in the <m>\chi^2</m>-distribution table, we find <m>\chi^2_{0.10} = 4.605</m> and sketch the picture below.</p>
+				<figure xml:id="fig_goodness-of-fit_examp_test-relative">
+					<caption>Comparing <m>\chi^2</m> Values</caption>
+					<image width="60%" xml:id="image_goodness-of-fit_examp_test-relative">
+						<latex-image>
+							<xi:include href="./latex-images/goodness-of-fit_examp_test-relative.tex" parse="text"/>
+						</latex-image>
+					</image>
+				</figure>
+				<p>Because the test statistic is larger than the critical value (and thus further into the right tail) we must reject the null hypothesis. The three parties do not appear to have equal proportions.</p>
+			</solution>
+		</example>
+
+		<figure xml:id="video_goodness-of-fit_test-1">
+			<caption>Goodness-of-Fit Tests I</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-11.mp4"/>
+		</figure>
+		<figure xml:id="video_goodness-of-fit_test-2">
+			<caption>Goodness-of-Fit Tests II</caption>
+			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-12.mp4"/>
+		</figure>
+
+		<exercise xml:id="ckpt_goodness-of-fit_test-1">
+			<statement>
+				<p>To test the null hypothesis:
+					<me>H_0:\ p_1 = 0.7, \quad p_2 = 0.2, \quad p_3 = 0.1</me>
+					the following observed counts were collected, and the given expected counts were computed. The test statistic was then found, as shown in the table.</p>
+				<table>
+					<title>Goodness-of-Fit Table</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+							<cell><m>\frac{(O-E)^2}{E}</m></cell>
+						</row>
+						<row>
+						  <cell>1</cell>
+						  <cell>65</cell>
+						  <cell>70</cell>
+						  <cell>0.357</cell>
+						</row>
+						<row>
+							<cell>2</cell>
+							<cell>24</cell>
+							<cell>30</cell>
+							<cell>1.200</cell>
+						</row>
+						<row>
+							<cell>3</cell>
+							<cell>11</cell>
+							<cell>10</cell>
+							<cell>0.100</cell>
+						</row>
+						<row>
+							<cell>Totals:</cell>
+							<cell>110</cell>
+							<cell>110</cell>
+							<cell><m>\chi^2_\text{test} = 1.657</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what conclusion should you make at the <m>\alpha = 0.05</m> significance level?</p>
+			</statement>
+			<answer><p>Fail to reject the null hypothesis.</p></answer>
+		</exercise>
+		<exercise xml:id="ckpt_goodness-of-fit_test-2">
+			<statement>
+				<p>To test the null hypothesis:
+					<me>H_0:\ p_1 = 0.7, \quad p_2 = 0.2, \quad p_3 = 0.1</me>
+					the following observed counts were collected, and the given expected counts were computed. The test statistic was then found, as shown in the table.</p>
+				<table>
+					<title>Goodness-of-Fit Table</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col right="medium" halign="center"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell>Category</cell>
+							<cell>Observed</cell>
+							<cell>Expected</cell>
+							<cell><m>\frac{(O-E)^2}{E}</m></cell>
+						</row>
+						<row>
+						  <cell>1</cell>
+						  <cell>61</cell>
+						  <cell>70</cell>
+						  <cell>1.157</cell>
+						</row>
+						<row>
+							<cell>2</cell>
+							<cell>18</cell>
+							<cell>30</cell>
+							<cell>4.800</cell>
+						</row>
+						<row>
+							<cell>3</cell>
+							<cell>21</cell>
+							<cell>10</cell>
+							<cell>12.100</cell>
+						</row>
+						<row>
+							<cell>Totals:</cell>
+							<cell>110</cell>
+							<cell>110</cell>
+							<cell><m>\chi^2_\text{test} = 18.057</m></cell>
+						</row>
+					</tabular>
+				</table>
+				<p>Question: what conclusion should you make at the <m>\alpha = 0.01</m> significance level?</p>
+			</statement>
+			<answer><p>Reject the null hypothesis.</p></answer>
+		</exercise>
+	</subsection>
+	
+</section>

@@ -1,0 +1,39 @@
+\begin{tikzpicture}[
+    declare function={
+        gamma(\z)=2.506628274631*sqrt(1/\z)+ 0.20888568*(1/\z)^(1.5)+ 0.00870357*(1/\z)^(2.5)- (174.2106599*(1/\z)^(3.5))/25920- (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z;
+    },
+    declare function={
+        chisq(\x,\k) = ( ( (\x^(\k/2 - 1)) * exp(-\x/2) ) / ( (2^(\k/2))*gamma(\k/2) ) );
+    }
+  ]
+    \begin{axis}[
+        axis lines*=middle,
+        no markers,
+        domain=0.01:15,
+        samples=500,
+        xmin = 0, xmax = 15,
+        ymin = -0.05, ymax = 0.25,
+        xtick={0,5,9.488,15},
+        xticklabels={,,9.488,},
+        ticklabel style={font=\scriptsize},
+        ytick=\empty,
+        grid = none,
+        axis on top,
+        height=5cm,
+        width=8cm
+      ]
+      \path[name path=A] (axis cs: 0,0) -- (15,0);
+      \addplot+[thick,blue,name path=B] { chisq(x, 4) };
+      \addplot [
+        draw=black!50,
+        fill=red!50,
+        fill opacity=0.5,
+      ] fill between [
+        of=A and B,
+        soft clip={domain=9.488:15}
+      ];
+      \node at (axis cs:3,0.08) {\scriptsize $0.95$};
+      \draw[-stealth] (axis cs: 14,0.05) node[above]  {\scriptsize $0.05$} to (axis cs: 12.5,0.01);
+      \draw[line width=0.4mm,->] (axis cs: 5.784,0.03) node[above] {\scriptsize $\chi^2_{test}$} to (axis cs: 5.784,0);
+    \end{axis}
+\end{tikzpicture}
