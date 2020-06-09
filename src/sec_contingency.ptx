@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_contingency">
+  <title>Tests of Independence and Homogeneity</title>
+
+  <introduction xml:id="sec_contingency_intro">
+  	<title>Tests for Contingency Tables</title>
+  	<p>We&apos;ve made it to the last section in the text! In this section, we will look at one more type of hypothesis test that uses the <m>\chi^2</m>-distribution. This test is used to compare characteristics between two or more populations. Consider the following example.</p>
+  	<example xml:id="examp_contingency_intro">
+  		<title>Explaining Independence in a Contingency Table</title>
+  		<statement>
+  			<p>A student-body representative wishes to determine if a student&apos;s class standing affects their housing arrangements. To test this, the following data is collected.</p>
+  			<table xml:id="table_contingency_examp_intro">
+  				<title>Student Housing Status by Class Standing</title>
+  				<tabular>
+  					<col halign="left" right="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="medium" top="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell>Freshman</cell>
+  						<cell>Sophomore</cell>
+  						<cell>Junior</cell>
+  						<cell>Senior</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Dorm</cell>
+  						<cell>114</cell>
+  						<cell>99</cell>
+  						<cell>90</cell>
+  						<cell>78</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Off-Campus College-Owned Housing</cell>
+  						<cell>42</cell>
+  						<cell>83</cell>
+  						<cell>104</cell>
+  						<cell>124</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>Off-Campus Other Housing</cell>
+  						<cell>16</cell>
+  						<cell>19</cell>
+  						<cell>17</cell>
+  						<cell>21</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>If class standing does not affect housing arrangements (they are independent), what would we expect to see in this table?</p>
+  		</statement>
+  		<solution>
+  			<p>We would expect to see the same proportion of all four classes to be staying in the dorm, staying in off-campus college owned housing, and off-campus other housing. Note that this does not mean the numbers will all be equal, but the proportions of a row entry to the column total should be the same for every column.</p>
+  		</solution>
+  	</example>
+  	<p>Our goal in this situation is to determine if the proportion of people who live in each housing type is different within the four populations. That is, is housing type independent of class standing, or do different classes have a different distribution of housing types. Many of the same tools we used in <xref ref="sec_goodness-of-fit"/> will reappear in this section. This includes the <xref ref="def_chi-squared-distribution" text="custom"><m>\chi^2</m>-distribution</xref>, the notion of <xref ref="def_observed-counts" text="custom">observed and expected counts</xref>, and the <xref ref="thm_chi-squared-test-stat" text="custom"><m>\chi^2</m> test statistic</xref>.</p>
+  </introduction>
+
+  <objectives xml:id="sec_contingency_obj">
+  	<introduction>
+			<p>After finishing this section you should be able to</p>
+		</introduction>				
+		<ul>
+			<li><p>describe the following terms:
+				<ul>
+					<li><p>Degrees of Freedom for a Test of Independence or Homogeneity</p></li>
+					<li><p>Expected Counts for a Contingency Table</p></li>
+					<li><p>Test of Homogeneity</p></li>
+					<li><p>Test of Independence</p></li>
+					<li><p>Test Statistic for a Test of Independence or homogeneity</p></li>
+				</ul></p>
+			</li>
+			<li><p>accomplish the following tasks:
+				<ul>
+					<li><p>Formulate hypotheses for tests of independence and homogeneity</p></li>
+					<li><p>Compute the expected counts for a test of independence or homogeneity</p></li>
+					<li><p>Compute the <m>\chi^2</m> test statistic for a contingency table</p></li>
+					<li><p>Look up critical values in the <m>\chi^2</m>-distribution table</p></li>
+					<li><p>Conduct a traditional test of independence or homogeneity</p></li>
+				</ul></p>
+			</li>
+		</ul>
+	</objectives>
+
+	<subsection xml:id="sec_contingency_hypotheses">
+		<title>Two Types of Hypotheses</title>
+		<p>In this lesson, we will actually look at two types of hypothesis tests. The only difference between these two tests is the way in which the null hypothesis is stated. Because of this, the difference may seem like a technicality. However, it is important that we recognize the difference between these two types of tests.</p>
+		<definition xml:id="def_test-of-independence">
+			<idx>test of independence</idx>
+			<idx><h>hypothesis test</h><h>independence</h></idx>
+		  <statement>
+		  	<p>In a <term><m>\chi^2</m> test of independence</term>, the null hypothesis is that two characteristics in a single population are independent of each other.</p>
+		  </statement>
+		</definition>
+		<definition xml:id="def_test-of-homogeneity">
+			<idx>test of homogeneity</idx>
+			<idx><h>hypothesis test</h><h>homogeneity</h></idx>
+			<statement>
+				<p>In a <term><m>\chi^2</m> test of homogeneity</term>, the null hypothesis is that a single characteristic is distributed the same way across two or more populations.</p>
+			</statement>
+		</definition>
+		<p>The difference between these two tests has to do with the number of populations. If we are looking at a single characteristic across different populations, then we are conducting a <term>test of homogeneity</term>. On the other hand, if we are looking at the relationship between two characteristics in the same population, we need to conduct a <term>test of independence</term>.</p>
+		<p>In both cases, the alternative hypothesis is simply that the distribution is <em>not</em> independent or homogeneous. In the following examples, we will take a look at the hypotheses for each of these tests.</p>
+		<example xml:id="examp_contingency_hypotheses-homogeneity">
+			<title>Recognizing a Test of Homogeneity</title>
+			<statement>
+				<p>A student-body representative wishes to determine if a student&apos;s class standing affects their housing arrangements. To test this, the following data is collected.</p>
+				<table xml:id="table_contingency_examp_hypothesis-homogeneity">
+  				<title>Student Housing Status by Class Standing</title>
+  				<tabular>
+  					<col halign="left" right="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="medium" top="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell>Freshman</cell>
+  						<cell>Sophomore</cell>
+  						<cell>Junior</cell>
+  						<cell>Senior</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Dorm</cell>
+  						<cell>114</cell>
+  						<cell>99</cell>
+  						<cell>90</cell>
+  						<cell>78</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Off-Campus College-Owned Housing</cell>
+  						<cell>42</cell>
+  						<cell>83</cell>
+  						<cell>104</cell>
+  						<cell>124</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>Off-Campus Other Housing</cell>
+  						<cell>16</cell>
+  						<cell>19</cell>
+  						<cell>17</cell>
+  						<cell>21</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>State the null and alternative hypotheses for this test.</p>
+  		</statement>
+  		<solution>
+  			<p>We are looking at a single characteristic, housing type, among the four populations of Freshmen, Sophomores, Juniors, and Seniors. Therefore, this is a test of homogeneity. The hypotheses are therefore:
+  				<md>
+  					<mrow>H_0\amp:\ \text{Housing distributions in the four populations are homogeneous}</mrow>
+  					<mrow>H_A\amp:\ \text{Housing distributions are not homogeneous across the four populations}</mrow>
+  				</md>
+  			</p>
+  		</solution>
+  	</example>
+  	<example xml:id="examp_contingency_hypotheses-independence">
+			<title>Recognizing a Test of Homogeneity</title>
+			<statement>
+				<p>An efficiency expert at a certain large company believes that the number of years experience that an employee has is independent from their efficiency rating. To test this claim, the following data is collected.</p>
+				<table xml:id="table_contingency_examp_hypothesis-independence">
+					<title>Efficience Rating vs. Years of Experience</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="medium" top="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell><m>\lt</m> 5 Years</cell>
+  						<cell>5-15 Years</cell>
+  						<cell>15+ Years</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Low Efficiency</cell>
+  						<cell>21</cell>
+  						<cell>14</cell>
+  						<cell>11</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Moderate Efficiency</cell>
+  						<cell>45</cell>
+  						<cell>28</cell>
+  						<cell>24</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>High Efficiency</cell>
+  						<cell>62</cell>
+  						<cell>38</cell>
+  						<cell>32</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>State the hypothesis for this test.</p>
+  		</statement>
+			<solution>
+				<p>In this case, we are comparing two characteristics of the same population of employees. This is therefore a test of independence, and the hypotheses are:
+				  <md>
+				  	<mrow>H_0\amp:\ \text{Efficiency and years of experience are independent characteristics}</mrow>
+				  	<mrow>H_A\amp:\ \text{These characteristics are dependent}</mrow>
+				  </md>
+				</p>
+			</solution>
+  	</example>
+
+  	<figure xml:id="video_contingency_hypotheses-1">
+  		<caption>Two Types of Hypotheses I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-01.mp4"/>
+  	</figure>
+  	<figure xml:id="video_contingency_hypotheses-2">
+  		<caption>Two Types of Hypotheses II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-02.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_contingency_hypotheses-1">
+  		<statement>
+  			<p>A fish and game expert wishes to determine if two species of fish that live together in a certain lake have the same proportion of adult fish, juvenile fish, and minnows, or baby fish.</p>
+  			<p>Question: what hypotheses should he use?</p>
+  		</statement>
+  		<answer><p><md>
+  			<mrow>H_0\amp:\ \text{The two populations are homogeneous}</mrow>
+  			<mrow>H_A\amp:\ \text{The populations are not homogeneous}</mrow>
+  		</md></p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_contingency_hypotheses-2">
+  		<statement>
+  			<p>A social worker believes that there is a relationship between marital status: married, widowed, divorced, or never married, and happiness. To test this, she randomly selects a group of 1000 individuals and records their marital status and happiness levels.</p>
+  			<p>Question: what hypotheses should she use?</p>
+  		</statement>
+  		<answer><p><md>
+  			<mrow>H_0\amp:\ \text{The characteristics are independent}</mrow>
+  			<mrow>H_A\amp:\ \text{Marital status and happpiness are dependent}</mrow>
+  		</md></p></answer>
+  	</exercise>
+  </subsection>
+
+  <subsection xml:id="sec_contingency_counts">
+  	<title>Observed and Expected Counts</title>
+  	<p>No matter which type of hypothesis test we are doing, a test of homogeneity or a test of independence, the underlying assumption of the null hypothesis is the same. That assumption is that the rows and columns of our contingency table are independent. Put another way, the probability of being in a certain row is the same no matter what column you are in. Let&apos;s explore that idea with the following table.</p>
+  	<sidebyside widths="60% 30%" margins="auto" valign="middle">
+  	  <p>We will use the following notation.
+	     <ul>
+	     	<li><p><m>O_{ij}</m> represent the observed counts in the <m>i^\text{th}</m> column and <m>j^\text{th}</m> row. So, for example, <m>O_{23}</m> is the number of individuals in the 2nd row, 3rd column.</p></li>
+	     	<li><p><m>R_j</m> stands for the row total of the <m>j^\text{th}</m> row. That means, <m>R_1 = O_{11} + O_{21} + O_{31}</m> in the table shown.</p></li>
+	     	<li><p><m>C_i</m> stands for the column total of the <m>i^\text{th}</m> column. So <m>C_1 = O_{11} + O_{12}</m> in this table.</p></li>
+	     	<li><p>Finally, <m>T</m> stands for the grand total. In our table, 
+	     	  <me>T = C_1 + C_2 + C_3 = R_1 + R_2</me>.</p></li>
+	     	</ul>
+	    </p>
+	    <table>
+	    	<title></title>
+	    	<tabular>
+	    		<col halign="left" right="medium"></col>
+	    		<col halign="center" right="minor" top="medium"></col>
+	    		<col halign="center" right="minor" top="medium"></col>
+	    		<col halign="center" right="medium" top="medium"></col>
+	    		<col halign="center"></col>
+	    		<row bottom="medium">
+	    			<cell></cell>
+	    			<cell>col 1</cell>
+	    			<cell>col 2</cell>
+	    			<cell>col 3</cell>
+	    			<cell bottom="none">total</cell>
+	    		</row>
+	    		<row bottom="minor" left="medium">
+	    			<cell>row 1</cell>
+	    			<cell><m>O_{11}</m></cell>
+	    			<cell><m>O_{21}</m></cell>
+	    			<cell><m>O_{31}</m></cell>
+	    			<cell bottom="none"><m>R_1</m></cell>
+	    		</row>
+	    		<row bottom="medium" left="medium">
+	    			<cell>row 2</cell>
+	    			<cell><m>O_{12}</m></cell>
+	    			<cell><m>O_{22}</m></cell>
+	    			<cell><m>O_{23}</m></cell>
+	    			<cell bottom="none"><m>R_2</m></cell>
+	    		</row>
+	    		<row>
+	    			<cell right="none">total</cell>
+	    			<cell right="none"><m>C_1</m></cell>
+	    			<cell right="none"><m>C_2</m></cell>
+	    			<cell right="none"><m>C_3</m></cell>
+	    			<cell><m>T</m></cell>
+	    		</row>
+	    	</tabular>
+	    </table>
+	  </sidebyside>
+	  <p>Our goal is to find out what counts we would expect in each entry if we assume that the row and column probabilities are independent. Recall that we saw a <xref ref="thm_independence-test" text="custom">test for independence</xref> in <xref ref="sec_conditional"/>.  It stated that two events, <m>A</m> and <m>B</m>, are independent if and only if
+	    <me>P(A\cap B) = P(A)P(B)</me>.</p>
+	  <p>Suppose that <m>A</m> is the event of being in column <m>i</m> and <m>B</m> is the event of being in column <m>j</m>. Using the table above, we can figure out what these probabilities are.
+	    <md>
+	    	<mrow>P(A) \amp = P(\text{column } i) = \frac{\text{number in column } i}{\text{total in table}} = \frac{C_i}{T}</mrow>
+	    	<mrow>P(B) \amp = P(\text{row } j) = \frac{\text{number in row } j}{\text{total in table}} = \frac{R_j}{T}</mrow>
+	    </md>
+	  </p>
+	  <p>If these two events are independent, then the probability of being in the single cell in both row <m>i</m> and column <m>j</m> should be
+	    <me>P(\text{column } i \cap \text{row } j) = P(A \cap B) = P(A)P(B) = \left(\frac{C_i}{T}\right)\left(\frac{R_j}{T}\right) = \frac{C_iR_j}{T^2}</me>.</p>
+	  <p>This gives us the probability of being in the cell in column <m>i</m> and row <m>j</m>. To get the expected number of counts, we multiply that probability by the total number of individuals, <m>T</m>. This gives the following formulas for computing the expected counts in a contingency table.</p>
+	  <theorem xml:id="tmp_contingencey-expected-counts">
+	  	<title>Expected Counts for a Contingency Table</title>
+	  	<statement>
+	  		<p>The expected count for a cell in row <m>i</m> and column <m>j</m> of a contingency table under the assumption that rows and columns are independent is given by:
+	  		  <me>E_{ij} = \frac{C_iR_j}{T}</me>
+	  		where <m>C_i</m> is the column total, <m>R_j</m> is the row total, and <m>T</m> is the grand total in the table.</p>
+	  	</statement>
+	  </theorem>
+	  <p>Let&apos;s practice finding the expected counts using one of our previously seen examples.</p>
+	  <example xml:id="examp_contingency_counts-homogeneous">
+	  	<title>Finding Expected Counts for a Contingency Table</title>
+	  	<statement>
+	  		<p>A student-body representative wishes to determine if a student&apos;s class standing affects their housing arrangements. To test this, the following data is collected.</p>
+	  		<table xml:id="table_contingency_examp_counts-homogeneity">
+  				<title>Student Housing Status by Class Standing</title>
+  				<tabular>
+  					<col halign="left" right="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="medium" top="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell>Freshman</cell>
+  						<cell>Sophomore</cell>
+  						<cell>Junior</cell>
+  						<cell>Senior</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Dorm</cell>
+  						<cell>114</cell>
+  						<cell>99</cell>
+  						<cell>90</cell>
+  						<cell>78</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Off-Campus College-Owned Housing</cell>
+  						<cell>42</cell>
+  						<cell>83</cell>
+  						<cell>104</cell>
+  						<cell>124</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>Off-Campus Other Housing</cell>
+  						<cell>16</cell>
+  						<cell>19</cell>
+  						<cell>17</cell>
+  						<cell>21</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Find the expected counts for each entry in this table.</p>
+  		</statement>
+  		<solution>
+  			<p>In order to compute the expected counts, we follow the process outlined below.
+  				<ol label="1">
+  					<li><p>First compute the marginal distributions (row and column totals).</p></li>
+  					<li><p>Next, use the formula for expected counts above for each cell, taking the product of its row and column totals divided by the grand total.</p></li>
+  					<li><p>Finally, check our work by verifying that the row and column totals of the expected counts match the row and column totals of the observed counts, ignoring any rounding error.</p></li>
+  				</ol>
+  			</p>
+  			<p>While we won&apos;t go through the details of the computation for every cell, the the expected number of Juniors in College Owned housing is found as follows:
+  				<me>E_{23} = \frac{211 \times 353}{807} \approx 92.30</me>.
+  			The rest of the table is filled in as shown below.</p>
+  			<table>
+  				<title>Observed and Expected Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell colspan="2">Freshman</cell>
+  						<cell colspan="2">Sophomore</cell>
+  						<cell colspan="2">Junior</cell>
+  						<cell colspan="2">Senior</cell>
+  						<cell bottom="none">Total</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Dorm</cell>
+  						<cell>114</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>99</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>90</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>78</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>381</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>81.20</cell>
+  						<cell right="minor"></cell>
+  						<cell>94.90</cell>
+  						<cell right="minor"></cell>
+  						<cell>99.62</cell>
+  						<cell right="minor"></cell>
+  						<cell>105.28</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row left="medium">
+  						<cell>College Owned</cell>
+  						<cell>42</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>83</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>104</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>124</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>353</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>75.24</cell>
+  						<cell right="minor"></cell>
+  						<cell>87.92</cell>
+  						<cell right="minor"></cell>
+  						<cell>92.30</cell>
+  						<cell right="minor"></cell>
+  						<cell>97.55</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Other</cell>
+  						<cell>16</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>19</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>17</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>21</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>73</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>15.56</cell>
+  						<cell right="minor"></cell>
+  						<cell>18.18</cell>
+  						<cell right="minor"></cell>
+  						<cell>19.09</cell>
+  						<cell right="minor"></cell>
+  						<cell>20.17</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row>
+  						<cell right="none">Total</cell>
+  						<cell right="none" colspan="2">172</cell>
+  						<cell right="none" colspan="2">201</cell>
+  						<cell right="none" colspan="2">211</cell>
+  						<cell right="none" colspan="2">223</cell>
+  						<cell>807</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  		</solution>
+  	</example>
+  	<p>Pay special attention to the third step in the process outlined in the example above.  The sum of the observed and expected counts in any row or columnn should be the same.  In fact, this can be used to help reduce the number of computations you have to perform.  If you find the expected count in all but one of the cells in a row or column, you can subtract those expected count from the row or column total, and what is left must be the expected count in the final cell.</p>
+
+  	<figure xml:id="video_contingency_counts-1">
+  		<caption>Computing Expected Counts I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-03.mp4"/>
+  	</figure>
+  	<figure xml:id="video_contingency_counts-2">
+  		<caption>Computing Expected Counts II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-04.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_contingency_counts-1">
+  		<statement>
+  			<p>In a test of independence, the following observed counts are recorded.</p>
+  			<table>
+  				<title>Observed Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col top="medium" right="minor" halign="center"></col>
+  					<col top="medium" right="medium" halign="center"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell>Characteristic 1</cell>
+  						<cell>Characteristic 2</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Characteristic A</cell>
+  						<cell>24</cell>
+  						<cell>49</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Characteristic B</cell>
+  						<cell>46</cell>
+  						<cell>85</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>Characteristic C</cell>
+  						<cell>31</cell>
+  						<cell>62</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Question: What is the expected count for the entry in characteristic B, characteristic 2?</p>
+  		</statement>
+  		<answer><p>86.45</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_contingency_counts-2">
+  		<statement>
+  			<p>In a test of homogeneity, the following observed counts are recorded.</p>
+  			<table>
+  				<title>Observed Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col top="medium" right="medium" halign="center"></col>
+  					<col top="medium" right="medium" halign="center"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell>Population 1</cell>
+  						<cell>Population 2</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Characteristic A</cell>
+  						<cell>24</cell>
+  						<cell>49</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Characteristic B</cell>
+  						<cell>46</cell>
+  						<cell>85</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>Characteristic C</cell>
+  						<cell>31</cell>
+  						<cell>62</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Question: what is the expected count for the entry in characteristic C, population 1?</p>
+  		</statement>
+  		<answer><p>31.63</p></answer>
+  	</exercise>
+  </subsection>
+
+  <subsection xml:id="sec_contingency_test-stat">
+  	<title>The Test Statistic</title>
+  	<p>As in the goodness-of-fit test, a test of homogeneity or independence is based on measuring the differences between what we observed in our sample, and what we expected if the null hypothesis is really true. We just saw how to use the observed counts in a ontingency table to find the expected counts for each entry in that table. The test statistic is then computed as shown below.</p>
+  	<theorem xml:id="thm_test-statistic-contingency">
+  		<title>Test Statistic for a Test of Independence or Homogeneity</title>
+  		<statement>
+  			<p>The <m>\chi^2</m> test statistic for a test of independence or homogeneity using a contingency table in which <m>O_{ij}</m> and <m>E_{ij}</m> represent the observed and expected counts in the cell in column <m>i</m> and row <m>j</m> is given by:
+  			  <me>\chi^2_\text{test} = \sum_j\sum_i \frac{(O_{ij} - E_{ij})^2}{E_{ij}}</me>.
+  			</p>
+  		</statement>
+  	</theorem>
+  	<p>Don&apos;t let the double summation sign confuse you. All that this means is that we add together the observed count minus the expected count squared divided by the expected count for every cell in the contingency table. Below we perform this computation on the table we found in <xref ref="examp_contingency_counts-homogeneous"/>.</p>
+  	<example xml:id="examp_contingency_test-stat-homogeneity">
+  		<title>Computing the Test Statistic for a Test of Homogeneity</title>
+  		<statement>
+		  	<p>A student-body representative wishes to determine if a student&apos;s class standing affects their housing arrangements. To test this, the following data is collected.</p>
+		  	<table xml:id="table_contingency_examp_test-stat-homogeneity">
+  				<title>Student Housing Status by Class Standing</title>
+  				<tabular>
+  					<col halign="left" right="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="medium" top="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell>Freshman</cell>
+  						<cell>Sophomore</cell>
+  						<cell>Junior</cell>
+  						<cell>Senior</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Dorm</cell>
+  						<cell>114</cell>
+  						<cell>99</cell>
+  						<cell>90</cell>
+  						<cell>78</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Off-Campus College-Owned Housing</cell>
+  						<cell>42</cell>
+  						<cell>83</cell>
+  						<cell>104</cell>
+  						<cell>124</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>Off-Campus Other Housing</cell>
+  						<cell>16</cell>
+  						<cell>19</cell>
+  						<cell>17</cell>
+  						<cell>21</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Compute the test statistic for this test.</p>
+  		</statement>
+  		<solution>
+  			<p>Recall that the observed and expected counts were as follows.</p>
+  			<table>
+  				<title>Observed and Expected Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell colspan="2">Freshman</cell>
+  						<cell colspan="2">Sophomore</cell>
+  						<cell colspan="2">Junior</cell>
+  						<cell colspan="2">Senior</cell>
+  						<cell bottom="none">Total</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Dorm</cell>
+  						<cell>114</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>99</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>90</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>78</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>381</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>81.20</cell>
+  						<cell right="minor"></cell>
+  						<cell>94.90</cell>
+  						<cell right="minor"></cell>
+  						<cell>99.62</cell>
+  						<cell right="minor"></cell>
+  						<cell>105.28</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row left="medium">
+  						<cell>College Owned</cell>
+  						<cell>42</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>83</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>104</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>124</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>353</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>75.24</cell>
+  						<cell right="minor"></cell>
+  						<cell>87.92</cell>
+  						<cell right="minor"></cell>
+  						<cell>92.30</cell>
+  						<cell right="minor"></cell>
+  						<cell>97.55</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Other</cell>
+  						<cell>16</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>19</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>17</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>21</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>73</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>15.56</cell>
+  						<cell right="minor"></cell>
+  						<cell>18.18</cell>
+  						<cell right="minor"></cell>
+  						<cell>19.09</cell>
+  						<cell right="minor"></cell>
+  						<cell>20.17</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row>
+  						<cell right="none">Total</cell>
+  						<cell right="none" colspan="2">172</cell>
+  						<cell right="none" colspan="2">201</cell>
+  						<cell right="none" colspan="2">211</cell>
+  						<cell right="none" colspan="2">223</cell>
+  						<cell>807</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>To compute the test statistic, we must step through each entry in the table, adding the appropriate values.
+  				<md>
+  					<mrow>\chi^2_{\text{test}} \amp= \frac{(114-81.20)^2}{81.20} + \frac{(99-94.90)^2}{94.90} + \frac{(90-99.62)^2}{99.62} + \frac{(78-105.28)^2}{105.28}</mrow>
+  					<mrow>\amp+ \frac{(42-75.24)^2}{75.24} + \frac{(83-87.92)^2}{87.92} + \frac{(104-92.30)^2}{92.30} + \frac{(124-97.55)^2}{97.55}</mrow>
+  					<mrow>\amp+ \frac{(16-15.56)^2}{15.56} + \frac{(19-18.18)^2}{18.18} + \frac{(17-19.09)^2}{19.09} + \frac{(21 - 20.17)^2}{20.17}</mrow>
+  					<mrow>\amp\approx 45.35.</mrow>
+  				</md>
+  			</p>
+  		</solution>
+  	</example>
+
+  	<figure xml:id="video_contingency_test-stat-1">
+  		<caption>Test Statistic I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-05.mp4"/>
+  	</figure>
+  	<figure xml:id="video_contingency_test-stat-2">
+  		<caption>Test Statistic II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-06.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_contingency_test-stat-1">
+  		<statement>
+  			<p>In a test of homogeneity, the following observed counts are measured and the expected counts are shown in the lower right-hand corners of each cell.</p>
+  			<table xml:id="table_contingency_ckpt_test-stat-1">
+  				<title>Observed and Expected Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell colspan="2">Population 1</cell>
+  						<cell colspan="2">Population 2</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic A</cell>
+  						<cell>114</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>99</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>98.31</cell>
+  						<cell right="minor"></cell>
+  						<cell>114.69</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic B</cell>
+  						<cell>42</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>83</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>57.69</cell>
+  						<cell right="minor"></cell>
+  						<cell>67.31</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Question: what is the test statistic for this test? Round your answer to three decimal places.</p>
+  		</statement>
+  		<answer><p>12.575</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_contingency_test-stat-2">
+  		<statement>
+  			<p>In a test of independence, the following observed counts are observed, and the expected counts are shown in the lower right-hand corners of each cell.</p>
+  			<table xml:id="table_contingency_ckpt_test-stat-2">
+  				<title>Observed and Expected Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell colspan="2">Characteristic 1</cell>
+  						<cell colspan="2">Characteristic 2</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic A</cell>
+  						<cell>27</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>37</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>28.35</cell>
+  						<cell right="minor"></cell>
+  						<cell>35.65</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic B</cell>
+  						<cell>43</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>51</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>41.65</cell>
+  						<cell right="minor"></cell>
+  						<cell>52.35</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Question: what is the test statistic for this test? Round your answer to three decimal places.</p>
+  		</statement>
+  		<answer><p>0.194</p></answer>
+  	</exercise>
+  </subsection>
+
+  <subsection xml:id="sec_contingency_test">
+  	<title>Traditional Tests</title>
+  	<p>The last step in conducting a test of homogeneity or independence is to find the appropriate critical value from the <m>\chi^2</m>-distribution table. To do that, we need the number of degrees of freedom. Because we are dealing with contingency tables, instead of the categories we saw in the goodness-of-fit test, the degrees of freedom must be computed differently.</p>
+  	<theorem xml:id="thm_contingency-df">
+  	  <title>Degrees of Freedom for a Test of Independence or Homogeneity</title>
+  	  <statement>
+  	  	<p>The degrees of freedom for a test of independence or homogeneity using a contingency table with <m>c</m> columns and <m>r</m> rows is <m>df = (c-1)(r-1)</m>.</p>
+  	  </statement>
+  	</theorem>
+  	<p>Thus, if we take one less than the number of columns times one less than the number of rows, we have the degrees of freedom to use when looking up our critical value. This process is shown in the following examples.</p>
+  	<example xml:id="examp_contingency_test-homogeneity">
+  		<title>Conducting a Test of Homogeneity</title>
+  		<statement>
+  			<p>A student-body representative wishes to determine if a student&apos;s class standing affects their housing arrangements. To test this, the following data is collected.</p>
+  			<table xml:id="table_contingency_examp_test-homogeneity">
+  				<title>Student Housing Status by Class Standing</title>
+  				<tabular>
+  					<col halign="left" right="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="medium" top="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell>Freshman</cell>
+  						<cell>Sophomore</cell>
+  						<cell>Junior</cell>
+  						<cell>Senior</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Dorm</cell>
+  						<cell>114</cell>
+  						<cell>99</cell>
+  						<cell>90</cell>
+  						<cell>78</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Off-Campus College-Owned Housing</cell>
+  						<cell>42</cell>
+  						<cell>83</cell>
+  						<cell>104</cell>
+  						<cell>124</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>Off-Campus Other Housing</cell>
+  						<cell>16</cell>
+  						<cell>19</cell>
+  						<cell>17</cell>
+  						<cell>21</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Use a <m>\chi^2</m> test at the <m>\alpha = 0.01</m> significance level to make this determination.</p>
+  		</statement>
+  		<solution>
+  			<p>Recall that our hypotheses are:
+  				<md>
+  					<mrow>H_0\amp:\ \text{Housing distributions in the four populations are homogeneous}</mrow>
+  					<mrow>H_A\amp:\ \text{Housing distributions are not homogeneous across the four populations}</mrow>
+  				</md>
+  			  which means that the alternative is that they are not homogeneous, or in other words, that students in different class standings have different types of housing.</p>
+  			<p>Our test statistic from <xref ref="examp_contingency_test-stat-homogeneity"/> was:
+  			  <me>\chi^2_{\text{test}} = 45.35</me>.</p>
+  			<p>At the 0.01 significance level, with <m>(4-1)(3-1) = 6</m> degrees of freedom, the critical value from the <m>\chi^2</m>-distribution table is <m>\chi^2_{0.01} = 16.812</m> as shown below.</p>
+  			<figure xml:id="fig_contingency_examp_test-homogeneity">
+  				<caption>Rejection Region for <m>\chi^2</m> Test</caption>
+  				<image width="75%" xml:id="image_contingency_examp_test-homogeneity">
+  					<latex-image>
+  						<xi:include href="./latex-images/contingency_examp_test-homogeneity.tex" parse="text"/>
+  					</latex-image>
+  				</image>
+  			</figure>
+  			<p>Since our test statistic is further into the right tail than the critical value of 16.812, we must reject the null hypothesis. There is highly significant evidence that students with different class standing live in different types of housing.</p>
+  		</solution>
+  	</example>
+  	<example xml:id="examp_contingency_test-independence">
+  		<title>Conducting a Test of Independence</title>
+  		<statement>
+  			<p>An efficiency expert at a certain large company believes that the number of years experience that an employee has is independent from their efficiency rating. To test this claim, the following data is collected.</p>
+  			<table xml:id="table_contingency_examp_test-independence">
+					<title>Efficience Rating vs. Years of Experience</title>
+					<tabular>
+						<col halign="left" right="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="minor" top="medium"></col>
+  					<col halign="center" right="medium" top="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell><m>\lt</m> 5 Years</cell>
+  						<cell>5-15 Years</cell>
+  						<cell>15+ Years</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Low Efficiency</cell>
+  						<cell>21</cell>
+  						<cell>14</cell>
+  						<cell>11</cell>
+  					</row>
+  					<row left="medium" bottom="minor">
+  						<cell>Moderate Efficiency</cell>
+  						<cell>45</cell>
+  						<cell>28</cell>
+  						<cell>24</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell>High Efficiency</cell>
+  						<cell>62</cell>
+  						<cell>38</cell>
+  						<cell>32</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>Conduct a test of independence at the <m>\alpha = 0.05</m> significance level.</p>
+  		</statement>
+  		<solution>
+  			<p>You may recall that the hypotheses for this test are:
+  				<md>
+  					<mrow>H_0\amp:\ \text{Efficiency and years of experience are independent characteristics}</mrow>
+  					<mrow>H_A\amp:\ \text{These characteristics are dependent}</mrow>
+  				</md>
+  			</p>
+  			<p>Next, we compute the expected counts.</p>
+  			<table>
+  				<title>Observed and Expected Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center" top="medium"></col>
+  					<col right="medium" top="medium"></col>
+  					<col halign="center"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell colspan="2"><m>\lt</m> 5 Years</cell>
+  						<cell colspan="2">5-15 Years</cell>
+  						<cell colspan="2">15+ Years</cell>
+  						<cell bottom="none">Total</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Low Efficiency</cell>
+  						<cell>20</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>15</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>11</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>46</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>21.41</cell>
+  						<cell right="minor"></cell>
+  						<cell>13.38</cell>
+  						<cell right="minor"></cell>
+  						<cell>11.20</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Moderate Efficiency</cell>
+  						<cell>43</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>27</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>27</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>97</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>45.15</cell>
+  						<cell right="minor"></cell>
+  						<cell>28.22</cell>
+  						<cell right="minor"></cell>
+  						<cell>23.63</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row left="medium">
+  						<cell>High Efficiency</cell>
+  						<cell>65</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>38</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>29</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>132</cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>61.44</cell>
+  						<cell right="minor"></cell>
+  						<cell>38.40</cell>
+  						<cell right="minor"></cell>
+  						<cell>32.16</cell>
+  						<cell bottom="none"></cell>
+  					</row>
+  					<row>
+  						<cell right="none">Total</cell>
+  						<cell right="none" colspan="2">128</cell>
+  						<cell right="none" colspan="2">80</cell>
+  						<cell right="none" colspan="2">67</cell>
+  						<cell>275</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>And then we compute the <m>\chi^2</m> test statistic using this table.
+  			  <md>
+  			  	<mrow>\chi^2_{\text{test}} \amp= \frac{(20-21.41)^2}{21.41} + \frac{(15-13.38)^2}{13.38} + \frac{(11-11.20)^2}{11.20}</mrow>
+  			  	<mrow>\amp+ \frac{(43-45.15)^2}{45.15} + \frac{(27-28.22)^2}{28.22} + \frac{(27-23.63)^2}{23.63}</mrow>
+  			  	<mrow>\amp+ \frac{(65-61.44)^2}{61.44} + \frac{(38.38.40)^2}{38.40} + \frac{(29-32.16)^2}{32.16}</mrow>
+  			  	<mrow>\amp\approx 1.449</mrow>
+  			  </md>
+  			</p>
+  			<p>At the <m>\alpha = 0.05</m> significance level with <m>df = (3-1)(3-1) = 4</m>, the critical value from the <m>\chi^2</m>-distribution is 9.488. The distribution and test statistic are shown below.</p>
+  			<figure xml:id="fig_contingency_examp_test-independence">
+  				<caption>Rejection Region for <m>\chi^2</m> Test</caption>
+  				<image width="70%" xml:id="image_contingency_examp_test-independence">
+  					<latex-image>
+  						<xi:include href="./latex-images/contingency_examp_test-independence.tex" parse="text"/>
+  					</latex-image>
+  				</image>
+  			</figure>
+  			<p>Since our test statistic is not further into the tail than the critical value of <m>\chi^2_{0.05} = 9.488</m>, we must fail to reject the null hypothesis. There is no statistically significant evidence that efficiency and years worked are related. These two variables appear to be independent.</p>
+  		</solution>
+  	</example>
+
+  	<figure xml:id="video_contingency_test-1">
+  		<caption>Tests of Independence or Homogeneity I</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-07.mp4"/>
+  	</figure>
+  	<figure xml:id="video_contingency_test-2">
+  		<caption>Tests of Independence or Homogeneity II</caption>
+  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-08.mp4"/>
+  	</figure>
+
+  	<exercise xml:id="ckpt_contingency_test-1">
+  		<statement>
+  			<p>In a test of homogeneity, the following observed counts are observed, and the expected counts are shown in the lower right-hand corners of each cell.</p>
+  			<table xml:id="table_contingency_ckpt_test-1">
+  				<title>Observed and Expected Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell colspan="2">Population 1</cell>
+  						<cell colspan="2">Population 2</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic A</cell>
+  						<cell>51</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>42</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>43.22</cell>
+  						<cell right="minor"></cell>
+  						<cell>49.78</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic B</cell>
+  						<cell>61</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>87</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>68.78</cell>
+  						<cell right="minor"></cell>
+  						<cell>79.22</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>This results in a test statistic <m>\chi^2_\text{test} = 4.260</m>.</p>
+  			<p>Question: what is your conclusion at the <m>\alpha = 0.01</m> significance level?</p>
+  		</statement>
+  		<answer><p>The populations appear to be homogeneous.</p></answer>
+  	</exercise>
+  	<exercise xml:id="ckpt_contingency_test-2">
+  		<statement>
+  			<p>In a test of independence, the following observed counts are observed, and the expected counts are shown in the lower right-hand corners of each cell.</p>
+  			<table xml:id="table_contingency_ckpt_test-2">
+  				<title>Observed and Expected Counts</title>
+  				<tabular>
+  					<col right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<col top="medium" halign="center"></col>
+  					<col top="medium" right="medium"></col>
+  					<row bottom="medium">
+  						<cell></cell>
+  						<cell colspan="2">Characteristic 1</cell>
+  						<cell colspan="2">Characteristic 2</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic A</cell>
+  						<cell>51</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>42</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>43.22</cell>
+  						<cell right="minor"></cell>
+  						<cell>49.78</cell>
+  					</row>
+  					<row left="medium">
+  						<cell>Characteristic B</cell>
+  						<cell>61</cell>
+  						<cell bottom="minor"></cell>
+  						<cell>87</cell>
+  						<cell bottom="minor"></cell>
+  					</row>
+  					<row left="medium" bottom="medium">
+  						<cell></cell>
+  						<cell right="minor"></cell>
+  						<cell>68.78</cell>
+  						<cell right="minor"></cell>
+  						<cell>79.22</cell>
+  					</row>
+  				</tabular>
+  			</table>
+  			<p>This results in a test statistic <m>\chi^2_{\text{test}} = 4.260</m>.</p>
+  			<p>Question: what is your conclusion at the <m>\alpha = 0.05</m> significance level?</p>
+  		</statement>
+  		<answer><p>There is statistically significant evidence the characteristics are dependent.</p></answer>
+  	</exercise>
+  </subsection>
+
+</section>

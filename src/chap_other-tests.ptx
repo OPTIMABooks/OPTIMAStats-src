@@ -17,7 +17,6 @@
 
   <xi:include href="sec_anova.ptx"/>
   <xi:include href="sec_goodness-of-fit.ptx"/>
-<!--
   <xi:include href="sec_contingency.ptx"/>
--->
+
 </chapter>
