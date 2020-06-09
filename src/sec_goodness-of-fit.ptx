@@ -810,7 +810,7 @@
   <subsection xml:id="sec_goodness-of-fit_test">
   	<title>The Goodness-of-Fit Test</title>
   	<p>The goodness-of-fit test is, like any other hypothesis test, completed by comparing the test statistic from the sample to the significance level. In the case of a <m>\chi^2</m> test statistic, we again must use a traditional test because the table is not set up to give a p-values. That means that we need a degrees of freedom in order to look up the critical value.</p>
-  	<theorem xml:id="thm_chi-squared-df">
+  	<theorem xml:id="thm_goodness-of-fit-df">
   		<title>Degrees of Freedom for a Goodness-of-Fit Test</title>
   		<statement>
   			<p>The degrees of freedom for a goodness-of-fit test of a multinomial process in which there are k categories is <m>df = k-1</m>.</p>
@@ -1090,5 +1090,5 @@
 			<answer><p>Reject the null hypothesis.</p></answer>
 		</exercise>
 	</subsection>
-	
+
 </section>
