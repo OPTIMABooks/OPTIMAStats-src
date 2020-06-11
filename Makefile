@@ -85,7 +85,7 @@ html:
 	cp -a $(IMAGESRC) $(HTMLOUT)
 	-rm $(OUTPUT)/xsltreport.txt
 	@if [ -z "$(sec)" ]; then make htmlIndex; else make htmlSingle; fi
-	google-chrome-stable --new-window http://localhost/
+	google-chrome-stable --new-window http://localhost/ &
 	@if [ -s $(OUTPUT)/xsltreport.txt ]; then less $(OUTPUT)/xsltreport.txt; else echo "No errors found"; fi
 
 htmlIndex:
