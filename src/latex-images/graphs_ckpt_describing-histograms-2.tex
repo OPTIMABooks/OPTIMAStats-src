@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      axis lines*=left,
+      no markers,
+      xmin=0, xmax=35, ymin=0, ymax=10,
+      xtick={0,5,10,15,20,25,30,35},
+      ytick={0,2,...,10},
+      xlabel={Class},
+      ylabel={Frequency},
+      title={\large\bf Checkpoint Histogram},
+      ticklabel style={font=\small},
+      enlargelimits=false,
+      clip=false,
+      grid = none,
+      ymajorgrids=true,
+      ybar=0pt,
+      width=12cm,
+      height=8cm
+    ]
+    \addplot+[ybar interval,mark=no] plot coordinates { 
+        (0, 1)
+        (5, 3)
+        (10, 6)
+        (15, 9)
+        (20, 6)
+        (25, 3)
+        (30, 1)
+        (35, 0)
+    };
+  \end{axis}
+\end{tikzpicture}

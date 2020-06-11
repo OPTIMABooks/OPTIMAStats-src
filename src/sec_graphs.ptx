@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_graphs">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_graphs">
 	<title>Describing Data Graphically</title>
 
 	<introduction xml:id="sec_graphs_intro">
@@ -256,53 +256,55 @@
 						<table xml:id="examp_graphs_frequency-table_table">
 							<title>Pizza Toppings Frequency Table</title>
 							<tabular>
+								<col right="medium" halign="left"></col>
+								<col halign="center"></col>
 								<row bottom="medium">
 									<cell>Topping</cell>
-									<cell halign="center">Frequency</cell>
+									<cell>Frequency</cell>
 								</row>
 								<row>
 									<cell>Anchovies</cell>
-									<cell halign="center">1</cell>
+									<cell>1</cell>
 								</row>
 								<row>
 									<cell>Bacon</cell>
-									<cell halign="center">10</cell>
+									<cell>10</cell>
 								</row>
 								<row>
 									<cell>Cheese</cell>
-									<cell halign="center">17</cell>
+									<cell>17</cell>
 								</row>
 								<row>
 									<cell>Green Peppers</cell>
-									<cell halign="center">11</cell>
+									<cell>11</cell>
 								</row>
 								<row>
 									<cell>Mushrooms</cell>
-									<cell halign="center">4</cell>
+									<cell>4</cell>
 								</row>
 								<row>
 									<cell>Olives</cell>
-									<cell halign="center">15</cell>
+									<cell>15</cell>
 								</row>
 								<row>
 									<cell>Onions</cell>
-									<cell halign="center">5</cell>
+									<cell>5</cell>
 								</row>
 								<row>
 									<cell>Pepperoni</cell>
-									<cell halign="center">17</cell>
+									<cell>17</cell>
 								</row>
 								<row>
 									<cell>Pineapple</cell>
-									<cell halign="center">6</cell>
+									<cell>6</cell>
 								</row>
 								<row bottom="medium">
 									<cell>Sausage</cell>
-									<cell halign="center">10</cell>
+									<cell>10</cell>
 								</row>
 								<row>
 									<cell>Total:</cell>
-									<cell halign="center">96</cell>
+									<cell>96</cell>
 								</row>
 							</tabular>
 						</table>
@@ -337,53 +339,55 @@
 						<table xml:id="examp_graphs_relative-frequency-table_table">
 							<title>Pizza Toppings Relative Frequency Table</title>
 							<tabular>
+								<col halign="left" right="medium"></col>
+								<col halign="center"></col>
 								<row bottom="medium">
 									<cell>Topping</cell>
-									<cell halign="center">Relative Frequency</cell>
+									<cell>Relative Frequency</cell>
 								</row>
 								<row>
 									<cell>Anchovies</cell>
-									<cell halign="center"><m>\frac{1}{96} \approx 0.0104</m></cell>
+									<cell><m>\frac{1}{96} \approx 0.0104</m></cell>
 								</row>
 								<row>
 									<cell>Bacon</cell>
-									<cell halign="center"><m>\frac{10}{96} \approx 0.1042</m></cell>
+									<cell><m>\frac{10}{96} \approx 0.1042</m></cell>
 								</row>
 								<row>
 									<cell>Cheese</cell>
-									<cell halign="center"><m>\frac{17}{96} \approx 0.1771</m></cell>
+									<cell><m>\frac{17}{96} \approx 0.1771</m></cell>
 								</row>
 								<row>
 									<cell>Green Peppers</cell>
-									<cell halign="center"><m>\frac{11}{96} \approx 0.1146</m></cell>
+									<cell><m>\frac{11}{96} \approx 0.1146</m></cell>
 								</row>
 								<row>
 									<cell>Mushrooms</cell>
-									<cell halign="center"><m>\frac{4}{96} \approx 0.0417</m></cell>
+									<cell><m>\frac{4}{96} \approx 0.0417</m></cell>
 								</row>
 								<row>
 									<cell>Olives</cell>
-									<cell halign="center"><m>\frac{15}{96} \approx 0.1563</m></cell>
+									<cell><m>\frac{15}{96} \approx 0.1563</m></cell>
 								</row>
 								<row>
 									<cell>Onions</cell>
-									<cell halign="center"><m>\frac{5}{96} \approx 0.0521</m></cell>
+									<cell><m>\frac{5}{96} \approx 0.0521</m></cell>
 								</row>
 								<row>
 									<cell>Pepperoni</cell>
-									<cell halign="center"><m>\frac{17}{96} \approx 0.1771</m></cell>
+									<cell><m>\frac{17}{96} \approx 0.1771</m></cell>
 								</row>
 								<row>
 									<cell>Pineapple</cell>
-									<cell halign="center"><m>\frac{6}{96} \approx 0.0625</m></cell>
+									<cell><m>\frac{6}{96} \approx 0.0625</m></cell>
 								</row>
 								<row bottom="medium">
 									<cell>Sausage</cell>
-									<cell halign="center"><m>\frac{10}{96} \approx 0.1042</m></cell>
+									<cell><m>\frac{10}{96} \approx 0.1042</m></cell>
 								</row>
 								<row>
 									<cell>Total:</cell>
-									<cell halign="center"><m>1.0002</m></cell>
+									<cell><m>1.0002</m></cell>
 								</row>
 							</tabular>
 						</table>
@@ -411,9 +415,16 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_frequency-table_table" text="custom">frequency table for this data</xref>, we get the following bar graph.</p>
-					<figure xml:id="fig_examp_graphs_bar-graph">
+					<figure xml:id="fig_graphs_examp_bar-graph">
 						<caption>Pizza Topping Bar Graph</caption>
-						<image source="./images/graphs_examp_bar-graph.png" width="80%" archive="image_examp_graphs_bar-graph"/>
+						<image xml:id="image_graphs_examp_bar-graph" width="90%">
+							<description>
+								A bar for each pizza topping with heights corresponding to the to frequency of the topping in our frequency table.
+						  </description>
+						  <latex-image>
+						  	<xi:include href="./latex-images/graphs_examp_bar-graph.tex" parse="text"/>
+						  </latex-image>
+						</image>
 					</figure>
 				</solution>
 			</example>
@@ -432,9 +443,16 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_relative-frequency-table_table" text="custom">relative frequency table</xref>, we get the following bar graph.</p>
-					<figure xml:id="fig_examp_graphs_relative-frequency-bar-graph">
+					<figure xml:id="fig_graphs_examp_relative-frequency-bar-graph">
 						<caption>Pizza Topping Relative Frequency Bar Graph</caption>
-						<image source="./images/graphs_examp_relative-frequency-bar-graph.png" width="80%" archive="image_examp_graphs_relative-frequency-bar-graph"/>
+						<image width="90%" xml:id="image_graphs_examp_relative-frequency-bar-graph">
+							<description>
+								A bar for each pizza topping with heights corresponding to the to relative frequency of the topping in our relative frequency table.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_relative-frequency-bar-graph.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 					<p>Notice that the bar graph is scaled in terms of percent instead of the relative frequencies from the table.  This is a common quirk with using spreadsheet programs to produce such graphs.</p>
 				</solution>
@@ -454,9 +472,16 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_relative-frequency-table_table" text="custom">relative frequency table</xref> previously constructed for this data, we get the following pie graph.</p>
-					<figure xml:id="fig_examp_graphs_pie-graph">
+					<figure xml:id="fig_graphs_examp_pie-graph">
 						<caption>Pizza Topping Pie Graph</caption>
-						<image source="./images/graphs_examp_pie-graph.png" width="80%" archive="image_examp_graphs_pie-graph"/>
+						<image xml:id="image_graphs_examp_pie-graph"  width="80%">
+							<description>
+								A circle divided into ten sectors with sizes proportional to the relative frequency of the pizza toppings they represent.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_pie-graph.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 					<p>Again, spreadsheet programs often convert relative frequencies into percents when constructing a pie graph.</p>
 				</solution>
@@ -482,33 +507,38 @@
 					<table xml:id="examp_graphs_contingency-table_table">
 						<title>Class Standing and Summer Plans</title>
 						<tabular>
+							<col halign="left" right="medium"></col>
+							<col halign="center" right="minor" top="medium"></col>
+							<col halign="center" right="minor" top="medium"></col>
+							<col halign="center" right="minor" top="medium"></col>
+							<col halign="center" right="medium" top="medium"></col>
 							<row bottom="medium">
-								<cell right="medium"></cell>
-								<cell halign="center">Freshman</cell>
-								<cell halign="center">Sophomore</cell>
-								<cell halign="center">Junior</cell>
-								<cell halign="center">Senior</cell>
+								<cell></cell>
+								<cell>Freshman</cell>
+								<cell>Sophomore</cell>
+								<cell>Junior</cell>
+								<cell>Senior</cell>
 							</row>
-							<row>
-								<cell right="medium">Work</cell>
-								<cell halign="center">23</cell>
-								<cell halign="center">35</cell>
-								<cell halign="center">30</cell>
-								<cell halign="center">51</cell>
+							<row left="medium" bottom="minor">
+								<cell>Work</cell>
+								<cell>23</cell>
+								<cell>35</cell>
+								<cell>30</cell>
+								<cell>51</cell>
 							</row>
-							<row>
-								<cell right="medium">Play</cell>
-								<cell halign="center">49</cell>
-								<cell halign="center">62</cell>
-								<cell halign="center">29</cell>
-								<cell halign="center">17</cell>
+							<row left="medium" bottom="minor">
+								<cell>Play</cell>
+								<cell>49</cell>
+								<cell>62</cell>
+								<cell>29</cell>
+								<cell>17</cell>
 							</row>
-							<row>
-								<cell right="medium">Study</cell>
-								<cell halign="center">28</cell>
-								<cell halign="center">17</cell>
-								<cell halign="center">46</cell>
-								<cell halign="center">13</cell>
+							<row left="medium" bottom="medium">
+								<cell>Study</cell>
+								<cell>28</cell>
+								<cell>17</cell>
+								<cell>46</cell>
+								<cell>13</cell>
 							</row>
 						</tabular>
 					</table>
@@ -535,44 +565,50 @@
 					<table xml:id="examp_graphs_marginal-distribution_table">
 						<title>Marginal Distributions of Class Standing and Summer Plans</title>
 						<tabular>
+							<col halign="left" right="medium"></col>
+							<col halign="center" right="minor" top="medium"></col>
+							<col halign="center" right="minor" top="medium"></col>
+							<col halign="center" right="minor" top="medium"></col>
+							<col halign="center" right="medium" top="medium"></col>
+							<col halign="center"></col>
 							<row bottom="medium">
-								<cell right="medium"></cell>
-								<cell halign="center">Freshman</cell>
-								<cell halign="center">Sophomore</cell>
-								<cell halign="center">Junior</cell>
-								<cell right="minor" halign="center">Senior</cell>
-								<cell halign="center"><em>total</em></cell>
+								<cell></cell>
+								<cell>Freshman</cell>
+								<cell>Sophomore</cell>
+								<cell>Junior</cell>
+								<cell>Senior</cell>
+								<cell bottom="none">Total</cell>
+							</row>
+							<row left="medium" bottom="minor">
+								<cell>Work</cell>
+								<cell>23</cell>
+								<cell>35</cell>
+								<cell>30</cell>
+								<cell>51</cell>
+								<cell bottom="none">139</cell>
+							</row>
+							<row left="medium" bottom="minor">
+								<cell>Play</cell>
+								<cell>49</cell>
+								<cell>62</cell>
+								<cell>29</cell>
+								<cell>17</cell>
+								<cell bottom="none">157</cell>
+							</row>
+							<row left="medium" bottom="medium">
+								<cell>Study</cell>
+								<cell>28</cell>
+								<cell>17</cell>
+								<cell>46</cell>
+								<cell>13</cell>
+								<cell bottom="none">104</cell>
 							</row>
 							<row>
-								<cell right="medium">Work</cell>
-								<cell halign="center">23</cell>
-								<cell halign="center">35</cell>
-								<cell halign="center">30</cell>
-								<cell right="minor" halign="center">51</cell>
-								<cell halign="center"><em>139</em></cell>
-							</row>
-							<row>
-								<cell right="medium">Play</cell>
-								<cell halign="center">49</cell>
-								<cell halign="center">62</cell>
-								<cell halign="center">29</cell>
-								<cell right="minor" halign="center">17</cell>
-								<cell halign="center"><em>157</em></cell>
-							</row>
-							<row bottom="minor">
-								<cell right="medium">Study</cell>
-								<cell halign="center">28</cell>
-								<cell halign="center">17</cell>
-								<cell halign="center">46</cell>
-								<cell right="minor" halign="center">13</cell>
-								<cell halign="center"><em>104</em></cell>
-							</row>
-							<row>
-								<cell right="medium"><em>total</em></cell>
-								<cell halign="center"><em>100</em></cell>
-								<cell halign="center"><em>114</em></cell>
-								<cell halign="center"><em>105</em></cell>
-								<cell right="minor" halign="center"><em>81</em></cell>
+								<cell right="none">Total</cell>
+								<cell right="none">100</cell>
+								<cell right="none">114</cell>
+								<cell right="none">105</cell>
+								<cell right="none">81</cell>
 							</row>
 						</tabular>
 					</table>
@@ -597,14 +633,28 @@
 				</statement>
 				<solution>
 					<p>First we create a graph with class standing as the primary variable.</p>
-					<figure xml:id="fig_examp_graphs_stacked-bar-graph-a">
+					<figure xml:id="fig_graphs_examp_stacked-bar-graph-a">
 						<caption>Summer Plans by Class Standing</caption>
-						<image source="./images/graphs_stacked-bar-graph-a.png" width="80%" archive="image_examp_graphs_stacked-bar-graph-a"/>
+						<image width="80%" xml:id="image_graphs_examp_stacked-bar-graph-a">
+							<description>
+								One bar for each class with height equal to the number in that class and broken into three segments, one for each summer activity, whose heights are equal to the number in that class planning that activity.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_stacked-bar-graph-a.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 					<p>And then the graph with summer plans as the primary variable.</p>
-					<figure xml:id="fig_examp_graphs_stacked-bar-graph-b">
+					<figure xml:id="fig_graphs_examp_stacked-bar-graph-b">
 						<caption>Class Standing by Summer Plans</caption>
-						<image source="./images/graphs_stacked-bar-graph-b.png" width="80%" archive="image_examp_graphs_stacked-bar-graph-b"/>
+						<image width="80%" xml:id="image_graphs_examp_stacked-bar-graph-b">
+						  <description>
+						  	One bar for each summer activity with height equal to the number planning that activity and broken into four segments, one for each class standing, whose heights are equal to the number in that class planning that activity.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_stacked-bar-graph-b.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 				</solution>
 			</example>
@@ -812,28 +862,30 @@
 							<table xml:id="examp_graphs_frequency-distribution_frequency-distribution">
 								<title>Frequency Distribution of Tomato Plant Heights</title>
 								<tabular  halign="center">
+									<col halign="center" right="medium"></col>
+									<col halign="center"></col>
 									<row bottom="medium">
-										<cell right="medium">Classes</cell>
+										<cell>Classes</cell>
 										<cell>Frequency</cell>
 									</row>
 									<row>
-										<cell right="medium">8.1-10</cell>
+										<cell>8.1-10</cell>
 										<cell>17</cell>
 									</row>
 									<row>
-										<cell halign="center" right="medium">10.1-12</cell>
+										<cell>10.1-12</cell>
 										<cell>7</cell>
 									</row>
 									<row>
-										<cell halign="center" right="medium">12.1-14</cell>
+										<cell>12.1-14</cell>
 										<cell>14</cell>
 									</row>
 									<row>
-										<cell halign="center" right="medium">14.1-16</cell>
+										<cell>14.1-16</cell>
 										<cell>10</cell>
 									</row>
 									<row>
-										<cell halign="center" right="medium">16.1-18</cell>
+										<cell>16.1-18</cell>
 										<cell>16</cell>
 									</row>
 								</tabular>
@@ -861,11 +913,18 @@
 				</statement>
 				<solution>
 					<p>Based on the <xref ref="examp_graphs_frequency-distribution_frequency-distribution" text="custom">frequency distribution</xref> built in the previous example, we construct the following histogram.</p>
-					<figure xml:id="fig_examp_graphs_histogram">
-						<caption>A Histogram if Tomato Plant Heights</caption>
-						<image source="./images/graphs_examp_histogram.png" width="80%" archive="image_examp_graphs_histogram"/>
+					<figure xml:id="fig_graphs_examp_histogram">
+						<caption>Tomato Plant Heights</caption>
+						<image width="80%" xml:id="image_graphs_examp_histogram">
+							<description>
+								One bar for each range of tomato plant heights arranged in order of increasing height with no gaps between the bars and the height of the bar equal to the number of plants in the range the bar represents.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_histogram.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
-					<p>notice that the bars in this graph touch each other, and that they are in order from lowest values (8.1-10) up to highest values (16.1-18). These are both important characteristics for histograms!</p>
+					<p>notice that the bars in this graph touch each other, and that they are in order from lowest values (between 8.1 and 10) up to highest values (between 16.1 and 18). These are both important characteristics for histograms!</p>
 				</solution>
 			</example>
 
@@ -1005,21 +1064,19 @@
 								<li><p>List the stems in order in the first column of our table.</p></li>
 								<li><p>For each stem, list the associated leaves in ascending order.</p></li>
 							</ol>
-							This produces the following plot.</p>
-							<figure xml:id="fig_examp_graphs_stem-and-leaf">
-								<caption>Stem-and-Leaf Plot</caption>
-								<image xml:id="image_graphs_examp_stem-and-leaf">
-									<latex-image>
-\begin{tabular}{r|l}
-  Stem &amp; Leaves\\
-  \hline
-  \tt 0 &amp; \tt 3689\\
-  \tt 1 &amp; \tt 122334455555666666677889\\
-  \tt 2 &amp; \tt 11\\
-\end{tabular}
-                  </latex-image>
-								</image>
-							</figure>
+							This produces the following plot.
+						</p>
+						<figure xml:id="fig_graphs_examp_stem-and-leaf">
+							<caption>Stem-and-Leaf Plot</caption>
+							<image xml:id="image_graphs_examp_stem-and-leaf">
+								<description>
+									A table with one row for each stem (first digit)--0, 1, and 2--and in those rows a list of the leaves (second digit) in ascending order.
+								</description>
+								<latex-image>
+									<xi:include href="./latex-images/graphs_examp_stem-and-leaf.tex" parse="text"/>
+                </latex-image>
+							</image>
+						</figure>
 					</sidebyside>
 				</solution>
 			</example>
@@ -1038,20 +1095,14 @@
 				<solution>
 					<sidebyside widths="50% 45%" margins="auto" valign="middle">
 						<p>This is done in almost exactly the same way as	<xref ref="fig_examp_graphs_stem-and-leaf" text="custom">our last example</xref>. The only difference is that	each stem gets two rows. The leaves are then split up with 0-4 going in the first row and 5-9 in the second row for a given stem. The result is	shown to the right.</p>
-						<figure xml:id="fig_examp_graphs_expanded-stem-and-leaf">
+						<figure xml:id="fig_graphs_examp_expanded-stem-and-leaf">
 							<caption>Expanded Stem-and-Leaf Plot</caption>
 							<image xml:id="image_graphs_expanded-stem-and-leaf">
+								<description>
+									A table with two rows for each stem (first digit)--0, 1, and 2--and in the first of each of those rows a list of the leaves (second digit) for that stem from 0 to 4 in ascending order and in the second of each of those rows a list of the leaves for that stem from 5 to 9 in ascending order.
+								</description>
 								<latex-image>
-\begin{tabular}{r|l}
-Stem &amp; Leaves \\
-\hline
-\tt 0 &amp; 3 \\
-\tt 0 &amp; 689 \\
-\tt 1 &amp; 1223344 \\
-\tt 1 &amp; 55555666666677889 \\
-\tt 2 &amp; 11 \\
-\tt 2 &amp;	\\
-\end{tabular}					
+									<xi:include href="./latex-images/graphs_examp_expanded-stem-and-leaf.tex" parse="text"/>
 								</latex-image>
 							</image>
 						</figure>	
@@ -1110,18 +1161,14 @@ Stem &amp; Leaves \\
 					<p>Construct a stem-and-leaf plot for this data.</p>
 				</statement>
 				<solution>
-					<figure xml:id="fig_ckpt_graphs_stem-and-leaves-1">
+					<figure xml:id="fig_graphs_ckpt_stem-and-leaves-1">
 						<caption>Stem-and-Leaf Plot</caption>
-						<image width="20%" xml:id="image_ckpt_graphs_stem-and-leaves-1">
+						<image width="20%" xml:id="image_graphs_ckpt_stem-and-leaves-1">
+							<description>
+								First row: stem 2, leaves 4, 6, 6, and 7. Second row: stem 3, leaves 2, 4, 4, 6, 7, 7, 7, and 9. Third row: step 4, leaves 0,3,3,6, and 8. Last row: step 5, leaves 0, 1, and 1.
+							</description>
 							<latex-image>
-\begin{tabular}{r|l}
-  Stem &amp; Leaf \\
-  \hline
-  \tt 2 &amp; \tt 4667 \\
-  \tt 3 &amp; \tt 24467779 \\
-	\tt 4 &amp; \tt 03368 \\
-	\tt 5 &amp; \tt 011 \\
-\end{tabular}
+								<xi:include href="./latex-images/graphs_ckpt_stem-and-leaves-1.tex" parse="text"/>
 							</latex-image>
 						</image>
 					</figure>
@@ -1168,22 +1215,14 @@ Stem &amp; Leaves \\
 					<p>Construct an expanded stem-and-leaf plot for this data.</p>
 				</statement>
 				<solution>
-					<figure xml:id="fig_ckpt_graphs_stem-and-leaves-2">
+					<figure xml:id="fig_graphs_ckpt_stem-and-leaves-2">
 						<caption>Expanded Stem-and-Leaf Plot</caption>
-						<image width="20%" xml:id="image_ckpt_graphs_stem-and-leaves-2">
+						<image width="20%" xml:id="image_graphs_ckpt_stem-and-leaves-2">
+							<description>
+								Row one: stem 2 and leaf 4. Row two: stem 2 and leaves 6, 6, and 7. Row three: stem 3 and leaves 2, 4, and 4. Row four: stem 3 and leaves 6, 7, 7, 7, and 9. Row five: stem 4 and leaves 0, 3, and 3. Row six: stem 4 and leaves 6 and 8. Row seven: stem 5 and leaves 0, 1, and 1. Row eight: stem 5 and no leaves.
+							</description>
 							<latex-image>
-\begin{tabular}{r|l}
-  Stem &amp; Leaf\\
-  \hline
-  \tt 2 &amp; \tt 4\\
-  \tt 2 &amp; \tt 667\\
-  \tt 3 &amp; \tt 244\\
-  \tt 3 &amp; \tt 67779\\
-	\tt 4 &amp; \tt 033\\
-  \tt 4 &amp; \tt 68\\
-  \tt 5 &amp; \tt 011\\
-  \tt 5 &amp; \\
- \end{tabular}
+								<xi:include href="./latex-images/graphs_ckpt_stem-and-leaves-2.tex" parse="text"/>
 							</latex-image>
 						</image>
 					</figure>
@@ -1229,9 +1268,16 @@ Stem &amp; Leaves \\
 				</statement>
 				<solution>
 					<p>Using a spreadsheet program, we can produce the following graph.</p>
-					<figure xml:id="fig_examp_graphs_time-series">
+					<figure xml:id="fig_graphs_examp_time-series">
 						<caption>Time Series of Stock Price</caption>
-						<image source="./images/graphs_time-series.png" width="80%" archive="image_examp_graphs_time-series"/>
+						<image width="80%" xml:id="image_graphs_examp_time-series">
+							<description>
+								A marker for each year is placed at the height corresponding to the stock value during that year.  Then the markers are connected by line segments to show how the value changed from year to year.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_time-series.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 				</solution>
 			</example>
@@ -1250,54 +1296,64 @@ Stem &amp; Leaves \\
 					<table>
 						<title>Bivariate Mice Data</title>
 						<tabular>
+							<col right="medium" halign="left"></col>
+							<col right="medium" halign="center"></col>
+							<col halign="center"></col>
 							<row bottom="medium">
-								<cell right="medium">Mouse Number</cell>
-								<cell right="medium">Tail Length (cm)</cell>
+								<cell>Mouse Number</cell>
+								<cell>Tail Length (cm)</cell>
 								<cell>Weight (oz)</cell>
 							</row>
 							<row>								
-								<cell right="medium">Mouse #1</cell>
-								<cell halign="center" right="medium">7</cell>
-								<cell halign="center">3.3</cell>
+								<cell>Mouse #1</cell>
+								<cell>7</cell>
+								<cell>3.3</cell>
 							</row>
 							<row>
-								<cell right="medium">Mouse #2</cell>
-								<cell halign="center" right="medium">8.2</cell>
-								<cell halign="center">4.6</cell>
+								<cell>Mouse #2</cell>
+								<cell>8.2</cell>
+								<cell>4.6</cell>
 							</row>
 							<row>
-								<cell right="medium">Mouse #3</cell>
-								<cell halign="center" right="medium">12.1</cell>
-								<cell halign="center">8.6</cell>
+								<cell>Mouse #3</cell>
+								<cell>12.1</cell>
+								<cell>8.6</cell>
 							</row>
 							<row>
-								<cell right="medium">Mouse #4</cell>
-								<cell halign="center" right="medium">9.3</cell>
-								<cell halign="center">6.1</cell>
+								<cell>Mouse #4</cell>
+								<cell>9.3</cell>
+								<cell>6.1</cell>
 							</row>
 							<row>
-								<cell right="medium">Mouse #5</cell>
-								<cell halign="center" right="medium">11.5</cell>
-								<cell halign="center">7.3</cell>
+								<cell>Mouse #5</cell>
+								<cell>11.5</cell>
+								<cell>7.3</cell>
 							</row>
 							<row>
-								<cell right="medium">Mouse #6</cell>
-								<cell halign="center" right="medium">7.8</cell>
-								<cell halign="center">2.6</cell>
+								<cell>Mouse #6</cell>
+								<cell>7.8</cell>
+								<cell>2.6</cell>
 							</row>
 							<row>
-								<cell right="medium">Mouse #7</cell>
-								<cell halign="center" right="medium">10.4</cell>
-								<cell halign="center">7.0</cell>
+								<cell>Mouse #7</cell>
+								<cell>10.4</cell>
+								<cell>7.0</cell>
 							</row>
 						</tabular>
 					</table>
 				</statement>
 				<solution>
 					<p>Using a spreadsheet, we construct the following scatter plot.</p>
-					<figure xml:id="fig_examp_graphs_scatter-plot">
+					<figure xml:id="fig_graphs_examp_scatter-plot">
 						<caption>A Scatter Plot of Mouse Tail Length vs. Weight</caption>
-						<image source="./images/graphs_examp_scatter-plot.png" width="80%" archive="image_examp_graphs_scatter-plot"/>
+						<image width="80%" xml:id="image_graphs_examp_scatter-plot">
+							<description>
+								A point is placed for each mouse with x-coordinate corresponding to the mouses tail length and y-coordinate to its weight.  This shows a fairly strong linear trend with smaller tail lenghts seen in lighter mice and longer tails in heavier mice.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_scatter-plot.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 					<p>There definitely appears to be a relationship between tail length and weight. Larger tail lengths seem to correspond to larger weights. While this is not always the case (mouse	#6 is an exception) it does appear to be a fairly strong relationship.</p>
 				</solution>
@@ -1372,38 +1428,83 @@ Stem &amp; Leaves \\
 				<title>Describing Histograms</title>
 				<statement>
 					<p>Locate the center of each histogram and then classify it by number of modes and symmetry.</p>
-					<sbsgroup>
-						<sidebyside margins="5%" widths="40% 40%">
-							<figure xml:id="fig_examp_graphs_describing-histograms-a">
-								<caption>(a)</caption>
-								<image source="./images/graphs_examp_describing-histograms-a.png" width="100%" archive="image_examp_graphs_describing-histograms-a"/>
-							</figure>								
-							<figure xml:id="fig_examp_graphs_describing-histograms-b">
-								<caption>(b)</caption>
-							  <image source="./images/graphs_examp_describing-histograms-b.png" width="100%" archive="image_examp_graphs_describing-histograms-b"/>
-							</figure>
-						</sidebyside>
-						<sidebyside margins="5%" widths="40% 40%">
-							<figure xml:id="fig_examp_graphs_describing-histograms-c">
-								<caption>(c)</caption>
-								<image source="./images/graphs_examp_describing-histograms-c.png" width="100%" archive="image_examp_graphs_describing-histograms-c"/>
-							</figure>
-							<figure xml:id="fig_examp_graphs_describing-histograms-d">
-								<caption>(d)</caption>
-							  <image source="./images/graphs_examp_describing-histograms-d.png" width="100%" archive="image_examp_graphs_describing-histograms-d"/>
-							</figure>
-						</sidebyside>
-						<sidebyside margins="5%" widths="40% 40%">
-							<figure xml:id="fig_examp_graphs_describing-histograms-e">
-								<caption>(e)</caption>
-								<image source="./images/graphs_examp_describing-histograms-e.png" width="100%" archive="image_examp_graphs_describing-histograms-e"/>
-							</figure>
-							<figure xml:id="fig_examp_graphs_describing-histograms-f">
-								<caption>(f)</caption>
-							  <image source="./images/graphs_examp_describing-histograms-f.png" width="100%" archive="image_examp_graphs_describing-histograms-f"/>
-							</figure>
-						</sidebyside>
-					</sbsgroup>						
+					<figure xml:id="fig_graphs_examp_describing-histograms">
+						<caption>Various Histograms to Classify</caption>
+						<sbsgroup margins="auto" widths="40% 40%">
+							<sidebyside>
+								<figure xml:id="fig_graphs_examp_describing-histograms-a">
+									<caption></caption>
+									<image width="90%" xml:id="image_graphs_examp_describing-histograms-a">
+										<description>
+											Histogram bars increase from left to right with until the next-to-last bar, which is the highest.  The last bar is somewhat lower.
+										</description>
+										<latex-image>
+											<xi:include href="./latex-images/graphs_examp_describing-histograms-a.tex" parse="text"/>
+										</latex-image>
+									</image>
+								</figure>								
+								<figure xml:id="fig_graphs_examp_describing-histograms-b">
+									<caption></caption>
+								  <image width="90%" xml:id="image_graphs_examp_describing-histograms-b">
+								  	<description>
+											Histogram bars increase from left to right for the first three bars.  The fourth bar is significantly lower, and then the last bar is about the same height as the third.
+										</description>
+										<latex-image>
+											<xi:include href="./latex-images/graphs_examp_describing-histograms-b.tex" parse="text"/>
+										</latex-image>
+									</image>
+								</figure>
+							</sidebyside>
+							<sidebyside>
+								<figure xml:id="fig_graphs_examp_describing-histograms-c">
+									<caption></caption>
+									<image width="90%" xml:id="image_graphs_examp_describing-histograms-c">
+										<description>
+											Histogram bars increase from left to right until the third bar, which is the highest.  Then they decrease at about the same rate at which they increased.
+										</description>
+										<latex-image>
+											<xi:include href="./latex-images/graphs_examp_describing-histograms-c.tex" parse="text"/>
+										</latex-image>
+									</image>
+								</figure>
+								<figure xml:id="fig_graphs_examp_describing-histograms-d">
+									<caption></caption>
+								  <image width="90%" xml:id="image_graphs_examp_describing-histograms-d">
+								  	<description>
+								  		Histogram bars are at about the same height all the way across, with the second bar a little higher and the fourth a little lower than the rest.
+										</description>
+										<latex-image>
+											<xi:include href="./latex-images/graphs_examp_describing-histograms-d.tex" parse="text"/>
+										</latex-image>
+									</image>
+								</figure>
+							</sidebyside>
+							<sidebyside>
+								<figure xml:id="fig_graphs_examp_describing-histograms-e">
+									<caption></caption>
+									<image width="90%" xml:id="image_graphs_examp_describing-histograms-e">
+										<description>
+											The left most histogram bar is short, the second is quite tall, the third is short again (but a little taller than the first), the fourt is tall again (and a little taller than the second) and the last one is between the second and third in height.
+										</description>
+										<latex-image>
+											<xi:include href="./latex-images/graphs_examp_describing-histograms-e.tex" parse="text"/>
+										</latex-image>
+									</image>
+								</figure>
+								<figure xml:id="fig_graphs_examp_describing-histograms-f">
+									<caption></caption>
+								  <image width="90%" xml:id="image_graphs_examp_describing-histograms-f">
+								  	<description>
+								  		The first bar is quite tall, the second is very short, the third is tall again (a little taller than the first) and the fourth is short (a little shorter than the second).  The last bar is almost as tall as the first.
+										</description>
+										<latex-image>
+											<xi:include href="./latex-images/graphs_examp_describing-histograms-f.tex" parse="text"/>
+										</latex-image>
+									</image>
+								</figure>
+							</sidebyside>
+						</sbsgroup>
+					</figure>
 				</statement>
 				<solution>
 					<p><ol label="a">
@@ -1437,9 +1538,15 @@ Stem &amp; Leaves \\
 				<title>Histogram Shapes</title>
 				<statement>
 					<p>Consider the histogram shown below.</p>
-					<figure xml:id="fig_ckpt_graphs_describing-histograms-1">
+					<figure xml:id="fig_graphs_ckpt_describing-histograms-1">
 						<caption></caption>
-						<image source="./images/ckpt_graphs_describing-histograms-1.png" width="50%" archive="image_ckpt_graphs_describing-histograms-1"/>
+						<image width="50%" xml:id="image_graphs_ckpt_describing-histograms-1">
+							<description>
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_ckpt_describing-histograms-1.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 					<p>Question: Which of the following terms correctly describes this histogram?
 					  <ul cols="2">
@@ -1459,9 +1566,15 @@ Stem &amp; Leaves \\
 				<title>Histogram Shapes</title>
 				<statement>
 					<p>Consider the histogram shown below.</p>
-					<figure xml:id="fig_ckpt_graphs_describing-histograms-2">
+					<figure xml:id="fig_graphs_ckpt_describing-histograms-2">
 						<caption></caption>
-						<image source="./images/ckpt_graphs_describing-histograms-2.png" width="50%" archive="image_ckpt_graphs_describing-histograms-2"/>
+						<image width="50%" xml:id="image_graphs_ckpt_describing-histograms-2">
+							<description>
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_ckpt_describing-histograms-2.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 					<p>Question: Which of the following terms correctly describes this histogram?
 						<ul cols="2">
@@ -1481,9 +1594,15 @@ Stem &amp; Leaves \\
 				<title>Histogram Shapes</title>
 				<statement>
 					<p>Consider the histogram shown below.</p>
-					<figure xml:id="fig_ckpt_graphs_describing-histograms-3">
+					<figure xml:id="fig_graphs_ckpt_describing-histograms-3">
 						<caption></caption>
-						<image source="./images/ckpt_graphs_describing-histograms-3.png" width="50%" archive="image_ckpt_graphs_describing-histograms-3"/>
+						<image width="50%" xml:id="image_graphs_ckpt_describing-histograms-3">
+							<description>
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/graphs_ckpt_describing-histograms-3.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 					<p>Question: Which of the following terms correctly describes this histogram?
 						<ul cols="2">
@@ -1508,34 +1627,53 @@ Stem &amp; Leaves \\
 			<title>Incorrect Vertical Axis</title>
 			<statement>
 				<p>The following frequency table gives the number of individuals in a recent study who said that they had full health insurance coverage, some health insurance coverage, and no health insurance coverage. Next to those numbers are two bar charts representing this data. Determine which bar chart is misleading, and explain why it is misleading.</p>
-				<sidebyside margins="5%" widths="20% 35% 35%">
-					<table xml:id="examp_graphs_incorrect-axis_table">
-						<title>Frequency Table</title>
-						<tabular>
-							<row bottom="medium">
-								<cell right="medium">Status</cell>
-								<cell>Frequency</cell>
-							</row>
-							<row>
-								<cell right="medium">No Insurance</cell>
-								<cell>102</cell>
-							</row>
-							<row>
-								<cell right="medium">Some Insurance</cell>
-								<cell>95</cell>
-							</row>
-							<row>
-								<cell right="medium">Full Insurance</cell>
-								<cell>82</cell>
-							</row>
-						</tabular>
-					</table>
-					<image source="./images/graphs_examp_incorrect-axis-a.png" width="100%"/>
-					<image source="./images/graphs_examp_incorrect-axis-a.png" width="100%"/>
-				</sidebyside>
+				<table xml:id="examp_graphs_incorrect-axis_table">
+					<title>Frequency Table</title>
+					<tabular>
+						<col right="medium" halign="left"></col>
+						<col halign="center"></col>
+						<row bottom="medium">
+							<cell right="medium">Status</cell>
+							<cell>Frequency</cell>
+						</row>
+						<row>
+							<cell>No Insurance</cell>
+							<cell>102</cell>
+						</row>
+						<row>
+							<cell>Some Insurance</cell>
+							<cell>95</cell>
+						</row>
+						<row>
+							<cell>Full Insurance</cell>
+							<cell>82</cell>
+						</row>
+					</tabular>
+				</table>
+				<figure xml:id="fig_graphs_examp_incorrect-axis">
+					<caption>Bar Graphs with Different Scales</caption>
+					<sidebyside margins="auto" widths="45% 45%">
+						<figure xml:id="fig_graphs_examp_incorrect-axis-a">
+							<caption></caption>
+							<image xml:id="image_examp_graphs_examp_incorrect-axis-a">
+								<latex-image>
+									<xi:include href="./latex-images/graphs_examp_incorrect-axis-a.tex" parse="text"/>
+								</latex-image>
+							</image>
+						</figure>
+						<figure xml:id="fig_graphs_examp_incorrect-axis-b">
+							<caption></caption>
+							<image xml:id="image_examp_graphs_examp_incorrect-axis-b">
+								<latex-image>
+									<xi:include href="./latex-images/graphs_examp_incorrect-axis-b.tex" parse="text"/>
+								</latex-image>
+							</image>
+						</figure>
+					</sidebyside>
+				</figure>
 			</statement>
 			<solution>
-				<p>Both bar charts were constructed using the same spreadsheet program from the same frequency table. But te first graph is accurate while the second is not. Notice that the scale on the side starts at	0 in the right bar chart and at 80 in the left. This exaggerates the difference between the number of individuals with full	coverage and those with some or no coverage.</p>
+				<p>Both bar charts were constructed using the same data from the same frequency table. But the first graph is accurate while the second is not. Notice that the vertical scale in <xref ref="fig_graphs_examp_incorrect-axis-a"/> starts at	0 while the vertical scale in <xref ref="fig_graphs_examp_incorrect-axis-b"/> begins at 80. This exaggerates the difference between the number of individuals with full coverage and those with some or no coverage.</p>
 			</solution>
 		</example>
 		<p>This is one example of a problem caused by a violation of an important	principle in graphing.</p>
@@ -1550,37 +1688,46 @@ Stem &amp; Leaves \\
 			<title>A Three-Dimensional Pie Graph</title>
 			<statement>
 				<p>A store manager wishes to know the general age group into which most of his customers fall. He does a quick survey and comes up with the following fequency distribution. He then creates a pie graph to show the proportion of customers in each age group. Do you think his pie graph accurately represents the data from the frequency distribution?</p>
-				<sidebyside margins="5%" widths="20% 70%">
-					<table xml:id="examp_graphs_3d-pie-graph_table">
-						<title>Frequency Distribution</title>
+				<sidebyside margins="auto" widths="25% 65%">
+					<table xml:id="table_examp_graphs_3d-pie-graph">
+						<title>Customers</title>
 						<tabular>
+							<col right="medium" halign="center"></col>
+							<col halign="center"></col>
 							<row bottom="medium">
-								<cell right="medium">Ages</cell>
+								<cell>Ages</cell>
 								<cell>Frequency</cell>
 							</row>
 							<row>
-								<cell right="medium">0-20</cell>
+								<cell>0-20</cell>
 								<cell>14</cell>
 							</row>
 							<row>
-								<cell right="medium">21-40</cell>
+								<cell>21-40</cell>
 								<cell>16</cell>
 							</row>
 							<row>
-								<cell right="medium">41-60</cell>
+								<cell>41-60</cell>
 								<cell>10</cell>
 							</row>
 							<row>
-								<cell right="medium">61+</cell>
+								<cell>61+</cell>
 								<cell>7</cell>
 							</row>
 						</tabular>
 					</table>
-					<image source="./images/graphs_examp_3d-pie-graph.png" width="50%"/>
+					<figure xml:id="fig_graphs_examp_3d-pie-graph">
+						<caption>3D Pie Graph</caption>
+						<image xml:id="image_graphs_examp_3d-pie-graph">
+							<latex-image>
+								<xi:include href="./latex-images/graphs_examp_3d-pie-graph.tex" parse="text"/>
+							</latex-image>
+						</image>
+					</figure>
 				</sidebyside>
 			</statement>
 			<solution>
-				<p>This is not an accurate representation of the store manager's frequency distribution. Notice that the 0-20 year old age group looks like it may be the largest group based on the amount of blue	on the graph. However, the 21-40 year old group is in fact larger. By adding the 3D effects, the store manager has violated the area principle.</p>
+				<p>This is not an accurate representation of the store manager&apos;s frequency distribution. Notice that the 0-20 year old age group looks like it may be the largest group based on the amount of gray on the graph. It seems to be three times as large as the 61+ group in the back of the graph.  However, the 21-40 year old group is in fact the largest and the 61+ group is only about twice as large as the 0-20 year group. By adding the 3D effects, the store manager has violated the area principle.</p>
 			</solution>
 		</example>
 		<p>The most important thing to remember from this section is that we must be sure not to sacrifice accuracy to create <q>pretty</q> looking graphs.</p> 

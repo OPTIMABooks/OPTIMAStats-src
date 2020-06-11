@@ -1,0 +1,46 @@
+\begin{tikzpicture}[fading style/.style={preaction={fill=#1,opacity=.8,
+    path fading=circle with fuzzy edge 20 percent}}]
+  \begin{scope}[xscale=5,yscale=3]
+
+    % top of ring
+    \begin{scope}[draw=black,thin]
+      \fill[green!40!white](77:0cm)--(77:1cm) arc(77:-5:1cm)--(-5:0cm) arc(-5:77:0cm);     
+      \fill[white!20!gray](-5:0cm)--(-5:1cm) arc(-5:-112:1cm)--(-112:0cm) arc(-112:-5:0cm);        
+      \fill[orange!60](-112:0cm)--(-112:1cm) arc(-112:-234 :1cm)--(-234:0cm) arc(-234:-112:0cm);
+      \fill[blue!50!white](126:0cm)--(126:1cm) arc(126:77:1cm)--(77:0.5cm) arc(77:126:0cm);
+    \end{scope}  
+
+    % outside edge shading
+    \shadedraw[bottom color=orange!60,top color=orange!5!black,draw=black,very thin]   
+      (-180:1cm) --++(0,-3mm) arc (-180:-112:1cm) -- ++(0,3mm)  arc (-112:-180:1cm) -- cycle;  
+    \shadedraw[bottom color=white!20!gray,top color=white!5!black,draw=black,very thin]
+      (-112:1cm) --++(0,-3mm) arc (-112:0 :1cm) -- ++(0,3mm)  arc (0 :-112  :1cm) -- cycle;  
+
+    % top dividing lines between colors
+    \draw[very thin] (77:0cm) -- (77:1cm)
+      (-5:0cm) -- (-5:1cm)
+      (-112:0cm) -- (-112:1cm)
+      (126:0cm) -- (126:1cm)
+      (0,0) circle (1cm);
+
+    % establish coordinates for reference below
+    \coordinate (left border) at (1.5cm,0cm); 
+    \coordinate (right border) at (-1.5cm,0cm); 
+    \coordinate (l1) at (38.5:0.65 cm);
+    \coordinate (l2) at (-58.5:0.65 cm); 
+    \coordinate (l3) at (106.5:0.65 cm);
+    \coordinate (l4) at (-173:0.65 cm);
+
+    % attach labels
+    \begin{scope}[lab/.style={gray!50!black,thick,draw}]
+        \fill[lab] (l1) circle(.4mm) -- (l1-| left border) node[anchor=south east] {41 - 60 years}
+                                            node[anchor=north east] {21.3\%};         
+        \fill[lab] (l2) circle(.4mm) -- (l2-| left border)  node[anchor=south east] {0 - 20 years}
+                                            node[anchor=north east] {29.7\%}; 
+        \fill[lab] (l3) circle(.4mm) -- (l3-| right border) node[anchor=south west] {61+ years}
+                                            node[anchor=north west] {14.9\%};         
+        \fill[lab] (l4) circle(.4mm) -- (l4-| right border) node[anchor=south west] {21 - 40 years}
+                                            node[anchor=north west] {34.0\%}; 
+\end{scope}
+\end{scope}  
+\end{tikzpicture}    

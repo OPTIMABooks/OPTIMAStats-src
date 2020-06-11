@@ -1,0 +1,30 @@
+\begin{tikzpicture}[
+    declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);}
+  ]
+  \begin{axis}[
+      axis lines=left,
+      xmin = 6, xmax=13, ymin=0, ymax=10,
+      xtick={6,7,...,13},
+      ytick={0,2,...,10}, 
+      ticklabel style={font=\scriptsize},
+      xlabel={Tail Length (cm)},
+      ylabel={Weight (oz)},
+      title={\large\bf Mouse Tail Length and Weight},
+      enlargelimits=false,
+      clip=false,
+      grid = none,
+      ymajorgrids=true,
+      width=12cm,
+      height=8cm
+    ]
+    \addplot[mark=triangle*,only marks,draw=blue!70!white,line width=1mm] coordinates { 
+        (7,3.3)
+        (8.2,4.6)
+        (12.1,8.6)
+        (9.3,6.1)
+        (11.5,7.3)
+        (7.8,2.6)
+        (10.4,7)
+    };
+  \end{axis}
+\end{tikzpicture}

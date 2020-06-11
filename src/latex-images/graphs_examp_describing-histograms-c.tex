@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      axis lines*=left,
+      no markers,
+      xmin=0, xmax=25, ymin=0, ymax=12,
+      xtick={0,5,10,15,20,25},
+      ytick={0,2,...,12},
+      xlabel={Class},
+      ylabel={Frequency},
+      title={\large\bf Example Histogram},
+      ticklabel style={font=\small},
+      enlargelimits=false,
+      clip=false,
+      grid = none,
+      ymajorgrids=true,
+      ybar=0pt,
+      width=12cm,
+      height=8cm
+    ]
+    \addplot+[ybar interval,mark=no] plot coordinates { 
+        (0, 4)
+        (5, 7)
+        (10, 11)
+        (15, 6)
+        (20, 4)
+        (25,0)
+    };
+  \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+\begin{tikzpicture}[
+    declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);}
+  ]
+  \begin{axis}[
+      axis lines*=left,
+      no markers,
+      xmin = 0, xmax=12, ymin=80, ymax=105,
+      samples at={2,6,10},
+      xtick={2,6,10},
+      ytick={80,85,...,105}, 
+      xticklabels={No Insurance,Some Insurance,Full Insurance},
+      ticklabel style={font=\scriptsize},
+      xlabel={Amount of Coverage},
+      ylabel={Frequency},
+      title={Insurance Coverage},
+      enlargelimits=false,
+      clip=false,
+      grid = none,
+      ymajorgrids=true,
+      ybar=0pt, 
+      bar width=1
+    ]
+    \addplot[fill=blue!30] coordinates { (2,102) (6,95) (10,82) };
+    \node[right] at (axis description cs: 1,0) {\scriptsize $x$};
+  \end{axis}
+\end{tikzpicture}
