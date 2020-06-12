@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_relative-standing">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_relative-standing">
   <title>Describing Data Numerically: Measures of Relative Standing</title>
 
   <introduction xml:id="sec_relative-standing_intro">
@@ -128,77 +128,16 @@
 				  </ul></p>
 				<p>Next, we compute the interquartile range and calculate where the fences should be placed.  We get <m>IQR = Q_3 - Q_1 = 16.5 - 11 = 5.5</m>.  So the upper and lower fences are at <m>Q_1 - 1.5(\text{IQR}) = 11 - 1.5(5.5) = 2.75</m> and at <m>Q_3 + 1.5(\text{IQR}) = 16.5 + 1.5(5.5) = 24.75</m>.</p>
 				<p>Note that the maximum value in the data set, 42, is above the upper fence.  So it is an outlier and will not be included in the five number summary.  The minimum and maximum vales of the remaining data are 9 and 19 respectively.  This gives us the following five-number summary.
-					<me>\text{Min} = 9, \quad Q_1 = 11, \quad \text{Median} = 14, \quad Q_3 = 16.5, \text{Max} = 19</me>
+					<me>\text{Min} = 9, \quad Q_1 = 11, \quad \text{Median} = 14, \quad Q_3 = 16.5, \quad \text{Max} = 19</me>
 				Using these, we construct the box-plot shown below, remembering to identify the outlier with an asterisk.</p>
 				<figure xml:id="fig_xamp_relative-standing_box-plot_plot">
 					<caption>Box Plot</caption>
-					<image xml:id="image_examp_relative-standing_box-plot">
+					<image xml:id="image_relative-standing_examp_box-plot">
+						<description>
+							A rectangle is drawn from 11 up to 16.5 with a line through the middle at 14.  Dashed lines are drawn at 2.75 and 24.75.  There is an asterisk at 42.  Finally whiskers extend from the top of the rectangle up to 19 and the bottom of the rectangle down to 9.
+						</description>
 						<latex-image>
-							\begin{filecontents}{testdata.dat}
-							  % 0 median q3 q1 max min
-							  0 14 16.5 11 19 9
-							\end{filecontents}					
-							\pgfplotsset{
-							  box plot/.style={
-							    /pgfplots/.cd,
-							    black,
-							    only marks,
-							    mark=-,
-							    mark size=1em,
-							    /pgfplots/error bars/.cd,
-							    y dir=plus,
-							    y explicit,
-							  },
-							  box plot box/.style={
-							    /pgfplots/error bars/draw error bar/.code 2 args={%
-							        \draw  ##1 -- ++(1em,0pt) |- ##2 -- ++(-1em,0pt) |- ##1 -- cycle;
-							    },
-							    /pgfplots/table/.cd,
-							    y index=2,
-							    y error expr={\thisrowno{3}-\thisrowno{2}},
-							    /pgfplots/box plot
-							  },
-							  box plot top whisker/.style={
-							    /pgfplots/error bars/draw error bar/.code 2 args={%
-							        \pgfkeysgetvalue{/pgfplots/error bars/error mark}%
-							        {\pgfplotserrorbarsmark}%
-							        \pgfkeysgetvalue{/pgfplots/error bars/error mark options}%
-							        {\pgfplotserrorbarsmarkopts}%
-							        \path ##1 -- ##2;
-							    },
-							    /pgfplots/table/.cd,
-							    y index=4,
-							    y error expr={\thisrowno{2}-\thisrowno{4}},
-							    /pgfplots/box plot
-							  },
-							  box plot bottom whisker/.style={
-							    /pgfplots/error bars/draw error bar/.code 2 args={%
-							      \pgfkeysgetvalue{/pgfplots/error bars/error mark}%
-							      {\pgfplotserrorbarsmark}%
-							      \pgfkeysgetvalue{/pgfplots/error bars/error mark options}%
-							      {\pgfplotserrorbarsmarkopts}%
-							      \path ##1 -- ##2;
-							    },
-							    /pgfplots/table/.cd,
-							    y index=5,
-							    y error expr={\thisrowno{3}-\thisrowno{5}},
-							    /pgfplots/box plot
-							  },
-							  box plot median/.style={
-							      /pgfplots/box plot
-							  }
-							}
-							\begin{tikzpicture}
-							  \begin{axis} [enlarge x limits=0.25,xtick=data]
-							    \addplot [box plot median] table {testdata.dat};
-							    \addplot [box plot box] table {testdata.dat};
-							    \addplot [box plot top whisker] table {testdata.dat};
-							    \addplot [box plot bottom whisker] table {testdata.dat};
-							    \addplot [dashed] {2.75};
-							    \addplot [dashed] {24.75};
-							    \addplot coordinates {(0,42)};
-							  \end{axis}
-							\end{tikzpicture}	
+							<xi:include href="./latex-images/relative-standing_examp_box-plot.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -310,8 +249,14 @@
 		</definition>
 		<p>You can see then why a z-score of less than -3 or more than 3 would make a value an outlier. Only 0.3% of values should be in this range. To help you visualize the empirical rule, take a look at the following picture.</p>
 		<figure xml:id="fig_relative-standing_empirical">
-			<caption>Empirical Rule</caption>
-			<image source="./images/relative-standing_empirical.png" width="100%" archive="image_relative-standing_empirical"/>
+			<caption>Illustration of the Empirical Rule</caption>
+			<image width="90%" xml:id="image_relative-standing_empirical">
+				<description>
+				</description>
+				<latex-image>
+					<xi:include href="./latex-images/relative-standing_empirical.tex" parse="text"/>
+				</latex-image>
+			</image>
 		</figure>
 		<p>Now let's apply the empirical rule to an example.</p>
 		<example xml:id="examp_relative-standing_empirical">

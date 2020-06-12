@@ -1,0 +1,95 @@
+\begin{tikzpicture}
+    \begin{axis}[
+	    no markers,
+	    axis lines*=middle,
+        domain=-3.5:3.5,
+	    samples=500,
+	    xmin=-3.5,xmax=3.5,ymin=0, ymax=0.5,
+		axis lines*=left,
+	    xlabel=\empty,
+	    ticklabel style={font=\small},
+        xtick={-3,-2,-1,0,1,2,3},
+        xticklabels={$\overline{x}-3s$,$\overline{x}-2s$,$\overline{x}-s$,,$\overline{x}+s$,$\overline{x}+2s$,$\overline{x}+3s$},
+		ytick=\empty,
+		enlargelimits=false,
+		clip=false,
+		axis on top,
+		grid = none,
+        hide y axis,
+        width=16cm,
+        height=8cm
+      ]
+      
+      % add the mean in red and its vertical line
+      \node[red,below] at (axis description cs: 0.5,0) {\small $\overline{x}$};
+      \draw[red,thick] (axis cs: 0,0) -- (0,{gauss(0,0,1)});
+
+      % add vertical lines and standard deivations inside plot
+      \begin{scope}[black,thick,opacity=0.5]
+        \draw (axis cs: -3,0) -- (-3,{gauss(-3,0,1)});
+        \draw (axis cs: -2,0) -- (-2,{gauss(-2,0,1)});
+        \draw (axis cs: -1,0) -- (-1,{gauss(-1,0,1)});
+        \draw (axis cs: 1,0) -- (1,{gauss(1,0,1)});
+        \draw (axis cs: 2,0) -- (2,{gauss(2,0,1)});
+        \draw (axis cs: 3,0) -- (3,{gauss(3,0,1)});
+      \end{scope}
+
+      % drawn normal distribution and fill it
+      \path[name path=A] (axis cs: -3.5,0) -- (3.5,0);
+      \addplot[name path=B,very thick,blue!50!black] {gauss(x,0,1)};
+      \addplot [       
+        fill=blue!50,
+        fill opacity=0.5,
+      ] fill between [
+        of=A and B,
+        soft clip={domain=-3.25:3.25}
+      ];
+
+      % add vertical lines at standard deviations above area
+
+      % node text in scriptsize font
+      \begin{scope}[font=\small]
+
+        % label area of regions
+        \node at (axis cs: -0.5,0.15) {34\%};
+        \node at (axis cs: 0.5,0.15) {34\%};
+        \node at (axis cs: -1.5,0.05) {13.5\%};
+        \node at (axis cs: 1.5,0.05) {13.5\%};
+        \draw[stealth-] (axis cs: -2.25,0.01) -- (axis cs: -2.5,0.08) node[anchor=south]  {2.4\%};
+        \draw[stealth-] (axis cs: 2.25,0.01) -- (axis cs: 2.5,0.08) node[anchor=south]  {2.4\%};
+        \draw[stealth-] (axis cs: -3.1,0.005) -- (axis cs: -3.25,0.04) node[anchor=south]  {0.1\%};
+        \draw[stealth-] (axis cs: 3.1,0.005) -- (axis cs: 3.25,0.04) node[anchor=south]  {0.1\%};
+
+        % label ranges above plot
+        \node[align=center,execute at begin node=\setlength{\baselineskip}{1em}] (one) at (axis cs: 0,0.45) {
+            68\% within one\\
+            standard deviation\\
+        };
+        \node[align=center,execute at begin node=\setlength{\baselineskip}{1em}] (two) at (axis cs: 0,0.55) {
+            95\% within two standard\\
+            deviations of the mean\\
+        };
+        \node[align=center,execute at begin node=\setlength{\baselineskip}{1em}] (three) at (axis cs: 0,0.65) {
+            99.7\% within three standard deviations\\
+            of the mean ($\overline{x}-3s$ to $\overline{x}+3s$)\\
+        };
+      \end{scope}
+
+      % add vertical lines and draw arrows from labels above plot
+      \begin{scope}[gray!80,-stealth,thick]
+        \draw[-] (axis cs: -3,{gauss(-3,0,1)+0.01}) -- (-3,0.675);
+        \draw[-] (axis cs: 3,{gauss(3,0,1)+0.01}) -- (3,0.675);        
+        \draw[-] (axis cs: -2,{gauss(-2,0,1)+0.01}) -- (-2,0.575);
+        \draw[-] (axis cs: 2,{gauss(2,0,1)+0.01}) -- (2,0.575);        
+        \draw[-] (axis cs: -1,{gauss(-1,0,1)+0.01}) -- (-1,0.475);
+        \draw[-] (axis cs: 1,{gauss(1,0,1)+0.01}) -- (1,0.475);
+        \draw (one.west) -- (axis cs: -1,0.45);
+        \draw (one.east) -- (axis cs: 1,0.45);
+        \draw (two.west) -- (axis cs: -2,0.55);
+        \draw (two.east) -- (axis cs: 2,0.55);
+        \draw (three.west) -- (axis cs: -3,0.65);
+        \draw (three.east) -- (axis cs: 3,0.65);
+      \end{scope}
+
+	\end{axis}
+\end{tikzpicture}
