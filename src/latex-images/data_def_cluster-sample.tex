@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+    \edef\gnames{{"A","B","C","D","E","F"}};
+    \foreach \grp in {1,2,...,6} {
+        \pgfmathsetmacro\gname{\gnames[\grp-1]};
+        \foreach \num in {1,2,...,8} {
+            \draw[blue!30!white,very thick] (-0.5,{\grp-0.4}) rectangle (7.5,{\grp+0.4});
+            \node[left] at (-0.75,{\grp-0.05}) {Group \gname};
+            \draw[fill=black] ({\num-1},\grp) circle (0.3) node[white] (\num) {\gname\num};
+        }    
+    }
+    \foreach \grp in {1,3,6} {
+        \pgfmathsetmacro\gname{\gnames[\grp-1]};
+        \draw[red,thick] (-2.5,{\grp-0.2}) -- (-0.85,{\grp-0.2});
+        \node[left] at (-0.75,{\grp-0.05}) {Group \gname};
+        \foreach \num in {1,2,...,8} {
+            \draw[draw=red,thick] ({\num-1},\grp) circle (0.4) node[red] {\gname\num};
+        }
+    }
+\end{tikzpicture}
