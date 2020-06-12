@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      axis lines*=left,
+      no markers,
+      xmin=0, xmax=7, ymin=0, ymax=0.2,
+      xtick={1,2,...,6},
+      ytick={0,0.1,0.2},
+      xlabel={Value of X},
+      ylabel={Probability},
+      title={\large\bf Probabilty Histogram},
+      ticklabel style={font=\small},
+      enlargelimits=false,
+      clip=false,
+      grid = none,
+      ymajorgrids=true,
+      ybar=0pt,
+      bar width=1,
+      width=12cm,
+      height=8cm
+    ]
+    \addplot+[thick,fill=blue!20,draw=blue!40] coordinates { 
+        (1, 0.167)
+        (2, 0.167)
+        (3, 0.167)
+        (4, 0.167)
+        (5, 0.167)
+        (6, 0.167)
+    };
+  \end{axis}
+\end{tikzpicture}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_binomial">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_binomial">
   <title>Families of Discrete Distributions: Uniform and Binomial</title>
 
   <introduction xml:id="sec_binomial_intro">
@@ -66,7 +66,14 @@
 				<p>The random variable has six values, <m>X = 1, 2, 3, 4, 5, \text{ and } 6</m>. So, for each of these values, <m>P(X=x) = \frac{1}{6}</m>. Therefore, this is a discrete uniform distribution with <m>k=6</m>. To help visualize this, we construct the following probability histogram.</p>
 				<figure xml:id="fig_examp_binomial_uniform-graph">
 					<caption>Probability Histogram for <m>X</m></caption>
-					<image source="./images/examp_binomial_uniform-graph.png" archive="image_examp_binomial_uniform-graph"/>
+					<image xml:id="image_binomial_examp_uniform-graph" width="90%">
+						<description>
+							A histogram with one bar for each outcome, all having exactly the same heights.
+						</description>
+						<latex-image>
+							<xi:include href="./latex-images/binomial_examp_uniform-graph.tex" parse="text"/>
+						</latex-image>
+					</image>
 				</figure>
 			</solution>
 		</example>
