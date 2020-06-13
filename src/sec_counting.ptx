@@ -524,7 +524,7 @@
 								A three with one branch from the starting point for each destination, Hawaii, Florida, and Alaska.  Hawaii has two branches for its two resorts, Florida has three branches for its three resorts, and Alaska has one branch.
 							</description>
 							<latex-image>
-								<xi:include href="counting_multiplication_examp_unbalanced-tree.tex" parse="text"/>
+								<xi:include href="./latex-images/counting_multiplication_examp_unbalanced-tree.tex" parse="text"/>
 							</latex-image>
 						</image>
 					</figure>
