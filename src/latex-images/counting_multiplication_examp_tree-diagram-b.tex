@@ -1,0 +1,104 @@
+\begin{tikzpicture}[font=\sffamily\tiny]
+    \node (r) at (0,0);
+    \node (0) at (1.5,4)         {pant 1};
+      \node (00) at (2.5,4.75)    [below right]{shirt 1};
+        \node (000) at (4.5,4.65)  {shoes 1};
+        \node (001) at (4.5,4.4)   {shoes 2};
+      \node (01) at (2.5,4)       [right]{shirt 2};
+        \node (010) at (4.5,4.15)  {shoes 1};
+        \node (011) at (4.5,3.9)   {shoes 2};
+      \node (02) at (2.5,3.25)    [above right]{shirt 3};
+        \node (020) at (4.5,3.6)    {shoes 1};
+        \node (021) at (4.5,3.35)   {shoes 2};
+    \node (1) at (1.5,2)         {pant 2};
+      \node (10) at (2.5,2.75)    [below right]{shirt 1};
+        \node (100) at (4.5,2.65)  {shoes 1};
+        \node (101) at (4.5,2.4)   {shoes 2};
+      \node (11) at (2.5,2)       [right]{shirt 2};
+        \node (110) at (4.5,2.15)  {shoes 1};
+        \node (111) at (4.5,1.9)   {shoes 2};
+      \node (12) at (2.5,1.25)    [above right]{shirt 3};
+        \node (120) at (4.5,1.6)   {shoes 1};
+        \node (121) at (4.5,1.35)  {shoes 2};
+    \node (2) at (1.5,0)         {pant 3};
+      \node (20) at (2.5,0.75)    [below right]{shirt 1};
+        \node (200) at (4.5,0.65)  {shoes 1};
+        \node (201) at (4.5,0.4)   {shoes 2};
+      \node (21) at (2.5,0)       [right]{shirt 2};
+        \node (210) at (4.5,0.15)  {shoes 1};
+        \node (211) at (4.5,-0.1)  {shoes 2};
+      \node (22) at (2.5,-0.75)   [above right]{shirt 3};
+        \node (220) at (4.5,-0.4)   {shoes 1};
+        \node (221) at (4.5,-0.65)  {shoes 2};
+    \node (3) at (1.5,-2)        {pant 4};
+      \node (30) at (2.5,-1.25)   [below right]{shirt 1};
+        \node (300) at (4.5,-1.35) {shoes 1};
+        \node (301) at (4.5,-1.6)  {shoes 2};
+      \node (31) at (2.5,-2)      [right]{shirt 2};
+        \node (310) at (4.5,-1.85) {shoes 1};
+        \node (311) at (4.5,-2.1)  {shoes 2};
+       \node (32) at (2.5,-2.75)   [above right]{shirt 3};								  
+        \node (320) at (4.5,-2.4)   {shoes 1};
+        \node (321) at (4.5,-2.65)  {shoes 2};								     
+    \node (4) at (1.5,-4)        {pant 5};
+      \node (40) at (2.5,-3.25)   [below right]{shirt 1};
+        \node (400) at (4.5,-3.35) {shoes 1};
+        \node (401) at (4.5,-3.6)  {shoes 2};
+      \node (41) at (2.5,-4)      [right]{shirt 2};
+        \node (410) at (4.5,-3.85) {shoes 1};
+        \node (411) at (4.5,-4.1)  {shoes 2};
+      \node (42) at (2.5,-4.75)   [above right]{shirt 3};								
+        \node (420) at (4.5,-4.4)   {shoes 1};
+        \node (421) at (4.5,-4.65)  {shoes 2};								     
+    \draw[line width=0.25mm]
+      (r.east) to (0.west)
+        (0) to (00)
+          (00) to (000)
+          (00) to (001)
+        (0) to (01)
+          (01) to (010)
+          (01) to (011)
+        (0) to (02)
+          (02) to (020)
+          (02) to (021)
+      (r.east) to (1.west)
+        (1) to (10)
+            (10) to (100)
+            (10) to (101)
+        (1) to (11)
+          (11) to (110)
+          (11) to (111)
+        (1) to (12)
+          (12) to (120)
+          (12) to (121)
+      (r.east) to (2.west)
+        (2) to (20)
+          (20) to (200)
+          (20) to (201)
+          (2) to (21)
+            (21) to (210)
+            (21) to (211)
+          (2) to (22)
+            (22) to (220)
+            (22) to (221)
+      (r.east) to (3.west)
+        (3) to (30)
+          (30) to (300)
+          (30) to (301)
+        (3) to (31)
+          (31) to (310)
+          (31) to (311)
+        (3) to (32)
+          (32) to (320)
+          (32) to (321)
+      (r.east) to (4.west)
+        (4) to (40)
+          (40) to (400)
+          (40) to (401)
+        (4) to (41)
+          (41) to (410)
+          (41) to (411)
+        (4) to (42)
+          (42) to (420)
+          (42) to (421);
+\end{tikzpicture}								

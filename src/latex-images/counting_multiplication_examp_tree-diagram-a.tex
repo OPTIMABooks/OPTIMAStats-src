@@ -1,0 +1,60 @@
+\begin{tikzpicture}[font=\sffamily\tiny]
+    \node (r) at (0,0);
+    \node (0) at (1.5,4.5)    [align=left]{Color 1};
+      \node (00) at (3,4.83)  [align=left]{Engine 1};
+      \node (01) at (3,4.5)   [align=left]{Engine 1};
+      \node (02) at (3,4.17)  [align=left]{Engine 1};
+    \node (1) at (1.5,3)      [align=left]{Color 2};
+      \node (10) at (3,3.33)  [align=left]{Engine 1};
+      \node (11) at (3,3)     [align=left]{Engine 2};
+      \node (12) at (3,2.67)  [align=left]{Engine 3};
+    \node (2) at (1.5,1.5)    [align=left]{Color 3};
+      \node (20) at (3,1.83)  [align=left]{Engine 1};
+      \node (21) at (3,1.5)   [align=left]{Engine 2};
+      \node (22) at (3,1.17)  [align=left]{Engine 3};								  
+    \node (3) at (1.5,0)      [align=left]{Color 4};
+      \node (30) at (3,0.33)  [align=left]{Engine 1};
+      \node (31) at (3,0)     [align=left]{Engine 2};
+      \node (32) at (3,-0.33) [align=left]{Engine 3};								  
+    \node (4) at (1.5,-1.5)   [align=left]{Color 5};
+      \node (40) at (3,-1.17) [align=left]{Engine 1};
+      \node (41) at (3,-1.5)  [align=left]{Engine 2};
+      \node (42) at (3,-1.83) [align=left]{Engine 3};
+    \node (5) at (1.5,-3)     [align=left]{Color 6};
+      \node (50) at (3,-2.67) [align=left]{Engine 1};
+      \node (51) at (3,-3)    [align=left]{Engine 2};
+      \node (52) at (3,-3.33) [align=left]{Engine 3};								  
+    \node (6) at (1.5,-4.5)   [align=left]{Color 7};
+      \node (60) at (3,-4.17) [align=left]{Engine 1};
+      \node (61) at (3,-4.5)  [align=left]{Engine 2};
+      \node (62) at (3,-4.83)  [align=left]{Engine 3};								  
+    \draw[line width=0.25mm]
+      (r.east) to (0.west)
+        (0) to (00)
+        (0) to (01)
+        (0) to (02)
+      (r.east) to (1.west)
+        (1) to (10)
+        (1) to (11)
+        (1) to (12)
+      (r.east) to (2.west)
+        (2) to (20)
+          (2) to (21)
+          (2) to (22)
+      (r.east) to (3.west)
+        (3) to (30)
+        (3) to (31)
+        (3) to (32)
+      (r.east) to (4.west)
+        (4) to (40)
+        (4) to (41)
+        (4) to (42)
+      (r.east) to (5.west)
+        (5) to (50)
+        (5) to (51)
+        (5) to (52)
+      (r.east) to (6.west)
+        (6) to (60)
+        (6) to (61)
+        (6) to (62);
+\end{tikzpicture}
