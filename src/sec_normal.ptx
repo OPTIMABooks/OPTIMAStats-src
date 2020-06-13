@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_normal">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_normal">
   <title>The Normal Distribution</title>
 
   <introduction xml:id="sec_normal_intro">
@@ -81,21 +81,14 @@
 	  	</statement>
 	  	<solution>
 	  		<p>We start by drawing a graph of the density curve for <m>X</m>. Because the distribution is uniform, this means the curve will be a horizontal line above the range of possible values of <m>X</m>, which is from 5 to 10. Since the area under the curve must equal the probability and the probability that <m>X</m> is between 5 and 10 is 1 (this is the sample space because all possible values of <m>X</m> are between 5 and 10), we must make the height <m>h</m> the number for which <m>h \times (10-5) = 1</m>. That means, <m>h \times 5 = 1</m>, so <m>h = \frac{1}{5}</m>. This yields the first graph.</p>
-	  		<figure xml:id="fig_examp_normal_uniform-1">
+	  		<figure xml:id="fig_normal_examp_uniform-1">
 	  			<caption>Uniform density curve for <m>X</m></caption>
-	  			<image width="60%" xml:id="image_examp_normal_uniform-1">
+	  			<image width="60%" xml:id="image_normal_examp_uniform-1">
+	  				<description>
+	  					A horizontal line at a height of one-fifth that extends from above X=5 to above X=10.
+	  				</description>
 	  				<latex-image>
-	  					\begin{tikzpicture}
-	  					  \draw[line width=0.5mm,gray!20] 
-	  					    (5,0) -- (5,3.5)
-	  					    (10,0) -- (10,3.5);
-	  					  \draw[line width=0.5mm,->] (0,4) -- (0,0) -- (10.5,0);
-	  					  \draw[line width=0.5mm] (0.1,3.5) -- (-0.1,3.5) node [left] {$\scriptstyle \frac{1}{5}$};
-	  					  \foreach \i in {1,...,10} {
-	  					    \draw[line width=0.5mm] (\i,-0.1) -- (\i,0.1) node [below, pos=-0.1mm] {$\scriptstyle \i$};
-	  					  }
-	  					  \draw[line width=0.5mm] (4.975,3.5) -- (10.025,3.5);
-	  					\end{tikzpicture}
+	  					<xi:include href="./latex-images/normal_examp_uniform-1.tex" parse="text"/>
 	  				</latex-image>
 	  			</image>
 	  		</figure>
@@ -104,22 +97,14 @@
 	  		  	<li><sidebyside widths="45% 45%" margins="auto">
 	  		  		<p>The probability of <m>X</m> between 7 and 8 is found by taking the width of the range <m>(8 - 7) = 1</m> and multiplying by the height, which is <m>\frac{1}{5}</m>. This gives a probability of
 		  		  		<me>P(7 \leq X \leq 8) = 1 \times \frac{1}{5} = \frac{1}{5}</me>.</p>
-	  		  		<figure xml:id="fig_examp_norm_uniform-2">
+	  		  		<figure xml:id="fig_norm_examp_uniform-2">
 	  		  			<caption><m>P(7 \leq X \leq 8)</m></caption>
-	  		  			<image width="90%" xml:id="image_examp_normal_uniform-2">
+	  		  			<image width="90%" xml:id="image_normal_examp_uniform-2">
+	  		  				<description>
+	  		  					A horizontal line at a height of one-fifth that extends from above X=5 to above X=10.  The area below the line between X=7 and X=8 has been shaded in.
+	  		  				</description>
 	  		  				<latex-image>
-	  		  				  \begin{tikzpicture}
-				  					  \draw[line width=0.5mm,gray!20] 
-				  					    (5,0) -- (5,3.5)
-				  					    (10,0) -- (10,3.5);				  					  
-	  		  				    \draw[fill=purple!50,line width=0.5mm,purple!50] (7,0) rectangle (8,3.5);
-				  					  \draw[line width=0.5mm,->] (0,4) -- (0,0) -- (10.5,0);
-				  					  \draw[line width=0.5mm] (0.1,3.5) -- (-0.1,3.5) node [left] {$\scriptstyle \frac{1}{5}$};
-				  					  \foreach \i in {1,...,10} {
-				  					    \draw[line width=0.5mm] (\i,-0.1) -- (\i,0.1) node [below, pos=-0.1mm] {$\scriptstyle \i$};
-				  					  }
-				  					  \draw[line width=0.5mm] (4.975,3.5) -- (10.025,3.5);
-				  					\end{tikzpicture}
+	  		  					<xi:include href="./latex-images/normal_examp_uniform-2.tex" parse="text"/>
 	  		  				</latex-image>
 	  		  			</image>
 	  		  		</figure>
@@ -127,23 +112,14 @@
 	  		  	<li><sidebyside widths="45% 45%" margins="auto">
 	  		  		<p>The probability that <m>X</m> is more than 8.5 is the area in the shaded region shown. That has a width of <m>(10 - 8.5) = 1.5 = \frac{3}{2}</m> and a height of <m>\frac{1}{5}</m>. Therefore, 
 	  		  		  <me>P(X \geq 8.5) = \frac{3}{2} \times \frac{1}{5} = \frac{3}{10}</me>.</p>
-	  		  		<figure xml:id="fig_examp_norm_uniform-3">
+	  		  		<figure xml:id="fig_norm_examp_uniform-3">
 	  		  			<caption><m>P(X \geq 8.5)</m></caption>
-	  		  			<image width="90%" xml:id="image_examp_normal_uniform-3">
+	  		  			<image width="90%" xml:id="image_normal_examp_uniform-3">
+	  		  				<description>
+	  		  					A horizontal line at a height of one-fifth that extends from above X=5 to above X=10.  The area below the line between X=8.5 and X=10 has been shaded in.
+	  		  				</description>
 	  		  				<latex-image>
-	  		  					\begin{tikzpicture}
-				  					  \draw[line width=0.5mm,gray!20] 
-				  					    (5,0) -- (5,3.5)
-				  					    (10,0) -- (10,3.5);
-				  					  \draw[fill=purple!50,line width=0.5mm,purple!50] (8.5,0) rectangle (10,3.5);	  		  					
-				  					  \draw[line width=0.5mm,->] (0,4) -- (0,0) -- (10.5,0);
-				  					  \draw[line width=0.5mm] (0.1,3.5) -- (-0.1,3.5) node [left] {$\scriptstyle \frac{1}{5}$};
-
-				  					  \foreach \i in {1,...,10} {
-				  					    \draw[line width=0.5mm] (\i,-0.1) -- (\i,0.1) node [below, pos=-0.1mm] {$\scriptstyle \i$};
-				  					  }
-				  					  \draw[line width=0.5mm] (4.975,3.5) -- (10.025,3.5);
-				  					\end{tikzpicture}
+	  		  				  <xi:include href="./latex-images/normal_examp_uniform-3.tex" parse="text"/>
 	  		  				</latex-image>
 	  		  			</image>
 	  		  		</figure>
@@ -204,35 +180,7 @@
 				<caption>Normal Distributions</caption>
 				<image width="100%" xml:id="image_normal_normal-distributions">
 					<latex-image>
-						\begin{tikzpicture}
-					    \begin{axis}[
-					      no markers,
-					      axis lines=middle,
-		            domain=-6:6,
-		            samples=500,
-		            ymin=0,
-			    	    ymax=2,
-		            axis lines*=left,
-		            xlabel=\empty,
-		            ticklabel style={font=\small},
-		            xtick={-4,-2,0,2,4},
-		            ytick=\empty,
-		            enlargelimits=false,
-		            clip=false,
-		            axis on top,
-		            grid = none,
-		            hide y axis
-		  		      ]
-				        \addplot[very thick,purple!60!white] {gauss(x,-2,0.5)};
-				        \addplot[very thick,green!50!black] {gauss(x,0,1)};
-				        \addplot[very thick,red!80!white] {gauss(x,0,0.4)};
-				        \addplot[very thick,blue!50!black] {gauss(x,0,2)};
-					    \end{axis}
-					    \node[right,purple!60!white] at (5,3) {$\scriptstyle \mu = -2, \sigma = 0.5$};
-					    \node[right,green!50!black] at (5,2.75) {$\scriptstyle \mu = 0, \sigma = 1$};
-					    \node[right,red!80!white] at (5,2.5) {$\scriptstyle \mu = 0, \sigma = 0.4$};
-					    \node[right,blue!50!black] at (5,2.25) {$\scriptstyle \mu = 0, \sigma = 2$};
-						\end{tikzpicture}
+						<xi:include href="./latex-images/normal_normal-distributions.tex" parse="text"/>
 					</latex-image>
 				</image>
 			</figure>
@@ -255,46 +203,14 @@
 			<title>Comparing Populations from Different Normal Distributions</title>
 			<statement>
 				<p>The blue curve below represents the distribution of womens&apos; heights, which we will call <m>X</m>. The red curve represents the distribution of mens&apos; heights, which we will call <m>Y</m>. What, if anything, can you tell from these distributions?</p>
-				<figure xml:id="fig_two-normal-distributions">
+				<figure xml:id="fig_normal_two-distributions">
 					<caption>Two Normal Distributions</caption>
-					<image width="80%" xml:id="image_two-normal-distributions">
+					<image width="80%" xml:id="image_normal_two-distributions">
+						<description>
+							Two mound-shaped curves, one representing women's temperatures with a tallest point at 63.6.  The other, representing men's temperatures, with a peak at 69.  The one representing men's temperatures is a little shorter and wider than the one representing women's teperatures.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-							    \begin{axis}[
-							            no markers,
-							            domain=54:79,
-							            samples=500,
-							            ymin=0,
-							            ymax=0.3,
-							            axis lines=middle,
-							            axis line style={-},
-							            x label style={at={(axis description cs: 0.5,-0.1)},anchor=north},
-							            xlabel={\scriptsize Height (inches)},
-							            ticklabel style={font=\scriptsize},
-							            xtick={63.6,69.0},
-							            ytick=\empty,
-							            enlargelimits=false,
-							            clip=false,
-							            axis on top,
-							            grid = none,
-							            hide y axis
-							        ]
-							        \draw[gray,dashed] (axis cs: 69,0) -- (axis cs: 69,{gauss(69,69,2.8)});
-							        \draw[gray,dashed] (axis cs: 63.6,0) -- (axis cs: 63.6,{gauss(63.6,63.6,2.5)});
-							        \addplot[very thick,red!80!white] {gauss(x,69,2.8)};
-							        \addplot[very thick,blue!50!black] {gauss(x,63.6,2.5)};
-							    \end{axis}
-							    \node[red!80!white,align=left, execute at begin node=\setlength{\baselineskip}{1em}] at (5.5,2.5) {
-							        \scriptsize Men:\\ 
-							        \hspace{1em}$\scriptstyle \mu_Y = 69.0$\\ 
-							        \hspace{1em}$\scriptstyle \sigma_Y = 2.8$
-							    };
-							    \node[blue!50!black,align=left, execute at begin node=\setlength{\baselineskip}{1em}] at (0.75,2.25) {
-							        \scriptsize Women:\\ 
-							        \hspace{1em}$\scriptstyle \mu_X = 63.6$\\ 
-							        \hspace{1em}$\scriptstyle \sigma_X = 2.5$
-							    };
-							\end{tikzpicture}							
+							<xi:include href="./latex-images/normal_two-distributions.tex" parse="text"/>				
 						</latex-image>
 					</image>
 				</figure>
@@ -351,37 +267,14 @@
 		<exercise xml:id="ckpt_normal_normal-3">
 			<statement>
 			<p>Consider the graph of a normal distribution below and several statements about that distribution.</p>
-				<figure xml:id="fig_ckpt_normal_normal-3">
+				<figure xml:id="fig_normal_ckpt_normal-3">
 					<caption>A Normal Distribution</caption>
-					<image width="80%" xml:id="image_ckpt_normal_normal-3">
+					<image width="80%" xml:id="image_normal_ckpt_normal-3">
+						<description>
+							A mound-shaped, symmetric distribution with its peak at 400.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-						    \begin{axis}[
-				            no markers,
-				            domain=300:500,
-				            samples=500,
-				            ymin=0,
-				            ymax=0.3,
-				            axis lines=middle,
-				            axis line style={-},
-				            xlabel=\empty,
-				            ticklabel style={font=\scriptsize},
-				            xtick={400},
-				            extra x ticks={310,340,370,430,460,490},
-				            extra x tick labels={},
-				            ytick=\empty,
-				            enlargelimits=false,
-				            clip=false,
-				            axis on top,
-				            grid = none,
-				            hide y axis,
-				            width=10cm,
-				            height=50cm
-			        		]
-					        \draw[gray,dashed] (axis cs: 400,0) -- (axis cs: 400,{gauss(400,400,30)});
-					        \addplot[very thick,red!80!white] {gauss(x,400,30)};
-						    \end{axis}
-							\end{tikzpicture}								
+							<xi:include href="./latex-images/normal_ckpt_normal-3.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -409,35 +302,14 @@
 			<solution>
 				<p>Using the normal distribution from the last example, we have shaded the appropriate area. This area is the probability we are looking for.
 				</p>
-				<figure xml:id="fig_examp_normal_area-sketch">
+				<figure xml:id="fig_normal_examp_area-sketch">
 					<caption>Probability Between <m>Y=65</m> and <m>Y=70</m></caption>
-					<image width="80%" xml:id="image_examp_normal_area-sketch">
+					<image width="80%" xml:id="image_normal_examp_area-sketch">
+						<description>
+							A normal distribution curve with its peak at 69.  The area under the curve between 65 and 70 has been shaded in.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-						    \begin{axis}[
-				            no markers,
-				            domain=57.5:80,
-				            samples=500,
-				            ymin=0,
-				            ymax=0.3,
-				            axis lines=middle,
-				            axis line style={-},
-				            xlabel=\empty,
-				            ticklabel style={font=\scriptsize},
-				            xtick={65,70},
-				            ytick=\empty,
-				            enlargelimits=false,
-				            clip=false,
-				            axis on top,
-				            grid = none,
-				            hide y axis
-						      ]
-					        \draw[gray,dashed] (axis cs: 69,0) -- (axis cs: 69,{gauss(69,69,2.8)});
-					        \addplot[name path=A,very thick,red!80!white] {gauss(x,69,2.8)};
-					        \path[name path=B] (axis cs:65,0) -- (axis cs:70,0);
-					        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=65:70}];
-						    \end{axis}
-							\end{tikzpicture}					
+							<xi:include href="./latex-images/normal_examp_area-sketch.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -529,35 +401,14 @@
 			</statement>
 			<solution>
 				<p>We begin by sketching the standard normal distribution and the area corresponding to the probability we want.</p>
-				<figure xml:id="fig_examp_normal_table-range">
+				<figure xml:id="fig_normal_examp_table-range">
 					<caption>Finding Probablity in a Range</caption>
-					<image width="70%" xml:id="image_examp_normal_table-range">
+					<image width="70%" xml:id="image_normal_examp_table-range">
+						<description>
+							A normal distribution curve with its peak at 0.  The area under the curve between -1.82 and 1.24 has been shaded in.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-						    \begin{axis}[
-				            no markers,
-				            domain=-3.5:3.5,
-				            samples=500,
-				            ymin=0,
-				            ymax=0.5,
-				            axis lines=middle,
-				            axis line style={-},
-				            xlabel=\empty,
-				            ticklabel style={font=\small},
-				            xtick={-1.82,0,1.24},
-				            ytick=\empty,
-				            enlargelimits=false,
-				            clip=false,
-				            axis on top,
-				            grid = none,
-				            hide y axis
-						       ]
-					        \draw[gray,dashed] (axis cs: 0,0) -- (axis cs: 0,{gauss(0,0,1)});
-					        \addplot[name path=A,very thick] {gauss(x,0,1)};
-					        \path[name path=B] (axis cs:-3.5,0) -- (axis cs:3.5,0);
-					        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=-1.82:1.24}];
-						    \end{axis}
-							\end{tikzpicture}							
+							<xi:include href="./latex-images/normal_examp_table-range.tex" parse="text"/>				
 						</latex-image>
 					</image>
 				</figure>
@@ -585,7 +436,7 @@
 		<exercise xml:id="ckpt_normal_standard-2">
 			<statement>
 				<p>Use the standard normal distribution table to find the following probability.</p>
-				<p>Question: what is P(Z \lt -0.89)?</p>
+				<p>Question: what is <m>P(Z \lt -0.89)</m>?</p>
 			</statement>
 			<answer><p>0.1867</p></answer>
 		</exercise>
@@ -707,7 +558,7 @@
 	<subsection xml:id="sec_normal_reverse">
 		<title>Reverse Look-up</title>
 		<p>So far we have used the standard normal distribution table to look up probabilities based on a given z-score. We can, however, also use this table in reverse. Consider the following example.</p>
-		<example xml:id="examp_normal-reverse">
+		<example xml:id="examp_normal_reverse">
 			<title>Using the Standard Normal Distribution Table in Reverse</title>
 			<statement>
 				<p>Use the standard normal distribution table to find the z-score that separates:
@@ -721,85 +572,27 @@
 				<p>Since we are using the table in reverse, we will look in the body of the table for the given probability, and find the z-scores in the row and column headings.
 					<ol label="a">
 						<li><p>The bottom 80% of data in a normal distribution would have probability 0.8000, as shown in the picture below.</p>
-							<figure xml:id="fig_examp_normal-reverse-a">
+							<figure xml:id="fig_normal_examp_reverse-a">
 								<caption>The Bottom 80%</caption>
-								<image width="60%" xml:id="image_examp_normal-reverse-a">
+								<image width="60%" xml:id="image_normal_examp_reverse-a">
+									<description>
+										A normal distribution centered at 0 with area equal to 0.80 shaded from the left tail up to some unknown z value above the mean.
+									</description>
 									<latex-image>
-										\begin{tikzpicture}
-									    \begin{axis}[
-							            no markers,
-							            domain=-3.5:3.5,
-							            samples=500,
-							            ymin=0,
-							            ymax=0.5,
-							            axis lines=middle,
-							            axis line style={-},
-							            xlabel=\empty,
-							            ticklabel style={font=\small},
-							            xtick={0.84},
-							            xticklabel={$z$},
-							            ytick=\empty,
-							            enlargelimits=false,
-							            clip=false,
-							            axis on top,
-							            grid = none,
-							            hide y axis
-								        ]
-								        \draw[gray,dashed] (axis cs: 0,0) -- (axis cs: 0,{gauss(0,0,1)});
-								        \addplot[name path=A,very thick] {gauss(x,0,1)};
-								        \path[name path=B] (axis cs:-3.5,0) -- (axis cs:3.5,0);
-								        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=-3.5:0.84}];
-								        \node (1) at (axis cs: -2,0.25) {$0.8000$};
-								        \node (2) at (axis cs: -0.7,0.15);
-								        \path[-stealth,thick] (1.east) edge[bend left] (2.north);
-									    \end{axis}
-										\end{tikzpicture}										
+										<xi:include href="./latex-images/normal_examp_reverse-a.tex" parse="text"/>
 									</latex-image>
 								</image>
 							</figure>
 							<p>We look in the body of the table to find the probability closest to 0.8000. This is 0.7995 going with the z-score of 0.84.</p></li>
 						<li><p>The second problem may look familiar from the empirical rule. Since 68% of the data is in this middle range, that leaves <m>1 - 0.68 = 0.32</m>, or 32% of the data in the two tails. Since the distribution is symmetric, the left and right tails will contain the same proportion, which is <m>0.32 \div 2 = 0.16</m>.  This is shown in the following picture.</p>
-						<figure xml:id="fig_examp_normal-reverse-b">
+						<figure xml:id="fig_normal_examp_reverse-b">
 							<caption>Visualizing the Given Probability</caption>
-							<image width="60%" xml:id="image_examp_normal-reverse-b">
+							<image width="60%" xml:id="image_normal_examp_reverse-b">
+								<description>
+									A normal distribution centered at 0 with area equal to 0.68 shaded from some unknown negative z value below the mean to the positive z value above the mean so that 0.16 is in the unshaded regions in both the left and right tails.
+								</description>
 								<latex-image>
-									\begin{tikzpicture}
-									  \begin{axis}[
-									    no markers,
-									    domain=-3.5:3.5,
-									    samples=500,
-									    ymin=0,
-									    ymax=0.5,
-									    axis lines=middle,
-									    axis line style={-},
-									    xlabel=\empty,
-									    ticklabel style={font=\small},
-									    xtick={0.84},
-									    xticklabel={$z$},
-									    ytick=\empty,
-									    enlargelimits=false,
-									    clip=false,
-									    axis on top,
-									    grid = none,
-									    hide y axis
-									  	]
-							        \draw[gray!20,dashed] (axis cs: -1,0.42) -- (axis cs: -1,{gauss(-1,0,1)});
-							        \draw[gray!20,dashed] (axis cs: 1,0.42) -- (axis cs: 1,{gauss(1,0,1)});
-							        \draw[gray,dashed] (axis cs: 0,0) -- (axis cs: 0,{gauss(0,0,1)});
-							        \addplot[name path=A,very thick] {gauss(x,0,1)};
-							        \path[name path=B] (axis cs:-3.5,0) -- (axis cs:3.5,0);
-							        \addplot[blue!30!white] fill between [of=A and B,soft clip={domain=-1:1}];
-							        \draw (axis cs: -1,0.42) -- (axis cs: 1,0.42) node[midway,above] {$\scriptstyle 0.6800$};
-							        \draw (axis cs: -1,0.42) -- (axis cs: -1,0.41);
-							        \draw (axis cs: 1,0.42) -- (axis cs: 1,0.41);
-							        \node (1) at (axis cs: 2.5,0.10) {$\scriptstyle 0.1600$};
-							        \node (2) at (axis cs: 1.5,0.05) {};
-							        \path[-stealth] (1.west) edge[bend right] (2.north);
-							        \node (3) at (axis cs: -2.5,0.10) {$\scriptstyle 0.1600$};
-							        \node (4) at (axis cs: -1.5,0.05) {};
-							        \path[-stealth] (3.east) edge[bend left] (4.north);
-							    	\end{axis}
-							  	\end{tikzpicture}
+									<xi:include href="./latex-images/normal_examp_reverse-b.tex" parse="text"/>
     						</latex-image>
     					</image>
     				</figure>
@@ -815,55 +608,21 @@
 			</solution>
 		</example>
 		<p>At first, this may not seem terribly useful. However, it can be a very useful tool in real-world problems. We will use this reverse look-up technique extensively in inferential statistics in the second part of this text. We can also use it in applied problems such as the following.</p>
-		<example xml:id="examp_normal-reverse-application">
+		<example xml:id="examp_normal_reverse-application">
 		  <title>Solving an Application Problem Using the Standard Normal Distribution Table in Reverse</title>
 		  <statement>
 		  	<p>A mathematics professor at a large university gives an exam to 186 students. She decides that she will give A&apos;s on the final exam to those who scored in the top 10% of the class, and B&apos;s to those who scored in the top 25%. If the final exam scores had a normal distribution with mean <m>\mu = 65.3</m> and standard deviation <m>\sigma = 11.6</m>, What was the lowest score on the exam that earned an A, and what was the lowest score for a B?</p>
 		  </statement>
 		  <solution>
 		  	<p>We will first determine the z-scores that separate the A&apos;s and B&apos;s from the rest of the grades, and then turn those z-scores into exam scores.  The image below will serve as our guide.</p>
-		  	<figure xml:id="fig_examp_normal-reverse-application">
+		  	<figure xml:id="fig_normal_examp_reverse-application">
 		  		<caption>Grade Ranges</caption>
-		  		<image width="70%" xml:id="image_examp_normal-reverse-application">
+		  		<image width="70%" xml:id="image_normal_examp_reverse-application">
+		  			<description>
+		  				A normal distribution centered at 0 with area equal to 0.90 shaded from the left tail up to some unknown z values for A's and area equal to 0.75 shaded from the left tail up to some unknown z value for B's.
+		  			</description>
 		  			<latex-image>
-							\begin{tikzpicture}
-							    \begin{axis}[
-							            no markers,
-							            domain=30:100,
-							            samples=500,
-							            ymin=0,
-							            ymax=0.1,
-							            axis lines=middle,
-							            axis line style={-},
-							            xlabel=\empty,
-							            ticklabel style={font=\small},
-							            xtick={65.3,73.07,80.14},
-							            xticklabels={65.3,$z_B$,$z_A$},
-							            ytick=\empty,
-							            enlargelimits=false,
-							            clip=false,
-							            axis on top,
-							            grid = none,
-							            hide y axis
-							        ]
-							        \draw[gray!30,dashed] (axis cs: 30,0.045) -- (axis cs: 30,0);
-							        \draw[gray!30,dashed] (axis cs: 73.07,0.036) -- (axis cs: 73.07,{gauss(73.07,65.3,11.6)});
-							        \draw[gray!30,dashed] (axis cs: 80.14,0.045) -- (axis cs: 80.14,{gauss(80.14,65.3,11.6)});
-							        \draw[gray,dashed] (axis cs: 65.3,0) -- (axis cs: 65.3,{gauss(65.3,65.3,11.6)});
-							        \addplot[name path=A,very thick] {gauss(x,65.3,11.6)};
-							        \path[name path=B] (axis cs: 30,0) -- (axis cs:100,0);
-							        \begin{scope}[blend group = multiply]
-							            \addplot[blue!20] fill between [of=A and B,soft clip={domain=30:80.14}];
-							            \addplot[blue!30] fill between [of=A and B,soft clip={domain=30:73.07}];
-							        \end{scope}	
-							        \draw (axis cs: 30,0.036) -- (axis cs: 73.07,0.036) node[midway,above] {$\scriptstyle 0.7500$};
-							        \draw (axis cs: 30,0.036) -- (axis cs: 30,0.035);
-							        \draw (axis cs: 73.07,0.036) -- (axis cs: 73.07,0.035);
-							        \draw (axis cs: 30,0.045) -- (axis cs: 80.14,0.045) node[midway,above] {$\scriptstyle 0.9000$};
-							        \draw (axis cs: 30,0.045) -- (axis cs: 30,0.044);
-							        \draw (axis cs: 80.14,0.045) -- (axis cs: 80.14,0.044);        
-							    \end{axis}
-							\end{tikzpicture}
+		  				<xi:include xref="./latex-images/normal_examp_reverse-application.tex" parse="text"/>
 		  			</latex-image>
 		  		</image>
 		  	</figure>

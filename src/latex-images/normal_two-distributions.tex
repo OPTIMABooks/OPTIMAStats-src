@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+    \begin{axis}[
+            no markers,
+            domain=54:79,
+            samples=500,
+            ymin=0,
+            ymax=0.3,
+            axis lines=middle,
+            axis line style={-},
+            x label style={at={(axis description cs: 0.5,-0.1)},anchor=north},
+            xlabel={\scriptsize Height (inches)},
+            ticklabel style={font=\scriptsize},
+            xtick={63.6,69.0},
+            ytick=\empty,
+            enlargelimits=false,
+            clip=false,
+            axis on top,
+            grid = none,
+            hide y axis
+        ]
+        \draw[gray,dashed] (axis cs: 69,0) -- (axis cs: 69,{gauss(69,69,2.8)});
+        \draw[gray,dashed] (axis cs: 63.6,0) -- (axis cs: 63.6,{gauss(63.6,63.6,2.5)});
+        \addplot[very thick,red!80!white] {gauss(x,69,2.8)};
+        \addplot[very thick,blue!50!black] {gauss(x,63.6,2.5)};
+    \end{axis}
+    \node[red!80!white,align=left, execute at begin node=\setlength{\baselineskip}{1em}] at (5.5,2.5) {
+        \scriptsize Men:\\ 
+        \hspace{1em}$\scriptstyle \mu_Y = 69.0$\\ 
+        \hspace{1em}$\scriptstyle \sigma_Y = 2.8$
+    };
+    \node[blue!50!black,align=left, execute at begin node=\setlength{\baselineskip}{1em}] at (0.75,2.25) {
+        \scriptsize Women:\\ 
+        \hspace{1em}$\scriptstyle \mu_X = 63.6$\\ 
+        \hspace{1em}$\scriptstyle \sigma_X = 2.5$
+    };
+\end{tikzpicture}			

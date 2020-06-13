@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+  \begin{axis}[
+      no markers,
+      domain=-3.5:3.5,
+      samples=500,
+      ymin=0,
+      ymax=0.5,
+      axis lines=middle,
+      axis line style={-},
+      xlabel=\empty,
+      ticklabel style={font=\small},
+      xtick={0.84},
+      xticklabel={$z$},
+      ytick=\empty,
+      enlargelimits=false,
+      clip=false,
+      axis on top,
+      grid = none,
+      hide y axis
+    ]
+    \draw[gray,dashed] (axis cs: 0,0) -- (axis cs: 0,{gauss(0,0,1)});
+    \addplot[name path=A,very thick,blue!80] {gauss(x,0,1)};
+    \path[name path=B] (axis cs:-3.5,0) -- (axis cs:3.5,0);
+    \addplot[blue!20!white] fill between [of=A and B,soft clip={domain=-3.5:0.84}];
+    \node (1) at (axis cs: -2,0.25) {$0.8000$};
+    \path[-stealth,thick] (1.east) edge[bend left] (-0.7,0.15);
+  \end{axis}
+\end{tikzpicture}										

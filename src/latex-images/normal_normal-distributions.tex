@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+    \begin{axis}[
+	    no markers,
+	    axis lines=middle,
+	    domain=-6:6,
+	    samples=500,
+	    ymin=0, ymax=2,
+		axis lines*=left,
+	    xlabel=\empty,
+	    ticklabel style={font=\scriptsize},
+		xtick={-4,-2,0,2,4},
+		ytick=\empty,
+		enlargelimits=false,
+		clip=falsem
+		axis on top,
+		grid = none,
+		hide y axis
+	    ]
+	    \addplot[very thick,purple!60!white] {gauss(x,-2,0.5)};
+	    \addplot[very thick,green!50!black] {gauss(x,0,1)};
+	    \addplot[very thick,red!80!white] {gauss(x,0,0.4)};
+		\addplot[very thick,blue!50!black] {gauss(x,0,2)};
+	\end{axis}
+	\node[right,purple!60!white] at (5,3) {$\scriptstyle \mu = -2, \sigma = 0.5$};
+	\node[right,green!50!black] at (5,2.75) {$\scriptstyle \mu = 0, \sigma = 1$};
+	\node[right,red!80!white] at (5,2.5) {$\scriptstyle \mu = 0, \sigma = 0.4$};
+	\node[right,blue!50!black] at (5,2.25) {$\scriptstyle \mu = 0, \sigma = 2$};
+\end{tikzpicture}
