@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_probability">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_probability">
   <title>Probability and Probability Rules</title>
   
   <introduction xml:id="sec_probability_intro">
@@ -113,16 +113,11 @@
 		<figure xml:id="fig_probability_scale">
 			<caption>Range of Possible Probabilities</caption>
 			<image xml:id="image_probability_scale">
+				<description>
+					A line starting at 0 (can&apos;t happen) on the far left and extending to 1 (must happen) on the far right.  In the middle is 0.5 which stands for a 50-50 chance.
+				</description>
 				<latex-image>
-					\begin{tikzpicture}[font=\sffamily\tiny]
-					  \draw[line width=0.25mm] (0,0) -- (8,0);
-					  \draw (0,0.1) -- (0,-0.1) node [below] {0};
-					    \node at (0,0.25) [above center] {Can't Happen};
-					  \draw (4,0.1) -- (4,-0.1) node [below] {0.50};
-					    \node at (4,0.25) [above center] {50/50 Chance};
-					  \draw (8,0.1) -- (8,-0.1) node [below] {1};
-					  \node at (8,0.25) [above center] {Must Happen};
-					\end{tikzpicture}
+					<xi:include href="./latex-images/probability_scale.tex" parse="text"/>
 				</latex-image>
 			</image>
 		</figure>
@@ -451,24 +446,14 @@
   							<li><p>The probability of <m>W \cap \overline{R}</m> is written into the appropriate region.</p></li>
   						</ul>
   					</p>
-  					<figure xml:id="fig_examp_probability_venn_two-set-i">
+  					<figure xml:id="fig_probability_examp_venn_two-set-i">
   						<caption>Initial Venn diagram</caption>
-  						<image xml:id="image_examp_probability_venn_two-set-i">
+  						<image xml:id="image_probability_examp_venn_two-set-i">
+  							<description>
+  								A Venn Diagram with two circles, one for R and one for W.  The probability in W that is not also in R is 0.39.  The probability of 0.64 is divided between the part of W that is also in R and the part that is not.  The probability of 0.35 is divided between the part of R that is not in W and the part that is.
+  							</description>
   							<latex-image>
-  								\begin{tikzpicture}
-							  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
-							  		\draw (0,0) circle (1);
-							  		\draw (1,0) circle (1);
-							  		\node at (-1,1) {$R$};
-							  		\node at (2,1) {$W$};  
-							  		\node at (1.4,0) {$\scriptstyle 0.39$};
-							  		\node at (-0.4,-1.25) {$\scriptstyle 0.35$};
-							  		\node at (1.2,-1.25) {$\scriptstyle 0.64$};
-							  		\draw[->] (-0.4,-1.1) -- (-0.4,-0.3);
-							  		\draw[->] (-0.4,-1.1) -- (0.4,-0.3);
-							  		\draw[->] (1.2,-1.1) -- (0.6,-0.3);
-							  		\draw[->] (1.2,-1.1) -- (1.4,-0.3);
-									\end{tikzpicture}
+  								<xi:include href="./latex-images/probability_examp_venn_two-set-i.tex" parse="text"/>
   							</latex-image>
   						</image>
   					</figure>
@@ -487,20 +472,14 @@
   				    	<mrow>\amp = 0.74.</mrow>
   				    </md>
   				    </p>
-				    <figure xml:id="fig_examp_probability_venn_two-set-ii">
+				    <figure xml:id="fig_probability_examp_venn_two-set-ii">
 				    	<caption>Final Venn diagram</caption>
-				    	<image xml:id="image_examp_probability_venn_two-set-ii">
+				    	<image xml:id="image_probability_examp_venn_two-set-ii">
+				    		<description>
+				    			A Venn Diagram with circles for R and W.  The probability in the region included in both R and W is 0.25.  The probability in the region in R but not W is 0.10.  The probability in the region in W but not R is 0.39.
+				    		</description>
 				    		<latex-image>
-				    			\begin{tikzpicture}
-							  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
-							  		\draw (0,0) circle (1);
-							  		\draw (1,0) circle (1);
-							  		\node at (-1,1) {$R$};
-							  		\node at (2,1) {$W$};  
-							  		\node at (1.4,0) {$\scriptstyle 0.39$};
-							  		\node at (0.5,0) {$\scriptstyle 0.25$};
-							  		\node at (-0.4,0) {$\scriptstyle 0.10$};
-									\end{tikzpicture}
+				    			<xi:include href="./latex-images/probability_examp_venn_two-set-ii.tex" parse="text"/>
 				    		</latex-image>
 				    	</image>
 				    </figure>
@@ -524,27 +503,14 @@
 			</statement>
 			<solution>
 				<p>The final Venn Diagram is shown below. Can you determine how these numbers were found?</p>
-				<figure xml:id="fig_examp_probability_venn_three-set">
+				<figure xml:id="fig_probability_examp_venn_three-set">
 					<caption>Three Set Venn Diagram</caption>
-					<image width="60%" xml:id="image_examp_probability_venn_three-set">
+					<image width="60%" xml:id="image_probability_examp_venn_three-set">
+						<description>
+							A three set Venn diagram with circles for N, C, and H.  The probability in the region included in all three circles is zero.  The probability in N and C but not H is 0.  The probability in N and H but not C is 0.18, the probability in C and H but not N is 0.35.  The probability in C only is 0.10.  The probability in N only is 0.09.  The probability in H only is 0.12.  The probability outside of all three circles is 0.16.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-					  		\draw (-1.5,-1.25) rectangle (2.5,2.25);
-					  		\draw (0,0) circle (1);
-					  		\draw (1,0) circle (1);
-					  		\draw (0.5,1) circle (1);
-					  		\node at (-1.1,-0.7) {$\scriptstyle C$};
-					  		\node at (2.1,-0.7) {$\scriptstyle H$};  
-					  		\node at (-0.4,1.85) {$\scriptstyle N$};
-					  		\node at (0.5,0.4) {$\scriptstyle 0$};
-					  		\node at (-0.1,0.7) {$\scriptstyle 0$};
-					  		\node at (1.1,0.7) {$\scriptstyle 0.18$};
-					  		\node at (0.5,1.4) {$\scriptstyle 0.09$};
-					  		\node at (-0.6,-0.2) {$\scriptstyle 0.10$};
-					  		\node at (0.5,-0.4) {$\scriptstyle 0.35$};
-					  		\node at (1.6,-0.2) {$\scriptstyle 0.12$};
-					  		\node at (2.1,-1.1) {$\scriptstyle 0.16$};
-							\end{tikzpicture}
+							<xi:include href="./latex-images/probability_examp_venn_three-set.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -563,19 +529,14 @@
 		<exercise xml:id="ckpt_probability_venn-1">
 			<statement>
 				<p>Consider the following Venn Diagram.</p>
-				<figure xml:id="fig_ckpt_probability_venn_1">
+				<figure xml:id="fig_probability_ckpt_venn_1">
 					<caption></caption>
-					<image width="50%" xml:id="image_ckpt_probability_venn_1">
+					<image width="50%" xml:id="image_probability_ckpt_venn_1">
+						<description>
+							A Venn diagram with two circles.  The probabilty in the region in the left circle only is 0.53.  The probability in the region inside both circles is labeled "x".  The probability in the region in the right circle only is labeled "y".  The probabilty outside of both circles is 0.14.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
-					  		\draw (0,0) circle (1);
-					  		\draw (1,0) circle (1);
-					  		\node at (1.5,0) {$\scriptstyle y$};
-					  		\node at (0.5,0) {$\scriptstyle x$};
-					  		\node at (-0.5,0) {$\scriptstyle 0.53$};
-					  		\node at (2.1,-1.3) {$\scriptstyle 0.14$};
-							\end{tikzpicture}
+							<xi:include href="./latex-images/probability_ckpt_venn_1.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -593,19 +554,14 @@
 		<exercise xml:id="ckpt_probability_venn-2">
 			<statement>
 				<p>Suppose you are told that in the Venn Diagram below, <m>P(A\cup B) = 0.40</m>.</p>
-				<figure xml:id="fig_ckpt_probability_venn-2">
+				<figure xml:id="fig_probability_ckpt_venn-2">
 					<caption></caption>
-					<image width="50%" xml:id="image_ckpt_probability_venn-2">
+					<image width="50%" xml:id="image_probability_ckpt_venn-2">
+						<description>
+							A Venn diagram with two circles, one labeled "A" and the other "B".  The probability in the region in circle A only is 0.16.  The probability in the region in circle B only is 0.19.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
-					  		\draw (0,0) circle (1);
-					  		\draw (1,0) circle (1);
-					  		\node at (-1,1) {$A$};
-					  		\node at (2,1) {$B$}; 
-					  		\node at (1.5,0) {$\scriptstyle 0.19$};
-					  		\node at (-0.5,0) {$\scriptstyle 0.16$};
-							\end{tikzpicture}
+							<xi:include href="./latex-images/probability_ckpt_venn-2.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -616,20 +572,14 @@
 		<exercise xml:id="ckpt_probability_venn-3">
 			<statement>
 				<p>In the following Venn Diagram, <m>P(B) = 0.60</m>.</p>
-				<figure xml:id="fig_ckpt_probability_venn-3">
+				<figure xml:id="fig_probability_ckpt_venn-3">
 					<caption></caption>
-					<image width="50%" xml:id="image_ckpt_probability_venn-3">
+					<image width="50%" xml:id="image_probability_ckpt_venn-3">
+						<description>
+							A Venn diagram with two circles, one labeled "A" and the other "B".  The probability in the region in circle A only is 0.40.  The probability in the region in circle B only is 0.16.  The probability outside of both circles is labeled "x".
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
-					  		\draw (0,0) circle (1);
-					  		\draw (1,0) circle (1);
-					  		\node at (-1,1) {$A$};
-					  		\node at (2,1) {$B$}; 
-					  		\node at (1.5,0) {$\scriptstyle 0.16$};
-					  		\node at (-0.5,0) {$\scriptstyle 0.40$};
-					  		\node at (2.1,-1.3) {$\scriptstyle x$};
-							\end{tikzpicture}
+							<xi:include href="./latex-images/probability_ckpt_venn-3.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
