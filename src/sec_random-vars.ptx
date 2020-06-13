@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_random-vars">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_random-vars">
   <title>Random Variables and Discrete Probability distributions</title>
 
   <introduction xml:id="sec_random-vars_intro">
@@ -504,9 +504,16 @@
   						</row>
   					</tabular>
   				</table>
-  				<figure xml:id="fig_examp_random-vars_marble-histogram">
+  				<figure xml:id="fig_random-vars_examp_marble-histogram">
   					<caption>Probability Histogram</caption>
-  					<image width="80%" archive="image_random-vars_marble-histogram" source="./images/random-vars_marble-histogram.png"/>
+  					<image width="80%" xml:id="image_random-vars_examp_marble-histogram">
+  					  <description>
+  					  	A histogram with bars for 0 and 1 of the same height and a bar for 2 that is much shorter.
+  					  </description>
+  					  <latex-image>
+  					  	<xi:include href="./latex-images/random-vars_examp_marble-histogram.tex" parse="text"/>
+  					  </latex-image>
+  					</image>
   				</figure>
   			</sidebyside>
   			<p>The area principle plays an important role in this histogram. Recall that the area principle states that the area of a bar in a histogram must accurately reflect the proportion of the class represented by that bar in the frequency distribution. In a probability histogram, this relationship is even stronger. The area of each bar must be equal to the probability of the value of <m>X</m> that it represents. Since each bar has a height equal to the probability and a width equal to one, this is indeed the case.</p>
@@ -528,9 +535,16 @@
 						<li><p>If we were to add together all the bars (an infinite number), the sum would be 1 because the probability of the sample space is 1.</p></li>
 						<li><p>In this instance, the bars become so short that they can not be seen after about <m>Y=10</m>.</p></li>
 					</ul>
-					<figure xml:id="fig_examp_random-vars_distribution_formula-histogram">
+					<figure xml:id="fig_random-vars_examp_distribution_formula-histogram">
 						<caption>Probability Histogram for <m>Y</m></caption>
-						<image width="80%" archive="image_random-vars_distribution_formula-histogram" source="./images/random-vars_distribution_formula-histogram.png"/>
+						<image width="80%" xml:id="image_random-vars_examp_distribution_formula-histogram">
+							<description>
+								a histogram with bars for y-values from 1 to 10, starting with a bar of height 0.33 and then quickly tapering off to heights close to zero.
+							</description>
+							<latex-image>
+								<xi:include href="./latex-images/random-vars_examp_distribution_formula-histogram.tex" parse="text"/>
+							</latex-image>
+						</image>
 					</figure>
 				</sidebyside>
 			</solution>
@@ -549,9 +563,16 @@
 		<exercise xml:id="ckpt_random-vars_histograms-1">
 			<statement>
 				<p>Consider the following probability histogram for the random variable <m>X</m>.</p>
-				<figure xml:id="fig_ckpt_random-vars_histograms-1">
+				<figure xml:id="fig_random-vars_ckpt_histograms-1">
 					<caption>Probability Histogram for <m>X</m></caption>
-					<image width="80%" archive="image_ckpt_random-vars_histograms-1" source="./images/ckpt_random-vars_histograms-1.png"/>
+					<image width="80%" xml:id="image_random-vars_ckpt_histograms-1">
+						<description>
+							A histogram with bars of height 0.1 at X=1, 0.2 at X-2, 0.1 at X=5, 0.3 at X=5, 0.2 at X=7, and 0.1 at X=8.
+						</description>
+						<latex-image>
+							<xi:include href="./latex-images/random-vars_ckpt_histograms-1.tex" parse="text"/>
+						</latex-image>
+					</image>
 				</figure>
 				<p>Question: what is the probability that <m>X</m> is between 2 and 5 inclusively?</p>
 			</statement>
@@ -560,9 +581,16 @@
 		<exercise xml:id="ckpt_random-vars_histograms-2">
 			<statement>
 				<p>Consider the following probability histogram for the random variable <m>X</m>.</p>
-				<figure xml:id="fig_ckpt_random-vars_histograms-2">
+				<figure xml:id="fig_random-vars_ckpt_histograms-2">
 					<caption>Probability Histogram for <m>X</m></caption>
-					<image width="80%" archive="image_ckpt_random-vars_histograms-2" source="./images/ckpt_random-vars_histograms-1.png"/>
+					<image width="80%" xml:id="image_ckpt_random-vars_histograms-2">
+						<description>
+							A histogram with bars of height 0.1 at X=1, 0.2 at X-2, 0.1 at X=5, 0.3 at X=5, 0.2 at X=7, and 0.1 at X=8.
+						</description>
+						<latex-image>
+							<xi:include href="./latex-images/random-vars_ckpt_histograms-1.tex" parse="text"/>
+						</latex-image>
+					</image>
 				</figure>
 				<p>Question: which of the following are not possible values of the random variable X?
 					<ol label="a" cols="3">
@@ -580,9 +608,16 @@
 		<exercise xml:id="ckpt_random-vars_histograms-3">
 			<statement>
 				<p>Consider the following probability histogram for the distribution of the random variable <m>X</m>.</p>
-				<figure xml:id="fig_ckpt_random-vars_histograms-3">
+				<figure xml:id="fig_random-vars_ckpt_histograms-3">
 					<caption>Probability Histogram for <m>X</m></caption>
-					<image width="80%" archive="image_ckpt_random-vars_histograms-3" source="./images/ckpt_random-vars_histograms-3.png"/>
+					<image width="80%" xml:id="image_ckpt_random-vars_histograms-3">
+						<description>
+							A histogram with bars of height 0.1 at X=1, X=2, X=4, and X=8 and a bar of height 0.2 at X=7.  There is a question mark about X=3.
+						</description>
+						<latex-image>
+							<xi:include href="./latex-images/random-vars_ckpt_histograms-3.tex" parse="text"/>
+						</latex-image>
+					</image>
 				</figure>
 				<p>Question: this histogram is incorrect because the bar for <m>X=3</m> was left off. What should the height of that bar be?</p>
 			</statement>
@@ -648,6 +683,7 @@
 		</definition>
 		<p>As shown above, the expected value of <m>X</m> is really a weighted average. Each value of the random variable is weighted (i.e. multiplied) by its probability. So values that are very unlikely count far less than values that are likely. Let&apos;s see how this interaction plays out by finding the expected value of a slight variation on the game from <xref ref="examp_random-vars_average"/>.</p>
 		<example xml:id="examp_random-vars_expected-value">
+			<title>Finding the Expected Value of a Raffle Ticket</title>
 			<statement>
 				<p>A charity sells raffle tickets for $2.00 each. Each raffle ticket allows you to draw <em>two</em> colored balls from an urn containing 100 balls, 95 of which are red, 4 of which are white, and one of which is gold. For every white ball you draw, you win $5. If you draw the gold ball, you win $50. If <m>Y</m> is the amount of money you make on the game (after paying your $2.00), find the probability distribution for <m>Y</m> and use it to compute the expected value of <m>Y</m>.</p>
 			</statement>
@@ -901,9 +937,16 @@
 										</row>
 									</tabular>
 								</table>
-								<figure xml:id="fig_examp_random-vars_stdev">
-									<caption>Probability Histogram for <m>X</m></caption>
-									<image source="./images/random-vars_examp_stdev.png" width="80%" archive="image_examp_random-vars_stdev"/>
+								<figure xml:id="fig_random-vars_examp_stdev">
+									<caption>Probability Histogram</caption>
+									<image width="80%" xml:id="image_random-vars_examp_stdev">
+										<description>
+											A histogram with bars whose heights grow from X=2 until reaching their highest point at X=7 and then shrink in a mirror image until X=12.
+										</description>
+										<latex-image>
+											<xi:include href="./latex-images/random-vars_examp_stdev.tex" parse="text"/>
+										</latex-image>
+									</image>
 								</figure>
 							</sidebyside>
 							<p>We note that the histogram is symmetric about a single mode. In other words, it is <xref ref="def_histogram-mound-shaped" text="custom">mound shaped</xref>.</p>
