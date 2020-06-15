@@ -1094,7 +1094,7 @@
 				</statement>
 				<solution>
 					<sidebyside widths="50% 45%" margins="auto" valign="middle">
-						<p>This is done in almost exactly the same way as	<xref ref="fig_examp_graphs_stem-and-leaf" text="custom">our last example</xref>. The only difference is that	each stem gets two rows. The leaves are then split up with 0-4 going in the first row and 5-9 in the second row for a given stem. The result is	shown to the right.</p>
+						<p>This is done in almost exactly the same way as	<xref ref="fig_graphs_examp_stem-and-leaf" text="custom">our last example</xref>. The only difference is that	each stem gets two rows. The leaves are then split up with 0-4 going in the first row and 5-9 in the second row for a given stem. The result is	shown to the right.</p>
 						<figure xml:id="fig_graphs_examp_expanded-stem-and-leaf">
 							<caption>Expanded Stem-and-Leaf Plot</caption>
 							<image xml:id="image_graphs_expanded-stem-and-leaf">
