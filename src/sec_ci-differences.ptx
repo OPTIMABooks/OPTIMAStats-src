@@ -425,24 +425,14 @@
 	<subsection xml:id="sec_ci-differences_sample-size">
 		<title>Sample Size</title>
 		<p>When trying to determine the sample size that we need for a given margin of error in a confidence interval for differences, we need to make an 
-		extra assumption. Note that in the two margin of error formulas below, there are two, potentially different, values of <m>n</m>.</p>
-		<figure xml:id="fig_ci-differences_sample-size-me">
-			<caption>Margin of Error for Differences</caption>
-			<sidebyside width="45%" margins="auto" valign="middle">
-				<figure xml:id="fig_ci-differences_sample-size-me-mean">
-					<caption>Means</caption>
-					<image xml:id="image_ci-differences_sample-size-me-mean">
-						<latex-image>\displaystyle z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</latex-image>
-					</image>
-				</figure>
-				<figure xml:id="fig_ci-differences_sample-size-me-proportions">
-					<caption>Proportions</caption>
-					<image xml:id="image_ci-differences_sample-size-me-proportions">
-						<latex-image>\displaystyle z_{\alpha/2}\times \sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</latex-image>
-					</image>
-				</figure>
-			</sidebyside>
-		</figure>
+		extra assumption. Note that in the two margin of error formulas below, there are two, potentially different, values of <m>n</m>.
+		  <ul cols="2">
+		  	<li><title>Margin of Error for Means</title>
+		  	  <p><me>z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</me></p></li>
+		  	<li><title>Margin of Error for Proportions</title>
+		      <p><me>z_{\alpha/2}\times \sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</me></p></li>
+		  </ul>
+		</p>
 		<p>Because we can not solve a single inequality for both <m>n_1</m> and <m>n_2</m>, we must make the simplifying assumption that both samples will be of the same size. That is, we assume that <m>n_1 = n_2 = n</m>.  When dealing with the mean, we can now find the value of <m>n</m> that guarantees that we will have a margin of error no bigger than some fixed <m>E</m>.
 		  <md>
 		  	<mrow>z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{n}} \leq E \amp \Rightarrow z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2 + \sigma_2^2}{n}} \leq E</mrow>
