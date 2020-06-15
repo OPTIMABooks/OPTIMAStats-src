@@ -1,0 +1,26 @@
+\begin{tikzpicture}[font=\sffamily\tiny]
+  \node (r) at (0,0)      {};
+  \node (0) at (1.5,1.5)  [align=left]{B};
+  \node (00) at (3,2)     [align=left]{B};
+  \node (01) at (3,1.5)   [align=left]{R};
+  \node (02) at (3,1)     [align=left]{W};
+  \node (1) at (1.5,0)    [align=left]{R};
+  \node (10) at (3,0.5)   [align=left]{B};
+  \node (11) at (3,0)     [align=left]{R};
+  \node (12) at (3,-0.5)  [align=left]{W};
+  \node (2) at (1.5,-1.5) [align=left]{W};
+  \node (20) at (3,-1)    [align=left]{B};
+  \node (22) at (3,-2)    [align=left]{W};
+  \draw[line width=0.25mm] 
+    (r.east) -- (0.west) node [midway, left] {$\frac{3}{6}$}
+    (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+    (0) -- (01) node [pos=0.8, above=-1.0mm] {$\frac{2}{5}$}
+    (0) -- (02) node [midway, below=-0.5mm] {$\frac{1}{5}$}
+    (r.east) -- (1.west) node [midway, above=-0.5mm] {$\frac{2}{6}$}
+    (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+    (1) -- (11) node [pos=0.8, above=-1.0mm] {$\frac{1}{5}$}
+    (1) -- (12) node [midway, below=-0.5mm] {$\frac{1}{5}$}
+    (r.east) -- (2.west) node [midway, left] {$\frac{1}{6}$}
+    (2) -- (20) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+    (2) -- (22) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+\end{tikzpicture}							

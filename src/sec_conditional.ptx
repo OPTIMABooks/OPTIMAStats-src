@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_conditional">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_conditional">
   <title>Conditional Probability and Independence</title>
 
   <introduction xml:id="sec_conditional_intro">
@@ -201,35 +201,22 @@
 				<figure xml:id="fig_conditional_venn-a">
 					<caption></caption>
 					<image xml:id="image_conditional_venn-a">
+						<description>
+							A Venn diagram with two circles, A and B.  Circle A is shaded a light yellow.  Circle B is not shaded.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
-					  		\begin{scope}[blend group = soft light]
-                  \fill[yellow!30!white]  (0,0) circle (1);
-                \end{scope}						  		
-					  		\draw (0,0) circle (1);
-					  		\draw (1,0) circle (1);
-					  		\node at (-1,1) {$A$};
-					  		\node at (2,1) {$B$};  
-							\end{tikzpicture}
+							<xi:include href="./latex-images/conditional_venn-a.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
 				<figure xml:id="fig_conditional_venn-b">
 					<caption></caption>
 					<image xml:id="image_conditional_venn-b">
+						<description>
+							A Venn diagram with two circles, A and B.  Circle A is shaded a light yellow.  Circle B is shaded a light pink.  The region inside both circles A and B is a mixture of the two colors.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}
-					  		\draw (-1.5,-1.5) rectangle (2.5,1.5);
-					  		\begin{scope}[blend group = multiply]
-                  \fill[yellow!30!white]  (0,0) circle (1);
-                  \fill[purple!30!white]  (1,0) circle (1);
-                \end{scope}						  		
-					  		\draw (0,0) circle (1);
-					  		\draw (1,0) circle (1);
-					  		\node at (-1,1) {$A$};
-					  		\node at (2,1) {$B$};  
-							\end{tikzpicture}							
+							<xi:include href="./latex-images/conditional_venn-b.tex" parse="text"/>					
 						</latex-image>
 					</image>
 				</figure>
@@ -614,36 +601,14 @@
 							</md>.</p></li>
 						</ol>
 					</p>
-					<figure xml:id="fig_examp_conditional_probability-tree">
+					<figure xml:id="fig_conditional_examp_probability-tree">
 						<caption>Tree Diagram</caption>
-						<image xml:id="image_examp_conditional_probability-tree" width="80%">
+						<image xml:id="image_conditional_examp_probability-tree" width="80%">
+							<description>
+								A tree with three branches off of the start.  Branch B has a probability 3/6, branch R has a probability 2/6, and branch W has a probability 1/6.  Of of branch B, there are three branches: B with probability 2/5, R with probability 2/5, and W with probability 1/5.  Off of the initial branch R, there are also three branches: B with probability 3/5, R with probablyt 1/5, and W with probability 1/5.  Finally, off of the original branch W there are just two branches: B with probability 3/5 and W with probability 2/5.
+							</description>
 							<latex-image>
-								\begin{tikzpicture}[font=\sffamily\tiny]
-								  \node (r) at (0,0);
-								  \node (0) at (1.5,1.5)    [align=left]{B};
-								    \node (00) at (3,2)     [align=left]{B};
-								    \node (01) at (3,1.5)   [align=left]{R};
-								    \node (02) at (3,1)     [align=left]{W};
-								  \node (1) at (1.5,0)      [align=left]{R};
-								    \node (10) at (3,0.5)   [align=left]{B};
-								    \node (11) at (3,0)     [align=left]{R};
-								    \node (12) at (3,-0.5)  [align=left]{W};
-								  \node (2) at (1.5,-1.5)   [align=left]{W};
-								    \node (20) at (3,-1)    [align=left]{B};
-								    \node (22) at (3,-2)    [align=left]{W};
-								  \draw[line width=0.25mm] 
-								    (r.east) -- (0.west) node [midway, left] {$\frac{3}{6}$}
-								      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
-								      (0) -- (01) node [pos=0.8, above=-1.25mm] {$\frac{2}{5}$}
-								      (0) -- (02) node [midway, below=-0.5mm] {$\frac{1}{5}$}
-								    (r.east) -- (1.west) node [midway, above=-0.5mm] {$\frac{2}{6}$}
-								      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-								      (1) -- (11) node [pos=0.8, above=-1.25mm] {$\frac{1}{5}$}
-								      (1) -- (12) node [midway, below=-0.5mm] {$\frac{1}{5}$}
-								    (r.east) -- (2.west) node [midway, left] {$\frac{1}{6}$}
-								      (2) -- (20) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-								      (2) -- (22) node [midway, below=-0.5mm] {$\frac{2}{5}$};
-								\end{tikzpicture}
+								<xi:include href="./latex-images/conditional_examp_probability-tree.tex" parse="text"/>
 							</latex-image>
 						</image>
 					</figure>
@@ -675,26 +640,14 @@
 		<exercise xml:id="ckpt_conditional_trees-1">
 			<statement>
 				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
-				<figure xml:id="fig_ckpt_conditional_trees-1">
+				<figure xml:id="fig_conditional_ckpt_trees-1">
 					<caption></caption>
-					<image width="40%" xml:id="image_ckpt_conditional_trees-1">
+					<image width="40%" xml:id="image_conditional_ckpt_trees-1">
+						<description>
+							A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5.
+						</description>
 						<latex-image>
-							\begin{tikzpicture}[font=\sffamily\tiny]
-							  \node (r) at (0,0);
-							  \node (0) at (1.5,1)      [align=left]{A};
-							    \node (00) at (3,1.5)   [align=left]{X};
-							    \node (01) at (3,0.5)   [align=left]{Y};
-							  \node (1) at (1.5,-1)     [align=left]{B};
-							    \node (10) at (3,-0.5)  [align=left]{X};
-							    \node (11) at (3,-1.5)  [align=left]{Y};
-							  \draw[line width=0.25mm] 
-							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
-							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
-							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
-							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
-							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
-							\end{tikzpicture}
+							<xi:include href="./latex-images/conditional_ckpt_trees.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -705,26 +658,14 @@
 		<exercise xml:id="ckpt_conditional_trees-2">
 			<statement>
 				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
-				<figure xml:id="fig_ckpt_conditional_trees-2">
+				<figure xml:id="fig_conditional_ckpt_trees-2">
 					<caption></caption>
-					<image width="40%" xml:id="image_ckpt_conditional_trees-2">
+					<image width="40%" xml:id="image_conditional_ckpt_trees-2">
+						<description>
+							A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5.							
+						</description>
 						<latex-image>
-							\begin{tikzpicture}[font=\sffamily\tiny]
-							  \node (r) at (0,0);
-							  \node (0) at (1.5,1)      [align=left]{A};
-							    \node (00) at (3,1.5)   [align=left]{X};
-							    \node (01) at (3,0.5)   [align=left]{Y};
-							  \node (1) at (1.5,-1)     [align=left]{B};
-							    \node (10) at (3,-0.5)  [align=left]{X};
-							    \node (11) at (3,-1.5)  [align=left]{Y};
-							  \draw[line width=0.25mm] 
-							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
-							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
-							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
-							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
-							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
-							\end{tikzpicture}							
+							<xi:include href="./latex-images/conditional_ckpt_trees.tex" parse="text"/>						
 						</latex-image>
 					</image>
 				</figure>
@@ -735,26 +676,14 @@
 		<exercise xml:id="ckpt_conditional_trees-3">
 			<statement>
 				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
-				<figure xml:id="fig_ckpt_conditional_trees-3">
+				<figure xml:id="fig_conditional_ckpt_trees-3">
 					<caption></caption>
-					<image width="40%" xml:id="image_ckpt_conditional_trees-3">
+					<image width="40%" xml:id="image_conditional_ckpt_trees-3">
+						<description>
+							A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5.							
+						</description>
 						<latex-image>
-							\begin{tikzpicture}[font=\sffamily\tiny]
-							  \node (r) at (0,0);
-							  \node (0) at (1.5,1)      [align=left]{A};
-							    \node (00) at (3,1.5)   [align=left]{X};
-							    \node (01) at (3,0.5)   [align=left]{Y};
-							  \node (1) at (1.5,-1)     [align=left]{B};
-							    \node (10) at (3,-0.5)  [align=left]{X};
-							    \node (11) at (3,-1.5)  [align=left]{Y};
-							  \draw[line width=0.25mm] 
-							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
-							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
-							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
-							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
-							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
-							\end{tikzpicture}							
+							<xi:include href="./latex-images/conditional_ckpt_trees.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -771,36 +700,14 @@
 			<title>Computing <q>Backwards</q> Probabilities</title>
 			<statement>
 				<p>Recall from <xref ref="examp_conditional_probability-tree"/> that the tree diagram below gives us the probabilities for an experiment in which two marbles are drawn, without replacement, from an urn containing 3 blue marbles, 2 red marbles, and 1 white marble. Use the tree to help find the probability that the 1st marble was white given that the second is red.</p>
-				<figure xml:id="fig_examp_conditional_bayes">
+				<figure xml:id="fig_conditional_examp_bayes">
 					<caption>Tree Diagram</caption>
-					<image width="50%" xml:id="image_examp_conditional_bayes">
+					<image width="50%" xml:id="image_conditional_examp_bayes">
+						<description>
+								A tree with three branches off of the start.  Branch B has a probability 3/6, branch R has a probability 2/6, and branch W has a probability 1/6.  Of of branch B, there are three branches: B with probability 2/5, R with probability 2/5, and W with probability 1/5.  Off of the initial branch R, there are also three branches: B with probability 3/5, R with probablyt 1/5, and W with probability 1/5.  Finally, off of the original branch W there are just two branches: B with probability 3/5 and W with probability 2/5.							
+						</description>
 						<latex-image>
-							\begin{tikzpicture}[font=\sffamily\tiny]
-							  \node (r) at (0,0);
-							  \node (0) at (1.5,1.5)    [align=left]{B};
-							    \node (00) at (3,2)     [align=left]{B};
-							    \node (01) at (3,1.5)   [align=left]{R};
-							    \node (02) at (3,1)     [align=left]{W};
-							  \node (1) at (1.5,0)      [align=left]{R};
-							    \node (10) at (3,0.5)   [align=left]{B};
-							    \node (11) at (3,0)     [align=left]{R};
-							    \node (12) at (3,-0.5)  [align=left]{W};
-							  \node (2) at (1.5,-1.5)   [align=left]{W};
-							    \node (20) at (3,-1)    [align=left]{B};
-							    \node (22) at (3,-2)    [align=left]{W};
-							  \draw[line width=0.25mm] 
-							    (r.east) -- (0.west) node [midway, left] {$\frac{3}{6}$}
-							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
-							      (0) -- (01) node [pos=0.8, above=-1.25mm] {$\frac{2}{5}$}
-							      (0) -- (02) node [midway, below=-0.5mm] {$\frac{1}{5}$}
-							    (r.east) -- (1.west) node [midway, above=-0.5mm] {$\frac{2}{6}$}
-							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-							      (1) -- (11) node [pos=0.8, above=-1.25mm] {$\frac{1}{5}$}
-							      (1) -- (12) node [midway, below=-0.5mm] {$\frac{1}{5}$}
-							    (r.east) -- (2.west) node [midway, left] {$\frac{1}{6}$}
-							      (2) -- (20) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-							      (2) -- (22) node [midway, below=-0.5mm] {$\frac{2}{5}$};
-							\end{tikzpicture}							
+							<xi:include href="./latex-images/conditional_examp_bayes.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>
@@ -842,26 +749,14 @@
 		<exercise xml:id="ckpt_conditional_bayes-1">
 			<statement>
 				<p>The following tree diagram depicts the outcomes in a two-step experiment. Use it to answer the question below.</p>
-				<figure xml:id="fig_ckpt_conditional_bayes-1">
+				<figure xml:id="fig_conditional_ckpt_bayes-1">
 					<caption></caption>
-					<image width="60%" xml:id="image_ckpt_conditional_bayes-1">
+					<image width="60%" xml:id="image_conditional_ckpt_bayes-1">
+						<description>
+						  A tree with two branches off of the starting point: A with probability 3/4 and B with probability 1/4.  Off of branch A is a branch for X with probability 2/5 and a branch for Y with probability 3/5.  Off of the original branch B is a branch for X with probability 3/5 and a branch for Y with probability 2/5.							
+						</description>
 						<latex-image>
-							\begin{tikzpicture}[font=\sffamily\tiny]
-							  \node (r) at (0,0);
-							  \node (0) at (1.5,1)      [align=left]{A};
-							    \node (00) at (3,1.5)   [align=left]{X};
-							    \node (01) at (3,0.5)   [align=left]{Y};
-							  \node (1) at (1.5,-1)     [align=left]{B};
-							    \node (10) at (3,-0.5)  [align=left]{X};
-							    \node (11) at (3,-1.5)  [align=left]{Y};
-							  \draw[line width=0.25mm] 
-							    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
-							      (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
-							      (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
-							    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
-							      (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
-							      (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
-							\end{tikzpicture}							
+							<xi:include href="./latex-images/conditional_ckpt_bayes-1.tex" parse="text"/>
 						</latex-image>
 					</image>
 				</figure>

@@ -1,0 +1,16 @@
+\begin{tikzpicture}[font=\sffamily\tiny]
+  \node (r) at (0,0);
+  \node (0) at (1.5,1)      [align=left]{A};
+  \node (00) at (3,1.5)   [align=left]{X};
+  \node (01) at (3,0.5)   [align=left]{Y};
+  \node (1) at (1.5,-1)     [align=left]{B};
+  \node (10) at (3,-0.5)  [align=left]{X};
+  \node (11) at (3,-1.5)  [align=left]{Y};
+  \draw[line width=0.25mm] 
+    (r.east) -- (0.west) node [midway, above=-0.5mm] {$\frac{3}{4}$}
+    (0) -- (00) node [midway, above=-0.5mm] {$\frac{2}{5}$}
+    (0) -- (01) node [midway, below=-0.5mm] {$\frac{3}{5}$}
+    (r.east) -- (1.west) node [midway, below=-0.5mm] {$\frac{1}{4}$}
+    (1) -- (10) node [midway, above=-0.5mm] {$\frac{3}{5}$}
+    (1) -- (11) node [midway, below=-0.5mm] {$\frac{2}{5}$};
+\end{tikzpicture}
