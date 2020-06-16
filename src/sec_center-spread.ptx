@@ -326,7 +326,7 @@
 				<me>\text{range} = \text{maximum} - \text{minimum}.</me></p>
 			</statement>
 		</definition>
-		<p>Let's try out these new definitions with an example.</p>
+		<p>Let&apos;s try out these new definitions with an example.</p>
 		<example xml:id="examp_center-spread_midrange-range_computation">
 			<statement>
 				<p>A certain pond has been well stocked with fish for the upcoming fishing season. In order to keep a fish from this pond, it must be at least 13 inches long. To try to determine if the fish in the pond are long enough to allow fishing, a fish and game warden randomly catches and releases 20 different fish, finding the following lengths, in inches. Find the range and midrange of this data.</p>
@@ -379,7 +379,7 @@
 				<p>An <term>outlier</term> in a data set is a value that is either much larger than the rest of the data or much smaller than the rest of the data.</p>
 			</statement>
 		</definition>
-		<p>To see how an outlier can affect the midrange and range, let's take another look at the fish-length data from the previous example.</p>
+		<p>To see how an outlier can affect the midrange and range, let&apos;s take another look at the fish-length data from the previous example.</p>
 		<example xml:id="examp_center-spread_midrange-range_computation-outlier">
 			<title>The Effect of Outliers on the Midrange and Range</title>
 			<statement>
@@ -450,7 +450,7 @@
 				<p>The most expensive house in a certain market is a $2,500,000.00 mansion. The least expensive house is an $8,000.00 mobile home. Do you think that the midrange is an accurate measure of the <q>typical</q> home value in this market?</p>
 			</statement>
 			<solution>
-				<p>To answer this question, let's first compute the midrange. This is:
+				<p>To answer this question, let&apos;s first compute the midrange. This is:
 				<me>\text{midrange} = \frac{2500000 + 8000}{2} = 1254000.</me>
 				Do you think that the typical house really costs one and a quarter million dollars? Probably not! The midrange <em>is not an appropriate measure of center</em> for this data.</p>
 			</solution>
@@ -463,7 +463,7 @@
 				<p>The <term>median</term> of a data set is the middle number, or average of the two middle numbers, in the set of data once it has been arranged in increasing order.</p>
 			</statement>
 		</definition>
-		<p>You may have heard of the median before. It is often used as a measure of center in data sets where we expect outliers, such as housing prices. Another common set of data in which the median is used is household income. The phrase <q>median household income</q> may sound familiar.  For those of us working in Washington State with Bill Gates, it is a good thing that the median is used to measure typical incomes! Let's practice computing the median.</p>
+		<p>You may have heard of the median before. It is often used as a measure of center in data sets where we expect outliers, such as housing prices. Another common set of data in which the median is used is household income. The phrase <q>median household income</q> may sound familiar.  For those of us working in Washington State with Bill Gates, it is a good thing that the median is used to measure typical incomes! Let&apos;s practice computing the median.</p>
 		<example xml:id="examp_center-spread_median-quartile_median">
 			<title>Computing the Median</title>
 			<statement>
@@ -475,7 +475,7 @@
 				</p>
 			</statement>
 			<solution>
-				<p>There are two steps to computing the median, and it is important that we do step one first. That first step is to arrange the data in order. The second step is to locate the middle value. Let's try this on both of the data sets above. 
+				<p>There are two steps to computing the median, and it is important that we do step one first. That first step is to arrange the data in order. The second step is to locate the middle value. Let&apos;s try this on both of the data sets above. 
 					<ol label="a">
 						<li><p>Our first step is to re-arrange this set of numbers in order, from smallest to largest:
 							<me>\lbrace 9, 10, 10, 12, 13, 14, 15, 16, 17, 19\rbrace</me>
@@ -507,14 +507,14 @@
 		</definition>
 		<p>The range between <m>Q_1</m> and <m>Q_3</m> is of particular interest and, as mentioned above, it has a special name.</p>
 		<definition xml:id="def_iqr">
-			<idx>interquartile range (iqr)</idx>
-			<idx><h>measures of spread</h><h>interquartile range (iqr)</h></idx>
+			<idx>interquartile range (IQR)</idx>
+			<idx><h>measures of spread</h><h>interquartile range (IQR)</h></idx>
 			<statement>
 				<p>The <term>Interquartile Range</term> or <term>IQR</term> is the difference between the 3rd and 1st quartiles. That is,
 				<me>\text{IQR} = Q_3 - Q_1.</me></p>
 			</statement>
 		</definition>
-		<p>To see how this works, let's revisit the fish-length example.</p>
+		<p>To see how this works, let&apos;s revisit the fish-length example.</p>
 		<example xml:id="examp_center-spread_median-quartile_iqr">
 			<statement>
 				<p>A certain pond has been well stocked with fish for the upcoming fishing season. In order to keep a fish from this pond, it must be at least 13 inches long. To try to determine if the fish in the pond are long enough to allow fishing, a fish and game warden randomly catches and releases 20 different fish, finding the lengths from <xref ref="examp_center-spread_midrange-range_computation"/>. Find the median and IQR for this data.</p>
@@ -596,9 +596,9 @@
 			</statement>
 		</definition>
 		<p>Notice that there is a different symbol used for the mean depending on whether it is the mean of an entire population, or just the mean of a sample. For a population, the Greek letter <m>\mu</m> (pronounced <q>myoo</q>) is used for the mean. For a sample, we use <m>\overline{x}</m> (read <q>x bar</q>) to represent the mean. Keep this distinction in mind, as it can be a clue as to what type of data you are dealing with on a homework or exam problem.</p>
-		<p>Another thing to note is that the name <term>arithmetic mean</term> is important. First, we don't call this the <term>average</term>, even though most people think of it as the average. The reason is simply that the word average means <q>typical</q> and we have seen several ways to measure the <q>typical</q> value in a data set. Next, we specify that this is the <em>arithmetic</em> mean because there are actually different types of means. We could, for example, use the <term>geometric mean</term>, which is given by the formula:
+		<p>Another thing to note is that the name <term>arithmetic mean</term> is important. First, we don&apos;t call this the <term>average</term>, even though most people think of it as the average. The reason is simply that the word average means <q>typical</q> and we have seen several ways to measure the <q>typical</q> value in a data set. Next, we specify that this is the <em>arithmetic</em> mean because there are actually different types of means. We could, for example, use the <term>geometric mean</term>, which is given by the formula:
 		<me>\sqrt[n]{x_1 \times x_2 \times \cdots \times x_n}</me></p>
-		<p>For many data sets the geometric mean and arithmetic mean are very close. But you wouldn't want to have your homework average computed using the geometric mean. To understand why not, think about what would happen if only one of your assignments was not turned in! In this text we will always use the arithmetic mean.  For that reason, we can simplify things by stating up front that we mean the <term>arithmetic mean</term> when we say <term>mean</term>.</p>
+		<p>For many data sets the geometric mean and arithmetic mean are very close. But you wouldn&apos;t want to have your homework average computed using the geometric mean. To understand why not, think about what would happen if only one of your assignments was not turned in! In this text we will always use the arithmetic mean.  For that reason, we can simplify things by stating up front that we mean the <term>arithmetic mean</term> when we say <term>mean</term>.</p>
 		<p>The measure of spread most commonly used with the mean is called the <term>variance</term>. This can be thought of as the average (or mean) distance that each data point lies away from the mean. If we compute the average, however, we would get zero because of the +/- signs. So we square these differences, resulting in the following definition.</p>
 		<definition xml:id="def_variance">
 			<idx>variance</idx>
@@ -682,7 +682,7 @@
 		</example>
 		<p>The number for this example turned out very nice. This is not always the case. Usually the standard deviation will involve decimals. In general, you should not round your answers during any intermediate steps, and then round your standard deviation to one decimal more than the number of decimals in the original data set. One quick way to estimate the standard deviation is based on the range of the data.</p>
 		<principle xml:id="def_stddev-estimate">
-			<idx><h>meausures of spread</h><h>estimating standard deviation</h></idx>
+			<idx><h>measures of spread</h><h>standard deviation</h><h>estimate</h></idx>
 			<statement>
 				<p>To <term>estimate the standard deviation</term> of a population, use the following general rule:
 				<me>\sigma \approx \frac{\text{range}}{4}.</me></p>
@@ -734,7 +734,7 @@
 		  <li><p>the <xref ref="def_median" text="custom">median</xref> and <xref ref="def_iqr" text="custom">IQR</xref>, and</p></li>
 		  <li><p>the <xref ref="def_mean" text="custom">mean</xref> and <xref ref="def_stddev" text="custom">standard deviation,</xref>.</p></li>
 		</ul></p>
-		<p>But how do we know when to use a particular measure of center? To better answer this question, let's review the strengths and weaknesses of each of these numerical summaries in tabular format.</p>
+		<p>But how do we know when to use a particular measure of center? To better answer this question, let&apos;s review the strengths and weaknesses of each of these numerical summaries in tabular format.</p>
 		<table>
 			<title>Comparison of Measures of Center and Spread</title>
 			<tabular>
@@ -805,7 +805,7 @@
 			<statement>
 				<p>Determine which measure of center would be best in each of the following data sets.
 				<ol label="a">
-					<li><p>The salaries of all employee's at IBM.</p></li>
+					<li><p>The salaries of all employee&apos;s at IBM.</p></li>
 					<li><p>A quick assessment of how well a group of athletes did in a 100-meter dash.</p></li>
 					<li><p>Determine the typical hair color in a group of teenagers.</p></li>
 					<li><p>Finding the typical height of a pine tree in a given acre of forest.</p></li>
@@ -813,7 +813,7 @@
 			</statement>
 			<solution>
 				<p><ol label="a">
-					<li><p>Salaries of all employees at a large firm such as IBM are likely to include outliers, such as the CEO's salary. For this reason, the median is probably the best measure of center.</p></li>
+					<li><p>Salaries of all employees at a large firm such as IBM are likely to include outliers, such as the CEO&apos;s salary. For this reason, the median is probably the best measure of center.</p></li>
 					<li><p>The midrange may be best. This set of data should not include many outliers, and the values will be small and relatively close together. This makes the midrange an acceptable way to quickly measure the center.</p></li>
 					<li><p>Hair color is a qualitative variable, so our only choice is to use the mode.</p></li>
 					<li><p>Pine tree heights on an acre of forest land should not have large outliers, and there are likely to be quite a few trees. Since there is no reason to use any of the other measures of center, the mean would be best here.</p></li>

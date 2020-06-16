@@ -61,7 +61,7 @@
 	  </example>
 	  <p>Note the emphasized word <em>or</em> in the above solution. The addition rule can be thought of as going with the word <q>or</q> because we have one of two types of objects from which we must choose. In terms of mathematical sets, the word or goes with the notion of a <term>union</term>.</p>
 	  <definition xml:id="def_union">
-	  	<idx>union of two sets</idx>
+	  	<idx>union</idx>
 	  	<idx><h>sets</h><h>union</h></idx>
 	  	<statement>
 	  		<p>The <term>union</term> of two sets, <m>A</m> and <m>B</m>, is <m>A\cup B</m>, the set containing all elements that are in <m>A</m> or in <m>B</m> (or both).</p>
@@ -69,7 +69,7 @@
 	  </definition>
 	  <p>The union of the pies and the cakes in <xref ref="examp_counting_addition-informal"/> above is the set of all 14 baked goods from which you can choose your prize. You may have also noticed that the word <em>both</em> was emphasized in the solution above. This is because it is important that when we use the addition rule, none of the choices be members of both groups<mdash/>that is, none of the elements are in both sets.  Being in both sets <m>A</m> and <m>B</m> also has a mathematical name.</p>
 	  <definition xml:id="def_intersection">
-	  	<idx>intersection of two sets</idx>
+	  	<idx>intersection</idx>
 	  	<idx><h>sets</h><h>intersection</h></idx>
 	  	<statement>
 	  		<p>The <term>intersection</term> of two sets, <m>A</m> and <m>B</m>, is <m>A \cap B</m>, the set containing all elements that are in both <m>A</m> and <m>B</m>.</p>
@@ -78,6 +78,7 @@
 	  <p>One way to keep the union and intersection straight is to associate them with the common English terms. If the word <q>or</q> is used, chances are that we are talking about a <term>union</term>. If the word <q>and</q> is used, we are probably referring to an <term>intersection</term>.  While associating specific English words with the set operations is one way to help remember what each does, sometimes a picture can help even more.  When drawing pictures of combinations of sets, we typically use a special type called a <term>Venn diagram</term>.</p>
 	  <definition xml:id="def_venn-diagram">
 	  	<idx>Venn diagram</idx>
+	  	<idx>universal set</idx>
 	  	<idx><h>sets</h><h>Venn diagram</h></idx>
 	  	<idx><h>sets</h><h>universal set</h></idx>
 	  	<statement>
@@ -116,7 +117,7 @@
 	  <p>Using these more formal ideas involving sets, we can restate the addition rule as follows.</p>
 	  <theorem xml:id="thm_counting-rule_addition">
 	  	<idx>addition rule (counting)</idx>
-	  	<idx><h>counting rules</h><h>addition rule</h></idx>
+	  	<idx><h>counting rules</h><h>addition</h></idx>
 	  	<statement>
 	  		<p>If <m>A</m> and <m>B</m> are mutually exclusive sets, then the <term>addition rule</term> states that
 	  		  <me>n(A\cup B) = n(A) + n(B)</me>,
@@ -218,8 +219,8 @@
 		</example>
 		<p>In the above example, those who were in both classes are included in both the 23 and the 34. So to make up for the fact that they were counted twice, we have to subtract them back out, or exclude them, to get the final total.</p>
 		<theorem xml:id="thm_counting-rule_inclusion-exclusion">
-			<idx>inclusion/exclusion rule (counting)</idx>
-			<idx><h>counting rules</h><h>inclusion/exclusion rule</h></idx>
+			<idx>inclusion/exclusion rule</idx>
+			<idx><h>counting rules</h><h>inclusion/exclusion</h></idx>
 			<statement>
 				<p>The <term>inclusion/exclusion rule</term> states that, for two sets <m>A</m> and <m>B</m>,
 				  <me>n(A\cup B) = n(A) + n(B) - n(A\cap B)</me>.</p>
@@ -422,14 +423,14 @@
 		<p>In some instances, a process may have two or more steps, each of which can happen in several different ways. In order to determine the total number of ways that such a multi-step process can happen, we need to use a new rule, called the <term>multiplication rule</term>.</p>
 		<theorem xml:id="thm_counting-rule_multiplication">
 			<idx>multiplication rule (counting)</idx>
-			<idx><h>counting rules</h><h>multiplication rule</h></idx>
+			<idx><h>counting rules</h><h>multiplication</h></idx>
 			<statement>
 				<p>The <term>multiplication rule</term> states that if a process includes two steps where step one can happen in <m>n_1</m> ways and step two can happen in <m>n_2</m> ways, then the entire process can happen in <m>n_1 \times n_2</m> ways.</p>
 				<p>This can be expanded to a process which includes <m>k</m> stages, the <m>i^\text{th}</m> of which can happen in <m>n_i</m> ways, then the total number of ways the process can happen is:
 				<me>n_1 \times n_2 \times \cdots \times n_k</me>.</p>
 			</statement>
 		</theorem>
-		<p>To see how this rule works, let's look at several examples.</p>
+		<p>To see how this rule works, let&apos;s look at several examples.</p>
 		<example xml:id="examp_counting_multiplication_2-step">
 			<title>Applying the Multiplication Rule I</title>
 			<statement>
@@ -463,7 +464,7 @@
 				</p>
 			</solution>
 		</example>
-		<p>Both of the examples above could be modeled using a tree diagram. A tree diagram is a useful way of picturing the multiplication rule. It can also be used to help us work through multiple-step problems that don't fit the multiplication rule above.</p>
+		<p>Both of the examples above could be modeled using a tree diagram. A tree diagram is a useful way of picturing the multiplication rule. It can also be used to help us work through multiple-step problems that don&apos;t fit the multiplication rule above.</p>
 		<definition xml:id="def_tree-diagram">
 			<idx>tree diagram</idx>
 			<statement>
@@ -897,6 +898,7 @@
 		<p>One of the hardest parts of counting problems is determining which rules or combinations of rules to use to answer a given question. Here are a few basic things to remember:</p>
 		<principle xml:id="thm_counting-rules_principles">
 			<title>Combining Counting Rules</title>
+			<idx><h>counting rules</h><h>combining</h></idx>
 			<statement>
 				<p><ol>
 					<li><p>If the things you are counting come in two distinct groups, count each group then add together the results. (<xref ref="thm_counting-rule_addition" text="custom">addition rule</xref> <mdash/> goes with <q>or</q>)</p></li>

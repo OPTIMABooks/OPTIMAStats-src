@@ -164,6 +164,7 @@
 		<p>If then the binomial distribution can have so many different shapes depending on the parameters <m>n</m> and <m>p</m>, when is is enough like the mound<ndash/>shaped normal distribution to allow us to use the normal distribution to approximate probabilities?</p>
 		<principle xml:id="def_binomial-approx-criteria">
 			<title>Criteria for Approximation</title>
+			<idx><h>binomial distribution</h><h>normal approximation</h><h>criteria for</h></idx>
 			<statement>
 				<p>A normal distribution can be used to approximate binomial probabilities as long as both <m>n\times p</m> and <m>n\times q</m> are greater than <m>5</m>.</p>
 			</statement>
@@ -248,6 +249,7 @@
 		When we change a whole number into a range like this we are correcting for the fact that we use a continuous random variable in place of a discrete random variable.</p>
 		<definition xml:id="def_continuity-correction">
 			<idx>continuity correction</idx>
+			<idx><h>binomial distribution</h><h>normal approximation</h><h>continuity correction</h></idx>
 			<statement>
 				<p>When we add or subtract <m>0.5</m> to a whole number as we approximate a binomial probability using a normal probability distribution, we are using a <term>continuity correction</term>.</p>
 			</statement>
@@ -356,6 +358,7 @@
 		<p>tools in place to use a normal distribution to approximate probabilities for a binomial distribution. Recall that a binomial random variable has mean and standard deviation as shown below.</p>
 		<theorem xml:id="def_normal-approximation">
 			<title>Normal Approximation to the Binomial Distribution</title>
+			<idx><h>binomial distribution</h><h>normal approximation</h></idx>
 			<statement>
 				<p>If <m>X</m> is a binomial random variable for a binomial process involving <m>n</m> trials in which the probability of a success in each trial is <m>p</m>, then probabilities for <m>X</m> can be approximated by a normal distribution with mean and standard deviation as shown below provided that <m>n\times p</m> and <m>n\times q</m> are both greater than <m>5</m>.
 				  <me>\text{Mean: } \mu = n\times p \qquad \text{Standard Deviation: } \sigma = \sqrt{n\times p\times q}</me>.</p>

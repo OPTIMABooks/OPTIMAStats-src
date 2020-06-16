@@ -101,7 +101,7 @@
 					</p>
 				</statement>
 			</definition>
-			<p>Let's look at an example.</p>
+			<p>Let&apos;s look at an example.</p>
 			<example xml:id="examp_data_classifying-datasets">
 				<title>Classifying Datasets</title>
 				<statement>
@@ -188,7 +188,7 @@
 							</li>
 							<li>
 								<title>Length of Residence</title>
-								<p>The values for this final variable are also numbers (i.e. 1 year, 2 months, and 12 days = 1.2 years). These numbers do make sense in an average, and they also are different from the number of residents values because there is no space in between them.  In other words, if I've lived at my house for 0.9 years, and you've lived at yours for 1.0 years, then there is still room <q>in between</q> those two values for somebody who has lived that their residence for 0.97 years.</p>
+								<p>The values for this final variable are also numbers (i.e. 1 year, 2 months, and 12 days = 1.2 years). These numbers do make sense in an average, and they also are different from the number of residents values because there is no space in between them.  In other words, if I&apos;ve lived at my house for 0.9 years, and you&apos;ve lived at yours for 1.0 years, then there is still room <q>in between</q> those two values for somebody who has lived that their residence for 0.97 years.</p>
 							</li>
 						</ul>
 					</p>
@@ -196,6 +196,7 @@
 			</example>
 			<p>This example helps point out the three types of variables that we will be studying. The first type, zip code, is an example of a variable that really yields non-numerical data. The values of such a variable represent categories into which the individuals can be grouped, or in other words a <q>quality</q> instead of a <q>quantity.</q></p>
 			<definition xml:id="def_qualitative-variable">
+				<idx>qualitative variable</idx>
 				<idx><h>variable</h><h>qualitative</h></idx>
 				<statement>
 					<p>A <term>qualitative variable</term> (also called a <term>categorical variable</term>) is one that takes on values representing categories or descriptions as opposed to numerical values.</p>
@@ -203,6 +204,7 @@
 			</definition>
 			<p>In this text we will spend the majority of our time working with variables whose values are numbers that can be added, divided, etc. These types of values represent a quantity as opposed to a quality, and they are named accordingly.</p>
 			<definition xml:id="def_quantitative-variable">
+				<idx>quantitative variable</idx>
 				<idx><h>variable</h><h>quantitative</h></idx>
 				<statement>
 					<p>A <term>quantitative variable</term> is one that takes on numerical values. Unlike a qualitative variable, the values of a quantitative variable can be used in computations.</p>
@@ -210,18 +212,20 @@
 			</definition>
 			<p> In our example we saw that even though Number of Residents and Length of Residence are both quantitative variables, the measurements we take are still somewhat different.  Because of these  differences, we need two more definitions that apply only to quantitative variables.</p>	
 			<definition xml:id="def_discrete">
+				<idx>discrete variable</idx>
 				<idx><h>variable</h><h>quantitative</h><h>discrete</h></idx>
 				<statement>
 					<p>A <term>discrete variable</term> is a quantitative variable in which there are gaps between the possible values of the variable.</p>
 				</statement>
 			</definition>
 			<definition xml:id="def_continuous">
+				<idx>continuous variable</idx>
 				<idx><h>variable</h><h>quantitative</h><h>continuous</h></idx>
 				<statement>
 					<p>A <term>continuous variable</term> is a quantitative variable for which there are an infinite number of possible values with no gaps between these values.</p>
 				</statement>
 			</definition>
-			<p>Before we move on, let's revisit the example above and give the formal types of each of the three variables.</p>
+			<p>Before we move on, let&apos;s revisit the example above and give the formal types of each of the three variables.</p>
 			<example xml:id="examp_data_classify-variables-2">
 				<title>Classifying Variables, Revisited</title>
 				<statement>
@@ -304,7 +308,7 @@
 			<example xml:id="examp_data_representative-data">
 				<title>Representative Data</title>
 				<statement>
-					<p>Sam the high school student, who has not had a statistics class, decides to do a research project on the height of an average student at his school. Since he works for the basketball coach, Sam decides to look up the heights of all students who have played for the basketball team over the last 10 years.	How useful will this data be for Sam's research project?</p>
+					<p>Sam the high school student, who has not had a statistics class, decides to do a research project on the height of an average student at his school. Since he works for the basketball coach, Sam decides to look up the heights of all students who have played for the basketball team over the last 10 years.	How useful will this data be for Sam&apos;s research project?</p>
 				</statement>
 				<solution>
 					<p>This data will be of no use in researching the height of an average high school student. The data was collected from a small group of students who will, in general, be much taller than the typical high school student.</p>
@@ -323,7 +327,7 @@
 					<p>A <term>sample</term> is a sub-collection of subjects drawn from a given population.</p>
 				</statement>
 			</definition>
-			<p>Using these new terms, the problem with Sam's research is that the sample he selected is not representative of the population he is studying. One way to remedy this problem would be to collect the height of all students at Sam's school. That is, he could measure the entire population.</p>
+			<p>Using these new terms, the problem with Sam&apos;s research is that the sample he selected is not representative of the population he is studying. One way to remedy this problem would be to collect the height of all students at Sam&apos;s school. That is, he could measure the entire population.</p>
 			<definition xml:id="def_census">
 				<idx>census</idx>
 				<statement>
@@ -400,10 +404,9 @@
 
 		<subsubsection xml:id="sec_data_collecting_plans">
 			<title>Sampling Plans</title>
-			<idx>sampling plans</idx>
 			<p>Since it is important that we select a sample that represents the population we are studying, we need to be very careful when selecting a sample. We not only need to guard against accidentally designing a sample that does not represent the population, but also against unintentional bias in the way we collect our data. One of the best tools in guarding against such biased samples is randomness, and the simplest way to use randomness to collect a sample is to collect a <term>simple random sample</term>.</p>
 			<definition xml:id="def_simple-random-sample">
-				<idx><h>sampling plans</h><h>simple random sample</h></idx>
+				<idx><h>sample</h><h>simple random sample</h></idx>
 				<statement>
 					<p>A <term>simple random sample</term> of size <m>n</m> is a sample drawn from a population in such a way that every group of <m>n</m> subjects in the population is equally likely to be chosen.</p>
 				</statement>
@@ -422,7 +425,7 @@
 					<solution>
 						<p>The key to solving this problem is deciding if using a particular method give each group of six students the same chance of being chosen.
 							<ol>
-								<li><p>This method is a simple random sample. Each group of six students has the same chance of being chosen (we'll see how to compute this when we study probability).</p></li>
+								<li><p>This method is a simple random sample. Each group of six students has the same chance of being chosen (we&apos;ll see how to compute this when we study probability).</p></li>
 								<li><p>This method is not a simple random sample. To see this, suppose that Bob is sitting in row 1 and Mary in row 2. Then it is impossible for Bob and Mary to be chosen in the same sample. This means that any group including both Bob and Mary has no chance of being chosen, and therefore all groups of six are not equally likely.</p></li>
 							</ol>
 						</p>
@@ -430,7 +433,7 @@
 				</example>
 				<p>Ensuring that we get a simple random sample can be difficult. Even if we manage to design a simple random sample, we still can not be certain that we will get a sample that is representative of the population we are studying. There are several alternative sampling techniques that can help us select a representative sample, and at the same time make it easier to select our sample. Each of these methods employs randomness. However, none of them will result in a true simple random sample.</p>
 				<definition xml:id="def_systematic_sample">
-					<idx><h>sampling plans</h><h>systematic sample</h></idx>
+					<idx><h>sample</h><h>systematic sample</h></idx>
 					<statement>
 						<p>A <term>systematic sample</term> is a random sample collected from an ordered population by randomly choosing one of the first <m>k</m> subjects, and then selecting every <m>k</m>th subject thereafter.</p>
 						<figure xml:id="fig_data_def_systematic-sample">
@@ -448,7 +451,7 @@
 				</definition>
 				<p>A systematic sample is particularly useful when the population from which we are sampling is already ordered. Examples of this include products coming off of an assembly line, or cars moving through a sobriety check point.</p>
 				<definition xml:id="def_stratified_sample">
-					<idx><h>sampling plans</h><h>stratified sample</h></idx>
+					<idx><h>sample</h><h>stratified sample</h></idx>
 					<statement>
 						<p>In a <term>stratified sample</term>, a population is broken into several groups (called strata) and then a simple random sample is collected from each of these groups.</p>
 						<figure xml:id="fig_data_def_stratified-sample">
@@ -466,7 +469,7 @@
 				</definition>
 				<p>In a stratified sample we group the population by characteristics which we think may make a difference, and then select randomly from each group. For example, we may want to ensure that both men and women are included in a drug study, so we select some men and some women. Or we may wish to ensure that voters of all political leanings are included in an election poll.</p>
 				<definition xml:id="def_cluster_sample">
-					<idx><h>sampling plans</h><h>cluster sample</h></idx>
+					<idx><h>sample</h><h>cluster sample</h></idx>
 					<statement>
 						<p>A <term>cluster sample</term> is taken by dividing the population into several groups (called clusters) and then picking a simple random sample of the clusters. We then sample each individual in the selected clusters.</p>
 						<figure xml:id="fig_data_def_cluster-sample">
@@ -564,7 +567,7 @@
 							<ol>
 								<li>
 									<title>Finding Favorite Pizza Toppings</title>
-									<p>A pizza parlor wishes to determine its customers' favorite pizza topping. To do this, they decide that on each day of the coming week they will randomly pick one of the first 10 people who order a pizza and ask them their favorite topping. They will then ask every 10th person after this randomly selected person for their favorite pizza topping.</p>
+									<p>A pizza parlor wishes to determine its customers&apos; favorite pizza topping. To do this, they decide that on each day of the coming week they will randomly pick one of the first 10 people who order a pizza and ask them their favorite topping. They will then ask every 10th person after this randomly selected person for their favorite pizza topping.</p>
 								</li>
 								<li>
 									<title>Identifying Road Rage</title>
@@ -613,7 +616,7 @@
 								</li>
 								<li>
 									<title>Computing Computer Costs</title>
-									<p>A popular computing magazine editor wishes to determine the cost of a typical computer. To do this, she asks the magazine's readers to write in if they have purchased a computer in the last six months, and give the price of the new computer. The editor takes the first response she receives and then takes every 5th response that comes in after that.</p>
+									<p>A popular computing magazine editor wishes to determine the cost of a typical computer. To do this, she asks the magazine&apos;s readers to write in if they have purchased a computer in the last six months, and give the price of the new computer. The editor takes the first response she receives and then takes every 5th response that comes in after that.</p>
 								</li>
 								<li>
 									<title>Identifying Climate Change</title>
@@ -645,12 +648,14 @@
 				<title>Types of Studies</title>
 				<p>A sample may be collected from a population for one of two reasons. We may simply wish to know a characteristic of that population. On the other hand, we may want to try to change a characteristic and then measure the result. These result in two different types	of studies.</p>
 				<definition xml:id="def_observational-study">
-					<idx><h>study types</h><h>observational study</h></idx>
+					<idx>observational study</idx>
+					<idx><h>study types</h><h>observational</h></idx>
 					<statement>
 						<p>In an <term>observational study</term> specific characteristics are observed and measured, but no attempt is made to change these characteristics.</p>
 					</statement>
 				</definition>
 				<definition xml:id="def_experiment">
+					<idx>experiment</idx>
 					<idx><h>study types</h><h>experiment</h></idx>
 					<statement>
 						<p>In an <term>experiment</term>, some treatment is applied and its effects on the subject are observed.</p>
@@ -658,6 +663,8 @@
 				</definition>
 				<p>Notice that the main difference is that in an experiment we attempt to change a characteristic whereas in an observational study, we do not. Because experiments seek to measure the effect of a treatment on the subject, they are by nature more complicated than observational studies. Below are some specific terms used when designing an experiment.</p>
 				<definition xml:id="def_experiment-terms">
+					<idx>factor</idx>
+					<idx>treatment</idx>
 					<idx><h>study types</h><h>experiment</h><h>factor</h></idx>
 					<idx><h>study types</h><h>experiment</h><h>treatment</h></idx>
 					<statement>
@@ -669,7 +676,7 @@
 						</p>
 					</statement>
 				</definition>
-				<p>To help see the difference between these two types of studies, let's look at a couple of examples.</p>
+				<p>To help see the difference between these two types of studies, let&apos;s look at a couple of examples.</p>
 				<example xml:id="examp_data_study-type-1">
 					<title>Types of Studies</title>
 					<statement>
@@ -744,7 +751,8 @@
 					<title>Bad Samples</title>
 					<p>If we use a sampling technique that does not include some element of randomness we are likely to produce a sample that does not represent our population. One of the easiest, but most dangerous ways to collect data is by using a convenience sample.</p>
 					<definition xml:id="def_convenience-sample">
-						<idx><h>sampling plans</h><h>convenience sample</h></idx>
+						<idx>convenience sample</idx>
+						<idx><h>sample</h><h>convenience sample</h></idx>
 						<statement>
 							<p>A <term>convenience sample</term> is a sample collected by simply selecting the most convenient members of a population.</p>
 						</statement>
@@ -794,7 +802,8 @@
 					<p>Another potential source of bias in a sample comes from having people <q>volunteer</q> to respond to a
 					survey.</p>
 					<definition xml:id="def_voluntary-response-sample">
-						<idx><h>sampling plans</h><h>voluntary response sample</h></idx>
+						<idx>voluntary response sample</idx>
+						<idx><h>sample</h><h>voluntary response sample</h></idx>
 						<statement>
 							<p>A sample in which people choose themselves by responding to a general request to participate is called a <term>voluntary response sample</term>.</p>
 						</statement>
@@ -813,14 +822,14 @@
 
 				<paragraphs xml:id="sec_data_collecting_avoid-lurking-variables">
 					<title>Lurking Variables</title>
-					<p>One of the most prevalent things to avoid when using statistics is assuming that because there is a <term>correlation</term> between two things, one must cause the other. In many cases there can be a third (or forth, or fifth) unknown variable that <q>lurks</q> in the background and is affecting both observed variables. Let's define these terms precisely and finish with an example.</p>
+					<p>One of the most prevalent things to avoid when using statistics is assuming that because there is a <term>correlation</term> between two things, one must cause the other. In many cases there can be a third (or forth, or fifth) unknown variable that <q>lurks</q> in the background and is affecting both observed variables. Let&apos;s define these terms precisely and finish with an example.</p>
 					<definition xml:id="def_correlation">
 						<idx>correlation</idx>
 						<statement>
 							<p>We say that there is <term>correlation</term> between two (or more) variables if certain values of one frequently appear together with certain values of the other.</p>
 						</statement>
 					</definition>
-					<p>For example, we would say that there is a correlation between people's height and weight because taller people tend to weigh more. But does being taller cause you to weigh more, or do they just go together?</p>
+					<p>For example, we would say that there is a correlation between people&apos;s height and weight because taller people tend to weigh more. But does being taller cause you to weigh more, or do they just go together?</p>
 					<definition xml:id="def_causation">
 						<idx>causation</idx>
 						<statement>
@@ -830,6 +839,7 @@
 					<p>To understand this term, suppose that we measured the variables <q>average driving speed</q> and <q>number of speeding tickets.</q> It would be reasonable to say that there is causation between these two variables. That is, driving faster causes one to get more speeding tickets. But it is possible that there is another variable affecting both your driving speed and number of tickets. Suppose, for example, that you drive a fancy red sports car. This is a potential example of a <term>lurking variable</term>.</p>
 					<definition xml:id="def_lurking-variable">
 						<idx>lurking variable</idx>
+						<idx><h>variable</h><h>lurking</h></idx>
 						<statement>
 							<p>A lurking variable is an unmeasured variable that has an important effect on the relationship between variables in a study.</p>
 						</statement>
@@ -838,7 +848,7 @@
 					<example xml:id="examp_data_lurking-variables-1">
 						<title>Luring Variables</title>
 						<statement>
-							<p>In a study of fuel efficiency and its relationship to weight the Buick Estate Wagon appeared to be an anomaly. Although weighing much more than most cars in its class, the Buick Estate Wagon had a better fuel economy than it should have had in relation to these other cars. Further research indicated that Buick's recommended a higher tire inflation pressure than did the other car manufacturers. Identify the lurking variable in this study.</p>
+							<p>In a study of fuel efficiency and its relationship to weight the Buick Estate Wagon appeared to be an anomaly. Although weighing much more than most cars in its class, the Buick Estate Wagon had a better fuel economy than it should have had in relation to these other cars. Further research indicated that Buick&apos;s recommended a higher tire inflation pressure than did the other car manufacturers. Identify the lurking variable in this study.</p>
 						</statement>
 						<solution>
 							<p>Tire Pressure is the lurking variable. While it has an effect on gas mileage (higher pressure = better mileage) it was not included in the original study.</p>
@@ -879,7 +889,7 @@
 				<exercise xml:id="ckpt_data_collecting_avoid-2">
 					<title>Things to Avoid</title>
 					<statement>
-						<p>A major department store wishes to determine if people with store credit cards enjoy their shopping experience more than those who do not have store credit cards. To research this question, they send surveys to everybody who has shopped at their store in the last year and ask them if they enjoyed their shopping experience, and if they have a store card. They find that the majority of returned surveys are from people who either have a card and enjoyed their shopping experience, or from people who do not have a card and didn't enjoy their shopping experience. The store concludes that having a store card makes shopping with the store more enjoyable.</p>
+						<p>A major department store wishes to determine if people with store credit cards enjoy their shopping experience more than those who do not have store credit cards. To research this question, they send surveys to everybody who has shopped at their store in the last year and ask them if they enjoyed their shopping experience, and if they have a store card. They find that the majority of returned surveys are from people who either have a card and enjoyed their shopping experience, or from people who do not have a card and didn&apos;t enjoy their shopping experience. The store concludes that having a store card makes shopping with the store more enjoyable.</p>
 						<p>Question: Which of the <q>things to avoid</q> mentioned in this section did the department store do in its study?</p>
 					</statement>
 					<answer>

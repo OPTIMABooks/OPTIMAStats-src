@@ -87,14 +87,16 @@
 		<p>In this lesson, we will actually look at two types of hypothesis tests. The only difference between these two tests is the way in which the null hypothesis is stated. Because of this, the difference may seem like a technicality. However, it is important that we recognize the difference between these two types of tests.</p>
 		<definition xml:id="def_test-of-independence">
 			<idx>test of independence</idx>
-			<idx><h>hypothesis test</h><h>independence</h></idx>
+      <idx><h>test of independence</h><seealso>hypothesis test</seealso></idx>
+			<idx><h>hypothesis test</h><h>test of independence</h><h>hypotheses</h></idx>
 		  <statement>
 		  	<p>In a <term><m>\chi^2</m> test of independence</term>, the null hypothesis is that two characteristics in a single population are independent of each other.</p>
 		  </statement>
 		</definition>
 		<definition xml:id="def_test-of-homogeneity">
 			<idx>test of homogeneity</idx>
-			<idx><h>hypothesis test</h><h>homogeneity</h></idx>
+      <idx><h>test of homogeneity</h><seealso>hypothesis test</seealso></idx>
+			<idx><h>hypothesis test</h><h>test of homogeneity</h><h>hypotheses</h></idx>
 			<statement>
 				<p>In a <term><m>\chi^2</m> test of homogeneity</term>, the null hypothesis is that a single characteristic is distributed the same way across two or more populations.</p>
 			</statement>
@@ -299,6 +301,9 @@
 	  <p>This gives us the probability of being in the cell in column <m>i</m> and row <m>j</m>. To get the expected number of counts, we multiply that probability by the total number of individuals, <m>T</m>. This gives the following formulas for computing the expected counts in a contingency table.</p>
 	  <theorem xml:id="tmp_contingencey-expected-counts">
 	  	<title>Expected Counts for a Contingency Table</title>
+      <idx><h>expected counts (contingency tables)</h></idx>
+      <idx><h>hypothesis test</h><h>test of independence</h><h>expected counts</h></idx>
+      <idx><h>hypothesis test</h><h>test of homogeneity</h><h>expected counts</h></idx>
 	  	<statement>
 	  		<p>The expected count for a cell in row <m>i</m> and column <m>j</m> of a contingency table under the assumption that rows and columns are independent is given by:
 	  		  <me>E_{ij} = \frac{C_iR_j}{T}</me>
@@ -554,6 +559,8 @@
   	<p>As in the goodness-of-fit test, a test of homogeneity or independence is based on measuring the differences between what we observed in our sample, and what we expected if the null hypothesis is really true. We just saw how to use the observed counts in a ontingency table to find the expected counts for each entry in that table. The test statistic is then computed as shown below.</p>
   	<theorem xml:id="thm_test-statistic-contingency">
   		<title>Test Statistic for a Test of Independence or Homogeneity</title>
+      <idx><h>hypothesis test</h><h>test of independence</h><h>test statistic</h></idx>
+      <idx><h>hypothesis test</h><h>test of homogeneity</h><h>test statistic</h></idx>
   		<statement>
   			<p>The <m>\chi^2</m> test statistic for a test of independence or homogeneity using a contingency table in which <m>O_{ij}</m> and <m>E_{ij}</m> represent the observed and expected counts in the cell in column <m>i</m> and row <m>j</m> is given by:
   			  <me>\chi^2_\text{test} = \sum_j\sum_i \frac{(O_{ij} - E_{ij})^2}{E_{ij}}</me>.
@@ -837,6 +844,8 @@
   	<p>The last step in conducting a test of homogeneity or independence is to find the appropriate critical value from the <m>\chi^2</m>-distribution table. To do that, we need the number of degrees of freedom. Because we are dealing with contingency tables, instead of the categories we saw in the goodness-of-fit test, the degrees of freedom must be computed differently.</p>
   	<theorem xml:id="thm_contingency-df">
   	  <title>Degrees of Freedom for a Test of Independence or Homogeneity</title>
+      <idx><h>hypothesis test</h><h>test of independence</h><h>degrees of freedom</h></idx>
+      <idx><h>hypothesis test</h><h>test of homogeneity</h><h>degrees of freedom</h></idx>
   	  <statement>
   	  	<p>The degrees of freedom for a test of independence or homogeneity using a contingency table with <m>c</m> columns and <m>r</m> rows is <m>df = (c-1)(r-1)</m>.</p>
   	  </statement>

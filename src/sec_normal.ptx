@@ -40,8 +40,9 @@
 		<title>Uniform Distribution</title>
 		<p>When dealing with discrete distributions and histograms, we were reminded of the special role that the area principle plays in probability graphs. That is, the area of a given bar in those graphs was exactly equal to the probability of the outcome associated with that bar. This principal holds true with continuous probability distributions as well. In the case of a continuous variable, however, we no longer have a histogram, but instead a smooth (and continuous for those of you who have seen Calculus) curve called a <term>density curve</term>.</p>
 		<definition xml:id="def_density-curve">
-		  <idx>probability density curve</idx>
+		  <idx>density curve</idx>
 		  <idx><h>probability</h><h>density curve</h></idx>
+		  <idx><h>probability</h><h>density curve</h><seealso>density curve</seealso></idx>
 		  <statement>
 		  	<p>The <term>probability density</term> curve for a random variable <m>X</m> is a graph in which the possible values of <m>X</m> are listed as a continuous range on the horizontal axis, and the area in a range of <m>X</m> values and below the curve corresponds to the probability that <m>X</m> takes on one of those values.</p>
 		  </statement>
@@ -49,6 +50,8 @@
 		<p>There are certain things that all probability density curves have in common.</p>
 		<principle xml:id="def_density-curve-properties">
 		  <title>Properties of Probability Density Curves</title>
+		  <idx><h>density curve</h><h>properties of</h></idx>
+		  <idx><h>area principle (probabilty)</h></idx>
 		  <statement>
 		  	<p>Any probability density curve for a continuous random variable <m>X</m> will have the following properties.
 		  	  <ul>
@@ -63,7 +66,7 @@
 	  <p>To better understand this connection between area and probability, we will briefly examine one of the simplest probability distributions for a continuous random variable.</p>
 	  <definition xml:id="def_continuous-uniform">
 	  	<idx>uniform distribution (continuous)</idx>
-	  	<idx><h>probability</h><h>distributions</h><h>continuous uniform</h></idx>
+	  	<idx><h>probability</h><h>distribution families</h><h>continuous uniform</h></idx>
 	  	<statement>
 	  		<p>A continuous random variable <m>X</m> has a <term>uniform distribution</term>, and is called a <term>uniform random variable</term>, if the probability of <m>X</m> is spread evenly within the range of possible values of <m>X</m>.</p>
 	  	</statement>
@@ -168,7 +171,8 @@
 		<p>Several times in this book we have referred to a <q>mound-shaped</q> distribution, going so far as to give this <xref ref="def_histogram-mound-shaped" text="custom">a definintion</xref> in chapter 1. We now give the continuous distribution with this shape its more formal name.</p>
 		<definition xml:id="def_normal-dist">
 			<idx>normal distribution</idx>
-			<idx><h>probability</h><h>distributions</h><h>normal</h></idx>
+			<idx><h>probability</h><h>distribution families</h><h>normal</h></idx>
+			<idx><h>probability</h><h>distribution families</h><h>normal</h><seealso>normal distribution</seealso></idx>
 			<statement>
 				<p>A random variable <m>X</m> has a <term>normal distribution</term> if the probability density curve of <m>X</m> is mound-shaped with a single peak at the mean.</p>
 			</statement>
@@ -188,6 +192,7 @@
 		<p>So what are the properties common to every normal distribution? These are summarized below.</p>
 		<theorem xml:id="thm_normal-dist-properties">
 			<title>Properties of Normal Distributions</title>
+			<idx><h>normal distribution</h><h>properties of</h></idx>
 			<statement>
 				<p>If <m>X</m> is a random variable with a normal distribution, then the probability density curve for <m>X</m> has the following properties.
 				  <ul>
@@ -207,7 +212,7 @@
 					<caption>Two Normal Distributions</caption>
 					<image width="80%" xml:id="image_normal_two-distributions">
 						<description>
-							Two mound-shaped curves, one representing women's temperatures with a tallest point at 63.6.  The other, representing men's temperatures, with a peak at 69.  The one representing men's temperatures is a little shorter and wider than the one representing women's teperatures.
+							Two mound-shaped curves, one representing women&apos;s temperatures with a tallest point at 63.6.  The other, representing men&apos;s temperatures, with a peak at 69.  The one representing men&apos;s temperatures is a little shorter and wider than the one representing women&apos;s teperatures.
 						</description>
 						<latex-image>
 							<xi:include href="./latex-images/normal_two-distributions.tex" parse="text"/>				
@@ -260,7 +265,7 @@
 						<li><p><m>P(X \lt \mu) = 1</m></p></li>
 					</ol>
 				</p>
-				<p>Question: which of these are properties of the normal probability distribution's curve?</p>
+				<p>Question: which of these are properties of the normal probability distribution&apos;s curve?</p>
 			</statement>
 			<answer><p>(b), (d), and (e) are properties of a normal density curve.</p></answer>
 		</exercise>
@@ -321,7 +326,7 @@
 		<p>This formula gives the height of the curve at a particular value of <m>x</m>.  To actually use this formula to find the area above, we would need to use calculus, which is beyond the scope of this course. We therefore take another approach. We instead use tables for a single normal distribution, and convert all other normal distributions to that one <term>standard normal distribution</term>.</p>
 		<definition xml:id="def_standard-normal-dist">
 			<idx>standard normal distribution</idx>
-			<idx><h>probability</h><h>distributions</h><h>standard normal</h></idx>
+			<idx><h>normal distribution</h><h>standard normal distribution</h></idx>
 			<statement>
 				<p>The <term>standard normal distribution</term> is the normal distribution with mean <m>\mu = 0</m> and standard deviation <m>\sigma = 1</m>. We use the random variable <m>Z</m> to represent values taken from the standard normal distribution.</p>
 			</statement>
@@ -329,6 +334,7 @@
 		<p>We have actually already used the standard normal distribution to some extent. Values of a standard normal random variable <m>Z</m> are called <xref ref="def_z-score" text="custom">z-scores</xref>. These same z-scores were used in <xref ref="sec_relative-standing"/> to help measure relative standing<mdash/>that is, where a value lies relative to the mean and standard deviation of a data set. The standard normal distribution has the same properties as any other normal distribution, with these additional properties added to that list.</p>
 		<theorem xml:id="thm_standard-normal-properties">
 			<title>Properties of the Standard Normal Distribution</title>
+			<idx><h>normal distribution</h><h>standard normal distribution</h><h>properties of</h></idx>
 			<statement>
 				<p>The standard normal distribution has values <m>Z</m> such that:
 				  <ul>
@@ -454,6 +460,7 @@
 		<p>As we saw earlier, there are many different normal distributions. Our goal now is to learn how all of those can be modeled using the standard normal distribution table. To do this, we make use of <xref ref="def_z-score" text="custom">z-scores</xref>. We incorporate this definition into the following principle for converting from any normal dikstribution to the standard normal distribution.</p>
 		<principle xml:id="thm_convert-to-standard-normal">
 			<title>Converting to the Standard Normal Distribution</title>
+			<idx><h>normal distribution</h><h>standard normal distribution</h><h>z-score formula</h></idx>
 			<statement>
 				<p>To convert a random variable <m>X</m> from a normal distribution with mean <m>\mu</m> and standard deviation <m>\sigma</m> to a random variable <m>Z</m> with the standard normal distribution, use:
 				  <me>z = \frac{x - \mu}{\sigma}</me>.
@@ -619,7 +626,7 @@
 		  		<caption>Grade Ranges</caption>
 		  		<image width="70%" xml:id="image_normal_examp_reverse-application">
 		  			<description>
-		  				A normal distribution centered at 0 with area equal to 0.90 shaded from the left tail up to some unknown z values for A's and area equal to 0.75 shaded from the left tail up to some unknown z value for B's.
+		  				A normal distribution centered at 0 with area equal to 0.90 shaded from the left tail up to some unknown z values for A&apos;s and area equal to 0.75 shaded from the left tail up to some unknown z value for B&apos;s.
 		  			</description>
 		  			<latex-image>
 		  				<xi:include xref="./latex-images/normal_examp_reverse-application.tex" parse="text"/>

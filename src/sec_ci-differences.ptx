@@ -46,7 +46,8 @@
 		<title>Point Estimate</title>
 		<p>It should come as no surprise by now that the point estimate we use for the difference between population means or proportions is the difference between the sample means or proportions. We state this formally below, first for means and then for proportions.</p>
 		<theorem xml:id="tmp_point-estimate-difference-means">
-			<title>Point Estimate for a Difference Between Means</title>
+			<title>Point Estimator for a Difference Between Means</title>
+			<idx><h>confidence interval</h><h>difference of means</h><h>point estimator</h></idx>
 			<statement>
 				<p>If samples with means <m>\overline{x}_1</m> and <m>\overline{x}_2</m> are drawn from two independent populations with means <m>\mu_1</m> and <m>\mu_2</m>, then the best point estimate for <m>\mu_1 - \mu_2</m> is <m>\overline{x}_1 - \overline{x}_2</m>.</p>
 			</statement>
@@ -62,7 +63,8 @@
 		</example>
 		<p>And now we repeat this process for proportions.</p>
 		<theorem xml:id="tmp_point-estimate-difference-proportions">
-			<title>Point Estimate for a Difference Between Proportions</title>
+			<title>Point Estimator for a Difference Between Proportions</title>
+			<idx><h>confidence interval</h><h>difference of proportions</h><h>point estimator</h></idx>
 			<statement>
 				<p>If samples with proportions <m>\hat p_1</m> and <m>\hat p_2</m> are drawn from two independent populations with proportions <m>p_1</m> and <m>p_2</m>, then the best point estimate for <m>p_1 - p_2</m> is <m>\hat p_1 - \hat p_2</m>.</p>
 			</statement>
@@ -165,6 +167,7 @@
 			and taking the square root of this gives us the standard deviation for <m>\overline{x}_1 - \overline{x}_2</m>.</p>
 		<theorem xml:id="thm_margin-error-difference-means">
 			<title>Margin of Error for a Difference Between Means</title>
+			<idx><h>confidence interval</h><h>difference of means</h><h>margin of error</h></idx>
 			<statement>
 				<p>The margin of error when estimating the difference between two population means at the <m>(1-\alpha)100\%</m> confidence level is given by:
 				  <me>z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</me>.</p>
@@ -191,6 +194,7 @@
 		<p>The margin of error is then the following.</p>
 		<theorem xml:id="thm_margin-error-difference-proportions">
 			<title>Margin of Error for a Difference Between Proportions</title>
+			<idx><h>confidence interval</h><h>difference of proportions</h><h>margin of error</h></idx>
 			<statement>
 				<p>The margin of error when estimating the difference between two population proportions at the <m>(1-\alpha)100\%</m> confidence level is given by:
 			  	<me>z_{\alpha/2}\times \sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</me>.</p>
@@ -292,6 +296,9 @@
 		<p>Once we have found the point estimate and margin of error, putting together the confidence interval is a fairly straight-forward task. The confidence interval formulas for the differences between means and proportions are given below, along with examples.</p>
 		<theorem xml:id="thm_ci-difference-means">
 			<title>Confidence Interval for the Difference Between Means</title>
+			<idx><h>confidence interval</h><h>difference of means</h></idx>
+			<idx><h>difference of means</h><h>confidence interval</h></idx>
+			<idx><h>difference of means</h><h>confidence interval</h><seealso>confidence interval</seealso></idx>
 			<statement>
 				<p>The <m>(1-\alpha)100\%</m> confidence interval for the difference <m>\mu_1 - \mu_2</m> between means of independent populations is given by:
 				  <me>(\overline{x}_1 - \overline{x}_2) \pm z_{\alpha/2}\times \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</me>.</p>
@@ -313,6 +320,9 @@
 		<p>And now we look at population proportions.</p>
 		<theorem xml:id="thm_ci-difference-proportions">
 		  <title>Confidence Interval for the Difference Between Proportions</title>
+		  <idx><h>confidence interval</h><h>difference of proportions</h></idx>
+		  <idx><h>difference of proportions</h><h>confidence interval</h></idx>
+		  <idx><h>difference of proportions</h><h>confidence interval</h><seealso>confidence interval</seealso></idx>
 		  <statement>
 		  	<p>The <m>(1-\alpha)100\%</m> confidence interval for the difference <m>p_1 - p_2</m> between proportions in independent populations is given by:
 		  	  <me>(\hat p_1 - \hat p_2) \pm z_{\alpha/2}\sqrt{\frac{p_1q_1}{n_1} + \frac{p_2q_2}{n_2}}</me>.</p>
@@ -416,7 +426,7 @@
 						</row>
 					</tabular>
 				</table>
-				<p>Question: what is the 98% confidnece interval for this difference? Round your answer to four decimal places.</p>
+				<p>Question: what is the 98% confidence interval for this difference? Round your answer to four decimal places.</p>
 			</statement>
 			<answer><p><m>0.0241 \lt p_1 - p_2 \lt 0.3971</m></p></answer>
 		</exercise>
@@ -443,6 +453,7 @@
 		<p>This result is summarized below.</p>
 		<theorem xml:id="thm_sample-size-difference-means">
 			<title>Sample Size when Estimating a Difference Between Means</title>
+			<idx><h>confidence interval</h><h>difference of means</h><h>sample size</h></idx>
 			<p>To get a maximum margin of error of <m>E</m> at the <m>(1-\alpha)100\%</m> confidence level, we must take samples of size <m>n</m> from each population where:
 			  <me>n \geq \frac{(z_{\alpha/2})^2(\sigma_1^2 + \sigma_2^2)}{E^2}</me>.</p>
 		</theorem>
@@ -467,6 +478,7 @@
 		<p>Following a procedure similar to that above, we get the following formula for the minimum sample size for a difference between proportions.</p>
 		<theorem xml:id="thm_sample-size-difference-proportions">
 			<title>Sample Size when Estimating a Difference Between Proportions</title>
+			<idx><h>confidence interval</h><h>difference of proportions</h><h>sample size</h></idx>
 			<statement>
 				<p>To get a maximum margin of error of <m>E</m> at the <m>(1-\alpha)100\%</m> confidence level, we must take samples of size <m>n</m> from each population where:
 				  <me>n \geq \frac{(z_{\alpha/2})^2(p_1q_1+ p_2q_2)}{E^2}</me>.</p>

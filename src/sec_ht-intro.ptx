@@ -64,10 +64,9 @@
 		<title>Formulating Hypotheses</title>
 		<p>The first step in conducting a hypothesis test is to figure out what we are hypothesizing. While this may seem obvious, it is often overlooked or thought to be <q>understood.</q> However we must be very careful that we explicitly state two hypotheses, called the <term>null</term> and <term>alternative hypothesis</term>, before we begin a hypothesis test. This is done not only to ensure our own understanding, but also because the numbers used in these hypotheses will be needed in the next step of the hypothesis test.</p>
 		<definition xml:id="def_hypotheses">
-			<idx><h>hypothesis test</h><h>null hypothesis</h></idx>
-			<idx><h>hypothesis test</h><h>alternative hypothesis</h></idx>
 			<idx><h>null hypothesis</h></idx>
 			<idx><h>alternative hypothesis</h></idx>
+			<idx><h>hypothesis test</h><h>hypothesis</h></idx>
 			<statement>
 				<p>In a statistical test of hypothesis, we compare the <term>alternative hypothesis</term> against the <term>null hypothesis</term>. These hypotheses are:
 				  <ul>
@@ -231,7 +230,7 @@
 			To conduct a traditional hypothesis test, we must divide the test statistic&apos;s distribution up into two regions. The <term>rejection region</term> will be those values of the test statistic which are more unusual than the significance level, and will therefore lead to rejecting <m>H_0</m>. The <term>acceptance region</term> is the rest of the distribution, containing those values of the test statistic which are not unusual. How we draw these regions depends on the alternative hypothesis being tested. In the pictures that follow, the red areas are the rejection regions and the blue areas are the acceptance regions. Note that <m>\theta</m> could be a mean or proportion.</p>
 		<definition xml:id="def_left-tailed-test">
 			<idx>left-tailed test</idx>
-			<idx><h>hypothesis test</h><h>left-tailed</h></idx>
+			<idx><h>hypothesis test</h><h>left-tailed test</h></idx>
 			<statement>
 				<p>In a <term>left-tailed hypothesis test</term>, we test the alternative that the population parameter is less-than a given value against the null hypothesis that it is greater-than-or-equal-to that value. We therefore put the full significance level <m>\alpha</m> in the left tail as shown.</p>
 				<figure xml:id="fig_ht-intro_def_left-tailed-test">
@@ -246,7 +245,7 @@
 		</definition>
 		<definition xml:id="def_right-tailed-test">
 			<idx>right-tailed test</idx>
-			<idx><h>hypothesis test</h><h>right-tailed</h></idx>
+			<idx><h>hypothesis test</h><h>right-tailed test</h></idx>
 			<statement>			
 				<p>In a <term>right-tailed hypothesis test</term>, we test the alternative that the population parameter is greater-than a given value against the null hypothesis that it is less-than-or-equal-to that value. We therefore put the full significance level <m>\alpha</m> in the right tail as shown.</p>
 				<figure xml:id="fig_ht-intro_def_right-tailed-test">
@@ -261,7 +260,7 @@
 		</definition>
 		<definition xml:id="def_two-tailed-test">
 			<idx>two-tailed test</idx>
-			<idx><h>hypothesis test</h><h>two-tailed</h></idx>
+			<idx><h>hypothesis test</h><h>two-tailed test</h></idx>
 			<statement>
 				<p>In a two-tailed hypothesis test, we test the alternative that the population parameter is not equal to a given value against the null hypothesis that it is equal to that value. We therefore split the significance level <m>\alpha</m> equally between the left and right tails.</p>
 				<figure xml:id="fig_ht-intro_def_two-tailed-test">

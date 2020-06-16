@@ -45,9 +45,10 @@
 		<p>To construct confidence intervals for means based on small samples drawn from normal populations, we must either know what <m>\sigma</m> is, or we must come up with a new distribution. It is unreasonable, as mentioned previouly, to know the population standard deviation when we are trying to estimate the population mean. We therefore introduce a new distribution.</p>
 		<p>This distribution is actually an entire family of distributions, one for each possible sample size less than 30. It is called the <term>student&apos;s t-distribution</term> because the author, who worked for a brewery, was not allowed to publish his results so as to keep these tools away from competing breweries. The author believed, however, that this information should be shared and so he published it under the pen-name <q>Student.</q></p>
 		<definition xml:id="def_student-t-distribution">
-			<idx>student t-distribution</idx>
+			<idx>t-distribution</idx>
+			<idx><h>probability</h><h>distribution families</h><h>t-distribution</h></idx>
 			<statement>
-				<p>The <term>student's t-distribution</term> is the name given to the distribution of the variable <m>t</m> based on a random sample of size <m>n</m> with mean <m>\overline{x}</m> and standard deviation <m>s</m>, drawn from a normal population. The variable <m>t</m> is:
+				<p>The <term>student&apos;s t-distribution</term> is the name given to the distribution of the variable <m>t</m> based on a random sample of size <m>n</m> with mean <m>\overline{x}</m> and standard deviation <m>s</m>, drawn from a normal population. The variable <m>t</m> is:
 			  <me>t = \frac{\overline{x} - \mu}{s/\sqrt{n}}</me>.</p>
 			</statement>
 		</definition>
@@ -138,6 +139,8 @@
 		<p>The process for building a confidence interval for a population mean based on a small sample should be very familiar. Aside from using the t-distribution to look up critical values, it is in fact exactly the same as what was done for large-sample estimation. Below you will find the formula for this confidence interval.</p>
 		<theorem xml:id="thm_ci-small-sample-mean">
 			<title>Small Sample Confidence Interval for a Population Mean</title>
+			<idx><h>confidence interval</h><h>small-sample mean</h></idx>
+			<idx><h>single mean</h><h>small-sample confidence interval</h></idx>
 			<statement>
 				<p>The <m>(1-\alpha)100\%</m> small sample confidence interval for a population mean based on a sample of size <m>n</m> taken from a normal population with sample mean <m>\overline{x}</m> and standard deviation <m>s</m> is given by:
 				  <me>\overline{x} \pm t_{\alpha/2}\times \left(\frac{s}{\sqrt{n}}\right)</me>.
@@ -207,6 +210,9 @@
 		<p>It turns out that in order to get critical values for the difference between two sample means, we have to make one more assumption. We have to assume that the two populations from which we are sampling have the same variance and therefore standard deviation, so <m>\sigma_1^2</m> and <m>\sigma_2^2</m> are the same. However when we draw samples we can not expect that they will come out with exactly the same variance. To get as accurate an estimate of what that single variance is, we must combine the variances of our two samples into a <term>pooled variance</term> as shown below.</p>
 		<definition xml:id="def_pooled-variance">
 			<title>Pooled Variance</title>
+			<idx>pooled variance</idx>
+			<idx><h>confidence interval</h><h>small-sample difference of means</h><h>pooled variance</h></idx>
+			<idx><h>hypothesis test</h><h>small-sample difference of means</h><h>pooled variance</h></idx>
 			<statement>
 				<p>If samples of sizes <m>n_1</m> and <m>n_2</m> with variances <m>s_1^2</m> and <m>s_2^2</m> respectively are drawn from independent populations with a common variance <m>\sigma^2</m>, then the pooled estimate for this variance based on these samples is:
 				  <me>s^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}</me>.
@@ -216,6 +222,9 @@
 		<p>We can then use this pooled variance in place of both <m>\sigma_1^2</m> and <m>\sigma_2^2</m> in the standard error formula above to get the following confidence interval formula for small samples.</p>
 		<theorem xml:id="thm_ci-small-sample-differences">
 			<title>Small Sample Confidence Interval for the Difference Between Means</title>
+			<idx><h>confidence interval</h><h>small-sample difference of means</h></idx>
+  		<idx><h>difference of means</h><h>small-sample confidence interval</h></idx>
+  		<idx><h>difference of means</h><h>small-sample confidence interval</h><seealso>confidence interval</seealso></idx>
 			<statement>
 				<p>The <m>(1-\alpha)100\%</m> small sample confidence interval for the difference between population means, <m>\mu_1 - \mu_2</m>, based on two independent samples of sizes <m>n_1</m> and <m>n_2</m> drawn from normal populations with a common variance, estimated by the pooled variance <m>s^2</m>, and having sample means <m>\overline{x}_1</m> and <m>\overline{x}_2</m> is:
 				  <me>(\overline{x}_1 - \overline{x}_2) \pm t_{\alpha/2}\times \sqrt{s^2\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}</me>.

@@ -237,7 +237,7 @@
 					<p>A <term>frequency table</term> is a two column table used to summarize the values of a	qualitative variable.	The first column contains the various categories that the variable can take on.	The second column contains the counts or frequency with which each category appears.</p>
 				</statement>
 			</definition>
-			<p>To see how this works, let's use a frequency table to summarize the pizza topping data set we saw in our first example.</p>
+			<p>To see how this works, let&apos;s use a frequency table to summarize the pizza topping data set we saw in our first example.</p>
 			<example xml:id="examp_graphs_frequency-table">
 				<title>A Frequency Table</title>
 				<statement>
@@ -251,7 +251,7 @@
 								<li><p>Count the frequency with which each topping appears in <xref ref="examp_graphs_organizing-data_table" text="custom">the original data</xref>.</p></li>
 								<li><p>Check to ensure that the total of our counts adds up to the total number of values in the set of data.</p></li>
 							</ol>
-							This definitely gives us a clearer picture of the data set. We can now see the number of times each topping was selected as somebody's favorite.
+							This definitely gives us a clearer picture of the data set. We can now see the number of times each topping was selected as somebody&apos;s favorite.
 						</p>
 						<table xml:id="examp_graphs_frequency-table_table">
 							<title>Pizza Toppings Frequency Table</title>
@@ -320,7 +320,7 @@
 					<p>A <term>relative frequency table</term> is a table in which each category is listed together with the ratio of the total values from the data set that fall into that category.</p>
 				</statement>
 			</definition>
-			<p>Let's revisit the pizza topping data once again, this time constructing a relative frequency table.</p>
+			<p>Let&apos;s revisit the pizza topping data once again, this time constructing a relative frequency table.</p>
 			<example xml:id="examp_graphs_relative-frequency-table">
 				<title>A Relative Frequency Table</title>
 				<statement>
@@ -402,6 +402,7 @@
 			<p>One of the most basic ways to graphically represent data collected for a qualitative variable is using a bar graph.</p>
 			<definition xml:id="def_bar-graph">
 				<title>Bar Graph</title>
+				<idx>bar graph</idx>
 				<idx><h>graphs</h><h>bar graph</h></idx>
 				<statement>
 					<p>A <term>bar graph</term> is a graph for qualitative data in which each possible category is represented by a bar, the height of which corresponds to the frequency of that category in the	data set. These bars can be arranged in any order and are separated from each other by empty space.</p>
@@ -430,6 +431,7 @@
 			</example>
 			<p>What happens to the bar graph if we use the relative frequency table instead of the frequency table? We do get a new type of graph, but as we shall see, the shape of the graph will not change, just the scale. First, the definition.</p>
 			<definition xml:id="def_relative-frequency-bar-graph">
+				<idx>relative frequency bar graph</idx>
 				<idx><h>graphs</h><h>relative frequency bar graph</h></idx>
 				<statement>
 					<p>A relative frequency bar graph is a graph for qualitative data in which each category is represented by a bar, the height of which corresponds to the percent of the	data values that are in that category. These bars can be arranged in any order and are separated from each other by empty space.</p>
@@ -459,6 +461,7 @@
 			</example>
 			<p>Both the bar graph and relative frequency bar graph are particularly useful for comparing the number or percent of values that are in one category with the number or proportion in another category. However it is sometimes better to show how each category frequency or proportion relates to the whole. For this type of situation, a <term>pie graph</term> is more useful.</p>
 			<definition xml:id="def_pie-graph">
+				<idx>pie graph</idx>
 				<idx><h>graphs</h><h>pie graph</h></idx>
 				<statement>
 					<p>A <term>pie graph</term> is a graph for qualitative data in which a circle is divided into sectors or wedges	representing the various categories. The area of these sectors is determined by	the relative frequency of the associated category.</p>
@@ -491,14 +494,14 @@
 
 		<subsubsection xml:id="sec_graphs_qualitative_bivariate">
 			<title>Bivariate Data</title>
-			<p>The frequency tables and graphs that we've looked at so far work well for <xref ref="def_num-vars" text="custom">univariate data</xref>. But they need to be modified before they will work with data involving more than one variable. <xref ref="def_num-vars" text="custom">Multivariate data</xref> can be very difficult to summarize and display graphically. Because of this, we usually just look at each variable separately. However when we have two variables (<xref ref="def_num-vars" text="custom">bivariate data</xref>) there are	some special techniques that we can use to summarize and display the data.</p>
+			<p>The frequency tables and graphs that we&apos;ve looked at so far work well for <xref ref="def_num-vars" text="custom">univariate data</xref>. But they need to be modified before they will work with data involving more than one variable. <xref ref="def_num-vars" text="custom">Multivariate data</xref> can be very difficult to summarize and display graphically. Because of this, we usually just look at each variable separately. However when we have two variables (<xref ref="def_num-vars" text="custom">bivariate data</xref>) there are	some special techniques that we can use to summarize and display the data.</p>
 			<definition xml:id="def_contingency-table">
 				<idx>contingency table</idx>
 				<statement>
 					<p>A <term>contingency table</term>, also called a <term>two-way table</term>, is a table used to summarize bivariate qualitative data. The columns in this table represent the various categories of one of the two variables and the rows represent the categories of the other variable. In each cell (row-column combination) we record the number of subjects with that row category and column category.</p>
 				</statement>
 			</definition>
-			<p>To see how a contingency table can be read, let's look at an example involving college students and summer vacation plans.</p>
+			<p>To see how a contingency table can be read, let&apos;s look at an example involving college students and summer vacation plans.</p>
 			<example xml:id="examp_graphs_contingency-table">
 				<title>Using a Contingency Table</title>
 				<statement>
@@ -550,11 +553,12 @@
 			<p>When we create a contingency table, or if we are just given a contingency table, we sometimes will want to look at each variable separately. In the example above, we may want to know how many of	these students intend to work this summer. To answer this question, we need to total up the rows and/or columns. These totals are typically displayed in the margins of the	table, leading to the	following definition.</p>
 			<definition xml:id="def_marginal-distribution">
 				<idx>marginal distribution</idx>
+				<idx><h>contingency table</h><h>marginal distribution</h></idx>
 				<statement>
 					<p>A <term>marginal distribution</term> of a contingency table is either the sums of the rows of that contingency table, or the sum of the columns of that contingency table.</p>
 				</statement>
 			</definition>
-			<p>Let's find the marginal distributions for the student summer plans example	above.</p>
+			<p>Let&apos;s find the marginal distributions for the student summer plans example	above.</p>
 			<example xml:id="examp_graphs_marginal-distribution">
 				<title>Computing Marginal Distributions</title>
 				<statement>
@@ -618,14 +622,13 @@
 			</example>
 			<p>A contingency table is a great tool for summarizing bivariate qualitative data. But in order to describe this data with a graph, we will need to make a modification to our bar graph. We will use a	special type of bar graph called a <term>stacked bar graph</term>.</p>
 			<definition xml:id="def_stacked-bar-graph">
+				<idx>stacked bar graph</idx>
 				<idx><h>graphs</h><h>stacked bar graph</h></idx>
-				<idx><h>graphs</h><h>stacked bar graph</h><h>primary variable</h></idx>
-				<idx><h>graphs</h><h>stacked bar graph</h><h>secondary variable</h></idx>
 				<statement>
 					<p>A <term>stacked bar graph</term> is used to display the data in a <xref ref="def_contingency-table" text="custom">contingency table</xref>. One of the two variables is chosen as the <term>primary variable</term>, and a bar is created for each category of the primary variable. The height of the bar is equal to the <xref ref="def_marginal-distribution" text="custom">marginal distribution</xref> entry for that category. The bar is broken up into <q>stacked</q> pieces, the heights of which represent the frequency of the <term>secondary variable</term> categories within that primary variable category.</p>
 				</statement>
 			</definition>
-			<p>This definition can be difficult to decipher. Let's look at stacked bar graphs	for the summer plans data. Again, these graphs were created using a spreadsheet program.</p>
+			<p>This definition can be difficult to decipher. Let&apos;s look at stacked bar graphs	for the summer plans data. Again, these graphs were created using a spreadsheet program.</p>
 			<example xml:id="examp_graphs_stacked-bar-graph">
 				<title>Constructing Stacked Bar Graphs</title>
 				<statement>
@@ -743,6 +746,7 @@
 				<idx><h>frequency distribution</h><h>class</h></idx>
 				<idx><h>frequency distribution</h><h>class width</h></idx>
 				<idx><h>frequency distribution</h><h>upper class limit</h></idx>
+				<idx>class width</idx>
 				<statement>
 					<p>A <term>frequency distribution</term> is a table constructed to summarize quantative data. It has the following components:
 						<ul>
@@ -854,7 +858,7 @@
 										<li><p>Find the difference between the highest number, 17.9, and the lowest, 8.1. We round to a range of 10.</p></li>
 										<li><p>Find the class width by taking dividing the range by the number of classes: <m>\frac{10}{5} = 2</m>.</p></li>
 									</ol></p></li>
-									<li><p>Starting with our minimum value (we'll round down to 8), add the class width to get the upper class limits: 10, 12, 14, 16, and 18.</p></li>
+									<li><p>Starting with our minimum value (we&apos;ll round down to 8), add the class width to get the upper class limits: 10, 12, 14, 16, and 18.</p></li>
 									<li><p>List the classes in the first column of our table. Note that these should not include the previous class upper class limit, thus the second class is	from 10.1-12, not 10-12.</p></li>
 									<li><p>Finally, count the number of values that fall into each class. For example, there are 7 values bigger than 10, but less than or equal to 12.</p></li>
 								</ol>
@@ -900,12 +904,14 @@
 			<title>Histograms</title>
 			<p>The graph that we use to describe data summarized by a frequency distribution is very similar to	the <xref ref="def_bar-graph" text="custom">bar graphs</xref> we used to summarize data from a frequency table. There is,	however, some important distinction.</p>
 			<definition xml:id="def_histogram">
+				<idx>histogram</idx>
 				<idx><h>graphs</h><h>histogram</h></idx>
+				<idx><h>graphs</h><h>histogram</h><seealso>histogram</seealso></idx>
 				<statement>
 					<p>A <term>histogram</term> is a graph for quantitative data in which each class in a frequency	distribution for that data is represented by a bar, the height of which corresponds to the frequency of that class. These bars must be arranged in ascending order of the classes and must touch each other.</p>
 				</statement>
 			</definition>
-			<p>Note that in a histogram, the order is important because the classes of a frequency distribution are themselves ordered from smallest values to largest values. Also, note that the bars touch to show that the classes are contiguous--that is, there is no space between the classes. Let's try constructing a histogram for the tomato plant heights seen in the previous example. We use a spreadsheet to accomplish this, in much the same way that we constructed a bar graph.</p>
+			<p>Note that in a histogram, the order is important because the classes of a frequency distribution are themselves ordered from smallest values to largest values. Also, note that the bars touch to show that the classes are contiguous--that is, there is no space between the classes. Let&apos;s try constructing a histogram for the tomato plant heights seen in the previous example. We use a spreadsheet to accomplish this, in much the same way that we constructed a bar graph.</p>
 			<example xml:id="examp_graphs_histogram">
 				<title>Constructing a Histogram</title>
 				<statement>
@@ -1002,6 +1008,7 @@
 			</example>
 			<p>If we wish to create a pictorial representation of a set of quantitative data that also shows the raw data, we need a new type of graph.</p>
 			<definition xml:id="def_stem-and-leaf">
+				<idx>stem-and-leaf plot</idx>
 				<idx><h>graphs</h><h>stem-and-leaf plot</h></idx>
 				<statement>
 					<p>In a <term>stem-and-leaf plot</term>, data is represented by separating each value into two parts: the stem (all but the right-most digit) and leaf (
@@ -1009,7 +1016,7 @@
 					belong from that stem in the second column, given in ascending order with no spaces or commas between them.</p>
 				</statement>
 			</definition>
-			<p>Stem-and-leaf plots are usually created by hand. Because of this, they are most useful for	relatively small data sets for which we wish to get a quick picture of the shape of the data. To get an accurate picture, it is important that each <q>leaf</q> take up the same amount of space. So if you are typing a stem-and-leaf plot into a computer, use a mono-spaced font such as courier so that the ones (1) don't take up less space than the eights (8). Consider the following	example.</p>
+			<p>Stem-and-leaf plots are usually created by hand. Because of this, they are most useful for	relatively small data sets for which we wish to get a quick picture of the shape of the data. To get an accurate picture, it is important that each <q>leaf</q> take up the same amount of space. So if you are typing a stem-and-leaf plot into a computer, use a mono-spaced font such as courier so that the ones (1) don&apos;t take up less space than the eights (8). Consider the following	example.</p>
 			<example xml:id="examp_graphs_stem-and-leaf">
 				<title>Constructing a Stem-and-Leaf Plot</title>
 				<statement>
@@ -1060,7 +1067,7 @@
 					<sidebyside widths="50% 45%" margins="auto" valign="middle">
 						<p>We construct our stem-and-leaf plot as follows:
 							<ol>
-								<li><p>Divide each value into the stem (10's	digit) and leaf (1's digit) pieces. Note that	this yields stems 0, 1, and 2.</p></li>
+								<li><p>Divide each value into the stem (10&apos;s	digit) and leaf (1&apos;s digit) pieces. Note that	this yields stems 0, 1, and 2.</p></li>
 								<li><p>List the stems in order in the first column of our table.</p></li>
 								<li><p>For each stem, list the associated leaves in ascending order.</p></li>
 							</ol>
@@ -1082,6 +1089,7 @@
 			</example>
 			<p>Note that the <q>shape</q> we see here is like a histogram tilted on its side.	However, in this particular	instance the middle stem seems to have a disproportionate number of leaves. To remedy this, we can split our stems up into smaller pieces.</p>
 			<definition>
+				<idx>expanded stem-and-leaf plot</idx>
 			  <idx><h>graphs</h><h>expanded stem-and-leaf plot</h></idx>
 			  <statement>
 			  	<p>An <term>expanded stem-and-leaf plot</term> includes more than one row for each stem. The leaves are divided equally between the rows representing the associated stems.</p>
@@ -1234,6 +1242,7 @@
 			<title>Other Graphs</title>
 			<p>There are several other graphs that can be useful to help display certain types of data. One of the most useful <q>other</q> types of graphs is meant to display the value of a single quantitative variable	measured over time.</p>
 			<definition xml:id="def_time-series">
+				<idx>time series</idx>
 				<idx><h>graphs</h><h>time series</h></idx>
 				<statement>
 					<p>A <term>time series</term> graph, also called a line chart, lists times along the horizontal axis, and values along the vertical axis. Points are placed at the appropriate height for the value of the variable at each time. These points are then connected with line segments.</p>
@@ -1282,13 +1291,15 @@
 				</solution>
 			</example>
 			<p>We need another type of graph to represent bivariate quantitative variables. This sort of data comes in <m>(x,y)</m> pairs where <m>x</m> represents the value of the first variable and <m>y</m> the value of the second. In order to describe the relationship between the two variables, we can plot these pairs on
-			a graph, creating what's called a <term>scatter plot</term>.</p>
+			a graph, creating what&apos;s called a <term>scatter plot</term>.</p>
 			<definition xml:id="def_scatter-plot">
+				<idx>scatter plot</idx>
+				<idx><h>graphs</h><h>scatter plot</h></idx>
 				<statement>
 					<p>In a scatter plot we associate one variable from a set of bivariate data with	the <m>x</m>-axis and the other with the <m>y</m>-axis. We then plot each pair of values as an <m>(x,y)</m> point on this coordinate system.</p>
 				</statement>
 			</definition>
-			<p>To see how this works, let's look at an example.</p>
+			<p>To see how this works, let&apos;s look at an example.</p>
 			<example xml:id="examp_graphs_scatter-plot">
 				<title>Constructing a Scatter Plot</title>
 				<statement>
@@ -1380,7 +1391,7 @@
 			<exercise xml:id="ckpt_graphs_other-graphs-2">
 				<title>Appropriate Graphs</title>
 				<statement>
-					<p>Data has been collected from 100 ten-year-old children. For each child the parents' combined income, and the child's reading level are recorded. You wish to construct a graph to determine if there is a relationship between these two variables.</p>
+					<p>Data has been collected from 100 ten-year-old children. For each child the parents&apos; combined income, and the child&apos;s reading level are recorded. You wish to construct a graph to determine if there is a relationship between these two variables.</p>
 					<p>Question: What type of graph is most appropriate for this data?</p>
 				</statement>
 				<answer><p>A scatter plot</p></answer>
@@ -1400,25 +1411,25 @@
 		  <title>Interpreting Graphs</title>
 		  <p>The reason that we create graphs in the first place is to help us better understand a set of data. It is therefore important that we know how to interpret the graphs that we create. In this class, we will spend most of our time working with univariate quantitative variables. We thus need to be sure that	we know how to interpret histograms. There are three major things to look for	in a histogram.</p>
 		  <definition xml:id="def_histogram-center">
-		  	<idx><h>graphs</h><h>histogram</h><h>center</h></idx>
+		  	<idx><h>histogram</h><h>center</h></idx>
 		  	<statement>
 		  		<p>The <term>center</term> of a histogram is the class that most accurately describes the typical value in the data set being described.</p>
 		  	</statement>
 		  </definition>
 		  <definition xml:id="def_histogram-mode">
-		  	<idx><h>graphs</h><h>histogram</h><h>mode</h></idx>
-		  	<idx><h>graphs</h><h>histogram</h><h>unimodal</h></idx>
-		  	<idx><h>graphs</h><h>histogram</h><h>bimodal</h></idx>
-		  	<idx><h>graphs</h><h>histogram</h><h>multimodal</h></idx>
-		  	<idx><h>graphs</h><h>histogram</h><h>uniform</h></idx>
+		  	<idx><h>histogram</h><h>mode</h></idx>
+		  	<idx><h>histogram</h><h>unimodal</h></idx>
+		  	<idx><h>histogram</h><h>bimodal</h></idx>
+		  	<idx><h>histogram</h><h>multimodal</h></idx>
+		  	<idx><h>histogram</h><h>uniform</h></idx>
 		  	<statement>
 		  		<p>One way to describe the shape of a histogram is based on the number and location of its modes. A <term>mode</term> is a class that contains significantly more data than the classes immediately	next to it. A histogram can be <term>unimodal</term> (one mode), <term>bimodal</term> (two modes),
 					<term>multimodal</term> (more than two modes), or it may have no prominent modes in which case it is called <term>uniform</term>.</p>
 				</statement>
 			</definition>
 			<definition xml:id="def_histogram-symmetry">
-				<idx><h>graphs</h><h>histogram</h><h>symmetric</h></idx>
-				<idx><h>graphs</h><h>histogram</h><h>skewed</h></idx>
+				<idx><h>histogram</h><h>symmetric</h></idx>
+				<idx><h>histogram</h><h>skewed</h></idx>
 				<statement>
 					<p>Another way to describe the shape of a histogram is based on its <term>symmetry</term>. A histogram may be <term>symmetric</term> (meaning it has the same shape on the left and right of its center), <term>skewed right</term> (meaning that the right tail is longer than the left) or <term>skewed left</term> (meaning that the left tail is longer than the right).</p>
 				</statement>
@@ -1519,7 +1530,7 @@
 			</example>
 			<p>Graph (c) above is an example of a very common histogram shape. This shape is so common, in fact, that it has a distinctive name.</p>
 			<definition xml:id="def_histogram-mound-shaped">
-				<idx><h>graphs</h><h>histogram</h><h>mound-shaped</h></idx>
+				<idx><h>histogram</h><h>mound-shaped</h></idx>
 				<statement>
 					<p>A histogram is called <term>mound-shaped</term> if it is unimodal and symmetric, with the mode in the exact center of the histogram.</p>
 				</statement>
@@ -1678,6 +1689,7 @@
 		</example>
 		<p>This is one example of a problem caused by a violation of an important	principle in graphing.</p>
 		<definition xml:id="def_area-principle">
+			<idx>area principle (graphs)</idx>
 			<idx><h>graphs</h><h>area principle</h></idx>
 			<statement>
 				<p>The <term>area principle</term> states that the area of any bar or sector in a graph representing a category in a frequency table or class in a frequency distribution must be in the same proportion to the rest of the graph as the frequency of the category or class is to the rest of the data in the table.</p>

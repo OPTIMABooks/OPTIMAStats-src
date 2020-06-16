@@ -3,8 +3,8 @@
   <title>Randomness and Simulation</title>
 
   <introduction xml:id="sec_simulation_intro">
-  	<p>We begin our study of randomness and probability by exploring the concept of randomness.  What does it mean for a process to be random?  Why does it matter?  We'll attempt to answer these questions in the first few parts of this section.</p>
-  	<p>Once we've identified sources of randomness, we will focus on how we can utilize them to simulate a process.  We'll discuss the key steps in conducting a simulation and look at several examples.  We will finish the section by reviewing several limitations of simulations.</p>
+  	<p>We begin our study of randomness and probability by exploring the concept of randomness.  What does it mean for a process to be random?  Why does it matter?  We&apos;ll attempt to answer these questions in the first few parts of this section.</p>
+  	<p>Once we&apos;ve identified sources of randomness, we will focus on how we can utilize them to simulate a process.  We&apos;ll discuss the key steps in conducting a simulation and look at several examples.  We will finish the section by reviewing several limitations of simulations.</p>
   </introduction>
 
   <objectives xml:id="sec_simulation_obj">
@@ -89,8 +89,8 @@
 				<p>You wish to randomly pick a sample of 6 people from a group of 100 people. Use the random number table provided above to do this.</p>
 			</statement>
 			<solution>
-				<p>We will assign each person in our group of 100 a two-digit number from 00 to 99. This means we will take groups of two digits from the table above, skipping over any repeating numbers since we don't want to pick the same <q>person</q> twice.</p>
-				<p>In order to select our six pairs of digits, we must first pick a starting point.  We'll do this by rolling a six-sided die (since there are six rows in the table).  Let's say this comes up with the number 3.  Then we will start at the beginning of the third row in the table.  The first six pairs of two-digit numbers from that row are <m>89, 06, 42, 73, 08,</m> and <m>65</m>.</p>
+				<p>We will assign each person in our group of 100 a two-digit number from 00 to 99. This means we will take groups of two digits from the table above, skipping over any repeating numbers since we don&apos;t want to pick the same <q>person</q> twice.</p>
+				<p>In order to select our six pairs of digits, we must first pick a starting point.  We&apos;ll do this by rolling a six-sided die (since there are six rows in the table).  Let&apos;s say this comes up with the number 3.  Then we will start at the beginning of the third row in the table.  The first six pairs of two-digit numbers from that row are <m>89, 06, 42, 73, 08,</m> and <m>65</m>.</p>
 				<p>Each of these numbers represents one of our people, and there are no repeats.  So the six people we will use in our sample are those assigned numbers 89, 6, 42, 73, 8, and 64.</p>
 			</solution>
 		</example>
@@ -244,7 +244,7 @@
 
 	<subsection xml:id="sec_simulation_simulation">
 		<title>Simulation</title>
-		<p>Our <xref ref="examp_simulation_random-or-deterministic-1" text="custom">fishing example</xref> from the last page illustrates an important point. Many times it is not practical to replicate a particular random process. We don't have a lake in our back yard that we can stock with these fish to perform this exact experiment. Instead, we need to try to construct a model for the process which we can then use as a <term>simulation</term>.</p>
+		<p>Our <xref ref="examp_simulation_random-or-deterministic-1" text="custom">fishing example</xref> from the last page illustrates an important point. Many times it is not practical to replicate a particular random process. We don&apos;t have a lake in our back yard that we can stock with these fish to perform this exact experiment. Instead, we need to try to construct a model for the process which we can then use as a <term>simulation</term>.</p>
 		<definition xml:id="def_simulation">
 			<idx>simulation</idx>
 			<statement>
@@ -275,7 +275,7 @@
 				</p>
 			</statement>
 		</definition>
-		<p>To better understand these terms, let's apply them to the fishing example from earlier.</p>
+		<p>To better understand these terms, let&apos;s apply them to the fishing example from earlier.</p>
 		<example xml:id="examp_simulation_identify-parts">
 			<title>Identifying Parts of a Random Process</title>
 			<statement>
@@ -338,7 +338,7 @@
 					<ul>
 						<li><p>Each species of fish has the same chance of being caught--that is, no one fish is more likely to take a hook than another.</p></li>
 						<li><p>The number of fish does not change from those that we are given--no fish have died, been added, etc.</p></li>
-						<li><p>The fisherman is fishing in a spot that is visited equally by all three types of fish--he hasn't found a place where trout will not go, for example.</p></li>
+						<li><p>The fisherman is fishing in a spot that is visited equally by all three types of fish--he hasn&apos;t found a place where trout will not go, for example.</p></li>
 						<li><p>And others...</p></li>
 					</ul>
 				</p>
@@ -360,7 +360,7 @@
 				</p>
 			</statement>
 		</algorithm>
-		<p>We have already seen how to identify the components, outcomes, and trials. Let's finish our fishing example by actually conducting the simulation.</p>
+		<p>We have already seen how to identify the components, outcomes, and trials. Let&apos;s finish our fishing example by actually conducting the simulation.</p>
 		<example xml:id="examp_simulation_conducting">
 			<title>Conducting a Simulation</title>
 			<statement>
@@ -453,7 +453,7 @@
 						</li>
 						<li><p>The response variable had values 4, 5, 14, 7, 4, 14, 3, 3, 6, 4 giving a mean value of:
 							<me>\overline{x} = \frac{4+5+14+7+4+14+3+3+6+4}{10} = 6.4 \text{ fish}.</me>
-							It appears that the number of fish we would need to catch before having one of each sort is around 6. Note, however, that the 14's may be outliers.</p></li>
+							It appears that the number of fish we would need to catch before having one of each sort is around 6. Note, however, that the 14&apos;s may be outliers.</p></li>
 				  </ol>
 				</p>
 			</solution>
@@ -519,7 +519,7 @@
   		</statement>
   		<solution>
   			<p>We saw in <xref ref="examp_simulation_conducting"/> that the mean was <m>\overline{x} = 6.4</m> fish.  Using a calculator or spreadsheet program, we find that the standard deviation in this sample is  <m>s = 4.2</m> fish.</p>
-  			<p>The standard deviation is almost as large as the mean, so there is a lot of variation in the number of fish needed to complete a trial. The 14's are not outliers, but they do have a z-score of <m>z = \frac{14-6.4}{4.2} \approx 1.81</m> which is relatively large.</p>
+  			<p>The standard deviation is almost as large as the mean, so there is a lot of variation in the number of fish needed to complete a trial. The 14&apos;s are not outliers, but they do have a z-score of <m>z = \frac{14-6.4}{4.2} \approx 1.81</m> which is relatively large.</p>
   		</solution>
   	</example>
   	<p>If we decide that our standard deviation of 4.2 is too large, and we want a more <q>precise</q> mean, meaning we want to see better results from the simulation, what can we do?  There are several ways to improve a simulation.
@@ -533,10 +533,11 @@
   	<p>Be very cautious when conducting and reporting on simulations.  The following guidelines should be followed.</p>
   	<principle xml:id="def_simulation-cautions">
   		<title>Cautions Regarding Simulations</title>
+  		<idx><h>simulation</h><h>cautions</h></idx>
   		<statement>
   			<p>
 	  			<ul>
-		  			<li><title>Don't Overstate Your Case</title><p>A simulation is in some sense always wrong. We didn't actually fish in a lake stocked as the example stated. Add to that the fact that a random process will always turn out differently each time we do it, and you need to be cautious about claiming that <q>we must catch 6.4 fish</q> in order to complete the process.</p></li>
+		  			<li><title>Don&apos;t Overstate Your Case</title><p>A simulation is in some sense always wrong. We didn&apos;t actually fish in a lake stocked as the example stated. Add to that the fact that a random process will always turn out differently each time we do it, and you need to be cautious about claiming that <q>we must catch 6.4 fish</q> in order to complete the process.</p></li>
 		  			<li><title>Model Outcomes Correctly</title><p>We must keep outcomes in the correct proportion to our random digits. Drop digits as necessary to ensure that these proportions are correct. If you have more than 10 outcomes to model, you can use two digits at a time.</p></li>
 		  			<li><title>Run Enough Trials</title><p>The purpose of a simulation is to make a long and possibly expensive process short and cheap. So use a large number of trials!</p></li>
 		  		</ul>
@@ -572,7 +573,7 @@
   			<p>Seventy-four employees at a firm with limited free parking participate in a <q>parking lottery</q> to receive one of 23 free parking spaces. Seventeen of those whose names were in the lottery were upper management. When all 17 upper management employees were <q>randomly</q> selected to receive free parking, the other employees complained that the lottery had been rigged. You decide to use a random number table to simulate the situation. You assign the management the even digits (0,2,4,6,8) and the other employees the odd digits (1,3,5,7,9). You then simulate 100 trials using a random number table and find that 8.2 of the 17 upper management employees were selected. You therefore conclude that all 17 being selected is not very likely if the lottery is indeed fair.</p>
   			<p>Question: What, if any, mistake did you make?</p>
   		</statement>
-  		<answer><p>Didn't Model Outcomes Correctly</p></answer>
+  		<answer><p>Didn&apos;t Model Outcomes Correctly</p></answer>
   	</exercise>
   </subsection>
 

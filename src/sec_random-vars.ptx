@@ -189,7 +189,8 @@
   	<p>Again, refering back to <xref ref="chap_descriptive"/>, we looked at the distribution of a set of data values by creating <xref ref="def_frequency-table" text="custom">frequency tables</xref> for qualitative variables, and <xref ref="def_frequency-distribution" text="custom">frequency distributions</xref> for quantitative variables. Once we have defined a random variable for a random process, we can also create a <term>probability distribution</term> for that variable. The difference is that instead of listing a frequency for each value of the variable, we list the probability of that value. Formally, we state this as follows.</p>
   	<definition xml:id="def_probability-distribution">
   		<idx>probability distribution</idx>
-  		<idx><h>probability</h><h>probability distribution</h></idx>
+  		<idx><h>probability</h><h>distribution</h></idx>
+  		<idx><h>probability</h><h>distribution</h><seealso>probability distribution</seealso></idx>
   		<statement>
   			<p>The <term>probability distribution</term> for a discrete random variable is a formula, table, or graph that assigns to each possible value of <m>X</m> the probability that that value will occur.</p>
   		</statement>
@@ -467,7 +468,7 @@
   	<definition xml:id="def_probability-histogram">
   		<idx>probability histogram</idx>
   		<idx><h>graphs</h><h>histogram</h><h>probability histogram</h></idx>
-  		<idx><h>probability</h><h>probability distribution</h><h>histogram</h></idx>
+  		<idx><h>probability distribution</h><h>histogram</h></idx>
   		<statement>
   			<p>A <term>probability histogram</term> is a histogram in which each value of the random variable is represented by a bar having a height equal to the probability of that value.</p>
   		</statement>
@@ -674,7 +675,8 @@
 		Do you see how the numbers involved in this grouped form can be read right off of the probability distribution?</p>
 		<definition xml:id="def_expected-value">
 			<idx>expected value</idx>
-			<idx><h>probability</h><h>distribution</h><h>expected value</h></idx>
+			<idx><h>probability</h><h>random variable</h><h>expected value</h></idx>
+			<idx><h>probability distribution</h><h>expected value</h></idx>
 			<statement>
 				<p>The <term>expected value</term> of a discrete random variable is given by:
 				  <me>E(X) = \sum_{x} x\times P(X=x)</me>,
@@ -849,8 +851,9 @@
 		<title>Standard Deviation</title>
 		<p>As was the case with the mean of an ordinary variable, the expected value of a random variable gives us only part of the picture. In addition to knowing what the typical value of the variable will be, we often want to know how spread out the values of the variable are. That is, we want to know the standard deviation of the random variable. To get to the standard deviation, we must first compute the variance.</p>
 		<definition xml:id="def_random-var-variance">
-			<idx><h>variance of a random variable</h></idx>
-			<idx><h>probability</h><h>distribution</h><h>variance</h></idx>
+			<idx><h>variance (random variable)</h></idx>
+			<idx><h>probability</h><h>random variable</h><h>variance</h></idx>
+			<idx><h>probability distribution</h><h>variance</h></idx>
 			<statement>
 				<p>The <term>variance</term> of a discrete random variable <m>X</m> is:
 				  <me>\sigma^2 = E[(X-\mu)^2] = \sum_x (x - \mu)^2 \times P(X=x)</me>,
@@ -860,8 +863,9 @@
 		</definition>
 		<p>Note that in this formula we are adding together the squares of the differences between each value of <m>X</m> and the mean of <m>X</m>. This definition is similar then to the definition of the variance of a sample or population as seen in <xref ref="sec_center-spread_mean-stdev"/>. One big difference is that instead of dividing by <m>n</m> or <m>n-1</m>, we multiply each term by the probability that <m>X</m> will have that value. So in a sense, this is the weighted variance of <m>X</m> where each value is weighted by its probability. From the variance, it is relatively easy to compute the standard deviation.</p>
 		<definition xml:id="def_random-var-stdev">
-			<idx><h>standard deviation of a random variable</h></idx>
-			<idx><h>probability</h><h>distribution</h><h>standard deviation</h></idx>
+			<idx><h>standard deviation (random variable)</h></idx>
+			<idx><h>probability</h><h>random variable</h><h>standard deviation</h></idx>
+			<idx><h>probability distribution</h><h>standard deviation</h></idx>
 			<statement>
 				<p>The <term>standard deviation</term> of a discrete random variable <m>X</m> is <m>\sigma = \sqrt{\sigma^2}</m>.</p>
 			</statement>

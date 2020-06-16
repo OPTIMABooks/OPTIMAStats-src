@@ -47,6 +47,7 @@
 		<p>The possible null and alternative hypotheses for comparing two population proportions are listed below.</p>
 		<principle xml:id="thm_hypotheses-diff-proportions">
 			<title>Hypotheses for a Difference Between Population Proportions</title>
+			<idx><h>hypothesis test</h><h>difference of proportions</h><h>hypotheses</h></idx>
 			<statement>
 				<p>To test a claim comparing two population proportions, we use one of the following sets of hypotheses.
 					<ul cols="3">
@@ -78,6 +79,7 @@
 		To get this added flexibility, we state our null and alternative hypothesis in terms of some difference <m>d_0</m>, which would have been 5 in this example. If we are testing a claim that two means are equal to each other, we set <m>d_0 = 0</m>. In most of our tests, we will use <m>d_0 = 0</m>.</p>
 		<principle xml:id="thm_hypotheses-diff-means">
 			<title>Hypotheses for a Difference Between Population Means</title>
+			<idx><h>hypothesis test</h><h>difference of means</h><h>hypotheses</h></idx>
 			<statement>
 				<p>To test a claim comparing two population means, we use one of the following sets of hypotheses, where <m>d_0</m> is the claimed difference.
 				  <ul cols="3">
@@ -161,6 +163,9 @@
 		<p>The test statistic for a difference between means measures how unusual the difference between our two sample means would be if the assumed difference from the null hypothesis is true. This measure of <q>unusualness</q> is again a z-score from the normal distribution. To find that z-score, we look at the difference between our observed difference and the assumed difference, and then divide that by the standard deviation for the difference between sample means. That mouth-full is represented symbolically below.</p>
 		<theorem xml:id="thm_test-statistic-difference-means">
 			<title>Test Statistic for a Difference Between Sample Means</title>
+			<idx><h>hypothesis test</h><h>difference of means</h><h>test statistic</h></idx>
+			<idx><h>difference of means</h><h>hypothesis test</h></idx>
+			<idx><h>difference of means</h><h>hypothesis test</h><seealso>hypothesis test</seealso></idx>
 			<statement>
 				<p>The test statistic for a difference between sample means <m>(\overline{x}_1 - \overline{x}_2)</m> used to test the assumption of the null hypothesis that <m>(\mu_1 - \mu_2) = d_0</m> is:
 				  <me>z_{\text{test}} = \frac{ (\overline{x}_1 - \overline{x}_2) - d_0}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}</me>.</p>
@@ -258,6 +263,9 @@
 		<p>When computing the test statistic for a difference between proportions, we again want to measure how unusual the observed difference is. However, because our null hypotheses will always use the assumption that the two proportions are equal, the test statistic formula is slightly simpler.</p>
 		<theorem xml:id="thm_test-statistic-difference-proportions">
 			<title>Test Statistic for a Difference Between Sample Proportions</title>
+			<idx><h>hypothesis test</h><h>difference of proportions</h><h>test statistic</h></idx>
+			<idx><h>difference of proportions</h><h>hypothesis test</h></idx>
+			<idx><h>difference of proportions</h><h>hypothesis test</h><seealso>hypothesis test</seealso></idx>
 			<statement>
 				<p>The test statistic for a difference between sample proportions <m>(p_1 - p_2)</m> used to test the assumption of the null hypothesis that <m>p_1 = p_2</m> is:
 				  <me>z_{\text{test}} = \frac{(\hat p_1 - \hat p_2)}{\sqrt{\frac{pq}{n_1} + \frac{pq}{n_2}}}</me>
@@ -267,6 +275,7 @@
 		<p>The null hypothesis asserts that <m>p_1 = p_2</m>, but doesn&apos;t tell us what that proportion of successes is. We must approximate <m>p</m> using the two samples that were drawn from these populations. While it is unlikely that these two sample proportions will equal <m>p</m> exactlyu, or even each other, by pooling them into a single proportion <m>\hat p_{\text{pooled}}</m>, we can get an estimate for the populations&apos; proportion <m>p</m>.</p>
 		<definition xml:id="def_pooled-proportion">
 			<idx>pooled proportion</idx>
+			<idx><h>hypothesis test</h><h>difference of proportions</h><h>pooled proportion</h></idx>
 			<statement>
 				<p>The <term>pooled estimate for a proportion</term> based on the sample proportions <m>\hat p_1</m> and <m>\hat p_2</m> is:
 				  <me>\hat p_{\text{pooled}} = \frac{n_1 \hat p_1 + n_2 \hat p_2}{n_1 + n_2}</me>.</p>
@@ -495,7 +504,7 @@
 					which is smaller than all of our standard significance levels of 0.10, 0.05, and 0.01. We therefore reject the null hypothesis at each of these significance levels. There is <xref ref="table_significance-levels" text="custom">highly significant</xref> evidence that dogs live at least 5 years longer than cats.</p>
 			</solution>
 		</example>
-		<p>You may have noticed that we did not give a significance level at which to conduct our test in this last example. When a p-value test is being conducted, we sometimes don't state a significance level as part of the problem statement.  Instead, once we have the p-value for the test, we compare it with all three of the <xref ref="table_significance-levels" text="title"/> to see at which levels, if any, we can reject the null hypothesis.</p>
+		<p>You may have noticed that we did not give a significance level at which to conduct our test in this last example. When a p-value test is being conducted, we sometimes don&apos;t state a significance level as part of the problem statement.  Instead, once we have the p-value for the test, we compare it with all three of the <xref ref="table_significance-levels" text="title"/> to see at which levels, if any, we can reject the null hypothesis.</p>
 		<example xml:id="examp_ht-differences_p-value-proportions">
 			<title>Conducting a p-Value Hypothesis Test for a Difference Between Proportions</title>
 			<statement>

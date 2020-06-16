@@ -41,6 +41,7 @@
 		<p>We start once more by identifying the null and alternative hypothesis. When testing a claim about a single population proportion, the three basic types of null/alternative hypothesis combinations are as follows.</p>
 		<principle xml:id="thm_hypotheses-proportions">
 			<title>Hypotheses for a Single Population Proportion</title>
+			<idx><h>hypothesis test</h><h>single proportion</h><h>hypotheses</h></idx>
 			<statement>
 				<p>To test a claim about a single population mean, we use one of the following sets of hypotheses, where <m>p_0</m> is a given value.
 				  <ul cols="3">
@@ -138,6 +139,9 @@
 		<p>When testing a claim about a population proportion, the test statistic measures how unusual the observed sample is if the null hypothesis is true. The test statistic is really just a z-score for the sample proportion based on the assumption <m>p</m> is as indicated in the null hypothesis. Below we remind you of this formula in the context of a hypothesis test.</p>
 		<theorem xml:id="thm_test-statistic-proportion">
 			<title>Test Statistic for a Single Sample Proportion</title>
+			<idx><h>hypothesis test</h><h>single proportion</h><h>test statistic</h></idx>
+			<idx><h>single proportion</h><h>hypothesis test</h></idx>
+			<idx><h>single proportion</h><h>hypothesis test</h><seealso>hypothesis test</seealso></idx>
 			<statement>
 				<p>The test statistic for a sample proportion <m>\hat p</m> used to test the assumption of the null hypothesis that <m>p = p_0</m> is:
 				  <me>z_{\text{test}} = \frac{\hat p - p_0}{\sqrt{\frac{p_0q_0}{n}}}</me>.</p>

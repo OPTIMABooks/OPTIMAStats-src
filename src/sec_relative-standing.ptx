@@ -31,7 +31,7 @@
 					<li><p>compute the z-score for a value within its data set</p></li>
 					<li><p>use z-scores to compare the relative standing of a value within two or more data sets</p></li>
 					<li><p>apply the empirical rule to mound-shaped distributions</p></li>
-					<li><p>use Cheybshev's inequality</p></li>
+					<li><p>use Cheybshev&apos;s inequality</p></li>
 				</ul></p>
 			</li>
 		</ul>
@@ -43,7 +43,7 @@
 		<example xml:id="examp_relative-standing_quartile">
 			<title>Using Quartiles for Relative Standing</title>
 			<statement>
-				<p>Obed's plumbing business charges $95 an hour for residential service.  A study of residential service rates among all plumbers in the same region finds the following quartiles.  How do Obed's rates compare to those of the other plubers in the region?
+				<p>Obed&apos;s plumbing business charges $95 an hour for residential service.  A study of residential service rates among all plumbers in the same region finds the following quartiles.  How do Obed&apos;s rates compare to those of the other plubers in the region?
 					<ul cols="3">
 						<li><p><m>Q_0 = \$65</m></p></li>
 						<li><p><m>Q_1 = \$74</m></p></li>
@@ -54,7 +54,7 @@
 				</p>
 			</statement>
 			<solution>
-				<p>Obed's rate of $95 an hour is between <m>Q_2</m>, the second quartile or median, and <m>Q_3</m>, the third quartile.  So he charges more than at least 50% of plumbers, but less than at most 75% of plumbers in his region.</p>
+				<p>Obed&apos;s rate of $95 an hour is between <m>Q_2</m>, the second quartile or median, and <m>Q_3</m>, the third quartile.  So he charges more than at least 50% of plumbers, but less than at most 75% of plumbers in his region.</p>
 			</solution>
 		</example>
 		<p>Another related measure of relative standing closely related to quartiles is a <term>percentile</term>.</p>
@@ -78,7 +78,7 @@
 			<solution>
 				<p>The following statements interpret the percentiles used above.
 					<ol label="a">
-						<li><p>Johnny's height was in the 20th percentile, meaning that he was as tall or taller than 20% of newborns and as short or shorter than 80%. So relative to other newborns, he was fairly short.</p></li>
+						<li><p>Johnny&apos;s height was in the 20th percentile, meaning that he was as tall or taller than 20% of newborns and as short or shorter than 80%. So relative to other newborns, he was fairly short.</p></li>
 						<li><p>Isabella scored in the 95th percentile, meaning that her score was as good or better than 95% of children who took this achievement test. Stated from the opposite perspective, only 5% of children scored as well or better than Isabella.</p></li>
 					</ol>
 				</p>
@@ -88,9 +88,10 @@
 
 	<subsection xml:id="sec_relative-standing_box-plots">
 		<title>Five Number Summaries and Box-Plots</title>
-		<p>The median and quartiles that we saw in <xref ref="sec_center-spread_median-quartile"/> can be used to create a graphic that represents the distribution (shape) of the data set. This graphic is referred to as a <term>box-plot</term>. Before we see how to build a box plot, however, let's look at the numbers that go into making the plot.</p>
+		<p>The median and quartiles that we saw in <xref ref="sec_center-spread_median-quartile"/> can be used to create a graphic that represents the distribution (shape) of the data set. This graphic is referred to as a <term>box-plot</term>. Before we see how to build a box plot, however, let&apos;s look at the numbers that go into making the plot.</p>
 		<definition xml:id="def_five-number-summary">
 			<idx>five-number summary</idx>
+			<idx><h>measures of relative standing</h><h>five-number summary</h></idx>
 			<statement>
 				<p>The <term>five-number summary</term> for a set of data is the minimum, first quartile, median, third quartile, and maximum for that set of data, once any outliers have been removed.</p>
 			</statement>
@@ -111,7 +112,7 @@
 					</ol></p>
 			</statement>
 		</definition>
-		<p>Unlike a histogram, the box-plot focuses on showing the range of data. This range, excluding outliers, is divided up into quarters allowing one to see where the data is most <q>tightly packed</q> together. Let's see how this works in an example.</p>
+		<p>Unlike a histogram, the box-plot focuses on showing the range of data. This range, excluding outliers, is divided up into quarters allowing one to see where the data is most <q>tightly packed</q> together. Let&apos;s see how this works in an example.</p>
 		<example xml:id="examp_relative-standing_box-plot">
 			<title>Constructing a Box-Plot</title>
 			<statement>
@@ -258,7 +259,7 @@
 				</latex-image>
 			</image>
 		</figure>
-		<p>Now let's apply the empirical rule to an example.</p>
+		<p>Now let&apos;s apply the empirical rule to an example.</p>
 		<example xml:id="examp_relative-standing_empirical">
 			<title>Applying the Empirical Rule</title>
 			<statement>
@@ -317,17 +318,17 @@
 	</subsection>
 		
   <subsection xml:id="sec_relative-standing_chebyshev">
-  	<title>Chebyshev's Inequality</title>
+  	<title>Chebyshev&apos;s Inequality</title>
 		<p>While the empirical rule gives us a good way to estimate how much of a data set will lie within one, two, or three standard deviations of the mean, it does have limitations. First, it only works if we know the distribution is mound-shaped. If the distribution is skewed, bimodal, or otherwise not mound shaped the empirical rule will not give us accurate results. The other drawback is that this rule only tells us how much of the data is within the three ranges given: one, two, or three standard deviations on each side of the mean. The next rule we will examine is much more general.</p>
 		<theorem xml:id="thm_chebyshev">
-			<idx>Chebyshev's inequality</idx>
+			<idx>Chebyshev&apos;s inequality</idx>
 			<statement>
-				<p><term>Chebyshev's Inequality</term> states that the proportion of values in any distribution that lie within <m>k</m> standard deviations of the mean is at least <m>1-\frac{1}{k^2}</m>. Symbolically, if <m>P</m> is the proportion of values in the range from <m>\mu - k\sigma</m> to <m>\mu+k\sigma</m>, then <me>P \geq 1-\frac{1}{k^2}.</me></p>
+				<p><term>Chebyshev&apos;s Inequality</term> states that the proportion of values in any distribution that lie within <m>k</m> standard deviations of the mean is at least <m>1-\frac{1}{k^2}</m>. Symbolically, if <m>P</m> is the proportion of values in the range from <m>\mu - k\sigma</m> to <m>\mu+k\sigma</m>, then <me>P \geq 1-\frac{1}{k^2}.</me></p>
 			</statement>
 		</theorem>
-		<p>Now let's revisit <xref ref="examp_relative-standing_empirical"/> and see how this new rule can be applied.</p>
+		<p>Now let&apos;s revisit <xref ref="examp_relative-standing_empirical"/> and see how this new rule can be applied.</p>
 		<example xml:id="examp_relative-standing_chebyshev_find-P">
-			<title>Using Chebyshev's Inequality to Find Percentages</title>
+			<title>Using Chebyshev&apos;s Inequality to Find Percentages</title>
 			<statement>
 				<p>Suppose that the mean score on a standardized exam is <m>\mu = 102.5</m> and standard deviation is <m>\sigma = 9.8</m>. Without assuming that the distribution of scores is mound shaped, answer the following questions.
 					<ol label="a">
@@ -337,15 +338,15 @@
 				</p>
 			</statement>
 			<solution>
-				<p>We can no longer use the empirical rule, since we do not know if the distribution is mound shaped. Instead, we use Chebyshev's Inequality.
+				<p>We can no longer use the empirical rule, since we do not know if the distribution is mound shaped. Instead, we use Chebyshev&apos;s Inequality.
 					<ol label="a">
-					<li><p>Our first step is to figure out how many standard deviations 82.9 and 122.1 are on either side of the mean.  This is the value of <m>k</m> in Chebyshev's inequality.  We compute that by finding the difference between the mean and the lower bound of our range and dividing by <m>\sigma</m>.
+					<li><p>Our first step is to figure out how many standard deviations 82.9 and 122.1 are on either side of the mean.  This is the value of <m>k</m> in Chebyshev&apos;s inequality.  We compute that by finding the difference between the mean and the lower bound of our range and dividing by <m>\sigma</m>.
 					  <me>k = \frac{\mu - \text{lower bound}}{\sigma} = \frac{102.5-82.9}{9.8} = 2</me>
 					  We could have found the same value using the upper bound.
 					  <me>k = \frac{\text{upper bound} - \mu}{\sigma} = \frac{122.1-102.5}{9.8} = 2</me>
 					  Therefore, the percent of values in this range is 
 					  <me>P \geq 1-\frac{1}{2^2} = 1 - \frac{1}{4} = \frac{3}{4} = 0.75 \text{ or } 75\%</me></p>
-					  <p>Note that this is less than the 95% the empirical rule gave us. That is because we can not be as certain how the data is distributed if we don't know the shape of the distribution.</p></li>
+					  <p>Note that this is less than the 95% the empirical rule gave us. That is because we can not be as certain how the data is distributed if we don&apos;t know the shape of the distribution.</p></li>
 					<li><p>For the second part, we again start by finding the value of <m>k</m>.
 					  <me>k = \frac{102.5 - 87.8}{9.8} = 1.5</me>
 					  So our range is 1.5 standard deviations on either side of the mean. Plugging this in we get
@@ -356,18 +357,18 @@
 				</ol></p>
 			</solution>
 		</example>
-		<p>Chebyshev's inequality relates several things together:
+		<p>Chebyshev&apos;s inequality relates several things together:
 			<ul>
 				<li><p>the mean of the data set,</p></li>
 				<li><p>The standard deviation of the data set,</p></li>
 				<li><p>a range extending a certain number of standard deviations above and below the mean, and</p></li>
 				<li><p>a minimum percent of the data.</p></li>
 			</ul>
-			If we have any three of these values, we can use Chebyshev's inequality to relate them all together.  Consider the following examples.</p>
+			If we have any three of these values, we can use Chebyshev&apos;s inequality to relate them all together.  Consider the following examples.</p>
 		<example xml:id="examp_relative-standing_chebyshev_find-k">
-			<title>Using Chebyshev's Inequality to Find the Range</title>
+			<title>Using Chebyshev&apos;s Inequality to Find the Range</title>
 			<statement>
-				<p>Montly sales for a particular retail business follow an unknown distribution with a mean of <m>\mu = \$92,000</m> and a standard deviation of <m>\sigma = \$12,500</m>.  Use Chebyshev's inequality to determine between what minimum and maximum amount the montly sales figure will lie at least 75% of the time.</p>
+				<p>Montly sales for a particular retail business follow an unknown distribution with a mean of <m>\mu = \$92,000</m> and a standard deviation of <m>\sigma = \$12,500</m>.  Use Chebyshev&apos;s inequality to determine between what minimum and maximum amount the montly sales figure will lie at least 75% of the time.</p>
 			</statement>
 			<solution>
 				<p>In this problem we are given the value of <m>P</m>, the proportion that lies within <m>k</m> standard deviations of the mean.  So we will use it to find <m>k</m>.
@@ -382,9 +383,9 @@
 			</solution>
 		</example>
 		<example xml:id="examp_relative-standing_chebyshev_find-sigma">
-			<title>Using Chebyshev's Inequality to Find the Standard Deviation</title>
+			<title>Using Chebyshev&apos;s Inequality to Find the Standard Deviation</title>
 			<statement>
-				<p>The Matabolism rate of a drug is the rate at which the drug is eliminated from a patient's system. It is often measured in half-life, or the time it takes for 50% of the drug to be eliminated in the system.  Suppose that for a certain drug, the average half-life in a general patient is known to be <m>\mu = 5.5</m> hours.  A recent study found that in at least 99% of patients, the half-life was somewhere between 3.8 and 7.2 hours.  Use Chebyshev's inequality to determine the standard deviation of the drug half-life.</p>
+				<p>The Matabolism rate of a drug is the rate at which the drug is eliminated from a patient&apos;s system. It is often measured in half-life, or the time it takes for 50% of the drug to be eliminated in the system.  Suppose that for a certain drug, the average half-life in a general patient is known to be <m>\mu = 5.5</m> hours.  A recent study found that in at least 99% of patients, the half-life was somewhere between 3.8 and 7.2 hours.  Use Chebyshev&apos;s inequality to determine the standard deviation of the drug half-life.</p>
 			</statement>
 			<solution>
 				<p>As in <xref ref="examp_relative-standing_chebyshev_find-P"/>, we are given a range of values.  In that example, we used it to find <m>k</m>k, but this required that we know the standard deviation <m>\sigma</m>.  But we are also given a percent of the population in the range, as in <xref ref="examp_relative-standing_chebyshev_find-k"/>.  So we can start by finding <m>k</m> with this information.
@@ -405,11 +406,11 @@
 		</example>
 
 		<figure xml:id="video_relative-standing_chebyshev-1">
-			<caption>Using Chebyshev's Inequality I</caption>
+			<caption>Using Chebyshev&apos;s Inequality I</caption>
 			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-15.mp4"/>
 		</figure>
 		<figure xml:id="video_relative-standing_chebyshev-2">
-			<caption>Using Chebyshev's Inequality II</caption>
+			<caption>Using Chebyshev&apos;s Inequality II</caption>
 			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-16.mp4"/>
 		</figure>
 
@@ -422,7 +423,7 @@
 		</exercise>
 		<exercise xml:id="ckpt_relative-standing_chebyshev-2">
 			<statement>
-				<p>Chebyshev's inequality can be used with which of the following distribution shapes?
+				<p>Chebyshev&apos;s inequality can be used with which of the following distribution shapes?
 					<ul cols="2">
 						<li><p>Mound-Shaped</p></li>
 						<li><p>Skewed Left</p></li>
@@ -436,7 +437,7 @@
 		<exercise xml:id="ckpt_relative-standing_chebyshev-3">
 			<statement>
 				<p>Suppose that the weight of a certain mellon has an unknown distribution, but the mean is known to be 4.2 pounds and the standard deviation is 1.28 pounds.</p>
-				<p>Question: According to Chebyshev's inequality, 75% of mellons will weigh between 1.64 pounds and what maximum weight?</p>
+				<p>Question: According to Chebyshev&apos;s inequality, 75% of mellons will weigh between 1.64 pounds and what maximum weight?</p>
 			</statement>
 			<answer><p>6.76 pounds</p></answer>
 		</exercise>

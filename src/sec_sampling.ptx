@@ -9,6 +9,7 @@
     <p>This formula should look familiar from <xref ref="sec_center-spread_mean-stdev"/>. We restate it here, however, to consider a question. If we select a sample of <m>n</m> values and look at their average over and over again, will we see more or less variation between these averages than we would if we look at the individual values in the population? We shall see that there is in fact less variation between the means of different samples than between individual values. This is because it is a lot harder to get a group of <m>n</m> individuals who all vary in the same way from the population average than it is to get a single individual who varies from the population average.</p>
     <p>Besides taking the average of some variable in a sample, we may also wish to examine the proportion of individuals in a sample who have some characteristic. This is similar to the binomial processes we studied in <xref ref="sec_binomial"/>. The only real difference is that instead of looking at <m>x</m>, the number of successes, we look at <m>\frac{x}{n}</m>, the proportion of successes.</p>
     <definition xml:id="def_sample-proportion">
+    	<idx><h>sampling distribution</h><h>proportion</h><h>sample proportion</h></idx>
     	<statement>
     		<p>If a sample of size <m>n</m> is drawn from a population and <m>x</m> of those <m>n</m> individuals have some characteristic, then the sample proportion with that characteristic is:
     		  <me>\hat p = \frac{x}{n}</me>.</p>
@@ -236,6 +237,11 @@
 		<p>Making inferences about populations based on samples relies heavily on an understanding of how these samples behave. We must know what we can expect to see in samples that are drawn from a population with a uniform distribution, a normal distribution, or some other distribution. In the  previous subsection, we saw an example in which a sample drawn from a uniform distribution had sample means that had a more mound-shaped distribution. This is a particular instance of the next theorem.</p>
 		<theorem xml:id="thm_central-limit">
 			<title>Central Limit Theorem</title>
+			<idx>central limit theorem</idx>
+			<idx><h>normal distribution</h><h>central limit theorem</h></idx>
+			<idx><h>normal distribution</h><h>central limit theorem</h><seealso>central limit theorem</seealso></idx>
+			<idx><h>sampling distribution</h><h>central limit theorem</h></idx>
+			<idx><h>sampling distribution</h><h>central limit theorem</h><seealso>central limit theorem</seealso></idx>
 			<statement>
 				<p>The distribution of the sample mean of a random sample of <m>n</m> values can be approximated by the normal distribution with mean and standard deviation shown below, where <m>\mu</m> and <m>\sigma</m> are the mean and standard deviation of the population.</p>
 				<sidebyside width="25%" margins="15% 30%" valign="middle">
@@ -248,6 +254,7 @@
 		<p>According to the <term>central limit theorem</term>, if we take samples and look at their means, they will have approximately a normal distribution, and the bigger the sample we take, the better the sample means will match a normal distribution. How big does <m>n</m> need to be? That depends on the way the individual population values are distributed.</p>
 		<principle xml:id="thm_central-limit-criteria">
 			<title>Criteria for Applying the Central Limit Theorem</title>
+			<idx><h>central limit theorem</h><h>criteria for use</h></idx>
 			<statement>
 				<p>We may use the normal distribution given by the central limit theorem to approximate probabilities for means of samples of size <m>n</m> when:
 				  <ul>
@@ -334,6 +341,7 @@
 		<p>In those cases where the central limit theorem applies, it gives us a powerful tool for dealing with sample means. It not only tells us that these sample means will have a normal distribution, it also provides the mean and standard deviation of that normal distribution.</p>
 		<theorem xml:id="thm_mean-sampling-dist">
 			<title>Sampling Distribution for a Mean</title>
+			<idx><h>sampling distribution</h><h>mean</h></idx>
 			<statement>
 				<p>The sampling distribution for a mean of a sample of size <m>n</m>, where the central limit theorem applies, is a normal distribution with mean and standard deviation</p>
 				<sidebyside width="25%" margins="20% 30%" valign="middle">
@@ -490,6 +498,7 @@
   	<p>How does this relate to proportions? A proportion in a sample is simply a ratio of the <m>x</m> successes to the <m>n</m> trials in a binomial process. Thus, the distribution of sample proportions will have a mean which is the mean of a binomial distribution divided by <m>n</m>. It will have a standard deviation which is the standard deviation of the binomial distribution divided by <m>n</m>. These formulas are summarized below.</p>
   	<theorem xml:id="thm_proportion-sampling-dist">
   		<title>Sampling Distribution for a Proportion</title>
+  		<idx><h>sampling distribution</h><h>proportion</h></idx>
   		<statement>
   			<p>If <m>p</m> is the proportion of individuals in a population with a given characteristic and a sample of size <m>n</m> is drawn from that population, then the proportion of individuals in the sample with that characteristic, <m>\hat p</m>, will have a normal distribution with the following mean and standard deviation.</p>
   			<sidebyside width="30%" margins="10% 20%" valign="middle">

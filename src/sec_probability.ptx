@@ -14,7 +14,7 @@
   	  <p>Probabilities can be computed in several different ways. The simulations that we saw in <xref ref="sec_simulation"/> lead to the following type of probability computation.</p>
   	<definition xml:id="def_experimental-probability">
 	  	<idx>experimental probability</idx>
-	  	<idx><h>probability</h><h>experimental</h></idx>
+	  	<idx><h>probability</h><h>types</h><h>experimental</h></idx>
 	  	<statement>
   		  <p>The <term>experimental probability</term>, also called the <term>relative frequency probability</term>, of a certain event <m>A</m> happening in an experiment is found by simulating the experiment and taking the ratio of the number of trials resulting in <m>A</m> to the total number of trials. That is:
   		  <me>P(A) = \frac{\text{number of times }A\text{ occurred}}{\text{number of trials}}</me>.</p>
@@ -23,13 +23,13 @@
   	<p>On the other hand, if we use our counting rules to examine the experiment from a more theoretical point of view, we get the following type of probability.</p>
   	<definition xml:id="def_theoretical-probability">
   		<idx>theoretical probability</idx>
-  		<idx><h>probability</h><h>theoretical</h></idx>
+  		<idx><h>probability</h><h>types</h><h>theoretical</h></idx>
   		<statement>
   			<p>The <term>theoretical probability</term> of a certain event <m>A</m> happening in an experiment is found by counting the number of possibly outcomes of the experiment in which <m>A</m> happens and dividing by the total number of outcomes, assuming each outcome is equally likely. That is:
   			<me>P(A) = \frac{\text{number of ways }A\text{ can occur}}{\text{number of possible outcomes}}</me>.</p>
   		</statement>
   	</definition>
-  	<p><idx><h>probability</h><h>subjective</h></idx>Another type of probability, called <term>subjective probability</term>, is basically just an educated guess of how likely an event is to occur based on one&apos;s previous experience. In this section we will learn about the basic rules and terms of probability, how to illustrate probabilities using pictures called <term>Venn Diagrams</term>, how to compute probabilities of related events, and finally how to compute theoretical probabilities in experiments in which each outcome is equally likely.</p>
+  	<p><idx><h>probability</h><h>types</h><h>subjective</h></idx>Another type of probability, called <term>subjective probability</term>, is basically just an educated guess of how likely an event is to occur based on one&apos;s previous experience. In this section we will learn about the basic rules and terms of probability, how to illustrate probabilities using pictures called <term>Venn Diagrams</term>, how to compute probabilities of related events, and finally how to compute theoretical probabilities in experiments in which each outcome is equally likely.</p>
   </introduction>
 
   <objectives xml:id="sec_probability_obj">
@@ -99,7 +99,7 @@
 		<p>In <xref ref="examp_probabilty_basic-rules_coin-flip"/>, the event of interest was <m>A = \lbrace HT, TH \rbrace</m>. Notice that every outcome in that event is also an outcome in the sample space <m>S</m>. This is what it means to say that <m>A</m> is a <idx><h>sets</h><h>subset</h></idx><term>subset</term> of <m>S</m>. Also notice that because <m>A</m> is a subset of <m>S</m>, it must always be true that <m>A</m> contains at most the same number of elements as <m>S</m>. That is, <m>n(A) \leq n(S)</m>. This, together with our definition of <xref ref="def_theoretical-probability" text="custom">theoretical probability</xref>, leads to the following rules.</p>
 		<theorem xml:id="thm_basic-probability">
 			<title>Basic Probability Rules</title>
-			<idx><h>probability</h><h>rules</h><h>basic probability rules</h></idx>
+			<idx><h>probability</h><h>formula</h><h>basic rules</h></idx>
 			<statement>
 				<p>For any event <m>A</m> in a sample space <m>S</m>, the following rules must hold.
 				  <ul cols="2">
@@ -146,7 +146,7 @@
 		<theorem xml:id="thm_probability-rule_addition">
 			<title>Addition Rule</title>
 			<idx>addition rule (probability)</idx>
-			<idx><h>probability</h><h>rules</h><h>addition rule</h></idx>
+			<idx><h>probability</h><h>formula</h><h>addition rule</h></idx>
 			<statement>
 				<p>For <xref ref="def_mutually-exclusive" text="custom">mutually exclusive</xref> events <m>A</m> and <m>B</m>, 
 				<me>P(A\cup B) = P(A) + P(B)</me>.</p>
@@ -228,7 +228,7 @@
   			</p>
   		</solution>
   	</example>
-  	<p>Note that in the above example, the probabilities of the individual outcomes were <m>0.40</m>, <m>0.30</m>, <m>0.20</m>, and <m>0.10</m>. The sum of all of these probabilities is, not surprisingly, the probability of the sample space, 1. This is a specific application of the addition rule we saw on the previous page. Using this observation, let's work on another example.</p>
+  	<p>Note that in the above example, the probabilities of the individual outcomes were <m>0.40</m>, <m>0.30</m>, <m>0.20</m>, and <m>0.10</m>. The sum of all of these probabilities is, not surprisingly, the probability of the sample space, 1. This is a specific application of the addition rule we saw on the previous page. Using this observation, let&apos;s work on another example.</p>
   	<example xml:id="examp_probability_measure_missing-outcome">
   		<title>Finding a Missing Outcome Probability</title>
   		<statement>
@@ -242,7 +242,8 @@
   	</example>
 		<p>When each outcome in the sample space has been assigned a valid probability, between 0 and 1,and the sum of those probabilities is one, probabilities make up a valid probability measure.</p>
 		<definition xml:id="def_probability-measure">
-			<idx><h>probability</h><h>probability measure</h></idx>
+			<idx>measure (probability)</idx>
+			<idx><h>probability</h><h>measure</h></idx>
 			<statement>
 				<p>An assignment of probabilities to the outcomes in a sample space in such a way as to ensure that each outcome has a probability between 0 and 1, and the sum of these probabilities is 1 is called a valid <term>probability measure</term>.</p>
 			</statement>
@@ -318,8 +319,8 @@
   	<title>More Probability Rules</title>
   	<p>There are several other probability rules that can be helpful when working with events. The first is a generalization of the <xref ref="thm_probability-rule_addition" text="custom">addition rule</xref>. It follows from the <xref ref="thm_counting-rule_inclusion-exclusion" text="custom">inclusion/exclusion counting rule</xref> that we saw in the previous section.</p>
   	<theorem xml:id="thm_probability-rule_general-addition">
-  		<idx>addition rule (general)</idx>
-  		<idx><h>probability</h><h>rules</h><h>general addition rule</h></idx>
+  		<idx>general addition rule (probability)</idx>
+  		<idx><h>probability</h><h>formula</h><h>general addition rule</h></idx>
   		<statement>
   			<p>The <term>general addition rule</term> states that if events <m>A</m> and <m>B</m> are not-necessarily mutually exclusive events in a sample space, then:
   			<me>P(A\cup B) = P(A) + P(B) - P(A\cap B)</me>.</p>
@@ -353,6 +354,8 @@
   	</example>
   	<p>Another rule that is often useful deals with the <term>complement</term> of a set.  We will first define what a complement is and then explore the rule.</p>
   	<definition xml:id="def_complement">
+  		<idx>complement</idx>
+  		<idx><h>sets</h><h>complement</h></idx>
   		<statement>
   			<p>The <term>complement</term> of a set <m>A</m> in a sample space <m>S</m> is the set <m>\overline{A}</m> consisting of all elements of the sample space that are not in <m>A</m>.</p>
   		</statement>
@@ -371,7 +374,7 @@
   	<p>Did you notice that an event and its complement divide up the sample space?  That is, every element in the sample space is either in the event or in its complement, and never in both.  We can generalize the results from the above example into a rule for finding the probability of the complement of an event.</p>
   	<theorem xml:id="def_probability-rule_complement">
   		<idx>complement rule</idx>
-  		<idx><h>probability</h><h>rules</h><h>complement rule</h></idx>
+  		<idx><h>probability</h><h>formula</h><h>complement rule</h></idx>
   		<statement>
   			<p>The <term>complement rule</term> states that if <m>A</m> is an event in a sample space <m>S</m>, then the probability of the complement of <m>A</m> is:
   			  <me>P(\overline{A}) = 1 - P(A)</me>.</p>
@@ -662,7 +665,7 @@
 				</p>
 			</statement>
 			<solution>
-				<p>We start by counting the sample space, which will be the same for all three events. We are drawing three marbles from an urn containing 12 total marbles. We don't care about the order in which we draw the marbles, just the colors that are drawn. Therefore, <m>n(S) = C(12,3) = 220</m>.
+				<p>We start by counting the sample space, which will be the same for all three events. We are drawing three marbles from an urn containing 12 total marbles. We don&apos;t care about the order in which we draw the marbles, just the colors that are drawn. Therefore, <m>n(S) = C(12,3) = 220</m>.
 				  <ol label="a">
 				  	<li><p>Since there are only two green marbles, it is impossible for all three of the marbles we draw to be green. Therefore, <m>P(\text{all three are green}) = 0</m>.</p></li>
 				  	<li><p>There are four white marbles. The number of ways we can draw three of the four is <m>C(4,3) = 4</m>. Therefore, <m>P(\text{all three are white}) = \frac{4}{220} = \frac{1}{55}</m>.</p></li>

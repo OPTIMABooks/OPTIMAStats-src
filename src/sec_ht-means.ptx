@@ -41,6 +41,7 @@
 		<p>As we saw in <xref ref="sec_ht-intro"/>, the first step in any hypothesis test is to identify the null and alternative hypotheses. When testing a claim about a single population mean, there are three basic types of null/alternative hypothesis combinations.</p>
 		<principle xml:id="thm_hypotheses-means">
 		  <title>Hypotheses for a Single Population Mean</title>
+		  <idx><h>hypothesis test</h><h>single mean</h><h>hypotheses</h></idx>
 		  <statement>
 		  	<p>To test a claim about a single population mean, we use one of the following sets of hypotheses, where <m>\mu_0</m> is a given value.  	
 		  	  <ul cols="3">
@@ -141,6 +142,9 @@
 		<p>When testing a claim about a population mean, the test statistic measures how unusual the observed sample is if the null hypothesis is true. The test statistic is really just a z-score for the sample mean based on the assumption that the population mean is as indicated in the null hypothesis. This formula should be familiar already from lesson 3.5, but is repeated below in the context of a hypothesis test.</p>
 		<theorem xml:id="thm_test-statistic-mean">
 			<title>Test Statistic for a Single Sample Mean</title>
+			<idx><h>hypothesis test</h><h>single mean</h><h>test statistic</h></idx>
+			<idx><h>single mean</h><h>hypothesis test</h></idx>
+			<idx><h>single mean</h><h>hypothesis test</h><seealso>hypothesis test</seealso></idx>
 			<statement>
 				<p>The test statistic for a sample mean <m>\overline{x}</m> used to test the assumption of the null hypothesis that <m>\mu = \mu_0</m> is:
 				  <me>z_{\text{test}} = \frac{\overline{x} - \mu_0}{\sigma/\sqrt{n}}</me>. 

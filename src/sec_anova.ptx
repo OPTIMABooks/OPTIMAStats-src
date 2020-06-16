@@ -59,8 +59,9 @@
   	<me>(0.95)(0.95)(.95) = 0.8574</me>.
   	The more means we add to this mix (suppose there were, for example, four fertilizers) the worse our chances become. The above is an example of how conducting multiple tests increases the probability that we make an error. To remedy this, we will introduce a way to check if multiple means are equal using a single test. This process is called an Analysis of Variance test, or <term>ANOVA test</term> for short.</p>
   	<definition xml:id="def_anova">
-  		<idx>analysis of variance</idx>
-  		<idx><h>hypothesis test</h><h>anova test</h></idx>
+      <idx><h>ANOVA test</h></idx>
+  		<idx><h>ANOVA test</h><seealso>hypothesis test</seealso></idx>
+      <idx><h>hypothesis test</h><h>ANOVA</h></idx>
   		<statement>
   			<p>An <term>ANOVA Test</term>, short for <term>Analysis of Variance test</term>, is used to test hypotheses concerning three or more population means.</p>
   		</statement>
@@ -97,6 +98,7 @@
 		<p>Because the Analysis of Variance test is a single hypothesis test, it uses a single null and alternative hypothesis involving the means of our populations. In an ANOVA test, the various populations are often referred to as the treatment groups. This is because the test was originally designed to test for differences between groups in an experiment that received differing treatments. The null hypothesis for an ANOVA test is that the different treatments all have the same mean. The alternative, is that at least one of those means is different. This is summarized below.</p>
 		<principle xml:id="thm_hypotheses-anova">
 			<title>ANOVA Hypotheses</title>
+      <idx><h>hypothesis test</h><h>ANOVA</h><h>hypotheses</h></idx>
 			<statement>
 				<p>To conduct an ANOVA test for treatments <m>1, 2, \ldots, n</m> we use the following hypotheses.
 				  <md>
@@ -217,8 +219,7 @@
 
   	<p>Creating a graph like this any time we wish to conduct an ANOVA test would be involved and would require a lot of <q>guess-work</q> when analyzing it.  Instead, we use the mathematical computations mentioned earlier to create what is called an <term>ANOVA table</term>.  While we won&apos;t go into the details of how each entry in the table is computed, it is important to understand what the entries represent and how they are related to each other.</p>
   	<definition xml:id="def_anova-table">
-  		<idx>anova table</idx>
-  		<idx><h>hypotheses tests</h><h>anova</h><h>anova table</h></idx>
+  		<idx><h>hypothesis test</h><h>ANOVA</h><h>ANOVA table</h></idx>
   		<statement>
 				<p>A table for a one-way analysis of variance test of <m>k</m> different treatment groups containing a total of <m>n</m> values, called an <term>ANOVA Table</term>, has the following entries.</p>
 				<table xml:id="table_anova-table">
@@ -484,7 +485,7 @@
   	<p>The critical value in an ANOVA test is called <m>F_\text{test}</m> because it comes from the <term>F-distribution</term>. The F-distribution is a continuous probability distribution much like the <xref ref="def_normal-dist" text="custom">normal</xref> and <xref ref="def_student-t-distribution" text="custom">t-distributions</xref> with which we&apos;ve already worked. Like the t-distribution, the F-distribution is actually a family of distributions depending on a pair of degrees of freedom<mdash/>one for the numerator and one for the denominator. There are, however, several properties of the F-distribution which are different.</p>
   	<definition xml:id="def_f-distribution">
   		<idx>f-distribution</idx>
-  		<idx><h>probability</h><h>distributions</h><h>f-distribution</h></idx>
+  		<idx><h>probability</h><h>distribution families</h><h>f-distribution</h></idx>
   		<statement>
   			<p>The <term>f-distribution</term> is a family of probability distributions depending on two degrees of freedom<mdash/>one for the numerator and one for the denominator. The f-distribution has the following properties:
   			  <ul>

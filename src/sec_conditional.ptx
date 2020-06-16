@@ -8,7 +8,7 @@
   	<example xml:id="examp_conditional_monty-hall">
   		<title>The Monty Hall Problem</title>
   		<statement>
-  			<p>Suppose you&apos;re on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what&apos;s behind the doors, opens another door, say No. 3, which has a goat. He then says to you, <q>Do you want to pick door No. 2?</q> Is it to your advantage to switch your choice? (<url href="https://en.wikipedia.org/wiki/Monty_Hall_problem">Whitaker 1990</url>)</p>
+  			<p>Suppose you&apos;re on a game show, and you&apos;re given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what&apos;s behind the doors, opens another door, say No. 3, which has a goat. He then says to you, <q>Do you want to pick door No. 2?</q> Is it to your advantage to switch your choice? (<url href="https://en.wikipedia.org/wiki/Monty_Hall_problem">Whitaker 1990</url>)</p>
   			<p>What would you do? Think carefully and make up your mind before checking out the video which explains the solution.</p>
   		</statement>
   		<solution>
@@ -130,11 +130,11 @@
 			<statement>
 				<p>Events in everyday life can be classified as dependent or independent using common sense and the notion of cause-and-effect.  For example,
 					<ol label="a">
-						<li><p>You forget to put gas in your car, and the next day it won't start.</p></li>
+						<li><p>You forget to put gas in your car, and the next day it won&apos;t start.</p></li>
 						<li><p>You toss salt over your shoulder for luck, buy a lottery ticket, and win $20.</p></li>
 						<li><p>You stay up all night playing games and sleep through a meeting the next day.</p></li>
 						<li><p>You miss paying the electricity bill and your lights and other electrical appliances stop working.</p></li>
-						<li><p>You speed through a school zone on Monday and don't get a ticket. You do the same thing on Tuesday and are pulled over and ticketed.</p></li>
+						<li><p>You speed through a school zone on Monday and don&apos;t get a ticket. You do the same thing on Tuesday and are pulled over and ticketed.</p></li>
 					</ol>
 				</p>
 				<p>Question: which of the pairs of events above are independent?</p>
@@ -230,6 +230,7 @@
 		</sbsgroup>
 		<theorem xml:id="thm_conditional-probability-formula">
 			<title>Conditional Probability Formula</title>
+			<idx><h>probability</h><h>formula</h><h>conditional formula</h></idx>
 			<statement>
 				<p>If <m>A</m> and <m>B</m> are events in a sample space <m>S</m>, then the conditional probability of <m>A</m> given <m>B</m> is:
 				<me>P(A|B) = \frac{P(A\cap B)}{P(B)}</me>.</p>
@@ -328,7 +329,7 @@
 
 		<exercise xml:id="ckpt_conditional_formula-1">
 			<statement>
-				<p>A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
+				<p>A large bowl of candy contains 120 colored M&amp;M&apos;s in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
 				<table>
 					<title>Table for <xref ref="ckpt_conditional_formula-1"/></title>
 					<tabular>
@@ -369,7 +370,7 @@
 		</exercise>
 		<exercise xml:id="ckpt_conditional_formula-2">
 			<statement>
-				<p>A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
+				<p>A large bowl of candy contains 120 colored M&amp;M&apos;s in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select one M&amp;M from this bowl.</p>
 				<table>
 					<title>Table for <xref ref="ckpt_conditional_formula-1"/></title>
 					<tabular>
@@ -422,8 +423,8 @@
 		<p>In <xref ref="sec_probability_more-rules"/>, we saw a rule for finding <m>P(A\cup B)</m>, which we called the <xref ref="thm_probability-rule_general-addition">general addition rule</xref>.  We have not, however, seen a general rule for finding <m>P(A\cap B)</m>, the probability that both <m>A</m> and <m>B</m> occur. A little bit of algebra with the conditional probability formula produces just such a rule.</p>
 		<theorem xml:id="thm_probability-rule_general-multiplication">
 			<title>General Multiplication Rule</title>
-			<idx>multiplication rule (general)</idx>
-			<idx><h>probability</h><h>rules</h><h>multiplication rule</h></idx>
+			<idx>multiplication rule (probability)</idx>
+			<idx><h>probability</h><h>formula</h><h>multiplication rule</h></idx>
 			<statement>
 				<p>If <m>A</m> and <m>B</m> are events in a sample space <m>S</m>, then 
 				  <me>P(A\cap B) = P(B)P(A|B)\quad\text{and}\quad P(A\cap B) = P(A)P(B|A)</me>.</p>
@@ -453,8 +454,8 @@
 		<p>This is in fact one of the best ways to test two events and see if they are independent.</p>
 		<theorem xml:id="thm_independence-test">
 			<title>Test of Independence</title>
-			<idx>independence, test of</idx>
-			<idx><h>probability</h><h>test of independence</h></idx>
+			<idx>independence (test of)</idx>
+			<idx><h>probability</h><h>formula</h><h>independence test</h></idx>
 			<statement>
 				<p>Events <m>A</m> and <m>B</m> in a sample space <m>S</m> are independent if and only if <m>P(A\cap B) = P(A) P(B)</m>.</p>
 			</statement>
@@ -524,7 +525,7 @@
 		</exercise>
 		<exercise xml:id="ckpt_conditional_multiplication-rule-2">
 			<statement>
-				<p>A large bowl of candy contains 120 colored M&amp;M's in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select two M&amp;Ms from this bowl.</p>
+				<p>A large bowl of candy contains 120 colored M&amp;M&apos;s in plain and peanut varieties. The contingency table for these M&amp;Ms is shown below. You randomly select two M&amp;Ms from this bowl.</p>
 				<table>
 					<title>Table for <xref ref="ckpt_conditional_formula-1"/></title>
 					<tabular>
@@ -725,7 +726,7 @@
 		<theorem xml:id="thm_bayes">
 			<title>Bayes&apos; Theorem</title>
 			<idx>Bayes&apos; theorem</idx>
-			<idx><h>probability</h><h>rules</h><h>Bayes&apos; theorem</h></idx>
+			<idx><h>probability</h><h>formula</h><h>Bayes&apos; theorem</h></idx>
 			<statement>
 				<p>If a sample space can be split into mutually exclusive events <m>A_1</m>, <m>A_2</m>, <m>\ldots</m>, <m>A_n</m> and <m>E</m> is an event in <m>S</m> with  <m>P(E) > 0</m>, then:
 				  <me>P(A_i|E) = \frac{P(A_i)P(E|A_i)}{P(A_1)P(E|A_1) + P(A_2)P(E|A_2) + \cdots + P(A_n)P(E|A_n)}</me>.</p>

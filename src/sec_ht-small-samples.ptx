@@ -40,6 +40,9 @@
 		<p>The test statistic for a single mean when using a small sample will be a t-score. This t-score measures how unusual the observed sample is under the assumption of the null hypothesis. The formula is very similar to the one used with large samples with the exception that it is a t-score and not a z-score, and that it explicitly uses the sample standard deviation <m>s</m> instead of the population standard deviation <m>\sigma</m>.</p>
 		<theorem xml:id="thm_test-statistics-small-sample-means">
 			<title>Test Statistic for a Single Small-Sample Mean</title>
+			<idx><h>hypothesis test</h><h>small-sample mean</h></idx>
+			<idx><h>single mean</h><h>small-sample hypothesis test</h></idx>
+			<idx><h>single mean</h><h>small-sample hypothesis test</h><seealso>hypothesis test</seealso></idx>
 			<statement>
 				<p>The test statistic for the sample mean <m>\overline{x}</m> from a sample of size less than 30 drawn from a normal distribution and used to test the null hypothesis that <m>\mu = \mu_0</m> is:
 				<me>t_{\text{test}} = \frac{\overline{x} - \mu_0}{s/\sqrt{n}}</me>.</p>
@@ -96,6 +99,9 @@
 		where <m>s_1</m> is the standard deviation of the first sample of size <m>n_1</m> and <m>s_2</m> is the standard deviation of the second sample of size <m>n_2</m>. While we do not expect that <m>s_1^2 = s_2^2</m>, we do assume that they both will be close to the same common variance <m>\sigma^2</m>, and we therefore use <m>\sigma^2 \approx s^2</m> as our approximation in the following test statistic computation.</p>
 		<theorem xml:id="thm_test-statistics-small-sample-differences">
 			<title>Test Statistic for a Difference Between Small-Sample Means</title>
+			<idx><h>hypothesis test</h><h>small-sample difference of means</h><h>test statistic</h></idx>
+			<idx><h>difference of means</h><h>small-sample hypothesis test</h></idx>
+			<idx><h>difference of means</h><h>small-sample hypothesis test</h><seealso>hypothesis test</seealso></idx>
 			<statement>
 				<p>The test statistic for a difference between sample means <m>(\overline{x}_1 - \overline{x}_2)</m> use to test the assumption that <m>(\mu_1 - \mu_2) = d_0</m> where at least one of the sample sizes is less than 30 is given by:
 				  <me>t_{\text{test}} = \frac{(\overline{x}_1 - \overline{x}_2) - d_0}{\sqrt{s^2\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}</me>.
@@ -193,7 +199,7 @@
 		  	  <p>Degrees of freedom is two less than the sum of the sample sizes: <m>df = n_1 + n_2 - 2</m>.</p></li>
 		  </ul>
 		</p>
-		<p>Let&apos;s revisit the two examples we've seen in this lesson so far, finishing them off with a traditional hypothesis test.</p>
+		<p>Let&apos;s revisit the two examples we&apos;ve seen in this lesson so far, finishing them off with a traditional hypothesis test.</p>
 		<example xml:id="examp_ht-small-samples_traditional-mean">
 			<title>Conducting a Traditional Hypothesis Test for a Small Sample Mean</title>
 			<statement>

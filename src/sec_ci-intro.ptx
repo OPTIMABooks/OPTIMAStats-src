@@ -8,7 +8,7 @@
   	<example xml:id="examp_ci-intro_intro">
   		<title>Motivating Estimation</title>
   		<statement>
-  			<p>You wish to estimate the average speed that a certain fast-ball pitcher will throw the ball. In order to make this estimation, you observe 40 throws by this pitcher, in random settings, and record the speed of each of these 40 throws. How can you use this sample to estimate the actual speed of this pitcher's throws?</p>
+  			<p>You wish to estimate the average speed that a certain fast-ball pitcher will throw the ball. In order to make this estimation, you observe 40 throws by this pitcher, in random settings, and record the speed of each of these 40 throws. How can you use this sample to estimate the actual speed of this pitcher&apos;s throws?</p>
   		</statement>
   		<solution>
   			<p>One simple way to do this is to compute the sample mean for our sample of 40 throws.  But as we shall see, this estimation does not provide us enough information.  Instead, we will learn to construct a <term>confidence interval</term> to estimate the average speed of the pitcher&amp;s throws.</p>
@@ -56,12 +56,15 @@
 		<definition xml:id="def_estimator">
 			<idx>estimator</idx>
 			<idx><h>estimation</h><h>estimator</h></idx>
+			<idx><h>estimation</h><h>estimator</h><seealso>estimator</seealso></idx>
 			<statement>
 				<p>An <term>estimator</term> is a tool used to approximate the value of a population parameter based on a random sample drawn from that population.</p>
 			</statement>
 		</definition>
 		<p>There are many different tools one could use as an estimator. Our goal is to come up with a method that is both simple and accurate. Perhaps the simplest estimator is one that uses a single value from the sample to estimate the population proportion.</p>
 		<definition xml:id="def_point-estimator">
+			<idx>point estimator</idx>
+			<idx><h>estimator</h><h>point</h></idx>
 			<statement>
 				<p>A <term>point estimator</term> uses a single statistic from a sample to approximate a population parameter.</p>
 			</statement>
@@ -69,7 +72,7 @@
 		<p>In <xref ref="examp_ci-intro_intro"/>, our goal was to estimate the speed of a pitcher&apos;s throw. What one measure computed from our sample of 40 throwing speeds would be best for this estimation? There are several possibilities including the mode, the mean, the median, or any other measure of center from this sample. However, which one is best? Which one will routinely give us an estimate that is close to the actual average? Such an estimator is called <term>unbiased</term>.</p>
 		<definition xml:id="def_unbiased-estimator">
 			<idx>unbiased estimator</idx>
-			<idx><h>estimation</h><h>unbiased estimator</h></idx>
+			<idx><h>estimator</h><h>unbiased</h></idx>
 			<statement>
 				<p>An <term>unbiased estimator</term> is one that will have a sampling distribution centered about the population parameter that is to be estimated.</p>
 			</statement>
@@ -138,8 +141,8 @@
 		</example>
 		<p>As this example shows, a point estimator ignores any information about variance that we may be able to gather from the sample. Another way to say this is that there is error in any point estimate because of the randomness of the sampling process. This error is called the <term>standard error</term>.</p>
 		<definition xml:id="def_standard-error">
-			<idx>standard error</idx>
-			<idx><h>estimation</h><h>standard error</h></idx>
+			<idx>standard error (point estimate)</idx>
+			<idx><h>estimator</h><h>point</h><h>standard error</h></idx>
 			<statement>
 				<p>The <term>standard error</term> in a point estimate <m>x</m> is the standard deviation in the sampling distribution for <m>x</m>.</p>
 			</statement>
@@ -147,7 +150,7 @@
 		<p>In the next section we will see how to find the standard error when using a sample mean to estimate a population mean. But for now, the important point to recognize is that a single value is not a reliable estimator. To factor in the standard error, we will use an interval to estimate population parameters.</p>
 		<definition xml:id="def_interval-estimator">
 			<idx>interval estimator</idx>
-			<idx><h>estimation</h><h>interval estimator</h></idx>
+			<idx><h>estimator</h><h>interval</h></idx>
 			<statement>
 				<p>An <term>interval estimator</term> is a range of values, centered at a point estimate, into which we estimate the true value of a population parameter will fall.</p>
 			</statement>
@@ -196,7 +199,7 @@
 		<p>We have already talked about the first two. That leaves the confidence level.</p>
 		<definition xml:id="def_confidence-level">
 			<idx>confidence level</idx>
-			<idx><h>estimation</h><h>confidence interval</h><h>confidence level</h></idx>
+			<idx><h>confidence interval</h><h>confidence level</h></idx>
 			<statement>
 				<p>A <term>confidence level</term> is the probability that a confidence interval contains the true population proportion.</p>
 			</statement>
@@ -221,8 +224,8 @@
 		<p>In most of our confidence intervals, the population we are sampling will have a normal distribution, or the sample size will be large enough that we can use the central limit theorem to assume that the distribution is normal. We can then use the standard normal distribution to determine what is called the <term>critical value</term> for a given confidence level.</p>
 		<definition xml:id="dev_critical-value">
 			<idx>critical value</idx>
-			<idx><h>estimation</h><h>confidence interval</h><h>critical value</h></idx>
-			<idx><h>hypothesis testing</h><h>critical value</h></idx>
+			<idx><h>confidence interval</h><h>critical value</h></idx>
+			<idx><h>hypothesis test</h><h>critical value</h></idx>
 			<statement>
 				<p>A <term>critical value</term> at the <m>(1-\alpha)</m> confidence level is the value of the random variable that divides the middle <m>(1-\alpha)</m> percent of the data from the remainbing <m>\alpha</m> percent which is split between the two tails.</p>
 			</statement>
@@ -279,7 +282,7 @@
 		<p>These critical values are put together with the standard error, which is the standard deviation in the sampling distribution to give us the radius of our confidence interval. This radius is called the <term>margin of error</term>.</p>
 		<definition xml:id="def_margin-error">
 			<idx>margin of error</idx>
-			<idx><h>estimation</h><h>confidnece interval</h><h>margin of error</h></idx>
+			<idx><h>confidence interval</h><h>margin of error</h></idx>
 			<statement>
 				<p>The <term>margin of error</term> for a confidence interval is the standard deviation of the sampling distribution for the population parameter multiplied by the critical value for the confidence level.</p>
 			</statement>
@@ -314,6 +317,7 @@
 		<definition xml:id="def_confidence-interval">
 			<idx>confidence interval</idx>
 			<idx><h>estimation</h><h>confidence interval</h></idx>
+			<idx><h>estimation</h><h>confidence interval</h><seealso>confidence interval</seealso></idx>
 			<statement>
 				<p>A <term>confidence interval</term> for a population parameter is found by adding and subtracting the margin of error to the point estimate. That is, the confidence interval has the form:
 				  <me>\text{ point estimate } \pm \text{ margin of error }</me>.</p>
@@ -406,7 +410,7 @@
   	</figure>
   	<definition xml:id="def_one-sided-ci">
   		<idx>one-sided confidence interval</idx>
-  		<idx><h>estimation</h><h>confidnece interval</h><h>one-sided</h></idx>
+  		<idx><h>confidence interval</h><h>one-sided</h></idx>
   		<statement>
   			<p>An upper or lower confidence bound is called a <term>one-sided confidence interval</term>.</p>
   		</statement>

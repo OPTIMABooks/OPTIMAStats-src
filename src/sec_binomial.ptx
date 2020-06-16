@@ -51,7 +51,8 @@
 		<p>When you roll a fair die or flip a fair coin, each of the outcomes is equally likely. If you assign the values of those outcomes to a random variable, then each value of the variable is equally likely. One could say that the probabilities are <term>uniform</term>. These are members of the following family of distributions.</p>
 		<definition xml:id="def_discrete-uniform">
 			<idx>uniform distribution (discrete)</idx>
-			<idx><h>probability</h><h>distributions</h><h>discrete uniform</h></idx>
+			<idx><h>probability</h><h>distribution families</h><h>discrete uniform</h></idx>
+			<idx><h>probability</h><h>distribution families</h><h>discrete uniform</h><seealso>uniform distribution (discrete)</seealso></idx>
 			<statement>
 				<p>A random variable <m>X</m> has a <term>discrete uniform</term> probability distribution if <term>X</term> can take on one of <m>k</m> possible values, <m>x_1</m>, <m>x_2</m>, <m>\ldots</m>, <m>x_k</m>, each with probability <m>P(X=x_i) = \frac{1}{k}</m>.</p>
 			</statement>
@@ -80,6 +81,7 @@
 		<p>The second reason to study families of distributions is to develop general rules for computation. For example, a discrete uniform distribution has the following property.</p>
 		<theorem xml:id="thm_discrete-uniform-mean-stdev">
 			<title>Mean and Standard Deviation of a Discrete Uniform Random Variable</title>
+			<idx><h>uniform distribution (discrete)</h><h>mean and standard deviation of</h></idx>
 			<statement>
 				<p>If a random variable <m>X</m> has a discrete uniform distribution then the mean and standard deviation of the random variable <m>X</m> are the mean and standard deviation of the set of possible values of <m>X</m>.</p>
 			</statement>
@@ -257,6 +259,7 @@
 		<p>The family of binomial probability distributions is based on one of the simplest random processes around. This basic process is called a <term>Bernoulli trial</term>. Bernoulli Trial.</p>
 		<definition xml:id="def_bernoulli-trial">
 			<idx>Bernoulli trial</idx>
+			<idx><h>probability</h><h>distribution families</h><h>Bernoulli trial</h></idx>
 			<statement>
 				<p>A <term>Bernoulli trial</term> is a random process in which there are only two possible outcomes: success and failure. The probability of a success is denoted by <m>p</m>, and the probability of a failure by <m>q = 1 - p</m>.</p>
 			</statement>
@@ -368,7 +371,8 @@
   	<p>If a random variable is the result variable for a binomial process, then it too has a special name.</p>
   	<definition xml:id="def_binomial">
   		<idx>binomial distribution</idx>
-  		<idx><h>probability</h><h>distributions</h><h>binomial</h></idx>
+  		<idx><h>probability</h><h>distribution families</h><h>binomial</h></idx>
+  		<idx><h>probability</h><h>distribution families</h><h>binomial</h><seealso>binomial distribution</seealso></idx>
   		<statement>
   			<p>A <term>binomial random variable</term> is a random variable representing the number of successes in a binomial process. Such a variable is said to have a <term>binomial distribution</term>.</p>
   		</statement>
@@ -430,7 +434,7 @@
 	  <p>How do we tell how large a population needs to be in order to assume that as we draw individuals for our sample we do not change the probabilities? The following rule is a good way to determine this.</p>
 	  <principle xml:id="def_five-percent-rule">
 	  	<title>The 5% Condition</title>
-	  	<idx>five percent condition</idx>
+	  	<idx><h>binomial distribution</h><h>5% rule</h></idx>
 	  	<statement>
 	  		<p>If in repeating a Bernoulli trial <m>n</m> times we choose individuals from a population of size <m>N</m> without replacement, we can assume that the trials are independent and the probability <m>p</m> does not change as long as <m>n</m> is less than 5% of <m>N</m>. That is, as long as <m>\frac{n}{N} \lt 0.05</m>.</p>
 	  	</statement>
@@ -507,8 +511,7 @@
 		<p>Hopefully you see that there is a pattern to determining the probability of a certain value of <m>X</m>. We first choose which of the <m>n</m> trials are going to be our successes. Then we multiply that by <m>p</m> for each success and by <m>q</m> for each failure. This results in the following formula.</p>
 		<theorem xml:id="thm_binomial-probability">
 			<title>Binomial Probability Formula</title>
-			<idx>binomial probability formula</idx>
-			<idx><h>probability</h><h>distributions</h><h>binomial formula</h></idx>
+			<idx><h>binomial distribution</h><h>formula</h></idx>
 			<statement>
 				<p>If a <m>X</m> is the number of successes in a binomial process of n trials where <m>p</m> is the probability of a success and <m>q = 1 - p</m> the probability of a failure, then 
 				<me>P(X=x) = C(n,x)p^xq^{n-x}</me>.</p>
@@ -727,7 +730,7 @@
 		<p>But wait a minute. Couldn&apos;t you have guessed that using intuition? A 70% free-throw shooter should make 70% of the 10 shots, which is 7 shots. It turns out that there are extremely simple formulas for finding both the mean and the standard deviation of a normal distribution. They are stated below.</p>
 		<theorem xml:id="tmp_binomial-mean-stdev">
 			<title>Mean and Standard Deviation of a Binomial Random Variable</title>
-			<idx><h>binomial distribution</h><h>mean and standard deviation</h></idx>
+			<idx><h>binomial distribution</h><h>mean and standard deviation of</h></idx>
 			<statement>
 				<p>If <m>X</m> is a binomial random variable for a binomial process involving <m>n</m> trials in which the probability of a success in each trial is <m>p</m>, then the mean and standard deviation of <m>X</m> are:
 				  <me>\text{Mean: } \mu = n \times p \qquad \text{Standard Deviation: } \sigma = \sqrt{n\times p\times q}</me></p>

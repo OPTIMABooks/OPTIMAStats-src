@@ -166,6 +166,7 @@
 		<p>A goodness-of-fit test is used to test a claim about the probabilities in a multinomial process. That is, we specify ahead of time what we believe the probability of each of the <m>k</m> categories should be. We then take a sample and look at the observed probability of those categories. If they are different enough from what we claimed the probabilities should be, we conclude that our claim was wrong. Since this claim involves equality (we specify what we assume the probabilities will be), it is the null hypothesis.</p>
 		<principle xml:id="thm_hypotheses-goodness-of-fit">
 			<title>Hypotheses for Goodness-of-Fit Tests</title>
+			<idx><h>hypothesis test</h><h>goodness-of-fit</h><h>hypotheses</h></idx>
 			<statement>
 				<p>In a goodness-of-fit hypothesis test, we assume that a multinomial process will have probabilities <m>p_1, p_2, \ldots, p_k</m>. The opposite of this claim is that at least one of the probabilities is different from what we specify.  Thus, the null and alternative hypotheses are:
 				  <md>
@@ -238,6 +239,9 @@
 		<p>In a goodness-of-fit test, our goal is to compare what happens in a sample drawn from the population being studied with what we expected to happen based on the null hypothesis. The result of the sample we draw will be a list of frequencies, or counts, for each category.</p>
 		<definition xml:id="def_observed-counts">
 			<idx>observed counts</idx>
+			<idx><h>hypothesis test</h><h>goodness-of-fit</h><h>observed counts</h></idx>
+			<idx><h>hypothesis test</h><h>test of homogeneity</h><h>observed counts</h></idx>
+			<idx><h>hypothesis test</h><h>test of independence</h><h>observed counts</h></idx>
 			<statement>
 				<p>The number of times in a process that each category of outcome occurred are together called the <term>observed counts</term> for that category.</p>
 			</statement>
@@ -245,6 +249,8 @@
 		<p>Our null hypothesis tells us what we expect the probability of each category to be. In order to compare these expected outcomes, we must convert these probabilities into expected counts. We can then compare the counts that we observed with the counts that we expected. To compute the expected counts for each category, we use the following procedure.</p>
 		<theorem xml:id="thm_expected-counts_multinomial">
 			<title>Expected Counts</title>
+			<idx>expected counts (goodness-of-fit)</idx>
+			<idx><h>hypothesis test</h><h>goodness-of-fit</h><h>expected counts</h></idx>
 			<statement>
 				<p>The <term>expected count</term> for category <m>i</m> in a multinomial process is <m>n\times p_i</m>, where <m>n</m> is the total number of trials and <m>p_i</m> is the probability of the <m>i^\text{th}</m> category according to the null hypothesis.</p>
 			</statement>
@@ -457,7 +463,7 @@
 		<p>In order to measure the differences between observed and expected counts, we will need yet another distribution. This distribution is useful in hypothesis tests involving squares. As we shall see, we will use squares in the goodness-of-fit test statistic. The family of distributions, called <m>\chi^2</m> (pronounced /&apos;kai skwered/) distributions, are described below.</p>
 		<definition xml:id="def_chi-squared-distribution">
 			<idx><m>\chi^2</m>-distribution</idx>
-			<idx><h>probability</h><h>distributions</h><h><m>\chi^2</m>-distribution</h></idx>
+			<idx><h>probability</h><h>distribution families</h><h><m>\chi^2</m>-distribution</h></idx>
 			<statement>
 				<p>The <term><m>\chi^2</m>-distribution</term> is a continuous probability distribution with the following properties
 				  <ul>
@@ -568,7 +574,10 @@
 		<title>The Test Statistic</title>
 		<p>To compute the test statistic for a goodness-of-fit test, our goal is to measure how far off our observed counts are from our expected counts. To do this, we want to examine the difference between observed and expected, but we don&apos;t care which is larger. Thus, we square that difference. Finally, we scale the difference by dividing by the expected counts. This is done because a difference of 10 means a lot more when only 15 were expected than it would if 100 were expected.</p>
 		<theorem xml:id="thm_chi-squared-test-stat">
-			<title><m>\chi^2</m> Test Statistic</title>
+			<title>Goodness-of-Fit Test Statistic</title>
+			<idx><h>goodness-of-fit test</h></idx>
+			<idx><h>goodness-of-fit test</h><seealso>hypothesis test</seealso></idx>
+			<idx><h>hypothesis test</h><h>goodness-of-fit</h><h>test statistic</h></idx>
 			<statement>
 				<p>The <m>\chi^2</m> test statistic for a goodness-of-fit test having observed counts <m>O_i</m> and expected counts <m>E_i</m> in category <m>i</m> is given by:
 				  <me>\chi^2_{\text{test}} = \sum \frac{(O_i - E_i)^2}{E_i}</me>
@@ -812,6 +821,7 @@
   	<p>The goodness-of-fit test is, like any other hypothesis test, completed by comparing the test statistic from the sample to the significance level. In the case of a <m>\chi^2</m> test statistic, we again must use a traditional test because the table is not set up to give a p-values. That means that we need a degrees of freedom in order to look up the critical value.</p>
   	<theorem xml:id="thm_goodness-of-fit-df">
   		<title>Degrees of Freedom for a Goodness-of-Fit Test</title>
+  		<idx><h>hypothesis test</h><h>goodness-of-fit</h><h>degrees of freedom</h></idx>
   		<statement>
   			<p>The degrees of freedom for a goodness-of-fit test of a multinomial process in which there are k categories is <m>df = k-1</m>.</p>
   		</statement>

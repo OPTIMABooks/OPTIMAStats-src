@@ -46,9 +46,10 @@
     <frontmatter>
       <titlepage>
         <author>
-          <personname>Jonathan Duncan, Ph.D.</personname>
+          <personname>Jonathan Duncan</personname>
           <department>Department of Mathematics</department>
           <institution>Walla Walla University</institution>
+          <email>jonathan.duncan@wallawalla.edu</email>
         </author>
 
         <date>
@@ -57,7 +58,7 @@
       </titlepage>
 
       <colophon>
-        <edition>1</edition>
+        <edition>1.0</edition>
         <copyright>
           <year>2008<ndash/>2020</year>
           <holder>Jonathan Duncan</holder>
@@ -79,7 +80,6 @@
           </ul>
           In chapter 1 we will learn how to collect and describe (present) data. This is usually referred to as descriptive statistics. Chapters 2 and 3 introduce us to randomness and help us better understand chance. Finally, in chapters 4, 5, and 6 we will apply what we learned about randomness to the analysis and interpretation of data. In particular, we will learn how to make inferences about a population based on data we collect and describe for a sample. These chapters are referred to collectively as inferential statistics.</p>
         </preface>
-
       </frontmatter>
 
       <part>
