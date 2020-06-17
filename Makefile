@@ -65,7 +65,7 @@ PTXXSL = $(PTX)/xsl
 # These paths are subdirectories of the output
 # folder for different output formats
 PRINTOUT   = $(OUTPUT)/print
-HTMLOUT    = $(OUTPUT)/html
+HTMLOUT    = $(HTML)
 IMAGESOUT  = $(OUTPUT)/images
 
 # The WeBWorK server we use
