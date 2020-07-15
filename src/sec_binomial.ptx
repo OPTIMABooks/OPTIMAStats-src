@@ -786,7 +786,7 @@
 				<p>An 80 question multiple choice test has five possible answers on each question, only one of which is correct. You decide to take the test by randomly selecting an answer on each question. A random variable <m>Y</m> is defined to be your final score on the test<mdash/>that is, the number you answered correctly.</p>
 				<p>Question: what is the standard deviation of <m>Y</m>? Round your answer to one decimal place.</p>
 			</statement>
-			<answer><p>3.56</p></answer>
+			<answer><p>3.58</p></answer>
 		</exercise>
 	</subsection>
 	
