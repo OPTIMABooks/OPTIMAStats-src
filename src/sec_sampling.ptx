@@ -385,7 +385,7 @@
 						</md>
 						This is a fairly likely occurrence.</p>
 					</li>
-					<li><p>Now we need to find \(P(\overline{W} \gt 22)\). The variable \(\overline{W}\).  We do a very similar computation to the one shown above, but we use the standard deviation for the sampling distribution when computing the z-score.
+					<li><p>Now we need to find <m>P(\overline{W} \gt 22)</m>. The variable <m>\overline{W}</m>.  We do a very similar computation to the one shown above, but we use the standard deviation for the sampling distribution when computing the z-score.
 						<md>
 							<mrow>P(\overline W \gt 22) \amp = P\left(\frac{\overline{W} - \mu}{\sigma/\sqrt{n}} \gt \frac{22-19.4}{4.5/\sqrt{10}}\right)</mrow>
 							<mrow>\amp = P(Z \gt 1.83)</mrow>
