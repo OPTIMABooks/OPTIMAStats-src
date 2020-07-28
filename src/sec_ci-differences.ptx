@@ -121,7 +121,7 @@
 				</table>
 				<p>Question: what is the best point estimate for the difference between the average proportion of yellow skittles and yellow M&amp;M&apos;s? </p>
 			</statement>
-			<answer><p><m>-0.0224</m></p></answer>
+			<answer><p><m>-0.0220</m></p></answer>
 		</exercise>
 		<exercise xml:id="ckpt_ci-differences_point-2">
 			<statement>
