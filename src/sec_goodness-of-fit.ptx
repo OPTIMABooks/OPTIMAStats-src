@@ -408,7 +408,7 @@
 						</row>
 						<row>
 							<cell>1</cell>
-							<cell>35</cell>
+							<cell>34</cell>
 						</row>
 						<row>
 							<cell>2</cell>
@@ -440,7 +440,7 @@
 						</row>
 						<row>
 							<cell>1</cell>
-							<cell>35</cell>
+							<cell>34</cell>
 						</row>
 						<row>
 							<cell>2</cell>
@@ -454,7 +454,7 @@
 				</table>
 				<p>Question: what is the expected count for category 3? Round your answer to one decimal place.</p>
 			</statement>
-			<answer><p>25.5</p></answer>
+			<answer><p>25.8</p></answer>
 		</exercise>
 	</subsection>
 
@@ -559,7 +559,7 @@
 					</ol>
 				</p>
 			</statement>
-			<answer><p>(a), (d), and (e)</p></answer>
+			<answer><p>(a), (e), and (f)</p></answer>
 		</exercise>
 		<exercise xml:id="ckpt_goodness-of-fit_chi-squared-2">
 			<statement>

@@ -322,7 +322,7 @@
   					    </ul>
   					  	As a double-check, we verify that the sum of the degrees of freedom for the treatments and error is equal to the total degrees of freedom, and indeed, <m>2 + 9 = 11</m>.</p></li>
   					<li><title>Sum of the Squares</title>
-  					  <p>We are told that SST = 9 and TSS = 47.  Since we know that SST + SSE = SST, we can solve:
+  					  <p>We are told that SST = 9 and TSS = 47.  Since we know that SST + SSE = TSS, we can solve:
   					  	<me>9 + \text{SSE} = 47 \Rightarrow \text{SSE} = 47 - 9 = 39</me></p></li>
   					<li><title>Mean Squares</title>
   					  <p>We get the mean squares by dividing the sum of the squares by the degrees of freedom.  In particular,
