@@ -342,7 +342,7 @@
 		<example xml:id="examp_goodness-of-fit_counts-relative">
 			<title>Finding Expected Counts Based on Relative Probabilities</title>
 			<statement>
-				<p>A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 179 of them are Republicans, 146 of them are Democrats, and 175 of them are independents. What should the null hypothesis be for a goodness-of-fit test of the politician&apos;s claim?</p>
+				<p>A politician believes that the proportion of Republicans, Democrats, and independents in a certain congressional district are equal. To test this claim, she hires a polling firm to sample 500 registered voters. They find that 183 of them are Republicans, 142 of them are Democrats, and 175 of them are independents. What should the null hypothesis be for a goodness-of-fit test of the politician&apos;s claim?</p>
 			</statement>
 			<solution>
 				<p>As we noted last time, the null hypothesis is that the probability for each political party is <m>\frac{1}{3}</m>. Placing the above information into a table as we did in the last example, yields the following table.</p>
@@ -694,13 +694,13 @@
 						</row>
 						<row>
 							<cell>Republican</cell>
-							<cell>179</cell>
+							<cell>183</cell>
 							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
 							<cell><m>\frac{(183-166.67)^2}{166.67} \approx 1.6000</m></cell>
 						</row>
 						<row>
 							<cell>Democrats</cell>
-							<cell>146</cell>
+							<cell>142</cell>
 							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
 							<cell><m>\frac{(142-166.67)^2}{166.67} \approx 3.6516</m></cell>
 						</row>
@@ -959,13 +959,13 @@
 						</row>
 						<row>
 							<cell>Republican</cell>
-							<cell>179</cell>
+							<cell>183</cell>
 							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
 							<cell><m>\frac{(183-166.67)^2}{166.67} \approx 1.6000</m></cell>
 						</row>
 						<row>
 							<cell>Democrats</cell>
-							<cell>146</cell>
+							<cell>142</cell>
 							<cell><m>\frac{1}{3}(500) \approx 166.67</m></cell>
 							<cell><m>\frac{(142-166.67)^2}{166.67} \approx 3.6516</m></cell>
 						</row>

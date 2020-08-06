@@ -242,7 +242,7 @@
   	<sidebyside widths="60% 30%" margins="auto" valign="middle">
   	  <p>We will use the following notation.
 	     <ul>
-	     	<li><p><m>O_{ij}</m> represent the observed counts in the <m>i^\text{th}</m> column and <m>j^\text{th}</m> row. So, for example, <m>O_{23}</m> is the number of individuals in the 2nd row, 3rd column.</p></li>
+	     	<li><p><m>O_{ij}</m> represent the observed counts in the <m>i^\text{th}</m> column and <m>j^\text{th}</m> row. So, for example, <m>O_{32}</m> is the number of individuals in the 3rd column, 2nd row.</p></li>
 	     	<li><p><m>R_j</m> stands for the row total of the <m>j^\text{th}</m> row. That means, <m>R_1 = O_{11} + O_{21} + O_{31}</m> in the table shown.</p></li>
 	     	<li><p><m>C_i</m> stands for the column total of the <m>i^\text{th}</m> column. So <m>C_1 = O_{11} + O_{12}</m> in this table.</p></li>
 	     	<li><p>Finally, <m>T</m> stands for the grand total. In our table, 
@@ -275,7 +275,7 @@
 	    			<cell>row 2</cell>
 	    			<cell><m>O_{12}</m></cell>
 	    			<cell><m>O_{22}</m></cell>
-	    			<cell><m>O_{23}</m></cell>
+	    			<cell><m>O_{32}</m></cell>
 	    			<cell bottom="none"><m>R_2</m></cell>
 	    		</row>
 	    		<row>
