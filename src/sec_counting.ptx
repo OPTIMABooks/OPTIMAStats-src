@@ -5,7 +5,7 @@
   <introduction xml:id="sec_counting_intro">
   	<title>A Theoretical Approach</title>
   	<p>The simulations that we saw in the last section can be thought of as an experimental approach to understanding a random process. While this is a good way to investigate a random process, it can be time consuming and will yield different results each time it is performed, due to its random nature.</p>
-  	<p>An alternative approach is to be more theoretical. Instead of simulating the process, we try to understand the process by counting the number of different outcomes that could happen and the number of outcomes that lead to each value of the response variable in which we are interested. In order to use this more theoretical approach, which we will talk more about in <xref provisional="sec_probability-rules" />, we first need to know how to count.</p>
+  	<p>An alternative approach is to be more theoretical. Instead of simulating the process, we try to understand the process by counting the number of different outcomes that could happen and the number of outcomes that lead to each value of the response variable in which we are interested. In order to use this more theoretical approach, which we will talk more about in <xref ref="sec_probability" />, we first need to know how to count.</p>
   	<p>In this section we will introduce several important counting rules. Many of these rules may be familiar to you already. Some of them, however, will probably be new. We will focus not only on understanding the formulas that go with these counting rules, but also when to use each rule.</p>
   </introduction>
 
