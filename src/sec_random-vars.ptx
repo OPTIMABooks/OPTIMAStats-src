@@ -93,7 +93,7 @@
 				</p>
 			</solution>
 		</example>
-		<p>Just like <q>ordinary</q> variables, random variables can be either discrete or continuous. Recall that a <xref ref="def_discrete" text="custom">discrete variable</xref> is one that takes on a finite number of values (or an infinite number with <q>spaces</q> between the values), whereas a <xref ref="def_continuous">continuous variable</xref> can take on any value in a given range. Looking back at <xref ref="examp_random-vars_identify" /> you should see that both discrete and continuous random variables are represented.</p>
+		<p>Just like <q>ordinary</q> variables, random variables can be either discrete or continuous. Recall that a <xref ref="def_discrete" text="custom">discrete variable</xref> is one that takes on a finite number of values (or an infinite number with <q>spaces</q> between the values), whereas a <xref ref="def_continuous" text="custom">continuous variable</xref> can take on any value in a given range. Looking back at <xref ref="examp_random-vars_identify" /> you should see that both discrete and continuous random variables are represented.</p>
 		<example xml:id="examp_random-vars_identify-type">
 			<title>Classifying Random Variables as Discrete or Continuous</title>
 			<statement>
