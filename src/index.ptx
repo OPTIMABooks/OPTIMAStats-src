@@ -42,7 +42,7 @@
   </docinfo>
 
   <book>
-    <title>OpenIntro Statistics</title>
+    <title>OPTIMA Statistics</title>
     <frontmatter>
       <titlepage>
         <author>
@@ -100,14 +100,15 @@
       <appendix xml:id="apx_reference">
         <title>Reference</title>
         <xi:include href="./ref_critical-values.ptx"/>
-      </appendix>
-<!--       
+      </appendix>       
       <appendix xml:id="apx_tables">
+        <title>Distribution Tables</title>
         <xi:include href="./table_normal.ptx"/>
+<!--        
         <xi:include href="./table_student-t.ptx"/>
         <xi:include href="./table_chi-squared.ptx"/>
+-->        
       </appendix>
--->
       <index>
         <title>Index</title>
         <index-list/>
