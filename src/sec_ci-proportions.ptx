@@ -107,7 +107,7 @@
 			<statement>
 				<p>The margin of error when estimating a population proportion with a sample proportion <m>\hat p</m> drawn from a sample of size <m>n</m> at the <m>(1-\alpha)</m> significance level is:
 				  <me>z_{\alpha/2}\times \sqrt{\frac{pq}{n}}</me>.
-				  Note that since <m>p</m> is not known, we approximate with <m>p approx \hat p</m> and <m>q \approx 1-\hat p</m>.</p>
+				  Note that since <m>p</m> is not known, we approximate with <m>p \approx \hat p</m> and <m>q \approx 1-\hat p</m>.</p>
 			</statement>
 		</theorem>
 		<p>Let&apos;s apply this formula to the <xref ref="examp_ci-proportions_point-find" text="custom">storybook writer example</xref>.</p>
