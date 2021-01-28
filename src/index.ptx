@@ -104,10 +104,8 @@
       <appendix xml:id="apx_tables">
         <title>Distribution Tables</title>
         <xi:include href="./table_normal.ptx"/>
-<!--        
-        <xi:include href="./table_student-t.ptx"/>
+        <xi:include href="./table_student-t.ptx"/>   
         <xi:include href="./table_chi-squared.ptx"/>
--->        
       </appendix>
       <index>
         <title>Index</title>

@@ -1,0 +1,34 @@
+\begin{tikzpicture}[
+    declare function={gamma(\z)=2.506628274631*sqrt(1/\z)+ 0.20888568*(1/\z)^(1.5)+ 0.00870357*(1/\z)^(2.5)- (174.2106599*(1/\z)^(3.5))/25920- (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z;},
+    declare function={student(\x,\n)= gamma((\n+1)/2.)/(sqrt(\n*pi) *gamma(\n/2.)) *((1+(\x*\x)/\n)^(-(\n+1)/2.));}
+]
+  \begin{axis}[
+      axis lines*=middle,
+      no markers,
+	    domain=-3.5:3.5,
+      samples=500,
+      xmin = -3.5, xmax = 3.5,
+	    ymin = -0.05, ymax = 0.41,
+      xtick={0,1},
+      xticklabels={0,$t_\alpha$},
+      ticklabel style={font=\scriptsize},
+	    ytick=\empty,
+      grid = none,
+      axis on top,
+      hide y axis,
+      height=4cm,
+      width=8cm
+    ]
+    \draw (axis cs: 0,-0.01) -- (axis cs: 0,0.01);
+    \path[name path=A] (axis cs: -3.5,0) -- (3.5,0);
+    \addplot+[name path=B,thick] { student(x, 10) };
+    \addplot [
+        draw=red!50,
+        fill=red!50,
+        fill opacity=0.5
+    ] fill between [
+        of=A and B,
+        soft clip={domain=1:4}
+    ];
+  \end{axis}
+\end{tikzpicture}
