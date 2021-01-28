@@ -246,7 +246,7 @@
 				<p>The distribution of the sample mean of a random sample of <m>n</m> values can be approximated by the normal distribution with mean and standard deviation shown below, where <m>\mu</m> and <m>\sigma</m> are the mean and standard deviation of the population.</p>
 				<sidebyside width="25%" margins="15% 30%" valign="middle">
 					<p><me>\mu_{\overline{x}} = \mu</me></p>
-					<p><me>\overline{x} = \frac{\sigma}{\sqrt{n}}</me></p>
+					<p><me>\sigma_\overline{x} = \frac{\sigma}{\sqrt{n}}</me></p>
 				</sidebyside>
 				<p>The larger the value of <m>n</m>, the better this approximation becomes.</p>
 			</statement>
