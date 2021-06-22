@@ -75,11 +75,11 @@
 
 		<figure xml:id="video_ci-proportions_point-1">
 			<caption>Point Estimates for a Proportion I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-proportions_point-2">
 			<caption>Point Estimates for a Proportion II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-proportions_point-1">
@@ -126,11 +126,11 @@
 
 		<figure xml:id="video_ci-proportions_margin-error-1">
 			<caption>Margin of Error for a Proportion I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-03.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-proportions_margin-error-2">
 			<caption>Margin of Error for a Proportion II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-proportions_margin-error-1">
@@ -204,15 +204,15 @@
 
 		<figure xml:id="video_ci-proportions_interval-1">
 			<caption>Confidence Interval for a Proportion I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-05.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-proportions_interval-2">
 			<caption>Confidence Interval for a Proportion II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-06.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-proportions_interval-3">
 			<caption>Confidence Interval for a Proportion III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-07.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-proportions_interval-1">
@@ -277,11 +277,11 @@
 
 		<figure xml:id="video_ci-proportions_sample-size-1">
 			<caption>Sample Size I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-08.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-proportions_sample-size-2">
 			<caption>Sample Size II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.3-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.3-09.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-proportions_sample-size-1">

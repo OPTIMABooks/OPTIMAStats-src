@@ -145,11 +145,11 @@
 
   	<figure xml:id="video_anova_hypotheses-1">
   		<caption>ANOVA Hypotheses I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-01.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-01.mp4"/>
   	</figure>
   	<figure xml:id="video_anova_hypotheses-2">
   		<caption>ANOVA Hypotheses II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-02.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-02.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_anova_hypotheses-1">
@@ -382,11 +382,11 @@
 
   	<figure xml:id="video_anova_table-1">
   		<caption>ANOVA Tables I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-03.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-03.mp4"/>
   	</figure>
   	<figure xml:id="video_anova_table-2">
   		<caption>ANOVA Tables II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-04.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-04.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_anova_tables-1">
@@ -649,11 +649,11 @@
 
 		<figure xml:id="video_anova_test-1">
 			<caption>ANOVA Test I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-05.mp4"/>
 		</figure>
 		<figure xml:id="video_anova_test-2">
 			<caption>ANOVA Test II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.1-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.1-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_anova_test-1">

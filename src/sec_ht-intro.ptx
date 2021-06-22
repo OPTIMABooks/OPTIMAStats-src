@@ -111,11 +111,11 @@
 
 		<figure xml:id="video_ht-intro_hypothesis-1">
 			<caption>Stating Hypotheses I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-intro_hypothesis-2">
 			<caption>Stating Hypotheses II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-intro_hypothesis-1">
@@ -201,7 +201,7 @@
 
 		<figure xml:id="video_ht-intro_test-stat-1">
 			<caption>Test Statistics and Significance Levels</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-03.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-intro_test-stat-1">
@@ -295,15 +295,15 @@
 
 		<figure xml:id="video_ht-intro_critical-region-1">
 			<caption>Test Statistics and Significance Levels I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-04.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-intro_critical-region-2">
 			<caption>Test Statistics and Significance Levels II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-05.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-intro_critical-region-3">
 			<caption>Test Statistics and Significance Levels III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-intro_critical-region-1">
@@ -375,15 +375,15 @@
 
 		<figure xml:id="video_ht-intro_p-value-1">
 			<caption>P-Value Hypothesis Tests I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-07.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-intro_p-value-2">
 			<caption>P-Value Hypothesis Tests II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-08.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-intro_p-value-3">
 			<caption>P-Value Hypothesis Tests III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-09.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-intro_p-value-1">
@@ -457,11 +457,11 @@
 
 		<figure xml:id="fig_ht-intro_errors-1">
 			<caption>Type I and Type II Errors I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-10.mp4"/>
 		</figure>
 		<figure xml:id="fig_ht-intro_errors-2">
 			<caption>Type I and Type II Errors II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.1-11.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.1-11.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-intro_errors-1">

@@ -224,11 +224,11 @@
 
 		<figure xml:id="video_binomial_uniform-1">
 			<caption>Discrete Uniform Distributions I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-01.mp4"/>
 		</figure>
 		<figure xml:id="video_binomial_uniform-2">
 			<caption>Discrete Uniform Distributions II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_binomial_uniform-1">
@@ -297,11 +297,11 @@
 
 		<figure xml:id="video_binomial_bernoulli-1">
 			<caption>Bernoulli Processes I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-03.mp4"/>
 		</figure>
 		<figure xml:id="video_binomial_bernoulli-2">
 			<caption>Bernoulli Processes II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_binomial_bernoulli-1">
@@ -454,11 +454,11 @@
 
 	  <figure xml:id="video_binomial_binomial-1">
 	  	<caption>Binomial Processes I</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-05.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-05.mp4"/>
 	  </figure>
 	  <figure xml:id="video_binomial_binomial-2">
 	  	<caption>Binomial Processes II</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-06.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-06.mp4"/>
 	  </figure>
 
 	  <exercise xml:id="ckpt_binomial_binomial-1">
@@ -543,11 +543,11 @@
 
 		<figure xml:id="video_binomial_formula-1">
 			<caption>Binomial Probability Formula I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-07.mp4"/>
 		</figure>
 		<figure xml:id="video_binomial_formula-2">
 			<caption>Binomial Probability Formula II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_binomial_formula-1">
@@ -616,11 +616,11 @@
 
 		<figure xml:id="video_binomial_at-least-most-1">
 			<caption>Binomial Probability Ranges I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-09.mp4"/>
 		</figure>
 		<figure xml:id="video_binomial_at-least-most-2">
 			<caption>Binomial Probability Ranges II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_binomial_at-least-most-1">
@@ -760,11 +760,11 @@
 
 		<figure xml:id="video_binomial_mean-stdev-1">
 			<caption>Mean and Standard Deviation I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-11.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-11.mp4"/>
 		</figure>
 		<figure xml:id="video_binomial_mean-stdev-2">
 			<caption>Mean and Standard Deviation II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.2-12.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.2-12.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_binomial_mean-stdev-1">

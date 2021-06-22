@@ -69,11 +69,11 @@
 
 		<figure xml:id="video_ht-small-samples_means-1">
 			<caption>Critical Values for Small Sample Means I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-small-samples_means-2">
 			<caption>Critical Values for Small Sample Means II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-small-samples_means-1">
@@ -130,11 +130,11 @@
 
 		<figure xml:id="video_ht-small-samples_differences-1">
 			<caption>Test Statistic for a Difference Between Small-Sample Means I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-03.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-small-samples_differences-2">
 			<caption>Test Statistic for a Difference Between Small-Sample Means II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-small-samples_differences-1">
@@ -257,11 +257,11 @@
 
 		<figure xml:id="video_ht-small-samples_traditional-1">
 			<caption>Traditional Hypothesis Tests</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-05.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-small-samples_traditional-2">
 			<caption>Traditional Hypothesis Tests</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-small-samples_traditional-1">
@@ -418,11 +418,11 @@
 
 		<figure xml:id="video_ht-small-samples_p-value-1">
 			<caption>P-Values for t-Distribution Test Statistics I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-07.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-small-samples_p-value-2">
 			<caption>P-Values for t-Distribution Test Statistics II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.5-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.5-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-small-samples_p-value-1">

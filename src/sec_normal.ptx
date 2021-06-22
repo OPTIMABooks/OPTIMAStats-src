@@ -136,11 +136,11 @@
 
 	  <figure xml:id="video_normal_uniform-1">
 	    <caption>Uniform Distributions I</caption>
-	    <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-01.mp4"/>
+	    <video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-01.mp4"/>
 	  </figure>
 	  <figure xml:id="video_normal_uniform-2">
 	    <caption>Uniform Distributions II</caption>
-	    <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-02.mp4"/>
+	    <video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-02.mp4"/>
 	  </figure>
 
 	  <exercise xml:id="ckpt_normal_uniform-1">
@@ -232,11 +232,11 @@
 
 		<figure xml:id="video_normal_normal-1">
 			<caption>Normal Distributions I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-03.mp4"/>
 		</figure>
 		<figure xml:id="video_normal_normal-2">
 			<caption>Normal Distributions II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_normal_normal-1">
@@ -425,11 +425,11 @@
 
 		<figure xml:id="video_normal_standard-1">
 			<caption>Standard Normal Distribution I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-05.mp4"/>
 		</figure>
 		<figure xml:id="video_normal_standard-2">
 			<caption>Standard Normal Distribution II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_normal_standard-1">
@@ -532,11 +532,11 @@
 
 		<figure xml:id="video_normal_non-standard-1">
 			<caption>Normal Distribution Applications I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4"/>
 		</figure>
 		<figure xml:id="video_normal_non-standard-2">
 			<caption>Normal Distribution Applications II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_normal_non-standard-1">
@@ -650,11 +650,11 @@
 
 		<figure xml:id="video_normal_reverse-1">
 			<caption>Reverse Look-ups I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-09.mp4"/>
 		</figure>
 		<figure xml:id="video_normal_reverse-2">
 			<caption>Reverse Look-ups II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.3-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.3-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_normal_reverse-1">

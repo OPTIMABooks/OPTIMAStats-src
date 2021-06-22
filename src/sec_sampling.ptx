@@ -195,11 +195,11 @@
 
 		<figure xml:id="video_sampling_mean-dist-1">
 			<caption>Distribution of Sample Means I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-01.mp4"/>
 		</figure>
 		<figure xml:id="video_sampling_mean-dist-2">
 			<caption>Distribution of Sample Means II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_sampling_mean-dist-1">
@@ -306,11 +306,11 @@
 
 		<figure xml:id="video_sampling_theorem-1">
 			<caption>Central Limit Theorem I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-03.mp4"/>
 		</figure>
 		<figure xml:id="video_sampling_theorem-2">
 			<caption>Central Limit Theorem II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_sampling_theorem-1">
@@ -450,11 +450,11 @@
 
     <figure xml:id="video_sampling_means-1">
     	<caption>Sampling Distribution for the Mean I</caption>
-    	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-05.mp4"/>
+    	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-05.mp4"/>
     </figure>
     <figure xml:id="video_sampling_means-2">
     	<caption>Sampling Distribution for the Mean II</caption>
-    	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-06.mp4"/>
+    	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-06.mp4"/>
     </figure>
 
     <exercise xml:id="ckpt_sampling_means-1">
@@ -523,11 +523,11 @@
 
   	<figure xml:id="video_sampling_proportion-1">
   		<caption>Sampling Distribution for a Proportion I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-07.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-07.mp4"/>
   	</figure>
   	<figure xml:id="video_sampling_proportion-2">
   		<caption>Sampling Distribution for a Proportion I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-08.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-08.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_sampling_proportion-1">
@@ -599,11 +599,11 @@
 
   	<figure xml:id="video_sampling_proportion-3">
   	  <caption>Sampling Distribution for a Proportion III</caption>
-  	  <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-09.mp4"/>
+  	  <video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-09.mp4"/>
   	</figure>
   	<figure xml:id="video_sampling_proportion-4">
   	  <caption>Sampling Distribution for a Proportion IV</caption>
-  	  <video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.5-10.mp4"/>
+  	  <video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.5-10.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_sampling_proportion-4">

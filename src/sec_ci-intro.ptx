@@ -99,11 +99,11 @@
 
 		<figure xml:id="video_ci-intro_point-estimate-1">
 			<caption>Unbiased Estimators I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-intro_point-estimate-2">
 			<caption>Unbiased Estimators I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-intro_point-estimate-1">
@@ -168,7 +168,7 @@
 
 		<figure xml:id="video_ci-intro_interval-1">
 			<caption>Interval Estimators I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-03.mp4"/>
 		</figure>
 
     <exercise xml:id="ckpt_ci-intro_interval-1">
@@ -326,19 +326,19 @@
 
 		<figure xml:id="video_ci-intro_ci-1">
 			<caption>Confidence Intervals I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-04.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-intro_ci-2">
 			<caption>Confidence Intervals II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-05.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-intro_ci-3">
 			<caption>Confidence Intervals III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-06.mp4"/>
 		</figure>
 			<figure xml:id="video_ci-intro_ci-4">
 			<caption>Confidence Intervals IV</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-09.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-intro_ci-1">
@@ -442,11 +442,11 @@
 
 		<figure xml:id="video_ci-intro_one-sided-1">
 			<caption>One-Sided Confidence Intervals I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-07.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-intro_one-sided-2">
 			<caption>One-Sided Confidence Intervals II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.1-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.1-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-intro_one-sided-1">

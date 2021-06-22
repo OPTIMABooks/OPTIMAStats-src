@@ -155,11 +155,11 @@
 
 		<figure xml:id="video_probability_basic-rules-1">
 			<caption>Sample Spaces and Events I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-01.mp4"/>
 		</figure>
 		<figure xml:id="video_probability_basic-rules-2">
 			<caption>Sample Spaces and Events II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_probability_basic-rules-1">
@@ -268,11 +268,11 @@
 
 		<figure xml:id="video_probability_measure-1">
 			<caption>Valid Probability Measures I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-03.mp4"/>
 		</figure>
 		<figure xml:id="video_probability_measure-2">
 			<caption>Valid Probability Measures II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_probability_measure-1">
@@ -400,11 +400,11 @@
 
   	<figure xml:id="video_probability_more-rules-1">
   		<caption>Other Probability Rules</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-05.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-05.mp4"/>
   	</figure>
   	<figure xml:id="video_probability_more-rules-2">
   		<caption>Other Probability Rules</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-06.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-06.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_probability_more-rules-1">
@@ -522,11 +522,11 @@
 
 		<figure xml:id="video_probability_venn-1">
 			<caption>Probability and Venn Diagrams I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-07.mp4"/>
 		</figure>
 		<figure xml:id="video_probability_venn-2">
 			<caption>Probability and Venn Diagrams II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_probability_venn-1">
@@ -684,15 +684,15 @@
 
 		<figure xml:id="video_probability_counting-1">
 			<caption>Probability from Counting I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-09.mp4"/>
 		</figure>
 		<figure xml:id="video_probability_counting-2">
 			<caption>Probability from Counting II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-10.mp4"/>
 		</figure>
 		<figure xml:id="video_probability_counting-3">
 			<caption>Probability from Counting III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.3-11.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.3-11.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_probability_counting-1">

@@ -665,15 +665,15 @@
 		
 			<figure xml:id="video_graphs_graphing-qualitative-1">
 				<caption>Summarizing and Graphing Qualitative Data I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-01.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-01.mp4"/>
 			</figure>
 			<figure xml:id="video_graphs_graphing-qualitative-2">
 				<caption>Summarizing and Graphing Qualitative Data II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-02.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-02.mp4"/>
 			</figure>
 			<figure xml:id="video_graphs_graphing-qualitative-3">
 				<caption>Summarizing and Graphing Bivariate Qualitative Data</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-03.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-03.mp4"/>
 			</figure>
 
 			<exercise xml:id="ckpt_graphs_graphing-qualitative-1">
@@ -936,11 +936,11 @@
 
 			<figure xml:id="video_graphs_frequency-and-histogram-1">
 				<caption>Frequency Distributions and Histograms I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-04.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-04.mp4"/>
 			</figure>
 			<figure xml:id="video_graphs_frequency-and-histogram-2">
 				<caption>Frequency Distributions and Histograms II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-05.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-05.mp4"/>
 			</figure>
 
 			<exercise xml:id="ckpt_graphs_frequency-and-histogram-1">
@@ -1121,12 +1121,12 @@
 
 			<figure xml:id="video_graphs_stem-and-leaf-1">
 				<caption>Stem-and-Leaf Plots I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-06.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-06.mp4"/>
 			</figure>
 
 			<figure xml:id="video_graphs_stem-and-leaf-2">
 				<caption>Stem-and-Leaf Plots II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-07.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-07.mp4"/>
 			</figure>
 
 			<exercise xml:id="ckpt_graphs_stem-and-leaves-1">
@@ -1372,11 +1372,11 @@
 
 			<figure xml:id="video_graphs_other-graphs-1">
 				<caption>Other Graphs I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-08.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-08.mp4"/>
 			</figure>
 			<figure xml:id="video_graphs_other-graphs-2">
 				<caption>Other Graphs II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-09.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-09.mp4"/>
 			</figure>
 
 			<exercise xml:id="ckpt_graphs_other-graphs-1">
@@ -1538,11 +1538,11 @@
 
 			<figure xml:id="video_graphs_describing-histograms-1">
 				<caption>Histogram Shapes I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-10.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-10.mp4"/>
 			</figure>
 			<figure xml:id="video_graphs_describing-histograms-2">
 				<caption>Histogram Shapes II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-11.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-11.mp4"/>
 			</figure>
 
 			<exercise xml:id="ckpt_graphs_describing-histograms-1">
@@ -1746,11 +1746,11 @@
 
 		<figure xml:id="video_graphs_things-to-avoid-1">
 			<caption>Things to Avoid I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-12.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-12.mp4"/>
 		</figure>
 		<figure xml:id="video_graphs_things-to-avoid-2">
 			<caption>Things to Avoid II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.2-13.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.2-13.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_graphs_things-to-avoid-1">

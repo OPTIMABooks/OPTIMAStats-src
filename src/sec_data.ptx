@@ -127,11 +127,11 @@
 			</example>
 			<figure xml:id="video_data_variables_number-1">
 				<caption>Number of Variables I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-01.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-01.mp4"/>
 			</figure>
 			<figure xml:id="video_data_variables_number-2">
 				<caption>Number of Variables II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-02.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-02.mp4"/>
 			</figure>
 
 			<exercise xml:id="ckpt_data_variables_number-1">
@@ -253,11 +253,11 @@
 			<p>Now for some more video examples.</p>
 			<figure xml:id="video_data_variables_type-1">
 				<caption>Types of Variables I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-03"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-03"/>
 			</figure>
 			<figure xml:id="video_data_variables_type-2">
 				<caption>Types of Variables II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-04.mp4"/>
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-04.mp4"/>
 			</figure>
 
 			<exercise xml:id="ckpt_data_variables_type-1">
@@ -338,11 +338,11 @@
 
 			<figure xml:id="video_data_collecting_type-1">
 				<caption>Populations and Samples I</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-05.mp4" />
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-05.mp4" />
 			</figure>
 			<figure xml:id="video_data_collecting_type-2">
 				<caption>Populations and Samples II</caption>
-				<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-06.mp4" />
+				<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-06.mp4" />
 			</figure>
 
 			<exercise xml:id="ckpt_data_pop-and-sample-1">
@@ -512,11 +512,11 @@
 
 				<figure xml:id="video_data_collecting_plans-1">
 					<caption>Sampling Techniques I</caption>
-					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-07.mp4" />
+					<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-07.mp4" />
 				</figure>
 				<figure xml:id="video_data_collecting_plans-2">
 					<caption>Sampling Techniques II</caption>
-					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-08.mp4" />
+					<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-08.mp4" />
 				</figure>
 
 				<exercise xml:id="ckpt_data_collecting_plans-1">
@@ -707,11 +707,11 @@
 
 				<figure xml:id="video_data_collecting_studies-1">
 					<caption>Types of Studies I</caption>
-					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-09.mp4"/>
+					<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-09.mp4"/>
 				</figure>
 				<figure xml:id="video_data_collecting_studies-2">
 					<caption>Types of Studies II</caption>
-					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-10.mp4"/>
+					<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-10.mp4"/>
 				</figure>
 
 				<exercise xml:id="ckpt_data_collecting_studies-1">
@@ -869,11 +869,11 @@
 
 				<figure xml:id="video_data_collecting_avoid-1">
 					<caption>Things to Avoid I</caption>
-					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-11.mp4" />
+					<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-11.mp4" />
 				</figure>
 				<figure xml:id="video_data_collecting_avoid-2">
 					<caption>Things to Avoid II</caption>
-					<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.1-12.mp4" />
+					<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.1-12.mp4" />
 				</figure>
 
 				<exercise xml:id="ckpt_data_collecting_avoid-1">

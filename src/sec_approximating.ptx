@@ -117,7 +117,7 @@
 
 		<figure xml:id="video_approximating_visual-1">
 			<caption>Normal Distribution Shape</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-01.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_approximating_visual-1">
@@ -203,11 +203,11 @@
 
 		<figure xml:id="video_approximating_when-1">
 			<caption>Criteria for Approximation I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-02.mp4"/>
 		</figure>
 		<figure xml:id="video_approximating_when-2">
 			<caption>Criteria for Approximation II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-03.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_approximating_when-1">
@@ -315,11 +315,11 @@
 
 		<figure xml:id="video_approximating_correction-1">
 			<caption>Continuity Correction I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-04.mp4"/>
 		</figure>
 		<figure xml:id="video_approximating_correction-2">
 			<caption>Continuity Correction II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-05.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_approximating_correction-1">
@@ -439,15 +439,15 @@
 
 		<figure xml:id="video_approximating_computation-1">
 			<caption>Normal Approximation I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-06.mp4"/>
 		</figure>
 		<figure xml:id="video_approximating_computation-2">
 			<caption>Normal Approximation II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-07.mp4"/>
 		</figure>
 		<figure xml:id="video_approximating_computation-3">
 			<caption>Normal Approximation II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_approximating_computation-1">
@@ -589,11 +589,11 @@
 
 		<figure xml:id="video_approximating_how-good-1">
 			<caption>How Good are the Approximations I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-09.mp4"/>
 		</figure>
 		<figure xml:id="video_approximating_how-good-2">
 			<caption>How Good are the Approximations II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.4-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.4-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_approximating_how-good-1">

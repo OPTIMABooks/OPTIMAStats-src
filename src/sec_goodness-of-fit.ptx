@@ -138,11 +138,11 @@
 
 	  <figure xml:id="video_goodness-of-fit_multinomial-1">
 	  	<caption>Multinomial Processes I</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-01.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-01.mp4"/>
 	  </figure>
 	  <figure xml:id="video_goodness-of-fit_multinomial-2">
 	  	<caption>Multinomial Processes II</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-02.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-02.mp4"/>
 	  </figure>
 
 	  <exercise xml:id="ckpt_goodness-of-fit_multinomial-1">
@@ -211,11 +211,11 @@
 
 		<figure xml:id="video_goodness-of-fit-hypotheses-1">
 			<caption>Goodness-of-Fit Hypotheses I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-03.mp4"/>
 		</figure>
 		<figure xml:id="video_goodness-of-fit-hypotheses-2">
 			<caption>Goodness-of-Fit Hypotheses II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_goodness-of-fit_hypotheses-1">
@@ -385,11 +385,11 @@
 
 		<figure xml:id="video_goodness-of-fit_counts-1">
 			<caption>Observed and Expected Counts I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-05.mp4"/>
 		</figure>
 		<figure xml:id="video_goodness-of-fit_counts-2">
 			<caption>Observed and Expected Counts II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_goodness-of-fit_counts-1">
@@ -530,11 +530,11 @@
 
 		<figure xml:id="video_goodness-of-fit_chi-squared-1">
 			<caption><m>\chi^2</m>-Distribution I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-07.mp4"/>
 		</figure>
 		<figure xml:id="video_goodness-of-fit_chi-squared-2">
 			<caption><m>\chi^2</m>-Distribution II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_goodness-of-fit_chi-squared-1">
@@ -723,11 +723,11 @@
 
 		<figure xml:id="video_goodness-of-fit_test-stat-1">
 			<caption><m>\chi^2</m> Test Statistic I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-09.mp4"/>
 		</figure>
 		<figure xml:id="video_goodness-of-fit_test-stat-2">
 			<caption><m>\chi^2</m> Test Statistic II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_goodness-of-fit_test-stat-1">
@@ -998,11 +998,11 @@
 
 		<figure xml:id="video_goodness-of-fit_test-1">
 			<caption>Goodness-of-Fit Tests I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-11.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-11.mp4"/>
 		</figure>
 		<figure xml:id="video_goodness-of-fit_test-2">
 			<caption>Goodness-of-Fit Tests II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.2-12.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.2-12.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_goodness-of-fit_test-1">

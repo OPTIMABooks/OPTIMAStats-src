@@ -135,11 +135,11 @@
 
 		<figure xml:id="video_ht-differences_hypotheses-1">
 			<caption>Hypotheses for Differences I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-differences_hypotheses-2">
 			<caption>Hypotheses for Differences II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-differences_hypotheses-1">
@@ -208,11 +208,11 @@
 
 		<figure xml:id="video_ht-differences_test-stat-means-1">
 			<caption>Test Statistic for Differences Between Means I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-03.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-differences_test-stat-means-2">
 			<caption>Test Statistic for Differences Between Means II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-differences_test-stat-means-1">
@@ -321,11 +321,11 @@
 
 		<figure xml:id="video_ht-differences_test-stat-proportions-1">
 			<caption>Test Statistic for Differences Between Proportions I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-05.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-differences_test-stat-proportions-2">
 			<caption>Test Statistic for Differences Between Proportions II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-differences_test-stat-proportions-1">
@@ -427,11 +427,11 @@
 
 		<figure xml:id="video_ht-differences_traditional-1">
 			<caption>Traditional Hypothesis Test for Differences</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-07.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-differences_traditional-2">
 			<caption>Traditional Hypothesis Test for Differences</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-differences_traditional-1">
@@ -538,11 +538,11 @@
 
 		<figure xml:id="video_ht-differences_p-value-1">
 			<caption>P-Value Tests for Differences I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-09.mp4"/>
 		</figure>
 		<figure xml:id="video_ht-differences_p-value-2">
 			<caption>P-Value Tests for Differences II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter05/video/5.4-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter05/video/5.4-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ht-differences_p-value-1">

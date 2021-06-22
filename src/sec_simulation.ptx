@@ -97,11 +97,11 @@
 
 		<figure xml:id="video_simulation_pseudo-random-1">
 			<caption>Using Random Number Tables I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-01.mp4"/>
 		</figure>
 		<figure xml:id="video_simulation_pseudo-random-2">
 			<caption>Using Random Number Tables II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_simulation_pseudo-random-1">
@@ -194,11 +194,11 @@
 
 	  <figure xml:id="video_simulation_random-1">
 	  	<caption>Deterministic and Random Processes I</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-03.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-03.mp4"/>
 	  </figure>
 	  <figure xml:id="video_simulation_random-2">
 	  	<caption>Deterministic and Random Processes II</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-04.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-04.mp4"/>
 	  </figure>
 
 	  <exercise xml:id="ckpt_simulation_random-1">
@@ -295,11 +295,11 @@
 
 		<figure xml:id="video_simulation_identify-parts-1">
 			<caption>Identifying Parts of a Random Process I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-05.mp4"/>
 		</figure>
 		<figure xml:id="video_simulation_identify-parts-2">
 			<caption>Identifying Parts of a Random Process II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_simulation_simulation-1">
@@ -461,11 +461,11 @@
 
 		<figure xml:id="video_simulation_conducting-1">
 			<caption>Conducting Simulations I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-07.mp4"/>
 		</figure>
 		<figure xml:id="video_simulation_conducting-2">
 			<caption>Conducting Simulations II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_simulation_conducting-1">
@@ -547,11 +547,11 @@
 
   	<figure xml:id="video_simulation_cautions-1">
   		<caption>Simulation Cautions I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-09.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-09.mp4"/>
   	</figure>
   	<figure xml:id="video_simulation_cautions-2">
   		<caption>Simulation Cautions II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.1-10.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.1-10.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_simulation_cautions-1">

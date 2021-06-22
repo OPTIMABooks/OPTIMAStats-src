@@ -70,11 +70,11 @@
 
 		<figure xml:id="video_ci-means_point-1">
 			<caption>Point Estimates for a Mean I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-means_point-2">
 			<caption>Point Estimates for a Mean II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-means_point-1">
@@ -137,11 +137,11 @@
 
 		<figure xml:id="video_ci-means_margin-error-1">
 			<caption>Margin of Error I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-03.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-means_margin-error-2">
 			<caption>Margin of Error I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-means_margin-error-1">
@@ -215,15 +215,15 @@
 
 		<figure xml:id="video_ci-means_interval-1">
 			<caption>Confidence Intervals</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-05.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-means_interval-2">
 			<caption>Confidence Intervals</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-06.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-means_interval-3">
 			<caption>Confidence Intervals</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-07.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-means_interval-1">
@@ -278,11 +278,11 @@
 
 		<figure xml:id="video_ci-means_sample-size-1">
 			<caption>Sample Size I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-08.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-means_sample-size-2">
 			<caption>Sample Size II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.2-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.2-09.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-means_sample-size-1">

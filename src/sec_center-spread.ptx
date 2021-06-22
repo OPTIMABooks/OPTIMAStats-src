@@ -221,11 +221,11 @@
 
 		<figure xml:id="video_center-spread_mode-1">
 			<caption>Finding the Mode I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-01.mp4"/>
 		</figure>
 		<figure xml:id="video_center-spread_mode-2">
 			<caption>Finding the Mode II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_center-spread_mode-1">
@@ -397,11 +397,11 @@
 
 		<figure xml:id="video_center-spread_midrange-range-1">
 			<caption>Finding the Midrange and Range I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-03.mp4"/>
 		</figure>
 		<figure xml:id="video_center-spread_midrange-range-2">
 			<caption>Finding the Midrange and Range II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_center-spread_midrange-range-1">
@@ -539,11 +539,11 @@
 
 		<figure xml:id="video_center-spread_median-quartile-1">
 			<caption>Finding Medians, Quartiles, and IQR I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-05.mp4"/>
 		</figure>
 		<figure xml:id="video_center-spread_median-quartile-2">
 			<caption>Finding Medians, Quartiles, and IQR II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_center-spread_median-quartile-1">
@@ -692,11 +692,11 @@
 
 		<figure xml:id="video_center-spread_mean-stdev-1">
 			<caption>Finding Means and Standard Deviations I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-09.mp4"/>
 		</figure>
 		<figure xml:id="video_center-spread_mean-stdev-2">
 			<caption>Finding Means and Standard Deviations II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_center-spread_mean-stdev-1">
@@ -824,11 +824,11 @@
 
 		<figure xml:id="video_center-spread_appropriate-1">
 			<caption>Using Appropriate Measures I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-13.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-13.mp4"/>
 		</figure>
 		<figure xml:id="video_center-spread_appropriate-2">
 			<caption>Using Appropriate Measures II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter01/video/1.3-14.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter01/video/1.3-14.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_center-spread_appropriate-1">

@@ -111,11 +111,11 @@
 
 		<figure xml:id="video_ci-small-samples_t-dist-1">
 			<caption>Using the t-Distribution Table I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-small-samples_t-dist-2">
 			<caption>Using the t-Distribution Table II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-small-samples_t-dist-1">
@@ -175,15 +175,15 @@
 
 		<figure xml:id="video_ci-small-samples_single-mean-1">
 			<caption>Confidence Intervals for Single Small-Sample Means I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-03.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-small-samples_single-mean-2">
 			<caption>Confidence Intervals for Single Small-Sample Means II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-04.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-small-samples_single-mean-3">
 			<caption>Confidence Intervals for Single Small-Sample Means III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-05.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-small-samples_single-mean-1">
@@ -318,15 +318,15 @@
 
 		<figure xml:id="video_ci-small-samples_differences-1">
 			<caption>Small-Sample Confidence Intervals for Differences I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-06.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-small-samples_differences-2">
 			<caption>Small-Sample Confidence Intervals for Differences II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-07.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-small-samples_differences-3">
 			<caption>Small-Sample Confidence Intervals for Differences III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-small-samples_differences-1">
@@ -450,7 +450,7 @@
 
 		<figure xml:id="video_ci-small-samples_when-1">
 			<caption>Choosing Distributions</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.5-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.5-09.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-small-samples_when-1">

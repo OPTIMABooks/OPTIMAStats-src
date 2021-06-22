@@ -132,11 +132,11 @@
 
 		<figure xml:id="video_random-vars_definition-1">
 			<caption>Random Variables I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-01.mp4"/>
 		</figure>
 		<figure xml:id="video_random-vars_definition-2">
 			<caption>Random Variables II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_random-vars_definition-1">
@@ -281,11 +281,11 @@
 
   	<figure xml:id="video_random-vars_distributions-1">
   		<caption>Probability Distributions I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-03.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-03.mp4"/>
   	</figure>
   	<figure xml:id="video_random-vars_distributions-2">
   		<caption>Probability Distributions II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-04.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-04.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_random-vars_distributions-1">
@@ -554,11 +554,11 @@
 
 		<figure xml:id="video_random-vars_histograms-1">
 			<caption>Probability Histograms I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-05.mp4"/>
 		</figure>
 		<figure xml:id="video_random-vars_histograms-2">
 			<caption>Probability Histograms II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_random-vars_histograms-1">
@@ -790,11 +790,11 @@
 
 		<figure xml:id="video_random-vars_expected-value-1">
 			<caption>Expected Value I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-07.mp4"/>
 		</figure>
 		<figure xml:id="video_random-vars_expected-value-2">
 			<caption>Expected Value II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_random-vars_expected-value-1">
@@ -1055,11 +1055,11 @@
 
 		<figure xml:id="video_random-vars_stdev-1">
 			<caption>Standard Deviation I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-09.mp4"/>
 		</figure>
 		<figure xml:id="video_random-vars_stdev-2">
 			<caption>Standard Deviation II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter03/video/3.1-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter03/video/3.1-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_random-vars_stdev-1">

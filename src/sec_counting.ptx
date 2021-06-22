@@ -151,11 +151,11 @@
 
 	  <figure xml:id="video_counting_addition-1">
 	  	<caption>Sets and the Addition Rule I</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-01.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-01.mp4"/>
 	  </figure>
  	  <figure xml:id="video_counting_addition-2">
 	  	<caption>Sets and the Addition Rule II</caption>
-	  	<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-02.mp4"/>
+	  	<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-02.mp4"/>
 	  </figure>
 
 	  <exercise xml:id="ckpt_counting_addition-1">
@@ -289,11 +289,11 @@
 
 		<figure xml:id="video_counting_inclusion-exclusion-1">
 			<caption>Inclusion/Exclusion I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-03.mp4"/>
 		</figure>
 		<figure xml:id="video_counting_inclusion-exclusion-2">
 			<caption>Inclusion/Exclusion II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_counting_inclusion-exclusion-1">
@@ -536,11 +536,11 @@
 
 		<figure xml:id="video_counting_multiplication-1">
 			<caption>Multiplication Rule and Tree Diagrams I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-05.mp4"/>
 		</figure>
 		<figure xml:id="video_counting_multiplication-2">
 			<caption>Multiplication Rule and Tree Diagrams II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_counting_multiplication-1">
@@ -634,11 +634,11 @@
 
 		<figure xml:id="video_counting_factorial-1">
 			<caption>Factorials</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-07.mp4"/>
 		</figure>
 		<figure xml:id="video_counting_factorial-2">
 			<caption>Factorials</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_counting_factorial-1">
@@ -739,11 +739,11 @@
 
 		<figure xml:id="video_counting_permutation-1">
 			<caption>Permutations I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-09.mp4"/>
 		</figure>
 		<figure xml:id="video_counting_permutation-2">
 			<caption>Permutations II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_counting_permutaton-1">
@@ -863,11 +863,11 @@
 
 		<figure xml:id="video_counting_combination-1">
 			<caption>Combinations I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-11.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-11.mp4"/>
 		</figure>
 		<figure xml:id="video_counting_combination-2">
 			<caption>Combinations II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-12.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-12.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_counting_combination-1">
@@ -971,11 +971,11 @@
 
 		<figure xml:id="video_counting_mixed-1">
 			<caption>Mixed Counting Techniques I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-13.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-13.mp4"/>
 		</figure>
 		<figure xml:id="video_counting_mixed-2">
 			<caption>Mixed Counting Techniques II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.2-14.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.2-14.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_counting_mixed-1">

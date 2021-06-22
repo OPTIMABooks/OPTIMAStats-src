@@ -207,11 +207,11 @@
 
   	<figure xml:id="video_contingency_hypotheses-1">
   		<caption>Two Types of Hypotheses I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-01.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-01.mp4"/>
   	</figure>
   	<figure xml:id="video_contingency_hypotheses-2">
   		<caption>Two Types of Hypotheses II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-02.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-02.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_contingency_hypotheses-1">
@@ -475,11 +475,11 @@
 
   	<figure xml:id="video_contingency_counts-1">
   		<caption>Computing Expected Counts I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-03.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-03.mp4"/>
   	</figure>
   	<figure xml:id="video_contingency_counts-2">
   		<caption>Computing Expected Counts II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-04.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-04.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_contingency_counts-1">
@@ -730,11 +730,11 @@
 
   	<figure xml:id="video_contingency_test-stat-1">
   		<caption>Test Statistic I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-05.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-05.mp4"/>
   	</figure>
   	<figure xml:id="video_contingency_test-stat-2">
   		<caption>Test Statistic II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-06.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-06.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_contingency_test-stat-1">
@@ -1073,11 +1073,11 @@
 
   	<figure xml:id="video_contingency_test-1">
   		<caption>Tests of Independence or Homogeneity I</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-07.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-07.mp4"/>
   	</figure>
   	<figure xml:id="video_contingency_test-2">
   		<caption>Tests of Independence or Homogeneity II</caption>
-  		<video source="https://webwork.wallawalla.edu/courses/math206/Chapter06/video/6.3-08.mp4"/>
+  		<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter06/video/6.3-08.mp4"/>
   	</figure>
 
   	<exercise xml:id="ckpt_contingency_test-1">

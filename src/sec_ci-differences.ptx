@@ -82,11 +82,11 @@
 
 		<figure xml:id="video_ci-differences_point-1">
 			<caption>Point Estimates for Differences I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-01.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-differences_point-2">
 			<caption>Point Estimates for Differences II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-differences_point-1">
@@ -218,11 +218,11 @@
 
 		<figure xml:id="video_ci-difference_margin-error-1">
 			<caption>Margins of Error for Differences I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-03.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-difference_margin-error-2">
 			<caption>Margins of Error for Differences II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-differences_magin-error-1">
@@ -351,19 +351,19 @@
 
 		<figure xml:id="video_ci-differences_ci-1">
 			<caption>Confidence Intervals for Differences I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-05.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-differences_ci-2">
 			<caption>Confidence Intervals for Differences II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-06.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-differences_ci-3">
 			<caption>Confidence Intervals for Differences III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-07.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-differences_ci-4">
 			<caption>Confidence Intervals for Differences IV</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-08.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-differences_ci-1">
@@ -504,11 +504,11 @@
 
 		<figure xml:id="video_ci-differences_sample-size-1">
 			<caption>Sample Sizes I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-09.mp4"/>
 		</figure>
 		<figure xml:id="video_ci-differences_sample-size-2">
 			<caption>Sample Sizes II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter04/video/4.4-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter04/video/4.4-10.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_ci-differences_sample-size-1">

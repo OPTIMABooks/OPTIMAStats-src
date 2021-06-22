@@ -104,11 +104,11 @@
 
 		<figure xml:id="video_conditional_independence-1">
 			<caption>Dependent and Independent Events I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-01.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-01.mp4"/>
 		</figure>
 		<figure xml:id="video_conditional_independence-2">
 			<caption>Dependent and Independent Events II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-02.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-02.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_conditional_independence-1">
@@ -320,11 +320,11 @@
 
 		<figure xml:id="video_conditional_formula-1">
 			<caption>Conditional Probability I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-03.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-03.mp4"/>
 		</figure>
 		<figure xml:id="video_conditional_formula-2">
 			<caption>Conditional Probability II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-04.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-04.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_conditional_formula-1">
@@ -509,11 +509,11 @@
 
 		<figure xml:id="video_conditional_multiplication-rule-1">
 			<caption>General Multiplication Rule and Independence I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-05.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-05.mp4"/>
 		</figure>
 		<figure xml:id="video_conditional_multiplication-rule-2">
 			<caption>General Multiplication Rule and Independence II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-06.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-06.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_conditional_multiplication-rule-1">
@@ -627,15 +627,15 @@
 
 		<figure xml:id="video_conditional_trees-1">
 			<caption>Tree Diagrams and Conditional Probability I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-07.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-07.mp4"/>
 		</figure>
 		<figure xml:id="video_conditional_trees-2">
 			<caption>Tree Diagrams and Conditional Probability II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-08.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-08.mp4"/>
 		</figure>
 		<figure xml:id="video_conditional_trees-3">
 			<caption>Tree Diagrams and Conditional Probability III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-09.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-09.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_conditional_trees-1">
@@ -736,15 +736,15 @@
 
 		<figure xml:id="video_conditional_bayes-1">
 			<caption>Bayesian Probability I</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-10.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-10.mp4"/>
 		</figure>
 		<figure xml:id="video_conditional_bayes-2">
 			<caption>Bayesian Probability II</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-11.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-11.mp4"/>
 		</figure>
 		<figure xml:id="video_conditional_bayes-3">
 			<caption>Bayesian Probability III</caption>
-			<video source="https://webwork.wallawalla.edu/courses/math206/Chapter02/video/2.4-12.mp4"/>
+			<video source="https://webwork.cs.wallawalla.edu/courses/math206/Chapter02/video/2.4-12.mp4"/>
 		</figure>
 
 		<exercise xml:id="ckpt_conditional_bayes-1">
