@@ -305,7 +305,7 @@
       <idx><h>hypothesis test</h><h>test of independence</h><h>expected counts</h></idx>
       <idx><h>hypothesis test</h><h>test of homogeneity</h><h>expected counts</h></idx>
 	  	<statement>
-	  		<p>The expected count for a cell in row <m>i</m> and column <m>j</m> of a contingency table under the assumption that rows and columns are independent is given by:
+	  		<p>The expected count for a cell in column <m>i</m> and row <m>j</m> of a contingency table under the assumption that rows and columns are independent is given by:
 	  		  <me>E_{ij} = \frac{C_iR_j}{T}</me>
 	  		where <m>C_i</m> is the column total, <m>R_j</m> is the row total, and <m>T</m> is the grand total in the table.</p>
 	  	</statement>
