@@ -502,7 +502,7 @@
 		<example xml:id="examp_probability_venn_three-set">
 			<title>Using a Three-Set Venn Diagram</title>
 			<statement>
-				<p>On a given day, the probability that George the squirrel will spend time napping is 0.27. The probability that he will spend time chasing his tail is 0.45. The probability that he will spend time hunting for nuts is 0.65. If George chases his tail, then he will be too excited to take a nap, so those two events are mutually exclusive. The probability that George will both chase his tail and hunt for nuts is 0.35. Finally, the probability that George does none of these things is 0.16. Find the probability that George chases naps and hunts for nuts but does not chase his tail.</p>
+				<p>On a given day, the probability that George the squirrel will spend time napping is 0.27. The probability that he will spend time chasing his tail is 0.45. The probability that he will spend time hunting for nuts is 0.65. If George chases his tail, then he will be too excited to take a nap, so those two events are mutually exclusive. The probability that George will both chase his tail and hunt for nuts is 0.35. Finally, the probability that George does none of these things is 0.16. Find the probability that George naps and hunts for nuts but does not chase his tail.</p>
 			</statement>
 			<solution>
 				<p>The final Venn Diagram is shown below. Can you determine how these numbers were found?</p>
