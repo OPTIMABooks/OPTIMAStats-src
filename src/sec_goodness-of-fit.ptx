@@ -648,7 +648,7 @@
 							<cell>Cashew</cell>
 							<cell>42</cell>
 							<cell><m>0.15(355) = 53.25</m></cell>
-							<cell><m>\frac{(42-53.25)^2}{53.25} \approx 2.1230</m></cell>
+							<cell><m>\frac{(42-53.25)^2}{53.25} \approx 2.3768</m></cell>
 						</row>
 						<row>
 							<cell>Brazil Nut</cell>
@@ -896,7 +896,7 @@
 							<cell>Cashew</cell>
 							<cell>42</cell>
 							<cell><m>0.15(355) = 53.25</m></cell>
-							<cell><m>\frac{(42-53.25)^2}{53.25} \approx 2.1230</m></cell>
+							<cell><m>\frac{(42-53.25)^2}{53.25} \approx 2.3768</m></cell>
 						</row>
 						<row>
 							<cell>Brazil Nut</cell>
